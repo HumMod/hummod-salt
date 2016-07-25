@@ -1,0 +1,46 @@
+HumMod / PropranololDailyDose
+
+Created : 15-Jul-13
+Revised : 
+Author : W Pruett
+Copyright : 2013-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\Phenylephrine\ ?>
+
+<?include PhenylephrinePool.DES ?>
+<?include PhenylephrineLiver.DES ?>
+<?include PhenylephrineIV.DES ?>
+<?include PhenylephrineOral.DES ?>
+<?include PhenylephrineInhaler.DES ?>
+<?include PhenylephrineLung.DES ?>
+<?include PhenylephrineGILumen.DES ?>
+
+<structure><name> Phenylephrine</name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> PhenylephrineOral.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> PhenylephrinePool.CalcConc </call>
+  <call> PhenylephrineGILumen.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> PhenylephrineIV.Dervs </call>
+  <call> PhenylephrineLiver.Dervs </call>
+  <call> PhenylephrineInhaler.Dervs </call>
+  <call> PhenylephrineLung.Dervs </call>
+  <call> PhenylephrineGILumen.Dervs </call>
+  <call> PhenylephrinePool.Dervs </call>
+</block>
+
+<block><name> Wrapup </name>
+   <call> PhenylephrineOral.Wrapup </call>
+</block>
+</definitions>
+</structure>
+

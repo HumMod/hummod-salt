@@ -1,0 +1,87 @@
+HumMod / Summary
+
+Created : 2010-05-13
+Last Modified : 2010-05-13
+Author : Tom Coleman
+Copyright : 2010-2010
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 16.6 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<structurename> HeatInsensibleLung </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> H2O </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> H2O </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> ML_GAS_TO_ML_H2O </name>
+   <format><decimal> 4 </decimal></format>
+   <label> ML GAS TO ML H2O </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> Breathing.TotalVentilation </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total Ventilation </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> Bronchi.VaporPressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Bronchi pH2O </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> AirSupply-InspiredAir.PH2O </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Inspired pH2O </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.0 </row><col> 1.0 </col>
+   <name> AirSupply-InspiredAir.Pressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Inspired Air Pressure </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units for gain and loss are mL/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End

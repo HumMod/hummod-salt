@@ -1,0 +1,42 @@
+HumMod / SANode-BetaReceptors
+
+Created : 2012-07-22
+Revised : 2012-07-22
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+Stimulation of the cardiac nerves causes increases
+in heart rate within a few seconds.
+
+Edwards (below) measured ventilation and heart rate
+at the start of 150W exercise. Both ventilation and
+heart rate increased quickly hitting 60% of final
+values at 1 minute and 85% at two minutes.
+
+Final values were 57 L/Min (BTPS) and 170 Beats/Min.
+Note that maximum heart rate is around 200 Beats/Min,
+so there is not much upside left.
+
+This indicates that the Beta control of heart rate is
+almost totally neural, and the SA-node innervation
+should be configured appropriately.
+
+Edwards etal. JAP 32:165-169, 1972.
+
+Wilson (below) compared the heart rate response in
+cardiac denervated (heart transplant) patients to
+controls. In the denervated patients, heart rate
+rose slowly as if it was tracking catachol buildup
+in the catechol pool. Maximum heart response was
+much less than in control subjexts.
+
+Heart Rate  Resting  Exercise    %
+----------  -------  --------  ----
+Control       76        178     100
+Denervated    85        131      45
+
+Wilson etal. Circulation 101:2727-2733, 2000.
+
+
+End

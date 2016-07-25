@@ -1,0 +1,232 @@
+HumMod / FixedCalcium
+
+Created : 2011-08-08
+Last Modified : 2011-08-09
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<panel><name> Mineral-FixedCalcium </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Bone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Bone | Mineral | Fixed Calcium </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Bone-FixedCalcium </structurename>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> Stress </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Stress </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.0 </row><col> 3.0 </col>
+   <name> StressAdjustment </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Adjustment </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.0 </row><col> 3.0 </col>
+   <name> Weight.Weight(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Weight (kG) </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.0 </row><col> 3.0 </col>
+   <name> Gravity.Gz </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gravity </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.0 </row><col> 3.0 </col>
+   <name> Bone-Composition.Mass(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Bone Mineral </label>
+</showvalue>
+
+<maplist><name> StressAdjustment </name>
+<map><val> 0.0 </val><img> None </img></map>
+<map><val> 0.5 </val><img> Low </img></map>
+<map><val> 1.0 </val><img> Normal </img></map>
+<map><val> 1.5 </val><img> High </img></map>
+<map><val> 2.0 </val><img> Very High </img></map>
+<map><val> 2.5 </val><img> Extreme </img></map>
+</maplist>
+
+<slidebar>
+  <row> 8.6 </row><col> 1.0 </col>
+  <name> StressAdjustment </name>
+  <listname> StressAdjustment </listname>
+  <label> Adjust </label>
+</slidebar>
+
+<showvalue>
+   <row> 10.6 </row><col> 1.0 </col>
+   <name> [Calcitonin]Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Calcitonin] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 11.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> Calcitonin.[Conc(nG/mL)] </name>
+    <label> [Calcitonin] </label>
+    <scale><min> 0 </min><max> 0.02 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> [Calcitonin]Effect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 19.0 </row><col> 1.0 </col>
+   <name> Calcitonin.[Conc(nG/mL)] </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Calcitonin (nG/mL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.0 </row><col> 32.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.0 </row><col> 32.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 1000 </min><max> 1600 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.4 </row><col> 32.0 </col>
+   <name> Change </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 32.0 </col>
+   <name> Gain </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 32.0 </col>
+   <name> Loss </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.2 </row><col> 32.0 </col>
+   <name> Deposition </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Deposition </label>
+</showvalue>
+
+<repeatlist>
+  <name> DepositionK </name>
+  <repeat><reps> 100 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 16.6 </row><col> 34.0 </col>
+  <name> DepositionK </name>
+  <listname> DepositionK </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 18.0 </row><col> 34.0 </col>
+   <name> Bone-ExchangeableCalcium.[Conc(mG/dL)] </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Ca++ (mG/dL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.0 </row><col> 34.0 </col>
+   <name> [Calcitonin]Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Calcitonin] Effect </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.0 </row><col> 34.0 </col>
+   <name> Stress </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Stress </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.6 </row><col> 32.0 </col>
+   <name> Resorption </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Resorption </label>
+</showvalue>
+
+<repeatlist>
+  <name> ResorptionK </name>
+  <repeat><reps> 100 </reps><stepsize> 0.00001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 23.0 </row><col> 34.0 </col>
+  <name> ResorptionK </name>
+  <listname> ResorptionK </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 24.4 </row><col> 34.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+</panel>
+
+End

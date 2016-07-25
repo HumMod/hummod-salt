@@ -1,0 +1,48 @@
+HumMod / Size-Renin DES
+
+Created : 22-Aug-09
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> Size-Renin </name>
+
+<variables>
+<var><name> SizeModification </name></var>
+<constant><name>  BasicVD </name><val> 15312 </val></constant> <!-- ECFV -->
+
+<parm><name> FreeBase </name><val> 43500 </val></parm>
+<parm><name> GranuleBase </name><val> 435000 </val></parm>
+
+</variables>
+
+
+<definitions>
+
+<block><name> Calc </name>
+
+  <def><name> SizeModification </name><val> Sizing-ECFV.Vol / BasicVD </val></def>
+  <def><name> RightReninFree.InitialMass </name><val> FreeBase * SizeModification </val></def>
+  <def><name> LeftReninFree.InitialMass </name><val> FreeBase * SizeModification </val></def>
+  <def><name> RightReninGranules.InitialMass </name><val> GranuleBase * SizeModification </val></def>
+  <def><name> LeftReninGranules.InitialMass </name><val> GranuleBase * SizeModification </val></def>
+
+  <def><name> LeftReninSecretion.sizeModification </name><val> SizeModification </val></def>
+
+  <def><name> LeftReninSynthesis.sizeModification </name><val> SizeModification </val></def>
+  <def><name> RightReninSynthesis.sizeModification </name><val> SizeModification </val></def>
+
+
+  <call> RightReninFree.Init </call>
+  <call> LeftReninFree.Init </call>
+  <call> RightReninGranules.Init </call>
+  <call> LeftReninGranules.Init </call>
+  <call> ReninPool.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

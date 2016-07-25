@@ -1,0 +1,28 @@
+HumMod / Ventilator DES
+
+Created : 10-Oct-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<branch>
+  <name> Clinic_Tests </name>
+  <label> Tests </label>
+  <parent> INTERVENTION </parent>
+</branch>
+
+<leaf>
+  <name> Test-OGTT </name>
+  <label> OGTT </label>
+  <parent> Clinic_Tests</parent>
+</leaf>
+
+<leaf>
+  <name> Test-ACTH </name>
+  <label> ACTH Test </label>
+  <parent> Clinic_Tests</parent>
+</leaf>
+
+End

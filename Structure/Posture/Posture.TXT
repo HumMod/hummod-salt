@@ -1,0 +1,87 @@
+Posture Notes.TXT
+
+Created : 2013-02-23
+Revised : 2013-02-23
+Author : Tom Coleman
+
+Upon standing, blood drops to the lower torso where it is
+less effective in promoting venous return. Cardiac output
+falls. Arterial pressure falls if the autonomic response is
+inadequate. If the autonomic response is normal, arterial
+pressure is maintained by a substantial vasoconstriction.
+
+Starting with Rowell's data - posted in the HumMod Repository
+under Data | Posture and Hemodynamics
+
+               Recumbent Standing % Change
+               --------- -------- --------
+Mean BP           97        98       ~0
+Cardiac Output   6.0       4.6      -23
+TPR             16.2      21.3      +31
+HR                62        90
+SV               100        55
+RAP                6         1
+Forearm          3.0       0.4      -87
+Forearm Muscle   1.5       0.3      -80
+Liver            1.5       0.7      -53
+Kidney           1.2       0.5      -58
+
+Kaihara used severe hemorrhage in dogs.
+
+                 Control  Bled
+                 -------  ------
+Mean BP (mmHg)     95      40
+CO ((ml/Min)/kG)  130      49
+TPR              0.73    0.82
+Change in TPR            +12%
+
+Here are the % values for organ resistance after the bleed.
+
+Extremities      822
+Spleen           313
+Lungs            233
+Pancreas         208
+Stomach/Duodenum 141
+Colon            111
+Total Splanchnic 109
+Ileum/Jejunum     92
+Hepatosplanchnic  84
+Kidneys           81
+Hepatic Artery    58
+Heart             52
+Brain             42
+
+Hoffbrand and Forsyth infused norepi, tyramine and
+methoxamine and used microspheres. The animals were conscious
+so there was probably autoregulatory pushback.
+
+           Resistance (% of Control)
+           -------------------------
+Whole Body            119
+Heart                 120
+Brain                 120
+Kidney                139
+Skin                  203
+Skeletal Muscle       112
+GI Organs             158
+Hepatic Artery        172
+Lung (Bracheal)       170
+Bone                  135
+Fat                    81
+
+References ==================================================
+
+Hoffbrand, B.I. and R.P. Forsyth. Regional blood flow changes
+during norepinephrine, tyramine and methoxamine infusions in
+the unanesthetized rhesus monkey. J. Pharmacol. Exp. Ther.
+184:656-661, 1973.
+
+Jepsen, H. and P. Gaehtgens. Postural vascular response vs.
+sympathetic vasoconstriction in human skin during orthostasis.
+Am. J. Physiol. 269:H53-H61, 1995.
+
+Kaihara, S. et.al. Distribution of cardiac otput in
+experimental hemorrhagic shock in dogs. J. Appl. Physiol.
+27(2):218-222, 1969.
+
+End

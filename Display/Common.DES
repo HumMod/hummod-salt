@@ -1,0 +1,144 @@
+HumMod / Common
+
+Created : 05-Apr-05
+Revised : 2013-03-16
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<maplist>
+  <name> Common.Switch </name>
+  <map><val> 0 </val><img> Off </img></map>
+  <map><val> 1 </val><img> On </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.EffectIs </name>
+  <map><val> 0 </val><img> Variable </img></map>
+  <map><val> 1 </val><img> Fixed </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.NoYes </name>
+  <map><val> 0 </val><img> No </img></map>
+  <map><val> 1 </val><img> Yes </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.Active </name>
+  <map><val> 0 </val><img> Inactive </img></map>
+  <map><val> 1 </val><img> Active </img></map>
+</maplist>
+
+<repeatlist>
+  <name> Common.Percent </name>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<repeatlist>
+  <name> Common.Fraction </name>
+  <repeat><reps> 100 </reps><stepsize> 0.01 </stepsize></repeat>
+</repeatlist>
+
+Standard organ perfusion pump goes
+from 0 to 200 mmHg.
+
+<repeatlist>
+  <name> Common.PerfusionPump </name>
+  <repeat><reps> 14 </reps><stepsize> 5 </stepsize></repeat>
+  <repeat><reps> 40 </reps><stepsize> 1 </stepsize></repeat>
+  <repeat><reps> 18 </reps><stepsize> 5 </stepsize></repeat>
+</repeatlist>
+
+<maplist>
+  <name> Common.Adiposity </name>
+  <map><val> 0 </val><img> Underweight </img></map>
+  <map><val> 1 </val><img> Normal </img></map>
+  <map><val> 2 </val><img> Overweight </img></map>
+  <map><val> 3 </val><img> Obese </img></map>
+  <map><val> 4 </val><img> Morbidly Obese </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.Age </name>
+  <map><val> 0 </val><img> Young </img></map>
+  <map><val> 1 </val><img> Youngish </img></map>
+  <map><val> 2 </val><img> Middleaged </img></map>
+  <map><val> 3 </val><img> Old </img></map>
+  <map><val> 4 </val><img> Very Old </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.Gender </name>
+  <map><val> 0 </val><img> Male </img></map>
+  <map><val> 1 </val><img> Female </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.Height </name>
+  <map><val> 0 </val><img> Short </img></map>
+  <map><val> 1 </val><img> Normal </img></map>
+  <map><val> 2 </val><img> Tall </img></map>
+  <map><val> 3 </val><img> Very Tall </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.Muscularity </name>
+  <map><val> 0 </val><img> Below Normal </img></map>
+  <map><val> 1 </val><img> Normal </img></map>
+  <map><val> 2 </val><img> Above Normal </img></map>
+  <map><val> 3 </val><img> Trained Athlete </img></map>
+</maplist>
+
+<maplist>
+  <name> Common.OtherMass </name>
+  <map><val> 0 </val><img> Small </img></map>
+  <map><val> 1 </val><img> Normal </img></map>
+  <map><val> 2 </val><img> Large </img></map>
+  <map><val> 3 </val><img> Very Large </img></map>
+</maplist>
+
+A symbol for xy plots.
+
+<symbol>
+  <name> Common.RedBox </name>
+  <style> BOX </style>
+  <color> RED </color>
+  <size> 4 </size>
+  <linewidth> 2 </linewidth>
+</symbol>
+
+<repeatlist>
+  <name> Common.Multiplier </name>
+  <repeat><reps>   5 </reps><stepsize> 0.10 </stepsize></repeat>
+  <repeat><reps> 100 </reps><stepsize> 0.01 </stepsize></repeat>
+  <repeat><reps>  35 </reps><stepsize> 0.10 </stepsize></repeat>
+</repeatlist>
+
+<maplist>
+  <name> Common.Failed </name>
+  <map><val> 0 </val><img> Failed </img></map>
+  <map><val> 1 </val><img> OK </img></map>
+</maplist>
+
+<repeatlist>
+  <name> Common.Structure </name>
+  <repeat><reps> 20 </reps><stepsize> 0.01 </stepsize></repeat>
+</repeatlist>
+
+<repeatlist>
+  <name> Common.FiftySteps </name>
+  <repeat><reps> 50 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<repeatlist>
+  <name> Common.Thousandths </name>
+  <repeat><reps> 100 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<repeatlist>
+  <name> Common.Ten-Thousandths </name>
+  <repeat><reps> 100 </reps><stepsize> 0.0001 </stepsize></repeat>
+</repeatlist>
+
+End

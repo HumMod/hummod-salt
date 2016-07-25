@@ -1,0 +1,16 @@
+HumMod / Segments
+
+Created : 18-Apr-05
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Organs\Kidney\VascularSegments\ ?>
+
+<?include ArcuateArtery\ArcuateArtery.DES ?>
+<?include AfferentArtery\AfferentArtery.DES ?>
+<?include MyogenicResponse\MyogenicResponse.DES ?>
+<?include EfferentArtery\EfferentArtery.DES ?>
+
+End

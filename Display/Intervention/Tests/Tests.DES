@@ -1,0 +1,18 @@
+HumMod / Tests
+
+Created : 30 Oct-16
+Last Modified : 30-Oct-16
+Author : Pruett
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+
+
+<?path Display\Intervention\Tests\ ?>
+
+<?include OGTT.DES ?>
+<?include ACTHTest.DES ?>
+
+
+End

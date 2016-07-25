@@ -1,0 +1,110 @@
+HumMod / LeftHeartPumping-ContractileProtein
+
+Created : 2011-08-10
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<structure><name> LeftHeartPumping-ContractileProtein </name>
+
+<variables>
+
+<var><name> Mass </name></var>
+
+<var><name> Functional </name></var>
+<var><name> Ischemic </name></var>
+<var><name> Dead </name></var>
+
+<parm><name> Delay(Days) </name><val> 20 </val></parm>
+
+<var><name> Protein-Base </name></var>
+<var><name> Initial-Protein-Base </name></var>
+
+</variables>
+
+<equations>
+
+<delay>
+  <name> Protein-Ratio </name>
+  <outputname> Protein-Ratio </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> Protein-Ratio-SS </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.01 </errorlim>
+</delay>
+
+</equations>
+
+<functions>
+
+<curve><name> Protein-Ratio-SS </name>
+<point><x> 1.0 </x><y> 0.5 </y><slope> 0 </slope></point>1,1,0
+<point><x> 1.5 </x><y> 2.5 </y><slope> 0 </slope></point>1.5,4,0
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Protein-Base </name>
+  <val> Initial-Protein-Base </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> Protein-Base </val>
+</def>
+
+</block>
+
+<block><name> Parms </name>
+
+<def>
+  <name> K </name>
+  <val> INVERT ( 1440 * Delay(Days) ) * 0  </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Mass </name>
+  <val> Protein-Ratio * Protein-Base </val>
+</def>
+
+<def>
+  <name> Ischemic </name>
+  <val> LeftHeart-Infarction.IschemicTissueFraction * Mass </val>
+</def>
+
+<def>
+  <name> Dead </name>
+  <val> LeftHeart-Infarction.DeadTissueFraction * Mass </val>
+</def>
+
+<def>
+  <name> Functional </name>
+  <val> Mass - Ischemic - Dead </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Protein-Ratio-SS </name>
+  <val> Protein-Ratio  <!-- Protein-Ratio-SS [ LeftHeartWallStress-Systole.Stress-Ratio ] -->  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

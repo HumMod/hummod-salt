@@ -1,0 +1,39 @@
+HumMod | VitaminD
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> VitaminD </name>
+  <label> Vitamin D </label>
+  <parent> HORMONESGENERAL </parent>
+</branch>
+
+<leaf>
+  <name> VitaminD3 </name>
+  <label> Vitamin D3 </label>
+  <parent> VitaminD </parent>
+</leaf>
+
+<leaf>
+  <name> VitaminD3Stored </name>
+  <label> Vitamin D3 Stored </label>
+  <parent> VitaminD </parent>
+</leaf>
+
+<leaf>
+  <name> VitaminD(25-Hydroxy) </name>
+  <label> 25-Hydroxy Vitamin D </label>
+  <parent> VitaminD </parent>
+</leaf>
+
+<leaf>
+  <name> VitaminD(1,25-Dihydroxy) </name>
+  <label> 1,25-Dihydroxy Vitamin D </label>
+  <parent> VitaminD </parent>
+</leaf>
+
+End

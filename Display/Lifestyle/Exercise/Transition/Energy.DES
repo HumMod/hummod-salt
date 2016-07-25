@@ -1,0 +1,123 @@
+HumMod / Energy
+
+Created : 03-Aug-08
+Revised : 2012-06-29
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.0 </high>
+   <wide> 30.0 </wide>
+   <title> Energy </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> TotalWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total Watts </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TotalWatts </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> MotionWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Motion Watts </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> HeatWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Heat Watts </label>
+</showvalue>
+
+<repeatlist>
+  <name> EnergyTau </name>
+  <repeat><reps> 20 </reps><stepsize>  0.1 </stepsize></repeat>
+  <repeat><reps>  3 </reps><stepsize>  1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 12.2 </row><col> 1.0 </col>
+  <name> EnergyTau </name>
+  <listname> EnergyTau </listname>
+  <label> Delay </label>
+</slidebar>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> EnergyK </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Energy K </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.0 </row><col> 1.0 </col>
+   <name> TargetTotalWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Target Watts </label>
+</showvalue>
+
+<showgraph>
+  <row> 16.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TargetTotalWatts </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 23.4 </row><col> 1.0 </col>
+   <name> TargetMotionWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Motion Watts </label>
+</showvalue>
+
+<showvalue>
+   <row> 24.4 </row><col> 1.0 </col>
+   <name> TargetHeatWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Heat Watts </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

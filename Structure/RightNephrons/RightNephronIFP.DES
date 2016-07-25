@@ -1,0 +1,40 @@
+HumMod / RightNephronIFP
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> RightNephronIFP </name>
+
+<variables>
+
+<var><name> Pressure </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<constant><name> K </name><val> 0.042 </val></constant>0.042
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<conditional><name> Pressure </name>
+<test> Clamp </test>
+<true> Level </true>
+<false> K * RightKidney-ArcuateArtery.Pressure </false>
+</conditional>
+
+</block>
+
+</definitions>
+
+
+</structure>
+
+End

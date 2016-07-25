@@ -1,0 +1,88 @@
+Blood vs Plasma [Glucose].TXT
+
+Created : 2011-10-17
+Revised : 2011-10-17
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+The issue here is that home glucose monitors
+(usually) report blood glucose contentration
+while clinical labs report plasma or serum
+glucose concentration.
+
+A comprehensive model should consider both
+measures.
+
+UNITS ======================================
+
+Both mG/dL and mMol/L are the physical units
+used for [glucose].
+
+
+CONVERSIONS ================================
+
+The molecular weight of glucose is 180
+(C6-H12-O6), so
+
+Multiply mMol/L by 18 to get mG/dL
+
+Multiply mG/dL by 1/18 (0.0555) to get mMol/L
+
+Multiply [Blood Glucose] by 1.15 to get
+[Plasma/Serum Glucose]. More on this below.
+
+NORMAL VALUES ==============================
+
+ [Glucose] ~ 100 mG/dL
+           ~ 5.5 mMol/L
+
+without distinguishing between blood and
+plasma.
+
+DERIVATION =================================
+
+Erythrocytes or red blood cells (RBC's)
+metabolise glucose anaerobically (this is,
+down to pyruvate).
+
+The RBC's cell membrane is permeable to glucose
+and this permeability is not modulated by
+insulin.
+
+Thus, the assumption (and maybe there is some
+data) is that [Glucose] in the cytosol is equal
+to [Glucose] in the plasma.
+
+The confounding factor is that RBC's contain a
+lot of solid (hemoglobin, hgb) and this is what
+makes blood and plasma glucose concentrations
+differ.
+
+HumMod uses this fraction, although I do not
+have the reference in hand.
+
+  RBC's Solids = 0.34 * Total Volume
+
+Consider 1 mL of blood, hct of 44, [glucose]
+of 1 mG/mL blood, glucose mass of 1 mG.
+
+  Plasma = 0.56 mL
+  RBC's = 0.44 mL
+    RBC's H2O = 0.29 mL
+    RBC's Solids = 0.15 mL
+  Total H2O = 0.85 mL
+  [Plasma Glucose] = 1.18
+
+This is where the 1.15 multiplier comes from.
+
+Maybe some good data on [Glucose] and
+[Insulin] over 24 hours with 3 meals per day.
+
+Daly, Mark E. Acute effects on insulin
+sensitivity and diurnal metabolic profiles of
+a high-sucrose compared with a high starch
+diet. Am. J. Clin. Nutr. 67:1186–1196, 1998.
+
+	
+End

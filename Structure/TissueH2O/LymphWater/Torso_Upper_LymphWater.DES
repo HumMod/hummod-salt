@@ -1,0 +1,53 @@
+HumMod / Torso_Upper_LymphWater
+
+Created : 26-Mar-08
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Upper_LymphWater </name>
+
+<variables>
+
+<var><name> Rate </name><val> 0 </val></var>
+<var><name> PressureEffect </name></var>
+
+<parm><name> NormalRate </name><val> 4.43 </val></parm>
+
+</variables>
+
+<functions>
+<!--
+<curve>
+  <name> PressureFlow </name>
+  <point><x> -14.0 </x><y>  0.0 </y><slope> 0.0 </slope></point>
+  <point><x>  -4.0 </x><y>  1.0 </y><slope> 0.1 </slope></point>
+  <point><x>   2.0 </x><y>  8.0 </y><slope> 4.0 </slope></point>
+  <point><x>   6.0 </x><y> 25.0 </y><slope> 0.0 </slope></point>
+</curve>
+-->
+<curve>
+  <name> PressureFlow </name>
+  <point><x> -14.0 </x><y>  0.0 </y><slope> 0.0 </slope></point>
+  <point><x>  -2.1 </x><y> .25 </y><slope>  0.04 </slope></point>
+  <point><x>  -1.1 </x><y> .714 </y><slope>  0.8 </slope></point>
+  <point><x>  -0.1 </x><y> 2.1 </y><slope>  1.6 </slope></point>
+  <point><x>   6.0 </x><y> 25.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> PressureEffect </name><val> PressureFlow [ Torso_Upper_InterstitialWater.Pressure ] </val></def>
+<def><name> Rate </name><val> PressureEffect * NormalRate </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

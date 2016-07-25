@@ -1,0 +1,104 @@
+HumMod / Torso_Upper_LymphProtein
+
+Created : 21-Oct-04
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2004-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Upper_LymphProtein </name>
+
+<variables>
+
+<var><name> AlbRate </name></var>
+<var><name> [Alb] </name></var>
+<var><name> IgGRate </name></var>
+<var><name> [IgG] </name></var>
+<var><name> AGPRate </name></var>
+<var><name> [AGP] </name></var>
+<var><name> HetaLWRate </name></var>
+<var><name> [HetaLW] </name></var>
+<var><name> HetaHWRate </name></var>
+<var><name> [HetaHW] </name></var>
+<constant><name> K </name><val> 0.6 </val></constant>
+<var><name> [Conc] </name></var>
+<var><name> Rate  </name></var>
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> [Alb] </name>
+  <val>
+      ( K * AlbuminPool.[Alb] )
+    + ( ( 1 - K ) * Torso_Upper_InterstitialProtein.[Alb] )
+ </val>
+</def>
+
+<def>
+  <name> AlbRate </name>
+  <val> [Alb] * Torso_Upper_LymphWater.Rate </val>
+</def>
+
+<def>
+  <name> [IgG] </name>
+  <val>
+      ( K * IgGPool.[IgG] )
+    + ( ( 1 - K ) * Torso_Upper_InterstitialProtein.[IgG] )
+ </val>
+</def>
+
+<def>
+  <name> IgGRate </name>
+  <val> [IgG] * Torso_Upper_LymphWater.Rate </val>
+</def>
+
+<def>
+  <name> [AGP] </name>
+  <val>
+      ( K * AGPPool.[AGP] )
+    + ( ( 1 - K ) * Torso_Upper_InterstitialProtein.[AGP] )
+ </val>
+</def>
+
+<def>
+  <name> AGPRate </name>
+  <val> [AGP] * Torso_Upper_LymphWater.Rate </val>
+</def>
+
+<def>
+  <name> [HetaLW] </name>
+  <val>
+      ( K * HetaPool.[HetaLW] )
+    + ( ( 1 - K ) * Torso_Upper_InterstitialProtein.[HetaLW] )
+ </val>
+</def>
+
+<def>
+  <name> HetaLWRate </name>
+  <val> [HetaLW] * Torso_Upper_LymphWater.Rate </val>
+</def>
+
+<def>
+  <name> [HetaHW] </name>
+  <val>
+      ( K * HetaPool.[HetaHW] )
+    + ( ( 1 - K ) * Torso_Upper_InterstitialProtein.[HetaHW] )
+ </val>
+</def>
+
+<def>
+  <name> HetaHWRate </name>
+  <val> [HetaHW] * Torso_Upper_LymphWater.Rate </val>
+</def>
+
+<def><name> [Conc] </name><val> [Alb] + [AGP] + [IgG] + [HetaLW] + [HetaHW] </val></def>
+<def><name> Rate </name><val> AlbRate + AGPRate + IgGRate + HetaLWRate + HetaHWRate </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

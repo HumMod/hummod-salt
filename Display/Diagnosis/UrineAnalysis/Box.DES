@@ -1,0 +1,146 @@
+HumMod / Box
+
+Created : 2012-10-31
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 19.7 </high>
+   <wide> 30.0 </wide>
+
+<structurename> UrineAnalysis </structurename>
+
+<actionbutton>
+   <row> 1.4 </row><col> 1.0 </col>
+   <blockname> GetSpecimen </blockname>
+   <label> Get Specimen Now </label>
+</actionbutton>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> Timestamp </name>
+   <format>
+     <timestamp/>
+     <fieldwidth> 16 </fieldwidth>
+   </format>
+   <label> Timestamp </label>
+</showvalue>
+
+<showvalue>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> Chloride </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Cl-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.7 </row><col> 1.0 </col>
+  <name> Creatinine </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Creatinine] </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.8 </row><col> 1.0 </col>
+  <name> Glucose </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glucose] </label>
+</showvalue>
+
+<showvalue>
+  <row> 7.9 </row><col> 1.0 </col>
+  <name> Bicarbonate </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [HCO3-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.0 </row><col> 1.0 </col>
+  <name> Potassium </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.1 </row><col> 1.0 </col>
+  <name> Ketoacid </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [KA-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> Sodium </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Na+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.3 </row><col> 1.0 </col>
+  <name> Ammonia </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [NH4+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.4 </row><col> 1.0 </col>
+  <name> Phosphate </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [PO4--] </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.5 </row><col> 1.0 </col>
+  <name> Protein </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Protein] </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.6 </row><col> 1.0 </col>
+  <name> Sulphate </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [SO4--] </label>
+</showvalue>
+
+<showvalue>
+  <row> 16.7 </row><col> 1.0 </col>
+  <name> Urea </name>
+  <format><integer/></format>
+  <label> [Urea] </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.1 </row><col> 1.0 </col>
+  <name> BladderVolume.VolumeVoid </name>
+  <format><integer/></format>
+  <label> Specimen Volume </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26 </col>
+
+  <line> Typical Values And Units </line>
+  <line>  </line>
+  <line> [Cl-] = 35.5 mEq/L </line>
+  <line> [Creatinine] = 34.7 mG/dL </line>
+  <line> [Glucose] = 0.0 mMol/L </line>
+  <line> [HCO3-] = 3.0 mEq/L </line>
+  <line> [K+] = 13.5 mEq/L </line>
+  <line> [KA-] = 0.0 mMol/L </line>
+  <line> [Na+] = 35.1 mEq/L </line>
+  <line> [NH4+] = 6.5 mEq/L </line>
+  <line> [PO4--] = 6.2 mEq/L </line>
+  <line> [Protein] = 0.0 G/mL </line>
+  <line> [SO4--] = 10.3 mEq/L </line>
+  <line> [Urea] = 646 mG/dL </line>
+</infobutton>
+
+</groupbox>
+
+End

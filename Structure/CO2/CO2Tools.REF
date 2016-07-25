@@ -1,0 +1,351 @@
+HumMod / CO2Tools.REF
+
+Created : 02-Apr-05
+Revised : 2012-10-23
+Author : Tom Coleman
+Copyright : 2006-2012
+
+The first study of solubility of CO2 in blood was
+
+   Christiansen, Douglas and Haldane, J.Physiol.
+   48:244, 1914.
+
+This study also has very good data for blood CO2
+content as a function of pCO2.
+
+       pCO2     Content
+      (mmHg)     (Vol%)     
+      ------    -------
+         0          0
+        40         50
+        80         70
+       120         80
+
+   Bauer Resp. Physiol. 10:10-19, 1970.
+
+Good data on blood (actually Hgb) CO2 content as a
+function of pH. Content is Mol CO2 / Mol Hgb.
+
+        pH    CO2
+       ----  ----
+        6.6    2
+        7.0    3
+        7.2    4
+        7.4   10
+        7.6   20
+
+We need a relationship for [HCO3-], SID and pCO2.
+
+Units ================================================================
+
+Total blood CO2 content is reported as mL (of STP gas) / mL (of blood)
+and also as mMol/L. In this analysis, we'll deviate slighly and use
+mMol/mL in the mathematics.
+
+A mMol of gas occupies a standard volume of 22.4 mL.  Multiply mL/mL
+by 44.6 to get mMol/L. Multiply by 0.0446 to get mMol/mL.
+
+Square brackets [ ] indicated concentration.
+
+SID means <i>strong ion difference</i>.
+
+Overview =============================================================
+
+CO2 in the blood is mainly (88%) transported as bicarbonate [HCO3].
+The remaining 12% is bound to proteins or in solution. As a first
+approximation, we'll consider bicarbonate transport only.
+
+The concentration of HCO3 in the blood is a function of the partial
+pressure of CO2 (pCO2) as quantitated by CO2's disassociation curve.
+But [HCO3] is also a function of [SID].
+
+To get an acceptable physiological representation, we must model both
+of these factors.
+
+CO2 Dissociation Curve ================================================
+
+This relationship was accurately described a century ago.
+
+This relationship might adequately be modeled using pCO2/(p50 + pCO2).
+Note that the function must be invertible and this one is.
+
+Looking at the data, I estimate that the p50 for HCO3 as a function
+of PCO2 is 32 mmHg.
+
+Strong Ion Difference ==================================================
+
+Just as important as pCO2 is [SID], which modulates the pCO2 to
+[HCO3] equilibrium constant. A decreasing [SID] (acidosis) decreases
+[HCO3] for a given pCO2. This data comes from another early study.
+
+The following model may be adequate.
+
+  [HCO3] = K * (pCO2/(p50 + pCO2))
+  K = k * [SID]
+  p50 = 32
+
+where K is a linear function of [SID]. We can now fit k to a typical
+data set.
+
+Normal Values ==========================================================
+
+Normal values for venous blood.
+
+  pCO2 = 45 mmHg
+  [HCO3] = 0.0255 mMol/mL
+  [SID] = 0.040 mMol/mL
+
+I popped these values into a spread sheet to get
+
+  k = 1.09
+
+Arterial Values =========================================================
+
+Normal values for arterial blood.
+
+  pCO2 = 40 mmHg
+  [HCO3] = 0.0237 mMol/mL
+  [SID] = 0.040 mMol/mL
+
+For these values of pCO2 and [SID], the model predicts
+
+  [HCO3] = 0.0242
+
+Exercise Values =========================================================
+
+[SID] and pCO2 are altered by exercise and both have
+a significant effect on [HCO3]. Venous and arterial
+values are altered in their own special ways.
+
+Increased pCO2 tends to increase [HCO3] while decreased [SID] tends to
+decrease it.
+
+On the venous side, the pCO2 and [SID] effects are roughly
+offsetting. On the arterial side, the [SID] effect lowers
+[HCO3] while the arterial pCO2 is close to normal.
+
+On the venous side, pCO2 increases significantly. On the arterial
+side, ventilation takes care of the CO2 and the arterial values are
+close to normal.
+
+[SID] decreases during exercise mainly due to lactic acid accumulation,
+which is proportional to the severity of the exercise.
+
+Using this data, my best estimate for values at 200W is shown below.
+
+  pCO2 = 70 mmHg
+  [HCO3] = 0.0245 mMol/mL
+  [SID] = 0.026 mMol/mL
+
+For these values of pCO2 and [SID], the model predicts
+
+  [HCO3] = 0.0195
+
+References ===============================================================
+
+Åstrand, I., P.-O. Åstrand and K. Rodahl.  Maximum heart rate during work
+in older men. J. Appl. Physiol.  14:562-566, 1959.
+
+Christiansen, J., C.G. Douglas and J.S. Haldane.  The absorption and
+dissociation of carbon dioxide by human blood.  J. Physiol.
+48:244-277, 1914.
+
+Edwards, R.H.T., D.M. Denison, G. Jones, C.T.M. Davies and E.J.M. Campbell.
+Changes in mixed venous gas tensions at start of exercise in man.
+J. Appl. Physiol.  32:165-169, 1972.
+
+Hermansen, L. and I. Stensvold.  Production and removal of lactate during
+exercise in man. Acta Physiol. Scand. 86:191-201, 1972.
+
+Peters, J.P., A.J. Eisenman and H.A. Bulger.  Studies of the carbon
+dioxide absorptive curve of human blood. II. The nature of the curve
+representing the relation of pH to BHCO3.  J. Biol. Chem.
+55:709-716, 1923.
+
+Saltin, B., L.H. Hartley, Å. Kilbom and I. Åstrand.  Physical training
+in sedentary middle-aged and older men. II. Oxygen uptake, heart rate,
+and blood lactate concentration at submaximal and maximal exercise.
+Scand. J. Clin. Lab. Invest. 24:323-334, 1969.
+
+Sun, X.-G., J.E. Hansen, W.W. Stringer, H. Ting and K. Wasserman.  Carbon
+dioxide pressure-concentration relationship in arterial and mixed venous
+blood during exercise. J. Appl. Physiol. 90:1798-1810, 2001.
+
+Wasserman, K., B.J. Whipp, S.N. Koyal and W.L. Beaver.  Anaerobic threshold
+and respiratory gas exchange during exercise. J. Appl. Physiol.
+35:236-243, 1973.
+
+Across The Lungs ======================================================
+
+The units are
+
+  [HCO3], SID - mEq/mL
+  pCO2 - mmHg
+
+We exhale 200 mL/Min of CO2 as 5400 mL of blood pass
+through the lungs.  Each mL of blood loses 0.037 mL
+of CO2.  1 mEq of HCO3 is equal to 22.4 mL of gas.
+Thus, the change in CO2 across the lungs is 0.0016
+mEq/mL.
+
+pCO2 decreases about 5 mmHg across the lungs. When
+we model the Haldane effect, pCO decreases about
+2 1/2 mmHg due to HCO3 loss and 2 1/2 mmHg due to
+the increase in O2 saturation.
+
+Inverting =============================================================
+
+  [HCO3] = K * (pCO2/(p50 + pCO2))
+  K = k * [SID]
+  p50 = 32
+
+Forward expression inverts to
+
+  pCO2 = (p50 * [HCO3]) / (K - [HCO3])
+  K = k * [SID]
+  p50 = 32
+
+Valid for [HCO3] >= 0 and [HCO3] < k * [SID]
+
+For [HCO3] < 0 use pCO2 = 0
+For [HCO3] >= k * [SID] use pCO2 = PCO2_LARGE or 1000
+
+Estimating Metabolic Rate =============================================
+
+This is off topic. I assume that there is a negligible pCO2 gradient
+between cell and effluent blood. The effluent pCO2 increases with
+increasing metabolic rate and decreases with increasing blood flow.
+
+We can create a heuristic scaler (k) and calculate metabolic rate (Cal)
+as a function of pCO2 and blood flow (Flow).
+
+  Cal = k * (pCO2 / Flow)
+
+TISSUE ================================================================
+
+Tissue is qualitatively the same as blood but
+quantitatively different due to different SID's
+and intrinsic [HCO3]. The two cases are tissue in
+general and skeletal muscle.
+
+Tissue In General =====================================================
+
+  [HCO3-] = 0.016 mEq/mL
+  pCO2 = 45 mmHg
+  SID = 0.036 mEq/mL (see CellSID)
+
+  k = 0.760
+
+  [HCO3] from Raichle. Brain Res. 166:413-417, 1979.
+
+Skeletal Muscle =======================================================
+
+Sahlin JAP 45:474-480, 1978.
+Sahlin Clin.Sci.Mol.Med. 53:459-466, 1977.
+
+  [HCO3-] = 0.010 mEq/mL
+  pCO2 = 45 mmHg
+  SID = 0.036mEq/mL
+
+  k = 0.475
+
+Papers by Thomas.
+
+  J.Physiol. 238:159-180, 1974.
+  J.Physiol. 255:715-735, 1976.
+  J.Physiol. 273:317-338, 1977.
+
+Ten male and three female subjects with biopsies.
+
+  Total CO2 = 9.84
+  pH = 7.00
+  [HCO3] = 10.2
+
+Sahlin, K, Alvestrand A, Bergstrom J, Hultman E. Intracellular pH and
+bicarbonate concentration in biopsy samples from the quadriceps of man
+at rest. Clin Sci Mol Med 53:459-466, 1977.
+
+Nine dogs.
+
+  pCO2 = 50
+  pH = 7.23
+
+McKinley BA, Butler BD. Comparison of skeletal muscle PO2, PCO2, and
+pH with gastric tonometric pCO2 and pH in hemorrhagic shock. Crit Care
+Med 27:1869–1877, 1999. 
+
+Six subjects. Sampled blood in antecubital vein.
+
+  pCO2 = 48
+  pH = 7.37
+  [HCO3] = 24.2
+
+Brain =================================================================
+
+Three monkies. Tissue [HCO3] was 13.3 mMol/L.
+
+Raichle ME, Grubb RL Jr., Higgins CS. Measurement of brain tissue
+carbon dioxide content in vivo by emission tomography. Brain Research
+166:413–417, 1979.
+
+Eight dogs.
+
+  Tissue pCO2 = 61
+  Tissue pH = 7.16
+
+  Venous pCO2 = 43
+  Venous pH = 7.29
+
+Edelman G, Hoffman WE. Cerebral venous and tissue gases and
+arteriovenous shunting in the dog. Anesth Analg 89: 679 – 683, 1999. 
+
+Liver =================================================================
+
+Seven pigs.
+
+  Arterial pCO2 = 41.4
+  Tissue pCO2 = 53.2
+  Tissue pH = 7.38
+
+Uhlmann D, Pietsch UC, Ludwig S, Hess J, Armann B, Gaebel G, Escher E,
+Schaffranietz L, tannapfel A, Fiedler M, Hauss J, Witigmann H.
+Assessment of hepatic ischemia-reperfusion injury by simultaneous
+measurement of tissue pO2, pCO2, and pH. Microvasc Res 67:38–47, 2004. 
+
+GI Tract ==============================================================
+
+Six pigs. pCO2 in mesenteric vein was 48.7 mmHg.
+
+Knichwitz G, Rötker J, Brüssel T, Kuhmann M, Mertes N, Möllhoff T. A
+new method for continuous intramucosal PCO2 measurement in the
+gastrointestinal tract. Anesth Analg 83:6-11, 1996.
+
+Specific Organs =======================================================
+
+I'll refine this table as data comes to light.
+
+ORGAN                pCO2   p50  [SID]  [HCO3]    k
+-------------------  ----  ----  -----  ------  -----
+Bone                  45    32   0.036   0.016  0.760
+Brain                 45    32   0.036   0.016  0.760
+Fat                   45    32   0.036   0.016  0.760
+GI Tract              45    32   0.036   0.016  0.760
+Kidney                45    32   0.036   0.016  0.760
+Left Heart            45    32   0.036   0.016  0.760
+Liver                 45    32   0.036   0.016  0.760
+Other Tissue          45    32   0.036   0.016  0.760
+Respiratory Muscle    45    32   0.036   0.010  0.475
+Right Heart           45    32   0.036   0.016  0.760
+Skeletal Muscle       45    32   0.036   0.010  0.475
+Skin                  45    32   0.036   0.016  0.760
+
+To convert Mol to L, multiply by 22.4. Same scale
+applies when converting mMol to mL.
+
+To convert L to Mol, multiply by 0.0446. Same scale
+applies when converting mL to mMol.
+
+3.	PMID: 5972175. Barcroft H, Youlten LJ. The effect of tiring the forearm muscles in different ways on venous blood pH, pCO2 and standard bicarbonate. J Physiol 187: 343 – 349, 1966. 
+Indwelling needle inserted into antecubital vein for blood sampling. N = 6 normal subjects. Values (mean +/- SE) given are at rest. pH : 7.37+/-0.01; standard HCO3: 24.2+/- 0.3 meq/L; pCO2: 48+/-1.5 mmHg.  
+
+End

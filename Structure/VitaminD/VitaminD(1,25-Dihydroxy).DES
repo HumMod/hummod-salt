@@ -1,0 +1,119 @@
+HumMod | VitaminD(1,25-Dihydroxy)
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> VitaminD(1,25-Dihydroxy) </name>
+
+<variables>
+
+<var><name> Gain(nG/Min) </name></var>
+<var><name> Loss(nG/Min) </name></var>
+
+<var><name> Hydroxylation(25-H) </name></var>
+<var><name> Degradation </name></var>
+
+<parm><name> TargetConc </name><val> 37 </val></parm>
+<var><name> InitialMass </name></var>
+
+<var><name> [Conc(pG/mL)] </name></var>
+<var><name> [Conc(pMol/L)] </name></var>
+
+<constant><name> PG/ML_TO_PMOL/L </name><val> 2.4 </val></constant>
+
+<parm><name> PumpSwitch </name><val> FALSE </val></parm>
+<parm><name> PumpSetting </name><val> 0.0 </val></parm>
+<var><name> PumpRate </name></var>
+
+<parm><name> ClampSwitch </name><val> FALSE </val></parm>
+<parm><name> ClampSetting </name><val> 0.0 </val></parm>
+
+<parm><name> K </name><val> 0.0024 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 5.55 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> InitialMass </name>
+  <val> TargetConc * ECFV.InitialVol / 1000 </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Conc </name>
+<if><test> ClampSwitch </test>
+<true>
+  <def><name> [Conc(pG/mL)] </name><val> ClampSetting </val></def>
+</true>
+<false>
+  <def><name> [Conc(pG/mL)] </name><val> 1000 * Mass / ECFV.Vol </val></def>
+</false>
+</if>
+
+<def>
+  <name> [Conc(pMol/L)] </name>
+  <val> [Conc(pG/mL)] * PG/ML_TO_PMOL/L </val>
+</def>
+</block>
+
+<block><name> Dervs </name>
+
+<conditional><name> PumpRate </name>
+<test> PumpSwitch </test>
+<true> PumpSetting </true>
+<false> 0 </false>
+</conditional>
+
+<def>
+  <name> Hydroxylation(25-H) </name>
+  <val> VitaminD(25-Hydroxy).Hydroxylation(25-H) </val>
+</def>
+
+<def>
+  <name> Degradation </name>
+  <val> K * Mass </val>
+</def>
+
+<def>
+  <name> Gain(nG/Min) </name>
+  <val> Hydroxylation(25-H) + PumpRate </val>
+</def>
+
+<def>
+  <name> Loss(nG/Min) </name>
+  <val> Degradation </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain(nG/Min) - Loss(nG/Min) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

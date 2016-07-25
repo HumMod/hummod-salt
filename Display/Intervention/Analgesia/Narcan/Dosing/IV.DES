@@ -1,0 +1,49 @@
+HumMod / Injection
+
+Created : 04-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 4.8 </high>
+   <wide> 30.0 </wide>
+   <title> Continuous IV </title>
+
+<structurename> NarcanIV </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Switch </name>
+  <listname> Common.Switch </listname>
+  <label> Switch </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> NarcanIVRate.Rate </name>
+  <repeat><reps> 10 </reps><stepsize> 0.02 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.6 </row><col> 1.0 </col>
+  <name> Setting </name>
+  <listname> NarcanIVRate.Rate </listname>
+  <label> Dose </label>
+</slidebar>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Typical dose is 5 mg/4 hours = 0.02 mg / minute. </line>
+</infobutton>
+
+</groupbox>
+
+End
+
+

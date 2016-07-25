@@ -1,0 +1,86 @@
+Heart Size Notes.TXT
+
+Created : 2013-02-21
+Revised : 2013-02-22
+Author : Tom Coleman
+
+Reference Man has heart weight of 0.47% of body weight. For
+a body weight of 75 kG, this would be 352 G. HumMod scales
+to 338 G (74.9 kG, left heart 286 G, right heart 52 G).
+
+I don't have any info on atrial weight, but a guess is that
+it is ~18% of total weight.
+
+Both Cain and Hudsmith used cardiovascular MRI. Results are
+presented as a function of gender and age.
+
+Hudsmith studied 63 males and 45 females, average age 38
+years.
+
+                         Male   Female
+                        ------  ------
+Left Ventricle
+----------------------
+Mass (G)                 123     96
+EDV (mL)                 160    135
+ESV (mL)                  50     42
+SV (mL)                  112     91
+Ejection Fraction (%)     69     69
+
+Right Ventricle
+----------------------
+Mass (G)                  41     35
+EDV (mL)                 190    148
+ESV (mL)                  78     56
+SV (mL)                  113     90
+Ejection Fraction (%)     59     63
+
+Combined male and female
+------------------------
+Age (Years) = 38
+Height (cM) = 174
+Weight (kG) = 73.4
+BSA (M^2) = 1.88
+HR (/Min) = 65
+SBP (mmHg) = 123
+DBP (mmHg) = 81
+
+SV * HR yields CO's of 7280 and 5915 mL/Min!
+
+Cain presents as a function of age. I'll use the 30 to 50
+age data.
+
+                         Male   Female
+                        ------  ------
+Left Ventricle
+----------------------
+Age (Years)               41      35
+Height (M)              1.81    1.68
+Weight (kG)               80      64
+BSA (M^2)               2.01    1.73
+BMI (kG/M^2)            24.4    22.7
+SBP (mmHg)               123     123
+DBP (mmHg)                74      72
+
+Left Ventricle
+----------------------
+Mass (G)                 193    141
+EDV (mL)                 160    117
+ESV (mL)                  66     42
+SV (mL)                   95     76
+Ejection Fraction (%)     65     69
+
+
+References ==================================================
+
+Cain, P.A. et.al. Age and gender specific normal values of
+left ventricular mass, volume and function for gradient echo
+magnetic reasonance imaging : a cross sectional study. BMC
+Medical Imaging 9:2, 2009.
+
+Hudsmith, L.E. et.al. Normal left and right ventricular and
+left atrial dimensions using steady state free precession
+magnetic resonance imaging. J. Cardiovas. Magnetic Resonance
+7:775-782, 2005.
+
+End

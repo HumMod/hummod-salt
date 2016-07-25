@@ -1,0 +1,86 @@
+HumMod / Lung_N2
+
+Created : 2012-07-12
+Revised : 2012-07-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+
+<structure><name> Lung_N2 </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> [N2] </name></var>
+<var><name> pN2 </name></var>
+
+<parm><name> DiffusingCapacity(xO2) </name><val> 0.53 </val></parm>
+<var><name> DiffusingCapacity </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 1800 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 54 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+  <def>
+    <name> [N2] </name>
+    <val> Mass / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> pN2 </name>
+    <val> [N2] * Barometer.Pressure </val>
+  </def>
+</block>
+
+<block><name> Dervs </name>
+  <def>
+    <name> Gain </name>
+    <val> Breathing.AlveolarVentilation * ( Bronchi.[N2] - [N2] ) </val>
+  </def>
+
+  <def>
+    <name> DiffusingCapacity </name>
+    <val> DiffusingCapacity(xO2) * PulmonaryMembrane.DiffusingCapacity </val>
+  </def>
+
+  <def>
+    <name> Loss </name>
+    <val> DiffusingCapacity * ( pN2 - BodyN2.pN2 ) </val>
+  </def>
+
+  <def><name> Change </name><val> 0 </val></def>
+<!--  
+
+  <def><name> Change </name><val> Gain - Loss </val></def>
+-->
+
+  <def>
+    <name> DxMax </name>
+    <val> LungGases.DxMax </val>
+  </def>
+</block>
+
+</definitions>
+</structure>
+
+End

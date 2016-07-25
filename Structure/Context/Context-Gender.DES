@@ -1,0 +1,58 @@
+HumMod / Context-Gender
+
+Created : 2012-03-10
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Context-Gender </name>
+
+<variables>
+
+<parm><name> Index </name><val> 0 </val></parm>0
+
+<constant><name> IS_MALE </name><val> 0 </val></constant>
+<constant><name> IS_FEMALE </name><val> 1 </val></constant>
+
+<var><name> IsMale </name></var>
+<var><name> IsFemale </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<onjustchanged><name> Index </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+</block>
+
+<block><name> Calc </name>
+
+<if><test> Index EQ IS_MALE </test>
+<true>
+<def><name> IsMale </name><val> TRUE </val></def>
+<def><name> IsFemale </name><val> FALSE </val></def>
+</true>
+<false>
+<def><name> IsMale </name><val> FALSE </val></def>
+<def><name> IsFemale </name><val> TRUE </val></def>
+</false>
+</if>
+
+<def>
+  <name> Gender.Index </name>
+  <val> Index </val>
+</def>
+
+<call> Gender.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

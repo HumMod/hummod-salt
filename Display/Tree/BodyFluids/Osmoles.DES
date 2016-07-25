@@ -1,0 +1,33 @@
+HumMod / Osmoles
+
+Created : 08-Dec-05
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> Osmoles </name>
+  <label> Osmoles </label>
+  <parent> BODYFLUIDS </parent>
+</branch>
+
+<leaf>
+  <name> Osmoles-Function </name>
+  <label> Function </label>
+  <parent> Osmoles </parent>
+</leaf>
+
+<leaf>
+  <name> Osmoles-ECFV </name>
+  <label> ECFV </label>
+  <parent> Osmoles </parent>
+</leaf>
+
+<leaf>
+  <name> Osmoles-ICFV </name>
+  <label> ICFV </label>
+  <parent> Osmoles </parent>
+</leaf>
+
+End

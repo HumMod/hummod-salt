@@ -1,0 +1,56 @@
+HumMod / Compartments
+
+Created : 05-Jun-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 14.8 </row>
+   <col> 1.0 </col>
+   <high> 6.0 </high>
+   <wide> 30.0 </wide>
+   <title> Compartments </title>
+
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightKidney-Size.IFV </name>
+   <format> <integer/> </format>
+   <label> Right IFV </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftKidney-Size.IFV </name>
+   <format> <integer/> </format>
+   <label> Left IFV </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 1.0 </col>
+   <name> RightKidney-Size.CellH2O</name>
+   <format> <integer/> </format>
+   <label> Right Cell H2O </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.4 </row><col> 1.0 </col>
+   <name> LeftKidney-Size.CellH2O</name>
+   <format> <integer/> </format>
+   <label> Left Cell H2O </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> IFV = 78 mL </line>
+  <line> Cell H2O = 181 mL </line>
+</infobutton>
+
+</groupbox>
+
+End

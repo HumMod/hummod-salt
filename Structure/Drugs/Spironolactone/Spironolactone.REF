@@ -1,0 +1,33 @@
+HumMod / Spironolactone Reference
+
+Created : 2013-03-15
+Revised : 2013-03-15
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+Spironolactone tabs are 25, 50 and 100 mG.
+
+Dosing is 25 to 500 mG/Day in a single or multiple doses.
+
+Spironolactone has a half-life of 1.5 hours (90 minutes)
+but its canrenone metabolite has a half-life of 16.5 hours
+and is a strong aldosterone receptor antagonist.
+
+Aldosterone : MW 360.4 C21-H28-O5 EC50 0.5 nMol/L
+
+Spironolactone : MW 416.6 C24-H32-O4-S IC50 50 nMol/L
+
+Canrenone : MW 340.5 C22-H28-O3 IC50 300 nMol/L
+
+Dosing uses mG, but I think we should go to uG right in the
+gut. Plasma concentrations are reported in nG/mL, but 90%+
+of spironolactone and canrenone are bound to protein, mostly
+plasma albumin.
+
+ uG/mL * 10^6/MW = nMol/L
+
+and uG/Min for flux.
+
+
+End

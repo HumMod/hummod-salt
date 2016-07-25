@@ -1,0 +1,76 @@
+HumMod / ExternalH2O
+
+Created : 2013-03-01
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 11.8 </row>
+   <col> 1.0 </col>
+   <high> 11.6 </high>
+   <wide> 30.0 </wide>
+   <title> External H2O </title>
+
+<structurename> Sizing-ExternalH2O </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Total_Mass </name>
+  <format><integer/></format>
+  <label> Total (G) </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.8 </row><col> 1.0 </col>
+  <name> GILumen_Mass </name>
+  <format><integer/></format>
+  <label> GI Lumen (G) </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.8 </row><col> 3.0 </col>
+  <name> GILumen_Percent </name>
+  <format><decimal> 1 </decimal></format>
+  <label> % Base </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.2 </row><col> 1.0 </col>
+  <name> Peritoneum_Mass </name>
+  <format><integer/></format>
+  <label> Peritoneum (G) </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.2 </row><col> 3.0 </col>
+  <name> Peritoneum_Percent </name>
+  <format><decimal> 1 </decimal></format>
+  <label> % Base </label>
+</showvalue>
+
+<showvalue>
+  <row> 7.6 </row><col> 1.0 </col>
+  <name> Lung_Mass </name>
+  <format><integer/></format>
+  <label> Lung (G) </label>
+</showvalue>
+
+<showvalue>
+  <row> 8.6 </row><col> 3.0 </col>
+  <name> Lung_Percent </name>
+  <format><decimal> 1 </decimal></format>
+  <label> % Base </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.0 </row><col> 1.0 </col>
+  <name> Sizing-OrganMass.BaseMass(G) </name>
+  <format><integer/></format>
+  <label> Base Mass (G) </label>
+</showvalue>
+
+</groupbox>
+
+End

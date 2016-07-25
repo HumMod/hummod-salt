@@ -1,0 +1,47 @@
+HumMod / DailyDoseOral
+
+Created : 05-Jun-06
+Revised : 2012-08-09
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 9.0 </row>
+   <col> 1.0 </col>
+   <high> 4.4 </high>
+   <wide> 30.0 </wide>
+   <title> IV Bolus </title>
+
+<structurename> MorphineIMBolus </structurename>
+
+<actionbutton>
+  <row> 1.4 </row><col> 1.0 </col>
+  <blockname> InjectNow </blockname>
+  <label> Inject Now </label>
+</actionbutton>
+
+<repeatlist>
+  <name> MorphineIMBolus.Dose </name>
+  <repeat><reps> 6 </reps><stepsize> 2.5 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.8 </row><col> 1.0 </col>
+  <name> Dose </name>
+  <listname> MorphineIMBolus.Dose </listname>
+  <label> Amount </label>
+</slidebar>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Typical dose is 5 mg/4 hours. </line>
+</infobutton>
+
+
+</groupbox>
+
+End
+

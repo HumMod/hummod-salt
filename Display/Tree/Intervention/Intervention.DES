@@ -1,0 +1,32 @@
+HumMod / Intervention DES
+
+Created : 2011-07-26
+Last Modified : 2011-07-26
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> INTERVENTION </name>
+  <label> Intervention </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Intervention\ ?>
+
+<?include Anesthesia.DES ?>
+<?include Analgesia.DES ?>
+<?include Blockers.DES ?>
+<?include CardiacPacemaker.DES ?>
+<?include CPR.DES ?>
+<?include Defibrillator.DES ?>
+<?include Drugs.DES ?>
+<?include Fluids.DES ?>
+<?include Hemodialysis.DES ?>
+<?include InfusionPumps.DES ?>
+<?include InsulinInjection.DES ?>
+<?include PericardialDrain.DES ?>
+<?include Ventilator.DES ?>
+<?include Tests.DES ?>
+
+End

@@ -1,0 +1,37 @@
+HumMod / BloodVessels
+
+Created : 2013-01-27
+Revised : 2013-01-27
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> BloodVessels </name>
+  <label> Blood Vessels </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<?path Display\Tree\Circulation\BloodVessels\ ?>
+
+<?include Arteries\Arteries.DES ?>
+<?include Veins\Veins.DES ?>
+<?include Lungs\Lungs.DES ?>
+
+<separatorbar>
+  <parent> BloodVessels </parent>
+</separatorbar>
+
+<leaf>
+  <name> BloodVessels_VascularConductance </name>
+  <label> Vascular Conductance </label>
+  <parent> BloodVessels </parent>
+</leaf>
+
+<leaf>
+  <name> BloodVessels_VascularCompliance </name>
+  <label> Vascular Compliance </label>
+  <parent> BloodVessels </parent>
+</leaf>
+
+End

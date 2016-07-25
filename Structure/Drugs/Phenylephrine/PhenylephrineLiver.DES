@@ -1,0 +1,66 @@
+HumMod / FurosemideKidney
+
+Created : 05-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> PhenylephrineLiver </name>
+
+<variables>
+
+<var>
+  <name> Loss </name>
+</var>
+
+<var>
+  <name> PortalMass </name>
+</var>
+
+<var>
+  <name> [PortalMass] </name>
+</var>
+
+<var>
+  <name> [PortalMass(uMol)] </name>
+</var>
+
+<constant>
+  <name> K </name>
+  <val> .15 </val>
+</constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> PortalMass </name>
+  <val> SplanchnicVeins.Vol * ( PhenylephrinePool.[Phenylephrine] )  </val>
+</def>
+
+<def>
+   <name> [PortalMass] </name>
+   <val> PortalMass / SplanchnicVeins.Vol </val>
+</def>
+
+<def>
+   <name> [PortalMass(uMol)] </name>
+   <val> [PortalMass] / PhenylephrinePool.MW</val>
+</def>
+
+<def>
+  <name> Loss </name> 
+  <val> K * PortalMass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

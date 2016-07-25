@@ -1,0 +1,220 @@
+HumMod / OrganMass
+
+Created : 2012-03-10
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<panel><name> Sizing-OrganMass </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Sizing | Organ Mass </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 18.0 </high>
+   <wide> 35.0 </wide>
+
+<structurename> Sizing-OrganMass </structurename>
+
+<showvalue>
+  <row> 1.0 </row><col> 1.0 </col>
+  <name> BaseMass(G) </name>
+  <format><integer/></format>
+  <label> Base Mass (G) </label>
+</showvalue>
+
+<showtable>
+<row> 2.4 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 18 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Organ </textcell>
+<textcell> -------------------------------- </textcell>
+<textcell> Bone </textcell>
+<textcell> Brain </textcell>
+<textcell> GI Tract </textcell>
+<textcell> Right Kidney </textcell>
+<textcell> Left Kidney </textcell>
+<textcell> Left Heart </textcell>
+<textcell> Liver </textcell>
+<textcell> Other Tissue </textcell>
+<textcell> Respiratory Muscle </textcell>
+<textcell> Right Heart </textcell>
+<textcell> Skin </textcell>
+<textcell> -------------------------------- </textcell>
+<textcell> Check Sums </textcell>
+
+</column>
+
+<column>
+<indent> 18 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> % Base </textcell>
+<textcell> ---------- </textcell>
+
+<valuecell>
+  <name> Bone_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Brain_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> GITract_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftHeart_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Liver_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> OtherTissue_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RespiratoryMuscle_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightHeart_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Skin_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<textcell> ---------- </textcell>
+
+<valuecell>
+  <name> CheckSum_Percent </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 25 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Mass (G) </textcell>
+<textcell> ------------ </textcell>
+
+<valuecell>
+  <name> Bone_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Brain_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> GITract_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftHeart_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Liver_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> OtherTissue_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> RespiratoryMuscle_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> RightHeart_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Skin_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<textcell> -------- </textcell>
+
+<valuecell>
+  <name> CheckSum_Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+</column>
+</showtable>
+
+</groupbox>
+</panel>
+
+End

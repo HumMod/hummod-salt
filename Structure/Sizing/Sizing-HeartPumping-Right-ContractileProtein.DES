@@ -1,0 +1,34 @@
+HumMod / Sizing-HeartPumping-Right-ContractileProtein
+
+Created : 2013-02-26
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-HeartPumping-Right-ContractileProtein </name>
+
+<variables>
+  <var><name> Protein-Base </name></var>
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+  <def>
+    <name> Protein-Base </name>
+    <val> RightHeart-Size.InitialProteinMass </val>
+  </def>
+
+  <def>
+    <name> RightHeartPumping-ContractileProtein.Initial-Protein-Base </name>
+    <val> Protein-Base </val>
+  </def>
+
+  <call> RightHeartPumping-ContractileProtein.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

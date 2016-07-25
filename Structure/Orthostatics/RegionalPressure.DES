@@ -1,0 +1,166 @@
+HumMod / RegionalPressure
+
+Created : 18-Jun-05
+Revised : 2012-09-11
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> RegionalPressure </name>
+
+<variables>
+
+<parm><name> Alpha </name><val> 0.1667 </val></parm>
+<var><name> AlphaUpper </name><val> 0.343 </val></var>
+<var><name> AlphaMiddle </name><val> 0.343 </val></var>
+<var><name> AlphaLower </name><val> 0.2 </val></var>
+
+<var><name> Brain </name></var>
+<var><name> Carotid </name></var>
+
+<var><name> UpperArty </name></var>
+<var><name> UpperCapy </name></var>
+<var><name> UpperVein </name></var>
+
+<var><name> MiddleArty </name></var>
+<var><name> MiddleCapy </name></var>
+<var><name> MiddleVein </name></var>
+
+<var><name> LowerArty </name></var>
+<var><name> LowerCapy </name></var>
+<var><name> LowerVein </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Brain </name>
+  <val>
+    ( SystemicArtys.Pressure
+    + Hydrostatics.BrainGradient
+    )
+    MAX 0.0 
+  </val>
+</def>
+
+<def>
+  <name> Carotid </name>
+  <val>
+    ( SystemicArtys.Pressure
+    + Hydrostatics.CarotidGradient
+    )
+    MAX 0.0
+  </val>
+</def>
+
+<def>
+  <name> UpperArty </name>
+  <val>
+    ( SystemicArtys.Pressure
+    + Hydrostatics.UpperTorsoGradient
+    )
+    MAX 0.0 
+  </val>
+</def>
+
+<def>
+  <name> MiddleArty </name>
+  <val>
+    ( SystemicArtys.Pressure
+    + Hydrostatics.MiddleTorsoGradient
+    )
+    MAX 0.0
+  </val>
+</def>
+
+<def>
+  <name> LowerArty </name>
+  <val>
+    ( SystemicArtys.Pressure
+    + Hydrostatics.LowerTorsoArtyGradient
+    )
+    MAX 0.0
+  </val>
+</def>
+
+<def>
+  <name> UpperVein </name>
+  <val>
+    ( RightAtrium.Pressure
+    + Hydrostatics.UpperTorsoGradient
+    )
+    MAX 0.0
+  </val>
+</def>
+
+<def>
+  <name> MiddleVein </name>
+  <val>
+    ( RightAtrium.Pressure
+    + Hydrostatics.MiddleTorsoGradient
+    )
+    MAX 0.0 
+  </val>
+</def>
+
+<def>
+  <name> LowerVein </name>
+  <val>
+    ( RightAtrium.Pressure
+    + ( Hydrostatics.LowerTorsoVeinGradient * VenousValves.ValvesEffect )
+    )
+    MAX 0.0
+  </val>
+</def>
+<!--
+<def>
+  <name> AlphaUpper </name><val> UpperVein  / UpperArty </val>
+</def>
+
+<def>
+  <name> AlphaMiddle </name><val> MiddleVein / MiddleArty </val>
+</def>
+
+<def>
+  <name> AlphaLower </name><val> LowerVein / LowerArty </val>
+</def>
+-->
+<def>
+  <name> UpperCapy </name>
+  <val>
+    ( ( AlphaUpper * UpperArty )
+    + ( UpperVein )
+    ) / ( 1 + AlphaUpper )
+    MAX 0.0 
+  </val>
+</def>
+
+<def>
+  <name> MiddleCapy </name>
+  <val>
+    ( ( AlphaMiddle * MiddleArty )
+    + ( MiddleVein )
+    ) / ( 1 + AlphaMiddle )
+    MAX 0.0 
+  </val>
+</def>
+
+<def>
+  <name> LowerCapy </name>
+  <val>
+    ( ( AlphaLower * LowerArty )
+    + (  LowerVein )
+    ) / ( 1 + AlphaLower )
+    MAX 0.0 
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

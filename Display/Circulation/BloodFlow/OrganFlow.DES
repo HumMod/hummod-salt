@@ -1,0 +1,170 @@
+HumMod / OrganFlow
+
+Created : 24-May-05
+Revised : 2012-02-18
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 20.2 </high>
+   <wide> 30.0 </wide>
+   <title> Organ Flow </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> OrganFlow.CoronarySinusFlow </name>
+   <format><integer/></format>
+   <label> Coronary Sinus </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3 </col>
+   <name> RightHeart-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Right Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3 </col>
+   <name> LeftHeart-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Left Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.8 </row><col> 1.0 </col>
+   <name> OrganFlow.HepaticVeinFlow </name>
+   <format><integer/></format>
+   <label> Hepatic Vein </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.8 </row><col> 3 </col>
+   <name> GITract-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> GI Tract </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.8 </row><col> 3 </col>
+   <name> HepaticArtery-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Hepatic Artery </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> OrganFlow.PeripheralFlow </name>
+   <format><integer/></format>
+   <label> Peripheral </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.2 </row><col> 3 </col>
+   <name> A-VFistula-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> A-V Fistula </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.2 </row><col> 3 </col>
+   <name> Bone-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Bone </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 3 </col>
+   <name> Brain-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Brain </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 3 </col>
+   <name> Fat-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Fat </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 3 </col>
+   <name> LeftKidney-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Left Kidney </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 3 </col>
+   <name> RightKidney-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Right Kidney </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.2 </row><col> 3 </col>
+   <name> OtherTissue-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Other Tissue </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 3 </col>
+   <name> RespiratoryMuscle-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Respiratory Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.2 </row><col> 3 </col>
+   <name> SkeletalMuscle-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Skeletal Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.2 </row><col> 3 </col>
+   <name> Skin-Flow.BloodFlow </name>
+   <format><integer/></format>
+   <label> Skin </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.6 </row><col> 1 </col>
+   <name> OrganFlow.TotalFlow </name>
+   <format><integer/></format>
+   <label> Total </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Units are mL/Min. </line>
+  <line>  </line>
+  <line> NORMAL VALUES </line>
+  <line>  </line>
+  <line> Peripheral = 4150.0 </line>
+  <line>  </line>
+  <line> Bone = 420 </line>
+  <line> Brain = 820 </line>
+  <line> Fat = 240 </line>
+  <line> Kidney = 1200 </line>
+  <line> Left Heart = 190 </line>
+  <line> Other Tissue = 380 </line>
+  <line> Resp Muscle = 100 </line>
+  <line> Right Heart = 40 </line>
+  <line> Skeletal Muscle = 650 </line>
+  <line> Skin = 140 </line>
+  <line>  </line>
+  <line> Splanchnic = 1250 </line>
+  <line>  </line>
+  <line> GI Tract = 1000 </line>
+  <line> Hepatic Artery = 250 </line>
+</infobutton>
+
+</groupbox>
+
+End

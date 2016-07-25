@@ -1,0 +1,40 @@
+HumMod / BodyN2 (REF)
+
+Created : 2012-07-12
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+The molecular weight of nitrogen is 14 so the
+molecular weight of N2 is 28.
+
+STPD (Standard Temperature and Pressure, Dry)
+BTPS (Body Temperature, Atmospheric Pressure, Saturated)
+
+1 Mol STPD is 22.4 L while 1 Mol BTPS is 27.1 L at body
+temperature and sea level. We have GasTools to do a
+rigorous conversion.
+
+N2 solubility in body fluids is the big issue. It is
+0.012 mL STPD / mL body fluids at 1 atmosphere.
+
+N2's diffusion coeffient is 0.53 x O2.
+
+Lung volumes are BTPS while blood and body
+volumes are STPD, so we must do a conversion
+as gas crosses the pulmonary membrane.
+
+Something like this ...
+
+<copy>
+  <from> Volume(BTPS) </from>
+  <to> BTPS_To_STPD.V1 </to>
+</copy>
+<call> BTPS_To_STPD.Calc </call>
+<copy>
+  <from> BTPS_To_STPD.V2 </from>
+  <to> Volume(STPD) </to>
+</copy>
+
+End

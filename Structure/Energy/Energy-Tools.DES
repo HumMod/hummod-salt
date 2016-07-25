@@ -1,0 +1,21 @@
+HumMod / Energy-Tools
+
+Created : 2012-02-11
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Energy-Tools </name>
+
+<variables>
+
+<constant><name> CARBO_KCAL_PER_G </name><val> 4.10 </val></constant>
+<constant><name> FAT_KCAL_PER_G </name><val> 9.30 </val></constant>
+<constant><name> PROTEIN_KCAL_PER_G </name><val> 4.35 </val></constant>
+
+</variables>
+
+</structure>
+
+End

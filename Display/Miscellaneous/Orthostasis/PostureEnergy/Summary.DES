@@ -1,0 +1,120 @@
+HumMod / Summary
+
+Created : 2012-02-02
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 21.6 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<structurename> Status </structurename>
+
+<checkmark>
+  <row> 1.4 </row><col> 2.0 </col>
+  <name> Lying </name>
+  <label> Lying </label>
+</checkmark>
+
+<checkmark>
+  <row> 2.4 </row><col> 2.0 </col>
+  <name> Sitting </name>
+  <label> Sitting </label>
+</checkmark>
+
+<checkmark>
+  <row> 3.4 </row><col> 2.0 </col>
+  <name> Standing </name>
+  <label> Standing </label>
+</checkmark>
+
+<checkmark>
+  <row> 4.4 </row><col> 2.0 </col>
+  <name> Tilting </name>
+  <label> Tilting </label>
+</checkmark>
+
+<structurename> PostureEnergy </structurename>
+
+<showvalue>
+   <row> 6.0 </row><col> 1.0 </col>
+   <name> Cals </name>
+   <format><integer/></format>
+   <label> Calories </label>
+</showvalue>
+
+<showgraph>
+  <row> 7.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Cals </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 500 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 14.4 </row><col> 1.0 </col>
+   <name> Gravity.Gz </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gravity (Gz) </label>
+</showvalue>
+
+<repeatlist>
+  <name> Cals </name>
+  <repeat><reps> 100 </reps><stepsize> 10 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15.8 </row><col> 1.0 </col>
+  <name> Lying </name>
+  <listname> Cals </listname>
+  <label> Lying </label>
+</slidebar>
+
+<slidebar>
+  <row> 17.2 </row><col> 1.0 </col>
+  <name> Sitting </name>
+  <listname> Cals </listname>
+  <label> Sitting </label>
+</slidebar>
+
+<slidebar>
+  <row> 18.6 </row><col> 1.0 </col>
+  <name> Standing </name>
+  <listname> Cals </listname>
+  <label> Standing </label>
+</slidebar>
+
+<slidebar>
+  <row> 20.0 </row><col> 1.0 </col>
+  <name> Tilting </name>
+  <listname> Cals </listname>
+  <label> Tilting </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Posture energy is calculated as the product </line>
+  <line> of typical calories for a given posture and </line>
+  <line> gravity. </line>
+</infobutton>
+
+</groupbox>
+
+End

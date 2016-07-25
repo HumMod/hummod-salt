@@ -1,0 +1,206 @@
+HumMod / [Osm]
+
+Created : 26-May-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 30.4 </high>
+   <wide> 30.0 </wide>
+   <title> [Osm] </title>
+
+<structurename> OsmECFV </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Total] </name>
+   <format><integer/></format>
+   <label> [Total] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Total] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 250 </min><max> 350 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> [Active] </name>
+   <format><integer/></format>
+   <label> [Active] </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> [Electrolytes] </name>
+   <format><integer/></format>
+   <label> [Electrolytes] </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> [Cations] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Cations] </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 3 </col>
+   <name> [Na+] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Na+] </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.6 </row><col> 3 </col>
+   <name> [K+] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.6 </row><col> 3 </col>
+   <name> [OtherCations] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Other] </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.0 </row><col> 1.0 </col>
+   <name> [Anions] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Anions] </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.0 </row><col> 3 </col>
+   <name> [Cl-] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Cl-] </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.0 </row><col> 3 </col>
+   <name> [Lac-] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Lac-] </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.0 </row><col> 3 </col>
+   <name> [KA-] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [KA-] </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.0 </row><col> 3 </col>
+   <name> [SO4--] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [SO4--] </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.0 </row><col> 3 </col>
+   <name> [PO4--] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [PO4--] </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.0 </row><col> 3 </col>
+   <name> [OtherAnions] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Other] </label>
+</showvalue>
+
+<showvalue>
+   <row> 24.4 </row><col> 1.0 </col>
+   <name> [Non-Electrolytes] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Non-Electrolytes] </label>
+</showvalue>
+
+<showvalue>
+   <row> 25.4 </row><col> 3 </col>
+   <name> [Glucose] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Glucose] </label>
+</showvalue>
+
+<showvalue>
+   <row> 26.4 </row><col> 3 </col>
+   <name> [Urea] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Urea] </label>
+</showvalue>
+
+<showvalue>
+   <row> 27.4 </row><col> 3 </col>
+   <name> [OtherOsmoles] </name>
+   <format><integer/></format>
+   <label> [Other] </label>
+</showvalue>
+
+<showvalue>
+   <row> 28.8 </row><col> 1.0 </col>
+   <name> OsmBody.ECFV </name>
+   <format><integer/></format>
+   <label> Volume </label>
+</showvalue>
+-->
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units are mOsm. </line>
+  <line>  </line>
+  <line> NORMAL VALUES </line>
+  <line>  </line>
+  <line> Total = 4250 </line>
+  <line>  </line>
+  <line> Cations = 2236 </line>
+  <line>  </line>
+  <line> Na+ = 2170 </line>
+  <line> K+ = 66 </line>
+  <line>  </line>
+  <line> Anions = 1637 </line>
+  <line>  </line>
+  <line> Cl- = 1610 </line>
+  <line> Lac- = 23 </line>
+  <line> KA- = 1 </line>
+  <line> SO4-- = 2 </line>
+  <line> PO4-- = 1 </line>
+  <line>  </line>
+  <line> Other Osmoles = 375 </line>
+  <line>  </line>
+  <line> Glucose = 92 </line>
+  <line> Urea 93 </line>
+  <line> Unknown = 190 </line>
+  <line>  </line>
+  <line> Volume = 15.0 L </line>
+</infobutton>
+
+</groupbox>
+
+End

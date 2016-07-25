@@ -1,0 +1,36 @@
+HumMod / Capillaries-Lymph
+
+Created : 24-Mar-08
+Revised : 2013-02-05
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<panel><name> Torso-Middle-Capillaries_Lymph </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> H2O </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Middle Torso | Capillaries And Lymph </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 34.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Miscellaneous\Torso\Middle\Capillaries-Lymph\ ?>
+
+<?include CapillaryLeak.DES ?>
+<?include LymphFlow.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,131 @@
+HumMod / DigoxinDailyDose
+
+Created : 05-Jun-06
+Revised : 2012-08-09
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> DigoxinDailyDose </name>
+
+<variables>
+
+<parm><name> Dose </name><val> 0.0 </val></parm>
+<parm><name> TakeDaily </name><val> FALSE </val></parm>
+<parm><name> TimesADay </name><val> 1.0 </val></parm>
+<var><name> TimeLastDose </name><val> UNDEFINED </val></var>
+<var><name> TimeNextDose </name><val> UNDEFINED </val></var>
+<var><name> TotalDoses </name><val> 0.0 </val></var>
+<var><name> CumulativeDose </name><val> 0.0 </val></var>
+<timervar><name> Timer </name><val> 0.0 </val><state> OFF </state></timervar>
+<var><name> Interval </name></var>
+<constant><name> PREPTIME </name><val> 10.0 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<onjustchanged><name> TakeDaily </name>
+
+<if><test> TakeDaily </test>
+
+<true>
+
+<def>
+  <name> Interval </name>
+  <val> 1440.0 / TimesADay </val>
+</def>
+
+<timer>
+  <name> Timer </name>
+  <val> PREPTIME </val>
+  <state> DOWN </state>
+</timer>
+
+<def>
+  <name> TimeNextDose </name>
+  <val> System.X + PREPTIME </val>
+</def>
+
+</true>
+<false>
+
+<timer>
+  <name> Timer </name>
+  <state> OFF </state>
+</timer>
+
+<def>
+  <name> TimeNextDose </name>
+  <val> UNDEFINED </val>
+</def>
+
+</false>
+</if>
+
+</onjustchanged>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<ontimedout><name> Timer </name>
+
+<timer>
+  <name> Timer </name>
+  <val> Interval </val>
+</timer>
+
+<def>
+  <name> TimeLastDose </name>
+  <val> System.X </val>
+</def>
+
+<def>
+  <name> TimeNextDose </name>
+  <val> System.X + Interval </val>
+</def>
+
+<def>
+  <name> DigoxinGILumen.Mass </name>
+  <val> DigoxinGILumen.Mass + Dose </val>
+</def>
+
+<def>
+  <name> TotalDoses </name>
+  <val> TotalDoses + 1.0 </val>
+</def>
+
+<def>
+  <name> CumulativeDose </name>
+  <val> CumulativeDose + Dose </val>
+</def>
+
+</ontimedout>
+</block>
+
+<block><name> Reset </name>
+
+<def>
+  <name> TimeLastDose </name>
+  <val> UNDEFINED </val>
+</def>
+
+<def>
+  <name> TotalDoses </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> CumulativeDose </name>
+  <val> 0.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

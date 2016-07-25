@@ -1,0 +1,42 @@
+
+
+<structure><name> Mechanoreflex-Renal </name>
+
+<variables>
+
+<var><name> NA-Right </name></var>
+<var><name> NA-Left </name></var>
+
+<var><name> PressureEffect-Ave </name></var>
+<var><name> PressureEffect-Right </name></var>
+<var><name> PressureEffect-Left </name></var>
+
+<parm><name> Clamp-Right </name><val> FALSE </val></parm>
+<parm><name> Level-Right </name><val> 0.0 </val></parm>
+
+<parm><name> Clamp-Left </name><val> FALSE </val></parm>
+<parm><name> Level-Left </name><val> 0.0 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> PressureEffect </name>
+  <point><x> 40.0 </x><y> 1.5 </y><slope> 0 </slope></point>
+  <point><x> 50.0 </x><y> 1.0 </y><slope> -0.075 </slope></point>
+  <point><x> 60.0 </x><y> 0.5 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def><name> PressureEffect-Right </name><val> 1 </val></def>
+<def><name> PressureEffect-Left </name><val>1 </val></def>
+<def><name> PressureEffect-Ave </name><val> ( PressureEffect-Right + PressureEffect-Left ) / 2 </val></def>
+</block>
+</definitions>
+
+</structure>

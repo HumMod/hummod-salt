@@ -1,0 +1,187 @@
+HumMod / Heat
+
+Created : 2012-03-23
+Revised : 2012-03-23
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> HEAT </name>
+  <label> Heat </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<leaf>
+  <name> Heat-Summary </name>
+  <label> Summary </label>
+  <parent> HEAT </parent>
+</leaf>
+
+<separatorbar>
+  <parent> HEAT </parent>
+</separatorbar>
+
+<leaf>
+  <name> Heat-Core </name>
+  <label> Core </label>
+  <parent> HEAT </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Skin </name>
+  <label> Skin </label>
+  <parent> HEAT </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-SkeletalMuscle </name>
+  <label> Skeletal Muscle </label>
+  <parent> HEAT </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-GILumen </name>
+  <label> GI Lumen </label>
+  <parent> HEAT </parent>
+</leaf>
+
+<separatorbar>
+  <parent> HEAT </parent>
+</separatorbar>
+
+<branch>
+  <name> Heat-Movement </name>
+  <label> Movement </label>
+  <parent> HEAT </parent>
+</branch>
+
+<leaf>
+  <name> Heat-Movement-Intake </name>
+  <label> Oral Intake </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Metabolism </name>
+  <label> Metabolism </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-IVDrip </name>
+  <label> IV Drip </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Transfusion </name>
+  <label> Transfusion </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Shivering </name>
+  <label> Shivering </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Heat-Movement </parent>
+</separatorbar>
+
+<leaf>
+  <name> Heat-Movement-Urine </name>
+  <label> Urine </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Hemorrhage </name>
+  <label> Hemorrhage </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Dialysis </name>
+  <label> Dialysis </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Radiation </name>
+  <label> Radiation </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Conduction </name>
+  <label> Conduction </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Sweating </name>
+  <label> Sweating </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-InsensibleSkin </name>
+  <label> Insensible Skin </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-InsensibleLung </name>
+  <label> Insensible Lung </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Vomitus </name>
+  <label> Vomitus </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<leaf>
+  <name> Heat-Movement-Diarrhea </name>
+  <label> Diarrhea </label>
+  <parent> Heat-Movement </parent>
+</leaf>
+
+<separatorbar>
+  <parent> HEAT </parent>
+</separatorbar>
+
+<branch>
+  <name> Sweat </name>
+  <label> Sweat </label>
+  <parent> HEAT </parent>
+</branch>
+
+<leaf>
+  <name> Sweat_Gland </name>
+  <label> Gland </label>
+  <parent> Sweat </parent>
+</leaf>
+
+<leaf>
+  <name> Sweat_Duct </name>
+  <label> Duct </label>
+  <parent> Sweat </parent>
+</leaf>
+
+<leaf>
+  <name> Sweat_Acclimation </name>
+  <label> Acclimation </label>
+  <parent> Sweat </parent>
+</leaf>
+
+<leaf>
+  <name> Sweat_Fuel </name>
+  <label> Fuel </label>
+  <parent> Sweat </parent>
+</leaf>
+
+End

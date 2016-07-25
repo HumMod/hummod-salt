@@ -1,0 +1,25 @@
+HumMod / Diagnosis DES
+
+Created : 2011-07-26
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> DIAGNOSIS </name>
+  <label> Diagnosis </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Diagnosis\ ?>
+
+<?include Chart.DES ?>
+<?include BloodChemistry.DES ?>
+<?include UrineAnalysis.DES ?>
+<?include ECG.DES ?>
+<?include Evaluation.DES ?>
+<?include Size.DES ?>
+<?include AutopsyReport.DES ?>
+
+End

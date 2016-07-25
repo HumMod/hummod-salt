@@ -1,0 +1,180 @@
+HumMod / Box
+
+Created : 2012-07-01
+Revised : 2012-07-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 30.0 </high>
+   <wide> 30.0 </wide>
+
+<structurename> InsulinReceptors-General </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Bound </name>
+   <format><integer/></format>
+   <label> Bound </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Bound </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 300 </max><inc> 100 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1 </col>
+   <name> Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1 </col>
+   <name> Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1 </col>
+   <name> Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> Total </name>
+   <format><integer/></format>
+   <label> Total </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.6 </row><col> 1.0 </col>
+   <name> Free </name>
+   <format><integer/></format>
+   <label> Free </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.0 </row><col> 1.0 </col>
+   <name> BoundFraction(%) </name>
+   <format><integer/></format>
+   <label> Bound Fraction (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.4 </row><col> 1 </col>
+   <name> Binding </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Binding </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.4 </row><col> 3 </col>
+   <name> K1 </name>
+   <format><decimal> 6 </decimal></format>
+   <label> K1 </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.4 </row><col> 3 </col>
+   <name> InsulinPool.[Insulin] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Insulin] </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.4 </row><col> 3 </col>
+   <name> Free </name>
+   <format><integer/></format>
+   <label> Free </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.8 </row><col> 1 </col>
+   <name> Unbinding </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Unbinding </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.8 </row><col> 3 </col>
+   <name> K2 </name>
+   <format><decimal> 5 </decimal></format>
+   <label> K2 </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.8 </row><col> 3 </col>
+   <name> Bound </name>
+   <format><integer/></format>
+   <label> Bound </label>
+</showvalue>
+
+<showvalue>
+   <row> 25.2 </row><col> 1 </col>
+   <name> Degradation </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Degrading </label>
+</showvalue>
+
+<showvalue>
+   <row> 26.2 </row><col> 3 </col>
+   <name> K3 </name>
+   <format><decimal> 5 </decimal></format>
+   <label> K3 </label>
+</showvalue>
+
+<showvalue>
+   <row> 27.2 </row><col> 3 </col>
+   <name> Bound </name>
+   <format><integer/></format>
+   <label> Bound </label>
+</showvalue>
+
+<showvalue>
+   <row> 28.6 </row><col> 1 </col>
+   <name> NetBinding </name>
+   <format><decimal> 1 </decimal></format>
+   <label> NetBinding </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> The dynamics of insulin receptors involve binding, </line>
+  <line> unbinding and degrading. Units are mU/Min. </line>
+  <line>  </line>
+  <line> Binding = K1 * [Pool Insulin] * Free Receptors </line>
+  <line> Unbinding = K2 * Bound Receptors </line>
+  <line> Degrading = K3 * Bound Receptos </line>
+  <line>  </line>
+  <line> The liver has roughly the same number of insulin </line>
+  <line> receptors as the entire rest of the body. </line>
+</infobutton>
+
+</groupbox>
+
+End

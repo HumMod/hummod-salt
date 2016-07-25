@@ -1,0 +1,96 @@
+HumMod / Sizing-Composition-Kidney
+
+Created : 2013-03-01
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Composition-Kidney </name>
+
+<variables>
+
+<var><name> RightMass </name></var>
+<var><name> RightLiquidVol </name></var>
+<var><name> RightSolidMass </name></var>
+
+<var><name> LeftMass </name></var>
+<var><name> LeftLiquidVol </name></var>
+<var><name> LeftSolidMass </name></var>
+
+<constant><name> H2OFractMass </name><val> 0.67 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> RightMass </name>
+  <val> Sizing-OrganMass.RightKidney_Mass </val>
+</def>
+
+<def>
+  <name> LeftMass </name>
+  <val> Sizing-OrganMass.LEftKidney_Mass </val>
+</def>
+
+<def>
+  <name> RightLiquidVol </name>
+  <val> H2OFractMass * RightMass / Density.H2O </val>
+</def>
+
+<def>
+  <name> LeftLiquidVol </name>
+  <val> H2OFractMass * LeftMass / Density.H2O </val>
+</def>
+
+<def>
+  <name> RightSolidMass </name>
+  <val> ( 1 - H2OFractMass ) * RightMass </val>
+</def>
+
+<def>
+  <name> LeftSolidMass </name>
+  <val> ( 1 - H2OFractMass ) * LeftMass </val>
+</def>
+
+<def>
+  <name> RightKidney-Size.InitialMass </name>
+  <val> RightMass </val>
+</def>
+
+<def>
+  <name> LeftKidney-Size.InitialMass </name>
+  <val> LeftMass </val>
+</def>
+
+<def>
+  <name> RightKidney-Size.InitialLiquidVol </name>
+  <val> RightLiquidVol </val>
+</def>
+
+<def>
+  <name> LeftKidney-Size.InitialLiquidVol </name>
+  <val> LeftLiquidVol </val>
+</def>
+
+<def>
+  <name> RightKidney-Size.InitialSolidMass </name>
+  <val> RightSolidMass </val>
+</def>
+
+<def>
+  <name> LeftKidney-Size.InitialSolidMass </name>
+  <val> LeftSolidMass </val>
+</def>
+
+<call> Kidney-Size.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

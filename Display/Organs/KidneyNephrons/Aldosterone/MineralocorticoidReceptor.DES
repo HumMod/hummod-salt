@@ -1,0 +1,130 @@
+HumMod / MineralocorticoidReceptor
+
+Created : 2013-03-17
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman <groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 33.0 </high>
+   <wide> 30.0 </wide>
+   <title> Mineralocorticoid Receptor </title>
+
+<structurename> MineralocorticoidReceptor </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)-Bound] </name>
+   <format><integer/></format>
+   <label> [Aldo (nG/dL) Bound] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Aldo(pMol/L)-Bound] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 400 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)-Plasma] </name>
+   <format><integer/></format>
+   <label> [Aldo (nG/dL) Plasma] </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> SpironolactoneEffect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Spiro] Effect </label>
+</showvalue>
+
+<showmap>
+  <row> 12.2 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> [Spironolactone(nMol/L)] </name>
+    <label> [Spiro (nMol/L)] </label>
+    <scale><min> 0 </min><max> 400 </max><inc> 100 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> SpironolactoneEffect </name>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <blockname> Spironolactone </blockname>
+</showmap> <showvalue>
+   <row> 19.6 </row><col> 1.0 </col>
+   <name> [Spironolactone(nMol/L)] </name>
+   <format><integer/></format>
+   <label> [Spiro (nMol/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.6 </row><col> 1.0 </col>
+   <name> [Spironolactone(nMol/L)]-IC50 </name>
+   <format><integer/></format>
+   <label> [Spiro (nMol/L)] IC50 </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.0 </row><col> 1.0 </col>
+   <name> CanrenoneEffect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Canrenone] Effect </label>
+</showvalue>
+
+<showmap>
+  <row> 23.0 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> [Canrenone(nMol/L)] </name>
+    <label> [CAN (nMol/L)] </label>
+    <scale><min> 0 </min><max> 600 </max><inc> 200 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> CanrenoneEffect </name>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <blockname> Canrenone </blockname>
+</showmap> <showvalue>
+   <row> 30.4</row><col> 1.0 </col>
+   <name> [Canrenone(nMol/L)] </name>
+   <format><integer/></format>
+   <label> [CAN (nMol/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 31.4 </row><col> 1.0 </col>
+   <name> [Canrenone(nMol/L)]-IC50 </name>
+   <format><integer/></format>
+   <label> [CAN (nMol/L)] IC50 </label>
+</showvalue>
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

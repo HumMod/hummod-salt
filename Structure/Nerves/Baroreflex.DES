@@ -1,0 +1,155 @@
+/* HumMod / Baroreflex DES
+
+   Created : 2014-02-26
+   Revised : 2014-02-26
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structure><name> Baroreflex </name>
+
+<variables>
+
+<var><name> NA </name></var>
+
+<var><name> PressureChange </name></var>
+<var><name> PressureEffect </name></var>
+<parm><name> Sensitivity </name><val> 1.0 </val></parm>
+<var><name> TissueFunctionEffect </name></var>
+
+<var><name> Tau </name></var>
+<parm><name> TauTarget </name><val> 10.0 </val></parm>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+
+<parm><name> A2_ATarget </name><val> 2.4 </val></parm>
+<parm><name> A2_mTarget </name><val> 2.6 </val></parm>
+<parm><name> A2_STarget </name><val> 56 </val></parm>
+<parm><name> A2_BTarget </name><val> 0 </val></parm>
+ 
+</variables>
+
+<equations>
+
+<delay>
+  <name> AdaptedPressure </name>
+  <outputname> AdaptedPressure </outputname>
+  <initialval> 97.0 </initialval>97
+  <inputname> SinusPressure </inputname>Interpo
+  <rateconstname> RateConst </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.97 </errorlim>
+</delay>
+
+
+
+<diffeq>
+  <name> A2_A </name>
+  <integralname> A2_A </integralname>
+  <initialval> 2.4 </initialval>
+  <dervname> dA2A </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_m </name>
+  <integralname> A2_m </integralname>
+  <initialval> 2.6 </initialval>
+  <dervname> dA2m </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_S </name>
+  <integralname> A2_S </integralname>
+  <initialval> 56 </initialval>
+  <dervname> dA2S </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_B </name>
+  <integralname> A2_B </integralname>
+  <initialval> 0 </initialval>
+  <dervname> dA2B </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> PressureEffect </name>
+  <point><x> -50.0 </x><y> 0.0 </y><slope> 0 </slope></point>
+  <point><x>   0.0 </x><y> 1.0 </y><slope> 0.02 </slope></point>
+  <point><x>  50.0 </x><y> 2.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def><name> Tau </name><val> TauTarget </val></def>
+
+<def>
+  <name> RateConst </name>
+  <val> INVERT ( 60.0 * Tau ) </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> PressureChange </name>
+  <val> CarotidSinus.Pressure - AdaptedPressure </val>
+</def>
+
+
+<def><name> dA2A </name><val> 0.05 * ( A2_ATarget - A2_A ) </val></def>
+<def><name> dA2m </name><val> 0.05 * ( A2_mTarget - A2_m ) </val></def>
+<def><name> dA2S </name><val> 0.05 * ( A2_STarget - A2_S ) </val></def>
+<def><name> dA2B </name><val> 0.05 * ( A2_BTarget - A2_B ) </val></def>
+
+<!--
+<def><name> PressureEffect </name><val> ( A2_A * ( ( ( PressureChange + 50 ) ^ A2_m ) / ( ( ( PressureChange + 50 ) ^ A2_m ) + ( A2_S ^ A2_m ) ) ) ) + A2_B  </val></def>
+-->
+
+
+<def><name> PressureEffect </name><val>  2 / ( 1 + EXP ( Sensitivity * .05 * -1 * PressureChange ) ) </val></def>
+
+<def>
+  <name> TissueFunctionEffect </name>
+  <val> NOT OtherTissue-Function.Failed </val>
+</def>
+
+<conditional>
+  <name> NA </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false> PressureEffect * TissueFunctionEffect </false>
+</conditional>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> SinusPressure </name>
+  <val> CarotidSinus.Pressure </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

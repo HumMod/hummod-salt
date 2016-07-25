@@ -1,0 +1,37 @@
+HumMod / AcetazolamideKidney
+
+Created : 2013-02-08
+Revised : 2013-02-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> AcetazolamideKidney </name>
+
+<variables>
+
+<var><name> UrineLoss </name></var>
+
+<constant><name> K </name><val> 40 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> UrineLoss </name>
+  <val>
+      K
+    * AcetazolamidePool.[ACZ(mG/mL)]
+    * ( RightKidney-Function.Effect + LeftKidney-Function.Effect )
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,17 @@
+HumMod / Blood
+
+Created : 15-Apr-05
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<?path Display\BodyFluids\Blood\ ?>
+
+<?include Volume\Volume.DES ?>
+<?include Plasma\Plasma.DES ?>
+<?include RedCells\RedCells.DES ?>
+<?include Hemoglobin\Hemoglobin.DES ?>
+<?include Viscosity\Viscosity.DES ?>
+
+End

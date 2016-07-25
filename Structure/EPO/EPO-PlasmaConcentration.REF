@@ -1,0 +1,38 @@
+EPO-PlasmaConcentration.TXT
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+The normal range here is 10 to 20 mU/mL. I'm going to use
+
+15 mU/ml
+115 pG/mL
+
+Eckardt et.al. reported 16 mU/mL and 17 mU/mL (read from graph).
+
+But concentration may increase 100-fold to 1000-fold in severe
+anemia (Cotes, paper is in files).
+
+Coles et.al. used ELISA to measure [EPO] and got normal plasma
+values of 11.1 pG/mL (1.4 mU/mL) which is an order of magnitude
+less than typical RIA values. For now, I'm going with the RIA
+values -- there is a lot of consistent data out there.
+
+References =====================================================
+
+Coles, G.A. et.al. Estimation of erythropoietin secretion rate
+in normal and uremic subjects. Am. J. Physiol. 263:F939-F944,
+1992.
+
+Cotes, P.M. Immunoreactive erythropoietin in serum. Br. J.
+Haematol. 50:427-438, 1982.
+
+Eckardt, K-U. et.al. Rate of erythropoietin formation in humans
+in response to acute hypobaric hypoxia. J. Appl. Physiol.
+66(4):1785-1788, 1989.
+
+
+End

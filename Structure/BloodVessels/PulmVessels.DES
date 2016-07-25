@@ -1,0 +1,31 @@
+HumMod / PulmVessels DES
+
+Created : 2012-02-11
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> PulmVessels </name>
+
+<variables>
+
+<var><name> BloodFlow </name><val> 5400 </val></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> BloodFlow </name>
+  <val> RightVentricle.Outflow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

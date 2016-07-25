@@ -1,0 +1,39 @@
+HumMod / AcidBase
+
+Created : 2012-03-23
+Revised : 2012-03-23
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> AcidBase </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> AcidBase </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Acid / Base </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\AcidBase\ ?>
+
+<?include ArterialPh.DES ?>
+<?include BloodPh.DES ?>
+<?include VenousPh.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,30 @@
+HumMod / DietHunger
+
+Created : 15-Aug-08
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> DietHunger </name>
+
+<variables>
+
+<var><name> Effect </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Dervs </name>
+
+<def>
+  <name> Effect </name>
+  <val> DietHunger-Glucose.Effect * DietHunger-Leptin.Effect </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,156 @@
+HumMod / ExcessLungWater
+
+Created : 19-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 30 </high>
+   <wide> 30.0 </wide>
+   <title> Pleural Cavities </title>
+
+<structurename> LeftPleuralCavity </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> TotalVolume </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> RightPleuralCavity.TotalVolume </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Volume </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar><name> LeftPleuralCavity.TotalVolume </name><nolabel/><linecolor> BLUE </linecolor></yvar>
+    <yvar><name> RightPleuralCavity.TotalVolume </name><nolabel/><linecolor> RED </linecolor></yvar>   
+ <scale><min> 0 </min><max> 10 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 12.8 </row><col> 1.0 </col>
+   <name> LeftPleuralCavity.Change</name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 1.0 </col>
+   <name> RightPleuralCavity.Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 15 </row><col> 5.0 </col>
+   <name> PulmCapys.Pressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Capillary Pressure </label>
+</showvalue>
+
+<showvalue>
+   <row> 16 </row><col> 5.0 </col>
+   <name> COP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Pleural COP </label>
+</showvalue>
+
+<showvalue>
+   <row> 17 </row><col> 5.0 </col>
+   <name> RightPleuralCavity.COP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Pleural COP </label>
+</showvalue>
+
+<showvalue>
+   <row> 18 </row><col> 5.0 </col>
+   <name> PlasmaProtein.COP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Plasma COP </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.0 </row><col> 1 </col>
+   <name> LeftPleuralCavity.Lymph </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Outflow </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.0 </row><col> 1 </col>
+   <name> RightPleuralCavity.Lymph </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Outflow </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.0 </row><col> 1 </col>
+   <name> LeftPleuralCavity.[Alb] </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Left [Albumin] </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.0 </row><col> 1 </col>
+   <name> LeftPleuralCavity.[AGP] </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Left [AGP] </label>
+</showvalue>
+
+
+<showvalue>
+   <row> 24.0 </row><col> 1 </col>
+   <name> LeftPleuralCavity.[IgG] </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Left [IgG] </label>
+</showvalue>
+
+<showvalue>
+   <row> 26.0 </row><col> 1 </col>
+   <name> RightPleuralCavity.[Alb] </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Right [Albumin] </label>
+</showvalue>
+
+<showvalue>
+   <row> 27.0 </row><col> 1 </col>
+   <name> RightPleuralCavity.[AGP] </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Right [AGP] </label>
+</showvalue>
+
+
+<showvalue>
+   <row> 28.0 </row><col> 1 </col>
+   <name> RightPleuralCavity.[IgG] </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Right [IgG] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

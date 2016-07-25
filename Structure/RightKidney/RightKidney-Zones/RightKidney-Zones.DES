@@ -1,0 +1,28 @@
+HumMod / RightKidney-Zones
+
+Created : 2012-08-06
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\RightKidney\RightKidney-Zones\ ?>
+
+<?include RightKidney-ZonesAnatomy.DES ?>
+<?include RightKidney-ZonesCirculation.DES ?>
+<?include RightKidney-ZonesTransport.DES ?>
+
+<structure><name> RightKidney-Zones </name>
+
+<definitions>
+<block><name> Calc </name>
+<!--
+  <call> RightKidney-ZonesAnatomy.Calc </call>
+  <call> RightKidney-ZonesCirculation.Calc </call>
+  <call> RightKidney-ZonesTransport.Calc </call>
+-->
+</block>
+
+</definitions>
+</structure>
+End

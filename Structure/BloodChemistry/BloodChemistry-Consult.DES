@@ -1,0 +1,32 @@
+HumMod / BloodChemistry-Consult
+
+Created : 2012-11-02
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\BloodChemistry\ ?>
+
+<?include BloodChemistry-Potassium.DES ?>
+<?include BloodChemistry-Sodium.DES ?>
+
+<structure><name> BloodChemistry-Consult </name>
+
+<variables>
+  <var><name> Timestamp </name><val> 0 </val></var> 
+</variables>
+
+<definitions>
+
+<block><name> GetConsult </name>
+  <def><name> Timestamp </name><val> System.X </val></def>
+
+  <call> BloodChemistry-Potassium.Calc </call>
+  <call> BloodChemistry-Sodium.Calc </call>
+</block>
+
+</definitions>
+</structure>
+
+End

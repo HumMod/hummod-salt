@@ -1,0 +1,105 @@
+HumMod / SpironolactoneGILumen
+
+Created : 2013-03-15
+Revised : 2013-03-16
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> SpironolactoneGILumen </name>
+
+<variables>
+
+<parm><name> Permeability </name><val> 0.007 </val></parm>
+<parm><name> Disposal </name><val> 0.01 </val></parm>
+
+<parm><name> Bioavailability(%) </name><val> 80 </val></parm>
+
+<var><name> Uptake-F </name></var>
+<var><name> Disposal-F </name></var>
+
+<var><name> [Spironolactone(uG/mL)] </name></var>
+<var><name> [Spironolactone(mG/dL)] </name></var>
+
+<var><name> Uptake </name></var>
+<var><name> Excretion </name></var>
+
+<var><name> Loss </name></var>
+
+<constant><name> UG_ML_TO_MG_DL </name><val> 0.1 </val></constant>
+<constant><name> MG_TO_UG </name><val> 1000 </val></constant>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass(uG) </name>
+  <integralname> Mass(uG) </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> Uptake-F </name>
+  <val> Bioavailability(%) / 100 </val>
+</def>
+
+<def>
+  <name> Disposal-F </name>
+  <val> 1 - Uptake-F </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Spironolactone(uG/mL)] </name>
+  <val> Mass(uG) / GILumenH2O.Mass </val>
+</def>
+
+<def>
+  <name> [Spironolactone(mG/dL)] </name>
+  <val> UG_ML_TO_MG_DL * [Spironolactone(uG/mL)] </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Uptake </name>
+  <val> Permeability * Uptake-F * Mass(uG)
+  </val>
+</def>
+
+<def>
+  <name> Excretion </name>
+  <val> Disposal * Disposal-F * Mass(uG)
+  </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> Uptake + Excretion </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,29 @@
+HumMod / Circulation
+
+Created : 2011-07-27
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Circulation\ ?>
+
+<?include BloodVessels\BloodVessels.DES ?>
+
+<?include BloodFlow\BloodFlow.DES ?>
+<?include BloodPressure\BloodPressure.DES ?>
+<?include HeartRate\HeartRate.DES ?>
+<?include HeartValves\HeartValves.DES ?>
+<?include LeftHeartPumping\LeftHeartPumping.DES ?>
+<?include LeftHeartWallStress\LeftHeartWallStress.DES ?>
+<?include Pericardium\Pericardium.DES ?>
+<?include RightHeartPumping\RightHeartPumping.DES ?>
+<?include RightHeartWallStress\RightHeartWallStress.DES ?>
+
+<?include SplanchnicCirculation\SplanchnicCirculation.DES ?>
+<?include GreatVeins\GreatVeins.DES ?>
+
+<?include Interstitium\Interstitium.DES ?>
+<?include CirculatoryProtein\CirculatoryProtein.DES ?>
+
+End

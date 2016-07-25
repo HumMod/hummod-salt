@@ -1,0 +1,19 @@
+HumMod / SO4.Ref
+
+Created : 2012-03-11
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+A good source of information is
+
+Kohlmeier, M. Nutrient Matabolism. Academic Press. 2003.
+
+Hall and Guyton have SO4 at 0.5 mOsm/L which is also 0.5
+mMol/L. SO4 is divalent, so that is a conc of 1.0 mEq/L.
+
+Apply mass balance to mMol.
+
+
+End

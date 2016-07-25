@@ -1,0 +1,53 @@
+HumMod / CollectingDuct_Protein
+
+Created : 16-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> CollectingDuct_Protein </name>
+
+<variables>
+
+<var><name> Outflow </name></var>
+<var><name> AlbOutflow </name><val> 0 </val></var>
+<var><name> IgGOutflow </name><val> 0 </val></var>
+<var><name> AGPOutflow </name><val> 0 </val></var>
+<var><name> HetaLWOutflow </name><val> 0 </val></var>
+<var><name> [Protein(G/mL)] </name></var>
+
+</variables>
+
+<definitions>
+<block><name> CalcFlux </name>
+
+  <def><name> AlbOutflow </name><val> RightGlomerulusProtein.AlbRate + LeftGlomerulusProtein.AlbRate </val></def>
+  <def><name> IgGOutflow </name><val> RightGlomerulusProtein.IgGRate + LeftGlomerulusProtein.IgGRate   </val></def>
+  <def><name> AGPOutflow </name><val> RightGlomerulusProtein.AGPRate + LeftGlomerulusProtein.AGPRate </val></def>
+  <def><name> HetaLWOutflow </name><val> RightGlomerulusProtein.HetaLWRate + LeftGlomerulusProtein.HetaLWRate  </val></def>
+  <def><name> Outflow </name><val> AlbOutflow  + IgGOutflow  + AGPOutflow +  HetaLWOutflow </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+<if><test> CollectingDuct_H2O.Outflow GT 0 </test>
+<true>
+  <def><name> [Protein(G/mL)] </name><val> Outflow / CollectingDuct_H2O.Outflow </val></def>
+</true>
+<false>
+  <def><name> [Protein(G/mL)] </name><val> 0</val></def>
+</false>
+</if>
+</block>
+
+<block><name> NoFlow </name>
+  <def><name> Outflow </name><val> 0.0 </val></def>
+  <def><name> [Protein(G/mL)] </name><val> UNDEFINED </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

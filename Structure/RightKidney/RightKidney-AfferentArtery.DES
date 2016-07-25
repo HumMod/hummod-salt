@@ -1,0 +1,184 @@
+HumMod / RightKidney-AfferentArtery DES
+
+Created : 16-Nov-04
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> RightKidney-AfferentArtery </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+
+
+<var><name> NominalConductance </name></var>
+<constant><name> Conductance(/G) </name><val> 0.080883 </val></constant>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<var><name> TGFEffect </name></var>
+<var><name> SympEffect </name></var>
+<var><name> MyogenicEffect </name></var>
+<var><name> ANPEffect </name></var>
+
+<var><name> PressureGradient </name></var>
+<var><name> BloodFlow </name></var>
+<var><name> Resistance </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> ANPEffect </name>
+  <point><x> 0.0 </x><y> 0.9 </y><slope> 0.0 </slope></point>
+  <point><x> 20 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 200 </x><y> 3 </y><slope> 0.0 </slope></point>3
+</curve>
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 4 </y><slope> 0.0 </slope></point>8
+  <point><x> 1. </x><y> 1.0 </y><slope> -1 </slope></point>
+  <point><x> 3.0 </x><y> 0.35 </y><slope> 0.0 </slope></point>
+</curve>
+
+<!-- 
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 4 </y><slope> 0.0 </slope></point>
+  <point><x> 0.5 </x><y> 4 </y><slope> 0 </slope></point>0
+  <point><x> 1. </x><y> 1.0 </y><slope> -0.55 </slope></point>
+  <point><x> 3.0 </x><y> 0.35 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 1.75 </y><slope> 0.0 </slope></point>
+  <point><x> 1. </x><y> 1.0 </y><slope> -0.55 </slope></point>
+  <point><x> 3.0 </x><y> 0.35 </y><slope> 0.0 </slope></point>
+</curve>
+ -->
+
+<curve>
+  <name> SympEffect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 3.0 </x><y> 0.3 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> MyogenicEffect </name>
+  <point><x> -20.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x>   0.0 </x><y> 1.0 </y><slope> -0.02 </slope></point>
+  <point><x>  20.0 </x><y> 0.8 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * RightKidney-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+
+
+
+-------------------------
+
+<!--
+<def><name> MyogenicEffect </name><val> ( LeftKidney-AfferentArtery.Myo_A * ( ( RightKidney-MyogenicDelay.PressureChange + 20 ) ^ LeftKidney-AfferentArtery.Myo_m ) / ( ( ( RightKidney-MyogenicDelay.PressureChange + 20 ) ^ LeftKidney-AfferentArtery.Myo_m ) + ( LeftKidney-AfferentArtery.Myo_S ^ LeftKidney-AfferentArtery.Myo_m ) ) ) + LeftKidney-AfferentArtery.Myo_B  </val></def>
+<def><name> ANPEffect </name><val> ANPEffect [ ANPPool.[ANP] ] </val></def>
+<def><name> TGFEffect </name><val> TGFEffect [ RightTGF-Vascular.Signal ] </val></def>
+<def><name> SympEffect </name><val> SympEffect [ RightKidney-AlphaReceptors.Activity ] </val></def>
+-->
+
+<def><name> MyogenicEffect </name><val> MyogenicEffect [ RightKidney-MyogenicDelay.PressureChange ] </val></def>
+
+<def><name> SympEffect </name><val> ( LeftKidney-AfferentArtery.Symp_A * ( RightKidney-AlphaReceptors.Activity ^ LeftKidney-AfferentArtery.Symp_m ) / ( ( RightKidney-AlphaReceptors.Activity ^ LeftKidney-AfferentArtery.Symp_m ) + ( LeftKidney-AfferentArtery.Symp_S ^ LeftKidney-AfferentArtery.Symp_m ) ) ) + LeftKidney-AfferentArtery.Symp_B  </val></def>
+<def><name> ANPEffect </name><val> ( LeftKidney-AfferentArtery.ANP_A * ( ( ANPPool.[ANP] ^ LeftKidney-AfferentArtery.ANP_m ) / ( ( ANPPool.[ANP] ^ LeftKidney-AfferentArtery.ANP_m ) + ( LeftKidney-AfferentArtery.ANP_S ^ LeftKidney-AfferentArtery.ANP_m ) ) ) ) + LeftKidney-AfferentArtery.ANP_B </val></def>
+
+<if><test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def><name> TGFEffect </name><val> ( ( ( LeftKidney-AfferentArtery.TGF_A * ( LeftKidney-AfferentArtery.TGF_S ^ LeftKidney-AfferentArtery.TGF_m ) / ( ( RightTGF-Vascular.Signal ^ LeftKidney-AfferentArtery.TGF_m ) + ( LeftKidney-AfferentArtery.TGF_S ^ LeftKidney-AfferentArtery.TGF_m ) ) ) ) + ( ( LeftKidney-AfferentArtery.TGF_A1 * ( LeftKidney-AfferentArtery.TGF_S1 ^ LeftKidney-AfferentArtery.TGF_m1 ) / ( ( RightTGF-Vascular.Signal ^ LeftKidney-AfferentArtery.TGF_m1 ) + ( LeftKidney-AfferentArtery.TGF_S1 ^ LeftKidney-AfferentArtery.TGF_m1 ) ) ) + LeftKidney-AfferentArtery.TGF_B1 ) MAX 0.35 ) </val></def>
+</true>
+<false>
+<def>
+  <name> TGFEffect </name>
+  <val> 1 </val>
+</def>
+</false>
+</if>
+
+
+
+<conditional><name> Conductance </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicConductance
+  * ANPEffect
+  * TGFEffect
+  * SympEffect
+  * MyogenicEffect
+  * Anesthesia.VascularConductance
+  * Viscosity.ConductanceEffect * RightKidney-NephronCount.Total(xNormal)
+</false>
+</conditional>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> PressureGradient </name>
+  <val> RightKidney-ArcuateArtery.Pressure - RightGlomerulusFiltrate.Pressure </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> PressureGradient * Conductance </val>
+</def>
+
+<if><test> RightKidney-NephronCount.NumFiltering GT 0  </test>
+<true>
+<def>
+  <name> Resistance </name>
+  <val> 1 / Conductance </val>
+</def>
+</true>
+<false>
+<def>
+  <name> Resistance </name>
+  <val> 0 </val>
+</def>
+</false>
+</if>
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

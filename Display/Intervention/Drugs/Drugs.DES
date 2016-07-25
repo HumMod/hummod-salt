@@ -1,0 +1,26 @@
+HumMod / Drugs
+
+Created : 24-Apr-05
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Display\Intervention\Drugs\ ?>
+
+<?include Acetazolamide\Acetazolamide.DES ?>
+<?include Chlorothiazide\Chlorothiazide.DES ?>
+<?include Digoxin\Digoxin.DES ?>
+<?include Furosemide\Furosemide.DES ?>
+<?include Midodrine\Midodrine.DES ?>
+<?include Spironolactone\Spironolactone.DES ?>
+<?include Epi\Epi.DES?>
+<?include NE\NE.DES?>
+<?include Atropine\Atropine.DES ?>
+<?include Acetylcholine\Acetylcholine.DES ?>
+<?include Phenylephrine\Phenylephrine.DES ?>
+<?include Isoproterenol\Isoproterenol.DES ?>
+<?include Propranolol\Propranolol.DES ?>
+
+
+End

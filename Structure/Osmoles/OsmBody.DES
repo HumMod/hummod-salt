@@ -1,0 +1,121 @@
+HumMod / OsmBody
+
+Created : 31-May-05
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<structure><name> OsmBody </name>
+
+<variables>
+
+<var><name> Active </name></var>
+<var><name> [Active] </name></var>
+
+<var><name> Active-ECFV </name></var>
+<var><name> Active-ICFV </name></var>
+
+<var><name> Glucose </name></var>
+<var><name> Urea </name></var>
+
+<var><name> ECFV </name></var>
+<var><name> ECFV(L) </name></var>
+
+<var><name> ICFV </name></var>
+<var><name> ICFV(L) </name></var>
+
+<var><name> CellWall </name></var>
+<var><name> CellWall(mOsm/L) </name></var>
+
+<var><name> Osmoreceptors </name></var>
+<var><name> Osmoreceptors(mOsm/L) </name></var>
+
+<var><name> Dissociation </name></var>
+<parm><name> OsmoreceptorDamage </name><val> 0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Active-ECFV </name>
+  <val> OsmECFV.Active </val>
+</def>
+
+<def>
+  <name> Active-ICFV </name>
+  <val> OsmCell.Active </val>
+</def>
+
+<def>
+  <name> Active </name>
+  <val> Active-ECFV + Active-ICFV </val>
+</def>
+
+<def>
+  <name> [Active] </name>
+  <val> Active / BodyH2O.Vol </val>
+</def>
+
+<def>
+  <name> ICFV </name>
+  <val> ( Active-ICFV / Active ) * BodyH2O.Vol </val>
+</def>
+
+<def>
+  <name> ICFV(L) </name>
+  <val> ICFV / 1000.0 </val>
+</def>
+
+<def>
+  <name> ECFV </name>
+  <val> BodyH2O.Vol - ICFV </val>
+</def>
+
+<def>
+  <name> ECFV(L) </name>
+  <val> ECFV / 1000.0 </val>
+</def>
+
+<def>
+  <name> Glucose </name>
+  <val> GlucosePool.Osmoles </val>
+</def>
+
+<def>
+  <name> Urea </name>
+  <val> UreaPool.Osmoles </val>
+</def>
+
+<def>
+  <name> CellWall </name>
+  <val> [Active] </val>
+</def>
+
+<def>
+  <name> CellWall(mOsm/L) </name>
+  <val> 1000.0 * CellWall </val>
+</def>
+
+<def>
+  <name> Osmoreceptors </name>
+  <val> ( Active-ECFV - Glucose - Urea ) /  ECFV </val>
+</def>
+
+<def>
+  <name> Osmoreceptors(mOsm/L) </name>
+  <val> 1000.0 * Osmoreceptors </val>
+</def>
+
+</block>
+
+<block><name> Wrapup </name>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,125 @@
+HumMod / PlasmaProtein
+
+Created : 07-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2005-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> IgGPool </name>
+
+<variables>
+
+<var><name> Gain </name><val> 0 </val></var>
+<var><name> Loss </name><val> 0 </val></var>
+<constant><name> MW </name><val> 120000 </val></constant>
+
+<var><name> [IgG] </name></var>
+<var><name> [IgG(G/dL)] </name></var>
+<var><name> [IgG(mmol/mL)] </name></var>
+
+<constant><name> PER_ML_TO_PER_DL </name><val> 100.0 </val></constant>
+
+<var><name> COP </name></var>
+
+<parm><name> SynthesisBasic </name><val> 0.0033 </val></parm>
+<var><name> COPEffect </name></var>
+<var><name> Synthesis </name><val> 0 </val></var>
+
+<parm><name> DegradationBasic </name><val> 0.0033 </val></parm>
+<var><name> ProteinEffect </name></var>
+<var><name> Degradation </name><val> 0.00167 </val></var>
+
+<var><name> Target[IgG] </name><val> 0.031 </val></var><!-- 3.1 g/dL-->
+<var><name> InitialMass </name></var>
+
+<var><name> pCOP </name></var>
+<parm><name> sigmaIgG </name><val> 0.95 </val></parm>
+<var><name> IgGFrac </name><val> 0.33</val></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 2.10 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> COPEffect </name>
+  <point><x> 20.0 </x><y> 1.3 </y><slope> 0.0 </slope></point>
+  <point><x> 28.0 </x><y> 1.0 </y><slope> -0.07 </slope></point>
+  <point><x> 40.0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> IgGEffect </name>
+  <point><x> 0.00 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 0.031 </x><y> 1.0 </y><slope> 120.0 </slope></point>
+  <point><x> 0.038 </x><y> 6.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+  <def><name> InitialMass </name><val> Target[IgG] * PlasmaVol.Vol </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+  <def><name> Change </name><val> 0 </val></def>
+  
+</block>
+
+<block><name> CalcConc </name>
+
+<def><name> [IgG] </name><val> Mass / PlasmaVol.Vol </val></def>
+<def><name> [IgG(G/dL)] </name><val> PER_ML_TO_PER_DL * [IgG] </val></def>
+<def><name> [IgG(mmol/mL)] </name><val> Mass / PlasmaVol.Vol(L)  / MW </val></def>
+
+<def><name> pCOP </name><val> 1. * [IgG(mmol/mL)] * 62.36367 * HeatCore.Temp(K) * sigmaIgG </val></def>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<def><name> COPEffect </name><val> COPEffect [ PlasmaProtein.COP ] </val></def>
+<def><name> Synthesis </name><val> SynthesisBasic * COPEffect </val></def>
+
+<def><name> ProteinEffect </name><val> IgGEffect [ [IgG] ] * 0 + 1</val></def>
+<def><name> Degradation </name><val> DegradationBasic * ProteinEffect </val></def>
+
+<def><name> Gain </name>
+  <val>
+      Synthesis
+    + LymphProtein.IgGRate
+    + ( Transfusion.ProteinRate * Transfusion.IgGFrac )
+    + PeritoneumProtein.IgGLoss 
+    + ( IVDrip.ProteinRate * IVDrip.IgGFrac )
+  </val></def>
+
+<def><name> Loss </name>
+  <val>
+      Degradation
+    + CapillaryProtein.IgGRate 
+    + ( Hemorrhage.ProteinRate * IgGFrac )
+    + PeritoneumProtein.IgGGain 
+    + CollectingDuct_Protein.IgGOutflow 
+  </val></def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+<def><name> IgGFrac </name><val> [IgG(mmol/mL)] / PlasmaProtein.[Protein] </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End
+

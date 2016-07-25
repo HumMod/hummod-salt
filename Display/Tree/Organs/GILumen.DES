@@ -1,0 +1,75 @@
+HumMod / GILumen
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> GILumen </name>
+  <label> ... GI Lumen </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<branch>
+  <name> GILumenElectrolytes </name>
+  <label> Electrolytes </label>
+  <parent> GILumen </parent>
+</branch>
+
+<leaf>
+  <name> GILumenSodium </name>
+  <label> Na+ </label>
+  <parent> GILumenElectrolytes </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenChloride </name>
+  <label> Cl- </label>
+  <parent> GILumenElectrolytes </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenPotassium </name>
+  <label> K+ </label>
+  <parent> GILumenElectrolytes </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenCalcium </name>
+  <label> Ca++ </label>
+  <parent> GILumenElectrolytes </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenFood </name>
+  <label> Food </label>
+  <parent> GILumen </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenH2O </name>
+  <label> H2O </label>
+  <parent> GILumen </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenVolume </name>
+  <label> Volume </label>
+  <parent> GILumen </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenHeat </name>
+  <label> Heat </label>
+  <parent> GILumen </parent>
+</leaf>
+
+<leaf>
+  <name> GILumenOther </name>
+  <label> Other </label>
+  <parent> GILumen </parent>
+</leaf>
+
+End

@@ -1,0 +1,37 @@
+HumMod / LungVolumes
+
+Created : 2012-07-11
+Revised : 2012-07-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> LungVolumes </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Lungs </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Lung Volumes </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Respiration\LungVolumes\ ?>
+
+<?include Box.DES ?>
+
+</panel>
+
+End

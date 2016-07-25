@@ -1,0 +1,163 @@
+HumMod / Context-Muscularity
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Context-Muscularity </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Context | Muscularity </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.4 </high>
+   <wide> 35.0 </wide>
+
+<?path Display\Context\Muscularity\ ?>
+
+<structurename> Context-Muscularity </structurename>
+
+<showtable>
+<row> 1.0 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 12 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Trait </textcell>
+<textcell> -------------------------------- </textcell>
+<textcell> Below Normal </textcell>
+<textcell> Normal </textcell>
+<textcell> Above Normal </textcell>
+<textcell> Trained Athlete </textcell>
+
+</column>
+
+<column>
+<indent> 13 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Male </textcell>
+<textcell> -------- </textcell>
+
+<valuecell>
+  <name> MALE_BELOWNORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_NORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_ABOVENORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_TRAINEDATHLETE </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 20 </indent>
+<fieldwidth> 7.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Female </textcell>
+<textcell> ------------ </textcell>
+
+<valuecell>
+  <name> FEMALE_BELOWNORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_NORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_ABOVENORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_TRAINEDATHLETE </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<showvalue>
+  <row> 8.4 </row><col> 1.0 </col>
+  <name> Mass(kG) </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Initial Mass (kG) </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.6 </row><col> 3.0 </col>
+  <name> Stochasm </name>
+  <format><integer/></format>
+  <label> Stochasm (%) </label>
+</showvalue>
+
+<repeatlist>
+  <name> PlusMinus </name>
+  <firstval> -50 </firstval>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.0 </row><col> 3.0 </col>
+  <name> PlusMinus </name>
+  <listname> PlusMinus </listname>
+  <label> +/- (%) </label>
+</slidebar>
+
+<showvalue>
+  <row> 12.4 </row><col> 3.0 </col>
+  <name> NominalMass </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal Mass </label>
+</showvalue>
+
+<slidebar>
+  <row> 13.8 </row><col> 3.0 </col>
+  <name> Index </name>
+  <listname> Common.Muscularity </listname>
+  <label> Trait </label>
+</slidebar>
+
+</groupbox>
+</panel>
+
+End

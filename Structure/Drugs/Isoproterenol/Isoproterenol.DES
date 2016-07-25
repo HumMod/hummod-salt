@@ -1,0 +1,42 @@
+HumMod / PropranololDailyDose
+
+Created : 15-Jul-13
+Revised : 
+Author : W Pruett
+Copyright : 2013-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\Isoproterenol\ ?>
+
+<?include IsoproterenolPool.DES ?>
+<?include IsoproterenolLiver.DES ?>
+<?include IsoproterenolKidney.DES ?>
+<?include IsoproterenolIV.DES ?>
+<?include IsoproterenolIVBolus.DES ?>
+<?include IsoproterenolInhaler.DES ?>
+<?include IsoproterenolLung.DES ?>
+<?include IsoproterenolGILumen.DES ?>
+
+<structure><name> Isoproterenol </name>
+
+<definitions>
+
+<block><name> CalcConc </name>
+  <call> IsoproterenolPool.CalcConc </call>
+  <call> IsoproterenolGILumen.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> IsoproterenolIV.Dervs </call>
+  <call> IsoproterenolIVBolus.Dervs </call>
+  <call> IsoproterenolLiver.Dervs </call>
+  <call> IsoproterenolKidney.Dervs </call>
+  <call> IsoproterenolInhaler.Dervs </call>
+  <call> IsoproterenolLung.Dervs </call>
+  <call> IsoproterenolGILumen.Dervs </call>
+  <call> IsoproterenolPool.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+

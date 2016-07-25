@@ -1,0 +1,69 @@
+HumMod / Liver
+
+Created : 08-Dec-05
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> Liver </name>
+  <label> Liver </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<leaf>
+  <name> Liver-Metabolism </name>
+  <label> Metabolism </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-Fuel </name>
+  <label> Fuel </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-CO2 </name>
+  <label> CO2 </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-Lactate </name>
+  <label> Lactate </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-AcidBase </name>
+  <label> Acid-Base </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-Nerves </name>
+  <label> Nerves </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-Function </name>
+  <label> Function </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-Structure </name>
+  <label> Structure </label>
+  <parent> Liver </parent>
+</leaf>
+
+<leaf>
+  <name> Liver-Size </name>
+  <label> Size </label>
+  <parent> Liver </parent>
+</leaf>
+
+End

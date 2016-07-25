@@ -1,0 +1,83 @@
+HumMod / BloodFlow
+
+Created : 23-May-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 13.4 </high>
+   <wide> 30.0 </wide>
+   <title> Blood Flow </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightKidney-Flow.BloodFlow </name>
+   <format> <integer/> </format>
+   <label> Right Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftKidney-Flow.BloodFlow </name>
+   <format> <integer/> </format>
+   <label> Left Flow </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-Flow.BloodFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-Flow.BloodFlow </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale>
+      <min> 500 </min><max> 600 </max><inc> 50 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> RightKidney-Pressure.PressureGradient </name>
+   <format> <integer/> </format>
+   <label> Right Pressure Gradient </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> LeftKidney-Pressure.PressureGradient </name>
+   <format> <integer/> </format>
+   <label> Left Pressure Gradient </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Kidney blood flow is </line>
+  <line> normally 1200 mL/Min. </line>
+  <line>  </line>
+  <line> Normal pressure gradient is </line>
+  <line> 90 mmHg. </line>
+</infobutton>
+
+</groupbox>
+
+End

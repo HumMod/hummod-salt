@@ -1,0 +1,40 @@
+HumMod / Mechanoreceptors
+
+Created : 27-Apr-05
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> AutonomicNerves-Afferents-Mechanoreceptors </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> NerveAfferents </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Afferents - Heart Mechanoreceptors </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\NervousSystem\AutonomicNerves\Afferents\Mechanoreceptors\ ?>
+
+<?include FiringRate.DES ?>
+
+<?include RightHeart.DES ?>
+<?include LeftHeart.DES ?>
+
+</panel>
+
+End

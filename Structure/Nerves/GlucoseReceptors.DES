@@ -1,0 +1,60 @@
+HumMod / GlucoseReceptors
+
+Created : 2013-03-19
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> GlucoseReceptors </name>
+
+<variables>
+
+<var><name> NA </name></var>
+
+<var><name> [Glucose(mG/dL)] </name></var>
+<var><name> [Glucose(mMol/L)] </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> NA </name>
+  <point><x>  0 </x><y> 4 </y><slope> 0 </slope></point>
+  <point><x>  6 </x><y> 1 </y><slope> -0.2 </slope></point>
+  <point><x> 20 </x><y> 0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> [Glucose(mG/dL)] </name>
+  <val> GlucosePool.[Glucose(mG/dL)] </val>
+</def>
+
+<def>
+  <name> [Glucose(mMol/L)] </name>
+  <val> GlucosePool.[Glucose(mMol/L)] </val>
+</def>
+
+<conditional>
+  <name> NA </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false> Brain-Function.Effect * NA [ [Glucose(mMol/L)] ] </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

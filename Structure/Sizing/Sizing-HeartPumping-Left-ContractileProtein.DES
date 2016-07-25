@@ -1,0 +1,34 @@
+HumMod / Sizing-HeartPumping-Left-ContractileProtein
+
+Created : 2013-02-26
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-HeartPumping-Left-ContractileProtein </name>
+
+<variables>
+  <var><name> Protein-Base </name></var>
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+  <def>
+    <name> Protein-Base </name>
+    <val> LeftHeart-Size.InitialProteinMass </val>
+  </def>
+
+  <def>
+    <name> LeftHeartPumping-ContractileProtein.Initial-Protein-Base </name>
+    <val> Protein-Base </val>
+  </def>
+
+  <call> LeftHeartPumping-ContractileProtein.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

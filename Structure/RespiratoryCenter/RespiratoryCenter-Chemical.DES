@@ -1,0 +1,112 @@
+HumMod / RespiratoryCenter-Chemical
+
+Created : 23-Jan-06
+Revised : 2012-07-16
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> RespiratoryCenter-Chemical </name>
+
+<variables>
+
+<parm><name> K </name><val> 0.8 </val></parm>
+<parm><name> [ReferenceSID] </name><val> 40.8 </val></parm>
+
+<var><name> pH </name></var>
+<var><name> pCO2 </name></var>
+<var><name> [SID] </name></var>
+
+<var><name> TotalDrive </name></var>
+<var><name> CentralDrive </name></var>
+<var><name> PhEffect </name></var>
+<var><name> PeripheralDrive </name></var>
+<var><name> ChemoreceptorEffect </name></var>
+<var><name> MorphineOnGlomus </name></var>
+<parm><name> CentralBase </name><val> 0.6 </val></parm>
+<parm><name> PeripheralBase </name><val> 0.4 </val></parm>
+
+<var><name> CombinedMorphine </name></var>
+</variables>
+
+<functions>
+
+<curve>
+  <name> PhOnCentralDrive </name>
+  <point><x> 7.00 </x><y>  0.0 </y><slope> 0 </slope></point>
+  <point><x> 7.20 </x><y> 10.0 </y><slope> 0 </slope></point>
+  <point><x> 7.40 </x><y>  1.0 </y><slope> -6.0 </slope></point>
+  <point><x> 8.00 </x><y>  0.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> MorphineOnGlomus </name>
+  <point><x> 0 </x><y>  1.0 </y><slope> 0 </slope></point>
+  <point><x> 0.7 </x><y> 0.3 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> [SID] </name>
+  <val> ( ( 1 - K ) * [ReferenceSID] ) + ( K * BloodIons.[SID(mEq/L)] ) </val>
+</def>
+
+<def>
+  <name> pCO2 </name>
+  <val> ( CO2Artys.Pressure + CO2Veins.Pressure ) / 2 </val>
+</def>
+
+<copy>
+  <from> pCO2 </from>
+  <to> PhBlood.pCO2 </to>
+</copy>
+
+<copy>
+  <from> [SID] </from>
+  <to> PhBlood.SID </to>
+</copy>
+
+<call> PhBlood.Calc </call>
+
+<copy>
+  <from> PhBlood.pH </from>
+  <to> pH </to>
+</copy>
+
+<def>
+  <name> PhEffect </name>
+  <val> PhOnCentralDrive [ pH ] </val>
+</def>
+
+<def><name> CombinedMorphine </name><val> OR.[MR] + ( 0.33 * OR.[M6GR] )  </val></def>
+<def><name> MorphineOnGlomus </name><val> MorphineOnGlomus [ CombinedMorphine ] </val></def>
+
+<def>
+  <name> CentralDrive </name>
+  <val> MorphineOnGlomus * PhEffect * CentralBase </val>
+</def>
+
+<def>
+  <name> ChemoreceptorEffect </name>
+  <val> Chemoreceptors.FiringRate </val>
+</def>
+
+<def>
+  <name> PeripheralDrive </name>
+  <val> ChemoreceptorEffect * MorphineOnGlomus *  PeripheralBase </val>
+</def>
+
+<def>
+  <name> TotalDrive </name>
+  <val> CentralDrive + PeripheralDrive </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

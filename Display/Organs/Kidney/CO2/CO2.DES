@@ -1,0 +1,41 @@
+HumMod / CO2
+
+Created : 14-May-05
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> Kidney-CO2 </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Kidney </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Kidney - CO2 </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Kidney-CO2 </structurename>
+
+<?path Display\Organs\Kidney\CO2\ ?>
+
+<?include LeftBox.DES ?>
+<?include Technical.DES ?>
+<?include RightBox.DES ?>
+
+</panel>
+
+End

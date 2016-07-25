@@ -1,0 +1,61 @@
+HumMod / CollectingDuct_Na
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> CollectingDuct_Na </name>
+
+<variables>
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> Reab </name></var>
+<var><name> [Na+(mEq/L)] </name></var>
+<parm><name> testFlag </name><val> 0 </val></parm>
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> AUC </name>
+  <integralname> AUC </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> dAUC </dervname>
+  <errorlim> 0.01 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+<block><name> CalcFlux </name>
+<def><name> Inflow </name><val> RightCollectingDuct_Na.Inflow + LeftCollectingDuct_Na.Inflow  </val></def>
+<def><name> Outflow </name><val> RightCollectingDuct_Na.Outflow + LeftCollectingDuct_Na.Outflow  </val></def>
+<def><name> Reab </name><val> RightCollectingDuct_Na.Reab + LeftCollectingDuct_Na.Reab  </val></def>
+<def><name> dAUC </name><val> testFlag *  Outflow </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+<if><test> CollectingDuct_H2O.Outflow GT 0 </test>
+<true>
+  <def><name> [Na+(mEq/L)] </name><val> 1000 * Outflow / CollectingDuct_H2O.Outflow </val></def>
+</true>
+<false>
+  <def><name> [Na+(mEq/L)] </name><val> 0</val></def>
+</false>
+</if>
+</block>
+
+<block><name> NoFlow </name>
+  <def><name> Outflow </name><val> 0.0 </val></def>
+  <def><name>  [Na+(mEq/L)]  </name><val> UNDEFINED </val></def>
+</block>
+
+
+</definitions>
+</structure>
+
+End

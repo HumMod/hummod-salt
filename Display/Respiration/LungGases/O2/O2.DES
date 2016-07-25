@@ -1,0 +1,39 @@
+HumMod / O2
+
+Created : 2012-07-12
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> LungGases_O2 </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Lungs </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Lung Gases | O2 </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Respiration\LungGases\O2\ ?>
+
+<?include Box.DES ?>
+<?include Technical.DES ?>
+<?include O2Diffusion.DES ?>
+
+</panel>
+
+End

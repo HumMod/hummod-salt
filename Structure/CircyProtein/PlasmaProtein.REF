@@ -1,0 +1,35 @@
+HumMod / PlasmaProtein
+
+Created : 19-Mar-08
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+
+This model assumes that plasma protein (ie. albumin) is
+synthesized and catabolized in the liver and is exchanged
+with the plasma in the liver sinuses.
+
+GAIN
+  Synthesis
+  Systemic Lymph
+  Transfusion
+  Peritoneal Lymph
+  IV Drip
+
+LOSS
+  Catabolism
+  Capillary Leak
+  Hemorrhage
+  Hepatic Effusion
+  Kidney
+
+Guyton says that whole-body protein turnover is 400 G/Day
+and about 3% is plasma protein.
+
+Plasma protein turnover would be 12 G/Day or about 0.01 G/Min.
+
+I'll put 210 G in the plasma.
+
+
+End

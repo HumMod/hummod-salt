@@ -1,0 +1,23 @@
+HumMod / InfusionPumps
+
+Created : 24-Apr-05
+Last Modified : 2011-07-26
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<?path Display\Intervention\InfusionPumps\ ?>
+
+<?include ADH\ADH.DES ?>
+<?include Aldosterone\Aldosterone.DES ?>
+<?include Angiotensin\Angiotensin.DES ?>
+<?include ANP\ANP.DES ?>
+<?include Epinephrine\Epinephrine.DES ?>
+<?include Erythropoietin\Erythropoietin.DES ?>
+<?include Glucose\Glucose.DES ?>
+<?include Insulin\Insulin.DES ?>
+<?include Ketoacid\Ketoacid.DES ?>
+<?include LacticAcid\LacticAcid.DES ?>
+<?include Norepinephrine\Norepinephrine.DES ?>
+
+End

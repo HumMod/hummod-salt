@@ -1,0 +1,167 @@
+/* HumMod / ReninSynthesis
+
+   Created : 2014-02-26
+   Revised : 2014-02-26
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structure><name> LeftReninSynthesis </name>
+
+<variables>
+
+<var><name> TGFEffect </name></var>
+<var><name> SympsEffect </name></var>
+<var><name> Base </name></var>
+<parm><name> BaseTarget </name><val> 80 </val></parm>72.5
+
+<var><name> sizeModification </name></var>
+<parm><name> Tau</name><val> 60.0 </val></parm>
+
+<parm><name> TGF_ATarget </name><val> 19.7 </val></parm>19.7
+<parm><name> TGF_BTarget </name><val> 19.4 </val></parm>19.4
+<parm><name> TGF_STarget </name><val> 3 </val></parm>3.2
+
+<parm><name> Symps_ATarget </name><val> 4.57 </val></parm>
+<parm><name> Symps_BTarget </name><val> 0.57 </val></parm>
+<parm><name> Symps_mTarget</name><val> 4 </val></parm>
+<parm><name> Symps_STarget </name><val> 1.79 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> TGF_A </name>
+  <integralname> TGF_A </integralname>
+  <initialval> 19.7 </initialval>
+  <dervname> dTGFA </dervname>
+  <errorlim> 0.2 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_B </name>
+  <integralname> TGF_B </integralname>
+  <initialval> 19.4 </initialval>
+  <dervname> dTGFB </dervname>
+  <errorlim> 0.2 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_S </name>
+  <integralname> TGF_S </integralname>
+  <initialval> 3 </initialval>
+  <dervname> dTGFS </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_A </name>
+  <integralname> Symps_A </integralname>
+  <initialval> 4.57 </initialval>
+  <dervname> dSympsA </dervname>
+  <errorlim> .10 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_B </name>
+  <integralname> Symps_B </integralname>
+  <initialval> 0.57 </initialval>
+  <dervname> dSympsB </dervname>
+  <errorlim> 0.002 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_m </name>
+  <integralname> Symps_m </integralname>
+  <initialval> 4 </initialval>
+  <dervname> dSympsm </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_S </name>
+  <integralname> Symps_S </integralname>
+  <initialval> 1.79 </initialval>
+  <dervname> dSympsS </dervname>
+  <errorlim> 0.075 </errorlim>
+</diffeq>
+
+<delay>
+  <name> Rate </name>
+  <outputname> Rate </outputname>
+  <initialval> 72.5 </initialval>
+  <inputname> SteadyState </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 2.90 </errorlim>
+</delay>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 10.0 </y><slope> 0 </slope></point>
+  <point><x> 0.6 </x><y>  2.0 </y><slope> -4.0 </slope></point>
+  <point><x> 1.0 </x><y>  1.0 </y><slope> -1.0 </slope></point>
+  <point><x> 2.0 </x><y>  0.3 </y><slope> 0 </slope></point>0.3
+</curve>
+
+<curve>
+  <name> SympsEffect </name>
+  <point><x> 0.0 </x><y> 0.5 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 1.0 </slope></point>
+  <point><x> 2.5 </x><y> 4.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Parms </name>
+  <def><name> K </name><val> INVERT Tau </val></def>
+</block>
+
+<block><name> Dervs </name>
+
+<def><name> dTGFA </name><val> 0.05 * ( TGF_ATarget - TGF_A ) </val></def>
+<def><name> dTGFB </name><val> 0.05 * ( TGF_BTarget - TGF_B ) </val></def>
+<def><name> dTGFS </name><val> 0.05 * ( TGF_STarget - TGF_S ) </val></def>
+
+<def><name> dSympsA </name><val> 0.05 * ( Symps_ATarget - Symps_A ) </val></def>
+<def><name> dSympsB </name><val> 0.05 * ( Symps_BTarget - Symps_B ) </val></def>
+<def><name> dSympsS </name><val> 0.05 * ( Symps_STarget - Symps_S ) </val></def>
+<def><name> dSympsm </name><val> 0.05 * ( Symps_mTarget - Symps_m ) </val></def>
+
+<def><name> Base </name><val> RightReninSynthesis.BaseTarget * sizeModification </val></def>
+
+<def><name> TGFEffect </name><val>  TGF_A - ( TGF_B / ( 1 + EXP ( - TGF_S *  LeftTGF-Renin.Signal ) ) )   </val></def>
+<def><name> SympsEffect </name><val> ( Symps_A * ( LeftKidney-BetaReceptors.Activity ^ Symps_m ) ) / ( ( ( Symps_S ^ Symps_m ) + ( LeftKidney-BetaReceptors.Activity ^ Symps_m ) ) ) + Symps_B </val></def>
+
+<def><name> TGFEffect </name><val> TGFEffect [ LeftTGF-Renin.Signal ] </val></def>
+
+<!--  
+<def><name> Compensation </name><val>  (1 - RightKidney-NephronCount.Total(xNormal) ) * ( RightReninSynthesis.BaseTarget * LeftKidney-NephronCount.Total(xNormal) ) </val></def>
+-->
+
+<def>
+  <name> SteadyState </name>
+  <val>
+       Base
+     * TGFEffect
+     * SympsEffect
+     * LeftKidney-NephronCount.Total(xNormal)
+     * LeftKidney-Function.Effect 
+ </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End
+

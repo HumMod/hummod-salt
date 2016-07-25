@@ -1,0 +1,22 @@
+HumMod / MetabolicUnits (REF)
+
+Created : 2012-10-19
+Revised : 2012-10-19
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+A metabolic unit (MET) is the amount of O2
+consumed per minute at rest per kG body weight.
+Using an O2 consumption of 250 mL/Min and a
+body weight of 75 kG yields a MET of 3.33.
+
+The value generally used is
+
+  1 MET = 3.5 (mL/Min)/kG
+
+Then we can express O2 uptake or consumption
+in MET's, where a value near 1.0 is expected
+at rest.
+
+End

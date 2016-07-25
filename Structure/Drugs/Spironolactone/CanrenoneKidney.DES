@@ -1,0 +1,43 @@
+HumMod / CanrenoneKidney
+
+Created : 2013-03-15
+Revised : 2013-03-15
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> CanrenoneKidney </name>
+
+<variables>
+
+<var>
+  <name> UrineLoss </name>
+</var>
+
+<constant>
+  <name> K </name>
+  <val> 0.0045 </val>
+</constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> UrineLoss </name>
+  <val>
+      K
+    * CanrenonePool.Mass(uG)
+    *  (    ( 0.5 * RightKidney-NephronCount.Filtering(xNormal) * RightKidney-Function.Effect ) 
+	+ ( 0.5 * LeftKidney-NephronCount.Filtering(xNormal) * LeftKidney-Function.Effect ) )
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

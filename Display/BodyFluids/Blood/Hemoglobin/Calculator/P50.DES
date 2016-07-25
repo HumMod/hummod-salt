@@ -1,0 +1,95 @@
+HumMod / P50
+
+Created : 2012-09-13
+Revised : 2012-09-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 16.6 </high>
+   <wide> 30.0 </wide>
+   <title> P50 </title>
+
+<structurename> HgbCalculator </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> P50 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> P50 </label>
+</showvalue>
+
+<repeatlist>
+  <name> Temp </name>
+  <repeat><reps> 100 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.0 </row><col> 1.0 </col>
+  <name> Temp </name>
+  <listname> Temp </listname>
+  <label> Temp </label>
+</slidebar>
+
+<repeatlist>
+  <name> pH </name>
+  <firstval> 6 </firstval>
+  <repeat><reps> 20 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> pH </name>
+  <listname> pH </listname>
+  <label> pH </label>
+</slidebar>
+
+<repeatlist>
+  <name> pCO2 </name>
+  <repeat><reps> 100 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 6.2 </row><col> 1.0 </col>
+  <name> pCO2 </name>
+  <listname> pCO2 </listname>
+  <label> pCO2 </label>
+</slidebar>
+
+<repeatlist>
+  <name> CO(%) </name>
+  <repeat><reps> 100 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 7.8 </row><col> 1.0 </col>
+  <name> CO(%) </name>
+  <listname> CO(%) </listname>
+  <label> CO(%) </label>
+</slidebar>
+
+<repeatlist>
+  <name> P50Basic </name>
+  <firstval> 10 </firstval>
+  <repeat><reps> 400 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> P50Basic </name>
+  <listname> P50Basic </listname>
+  <label> Basic P50 </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

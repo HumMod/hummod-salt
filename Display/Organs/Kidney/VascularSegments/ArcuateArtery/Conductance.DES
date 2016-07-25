@@ -1,0 +1,110 @@
+HumMod / Conductance
+
+Created : 13-Apr-08
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 21.0 </high>
+   <wide> 30.0 </wide>
+   <title> Conductance </title>
+
+<structurename> Kidney-ArcuateArtery </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightKidney-ArcuateArtery.Conductance </name>
+  <format><integer/></format>
+  <label> Conductance </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> LeftKidney-ArcuateArtery.Conductance </name>
+  <format><integer/></format>
+  <label> Conductance </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-ArcuateArtery.Conductance </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+   <yvar>
+      <name> LeftKidney-ArcuateArtery.Conductance </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 200 </min><max> 250 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showbargraph>
+  <row> 10.8 </row><col> 1.0 </col><high> 3.0 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> Viscosity.ConductanceEffect </name>
+    <label> Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<showvalue>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> RightKidney-ArcuateArtery.Stenosis </name>
+  <format><list> Stenosis </list></format>
+  <label> Right Stenosis </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.2 </row><col> 1.0 </col>
+  <name> LeftKidney-ArcuateArtery.Stenosis </name>
+  <format><list> Stenosis </list></format>
+  <label> LeftStenosis </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.6 </row><col> 1.0 </col>
+  <name> LeftKidney-ArcuateArtery.BasicConductance </name>
+  <format><integer/></format>
+  <label> Basic Conductance </label>
+</showvalue>
+
+<slidebar>
+  <row> 17.0 </row><col> 3.0 </col>
+  <name>  RightKidney-ArcuateArtery.Multiplier </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<slidebar>
+  <row> 18.5 </row><col> 3.0 </col>
+  <name>  LeftKidney-ArcuateArtery.Multiplier </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

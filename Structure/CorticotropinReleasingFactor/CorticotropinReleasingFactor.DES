@@ -1,0 +1,86 @@
+HumMod | CorticotropinReleasingFactor
+
+Created : 2011-07-30
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<structure><name> CorticotropinReleasingFactor </name>
+
+<variables>
+
+<var><name> [CRF(pG/mL)] </name></var>
+<parm><name> [CRF(pG/mL)-Basic] </name><val> 80 </val></parm>
+
+<var><name> NeuralEffect </name></var>
+<var><name> StressEffect </name></var>
+<var><name> [Cortisol]Effect </name></var>
+
+<parm><name> Stress </name><val> 2 </val></parm>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve><name> NeuralEffect </name>
+<point><x>  0 </x><y>  0 </y><slope> 0 </slope></point>
+<point><x>  1 </x><y>  1 </y><slope> 1.0 </slope></point>
+<point><x> 10 </x><y> 10 </y><slope> 0 </slope></point>
+</curve>
+
+<curve><name> StressEffect </name>
+<point><x> 0 </x><y> 0 </y><slope> 0 </slope></point>
+<point><x> 2 </x><y> 1 </y><slope> 1.0 </slope></point>
+<point><x> 5 </x><y> 5 </y><slope> 0 </slope></point>
+</curve>
+
+<curve><name> [Cortisol]Effect </name>
+<point><x>   0 </x><y> 1.5 </y><slope> 0 </slope></point>
+<point><x>  20 </x><y> 1.0 </y><slope> -0.01 </slope></point>
+<point><x> 100 </x><y> 0.5 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> NeuralEffect </name>
+  <val> NeuralEffect [ Nucleus-CRF.NA ] </val>
+</def>
+
+<def>
+  <name> StressEffect </name>
+  <val> StressEffect [ Stress ] </val>
+</def>
+
+<def>
+  <name> [Cortisol]Effect </name>
+  <val> [Cortisol]Effect [ Cortisol.[Conc(uG/dL)] ] </val>
+</def>
+
+<conditional>
+  <name> [CRF(pG/mL)] </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false>
+      [CRF(pG/mL)-Basic]
+    * NeuralEffect 
+    * StressEffect 
+    * [Cortisol]Effect 
+    * Brain-Function.Effect
+  </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

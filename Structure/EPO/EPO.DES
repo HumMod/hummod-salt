@@ -1,0 +1,47 @@
+/* HumMod / EPO
+
+   Created : 2014-03-03
+   Revised : 2014-03-03
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<?path Structure\EPO\ ?>
+
+<?include EPOPool.DES ?>
+<?include EPOPump.DES ?>
+<?include EPOSecretion.DES ?>
+<?include EPODisposal.DES ?>
+
+<structure><name> EPO </name>
+
+<definitions>
+
+<block><name> Parms </name>
+
+  <call> EPOPool.Parms </call>
+  <call> EPOPump.Parms </call>
+  <call> EPOSecretion.Parms </call>
+  <call> EPODisposal.Parms </call>
+
+</block>
+
+<block><name> CalcConc </name>
+
+  <call> EPOPool.CalcConc </call>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <call> EPOSecretion.Dervs </call>
+  <call> EPODisposal.Dervs </call>
+  <call> EPOPool.Dervs </call>
+
+</block>
+
+</definitions>
+</structure>
+
+/* End */

@@ -1,0 +1,26 @@
+HumMod | CorticotropinReleasingFactor Reference
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Corticotropin releasing factor (CRF) stays in
+the hypothalamic-pituitary portal circulation.
+
+Major stimulus is stress. [Cortisol] is
+inhibitory.
+
+MW = 4757
+C208-H344-N60-O63-S2
+
+[Portal] = 80 pG/mL. Goes to 800 with severe
+hypoglycemia (big insulin injection).
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

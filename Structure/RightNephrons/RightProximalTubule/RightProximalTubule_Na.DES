@@ -1,0 +1,388 @@
+HumMod / RightProximalTubule_Na
+
+Created : 10-Apr-05
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> RightProximalTubule_Na </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> RightFractReab </name></var>
+<var><name> Reab </name></var>
+
+<parm><name> BasicFract </name><val> 0.58 </val></parm>0.58
+
+<var><name> TotalEffect </name></var>
+<var><name> LoadEffect </name></var>
+
+<var><name> A2Effect </name></var>
+<var><name> SympsEffect </name></var>
+<var><name> ANPEffect </name></var>
+<var><name> IFPEffect </name></var>
+<var><name> [Na+] </name></var>
+
+<parm><name> MaxReab </name><val> 8.0 </val></parm>
+<parm><name> ANPClamp </name><val> FALSE </val></parm>
+<parm><name> ANPLevel </name><val> 0.0 </val></parm>
+
+<parm><name> A2_ATarget </name><val> 0.7 </val></parm>
+<parm><name> A2_BTarget </name><val> 0.6 </val></parm>
+<parm><name> A2_STarget </name><val> 0.964 </val></parm>
+<parm><name> A2_mTarget </name><val> 7.8 </val></parm>
+
+<parm><name> Symps_ATarget </name><val> 0.92 </val></parm>
+<parm><name> Symps_BTarget </name><val> 0.62 </val></parm>
+<parm><name> Symps_STarget </name><val> 1.2 </val></parm>
+<parm><name> Symps_mTarget </name><val> 2.5  </val></parm>
+
+<parm><name> ANP_ATarget </name><val> 0.68 </val></parm>
+<parm><name> ANP_BTarget </name><val> 0.5 </val></parm>
+<parm><name> ANP_STarget </name><val> 1.8 </val></parm>
+<parm><name> ANP_mTarget </name><val> 3.2  </val></parm>
+
+<parm><name> IFP_ATarget </name><val> 1.4 </val></parm>
+<parm><name> IFP_BTarget </name><val> 0 </val></parm>
+<parm><name> IFP_STarget </name><val> 5 </val></parm>
+<parm><name> IFP_mTarget </name><val> -4  </val></parm>
+
+
+
+</variables>
+
+
+
+<equations>
+
+<diffeq>
+  <name> A2_A </name>
+  <integralname> A2_A </integralname>
+  <initialval> 0.7 </initialval>
+  <dervname> dA2A </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_m </name>
+  <integralname> A2_m </integralname>
+  <initialval> 7.8 </initialval>
+  <dervname> dA2m </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_S </name>
+  <integralname> A2_S </integralname>
+  <initialval> 0.964 </initialval>
+  <dervname> dA2S </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_B </name>
+  <integralname> A2_B </integralname>
+  <initialval> 0.6 </initialval>
+  <dervname> dA2B </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+-----------------------------------------------
+
+
+
+<diffeq>
+  <name> Symps_A </name>
+  <integralname> Symps_A </integralname>
+  <initialval> 0.92 </initialval>
+  <dervname> dSympsA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_m </name>
+  <integralname> Symps_m </integralname>
+  <initialval> 2.5 </initialval>
+  <dervname> dSympsm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_S </name>
+  <integralname> Symps_S </integralname>
+  <initialval> 1.2 </initialval>
+  <dervname> dSympsS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symps_B </name>
+  <integralname> Symps_B </integralname>
+  <initialval> 0.62 </initialval>
+  <dervname> dSympsB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+-----------------------------------------------
+
+
+
+<diffeq>
+  <name> ANP_A </name>
+  <integralname> ANP_A </integralname>
+  <initialval> 0.68 </initialval>
+  <dervname> dANPA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_m </name>
+  <integralname> ANP_m </integralname>
+  <initialval> 3.2 </initialval>
+  <dervname> dANPm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_S </name>
+  <integralname> ANP_S </integralname>
+  <initialval> 1.8 </initialval>
+  <dervname> dANPS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_B </name>
+  <integralname> ANP_B </integralname>
+  <initialval> 0.5 </initialval>
+  <dervname> dANPB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+-----------------------------------------------
+
+
+
+<diffeq>
+  <name> IFP_A </name>
+  <integralname> IFP_A </integralname>
+  <initialval> 1.4 </initialval>
+  <dervname> dIFPA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> IFP_m </name>
+  <integralname> IFP_m </integralname>
+  <initialval> -4 </initialval>
+  <dervname> dIFPm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> IFP_S </name>
+  <integralname> IFP_S </integralname>
+  <initialval> 5 </initialval>
+  <dervname> dIFPS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> IFP_B </name>
+  <integralname> IFP_B </integralname>
+  <initialval> 0 </initialval>
+  <dervname> dIFPB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> A2OnFract </name> 
+  <point><x> 0.7 </x><y> 0.8 </y><slope> 0 </slope></point>0.5 0.6
+  <point><x> 1. </x><y> 1.0 </y><slope> 1.5 </slope></point>0.8
+  <point><x> 1.6 </x><y> 1.2 </y><slope> 0 </slope></point>1.2
+</curve>
+
+<curve>
+  <name> LoadOnFract </name>
+  <point><x> 0 </x><y> 1.3 </y><slope> 0 </slope></point>
+  <point><x> 9.5 </x><y> 1.0 </y><slope> 0.03 </slope></point>0.8
+  <point><x> 18 </x><y> .75 </y><slope> 0 </slope></point>1.2
+</curve>
+
+<curve>
+  <name> SympsOnFract </name>
+  <point><x> 0.6 </x><y> 0.6 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0.5 </slope></point>
+  <point><x> 4.0 </x><y> 1.5 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ANPOnFract </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0 </slope></point>
+  <point><x> 1.3 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 2.7 </x><y> 0.6 </y><slope> 0 </slope></point>0.6
+</curve>
+
+<curve>
+  <name> IFPOnFract </name>
+  <point><x> 1.0 </x><y> 1.4 </y><slope> 0 </slope></point>
+  <point><x> 4.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 7.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Inflow </name>
+  <val> RightGlomerulusSodium.Rate </val>
+</def>
+
+<def><name> dA2A </name><val> 0.05 * ( A2_ATarget - A2_A ) </val></def>
+<def><name> dA2m </name><val> 0.05 * ( A2_mTarget - A2_m ) </val></def>
+<def><name> dA2S </name><val> 0.05 * ( A2_STarget - A2_S ) </val></def>
+<def><name> dA2B </name><val> 0.05 * ( A2_BTarget - A2_B ) </val></def>
+
+<def><name> dSympsA </name><val> 0.05 * ( A2_ATarget - A2_A ) </val></def>
+<def><name> dSympsm </name><val> 0.05 * ( A2_mTarget - A2_m ) </val></def>
+<def><name> dSympsS </name><val> 0.05 * ( A2_STarget - A2_S ) </val></def>
+<def><name> dSympsB </name><val> 0.05 * ( A2_BTarget - A2_B ) </val></def>
+
+<def><name> dANPA </name><val> 0.05 * ( ANP_ATarget - ANP_A ) </val></def>
+<def><name> dANPm </name><val> 0.05 * ( ANP_mTarget - ANP_m ) </val></def>
+<def><name> dANPS </name><val> 0.05 * ( ANP_STarget - ANP_S ) </val></def>
+<def><name> dANPB </name><val> 0.05 * ( ANP_BTarget - ANP_B ) </val></def>
+
+<def><name> dIFPA </name><val> 0.05 * ( IFP_ATarget - IFP_A ) </val></def>
+<def><name> dIFPm </name><val> 0.05 * ( IFP_mTarget - IFP_m ) </val></def>
+<def><name> dIFPS </name><val> 0.05 * ( IFP_STarget - IFP_S ) </val></def>
+<def><name> dIFPB </name><val> 0.05 * ( IFP_BTarget - IFP_B ) </val></def>
+
+
+
+
+<!--  
+<conditional>
+  <name> ANPEffect </name>
+  <test> ANPClamp </test>
+  <true> ANPLevel </true>
+  <false> ANPOnFract [ RightNephronANP.Log10Conc ] </false>
+</conditional>
+
+<def>
+  <name> SympsEffect </name> <val> SympsOnFract [ RightKidney-AlphaReceptors.Activity ] </val>
+</def>
+<def>
+  <name> A2Effect </name><val> A2OnFract [ A2Pool.Log10Conc ] </val>
+</def>
+
+
+
+-->
+
+
+<def>
+  <name> IFPEffect </name>
+  <val> IFPOnFract [ RightNephronIFP.Pressure ] </val>
+</def>
+
+<def>
+  <name> LoadEffect </name>
+  <val> LoadOnFract [ Inflow ] </val>
+</def>
+
+<def>
+  <name> A2Effect </name>
+  <val> ( A2_A * ( A2Pool.Log10Conc ^ A2_m ) / ( ( A2_S ^ A2_m ) + ( A2Pool.Log10Conc ^ A2_m ) ) + A2_B )  MAX 0.8 </val>
+</def>
+
+<def>
+  <name> SympsEffect </name>
+  <val> Symps_A * ( RightKidney-AlphaReceptors.Activity ^ Symps_m ) / ( ( Symps_S ^ Symps_m ) + ( RightKidney-AlphaReceptors.Activity ^ Symps_m ) ) + Symps_B </val>
+</def>
+
+<conditional>
+  <name> IFPEffect </name>
+  <test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+  <true> IFP_A * ( RightNephronIFP.Pressure ^ IFP_m ) / ( ( IFP_S ^ IFP_m ) + ( RightNephronIFP.Pressure ^ IFP_m ) ) + IFP_B </true>
+  <false> 1 </false>
+</conditional>
+
+<conditional>
+  <name> ANPEffect </name>
+  <test> ANPClamp </test>
+  <true> ANPLevel </true>
+  <false> ANP_A * ( ANP_S ^ ANP_m ) / ( ( ANP_S ^ ANP_m ) + ( RightNephronANP.Log10Conc ^ ANP_m ) ) + ANP_B </false>
+</conditional>
+
+
+<def>
+  <name> TotalEffect </name>
+  <val>
+      A2Effect
+    * SympsEffect
+    * ANPEffect
+    * IFPEffect
+    * RightKidney-Function.Effect
+<!--   * LoadEffect-->
+
+  </val>
+</def>
+
+<def><name> BasicFract </name><val> LeftProximalTubule_Na.BasicFract </val></def>
+<copy>
+  <from> BasicFract </from>
+  <to> RightFractReab.Normal </to>
+</copy>
+
+<copy>
+  <from> TotalEffect </from>
+  <to> RightFractReab.Effects </to>
+</copy>
+
+<call> RightFractReab.GetFract </call>
+
+<copy>
+  <from> RightFractReab.Fract </from>
+  <to> RightFractReab </to>
+</copy>
+
+<def>
+  <name> Reab </name>
+  <val> ( RightFractReab * Inflow ) MIN MaxReab </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<conditional>
+  <name> [Na+] </name>
+  <test> RightProximalTubule_H2O.Outflow GT 0.0 </test>
+  <true> 1000.0 * Outflow / RightProximalTubule_H2O.Outflow </true>
+  <false> UNDEFINED </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

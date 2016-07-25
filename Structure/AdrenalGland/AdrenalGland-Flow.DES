@@ -1,0 +1,90 @@
+HumMod / AdrenalGland-Flow
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> AdrenalGland-Flow </name>
+
+<variables>
+
+<var><name> TotalFlow </name></var>
+
+<var><name> CortexFlow </name></var>
+
+<var><name> GlomerulosaFlow </name></var>
+<parm><name> GlomerulosaCond/G </name><val> 0.009 </val></parm>
+
+<var><name> FasciculataFlow </name></var>
+<parm><name> FasciculataCond/G </name><val> 0.009 </val></parm>
+
+<var><name> ReticularisFlow </name></var>
+<parm><name> ReticularisCond/G </name><val> 0.009 </val></parm>
+
+<var><name> MedullaFlow </name></var>
+<parm><name> MedullaCond/G </name><val> 0.009 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> GlomerulosaFlow </name>
+  <val>
+      GlomerulosaCond/G
+    * AdrenalGland-Size.GlomerulosaMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> FasciculataFlow </name>
+  <val>
+      FasciculataCond/G
+    * AdrenalGland-Size.FasciculataMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> ReticularisFlow </name>
+  <val>
+      ReticularisCond/G
+    * AdrenalGland-Size.ReticularisMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> CortexFlow </name>
+  <val> GlomerulosaFlow + FasciculataFlow + ReticularisFlow </val>
+</def>
+
+<def>
+  <name> MedullaFlow </name>
+  <val>
+      MedullaCond/G
+    * AdrenalGland-Size.MedullaMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> TotalFlow </name>
+  <val> CortexFlow + MedullaFlow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

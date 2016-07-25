@@ -1,0 +1,62 @@
+HumMod / Acetoacetate
+
+Created : 2013-05-01
+Revised : 2013-05-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Acetoacetate </name>
+
+<variables>
+
+<constant><name> K </name><val> 0.144 </val></constant>
+
+<constant><name> VMax </name><val> 4000 </val></constant>
+<constant><name> Km </name><val> 44775 </val></constant>
+
+<var><name> V </name></var>
+
+</variables>
+
+<equations>
+
+<backwardeuler>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <f1name> F1 </f1name>
+  <f2name> F2 </f2name>
+  <dervname> Change </dervname>
+  <errorlim> 0. </errorlim>
+</backwardeuler>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> V </name>
+  <val> </val>
+</def>
+
+<def>
+  <name> F1 </name>
+  <val> </val>
+</def>
+
+<def>
+  <name> F2 </name>
+  <val> K </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

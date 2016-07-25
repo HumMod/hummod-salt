@@ -1,0 +1,51 @@
+HumMod / Chart
+
+Created : 02-Apr-09
+Revised : 2012-01-05
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<panel><name> Chart </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Chart </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Chart </text>
+</label>
+
+<?path Display\Diagnosis\Chart\ ?>
+
+<?include Morphology.DES ?>
+<?include Symptoms.DES ?>
+<?include BloodPressure.DES ?>
+<?include RespiratoryRate.DES ?>
+
+-----------------------------------------
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 28 </col>
+  <name> Clock </name>
+</showbitmap>
+
+<showclock>
+  <row> 0.3 </row><col> 31.5 </col>
+  <name> System.X </name>
+  <ampm/><secs/><days/>
+</showclock>
+
+<?include ThumbNail.DES ?>
+<?include Temperature.DES ?>
+<?include HeartRate.DES ?>
+
+</panel>
+
+End

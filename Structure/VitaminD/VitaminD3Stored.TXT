@@ -1,0 +1,47 @@
+HumMod | VitaminD3Stored.TXT
+
+Created : 2011-08-04
+Last Modified : 2011-08-06
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Hydroxylation is 11.7 nG/Min or 29.2 nMol/Min.
+
+100 days worth of storage is 1685 uG.
+
+Synthesis and storage over 24 hours is probably
+2-5 times hydroxylation.
+
+Sunlight
+--------
+0 - None
+1 - Dim
+2 - Normal
+3 - Bright
+4 - Very Bright
+5 - Extreme
+
+Synthesis and diet supplement raises the
+pool concentration and D3 diffuses into
+storage.
+
+I picked sequestration and mobilizaton of
+50 nG/Min to calculate the K's.
+
+With exp(-K*t) when t = 1/K, we have exp(-1)
+which is 0.37. The exponential is 63% of the
+way to completion, with 37% remaining. This
+is the time constant (tau).
+
+The half-time is the time when an exponential
+is 50% of the way to completion.
+
+T 1/2 = 0.69 * Tau
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

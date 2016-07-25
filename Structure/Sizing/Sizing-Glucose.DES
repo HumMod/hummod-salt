@@ -1,0 +1,53 @@
+HumMod / Sizing-Glucose
+
+Created : 2013-03-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Glucose </name>
+
+<variables>
+
+<constant><name> [Glucose] </name><val> 1100 </val></constant>
+<constant><name> MW </name><val> 180 </val></constant>
+
+<var><name> Mass </name></var>
+<var><name> Volume </name></var>
+<var><name> Osmoles </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-ECFV.Vol / 1000 </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> [Glucose] * Volume </val>
+</def>
+
+<def>
+  <name> Osmoles </name>
+  <val> Mass / MW </val>
+</def>
+
+<def>
+  <name> GlucosePool.InitialMass </name>
+  <val> Mass </val>
+</def>
+
+<call> GlucosePool.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

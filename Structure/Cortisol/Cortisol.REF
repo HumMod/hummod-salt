@@ -1,0 +1,48 @@
+HumMod | Cortisol Reference
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Cortisol (hydrocortisone) is secreted by the
+adrenal cortex. It accounts for 95% of the
+body's glucocorticoid activity.
+
+Corticosterone accounts for 5% and will not
+be initially modeled.
+
+Cortisol MW = 362.5
+C21-H30-O5
+
+Concentration is highly variable with a
+circadian rhythm and secretion bursts.
+
+[Cortisol] = 20 uG/dL or 550 nMol/L.
+
+uG/dL * 27.6 = nMol/L
+
+Volume of distribution = 15000 (ECFV, assumed).
+
+Mass = 3000 uG.
+
+1/2 life = 75 Min. Cleared by liver.
+
+Secretion is 15 mG/24 hours or 10.4 uG/Min.
+
+Clearance = K * [Cortisol] or 10.4 = K * 0.2
+K = 52
+
+Cortisol can increase hepatic gluconeogenesis
+from amino acids up to 10x. This will increase
+[Glucose] 50%.
+
+[Cortisol] may go up 4x as [ACTH] goes up 4x.
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

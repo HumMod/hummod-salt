@@ -1,0 +1,46 @@
+HumMod / Respiration DES
+
+Created : 2011-07-26
+Revised : 2012-07-11
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> RESPIRATION </name>
+  <label> Respiration </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Respiration\ ?>
+
+<?include O2.DES ?>
+<?include CO2.DES ?>
+
+<separatorbar>
+  <parent> RESPIRATION </parent>
+</separatorbar>
+
+<?include Breathing.DES ?>
+<?include LungGases.DES ?>
+<?include Lungs.DES ?>
+
+<separatorbar>
+  <parent> RESPIRATION </parent>
+</separatorbar>
+
+<?include RespiratoryCenter.DES ?>
+
+<separatorbar>
+  <parent> RESPIRATION </parent>
+</separatorbar>
+
+<?include LungVolumes.DES ?>
+
+<separatorbar>
+  <parent> RESPIRATION </parent>
+</separatorbar>
+
+<?include BodyN2.DES ?>
+
+End

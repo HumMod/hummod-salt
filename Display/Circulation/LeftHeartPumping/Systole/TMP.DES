@@ -1,0 +1,146 @@
+HumMod / TMP
+
+Created : 2012-07-20
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 33.8 </high>
+   <wide> 30.0 </wide>
+   <title> TMP </title>
+
+<structurename> LeftHeartPumping-Systole </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total </label>
+</showvalue>
+
+<showmap>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> ESV </name>
+    <label> Volume </label>
+    <scale><min> 0 </min><max> 200 </max><inc> 100 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> TMP </name>
+    <label> Total </label>
+    <scale><min> 0 </min><max> 200 </max><inc> 100 </inc></scale>
+  </yaxis>
+
+  <blockname> TMP </blockname>
+</showmap>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> TMP-Active </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Active </label>
+</showvalue>
+
+<showmap>
+  <row> 10.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> ESV </name>
+    <label> Volume </label>
+    <scale><min> 0 </min><max> 200 </max><inc> 100 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> TMP-Active </name>
+    <label> Active </label>
+    <scale><min> 0 </min><max> 200 </max><inc> 100 </inc></scale>
+  </yaxis>
+
+  <blockname> TMP-Active </blockname>
+</showmap>
+
+<showvalue>
+   <row> 18.2 </row><col> 1.0 </col>
+   <name> LeftHeartPumping-Contractility.Contractility </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Contractility </label>
+</showvalue>
+
+<slidebar>
+  <row> 19.6 </row><col> 1.0 </col>
+  <name> XTarget </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<showvalue>
+   <row> 21.0 </row><col> 1.0 </col>
+   <name> K-Basic </name>
+   <format><decimal> 1 </decimal></format>
+   <label> K - Basic </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.4 </row><col> 1.0 </col>
+   <name> TMP-Passive </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Passive </label>
+</showvalue>
+
+<showmap>
+  <row> 23.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> ESV </name>
+    <label> Volume </label>
+    <scale><min> 0 </min><max> 200 </max><inc> 100 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> TMP-Passive </name>
+    <label> Passive </label>
+    <scale><min> 0 </min><max> 20 </max><inc> 10 </inc></scale>
+  </yaxis>
+
+  <blockname> TMP-Passive </blockname>
+</showmap>
+
+<repeatlist>
+  <name> Stiffness </name>
+  <firstval> 0.1 </firstval>
+  <repeat><reps> 29 </reps><stepsize>  0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 30.8 </row><col> 1.0 </col>
+  <name> LeftHeartPumping-Diastole.StiffnessTarget </name>
+  <listname> Stiffness </listname>
+  <label> Stiffness </label>
+</slidebar>
+
+<showvalue>
+   <row> 32.2 </row><col> 1.0 </col>
+   <name> ESV </name>
+   <format><decimal> 1 </decimal></format>
+   <label> ESV </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

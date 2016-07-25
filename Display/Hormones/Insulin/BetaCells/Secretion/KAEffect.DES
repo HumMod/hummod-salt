@@ -1,0 +1,63 @@
+HumMod / KAEffect
+
+Created : 2012-11-03
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 13.8 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 30.0 </wide>
+   <title> Ketoacid Effect </title>
+
+<structurename> InsulinSecretion </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> KAEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Ketoacid Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> KAPool.[KA(mG/dL)] </name>
+    <label> [KA-] </label>
+    <scale>
+      <min> 0 </min><max> 50 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 0 </min><max> 2 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> KAEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> KAPool.[KA(mG/dL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [KA- (mG/dL)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

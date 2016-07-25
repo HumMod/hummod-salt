@@ -1,0 +1,127 @@
+HumMod / Summary
+
+Created : 2012-02-01
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structurename> ChemoreceptorsCNS </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.6 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Effect </name>
+  <label> Effect </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Effect </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showcurve>
+  <row> 9.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+
+  <xaxis>
+    <name> Change </name>
+    <label> Net Stimulus </label>
+    <scale><min> -10 </min><max> 10 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> Effect </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 16.8 </row><col> 1 </col>
+  <name> Change </name>
+  <label> Net Stimulus </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showvalue>
+  <row> 18.2 </row><col> 1 </col>
+  <name> OnsetDelay </name>
+  <label> Onset Effect </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<slidebar>
+  <row> 19.6 </row><col> 3 </col>
+  <name> OnsetTau </name>
+  <listname> Common.FiftySteps </listname>
+  <label> Tau </label>
+</slidebar>
+
+<showvalue>
+  <row> 21.0 </row><col> 3 </col>
+  <name> Chemoreceptors.FiringRate </name>
+  <label> Chemo's Firing Rate </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showvalue>
+  <row> 22.4 </row><col> 1 </col>
+  <name> AdaptationDelay </name>
+  <label> Adaptation Effect </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<slidebar>
+  <row> 23.8 </row><col> 3 </col>
+  <name> AdaptationTau </name>
+  <listname> Common.FiftySteps </listname>
+  <label> Tau </label>
+</slidebar>
+
+<showvalue>
+  <row> 25.2 </row><col> 3 </col>
+  <name> Chemoreceptors.FiringRate </name>
+  <label> Chemo's Firing Rate </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> The effect of chemoreceptor activity on </line>
+  <line> sympathetic outflow has a slight delay </line>
+  <line> at onset and then a long adaptation time. </line>
+  <line>  </line>
+  <line> The units of time for onset delay are </line>
+  <line> minutes while the units of time for </line>
+  <line> adaptation are days. </line>
+</infobutton>
+
+</groupbox>
+
+End

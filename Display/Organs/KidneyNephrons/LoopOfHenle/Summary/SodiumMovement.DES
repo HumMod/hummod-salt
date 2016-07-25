@@ -1,0 +1,129 @@
+HumMod / SodiumMovement
+
+Created : 18-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.8 </high>
+   <wide> 30.0 </wide>
+   <title> Sodium Movement </title>
+
+
+
+<showtable>
+<row> 1.4 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 9 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Inflow </textcell>
+<textcell> Reabsorp </textcell>
+<textcell> Outflow </textcell>
+<textcell> FractReab </textcell>
+
+</column>
+
+<column>
+<indent> 9.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+
+<valuecell>
+  <name> LeftLoopOfHenle_Na.Inflow </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftLoopOfHenle_Na.Reab </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftLoopOfHenle_Na.Outflow </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftLoopOfHenle_Na.LeftFractReab  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 17.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightLoopOfHenle_Na.Inflow </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightLoopOfHenle_Na.Reab </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightLoopOfHenle_Na.Outflow </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightLoopOfHenle_Na.RightFractReab  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+
+<showgraph>
+  <row> 6.4 </row><col> 1.0 </col><high> 8 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name><label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar><name> RightLoopOfHenle_Na.Inflow </name><label> In </label><linecolor> BLUE </linecolor></yvar>
+    <yvar><name> RightLoopOfHenle_Na.Reab </name><label> Reab </label><linecolor> RED </linecolor></yvar>
+    <yvar><name> RightLoopOfHenle_Na.Outflow </name><label> Out </label><linecolor> BLACK </linecolor></yvar>
+    <yvar><name> LeftLoopOfHenle_Na.Inflow </name><nolabel/><linetype> DOT </linetype><linecolor> BLUE </linecolor></yvar>
+    <yvar><name> LeftLoopOfHenle_Na.Reab </name><nolabel/><linetype> DOT </linetype><linecolor> RED </linecolor></yvar>
+    <yvar><name> LeftLoopOfHenle_Na.Outflow </name><nolabel/><linetype> DOT </linetype><linecolor> BLACK </linecolor></yvar>
+    <scale><min> 0 </min><max> 5 </max></scale>
+  </yaxis>
+</showgraph>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical values are </line>
+  <line>  </line>
+  <line> Inflow = 7.1 mEq/Min </line>
+  <line> Reaqbsorption = 5.3 mEq/Min </line>
+  <line> Outflow = 1.7 mEq/Min </line>
+  <line>  </line>
+  <line> [Na+] = 41.0 mEq/L </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,27 @@
+HumMod / Type 1 Diabetes
+
+
+<structure><name> Pancreas-BetaCells </name>
+
+<variables>
+  <parm><name> DamagedFraction </name><val> 0 </val></parm> 
+  <var><name> DamageMultiplier </name><val> 1 </val></var> 
+</variables>
+
+<definitions>
+<block><name> Parms </name>
+
+<onjustchanged>
+<name> DamagedFraction </name>
+<def><name> DamageMultiplier </name><val> 1 - DamagedFraction </val></def>
+<def><name> Pancreas-Size.OtherCellMass </name><val> Pancreas-Size.OtherCellMass + ( Pancreas-Size.BetaCellMass * DamageMultiplier ) </val></def>
+<def><name> Pancreas-Size.OtherCellMassPercent </name><val> Pancreas-Size.OtherCellMass / Pancreas-Size.Mass </val></def>
+<def><name> InsulinStorage.Mass </name><val> InsulinStorage.Mass * DamageMultiplier </val></def>
+</onjustchanged>
+
+</block>
+
+</definitions>
+</structure>
+
+End

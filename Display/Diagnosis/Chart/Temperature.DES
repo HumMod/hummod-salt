@@ -1,0 +1,41 @@
+HumMod / Temperature
+
+Created : 2014-02-25
+Revised : 2014-02-25
+Author : Tom Coleman
+Copyright : 2014-2014
+By : Tom Coleman
+
+<showvalue>
+   <row> 7.8 </row><col> 28 </col>
+   <name> HeatCore.Temp(F) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Temperature (F) </label>
+</showvalue>
+
+<showgraph>
+  <row> 8.8 </row><col> 28 </col><high> 7 </high><wide> 26 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> HeatCore.Temp(F) </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 90 </min><max> 100 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 15.8 </row><col> 28 </col>
+   <name> HeatCore.Temp(C) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Temperature (C) </label>
+</showvalue>
+
+End

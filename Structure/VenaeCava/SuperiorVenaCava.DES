@@ -1,0 +1,82 @@
+HumMod / SuperiorVenaCava
+
+Created : 2012-02-092
+Revised : 2012-02-09
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> SuperiorVenaCava </name>
+
+<variables>
+
+<var><name> TotalFlow </name></var>
+
+<var><name> BoneFlow </name></var>
+<var><name> BrainFlow </name></var>
+<var><name> FatFlow </name></var>
+<var><name> OtherTissueFlow </name></var>
+<var><name> RespiratoryMuscleFlow </name></var>
+<var><name> SkeletalMuscleFlow </name></var>
+<var><name> SkinFlow </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> BoneFlow </name>
+  <val> VenaeCava.SuperiorFraction * Bone-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> BrainFlow </name>
+  <val> Brain-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> FatFlow </name>
+  <val> VenaeCava.SuperiorFraction * Fat-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> OtherTissueFlow </name>
+  <val> VenaeCava.SuperiorFraction * OtherTissue-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> RespiratoryMuscleFlow </name>
+  <val> RespiratoryMuscle-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> SkeletalMuscleFlow </name>
+  <val> VenaeCava.SuperiorFraction * SkeletalMuscle-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> SkinFlow </name>
+  <val> VenaeCava.SuperiorFraction * Skin-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> TotalFlow </name>
+  <val> 
+      BoneFlow
+    + BrainFlow
+    + FatFlow
+    + OtherTissueFlow
+    + RespiratoryMuscleFlow
+    + SkeletalMuscleFlow
+    + SkinFlow
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

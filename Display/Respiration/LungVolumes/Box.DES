@@ -1,0 +1,128 @@
+HumMod / Box
+
+Created : 2012-07-11
+Revised : 2012-07-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 20.6 </high>
+   <wide> 30.0 </wide>
+
+<structurename> LungVolumes </structurename>
+
+<label>
+  <row> 1.4 </row><col> 1.0 </col>
+  <text> Total Lung Capacity </text>
+</label>
+
+<repeatlist>
+  <name> TotalCapacity </name>
+  <repeat><reps> 100 </reps><stepsize>  100 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.6 </row><col> 1.0 </col>
+  <name> TotalCapacity </name>
+  <listname> TotalCapacity </listname>
+  <label> Volume </label>
+</slidebar>
+
+<label>
+  <row> 4.0 </row><col> 1.0 </col>
+  <text> Reserves </text>
+</label>
+
+<slidebar>
+  <row> 5.4 </row><col> 1.0 </col>
+  <name> InspiratoryReserve(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Inspiratory (%) </label>
+</slidebar>
+
+<slidebar>
+  <row> 6.8 </row><col> 1.0 </col>
+  <name> ExpiratoryReserve(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Expiratory (%) </label>
+</slidebar>
+
+<label>
+  <row> 8.4 </row><col> 1.0 </col>
+  <text> Residual </text>
+</label>
+
+<slidebar>
+  <row> 9.6 </row><col> 1.0 </col>
+  <name> ResidualVolume(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Volume (%) </label>
+</slidebar>
+
+<showvalue>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> InspiratoryReserve </name>
+  <format><integer/></format>
+  <label> Inspiratory Reserve </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 1.0 </col>
+  <name> Breathing.TidalVolume </name>
+  <format><integer/></format>
+  <label> Tidal Volume </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> ExpiratoryReserve </name>
+  <format><integer/></format>
+  <label> Expiratory Reserve </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.2 </row><col> 1.0 </col>
+  <name> ResidualVolume </name>
+  <format><integer/></format>
+  <label> Residual Volume </label>
+</showvalue>
+
+<label>
+  <row> 15.8 </row><col> 1.0 </col>
+  <text> Capacities </text>
+</label>
+
+<showvalue>
+  <row> 17.0 </row><col> 1.0 </col>
+  <name> InspiratoryCapacity </name>
+  <format><integer/></format>
+  <label> Inspiratory </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.0 </row><col> 1.0 </col>
+  <name> VitalCapacity </name>
+  <format><integer/></format>
+  <label> Vital </label>
+</showvalue>
+
+<showvalue>
+  <row> 19.0 </row><col> 1.0 </col>
+  <name> FunctionalResidualCapacity </name>
+  <format><integer/></format>
+  <label> Functional Residual </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> </line>
+</infobutton>
+
+</groupbox>
+
+End

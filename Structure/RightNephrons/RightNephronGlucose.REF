@@ -1,0 +1,20 @@
+HumMod / RightNephronGlucose (REF)
+
+Created : 2012-07-10
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+I added a smooth transition from complete glucose
+reabsorption to maximum reabsorption. But this is
+a little tricky.
+
+We calculate filtration as a fraction of TMax, put
+the fraction into a curve and get reabsorption as
+a function of TMax. The curve supplies the smooth
+transition.
+
+
+
+End

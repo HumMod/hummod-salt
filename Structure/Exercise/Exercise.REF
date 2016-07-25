@@ -1,0 +1,70 @@
+HumMod / Exercise.REF
+
+Created : 24-Dec-05
+Last Modified : 2011-11-15
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University of Mississippi Medical Center
+
+Exercise type is ennumerated.
+
+  0 - Resting
+  1 - Exercise Bike
+  2 - Treadmill
+  3 - Daily Planner Work Level
+  4 - Daily Planner Aerobics
+
+Motivation is also ennumerated.
+
+  0.03 - Low
+  0.04 - Normal
+  0.05 - High
+  0.06 - Extreme
+
+These values are muscle [Lac-] in mEq/mL.
+
+Here is the correct calling sequence for the control of
+exercise.
+
+Every time through the parameter code, we update the bike
+and treadmill variables that are solely dependent on the
+effort and efficiency parameters.
+
+Request is the parameter of change. It can request resting,
+bike or treadmill. A request changes the request parameter.
+
+Exercise-Control.Parms is called on  a request just changed
+to see if exercise is permitted. It is not if the daily
+planner is active or if the person is comatose. With
+these conditions, the request parameter is returned to its
+previous value.
+
+If exercise is permitted, we set Status.Exertion to the
+request level and update exercise status.
+
+Exercise status gives an active or inactive value to the
+bike and treadmill.
+
+This completes just changed execution.
+
+Then in the Dervs, we toggle on and off elapsed time and
+distance traveled as appropriate using Exercise-Bike.Calc
+and Exercise-Treadmill.Calc.
+
+Exercise-Metabolism.Calc is used to update the calories
+demanded by exercise activity. Daily planner work and
+aerobics are included in these values.
+
+Then in wrapup code, we determine if exercise should be
+terminated. There are a number of reasons to stop exercise.
+I'm not sure how many will be implemented.
+
+# Skeletal muscle failed. Low pH or no more glycogen are the
+  usual reasons.
+# Respiratory muscle failed. Same reasons as skeletal muscle.
+# Brain function is impaired.
+# Subject is comatose.
+# Subject is dyspnic.
+# Subject has heart pain.
+
+End

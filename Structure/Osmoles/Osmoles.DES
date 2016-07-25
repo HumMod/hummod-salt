@@ -1,0 +1,38 @@
+HumMod / Osmoles
+
+Created : 26-May-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\Osmoles\ ?>
+
+<?include OsmBody.DES ?>
+<?include OsmCell.DES ?>
+<?include OsmECFV.DES ?>
+
+<structure><name> Osmoles </name>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<call> OsmECFV.Calc </call>
+<call> OsmCell.Calc </call>
+<call> OsmBody.Calc </call>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<call> OsmECFV.Wrapup </call>
+<call> OsmCell.Wrapup </call>
+<call> OsmBody.Wrapup </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

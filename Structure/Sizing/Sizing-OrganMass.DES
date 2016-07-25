@@ -1,0 +1,254 @@
+HumMod / Sizing-OrganMass DES
+
+Created : 2012-03-10
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Sizing-OrganMass </name>
+
+<variables>
+
+<var><name> BaseMass(G) </name></var>
+<var><name> FatMass(G) </name></var>
+<var><name> SkeletalMuscleMass(G) </name></var>
+
+<var><name> CheckSum_Mass </name></var>
+<var><name> CheckSum_Percent </name></var>
+
+<var><name> OtherTissue_Percent   </name></var>
+
+<constant><name> Bone_Percent              </name><val> 41.2 </val></constant>
+<constant><name> Brain_Percent             </name><val>  5.8 </val></constant>
+<constant><name> GITract_Percent           </name><val>  4.9 </val></constant>
+<constant><name> RightKidney_Percent            </name><val>  0.73 </val></constant>
+<constant><name> LeftKidney_Percent            </name><val>  0.57 </val></constant>
+
+<parm><name> LeftHeart_Percent         </name><val>  1.1 </val></parm>
+<constant><name> Liver_Percent             </name><val>  7.5 </val></constant>
+<constant><name> RespiratoryMuscle_Percent </name><val> 13.8 </val></constant>
+<parm><name> RightHeart_Percent        </name><val>  0.2 </val></parm>
+<constant><name> Skin_Percent              </name><val> 10.7 </val></constant>
+
+<constant><name> AdrenalGland_Percent   </name><val> 0.058 </val></constant>
+<constant><name> Pancreas_Percent       </name><val> 0.407 </val></constant>
+<constant><name> PituitaryGland_Percent </name><val> 0.002 </val></constant>
+<constant><name> ThyroidGland_Percent   </name><val> 0.087 </val></constant>
+
+<var><name> Bone_Mass </name></var>
+<var><name> Brain_Mass </name></var>
+<var><name> GITract_Mass </name></var>
+<var><name> LeftKidney_Mass </name></var>
+<var><name> RightKidney_Mass </name></var>
+
+<var><name> LeftHeart_Mass </name></var>
+<var><name> Liver_Mass </name></var>
+<var><name> OtherTissue_Mass </name></var>
+<var><name> RespiratoryMuscle_Mass </name></var>
+<var><name> RightHeart_Mass </name></var>
+<var><name> Skin_Mass </name></var>
+
+<var><name> Fat_Mass </name></var>
+<var><name> SkeletalMuscle_Mass </name></var>
+
+<var><name> AdrenalGland_Mass </name></var>
+<var><name> Pancreas_Mass </name></var>
+<var><name> PituitaryGland_Mass </name></var>
+<var><name> ThyroidGland_Mass </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BaseMass(G) </name>
+  <val> 1000 * Context-OtherMass.Mass(kG) </val>
+</def>
+
+<def>
+  <name> FatMass(G) </name>
+  <val> 1000 * Context-Adiposity.Mass(kG) </val>
+</def>
+
+<def>
+  <name> SkeletalMuscleMass(G) </name>
+  <val> 1000 * Context-Muscularity.Mass(kG) </val>
+</def>
+
+<def>
+  <name> OtherTissue_Percent </name>
+  <val>
+   100 -
+    (  Bone_Percent
+    + Brain_Percent
+    + GITract_Percent
+    + LeftKidney_Percent
+    + RightKidney_Percent
+    + LeftHeart_Percent
+    + Liver_Percent
+    + RespiratoryMuscle_Percent
+    + RightHeart_Percent
+    + Skin_Percent )
+  </val>
+</def>
+
+
+<def>
+  <name> CheckSum_Percent </name>
+  <val>
+      Bone_Percent
+    + Brain_Percent
+    + GITract_Percent
+    + LeftKidney_Percent
+    + RightKidney_Percent
+    + LeftHeart_Percent
+    + Liver_Percent
+    + OtherTissue_Percent
+    + RespiratoryMuscle_Percent
+    + RightHeart_Percent
+    + Skin_Percent
+  </val>
+</def>
+
+<!-- ============== Base Organs ============== -->
+
+<def>
+  <name> Bone_Mass </name>
+  <val> ( Bone_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> Brain_Mass </name>
+  <val> ( Brain_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> GITract_Mass </name>
+  <val> ( GITract_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> LeftKidney_Mass </name>
+  <val> ( LeftKidney_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> RightKidney_Mass </name>
+  <val> ( RightKidney_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> LeftHeart_Mass </name>
+  <val> ( LeftHeart_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> Liver_Mass </name>
+  <val> ( Liver_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> OtherTissue_Mass </name>
+  <val> ( OtherTissue_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> RespiratoryMuscle_Mass </name>
+  <val> ( RespiratoryMuscle_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> RightHeart_Mass </name>
+  <val> ( RightHeart_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> Skin_Mass </name>
+  <val> ( Skin_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> CheckSum_Mass </name>
+  <val>
+      Bone_Mass
+    + Brain_Mass
+    + GITract_Mass
+    + LeftKidney_Mass
+    + RightKidney_Mass
+    + LeftHeart_Mass
+    + Liver_Mass
+    + OtherTissue_Mass
+    + RespiratoryMuscle_Mass
+    + RightHeart_Mass
+    + Skin_Mass
+  </val>
+</def>
+
+<def>
+  <name> Fat_Mass </name>
+  <val> FatMass(G) </val>
+</def>
+
+<def>
+  <name> SkeletalMuscle_Mass </name>
+  <val> SkeletalMuscleMass(G) </val>
+</def>
+
+<!-- =============== Endocrine =============== -->
+
+<def>
+  <name> AdrenalGland_Mass </name>
+  <val> ( AdrenalGland_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> Pancreas_Mass </name>
+  <val> ( Pancreas_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> PituitaryGland_Mass </name>
+  <val> ( PituitaryGland_Percent / 100 ) * BaseMass(G) </val>
+</def>
+<def>
+  <name> ThyroidGland_Mass </name>
+  <val> ( ThyroidGland_Percent / 100 ) * BaseMass(G) </val>
+</def>
+
+<def>
+  <name> AdrenalGland-Size.InitialMass </name>
+  <val> AdrenalGland_Mass </val>
+</def>
+
+<call> AdrenalGland-Size.Init </call>
+
+<def>
+  <name> Pancreas-Size.InitialMass </name>
+  <val> Pancreas_Mass </val>
+</def>
+
+<call> Pancreas-Size.Init </call>
+
+<def>
+  <name> PituitaryGland-Size.InitialMass </name>
+  <val> PituitaryGland_Mass </val>
+</def>
+
+<call> PituitaryGland-Size.Init </call>
+
+<def>
+  <name> ThyroidGland-Size.InitialMass </name>
+  <val> ThyroidGland_Mass </val>
+</def>
+
+<call> ThyroidGland-Size.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

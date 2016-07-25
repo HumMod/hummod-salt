@@ -1,0 +1,162 @@
+HumMod / TissueLactate
+
+Created : 14-May-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 18.6 </high>
+   <wide> 30.0 </wide>
+   <title> Tissue Lactate </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightKidney-Lactate.[Lac-(mEq/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right [Lac- (mEq/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftKidney-Lactate.[Lac-(mEq/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left [Lac- (mEq/L)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-Lactate.[Lac-(mEq/L)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-Lactate.[Lac-(mEq/L)] </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showtable>
+<row> 9.8 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> [Lac-(mG/dL)] </textcell>
+<textcell> Mass </textcell>
+<textcell> Change </textcell>
+<textcell> Made </textcell>
+<textcell> Used</textcell>
+<textcell> Outflux </textcell>
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+<valuecell>
+  <name> LeftKidney-Lactate.[Lac-(mG/dL)]</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-Lactate.Mass  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-Lactate.Change  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-Lactate.Made</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-Lactate.Used</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-Lactate.Outflux</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+</column>
+
+<column>
+<indent> 15.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+<textcell> Right </textcell>
+<valuecell>
+  <name> RightKidney-Lactate.[Lac-(mG/dL)]</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-Lactate.Mass  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-Lactate.Change  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-Lactate.Made</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-Lactate.Used</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-Lactate.Outflux</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+</column>
+</showtable>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> NORMAL VALUES AND UNITS </line>
+  <line>  </line>
+  <line> [Lac-] = 1.0 mEq/L </line>
+  <line>  </line>
+  <line> Mass = 0.26 mEq </line>
+  <line> Outflux ~ 0 mEq/Min </line>
+</infobutton>
+
+</groupbox>
+
+End

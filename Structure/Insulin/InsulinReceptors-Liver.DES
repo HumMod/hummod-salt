@@ -1,0 +1,94 @@
+HumMod / InsulinReceptors-Liver
+
+Created : 2012-07-01
+Revised : 2012-07-07
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> InsulinReceptors-Liver </name>
+
+<variables>
+
+<parm><name> Total </name><val> 50000 </val></parm>
+
+<var><name> Free </name></var>
+
+<var><name> BoundFraction </name></var>
+<var><name> BoundFraction(%) </name></var>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Binding </name></var>
+<var><name> Unbinding </name></var>
+<var><name> NetBinding </name></var>
+
+<var><name> Degradation </name></var>
+
+<parm><name> K1 </name><val> 0.00706 </val></parm>0.0249
+<parm><name> K2 </name><val> 0.0000802 </val></parm>0.00124
+<parm><name> K3 </name><val> 0.00094 </val></parm>0.00134
+
+<var><name> [Insulin] </name></var>
+<var><name> [Insulin(mU/mL)] </name></var>
+
+<constant><name> UU_TO_MU </name><val> 0.001 </val></constant>
+<constant><name> MU_TO_UU </name><val> 1000 </val></constant>
+
+<var><name> Binding_Coeff </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Bound </name>
+  <integralname> Bound </integralname>
+  <initialval> 10000 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 100 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+<block><name> Calc </name>
+
+<def><name> Free </name><val> Total - Bound + ( InsulinPump.T2D * 10 )  </val></def>
+
+<def><name> BoundFraction </name><val> Bound / Total </val></def>
+<def><name> BoundFraction(%) </name><val> 100 * BoundFraction / ( InsulinPump.T2D + 1 ) </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def><name> Binding_Coeff </name><val> K1 * Free </val></def>
+
+<def>
+  <name> [Insulin(mU/mL)] </name>
+  <val>
+    ( ( PortalVein-Insulin.[Insulin(mU/mL)] * PortalVein.PlasmaFlow ) + ( K2 * Bound ) )
+    /
+    ( Binding_Coeff + PortalVein.PlasmaFlow )
+  </val>
+</def>
+
+<def><name> [Insulin] </name><val> [Insulin(mU/mL)] * MU_TO_UU </val></def>
+
+<def><name> Binding </name><val> Binding_Coeff * [Insulin(mU/mL)] </val></def>
+<def><name> Unbinding </name><val> K2 * Bound </val></def>
+<def><name> Degradation </name><val> K3 * Bound </val></def>
+<def><name> Gain </name><val> Binding </val></def>
+<def><name> Loss </name><val> Unbinding + Degradation </val></def>
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+<def><name> NetBinding </name><val> Binding - Unbinding </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

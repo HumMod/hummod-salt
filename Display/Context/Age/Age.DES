@@ -1,0 +1,137 @@
+HumMod / Context-Age
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Context-Age </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Context | Age </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.5 </high>
+   <wide> 35.0 </wide>
+
+<structurename> Context-Age </structurename>
+
+<showtable>
+<row> 1.0 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 12 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Trait </textcell>
+<textcell> ------------------------------ </textcell>
+<textcell> Young </textcell>
+<textcell> Youngish </textcell>
+<textcell> Middleaged </textcell>
+<textcell> Old </textcell>
+<textcell> Very Old </textcell>
+
+</column>
+
+<column>
+<indent> 13 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Value </textcell>
+<textcell> ---------- </textcell>
+
+<valuecell>
+  <name> YOUNG </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> YOUNGISH </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> MIDDLEAGED </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> OLD </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> VERYOLD </name>
+  <format><integer/></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<showvalue>
+  <row> 8.4 </row><col> 1.0 </col>
+  <name> Age(Years) </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Initial Age (Years) </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.6 </row><col> 3.0 </col>
+  <name> Stochasm </name>
+  <format><integer/></format>
+  <label> Stochasm (%) </label>
+</showvalue>
+
+<repeatlist>
+  <name> PlusMinus </name>
+  <firstval> -50 </firstval>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.0 </row><col> 3.0 </col>
+  <name> PlusMinus </name>
+  <listname> PlusMinus </listname>
+  <label> +/- (%) </label>
+</slidebar>
+
+<showvalue>
+  <row> 12.4 </row><col> 3.0 </col>
+  <name> NominalAge </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal Age </label>
+</showvalue>
+
+<slidebar>
+  <row> 13.8 </row><col> 3.0 </col>
+  <name> Index </name>
+  <listname> Common.Age</listname>
+  <label> Trait </label>
+</slidebar>
+
+</groupbox>
+</panel>
+
+End

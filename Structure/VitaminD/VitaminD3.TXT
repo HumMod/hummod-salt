@@ -1,0 +1,53 @@
+HumMod | VitaminD3.TXT
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Other names : cholecalciferol, calciol
+
+C27-H44-O
+MW : 384.6
+
+1 IU = 0.025 uG
+40 IU = 1 uG
+
+Supplements run 200-500 IU/Day
+
+I couldn't find any concentration data, so I
+used 25-H values. Molecules are nearly identical
+and they share a transporter.
+
+[Conc] = 10 nG/mL or 26 nMol/L
+
+NG/ML_TO_NMOL/L = 2.6
+
+Volume distribution : 15000 (ECFV)
+
+D3 appears not to degrade and the body can store
+enough to get through a dark winter. This leaves
+hydroxylation.
+
+Hydroxylation is 11.7 nG/Min or 29.2 nMol/Min.
+
+Mass is 150,000 nG, so lets use uG to get
+better numbers.
+
+With exp(-K*t) when t = 1/K, we have exp(-1)
+which is 0.37. The exponential is 63% of the
+way to completion, with 37% remaining. This
+is the time constant (tau).
+
+The half-time is the time when an exponential
+is 50% of the way to completion.
+
+T 1/2 = 0.69 * Tau
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

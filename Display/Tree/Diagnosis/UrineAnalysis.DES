@@ -1,0 +1,15 @@
+HumMod / UrineAnalysis
+
+Created : 2012-10-31
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<leaf>
+  <name> UrineAnalysis </name>
+  <label> Urine Analysis </label>
+  <parent> DIAGNOSIS </parent>
+</leaf>
+
+End

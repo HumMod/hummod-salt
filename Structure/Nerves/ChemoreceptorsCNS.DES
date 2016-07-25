@@ -1,0 +1,104 @@
+HumMod / ChemoreceptorsCNS DES
+
+Created : 21-Oct-04
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> ChemoreceptorsCNS </name>
+
+<variables>
+
+<var><name> Effect </name></var>
+<var><name> Change </name></var>
+
+<parm><name> OnsetTau </name><val> 5.0 </val></parm>
+<parm><name> AdaptationTau </name><val> 15.0 </val></parm>
+
+</variables>
+
+<equations>
+
+<delay>
+  <name> Onset </name>
+  <outputname> OnsetDelay </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> OnsetRate </inputname>
+  <rateconstname> OnsetK </rateconstname>
+  <dervname> OnsetDerv </dervname>
+  <errorlim> 0.01 </errorlim>
+</delay>
+
+<delay>
+  <name> Adaptation </name>
+  <outputname> AdaptationDelay </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> AdaptationRate </inputname>
+  <rateconstname> AdaptationK </rateconstname>
+  <dervname> AdaptationDerv </dervname>
+  <errorlim> 0.01 </errorlim>
+</delay>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> Effect </name>
+  <point><x> -10.0 </x><y> 0.6 </y><slope> 0 </slope></point>
+  <point><x>   0.0 </x><y> 1.0 </y><slope> 0.10 </slope></point>
+  <point><x>  10.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> OnsetK </name>
+  <val> INVERT ( OnsetTau ) </val>
+</def>
+
+<def>
+  <name> AdaptationK </name>
+  <val> INVERT ( 1440 * AdaptationTau ) </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Change </name>
+  <val> OnsetDelay - AdaptationDelay </val>
+</def>
+
+<def>
+  <name> Effect </name>
+  <val> Effect [ Change ] </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> OnsetRate </name>
+  <val> Chemoreceptors.FiringRate </val>
+</def>
+
+<def>
+  <name> AdaptationRate </name>
+  <val> Chemoreceptors.FiringRate </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

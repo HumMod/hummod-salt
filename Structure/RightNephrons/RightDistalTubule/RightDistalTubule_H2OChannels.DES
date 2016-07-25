@@ -1,0 +1,71 @@
+HumMod / RightCollectingDuct_H2OChannels
+
+Created : 09-Apr-05
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RightDistalTubule_H2OChannels </name>
+
+<variables>
+
+<var><name> Active </name></var>
+
+<constant><name> Total </name><val> 2 </val></constant>
+
+<constant><name> InactivateK </name><val> 0.000015 </val></constant>
+<constant><name> ReactivateK </name><val> 0.0004 </val></constant>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+</variables>
+
+
+<equations>
+
+<diffeq>
+  <name> Inactive </name>
+  <integralname> Inactive </integralname>
+  <initialval> 1</initialval>
+  <dervname> Change </dervname>
+  <errorlim> 0.01 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+<block><name> CalcActive </name>
+
+<def>
+  <name> Active </name>
+  <val> Total - Inactive </val>
+</def>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<def>
+  <name> Gain </name>
+  <val> InactivateK * RightDistalTubule_H2O.Reab / 0.88889  </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> ReactivateK * Inactive </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+
+</block>
+</definitions>
+</structure>
+
+End
+

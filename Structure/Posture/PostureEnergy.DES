@@ -1,0 +1,71 @@
+HumMod / PostureEnergy
+
+Created : 2012-02-02
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> PostureEnergy </name>
+
+<variables>
+
+<var><name> Cals </name><val> 0 </val></var>
+
+<parm><name> Lying </name><val> 0 </val></parm>
+<parm><name> Sitting </name><val> 250 </val></parm>
+<parm><name> Standing </name><val> 500 </val></parm>
+<parm><name> Tilting </name><val> 0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<testcase>
+
+<case><test> Status.Posture EQ PostureControl.LYING </test>
+
+<def>
+  <name> Cals </name>
+  <val> Lying * Gravity.Gz </val>
+</def>
+
+</case>
+
+<case><test> Status.Posture EQ PostureControl.SITTING </test>
+
+<def>
+  <name> Cals </name>
+  <val> Sitting * Gravity.Gz </val>
+</def>
+
+</case>
+
+<case><test> Status.Posture EQ PostureControl.STANDING </test>
+
+<def>
+  <name> Cals </name>
+  <val> Standing * Gravity.Gz </val>
+</def>
+
+</case>
+
+<case><test> Status.Posture EQ PostureControl.TILTING </test>
+
+<def>
+  <name> Cals </name>
+  <val> Tilting * Gravity.Gz </val>
+</def>
+
+</case>
+
+</testcase>
+
+</block>
+
+</definitions>
+</structure>
+
+End

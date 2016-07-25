@@ -1,0 +1,34 @@
+HumMod / Technical
+
+Created : 14-May-05
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 27.0 </row>
+   <col> 1.0 </col>
+   <high> 4.0 </high>
+   <wide> 30.0 </wide>
+   <title> Technical </title>
+
+<structurename> Brain-CO2 </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> K </name>
+   <format><decimal> 4 </decimal></format>
+   <label> K </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> Alpha </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Alpha </label>
+</showvalue>
+
+</groupbox>
+
+End

@@ -1,0 +1,172 @@
+HumMod / Adiposity
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Context-Adiposity </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Context | Adiposity </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.4 </high>
+   <wide> 35.0 </wide>
+
+<structurename> Context-Adiposity </structurename>
+
+<showtable>
+<row> 1.0 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 12 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Traits </textcell>
+<textcell> -------------------------------- </textcell>
+<textcell> Underweight </textcell>
+<textcell> Normal </textcell>
+<textcell> Overweight </textcell>
+<textcell> Obese </textcell>
+<textcell> Morbidly Obese </textcell>
+
+</column>
+
+<column>
+<indent> 13 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Male </textcell>
+<textcell> -------- </textcell>
+
+<valuecell>
+  <name> MALE_UNDERWEIGHT </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_NORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_OVERWEIGHT </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_OBESE </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> MALE_MORBIDLYOBESE </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 20 </indent>
+<fieldwidth> 7.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Female </textcell>
+<textcell> ------------ </textcell>
+
+<valuecell>
+  <name> FEMALE_UNDERWEIGHT </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_NORMAL </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_OVERWEIGHT </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_OBESE </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FEMALE_MORBIDLYOBESE </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<showvalue>
+  <row> 8.4 </row><col> 1.0 </col>
+  <name> Mass(kG) </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Initial Mass (kG) </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.6 </row><col> 3.0 </col>
+  <name> Stochasm </name>
+  <format><integer/></format>
+  <label> Stochasm (%) </label>
+</showvalue>
+
+<repeatlist>
+  <name> PlusMinus </name>
+  <firstval> -50 </firstval>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.0 </row><col> 3.0 </col>
+  <name> PlusMinus </name>
+  <listname> PlusMinus </listname>
+  <label> +/- (%) </label>
+</slidebar>
+
+<showvalue>
+  <row> 12.4 </row><col> 3.0 </col>
+  <name> NominalMass </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal Mass </label>
+</showvalue>
+
+<slidebar>
+  <row> 13.8 </row><col> 3.0 </col>
+  <name> Index </name>
+  <listname> Common.Adiposity </listname>
+  <label> Trait </label>
+</slidebar>
+
+</groupbox>
+</panel>
+
+End

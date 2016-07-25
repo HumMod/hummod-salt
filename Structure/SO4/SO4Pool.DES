@@ -1,0 +1,75 @@
+HumMod / SO4Pool
+
+Created : 06-Apr-05
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> SO4Pool </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> [SO4--] </name></var>
+<var><name> [SO4--(mMol/L)] </name></var>
+<var><name> [SO4--(mEq/L)] </name></var>
+
+<var><name> Osmoles </name></var>
+
+<var><name> InitialMass </name></var>
+<var><name> [SO4--(mEq/L)-Initial] </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 0.042 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> CalcOsmoles </name>
+
+<def><name> Osmoles </name><val> Mass / 2.0 </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def><name> [SO4--] </name><val> Mass / ECFV.Vol </val></def>
+<def><name> [SO4--(mEq/L)] </name><val> 1000.0 * [SO4--] </val></def>
+<def><name> [SO4--(mMol/L)] </name><val> [SO4--(mEq/L)] / 2 </val></def>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<def><name> Gain </name><val> DietIntakeElectrolytes.SO4--_mMol/Min </val></def>
+<def><name> Loss </name><val> CollectingDuct_SO4.Outflow </val></def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,91 @@
+HumMod / Box
+
+Created : 2012-07-07
+Revised : 2012-07-22
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 16.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> SkeletalMuscle-Glycogen </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Synthesis </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Made (mG/Min) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Synthesis </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> GlucoseEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Glucose Effect </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.8 </row><col> 1.0 </col>
+  <name> InsulinEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Insulin Effect </label>
+</showvalue>
+
+<showvalue>
+  <row> 11.8 </row><col> 1.0 </col>
+  <name> Space </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Space </label>
+</showvalue>
+
+<repeatlist>
+  <name> BasicSynthesis </name>
+  <repeat><reps> 100 </reps><stepsize>  1.0 </stepsize></repeat>
+  <repeat><reps>  90 </reps><stepsize> 10.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> BasicSynthesis </name>
+  <listname> BasicSynthesis </listname>
+  <label> Basic </label>
+</slidebar>
+
+<showvalue>
+  <row> 14.6 </row><col> 1.0 </col>
+  <name> Synthesis(mMol/Min) </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Synthesis (mMol/Min) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Effects are typically 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

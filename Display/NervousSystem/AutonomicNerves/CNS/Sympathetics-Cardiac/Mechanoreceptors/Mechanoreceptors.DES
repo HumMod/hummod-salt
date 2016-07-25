@@ -1,0 +1,37 @@
+HumMod / Mechanoreceptors
+
+Created : 27-Apr-05
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> CNS-Cardiac-Mechanoreceptors </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> NerveCNS </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Cardiac Symp's | Mechanoreceptors </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 38.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\NervousSystem\AutonomicNerves\CNS\Sympathetics-Cardiac\Mechanoreceptors\ ?>
+
+<?include Summary.DES ?>
+
+</panel>
+
+End

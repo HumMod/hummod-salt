@@ -1,0 +1,89 @@
+HumMod / CardiacArrest
+
+Created : 2012-07-18
+Revised : 2012-07-19
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 17.0 </high>
+   <wide> 30.0 </wide>
+   <title> Cardiac Arrest </title>
+
+<structurename> CardiacArrest </structurename>
+
+<maplist>
+  <name> ECG </name>
+  <map><val>  0 </val><img> Normal </img></map>
+  <map><val>  1 </val><img> Paced </img></map>
+  <map><val>  2 </val><img> S-T Shift </img></map>
+  <map><val>  3 </val><img> V-Fib </img></map>
+  <map><val>  4 </val><img> Flat </img></map>
+</maplist>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Heart-ECG.Now </name>
+  <format><list> ECG </list></format>
+  <label> ECG </label>
+</showvalue>
+
+<label>
+  <row> 2.8 </row><col> 1.0 </col>
+  <text> Arrest On Severe Acidosis </text>
+</label>
+
+<maplist>
+  <name> ArrestOnAcidosis </name>
+  <map><val>  0 </val><img> Never </img></map>
+  <map><val>  1 </val><img> Chance </img></map>
+  <map><val>  2 </val><img> Always </img></map>
+</maplist>
+
+<radiobuttons>
+  <row> 4.0 </row><col> 2.0 </col>
+  <name> ArrestOnAcidosis </name>
+  <listname> ArrestOnAcidosis </listname>
+  <layout> VERT </layout>
+</radiobuttons>
+
+<showcurve>
+  <row> 8.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> BloodPhValues.ArtysPh </name>
+    <label> Blood pH </label>
+    <scale>
+      <min> 6.5 </min><max> 7.5 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Risk(%) </label>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </yaxis>
+
+  <curvename> Risk </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 15.2 </row><col> 1.0 </col>
+   <name> BloodPhValues.ArtysPh </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Blood pH </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,27 @@
+HumMod / SkeletalMuscle-Glycogen.REF
+
+Created : 31-Jul-08
+Revised : 2012-07-22
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+The factors that control glycogen synthesis are insulin, blood glucose and
+the size of the glycogen pool. While fasting, formation rate is 20 mG/Min
+for skeletal muscle. Synthesis rate can increase to 2000 mG/Min when all of
+the above factors favor synthesis.
+
+Note that units for glycogen mass are G while rates are mG/Min.
+
+Molar glycogen is quantitated in glycosyl units.
+
+Glycosyl : C6-H10-O5  M.W. = 162
+Water :    H2-O       M.W. = 18
+Glucose :  C6-H12-O6  M.W. = 180
+
+Glycosyl unit conversion :
+  162 mG  =      1 mMol
+    1 mG  = 0.0062 mMol
+
+ 
+End

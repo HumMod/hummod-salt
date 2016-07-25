@@ -1,0 +1,169 @@
+HumMod / Density
+
+Created : 2012-01-29
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Size-Density </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Size | BodyDensity </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> BodyDensity </structurename>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> Total </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Density </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Total </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0.9 </min><max> 1.1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> Organs </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Organs </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 3.0 </col>
+   <name> Bone-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Bone </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 3.0 </col>
+   <name> Brain-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Brain </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.2 </row><col> 3.0 </col>
+   <name> Fat-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Fat </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 3.0 </col>
+   <name> GITract-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> GI Tract </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.2 </row><col> 3.0 </col>
+   <name> Kidney-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Kidney </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.2 </row><col> 3.0 </col>
+   <name> LeftHeart-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Left Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.2 </row><col> 3.0 </col>
+   <name> Liver-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Liver </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.2 </row><col> 3.0 </col>
+   <name> OtherTissue-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Other Tissue </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.2 </row><col> 3.0 </col>
+   <name> RespiratoryMuscle-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Respiratory Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.2 </row><col> 3.0 </col>
+   <name> RightHeart-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Right Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.2 </row><col> 3.0 </col>
+   <name> SkeletalMuscle-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Skeletal Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 24.2 </row><col> 3.0 </col>
+   <name> Skin-Size.Density </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Skin </label>
+</showvalue>
+
+<showvalue>
+   <row> 25.6 </row><col> 1.0 </col>
+   <name> Fluids </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Fluids </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 27.0 </col>
+
+  <line> NORMAL VALUES AND UNITS </line>
+  <line>  </line>
+  <line> Density = 1.05 </line>
+</infobutton>
+
+</panel>
+
+End

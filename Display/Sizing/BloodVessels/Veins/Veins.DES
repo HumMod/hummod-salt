@@ -1,0 +1,16 @@
+HumMod / Veins
+
+Created : 2013-02-19
+Revised : 2013-02-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Sizing\BloodVessels\Veins\ ?>
+
+<?include Total\Total.DES ?>
+<?include PeripheralVeins\PeripheralVeins.DES ?>
+<?include SplanchnicVeins\SplanchnicVeins.DES ?>
+<?include RightAtrium\RightAtrium.DES ?>
+
+End

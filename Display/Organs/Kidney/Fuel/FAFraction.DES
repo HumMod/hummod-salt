@@ -1,0 +1,93 @@
+HumMod / FAUsedFraction
+
+Created : 2012-11-05
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 15.2 </row>
+   <col> 32.0 </col>
+   <high> 18.8 </high>
+   <wide> 30.0 </wide>
+   <title> FA Fraction </title>
+
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightKidney-Fuel.FAUsedFraction </name>
+  <format><decimal> 2 </decimal></format>
+   <label> Right Use </label>
+</showvalue>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> LeftKidney-Fuel.FAUsedFraction </name>
+  <format><decimal> 2 </decimal></format>
+   <label> Left Use </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightKidney-Fuel.FADeliveredFraction </name>
+    <label> Delivery </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Use </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> RightKidney-Fuel.FAUsedFraction </curvename>
+</showcurve>
+
+<showcurve>
+  <row> 11.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftKidney-Fuel.FADeliveredFraction </name>
+    <label> Delivery </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Use </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> LeftKidney-Fuel.FAUsedFraction </curvename>
+</showcurve>
+
+
+
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> The insulin effect determines the fraction of glucose </line>
+  <line> delivered to the organ that can make it into the </line>
+  <line> cellular cytosol. </line>
+  <line>  </line>
+  <line> A typical value is 0.5, with a maximum value of 1.0 </line>
+  <line> and a minimum value of 0.15. </line>
+</infobutton>
+
+</groupbox>
+
+End

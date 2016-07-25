@@ -1,0 +1,193 @@
+HumMod / GITract-Flow
+
+Created : 23-May-05
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> GITract-Flow </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<parm><name> Conductance(/G) </name><val> 0.00904 </val></parm>
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+
+<var><name> A2Effect </name></var>
+<var><name> SympsEffect </name></var>
+<var><name> ADHEffect </name></var>
+<var><name> PO2Effect </name></var>
+<var><name> AerobicFraction </name></var>
+
+<var><name> Conductance_X_Normal </name></var>
+
+<var><name> O2Use </name></var>
+<var><name> [O2] </name></var>
+
+<var><name> BloodFlow </name></var>
+<var><name> PlasmaFlow </name></var>
+
+</variables>
+
+<equations>
+
+<impliciteq>
+  <name> PO2 </name>
+  <startname> PO2 </startname>
+  <initialval> 54.0 </initialval>
+  <endname> PO2End </endname>
+  <errorlim> 1.54 </errorlim>
+  <searchmin> 0.0 </searchmin>
+  <searchmaxname> SearchMax </searchmaxname>
+</impliciteq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> A2OnConductance </name>
+  <point><x> 0.0 </x><y> 1.05 </y><slope> 0 </slope></point>
+  <point><x> 1.3 </x><y> 1.00 </y><slope> -0.08 </slope></point>
+  <point><x> 3.5 </x><y> 0.50 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> SympsOnConductance </name>
+  <point><x> 0.0 </x><y> 1.3 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.3 </slope></point>
+  <point><x> 5.0 </x><y> 0.1 </y><slope> 0 </slope></point>0.1
+</curve>
+
+<curve>
+  <name> PO2OnConductance </name>
+  <point><x> 10 </x><y> 2.0 </y><slope> 0 </slope></point>
+  <point><x> 30 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 55 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 70 </x><y> 0.2 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ADHOnConductance </name>
+  <point><x> 0.8 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 3.0 </x><y> 0.1 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> PO2OnAerobicFraction </name>
+  <point><x>  2.0 </x><y> 0.0 </y><slope> 0 </slope></point>
+  <point><x> 10.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * GITract-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+<def>
+  <name> A2Effect </name>
+  <val> A2OnConductance [ A2Pool.Log10Conc ] </val>
+</def>
+
+<def>
+  <name> SympsEffect </name>
+  <val> SympsOnConductance [ GITract-AlphaReceptors.Activity ] </val>
+</def>
+
+<def>
+  <name> ADHEffect </name>
+  <val> ADHOnConductance [ ADHPool.Log10Conc ] </val>
+</def>
+
+<def>
+  <name> SearchMax </name>
+  <val> PO2Artys.Pressure </val>
+</def>
+
+<implicitmath><name> PO2 </name>
+
+<def>
+  <name> PO2Effect </name>
+  <val> PO2OnConductance [ PO2 ] </val>
+</def>
+
+<def>
+  <name> Conductance_X_Normal </name>
+  <val>
+      A2Effect
+    * SympsEffect
+    * PO2Effect
+    * ADHEffect
+    * Viscosity.ConductanceEffect
+    * Anesthesia.VascularConductance
+    * GITract-Vasculature.Effect
+  </val>
+</def>
+
+
+<conditional><name> Conductance </name>
+<test> Clamp </test>
+<true> Level </true>
+<false> 
+BasicConductance * Conductance_X_Normal 
+</false>
+</conditional>
+
+<def>
+  <name> BloodFlow </name>
+  <val> ( GITract-Pressure.PressureGradient * Conductance ) MAX 0.0 </val>
+</def>
+
+<def>
+  <name> AerobicFraction </name>
+  <val> PO2OnAerobicFraction [ PO2 ] </val>
+</def>
+
+<def>
+  <name> O2Use </name>
+  <val> GITract-Metabolism.O2Need * AerobicFraction </val>
+</def>
+
+<conditional>
+  <name> [O2] </name>
+  <test> BloodFlow GT 0.0 </test>
+  <true> O2Artys.[O2] - ( O2Use / BloodFlow ) </true>
+  <false> 0.0 </false>
+</conditional>
+
+<copy><from> [O2] </from><to> HgbTissue.[O2] </to></copy>
+  <call> HgbTissue.O2ToPO2 </call>
+<copy><from> HgbTissue.pO2 </from><to> PO2End </to></copy>
+
+
+</implicitmath>
+
+<def><name> PlasmaFlow </name><val> BloodFlow * BloodVol.PVCrit </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,66 @@
+HumMod / GlomerulusProtein
+
+Created : 17-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> RightGlomerulusProtein </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<var><name> [Protein] </name></var>
+
+<parm><name> Perm </name><val> 0.0 </val></parm>
+<var><name> ModPerm </name></var>
+
+<var><name> AlbFiltered </name><val> 0 </val></var>
+<var><name> IgGFiltered </name><val> 0 </val></var>
+<var><name> AGPFiltered </name><val> 0 </val></var>
+<var><name> HetaLWFiltered </name><val> 0 </val></var>
+
+<var><name> AlbPerm </name><val> 0 </val></var>
+<var><name> AGPPerm </name><val> 0.005 </val></var>
+<var><name> IgGPerm </name><val> 0 </val></var>
+<var><name> HetaLWPerm </name><val> 0.015 </val></var>
+
+<var><name> AlbRate </name></var>
+<var><name> AGPRate </name></var>
+<var><name> IgGRate </name></var>
+<var><name> HetaLWRate </name></var>
+
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> [Protein] </name><val> PlasmaProtein.[Total] </val></def>
+<def><name> ModPerm </name><val> GlomerulusProtein.RightPerm </val></def>
+<def><name> AlbRate </name><val> AlbuminPool.[Alb] * ( ModPerm + AlbPerm ) * RightGlomerulusFiltrate.GFR / 1000 </val></def>
+<def><name> IgGRate </name><val> IgGPool.[IgG] * ( ModPerm + IgGPerm ) * RightGlomerulusFiltrate.GFR / 1000 </val></def>
+<def><name> AGPRate </name><val> AGPPool.[AGP] * ( ModPerm + AGPPerm ) * RightGlomerulusFiltrate.GFR / 1000 </val></def>
+<def><name> HetaLWRate </name><val> HetaPool.[HetaLW] * ( ModPerm + HetaLWPerm ) * RightGlomerulusFiltrate.GFR / 1000 </val></def>
+<def><name> Rate </name><val> AlbRate + IgGRate + AGPRate + HetaLWRate </val></def>
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> [Protein] </name><val> 0.0 </val></def>
+<def><name> Rate </name><val> 0.0 </val></def>
+<def><name> AlbRate </name><val> 0.0 </val></def>
+<def><name> IgGRate </name><val> 0 </val></def>
+<def><name> AGPRate </name><val> 0 </val></def>
+<def><name> HetaLWRate </name><val> 0 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

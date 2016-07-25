@@ -1,0 +1,67 @@
+HumMod / LeftColumn
+
+Created : 2011-08-07
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<structurename> NephronCalciumProximal </structurename>
+
+<label>
+  <row> 3.0 </row><col> 1.0 </col>
+  <text> Proximal Reabsorption </text>
+</label>
+
+<showvalue>
+   <row> 4.4 </row><col> 1.0 </col>
+   <name> Inflow </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Inflow </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.4 </row><col> 1.0 </col>
+   <name> Reab </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Reabsorption </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.4 </row><col> 1.0 </col>
+   <name> Outflow </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Outflow </label>
+</showvalue>
+
+<showgraph>
+  <row> 7.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Reab </name>
+      <label> Reab </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 10 </max></scale>
+  </yaxis>
+</showgraph>
+
+<repeatlist>
+  <name> FractionalReab </name>
+  <repeat><reps> 100 </reps><stepsize>  0.01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15.2 </row><col> 1.0 </col>
+  <name> FractionalReab </name>
+  <listname> FractionalReab </listname>
+  <label> Fraction </label>
+</slidebar>
+
+End

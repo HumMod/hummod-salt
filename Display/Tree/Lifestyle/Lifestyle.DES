@@ -1,0 +1,25 @@
+HumMod / Lifestyle DES
+
+Created : 2011-07-26
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> LIFESTYLE </name>
+  <label> Lifestyle </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Lifestyle\ ?>
+
+<?include AirSupply.DES ?>
+<?include BreathHolding.DES ?>
+<?include DailyPlanner.DES ?>
+<?include Diet.DES ?>
+<?include Environment.DES ?>
+<?include Exercise.DES ?>
+<?include Posture.DES ?>
+
+End

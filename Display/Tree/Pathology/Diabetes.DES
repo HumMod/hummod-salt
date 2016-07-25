@@ -1,0 +1,23 @@
+HumMod / Diabetes DES
+
+
+
+<branch>
+  <name> Diabetes </name>
+  <label> Diabetes </label>
+  <parent> PATHOLOGY </parent>
+</branch>
+
+<leaf>
+  <name> Type1</name>
+  <label> Type 1 </label>
+  <parent> Diabetes </parent>
+</leaf>
+
+<leaf>
+  <name> Type2</name>
+  <label> Type 2 </label>
+  <parent> Diabetes </parent>
+</leaf>
+
+End

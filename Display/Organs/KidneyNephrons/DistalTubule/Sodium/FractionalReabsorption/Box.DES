@@ -1,0 +1,266 @@
+HumMod / Na+FractionalReabsorption
+
+Created : 17-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 37.0 </high>
+   <wide> 62.0 </wide>
+
+<structurename> LeftDistalTubule_Na </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> LeftFractReab </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Fraction </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1 </col>
+  <name> LoadEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Load Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Inflow </name>
+    <label> Na+ Inflow </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> LoadOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 11.2 </row><col> 1 </col>
+  <name> Inflow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Na+ Inflow </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 1 </col>
+  <name> AldoEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [Aldo] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 13.2 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+    <label> [Aldo-Nucleus] </label>
+    <scale><min> 0 </min><max> 20 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> AldoOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 21.4 </row><col> 1 </col>
+  <name> LeftNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Left [Aldo-Nucleus] </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.4 </row><col> 1 </col>
+  <name> LeftKidney-Function.Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Kidney Function </label>
+</showvalue>
+
+<slidebar>
+  <row> 23.4 </row><col> 1.0 </col>
+  <name> BasicFract </name>
+  <listname> Common.Fraction</listname>
+  <label> Normal </label>
+</slidebar>
+
+<showvalue>
+  <row> 25.4  </row><col> 1.0 </col>
+  <name> ThiazideEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Thiazide Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 26.4  </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> ThiazidePool.[Thiazide] </name>
+    <label> [Thiazide] </label>
+    <scale><min> 0 </min><max> 0.1 </max><inc> 0.1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> ThiazideOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 34.4 </row><col> 1 </col>
+  <name> ThiazidePool.[Thiazide] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Thiazide] </label>
+</showvalue>
+
+=======================================================================
+=============================================================================
+
+<structurename> RightDistalTubule_Na </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 32 </col>
+  <name> RightFractReab </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right Fraction </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 32 </col>
+  <name> LoadEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right Load Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 32 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Inflow </name>
+    <label> Na+ Inflow </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> LoadOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 11.2 </row><col> 32 </col>
+  <name> Inflow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Na+ Inflow </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 32 </col>
+  <name> AldoEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [Aldo] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 13.2 </row><col> 32 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+    <label> [Aldo-Nucleus] </label>
+    <scale><min> 0 </min><max> 20 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> AldoOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 21.4 </row><col> 32 </col>
+  <name> RightNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Right [Aldo-Nucleus] </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.4 </row><col> 32 </col>
+  <name> RightKidney-Function.Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right  Kidney Function </label>
+</showvalue>
+
+<slidebar>
+  <row> 23.4 </row><col> 32.0 </col>
+  <name> BasicFract </name>
+  <listname> Common.Fraction</listname>
+  <label> Normal </label>
+</slidebar>
+
+<showvalue>
+  <row> 25.4  </row><col> 32.0 </col>
+  <name> ThiazideEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Thiazide Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 26.4  </row><col> 32 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> ThiazidePool.[Thiazide] </name>
+    <label> [Thiazide] </label>
+    <scale><min> 0 </min><max> 0.1 </max><inc> 0.1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> ThiazideOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 34.4 </row><col> 32 </col>
+  <name> ThiazidePool.[Thiazide] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Thiazide] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical fraction is 0.580. </line>
+  <line>  </line>
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>

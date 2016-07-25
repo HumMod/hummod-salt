@@ -1,0 +1,83 @@
+HumMod / BodyN2
+
+Created : 2012-07-12
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> BodyN2 </name>
+
+<variables>
+
+<parm><name> Solubility </name><val> 0.000016 </val></parm>
+
+<var><name> pN2 </name></var>
+<var><name> [N2] </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 640 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 10 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+  <def><name> [N2] </name><val> Mass / BodyVolume.Total </val></def>
+  <def><name> pN2 </name><val> [N2] / Solubility </val></def>
+</block>
+
+<!--  
+
+<block><name> Dervs </name>
+  <copy>
+    <from> Lung_N2.Loss </from>
+    <to> BTPS_To_STPD.V1 </to>
+  </copy>
+  <call> BTPS_To_STPD.Calc </call>
+  <copy>
+    <from> BTPS_To_STPD.V2 </from>
+    <to> Change </to>
+  </copy>
+-->
+
+<block><name> Dervs </name>
+  <copy>
+    <from> Lung_N2.Loss </from>
+    <to> BTPS_To_STPD.V1 </to>
+  </copy>
+  <call> BTPS_To_STPD.Calc </call>
+
+ <def><name> Change </name><val> 0 </val></def>
+
+
+  <def>
+    <name> DxMax </name>
+    <val>
+        0.5
+* BodyVolume.Total
+      * Solubility
+      / Lung_N2.DiffusingCapacity / 10 
+
+    </val>
+  </def>
+0.5       
+</block>
+
+</definitions>
+</structure>
+
+End

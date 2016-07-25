@@ -1,0 +1,26 @@
+HumMod / Trauma DES
+
+Created : 2011-07-26
+Revised : 2012-07-18
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> TRAUMA </name>
+  <label> Trauma </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Trauma\ ?>
+
+<?include Acidosis.DES ?>
+<?include A-VFistula.DES ?>
+<?include BluntInjury.DES ?>
+<?include Hemorrhage.DES ?>
+<?include MyocardialInfarction.DES ?>
+<?include Pericardium.DES ?>
+<?include Pneumothorax.DES ?>
+<?include VentricularFibrillation.DES ?>
+
+End

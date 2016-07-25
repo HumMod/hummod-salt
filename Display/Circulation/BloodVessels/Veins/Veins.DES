@@ -1,0 +1,16 @@
+HumMod / Veins
+
+Created : 2013-01-28
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Circulation\BloodVessels\Veins\ ?>
+
+<?include SystemicVeins\SystemicVeins.DES ?>
+<?include SplanchnicVeins\SplanchnicVeins.DES ?>
+<?include RightAtrium\RightAtrium.DES ?>
+<?include RightVentricle\RightVentricle.DES ?>
+
+End

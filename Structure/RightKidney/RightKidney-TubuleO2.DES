@@ -1,0 +1,165 @@
+HumMod / RightKidney-TubuleO2
+
+   Created : 2014-03-02
+   Revised : 2014-03-02
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structure><name> RightKidney-TubuleO2 </name>
+
+<variables>
+
+<var><name> Tubule[O2] </name></var>
+<var><name> Tubule_pO2 </name></var>
+
+<var><name> Vein[O2] </name></var>
+<var><name> Vein_pO2 </name></var>
+
+<var><name> AerobicFraction </name></var>
+
+<var><name> O2Need </name></var>
+
+<var><name> O2Delivered </name></var>
+<var><name> O2Returned </name></var>
+
+<var><name> Shunt </name><val> 12.3 </val></var>
+
+</variables>
+
+<equations>
+<!--
+<impliciteq>
+  <name> Shunt </name>
+  <startname> Shunt </startname>
+  <initialval> 12.3 </initialval>
+  <endname> ShuntEnd </endname>
+  <errorlim> 1.5 </errorlim>
+  <searchmin> 0.0 </searchmin>
+</impliciteq>
+-->
+<impliciteq>
+  <name> O2Use </name>
+  <startname> O2Use </startname>
+  <initialval> 11.4 </initialval>
+  <endname> O2UseEnd </endname>
+  <errorlim> 0.11 </errorlim>
+  <searchmin> 0.0 </searchmin>
+</impliciteq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> AerobicFraction </name>
+  <point><x>  2.0 </x><y> 0.0 </y><slope> 0 </slope></point>
+  <point><x> 20.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> O2Need </name>
+  <val> RightKidney-Metabolism.O2Need </val>
+</def>
+<!--
+<implicitmath><name> Shunt </name>
+-->
+<call> TubuleO2Use </call>
+
+<conditional>
+  <name> Vein[O2] </name>
+  <test> RightKidney-Flow.BloodFlow GT 0 </test>
+  <true>
+       Tubule[O2]
+     - ( Shunt / RightKidney-Flow.BloodFlow )
+  </true>
+  <false> Tubule[O2] </false>
+</conditional>
+
+
+<!--
+<def>
+  <name> ShuntEnd </name>
+  <val> RightKidney-Flow.BloodFlow * ( O2Artys.[O2] - Vein[O2] ) </val>
+</def>
+
+</implicitmath>
+-->
+
+
+<copy>
+  <from> Vein[O2] </from>
+  <to> HgbTissue.[O2] </to>
+</copy>
+
+<call> HgbTissue.O2ToPO2 </call>
+
+<copy>
+  <from> HgbTissue.pO2 </from>
+  <to> Vein_pO2 </to>
+</copy>
+
+<def>
+  <name> O2Delivered </name>
+  <val> O2Artys.[O2] * RightKidney-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> O2Returned </name>
+  <val> Vein[O2] * RightKidney-Flow.BloodFlow </val>
+</def>
+
+</block>
+
+<block><name> TubuleO2Use </name>
+
+<implicitmath><name> O2Use </name>
+
+<conditional>
+  <name> Tubule[O2] </name>
+  <test> RightKidney-Flow.BloodFlow GT 0 </test>
+  <true> O2Artys.[O2]
+     - ( Shunt / RightKidney-Flow.BloodFlow )
+    - ( O2Use / RightKidney-Flow.BloodFlow )
+  </true>
+  <false> O2Artys.[O2] </false>
+</conditional>
+
+<copy>
+  <from> Tubule[O2] </from>
+  <to> HgbTissue.[O2] </to>
+</copy>
+
+<call> HgbTissue.O2ToPO2 </call>
+
+<copy>
+  <from> HgbTissue.pO2 </from>
+  <to> Tubule_pO2 </to>
+</copy>
+
+<def>
+  <name> AerobicFraction </name>
+  <val> AerobicFraction [ Tubule_pO2 ] </val>
+</def>
+
+<def>
+  <name> O2UseEnd </name>
+  <val> O2Need * AerobicFraction </val>
+</def>
+
+</implicitmath>
+
+</block>
+
+</definitions>
+
+</structure>
+
+End

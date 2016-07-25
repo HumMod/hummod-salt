@@ -1,0 +1,69 @@
+HumMod / TotalH2O
+
+Created : 2013-03-01
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 9.4 </high>
+   <wide> 30.0 </wide>
+   <title> Total H2O </title>
+
+<structurename> Sizing-BodyH2O </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> Total </name>
+  <format><integer/></format>
+  <label> Total </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.8 </row><col> 1 </col>
+  <name> Tissue </name>
+  <format><integer/></format>
+  <label> Tissue </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.8 </row><col> 1 </col>
+  <name> Plasma </name>
+  <format><integer/></format>
+  <label> Plasma </label>
+</showvalue>
+
+<showvalue>
+  <row> 4.8 </row><col> 1 </col>
+  <name> RedCells </name>
+  <format><integer/></format>
+  <label> RedCells </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.8 </row><col> 1 </col>
+  <name> ExternalTotal </name>
+  <format><integer/></format>
+  <label> External </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.8 </row><col> 3 </col>
+  <name> ExternalCore </name>
+  <format><integer/></format>
+  <label> Core </label>
+</showvalue>
+
+<showvalue>
+  <row> 7.8 </row><col> 3 </col>
+  <name> ExternalOther </name>
+  <format><integer/></format>
+  <label> Gut </label>
+</showvalue>
+
+</groupbox>
+
+End

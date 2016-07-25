@@ -1,0 +1,51 @@
+HumMod / Spironolactone
+
+Created : 2013-03-15
+Revised : 2013-03-15
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Structure\Drugs\Spironolactone\ ?>
+
+<?include SpironolactonePool.DES ?>
+<?include CanrenonePool.DES ?>
+
+<?include CanrenoneKidney.DES ?>
+<?include SpironolactoneGILumen.DES ?>
+<?include SpironolactoneSingleDose.DES ?>
+<?include SpironolactoneDailyDose.DES ?>
+
+<structure><name> Spironolactone </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> SpironolactoneSingleDose.Parms </call>
+  <call> SpironolactoneDailyDose.Parms </call>
+  <call> SpironolactoneGILumen.Parms </call>
+  <call> SpironolactonePool.Parms </call>
+  <call> CanrenonePool.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> SpironolactoneGILumen.CalcConc </call>
+  <call> SpironolactonePool.CalcConc </call>
+  <call> CanrenonePool.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> SpironolactoneGILumen.Dervs </call>
+  <call> CanrenoneKidney.Dervs </call>
+  <call> SpironolactonePool.Dervs </call>
+  <call> CanrenonePool.Dervs </call>
+</block>
+
+<block><name> Wrapup </name>
+  <call> SpironolactoneDailyDose.Wrapup </call>
+</block>
+
+</definitions>
+</structure>
+
+End

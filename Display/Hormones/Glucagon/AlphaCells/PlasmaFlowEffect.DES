@@ -1,0 +1,64 @@
+HumMod / PlasmaFlowEffect
+
+Created : 2012-07-04
+Revised : 2012-07-04
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 27.0 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 30.0 </wide>
+   <title> Plasma Flow Effect </title>
+
+<structurename> GlucagonSecretion </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> PlasmaFlowEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Pancreas-Flow.AlphaCellPlasmaFlow </name>
+    <label> Plasma Flow </label>
+    <scale>
+      <min> 0 </min><max> 10 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 0 </min><max> 1.5 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> PlasmaFlowEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> Pancreas-Flow.AlphaCellPlasmaFlow </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Alpha Cell Plasma Flow </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> We'll have little or no secretion at </line>
+  <line> low plasma flows. </line>
+</infobutton>
+
+</groupbox>
+
+End

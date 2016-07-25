@@ -1,0 +1,75 @@
+HumMod / HeatShivering
+
+Created : 27-Mar-05
+Revised : 2013-02-09
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> HeatShivering </name>
+
+<variables>
+
+<var><name> Cals </name></var>
+<var><name> NerveEffect </name></var>
+
+<var><name> SkeletalCals </name></var>
+<var><name> RespiratoryCals </name></var>
+
+<var><name> SkeletalFraction </name><val> 0.8 </val></var>
+<var><name> RespirratoryFraction </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> NerveEffect </name>
+  <point><x> 0.0 </x><y>  0.0 </y><slope> 0 </slope></point>
+  <point><x> 4.0 </x><y> 5000.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Cals </name>
+
+<def>
+  <name> NerveEffect </name>
+  <val> NerveEffect [ HypothalamusShivering.NerveActivity ] </val>
+</def>
+
+<def>
+  <name> SkeletalCals </name>
+  <val>
+       NerveEffect
+     * SkeletalFraction
+     * SkeletalMuscle-Structure.Effect
+  </val>
+</def>
+
+<def>
+  <name> RespirratoryFraction </name>
+  <val> 1.0 - SkeletalFraction </val>
+</def>
+
+<def>
+  <name> RespiratoryCals </name>
+  <val>
+       NerveEffect
+     * RespirratoryFraction
+     * RespiratoryMuscle-Structure.Effect
+  </val>
+</def>
+
+<def>
+  <name> Cals </name>
+  <val> SkeletalCals + RespiratoryCals </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

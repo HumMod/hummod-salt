@@ -1,0 +1,15 @@
+HumMod / SplanchnicCirculation
+
+Created : 2012-02-10
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Circulation\SplanchnicCirculation\ ?>
+
+<?include HepaticArtery\HepaticArtery.DES ?>
+<?include HepaticVein\HepaticVein.DES ?>
+<?include PortalVein\PortalVein.DES ?>
+
+End

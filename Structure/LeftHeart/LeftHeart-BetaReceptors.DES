@@ -1,0 +1,62 @@
+HumMod / LeftHeart-BetaReceptors
+
+Created : 31-Mar-05
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftHeart-BetaReceptors </name>
+
+<variables>
+
+<var><name> Activity </name></var>
+<var><name> TotalAgonism </name></var>
+<var><name> NeuralAgonism </name></var>
+<var><name> HumoralAgonism </name></var>
+
+
+<parm><name> Switch </name><val> FALSE </val></parm>
+<parm><name> Setting </name><val> 0.0 </val></parm>
+
+
+<constant><name> NEURALK </name><val> 0.333 </val></constant>
+<constant><name> HUMORALK </name><val> 0.5 </val></constant>
+
+</variables>
+
+
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> NeuralAgonism </name>
+  <val> Ganglia-Cardiac.NA(Hz) </val>
+</def>
+
+<def>
+  <name> HumoralAgonism </name>
+  <val> Beta1Pool.Effect </val>
+</def>
+
+<def>
+  <name> TotalAgonism </name>
+  <val>
+      ( NEURALK * NeuralAgonism )
+    + ( HUMORALK * HumoralAgonism )
+  </val>
+</def>
+
+<conditional>
+  <name> Activity </name>
+  <test> Switch </test>
+  <true> Setting </true>
+  <false> TotalAgonism </false>
+</conditional>
+
+</block>
+</definitions>
+</structure>
+
+End

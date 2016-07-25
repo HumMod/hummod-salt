@@ -1,0 +1,65 @@
+HumMod / PO2
+
+Created : 2012-02-02
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structurename> CoronarySinus </structurename>
+
+<groupbox>
+   <row> 14.8 </row>
+   <col> 32.0 </col>
+   <high> 12.4 </high>
+   <wide> 30.0 </wide>
+   <title> pO2 </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> pO2 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> pO2 </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> pO2 </name>
+      <label> pO2 </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 20 </max><inc> 10 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> RightHeart-Flow.PO2 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> LeftHeart-Flow.PO2  </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Heart </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,74 @@
+HumMod / Pump
+
+Created : 2011-07-27
+Last Modified : 2011-07-27
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.2 </high>
+   <wide> 30.0 </wide>
+   <title> Epinephrine Pump </title>
+
+<structurename> EpiPump </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Switch </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<repeatlist>
+  <name> EpiSetting </name>
+  <repeat><reps> 10 </reps><stepsize>   100.0 </stepsize></repeat>
+  <repeat><reps>  9 </reps><stepsize>  1000.0 </stepsize></repeat>
+  <repeat><reps>  9 </reps><stepsize> 10000.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.0 </row><col> 1.0 </col>
+  <name> Setting </name>
+  <listname> EpiSetting </listname>
+  <label> Setting </label>
+</slidebar>
+
+<showvalue>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> Rate </name>
+  <format><decimal> 0 </decimal></format>
+  <label> Rate </label>
+</showvalue>
+
+<showgraph>
+  <row> 5.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Rate </name>
+      <label> Rate </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 10 </max></scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Pump units are nG/Min. </line>
+  <line>  </line>
+  <line> Typical epinephrine secretion rate is 375 nG/Min </line>
+</infobutton>
+
+</groupbox>
+
+End

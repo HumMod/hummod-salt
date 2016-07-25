@@ -1,0 +1,22 @@
+HumMod / Size-InterstitialProtein DES
+
+Created : 2013-03-02
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Size-InterstitialProtein </name>
+
+
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> InterstitialProtein.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,16 @@
+HumMod | VitaminD
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<?path Display\Hormones\VitaminD\ ?>
+
+<?include VitaminD3\VitaminD3.DES ?>
+<?include VitaminD3Stored\VitaminD3Stored.DES ?>
+<?include VitaminD(25-Hydroxy)\VitaminD(25-Hydroxy).DES ?>
+<?include VitaminD(1,25-Dihydroxy)\VitaminD(1,25-Dihydroxy).DES ?>
+
+End

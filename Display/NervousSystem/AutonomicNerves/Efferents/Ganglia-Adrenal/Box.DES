@@ -1,0 +1,81 @@
+HumMod / Box
+
+Created : 2013-03-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 14.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Ganglia-Adrenal </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> NA(Hz) </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Post-ganglia NA (Hz) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> NA(Hz) </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 29 </reps><stepsize> 0.1 </stepsize></repeat>
+  <repeat><reps>  7 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> Sympathetics-Adrenal.NA(Hz) </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Pre-ganglia NA (Hz) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Pre- and post-ganglia nerve activities </line>
+  <line> are typically 1.5 Hz. </line>
+</infobutton>
+
+</groupbox>
+
+End

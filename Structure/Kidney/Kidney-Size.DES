@@ -1,0 +1,67 @@
+HumMod / Kidney-Size
+
+Created : 10-Apr-05
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Kidney-Size </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> Mass </name></var>
+<var><name> LiquidMass </name></var>
+<var><name> LiquidVol </name></var>
+
+<var><name> SolidMass </name></var>
+<var><name> Density </name></var>
+<var><name> SolidVol </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Integrate </name>
+
+<def>
+  <name> LiquidVol </name>
+  <val> LeftKidney-Size.LiquidVol + RightKidney-Size.LiquidVol </val>
+</def>
+
+<def>
+  <name> LiquidMass </name>
+  <val> LeftKidney-Size.LiquidMass + RightKidney-Size.LiquidMass </val>
+</def>
+
+<def>
+  <name> SolidMass </name>
+  <val> LeftKidney-Size.SolidMass + RightKidney-Size.SolidMass </val>
+</def>
+
+<def>
+  <name> SolidVol </name>
+  <val> LeftKidney-Size.SolidVol + RightKidney-Size.SolidVol </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> LeftKidney-Size.Mass + RightKidney-Size.Mass </val>
+</def>
+
+<def>
+  <name> Vol </name>
+  <val> LeftKidney-Size.Vol + RightKidney-Size.Vol </val>
+</def>
+
+<def>
+  <name> Density </name>
+  <val>  Mass / Vol </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

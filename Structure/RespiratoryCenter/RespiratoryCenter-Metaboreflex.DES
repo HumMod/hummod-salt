@@ -1,0 +1,32 @@
+HumMod / RespiratoryCenter-Metaboreflex
+
+Created : 07-Feb-06
+Revised : 2012-01-31
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+<structure><name> RespiratoryCenter-Metaboreflex </name>
+
+<variables>
+
+<var><name> Drive </name></var>
+
+<parm><name> Scaler </name><val> 1.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Drive </name>
+  <val> Scaler * SkeletalMuscle-Metaboreflex.NerveActivity </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,97 @@
+HumMod / RightBox
+
+Created : 2012-10-28
+Revised : 2012-10-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 17.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Brain-CO2 </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [HCO3] </name>
+   <format><decimal> 3 </decimal></format>
+   <label> [HCO3] </label>
+</showvalue>
+
+<showmap>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> PCO2 </name>
+    <label> pCO2 </label>
+    <scale>
+      <min> 0 </min><max> 100 </max><inc> 10 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <name> [HCO3] </name>
+    <label> [HCO3] </label>
+    <scale>
+      <min> 0 </min><max> 0.03 </max><inc> 0.01 </inc>
+    </scale>
+  </yaxis>
+
+  <blockname> MapperBlock </blockname>
+</showmap>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> PCO2 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> pCO2 </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 1.0 </col>
+   <name> Brain-Ph.[SID] </name>
+   <format><decimal> 3 </decimal></format>
+   <label> [SID] </label>
+</showvalue>
+
+<repeatlist>
+  <name> p50 </name>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 14.4 </row><col> 1.0 </col>
+  <name> p50 </name>
+  <listname> p50 </listname>
+  <label> p50 </label>
+</slidebar>
+
+<repeatlist>
+  <name> k </name>
+  <firstval> 0.6 </firstval>
+  <repeat><reps> 40 </reps><stepsize> .01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15.8 </row><col> 1.0 </col>
+  <name> k </name>
+  <listname> k </listname>
+  <label> k </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> [HCO3] = k * [SID] * (pCO2/(p50 + pCO2)) </line>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

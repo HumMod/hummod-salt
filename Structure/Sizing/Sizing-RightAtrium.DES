@@ -1,0 +1,88 @@
+HumMod / Sizing-RightAtrium
+
+Created : 2013-02-20
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-RightAtrium </name>
+
+<variables>
+
+<var><name> Volume </name></var>
+
+<var><name> V0 </name></var>
+<constant><name> V0-F </name><val> 0. </val></constant>
+
+<var><name> Compliance </name></var>
+<var><name> TMP </name></var>
+
+<var><name> Conductance </name></var>
+<var><name> Flow </name></var>
+<var><name> Gradient </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-Veins.RightAtriumVolume </val>
+</def>
+
+<def>
+  <name> V0 </name>
+  <val> V0-F * Volume </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> Sizing-Pressures.RightAtrium-TMP </val>
+</def>
+
+<def>
+  <name> Compliance </name>
+  <val> ( 1 / TMP ) * ( Volume - V0 ) </val>
+</def>
+
+<def>
+  <name> Flow </name>
+  <val> Sizing-BloodFlow.CardiacOutput </val>
+</def>
+
+<def>
+  <name> Gradient </name>
+  <val> 0 </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val> UNDEFINED </val>
+</def>
+
+<def>
+  <name> RightAtrium.InitialVolume </name>
+  <val> Volume </val>
+</def>
+
+<def>
+  <name> RightAtrium.InitialV0 </name>
+  <val> V0 </val>
+</def>
+
+<def>
+  <name> RightAtrium.InitialCompliance </name>
+  <val> Compliance </val>
+</def>
+
+<call> RightAtrium.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

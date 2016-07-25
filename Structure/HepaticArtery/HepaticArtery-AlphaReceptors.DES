@@ -1,0 +1,58 @@
+HumMod / HepaticArtery-AlphaReceptors
+
+Created : 2013-03-09
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> HepaticArtery-AlphaReceptors </name>
+
+<variables>
+
+<var><name> Activity </name></var>
+<var><name> TotalAgonism </name></var>
+<var><name> NeuralAgonism </name></var>
+<var><name> HumoralAgonism </name></var>
+
+<parm><name> Switch </name><val> FALSE </val></parm>
+<parm><name> Setting </name><val> 0.0 </val></parm>
+
+<constant><name> NEURALK </name><val> 0.333 </val></constant>
+<constant><name> HUMORALK </name><val> 0.5 </val></constant>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> NeuralAgonism </name>
+  <val> Ganglia-Mesenteric.NA(Hz) </val>
+</def>
+
+<def>
+  <name> HumoralAgonism </name>
+  <val> Alpha1Pool.Effect </val>
+</def>
+
+<def>
+  <name> TotalAgonism </name>
+  <val>
+      ( NEURALK * NeuralAgonism )
+    + ( HUMORALK * HumoralAgonism )
+  </val>
+</def>
+
+<conditional>
+  <name> Activity </name>
+  <test> Switch </test>
+  <true> Setting </true>
+  <false> TotalAgonism </false>
+</conditional>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,40 @@
+HumMod / Torso_Lower_CapillaryWater
+
+Created : 26-Mar-08
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Lower_CapillaryWater </name>
+
+<variables>
+
+<var><name> Rate </name><val> 0 </val></var>
+<var><name> Gradient </name></var>
+
+<parm><name> Perm </name><val> 0.0005 </val></parm>1.154
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> Gradient </name>
+  <val>
+      RegionalPressure.LowerCapy
+    - Torso_Lower_InterstitialWater.Pressure
+    + Torso_Lower_InterstitialProtein.COP
+    - PlasmaProtein.COP
+  </val>
+</def>
+
+<def><name> Rate </name><val> Perm * Torso_Lower_InterstitialWater.V0 * Gradient </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

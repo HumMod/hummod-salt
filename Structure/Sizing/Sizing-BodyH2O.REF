@@ -1,0 +1,49 @@
+HumMod / Size-BodyH2O REF
+
+Created : 2012-02-11
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+Call TissueH2O.Init. At this call, the size of the body's 12 major
+organs is known, including the H2O volume. So we get an initial
+volume for all body water except blood volume, called tissue water.
+
+Then the upper, middle and lower torsos are called to divide this
+volume up among the three regions. These three regions run water
+volume integrals.
+
+Next is a call to ExternalH2O.Init. This sizes external water spaces
+which is basically the water in the gut.
+
+Next comes a call to BodyH2O.Init. This gets the initial value of
+body water as the sum of
+
+# Tissue H2O
+# External H2O
+# Plasma Volume
+# RBC H2O
+
+Then a call to ECFV.Init. This puts a fraction of body water into
+the ECFV. A call to ICFV put the remainder into ICFV.
+
+A call to InterstitialWater.Init get the initial total interstitial
+water, which is ECFV - plasma volume and external (gut) water. We
+use this to calculate a fraction for each organ that divides IFV
+among the 12 organs.
+
+At this point, we know the total water (intracellular and extracellular)
+in each of the three regions and the total interstitial water in the
+body.
+
+A call to CellH2O.Init gets initial intracellular water for tissue,
+which is total intracellular water minus RBC water. We use this to
+to calculate a fraction for each organ that divides cell water among
+the 12 organs.
+
+A call to InterstitialProtein.Init gets a value for initial interstitial
+protein which we then divide among the three torso regions.
+
+
+End

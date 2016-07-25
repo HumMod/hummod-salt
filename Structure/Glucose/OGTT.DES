@@ -1,0 +1,124 @@
+HumMod / FurosemideSingleDose
+Created : 30-Oct-16
+Last Modified : 
+Author : Pruett
+Copyright : 2016
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> OGTT </name>
+
+<variables>
+
+<parm><name> Dummy </name><val> 0 </val></parm>
+
+<parm>
+  <name> Dose </name>
+  <val> 75.0 </val>
+</parm>
+
+<parm>
+  <name> Timespan </name>
+  <val> 1.0 </val>
+</parm>
+
+<var>
+  <name> K </name>
+</var>
+
+<var>
+  <name> Loss </name>
+  <val> 0 </val>
+</var>
+
+<var>
+  <name> TimeLastDose </name>
+  <val> UNDEFINED </val>
+</var>
+
+<var>
+  <name> TotalDoses </name>
+  <val> 0.0 </val>
+</var>
+
+<var>
+  <name> CumulativeDose </name>
+  <val> 0.0 </val>
+</var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 15.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> K </name>
+  <val> INVERT ( 2.0 * Timespan ) </val>
+</def>
+
+<onjustchanged>
+  <name> Dummy </name>
+<def><name> Mass </name><val> Mass + ( Dummy * Dose * 1000 ) </val></def>
+<def><name> TotalDoses </name><val> TotalDoses + Dummy </val></def>
+<def><name> CumulativeDose </name><val> CumulativeDose + ( Dummy * Dose * 1000 ) </val></def>
+
+<def><name> Dummy </name><val> 0 </val></def>
+</onjustchanged>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Loss </name>
+  <val> K * Mass </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> - Loss </val>
+</def>
+
+</block>
+
+<block><name> TakeNow </name>
+
+<def>
+  <name> Mass </name>
+  <val> Mass + ( 1000 * Dose ) </val>
+</def>
+
+<def>
+  <name> TimeLastDose </name>
+  <val> System.X </val>
+</def>
+
+<def>
+  <name> TotalDoses </name>
+  <val> TotalDoses + 1.0 </val>
+</def>
+
+<def>
+  <name> CumulativeDose </name>
+  <val> CumulativeDose + ( Dose * 1000 ) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

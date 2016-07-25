@@ -1,0 +1,25 @@
+HumMod / Template
+
+Created : 2011-07-26
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Intervention\ ?>
+
+<?include Anesthesia\Anesthesia.DES ?>
+=<?include Analgesia\Analgesia.DES ?>
+<?include Blockers\Blockers.DES ?>
+<?include CardiacPacemaker\CardiacPacemaker.DES ?>
+<?include CPR\CPR.DES ?>
+<?include Defibrillator\Defibrillator.DES ?>
+<?include Drugs\Drugs.DES ?>
+<?include Fluids\Fluids.DES ?>
+<?include Hemodialysis\Hemodialysis.DES ?>
+<?include InfusionPumps\InfusionPumps.DES ?>
+<?include InsulinInjection\InsulinInjection.DES ?>
+<?include PericardialDrain\PericardialDrain.DES ?>
+<?include Ventilator\Ventilator.DES ?>
+<?include Tests\Tests.DES ?>
+End

@@ -1,0 +1,15 @@
+HumMod / Osmoles
+
+Created : 24-Apr-05
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<?path Display\BodyFluids\Osmoles\ ?>
+
+<?include Function\Function.DES ?>
+<?include ECFV\ECFV.DES ?>
+<?include ICFV\ICFV.DES ?>
+
+End

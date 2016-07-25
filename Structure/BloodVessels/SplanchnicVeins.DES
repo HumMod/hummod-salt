@@ -1,0 +1,142 @@
+HumMod / SplanchnicVeins DES
+
+Created : 21-Oct-04
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> SplanchnicVeins </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+
+<var><name> V0 </name></var>
+<var><name> V0_Alpha_Effect </name></var>
+<var><name> Compliance_Alpha_Effect </name></var>
+
+
+<var><name> StressedVol </name></var>
+<var><name> Pressure </name></var>
+<var><name> ExternalPressure </name></var>
+
+<var><name> Compliance </name></var>
+<var><name> Conductance </name></var>
+
+<var><name> InitialVolume </name></var>
+<var><name> InitialV0 </name></var>
+<var><name> InitialCompliance </name></var>
+<var><name> InitialConductance </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Vol </name>
+  <integralname> Vol </integralname>
+  <initialval> 1007.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 0.5 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> V0_Alpha_Effect </name>
+  <point><x> 0.0 </x><y> 1.1 </y><slope>  0.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.20 </slope></point>
+  <point><x> 3.0 </x><y> 0.4 </y><slope>  0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> Compliance_Alpha_Effect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope>  0.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.10 </slope></point>
+  <point><x> 3.0 </x><y> 0.4 </y><slope>  0.0 </slope></point>
+</curve>
+
+
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Vol </name><val> InitialVolume </val></def>
+<def><name> V0 </name><val> InitialV0 </val></def>
+
+<def><name> Conductance </name><val> InitialConductance </val></def>
+
+</block>
+
+<block><name> CalcPressure </name>
+
+<def>
+  <name> V0_Alpha_Effect </name>
+  <val> V0_Alpha_Effect [ SystemicVeins-AlphaReceptors.Activity ] </val>
+</def>
+
+
+<def>
+  <name> Compliance_Alpha_Effect </name>
+  <val> Compliance_Alpha_Effect [ SystemicVeins-AlphaReceptors.Activity ] </val>
+</def>
+
+<def><name> V0 </name><val> InitialV0 * V0_Alpha_Effect </val></def>
+
+<def>
+  <name> StressedVol </name>
+  <val> ( Vol - V0 ) MAX 0.0 </val>
+</def>
+
+<def>
+  <name> ExternalPressure </name>
+  <val> Torso_Middle_InterstitialWater.Pressure  </val>0.0
+</def>
+
+<def><name> Compliance </name><val> Compliance_Alpha_Effect * InitialCompliance </val></def>
+
+<def>
+  <name> Pressure </name>
+  <val> ( StressedVol / Compliance ) + ExternalPressure </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<conditional>
+  <name> DxMax </name>
+  <test> Conductance GT 0.0 </test>
+  <true> 0.5 * Compliance / Conductance </true>
+  <false> 1e10 </false>
+</conditional>
+
+<def>
+  <name> Inflow </name>
+  <val> HepaticArtery-Flow.BloodFlow + GITract-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> HepaticVein.BloodFlow MIN ( Inflow + Vol )</val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Inflow - Outflow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

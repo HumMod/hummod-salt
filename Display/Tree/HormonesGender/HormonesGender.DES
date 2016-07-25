@@ -1,0 +1,36 @@
+HumMod / HormonesGender
+
+Created : 2014-01-15
+Revised : 2014-02-25
+Author : Tom Coleman
+Copyright : 2014-2014
+By : Tom Coleman
+
+<branch>
+  <name> HORMONESGENDER </name>
+  <label> ... Gender </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<leaf>
+  <name> Gender-Summary </name>
+  <label> Summary </label>
+  <parent> HORMONESGENDER </parent>
+</leaf>
+
+<separatorbar>
+  <parent> HORMONESGENDER </parent>
+</separatorbar>
+
+<?path Display\Tree\HormonesGender\ ?>
+
+<?include Estradiol.DES ?>
+<?include FSH.DES ?>
+<?include GnRH.DES ?>
+<?include hCG.DES ?>
+<?include Inhibin.DES ?>
+<?include LH.DES ?>
+<?include Progesterone.DES ?>
+<?include Testosterone.DES ?>
+
+End

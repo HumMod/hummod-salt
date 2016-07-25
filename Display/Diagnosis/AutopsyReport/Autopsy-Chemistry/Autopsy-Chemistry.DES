@@ -1,0 +1,38 @@
+HumMod / Autopsy-Chemistry
+
+Created : 15-Apr-05
+Revised : 2013-02-13
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<panel><name> Autopsy-Chemistry </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Autopsy </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Autopsy | Chemistry </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Diagnosis\AutopsyReport\Autopsy-Chemistry ?>
+
+<?include LeftBox.DES ?>
+<?include RightBox.DES ?>
+
+</panel>
+
+End

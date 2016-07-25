@@ -1,0 +1,229 @@
+HumMod / LeftBox
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 7.0 </row>
+   <col> 1.0 </col>
+   <high> 27.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> BloodChemistry-Sample </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> [Glucose] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glucose] </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> [FattyAcids] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Fatty Acids] </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.4 </row><col> 1.0 </col>
+  <name> [Triglycerides] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Triglycerides] </label>
+</showvalue>
+
+<showvalue>
+  <row> 4.4 </row><col> 1.0 </col>
+  <name> [AminoAcids] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Amino Acids] </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.4 </row><col> 1.0 </col>
+  <name> [Creatinine] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Creatinine] </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.4 </row><col> 1.0 </col>
+  <name> [Urea] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Urea] </label>
+</showvalue>
+
+<showvalue>
+  <row> 7.4 </row><col> 1.0 </col>
+  <name> [BUN] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [BUN] </label>
+</showvalue>
+
+<showvalue>
+  <row> 8.8 </row><col> 1.0 </col>
+  <name> [SID] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Strong Ion Difference </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> pH </name>
+  <format><decimal> 3 </decimal></format>
+  <label> pH </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.8 </row><col> 1.0 </col>
+  <name> [H+] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [H+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 1.0 </col>
+  <name> [Protein] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Protein] </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> ColloidPressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Colloid Pressure </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.6 </row><col> 1.0 </col>
+  <name> Osmolarity </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Osmolarity </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.6 </row><col> 1.0 </col>
+  <name> Hematocrit(%) </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Hematocrit (%) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical Values </line>
+  <line> </line>
+  <line> [Glucose] = 110 mG/dL </line>
+  <line> [Fatty Acids] = 15 mG/dL </line>
+  <line> [Triglycerides] = 100 mG/dL </line>
+  <line> [Amino Acids] = 50 mG/dL </line>
+  <line> [Creatinine] = 0.82 mG/dL </line>
+  <line> [Urea] = 26 mG/dL </line>
+  <line> [BUN] = 12 mG/dL </line>
+  <line> </line>
+  <line> Strong Ion Difference = 40 mEq/L </line>
+  <line> pH = 7.39 </line>
+  <line> [H+] = 41 nEq/L </line>
+  <line> </line>
+  <line> [Protein] = 7.0 G/dL </line>
+  <line> Colloid Pressure = 28 mmHg </line>
+  <line> </line>
+  <line> Osmolarity = 288 mOsm/L </line>
+  <line> Hematocrit = 44% </line>
+
+</infobutton>
+
+<showvalue>
+  <row> 17.0 </row><col> 1.0 </col>
+  <name> [Angiotensin] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Angiotensin] </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.0 </row><col> 1.0 </col>
+  <name> PlasmaReninActiviy </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Plasma Renin Activity </label>
+</showvalue>
+
+<showvalue>
+  <row> 19.0 </row><col> 1.0 </col>
+  <name> [Aldosterone] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Aldosterone] </label>
+</showvalue>
+
+<showvalue>
+  <row> 20.0 </row><col> 1.0 </col>
+  <name> [AntidiureticHormone] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Antidiuretic Hormone] </label>
+</showvalue>
+
+<showvalue>
+  <row> 21.0 </row><col> 1.0 </col>
+  <name> [ANP] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [ANP] </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.4 </row><col> 1.0 </col>
+  <name> [TotalT4/T3] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Total T4/T3] </label>
+</showvalue>
+
+<showvalue>
+  <row> 23.4 </row><col> 1.0 </col>
+  <name> [TSH] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [TSH] </label>
+</showvalue>
+
+<showvalue>
+  <row> 24.8 </row><col> 1.0 </col>
+  <name> [Norepineshrine] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Norepinephrine] </label>
+</showvalue>
+
+<showvalue>
+  <row> 25.8 </row><col> 1.0 </col>
+  <name> [Epinephrine] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Epinephrine] </label>
+</showvalue>
+
+<infobutton>
+  <row> 16.6 </row>
+  <col> 26.0 </col>
+
+  <line> Typical Values </line>
+  <line> </line>
+  <line> [Angiotensin] = 20 pG/mL </line>
+  <line> PRA = 2.0 (nG aI/mL)/Hr </line>
+  <line> [Aldosterone] = 300 pMol/L </line>
+  <line> [ADH] = 2.0 pG/mL </line>
+  <line> [ANP] = 20 pMol/L </line>
+  <line> </line>
+  <line> [Total T4/T3] = 8.0 uG/dL </line>
+  <line> [TSH] = 4 uU/mmL </line>
+  <line> </line>
+  <line> [Norepinephrine] = 240 pG/mL </line>
+  <line> [Epinephrine] = 80 pG/mL </line>
+  <line> </line>
+  <line> </line>
+  <line> </line>
+
+</infobutton>
+
+</groupbox>
+
+End

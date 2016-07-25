@@ -1,0 +1,68 @@
+HumMod / Type 1 Diabetes
+
+Created : 30-Oct-16
+Last Modified : 30 Oct-16
+Author : Pruett
+Copyright : 2016-2016
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<panel><name> Type1 </name>
+
+<showclock>
+  <row> 0.3 </row><col> 36.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 11.8 </high>
+   <wide> 32.0 </wide>
+   <title> Type 1 Diabetes </title>
+
+<structurename> Pancreas-BetaCells </structurename>
+
+<repeatlist>
+  <name> BetaCells.DamagedFraction </name>
+  <firstval> 0 </firstval>
+  <repeat><reps> 10 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> DamagedFraction </name>
+  <listname>  BetaCells.DamagedFraction </listname>
+  <label> Damage Fraction </label>
+</slidebar>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> InsulinStorage.Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 1000 </min><max> 1500 </max></scale>
+  </yaxis>
+</showgraph>
+
+
+
+</groupbox>
+
+</panel>
+End
+
+
+

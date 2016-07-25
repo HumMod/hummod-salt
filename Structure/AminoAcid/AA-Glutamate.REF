@@ -1,0 +1,63 @@
+Glutamate.TXT
+
+Created : 2013-02-07
+Revised : 2013-02-07
+Author : Tom Coleman
+
+M.W. 147.13 C5-H9-N-O4.
+Non-Essential
+% (by Mol) in generic protein : 6.8
+
+    COOH
+    |
+H2N-CH
+    |
+    CH2
+    |
+    CH2
+    |
+    C
+  // \
+  O  OH
+
+Glutamate can be aminated to glutamine.
+
+NH4+ + Alpha-Ketoglutarate <--> Glutamate
+
+So alpha-ketoglutarate is just a glutamate with its
+amino group and a proton removed and replaced by a
+double bonded oxygen.
+
+    COOH
+    |
+    C=O
+    |
+    CH2
+    |
+    CH2
+    |
+    C
+  // \
+  O  OH
+
+The 5 position can simply be shown as
+
+    |
+    COOH
+
+like the one position.
+
+And if Krebs substrate is not needed the glutamine
+can supply a single ammonium.
+
+Glutamine + H2O --> NH4+ + Glutimate
+
+Glutamate + Oxaloacetate <--> Aspartate + Alpha-Ketoglutarate
+
+Glutamate + Pyruvate <--> Alanine + Alpha-Ketoglutarate
+
+Glutamate --> Proline
+
+Aspartate + Glutamate --> Asparagine + Glutamate
+
+End

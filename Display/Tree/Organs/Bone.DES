@@ -1,0 +1,105 @@
+HumMod / Bone
+
+Created : 08-Dec-05
+Revised : 2012-02-17
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> Bone </name>
+  <label> Bone </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<leaf>
+  <name> Bone-Circulation </name>
+  <label> Circulation </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Metabolism </name>
+  <label> Metabolism </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Fuel </name>
+  <label> Fuel </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-CO2 </name>
+  <label> CO2 </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Lactate </name>
+  <label> Lactate </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-AcidBase </name>
+  <label> Acid-Base </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Nerves </name>
+  <label> Nerves </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Function </name>
+  <label> Function </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Structure </name>
+  <label> Structure </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Size </name>
+  <label> Size </label>
+  <parent> Bone </parent>
+</leaf>
+
+<leaf>
+  <name> Bone-Vasculature </name>
+  <label> Vasculature </label>
+  <parent> Bone </parent>
+</leaf>
+
+<branch>
+  <name> Bone-Mineral </name>
+  <label> Mineral </label>
+  <parent> Bone </parent>
+</branch>
+
+<leaf>
+  <name> Mineral-Composition </name>
+  <label> Composition </label>
+  <parent> Bone-Mineral </parent>
+</leaf>
+
+<leaf>
+  <name> Mineral-ExchangeableCalcium </name>
+  <label> Exchangeable Calcium </label>
+  <parent> Bone-Mineral </parent>
+</leaf>
+
+<leaf>
+  <name> Mineral-FixedCalcium </name>
+  <label> Fixed Calcium </label>
+  <parent> Bone-Mineral </parent>
+</leaf>
+
+End

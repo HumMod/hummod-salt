@@ -1,0 +1,33 @@
+HumMod / Size-OrganCO2
+
+Created : 2012-10-28
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Size-OrganCO2 </name>
+<definitions>
+
+<block><name> Calc </name>
+
+<call> Bone-CO2.Init </call>
+<call> Brain-CO2.Init </call>
+<call> Fat-CO2.Init </call>
+<call> GITract-CO2.Init </call>
+<call> RightKidney-CO2.Init </call>
+<call> LeftKidney-CO2.Init </call>
+<call> LeftHeart-CO2.Init </call>
+<call> Liver-CO2.Init </call>
+<call> OtherTissue-CO2.Init </call>
+<call> RespiratoryMuscle-CO2.Init </call>
+<call> RightHeart-CO2.Init </call>
+<call> SkeletalMuscle-CO2.Init </call>
+<call> Skin-CO2.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

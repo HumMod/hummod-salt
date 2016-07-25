@@ -1,0 +1,100 @@
+HumMod / Leptin
+
+Created : 2012-02-13
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 14.8 </row>
+   <col> 32.0 </col>
+   <high> 21.6 </high>
+   <wide> 30.0 </wide>
+   <title> Leptin </title>
+
+<structurename> DietHunger-Leptin </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Effect  </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Effect </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 50 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 30 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<showcurve>
+  <row> 12.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> LeptinPool.[Leptin(nG/mL)] </name>
+    <label> [Leptin] </label>
+    <scale>
+      <min> 0 </min><max> 50 </max><inc> 10 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </yaxis>
+
+  <curvename> Effect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 20.0 </row><col> 1.0 </col>
+   <name> LeptinPool.[Leptin(nG/mL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Leptin(nG/mL)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,92 @@
+HumMod / HepaticArtery-Flow
+
+Created : 2013-03-09
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> HepaticArtery-Flow </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<parm><name> Conductance(/G) </name><val> 0.00187 </val></parm>
+
+<var><name> SympsEffect </name></var>
+
+<var><name> PressureGradient </name></var>
+
+<var><name> BloodFlow </name></var>
+<var><name> PlasmaFlow </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> SympsOnConductance </name>
+  <point><x> 0.0 </x><y> 1.3 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.3 </slope></point>
+  <point><x> 5.0 </x><y> 0.1 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * Liver-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> CalcFlow </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+<def>
+  <name> SympsEffect </name>
+  <val> SympsOnConductance [ HepaticArtery-AlphaReceptors.Activity ] </val>
+</def>
+
+<def>
+  <name> PressureGradient </name>
+  <val> SystemicArtys.Pressure - SplanchnicVeins.Pressure </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val>
+      BasicConductance
+    * SympsEffect
+    * Viscosity.ConductanceEffect
+  </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> PressureGradient * Conductance </val>
+</def>
+
+<def>
+  <name> PlasmaFlow </name>
+  <val> BloodVol.PVCrit * BloodFlow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

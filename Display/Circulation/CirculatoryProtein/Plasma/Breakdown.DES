@@ -1,0 +1,60 @@
+HumMod / Gain-Loss
+
+Created : 27-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 64.0 </col>
+   <high> 14.4 </high>
+   <wide> 30.0 </wide>
+   <title> Breakdown </title>
+
+<structurename> PlasmaProtein </structurename>
+
+<showgraph>
+  <row> 1.8 </row><col> 1.0 </col><high> 12 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> AlbuminPool.Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> IgGPool.Mass </name>
+      <nolabel/>
+      <linecolor> BLACK </linecolor>
+    </yvar>
+    <yvar>
+      <name> AGPPool.Mass </name>
+      <nolabel/>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 300 </max>
+    </scale>
+
+  </yaxis>
+</showgraph>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Gain - loss units are G/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End
+

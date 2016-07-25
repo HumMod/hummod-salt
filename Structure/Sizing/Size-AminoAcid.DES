@@ -1,0 +1,20 @@
+HumMod / Size-AminoAcid DES
+
+Created : 21-Aug-09
+Revised : 2013-02-18
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Size-AminoAcid </name>
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> AminoAcid.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

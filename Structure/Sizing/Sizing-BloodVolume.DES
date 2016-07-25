@@ -1,0 +1,135 @@
+HumMod / Sizing-BloodVolume DES
+
+Created : 2012-03-10
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Sizing-BloodVolume </name>
+
+<variables>
+
+<var><name> BloodVolume </name></var>
+
+<var><name> BaseVolume </name></var>
+<var><name> FatVolume </name></var>
+<var><name> MuscleVolume </name></var>
+
+<constant><name> Base(mL/G)   </name><val> 0.10 </val></constant>0.1
+<constant><name> Fat(mL/G)    </name><val> 0.030 </val></constant>
+<constant><name> Muscle(mL/G) </name><val> 0.088 </val></constant>
+
+<var><name> Hct </name></var>
+
+<parm><name> HCT_MALE   </name><val> 0.44 </val></parm>
+<constant><name> HCT_FEMALE </name><val> 0.40 </val></constant>
+
+<var><name> PlasmaVolume </name></var>
+<var><name> RBCVolume </name></var>
+
+<constant><name> RBC-FractH2O </name><val> 0.66 </val></constant>
+<var><name> RBC-H2O </name></var>
+
+<var><name> RBC-FractSolids </name></var>
+<var><name> RBC-Solids </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BaseVolume </name>
+  <val> Base(mL/G) * Sizing-OrganMass.BaseMass(G) </val>
+</def>
+
+<def>
+  <name> FatVolume </name>
+  <val> Fat(mL/G) * Sizing-OrganMass.FatMass(G) </val>
+</def>
+
+<def>
+  <name> MuscleVolume </name>
+  <val> Muscle(mL/G) * Sizing-OrganMass.SkeletalMuscleMass(G) </val>
+</def>
+
+<def>
+  <name> BloodVolume </name>
+  <val> BaseVolume + FatVolume + MuscleVolume </val>
+</def>
+
+<def>
+  <name> BloodVol.InitialVol </name>
+  <val> BloodVolume </val>
+</def>
+
+<call> BloodVol.Init </call>
+
+<conditional>
+  <name> Hct </name>
+  <test> Context-Gender.IsMale </test>
+  <true> HCT_MALE </true>
+  <false> HCT_FEMALE </false>
+</conditional>
+
+<def>
+  <name> PlasmaVolume </name>
+  <val> BloodVolume * ( 1 - Hct ) </val>
+</def>
+
+<def>
+  <name> PlasmaVol.InitialVol </name>
+  <val> PlasmaVolume </val>
+</def>
+
+<call> PlasmaVol.Init </call>
+
+<def>
+  <name> RBCVolume </name>
+  <val> BloodVolume * Hct </val>
+</def>
+
+<def>
+  <name> RBCVol.InitialVol </name>
+  <val> RBCVolume </val>
+</def>
+
+<call> RBCVol.Init </call>
+
+<def>
+  <name> RBC-H2O </name>
+  <val> RBC-FractH2O * RBCVolume </val>
+</def>
+
+<def>
+  <name> RBCH2O.InitialFractH2O </name>
+  <val> RBC-FractH2O </val>
+</def>
+
+<call> RBCH2O.Init </call>
+
+<def>
+  <name> RBC-FractSolids </name>
+  <val> 1 - RBC-FractH2O </val>
+</def>
+
+<def>
+  <name> RBC-Solids </name>
+  <val> RBC-FractSolids * RBCVolume </val>
+</def>
+
+<def>
+  <name> RBCSolids.InitialFractSolids </name>
+  <val> RBC-FractSolids </val>
+</def>
+
+<call> RBCSolids.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

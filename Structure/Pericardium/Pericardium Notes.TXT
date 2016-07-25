@@ -1,0 +1,29 @@
+Pericardium Notes.TXT
+
+Created : 2013-02-21
+Revised : 2013-02-21
+Author : Tom Coleman
+
+Tyson et.al. used conscious, instrumented dogs and studied
+the left ventricle. End-diastolic data is presented (mmHg).
+
+                      Control  Volume Expanded
+                      -------  ---------------
+Ventricle EDP           9.9      22.1
+Ventricle ED-TMP        9.5      19.3
+Pericardial Pressure    0.4       2.8
+Paricardial TMP         2.3       4.0
+Pleural Pressure       -1.9      -1.2
+Diameter (Normalized)  0.14      0.20
+Diameter^2             0.02      0.04
+
+This looks like a doubling of EDV. The raw data suggests
+less.
+
+References ==================================================
+
+Tyson, G.S. Jr. Pericardial influences on ventricular filling
+in the conscious dog. Circ. Res. 54:173-184, 1984.
+
+
+End

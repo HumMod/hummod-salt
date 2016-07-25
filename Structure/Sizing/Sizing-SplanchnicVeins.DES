@@ -1,0 +1,93 @@
+HumMod / Sizing-SplanchnicVeins
+
+Created : 2013-02-20
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-SplanchnicVeins </name>
+
+<variables>
+
+<var><name> Volume </name></var>
+
+<var><name> V0 </name></var>
+<constant><name> V0-F </name><val> 0.5 </val></constant>
+
+<var><name> Compliance </name></var>
+<var><name> TMP </name></var>
+
+<var><name> Conductance </name></var>
+<var><name> Flow </name></var>
+<var><name> Gradient </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-Veins.SplanchnicVeinsVolume </val>
+</def>
+
+<def>
+  <name> V0 </name>
+  <val> V0-F * Volume </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> Sizing-Pressures.SplanchnicVeins-TMP </val>
+</def>
+
+<def>
+  <name> Compliance </name>
+  <val> ( 1 / TMP ) * ( Volume - V0 ) </val>
+</def>
+
+<def>
+  <name> Flow </name>
+  <val> Sizing-BloodFlow.SplanchnicFlow </val>
+</def>
+
+<def>
+  <name> Gradient </name>
+  <val> Sizing-Pressures.SplanchnicVeins - Sizing-Pressures.RightAtrium </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val> Flow / Gradient </val>
+</def>
+
+<def>
+  <name> SplanchnicVeins.InitialVolume </name>
+  <val> Volume </val>
+</def>
+
+<def>
+  <name> SplanchnicVeins.InitialV0 </name>
+  <val> V0 </val>
+</def>
+
+<def>
+  <name> SplanchnicVeins.InitialCompliance </name>
+  <val> Compliance </val>
+</def>
+
+<def>
+  <name> SplanchnicVeins.InitialConductance </name>
+  <val> Conductance </val>
+</def>
+
+<call> SplanchnicVeins.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,78 @@
+HumMod / AcetazolamideBound
+
+Created : 2013-02-09
+Revised : 2013-02-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> AcetazolamideBound </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<constant><name> Binding-K </name><val> 300 </val></constant>
+<constant><name> Unbinding-K </name><val> 0.02 </val></constant>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [ACZ(mG/mL)] </name>
+  <val> Mass / ECFV.Vol </val>
+</def>
+
+<def>
+  <name> [ACZ(uG/mL)] </name>
+  <val> [ACZ(mG/mL)] * MG_TO_UG </val>
+</def>
+
+<def>
+  <name> [ACZ(uMol/L)] </name>
+  <val> [ACZ(uG/mL)] * UG_ML_TO_UMOL_L </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Gain </name>
+  <val> AcetazolamidePool.[ACZ(mG/mL)] * Binding-K
+  </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> Mass * Unbinding-K
+  </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

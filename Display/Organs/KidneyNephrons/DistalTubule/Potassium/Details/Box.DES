@@ -1,0 +1,332 @@
+HumMod / Details
+
+Created : 2013-03-18
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 30.0 </high>
+   <wide> 62.0 </wide>
+
+<structurename> LeftDistalTubule_K </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> Outflow </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Left Secretion </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1 </col>
+  <name> AldoEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> LEft [Aldo] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+    <label> [Aldo] </label>
+    <scale><min> 0 </min><max> 50 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> AldoOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 10.6 </row><col> 1 </col>
+  <name> LeftNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Left [Aldo] </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.0 </row><col> 1 </col>
+  <name> KEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left [K+] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 13.0 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> KPool.[K+(mEq/L)] </name>
+    <label> [K+] </label>
+    <scale><min> 0 </min><max> 6 </max><inc> 2 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> KOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 20.4 </row><col> 1 </col>
+  <name> KPool.[K+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 21.4 </row><col> 1 </col>
+  <name> LeftKidney-Function.Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Kidney Function </label>
+</showvalue>
+
+<slidebar>
+  <row> 22.4 </row><col> 1.0 </col>
+  <name> BasicOutflow </name>
+  <listname> Common.Fraction</listname>
+  <label> Normal </label>
+</slidebar>
+
+<showvalue>
+  <row> 23.8 </row><col> 1 </col>
+  <name> NaEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Na+ Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 24.8 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftDistalTubule_Na.Outflow </name>
+    <label> Na+ Outflow </label>
+    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> NaOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 31.8 </row><col> 1 </col>
+  <name> LeftDistalTubule_Na.Outflow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Left Na+ Outflow </label>
+</showvalue>
+
+<showvalue>
+  <row> 33.2 </row><col> 1 </col>
+  <name> ThiazideEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [Thiazide] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 34.2 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> ThiazidePool.[Thiazide] </name>
+    <label> [Thiazide] </label>
+    <scale><min> 0 </min><max> 1 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> ThiazideOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 41.2 </row><col> 1 </col>
+  <name> ThiazidePool.[Thiazide] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Thiazide] </label>
+</showvalue>
+
+
+======================================
+======================================
+
+
+<structurename> RightDistalTubule_K </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> Outflow </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Right Secretion </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1 </col>
+  <name> AldoEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right [Aldo] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+    <label> [Aldo] </label>
+    <scale><min> 0 </min><max> 50 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> AldoOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 10.6 </row><col> 1 </col>
+  <name> RightNephronAldo.[Aldo(nG/dL)-Nucleus] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Right [Aldo] </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.0 </row><col> 1 </col>
+  <name> KEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right [K+] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 13.0 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> KPool.[K+(mEq/L)] </name>
+    <label> [K+] </label>
+    <scale><min> 0 </min><max> 6 </max><inc> 2 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+
+  <curvename> KOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 20.4 </row><col> 1 </col>
+  <name> KPool.[K+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 21.4 </row><col> 1 </col>
+  <name> RightKidney-Function.Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right Kidney Function </label>
+</showvalue>
+
+<slidebar>
+  <row> 22.4 </row><col> 32.0 </col>
+  <name> BasicOutflow </name>
+  <listname> Common.Fraction</listname>
+  <label> Normal </label>
+</slidebar>
+
+<showvalue>
+  <row> 23.8 </row><col> 1 </col>
+  <name> NaEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Na+ Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 24.8 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightDistalTubule_Na.Outflow </name>
+    <label> Na+ Outflow </label>
+    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> NaOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 31.8 </row><col> 1 </col>
+  <name> RightDistalTubule_Na.Outflow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Right Na+ Outflow </label>
+</showvalue>
+
+<showvalue>
+  <row> 33.2 </row><col> 1 </col>
+  <name> ThiazideEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [Thiazide] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 34.2 </row><col> 1 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> ThiazidePool.[Thiazide] </name>
+    <label> [Thiazide] </label>
+    <scale><min> 0 </min><max> 1 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> ThiazideOnOutflow </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 41.2 </row><col> 1 </col>
+  <name> ThiazidePool.[Thiazide] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Thiazide] </label>
+</showvalue>
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical secretion is 0.05 mEq/Min. </line>
+  <line>  </line>
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,49 @@
+HumMod / PortalVein
+
+Created : 2012-11-02
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> PortalVein </name>
+  <label> ... Portal Vein </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<leaf>
+  <name> PortalVein-BloodFlow </name>
+  <label> Blood Flow </label>
+  <parent> PortalVein </parent>
+</leaf>
+
+<separatorbar>
+  <parent> PortalVein </parent>
+</separatorbar>
+
+<leaf>
+  <name> PortalVein-Glucose </name>
+  <label> Glucose </label>
+  <parent> PortalVein </parent>
+</leaf>
+
+<leaf>
+  <name> PortalVein-FattyAcid </name>
+  <label> Fatty Acid </label>
+  <parent> PortalVein </parent>
+</leaf>
+
+<leaf>
+  <name> PortalVein-Insulin </name>
+  <label> Insulin </label>
+  <parent> PortalVein </parent>
+</leaf>
+
+<leaf>
+  <name> PortalVein-Glucagon </name>
+  <label> Glucagon </label>
+  <parent> PortalVein </parent>
+</leaf>
+
+End

@@ -1,0 +1,55 @@
+HumMod / CO2Blood
+
+Created : 2012-10-25
+Revised : 2013-04-04
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> CO2Blood </name>
+<variables>
+
+<var><name> pCO2 </name></var>
+<var><name> [SID] </name></var>
+<var><name> [HCO3] </name></var>
+<var><name> K </name></var>
+
+<var><name> pCO2-Inverse </name></var>
+<var><name> [SID]-Inverse </name></var>
+<var><name> [HCO3]-Inverse </name></var>
+<var><name> K-Inverse </name></var>
+
+<parm><name> k </name><val> 1.09 </val></parm>
+<parm><name> p50 </name><val> 32.0 </val></parm>
+
+</variables>
+
+<definitions>
+<block><name> pCO2_To_[HCO3] </name>
+
+<def><name> K </name><val> k * [SID] </val></def>
+
+<copy><from> p50 </from><to> CO2_pCO2_To_[HCO3].p50 </to></copy>
+<copy><from> K </from><to> CO2_pCO2_To_[HCO3].K </to></copy>
+<copy><from> pCO2 </from><to> CO2_pCO2_To_[HCO3].pCO2 </to></copy>
+<call> CO2_pCO2_To_[HCO3].Calc </call>
+<copy><from> CO2_pCO2_To_[HCO3].[HCO3] </from><to> [HCO3] </to></copy>
+
+</block>
+
+<block><name> [HCO3]_To_pCO2 </name>
+
+<def><name> K-Inverse </name><val> k * [SID]-Inverse </val></def>
+
+<copy><from> p50 </from><to> CO2_[HCO3]_To_pCO2.p50 </to></copy>
+<copy><from> K-Inverse </from><to> CO2_[HCO3]_To_pCO2.K </to></copy>
+<copy><from> [HCO3]-Inverse </from><to> CO2_[HCO3]_To_pCO2.[HCO3]</to></copy>
+<call> CO2_[HCO3]_To_pCO2.Calc </call>
+<copy><from> CO2_[HCO3]_To_pCO2.pCO2 </from><to> pCO2-Inverse </to></copy>
+
+</block>
+
+</definitions>
+</structure>
+
+End

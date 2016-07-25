@@ -1,0 +1,352 @@
+HumMod / Na+FractionalReabsorption
+
+Created : 17-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 30.0 </high>
+   <wide> 62.0 </wide>
+  <title> Left Fractional Reab </title>
+
+<structurename> LeftProximalTubule_Na </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> LeftFractReab </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Fraction </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.0 </row><col> 1 </col>
+  <name> A2Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [A2] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 4.0 </row><col> 1 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> A2Pool.Log10Conc </name>
+    <label> LOG10 [A2] </label>
+    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> A2OnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 13.2 </row><col> 1 </col>
+  <name> A2Pool.Log10Conc </name>
+  <format><decimal> 1 </decimal></format>
+  <label> LOG10 [A2] </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.8 </row><col> 1 </col>
+  <name> ANPEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [ANP] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 15.8 </row><col> 1 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftNephronANP.Log10Conc </name>
+    <label> LOG10 [ANP] </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> ANPOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 25.0 </row><col> 1 </col>
+  <name> LeftNephronANP.Log10Conc </name>
+  <format><decimal> 1 </decimal></format>
+  <label> LOG10 [ANP] </label>
+</showvalue>
+
+<showvalue>
+  <row> 26.6 </row><col> 1 </col>
+  <name> LeftKidney-Function.Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Kidney Function </label>
+</showvalue>
+
+<slidebar>
+  <row> 28.2 </row><col> 1.0 </col>
+  <name> BasicFract </name>
+  <listname> Common.Fraction</listname>
+  <label> Normal </label>
+</slidebar>
+
+<showvalue>
+  <row> 3.0 </row><col> 32 </col>
+  <name> SympsEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> a-Symp's Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 4.0 </row><col> 32 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftKidney-AlphaReceptors.Activity </name>
+    <label> a-Symp's </label>
+    <scale><min> 0 </min><max> 4 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> SympsOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 13.2 </row><col> 32 </col>
+  <name> LeftKidney-AlphaReceptors.Activity </name>
+  <format><decimal> 1 </decimal></format>
+  <label> a-Symp's Activity </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.8 </row><col> 32 </col>
+  <name> IFPEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> IFP Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 15.8 </row><col> 32 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftNephronIFP.Pressure </name>
+    <label> IFP </label>
+    <scale><min> 0 </min><max> 8 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> IFPOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 25.0 </row><col> 32 </col>
+  <name> LeftNephronIFP.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Interstitial Pressure </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical fraction is 0.580. </line>
+  <line>  </line>
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+==============================
+===============================
+==============================
+Right
+<groupbox>
+   <row> 64.0 </row>
+   <col> 1.0 </col>
+   <high> 30.0 </high>
+   <wide> 62.0 </wide>
+  <title> Right Fractional Reab </title>
+
+<structurename> RightProximalTubule_Na </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> RightFractReab </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Fraction </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.0 </row><col> 1 </col>
+  <name> A2Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [A2] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 4.0 </row><col> 1 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> A2Pool.Log10Conc </name>
+    <label> LOG10 [A2] </label>
+    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> A2OnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 13.2 </row><col> 1 </col>
+  <name> A2Pool.Log10Conc </name>
+  <format><decimal> 1 </decimal></format>
+  <label> LOG10 [A2] </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.8 </row><col> 1 </col>
+  <name> ANPEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [ANP] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 15.8 </row><col> 1 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightNephronANP.Log10Conc </name>
+    <label> LOG10 [ANP] </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> ANPOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 25.0 </row><col> 1 </col>
+  <name> RightNephronANP.Log10Conc </name>
+  <format><decimal> 1 </decimal></format>
+  <label> LOG10 [ANP] </label>
+</showvalue>
+
+<showvalue>
+  <row> 26.6 </row><col> 1 </col>
+  <name> RightKidney-Function.Effect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Kidney Function </label>
+</showvalue>
+
+<slidebar>
+  <row> 28.2 </row><col> 1.0 </col>
+  <name> BasicFract </name>
+  <listname> Common.Fraction</listname>
+  <label> Normal </label>
+</slidebar>
+
+<showvalue>
+  <row> 3.0 </row><col> 32 </col>
+  <name> SympsEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> a-Symp's Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 4.0 </row><col> 32 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightKidney-AlphaReceptors.Activity </name>
+    <label> a-Symp's </label>
+    <scale><min> 0 </min><max> 4 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> SympsOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 13.2 </row><col> 32 </col>
+  <name> RightKidney-AlphaReceptors.Activity </name>
+  <format><decimal> 1 </decimal></format>
+  <label> a-Symp's Activity </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.8 </row><col> 32 </col>
+  <name> IFPEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> IFP Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 15.8 </row><col> 32 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightNephronIFP.Pressure </name>
+    <label> IFP </label>
+    <scale><min> 0 </min><max> 8 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> IFPOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 25.0 </row><col> 32 </col>
+  <name> RightNephronIFP.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Interstitial Pressure </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical fraction is 0.580. </line>
+  <line>  </line>
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

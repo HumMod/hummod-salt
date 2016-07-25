@@ -1,0 +1,59 @@
+HumMod / RightHeartPumping
+
+Created : 2010-05-24
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2010-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> RightHeartPumping </name>
+  <label> Right Heart Pumping </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> RightHeartPumping-Output </name>
+  <label> Output </label>
+  <parent> RightHeartPumping </parent>
+</leaf>
+
+<leaf>
+  <name> RightHeartPumping-Systole </name>
+  <label> Systole </label>
+  <parent> RightHeartPumping </parent>
+</leaf>
+
+<leaf>
+  <name> RightHeartPumping-Diastole </name>
+  <label> Diastole </label>
+  <parent> RightHeartPumping </parent>
+</leaf>
+
+<separatorbar>
+  <parent> RightHeartPumping </parent>
+</separatorbar>
+
+<leaf>
+  <name> RightHeartPumping-HeartStrength </name>
+  <label> Heart Strength </label>
+  <parent> RightHeartPumping </parent>
+</leaf>
+
+<leaf>
+  <name> RightHeartPumping-ContractileProtein </name>
+  <label> Contractile Protein </label>
+  <parent> RightHeartPumping </parent>
+</leaf>
+
+<separatorbar>
+  <parent> RightHeartPumping </parent>
+</separatorbar>
+
+<leaf>
+  <name> RightHeartPumping-Cardiopathy </name>
+  <label> Cardiopathy </label>
+  <parent> RightHeartPumping </parent>
+</leaf>
+
+End

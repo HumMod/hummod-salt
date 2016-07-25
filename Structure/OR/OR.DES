@@ -1,0 +1,74 @@
+HumMod / NaPool
+
+Created : 06-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2005-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> OR </name>
+
+<variables>
+
+<parm><name> konM </name><val> 0.853 </val></parm>
+<parm><name> koffM </name><val> 0.138 </val></parm>
+<parm><name> konM6G </name><val> 0.0371 </val></parm>
+<parm><name> koffM6G </name><val> 0.0327 </val></parm>
+
+<var><name> check </name></var>
+
+
+<var><name> [R] </name></var>
+<var><name> [NR] </name><val> 0 </val></var>
+<parm><name> gamma </name><val> 1 </val></parm>
+<parm><name> C50N </name><val> 0.0015 </val></parm><!-- uMol-->
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> [MR] </name>
+  <integralname> [MR] </integralname>
+  <initialval> 0 </initialval>
+  <dervname> d[MR] </dervname>
+  <errorlim> 0.01 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> [M6GR] </name>
+  <integralname> [M6GR] </integralname>
+  <initialval> 0 </initialval>
+  <dervname> d[M6GR] </dervname>
+  <errorlim> 0.01 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+
+<block><name> Dervs </name>
+
+<def><name> [R] </name><val> 1 - [MR] - [M6GR] - [NR] </val></def>
+
+<def><name> d[MR] </name>
+  <val>  ( konM * MorphinePool.[Morphine(uMol)] * [R] ) - ( koffM * [MR] )  </val>
+</def>
+
+<def><name> d[M6GR] </name>
+  <val>  ( konM6G * MorphinePool.[M6G(uMol)] * [R] ) - ( koffM6G * [M6GR] )  </val>
+</def>
+
+<def><name> [NR] </name><val> ( NarcanPool.[Narcan(uMol)] ^ gamma ) / ( ( NarcanPool.[Narcan(uMol)] ^ gamma ) + ( C50N ^ gamma ) ) * ( 1 - [MR] - [M6GR] ) </val></def>
+
+<def><name> check </name><val> [R] + [MR] + [M6GR] + [NR] </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,144 @@
+Cardiac Hypertrophy Notes.TXT
+
+Created : 2013-02-22
+Revised : 2013-02-22
+Author : Tom Coleman
+
+Placing an additional load on the heart leads to increased
+heart mass and contractile protein. The load can be either
+continuous (aortic stenosis, regurg, hypertension) or
+intermittent (athletic training).
+
+Mechanisms are unknown, so I had to postulate a trophic
+factor to connect load with protein dynamics.
+
+Ventricle data from Scharhag.
+                       Control Trained
+                       ------- -------
+V-O2-Max ((mL/Min)/kG)   42       68
+LV/RV Mass              2.6      2.6
+LV/RV EDV              0.99     1.05
+LV/RV Stroke Volume    0.98     0.95
+
+Left Ventricle
+--------------
+Mass (G)                148      200
+EDV (mL)                125      167
+Stroke Volume (mL)       74       99
+Ejection Fraction (%)    59       59
+
+Right Ventricle
+---------------
+Mass (G)                 56       77
+EDV (mL)                128      160
+Stroke Volume (mL)       79      102
+Ejection Fraction (%)    62       63
+
+One important take away here is that training induces
+hypertrophy on both sides of the heart.
+
+Some numbers for left ventricle mass (G) from Pluim.
+
+                   Mass
+                   ----
+Control             174
+Endurance Trained   249
+Strength Trained    267
+Combined Training   288
+
+Mass in heart disease can go even higher. I looking for
+suitable references.
+
+Prolonged bed rest decreases ventricular mass. HumMod
+starts up in a bed rest setting. Here are % decreases in
+left ventricle mass with bedrest and spaceflight from
+Dorfman (D), Perhonen (P) and Levine (L).
+
+                        % Change
+                        --------
+Bed rest - 6 weeks (P)     -8%
+Bed rest - 12 weeks (P)   -15.6%
+Spaceflight (P)           -12%
+Bed rest - 8.6 weeks (D)   -9%  (25% in RV)
+Bed rest - 2 weeks (L)     -5%
+
+So here is the proposed contractile protein multiplier.
+
+                      Multiplier
+                      ----------
+Bed Rest                1.0
+Normal Activity         1.1
+Training                1.6
+Severe Heart Disease    2.5
+
+Persistance of Trophic Factor ===============================
+
+Myocardial protein turns over on a regular basis. The trophic
+factor increases anabolism. When the factor decreases,
+anabolism decreases also. The process has a rather long
+half-life, as suggested by the bed rest data above.
+
+Coyle measured V-O2-Max is highly trained athletes as they
+detrained. Of course, the decrease was due to both heart and
+muscle factors, but it gives a hint.
+
+          V-O2-Max (L/Min)
+          ----------------
+Trained     4.22
+12 Days     3.93
+21 Days     3.94
+56 Days     3.67
+84 Days     3.56
+
+Morad measured the fall in left ventricle mass after aortic
+valve replacement.
+
+           LV Mass (G/M^2)   Estimate (G)
+           ---------------  -------------
+Immediate       174              313
+1.6 Years       120              216
+8.1 Years       105              189
+
+With severe disease, there may be long-term structural
+changes that are more fixed than training changes.
+
+I think that I try a tau of 40 days.
+
+Stimulus for Trophic Factor =================================
+
+Fox argues that it is the intensity of training sessons that
+improves V-O2-Max. Note that cardiac work will be 5 times
+normal or above.
+
+References ==================================================
+
+Coyle, E.F. et.al. Time course of loss of adaptations after
+stopping prolonged intense endurance training. J. Appl.
+Physiol. 57(6):1857-1864, 1984.
+
+Dorfman, T.A. et.al. Cardiac atrophy in women following bed
+rest. J. Appl. Physiol. 103(1):8-16, 2007.
+
+Fox, E.L. et.al. Frequency and duration of interval training
+programs and changes in aerobic power. J. Appl. Physiol.
+38(3):481-484, 1975.
+
+Levine, B.D. et.al. Cardiac atrophy after bed-rest
+deconditioning. Circulation 96:517-525, 1997.
+
+Morad, E.S. et.at. Time course of regression of left
+ventricular hypertrophy after aortic valve replacement.
+Circulation 77(6):1345-1355, 1988.
+
+Perhonen, M.A. et.al. Cardiac atrophy after bed rest and
+spaceflight. J. Appl. Physiol. 91(2):645-653, 2001.
+
+Pluim, B.M. et.al. The athlete's heart. A meta-analysis of
+cardiac structure and function. Circulation 100:336-344, 1999.
+
+Scharhag, J. et.al. Athlete's heart. Right and left ventricular
+mass and function in male endurance athletes and untrained
+individuals determined by magnetic resonance imaging.  J. Amer.
+Coll. Cardiol. 40(10):1856-1863, 2002.
+
+End

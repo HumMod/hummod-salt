@@ -1,0 +1,51 @@
+HumMod / Context
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\Context\ ?>
+
+<?include Random.DES ?>
+
+<?include Context-Gender.DES ?>
+<?include Context-Age.DES ?>
+<?include Context-Height.DES ?>
+<?include Context-Adiposity.DES ?>
+<?include Context-Muscularity.DES ?>
+<?include Context-OtherMass.DES ?>
+
+<structure><name> Context </name>
+
+<definitions>
+
+<block><name> Parms </name>
+
+  <call> Random.Parms </call>
+
+  <call> Context-Gender.Parms </call>
+  <call> Context-Age.Parms </call>
+  <call> Context-Height.Parms </call>
+  <call> Context-Adiposity.Parms </call>
+  <call> Context-Muscularity.Parms </call>
+  <call> Context-OtherMass.Parms </call>
+
+</block>
+
+<block><name> Calc </name>
+  <call> Context-Gender.Calc </call>
+  <call> Context-Age.Calc </call>
+  <call> Context-Height.Calc </call>
+  <call> Context-Adiposity.Calc </call>
+  <call> Context-Muscularity.Calc </call>
+  <call> Context-OtherMass.Calc </call>
+
+  <call> Sizing.Calc </call>
+</block>
+
+</definitions>
+</structure>
+
+End

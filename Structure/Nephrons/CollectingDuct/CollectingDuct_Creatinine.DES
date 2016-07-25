@@ -1,0 +1,71 @@
+HumMod / CollectingDuct_Creatinine
+
+Created : 16-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> CollectingDuct_Creatinine </name>
+
+<variables>
+
+<var><name> Secretion </name></var>
+<var><name> Outflow </name></var>
+<var><name> [Creatinine] </name></var>
+<var><name> [Creatinine(mG/dL)] </name></var>
+
+<parm><name> K </name><val> 11.0 </val></parm>
+<parm><name> Block </name><val> 0.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> CalcFlux </name>
+
+  <onjustchanged>
+<name> Block </name>
+  <def><name> LeftCollectingDuct_Creatinine.Block </name><val> Block </val></def>
+  <def><name> RightCollectingDuct_Creatinine.Block </name><val> Block </val></def>
+</onjustchanged>
+
+
+  <def><name> Secretion </name><val> LeftCollectingDuct_Creatinine.Secretion + RightCollectingDuct_Creatinine.Secretion </val></def>
+  <def><name> Outflow </name><val> LeftCollectingDuct_Creatinine.Outflow + RightCollectingDuct_Creatinine.Outflow  </val></def>
+
+
+</block>
+
+
+
+<block><name> CalcConc </name>
+<if><test> CollectingDuct_H2O.Outflow GT 0 </test>
+<true>
+  <def><name> [Creatinine] </name><val> Outflow / CollectingDuct_H2O.Outflow </val></def>
+  <def><name> [Creatinine(mG/dL)] </name><val> 100 * [Creatinine] </val></def>
+
+</true>
+<false>
+<def>
+  <name>  [Creatinine]  </name>
+  <val> 0 </val>
+</def><def>
+  <name>  [Creatinine(mG/dL)]  </name>
+  <val> 0 </val>
+</def>
+</false>
+</if>
+</block>
+
+<block><name> NoFlow </name>
+  <def><name> Outflow </name><val> 0.0 </val></def>
+  <def><name>  [Creatinine(mG/dL)]  </name><val> UNDEFINED </val></def>
+</block>
+
+
+</definitions>
+</structure>
+
+End

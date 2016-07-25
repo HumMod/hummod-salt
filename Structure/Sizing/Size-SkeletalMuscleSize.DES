@@ -1,0 +1,20 @@
+HumMod / Size-SkeletalMuscleSize DES
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> Size-SkeletalMuscleSize </name>
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> SkeletalMuscle-Size.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

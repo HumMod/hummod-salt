@@ -1,0 +1,52 @@
+HumMod / BodyH2O.REF
+
+Created : 2013-02-09
+Revised : 2013-02-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+The total body water is not an individual integral, but
+instead is the sum of multiple compartment integrals.
+They are
+
+  Tissue H2O
+    Upper Torso
+    Middle Torso
+    Lower Torso
+  Plasma Volume
+  RBC H2O
+  External H2O
+    GILumen
+    Excess Lung H2O
+    Peritoneal H2O
+
+Most H2O flux is to and from the plasma.
+
+Gain
+  Oral Intake
+    Diet
+    H2O Loading
+  Metabolism
+  IV Drip
+  Transfusion
+
+Loss
+  Urine
+  Hemorrhage
+  Dialysis
+  Sweat
+  Insensible Skin
+  Insensible Lung
+  Vomitus
+  Diarrhea
+
+The plasma has additional fluxes that do not leave the body.
+
+  Capillary Filtration
+  Lymph Flow
+  GI Lumen Flux
+  Lung H2O Flux
+  Peritoneal Flux
+
+End

@@ -1,0 +1,94 @@
+HumMod / DietThirst
+
+Created : 24-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> DietThirst </name>
+
+<variables>
+
+<var><name> Rate(L/Day) </name></var>
+
+<parm><name> targetOsm_A </name><val> 30 </val></parm>
+<parm><name> targetOsm_S </name><val> 290 </val></parm>292
+<parm><name> targetOsm_m </name><val> 34 </val></parm>
+<parm><name> TargetMasterS </name><val> 1 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Osm_A </name>
+  <integralname> Osm_A </integralname>
+  <initialval> 30 </initialval>
+  <dervname> dOsm_A  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Osm_m </name>
+  <integralname> Osm_m </integralname>
+  <initialval> 34  </initialval>
+  <dervname> dOsm_m  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Osm_S </name>
+  <integralname> Osm_S </integralname>
+  <initialval> 290 </initialval>
+  <dervname> dOsm_S  </dervname>
+  <errorlim> 0.01 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> masterS </name>
+  <integralname> masterS </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dmasterS </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> Rate(L/Day) </name>
+  <point><x> 250 </x><y>  0.0 </y><slope> 0 </slope></point>
+  <point><x> 272 </x><y>  2.0 </y><slope> 0.225 </slope></point>274
+  <point><x> 320 </x><y> 30.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Dervs </name>
+
+<def><name> dOsm_A </name><val> 0.05 * ( targetOsm_A - Osm_A ) </val></def>
+<def><name> dOsm_S </name><val> 0.05 * ( targetOsm_S - Osm_S ) </val></def>
+<def><name> dOsm_m </name><val> 0.05 * ( targetOsm_m - Osm_m ) </val></def>
+<def><name> dmasterS </name><val> 0.05 * ( TargetMasterS - masterS ) </val></def>
+<!--
+<def>
+  <name> Rate(L/Day) </name>
+  <val> ( 1 - OsmBody.OsmoreceptorDamage ) * Rate(L/Day) [ OsmBody.Osmoreceptors(mOsm/L) ] </val>
+</def>
+-->
+<def>
+  <name> Rate(L/Day) </name>
+  <val> ( 1 - OsmBody.OsmoreceptorDamage ) * Osm_A * ( OsmBody.Osmoreceptors(mOsm/L) ^ Osm_m ) / ( ( ( masterS * Osm_S ) ^ Osm_m ) + ( OsmBody.Osmoreceptors(mOsm/L) ^ Osm_m ) )  </val>
+</def>
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

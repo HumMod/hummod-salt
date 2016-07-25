@@ -1,0 +1,36 @@
+HumMod / Acetazolamide Reference
+
+Created : 2013-02-08
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+M.W. 222.25 C4-H6-N4-O3-S2
+
+mMol to mG : x 222.25
+mG to mMol : x 0.0045
+uG/mL to uMol/L : x 4.5
+
+From Goodman and Gillman. Absorption : nearly complete.
+Elimination : Kidney. Time 1/2 : 7.5 hours.
+
+Dosing : 125, 250, 500 and 1000 mG.
+
+From Friberg, L. et.al. Am. J. Physiol. 258:H954-H959, 1990.
+
+Chronic 500 mG twice a day led to 15 uG/mL or 15 mG/L. Then
+using conversion factor above 0.0675 mMol/L or 67.5 uMol/L.
+
+Also from Friberg. Oral 1000 mG at time 0.
+
+Time [ACZ(uG/mL)
+---- ----------
+  0      0
+ 30    34.8
+120    31.8
+180    33.2
+240    27.4
+300    23.1
+
+End

@@ -1,0 +1,45 @@
+HumMod / Height DES
+
+Created : 21-May-05
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Height </name>
+
+<variables>
+
+<var><name> Height </name></var>
+<var><name> Height(M) </name></var>
+<var><name> Height(In) </name></var>
+
+<var><name> InitialHeight </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Height </name>
+  <val> InitialHeight </val>
+</def>
+
+<def>
+  <name> Height(In) </name>
+  <val> Height / 2.54 </val>
+</def>
+
+<def>
+  <name> Height(M) </name>
+  <val> Height / 100.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

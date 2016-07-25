@@ -1,0 +1,19 @@
+HumMod / Diagnosis
+
+Created : 2011-07-26
+Revised : 2013-02-12
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Diagnosis\ ?>
+
+<?include AutopsyReport\AutopsyReport.DES ?>
+<?include BloodChemistry\BloodChemistry.DES ?>
+<?include UrineAnalysis\UrineAnalysis.DES ?>
+<?include Chart\Chart.DES ?>
+<?include ECG\ECG.DES ?>
+<?include Evaluation\Evaluation.DES ?>
+<?include Size\Size.DES ?>
+
+End

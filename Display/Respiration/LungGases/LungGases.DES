@@ -1,0 +1,20 @@
+HumMod / LungGases
+
+Created : 2012-07-12
+Revised : 2012-07-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+
+<?path Display\Respiration\LungGases\ ?>
+
+<?include Anesthetic\Anesthetic.DES ?>
+<?include CO\CO.DES ?>
+<?include CO2\CO2.DES ?>
+<?include H2O\H2O.DES ?>
+<?include N2\N2.DES ?>
+<?include O2\O2.DES ?>
+<?include Summary\Summary.DES ?>
+
+End

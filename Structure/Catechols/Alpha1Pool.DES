@@ -1,0 +1,60 @@
+HumMod / AlphaPool
+
+Created : 22-Jun-06
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> Alpha1Pool </name>
+
+<variables>
+
+<parm><name> TotalAlpha1 </name><val> 4. </val></parm>
+<constant><name> kd_epi </name><val> 5  </val></constant>240,5
+<constant><name> kd_norepi </name><val> 5 </val></constant>240,5
+<constant><name> kd_desglymido </name><val> 150 </val></constant>
+<constant><name> kd_phenyl </name><val> 40 </val></constant>15?
+
+<var><name> epibound </name></var>
+<var><name> norepibound </name></var>
+<var><name> desglymidobound </name></var>
+<var><name> phenylbound </name></var>
+
+<var><name> epi </name></var>
+<var><name> norepi </name></var>
+<var><name> desglymido </name></var>
+<var><name> phenyl </name></var>
+
+<var><name> denominator </name></var>
+
+<var><name> ReceptorActivity </name><val> 1 </val></var>
+<var><name> Effect </name></var>
+<parm><name> Block(%) </name><val> 0 </val></parm>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def><name> epi </name><val> EpiPool.[Epi(nMol/L)]  </val></def>
+<def><name> norepi </name><val> NEPool.[NE(nMol/L)] </val></def>
+<def><name> desglymido </name><val> DesglymidodrinePool.[Desglymidodrine(nMol)]  </val></def>
+<def><name> phenyl </name><val> PhenylephrinePool.[Phenylephrine(nMol)] </val></def>
+
+<def><name> denominator </name><val> ( ( norepi * kd_desglymido * kd_epi * kd_phenyl ) + ( epi * kd_desglymido * kd_norepi * kd_phenyl ) + ( desglymido * kd_epi * kd_norepi * kd_phenyl ) + ( kd_desglymido * kd_epi * kd_norepi * kd_phenyl ) + ( phenyl * kd_desglymido * kd_epi * kd_norepi  ) )  </val></def>
+
+<def><name> epibound </name><val> ( epi * kd_norepi * kd_desglymido * kd_phenyl ) / denominator </val></def>
+<def><name> norepibound </name><val> ( norepi * kd_epi * kd_desglymido * kd_phenyl ) / denominator </val></def>
+<def><name> desglymidobound </name><val> ( desglymido * kd_norepi * kd_epi * kd_phenyl ) /  denominator </val></def>
+<def><name> phenylbound </name><val> ( phenyl * kd_norepi * kd_epi * kd_desglymido  ) / denominator </val></def>
+
+<def><name> ReceptorActivity </name><val> ( epibound + norepibound + desglymidobound + phenylbound ) * TotalAlpha1  </val></def>*1600,1.6
+<def><name> Effect </name><val> ( 1 - ( Block(%) / 100 ) ) * ReceptorActivity </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End
+

@@ -1,0 +1,113 @@
+HumMod / Summary
+
+Created : 01-Apr-08
+Revised : 2013-01-30
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.2 </high>
+   <wide> 30.0 </wide>
+   <title> Synthesis </title>
+
+<structurename> LiverMetabolism_Ketoacids </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Synthesis </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Synthesis </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Synthesis </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showbargraph>
+  <row> 11.8 </row><col> 1.0 </col><high> 6.0 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar><name> FattyAcidEffect </name><label> [Fatty Acid] </label><color> BLUE </color></bar>
+  <bar><name> GlucagonEffect </name><label> [Glucagon] </label><color> BLUE </color></bar>
+  <bar><name> InsulinEffect </name><label> [Insulin] </label><color> BLUE </color></bar>
+  <bar><name> Liver-Function.Effect </name><label> Liver Function </label><color> BLUE </color></bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<showvalue>
+  <row> 18.4 </row><col> 1.0 </col>
+  <name> SynthesisBasic </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Basic </label>
+</showvalue>
+
+<repeatlist>
+  <name> SynthesisMultiplier </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 19.8 </row><col> 3.0 </col>
+  <name> SynthesisMultiplier </name>
+  <listname> SynthesisMultiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<showvalue>
+  <row> 21.2 </row><col> 3.0 </col>
+  <name> SynthesisNominal </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.2 </row><col> 3.0 </col>
+  <name> Synthesis(/G) </name>
+  <format><decimal> 6 </decimal></format>
+  <label> /G </label>
+</showvalue>
+
+<showvalue>
+  <row> 23.2 </row><col> 3.0 </col>
+  <name> Liver-Size.Mass </name>
+  <format><decimal> 0 </decimal></format>
+  <label> Liver Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 24.6 </row><col> 1.0 </col>
+  <name> FattyAcidUse </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Fatty Acid Use </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Units for ketoacid and fatty acids rates </line>
+  <line> are mG/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End

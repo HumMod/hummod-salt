@@ -1,0 +1,48 @@
+HumMod / NephronCalciumDistal
+
+Created : 2011-08-07
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<structure><name> NephronCalciumDistal </name>
+
+<variables>
+
+
+<var><name> Inflow </name></var>
+<var><name> Reab </name></var>
+<var><name> Outflow </name></var>
+
+<var><name> Excretion </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+<def>
+  <name> Inflow </name>
+  <val> LeftNephronCalciumDistal.Inflow + RightNephronCalciumDistal.Inflow </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> ( LeftNephronCalciumDistal.Inflow  * LeftNephronCalciumDistal.FractionalReab ) +  ( RightNephronCalciumDistal.Inflow  * RightNephronCalciumDistal.FractionalReab ) </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+<def>
+  <name> Excretion </name>
+  <val> Outflow </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

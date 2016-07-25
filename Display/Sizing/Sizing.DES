@@ -1,0 +1,26 @@
+HumMod / Sizing
+
+Created : 2012-03-10
+Revised : 2013-03-04
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Sizing\ ?>
+
+<?include OrganMass\OrganMass.DES ?>
+<?include OrganComposition\OrganComposition.DES ?>
+<?include BloodVolume\BloodVolume.DES ?>
+<?include H2O\H2O.DES ?>
+<?include Osmoles\Osmoles.DES ?>
+<?include Electrolytes\Electrolytes.DES ?>
+<?include Metabolism\Metabolism.DES ?>
+<?include Hormones\Hormones.DES ?>
+<?include BloodFlow\BloodFlow.DES ?>
+<?include Pressures\Pressures.DES ?>
+<?include BloodVessels\BloodVessels.DES ?>
+<?include Pericardium\Pericardium.DES ?>
+<?include HeartChambers\HeartChambers.DES ?>
+<?include HeartPumping\HeartPumping.DES ?>
+
+End

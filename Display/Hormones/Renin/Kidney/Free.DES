@@ -1,0 +1,154 @@
+HumMod / Free
+
+Created : 23-Jun-06
+Last Modified : 2012-01-28
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 26.4 </row>
+   <col> 1.0 </col>
+   <high> 20.8 </high>
+   <wide> 40.0 </wide>
+   <title> Free </title>
+
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightReninFree.Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftReninFree.Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightReninFree.Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftReninFree.Mass </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 40000 </min><max> 45000 </max></scale>
+  </yaxis>
+</showgraph>
+
+<label><row> 11.4 </row><col> 6.5 </col><text> Left </text></label>
+
+<showvalue>
+   <row> 12.4 </row><col> 3.0 </col>
+   <name> LeftReninFree.Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.4 </row><col> 3.0 </col>
+   <name> LeftReninSynthesis.Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Synthesis </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 3.0 </col>
+   <name> LeftReninFree.InFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> InFlux </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 3.0 </col>
+   <name> LeftReninFree.Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.8 </row><col> 3.0 </col>
+   <name> LeftReninSecretion.Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Secretion </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.8 </row><col> 3.0 </col>
+   <name> LeftReninFree.OutFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> OutFlux </label>
+</showvalue>
+
+<label><row> 11.4 </row><col> 22.4 </col><text> Right </text></label>
+
+<showvalue>
+   <row> 12.4 </row><col> 19.0 </col>
+   <name> RightReninFree.Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.4 </row><col> 19.0 </col>
+   <name> RightReninSynthesis.Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Synthesis </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 19.0 </col>
+   <name> RightReninFree.InFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> InFlux </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 19.0 </col>
+   <name> RightReninFree.Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.8 </row><col> 19.0 </col>
+   <name> RightReninSecretion.Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Secretion </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.8 </row><col> 19.0 </col>
+   <name> RightReninFree.OutFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> OutFlux </label>
+</showvalue>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 31.0 </col>
+
+  <line> Units for renin are GU (Goldblatt Units). </line>
+  <line>  </line>
+  <line> A typical value for free renin is 87000 GU. </line>
+</infobutton>
+
+</groupbox>
+
+End

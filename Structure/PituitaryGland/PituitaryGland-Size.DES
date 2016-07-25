@@ -1,0 +1,60 @@
+HumMod / PituitaryGland-Size
+
+Created : 2012-06-30
+Revised : 2012-06-30
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> PituitaryGland-Size </name>
+
+<variables>
+
+<var><name> InitialMass </name></var>
+<var><name> Mass </name></var>
+
+<constant><name> LiquidDensity </name><val> 1.00 </val></constant>
+<constant><name> SolidDensity </name><val> 1.17 </val></constant>
+<constant><name> H2OFractMass </name><val> 0.67 </val></constant>
+
+<var><name> AnteriorMass </name></var>
+<parm><name> AnteriorMassPercent </name><val> 80 </val></parm>
+
+<var><name> PosteriorMass </name></var>
+<var><name> PosteriorMassPercent </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Parms </name>
+<def>
+  <name> AnteriorMass </name>
+  <val> Mass * ( AnteriorMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> PosteriorMassPercent </name>
+  <val> 100 - AnteriorMassPercent </val>
+</def>
+
+<def>
+  <name> PosteriorMass </name>
+  <val> Mass * ( PosteriorMassPercent / 100 ) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

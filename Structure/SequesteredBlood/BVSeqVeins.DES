@@ -1,0 +1,107 @@
+HumMod / BVSeqVeins
+
+Created : 19-Jun-05
+Revised : 2013-03-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> BVSeqVeins </name>
+
+<variables>
+
+<var><name> Pressure </name></var>
+<var><name> TMP </name></var>
+
+<var><name> AlphaAgonistEffect </name></var>
+
+<var><name> Conductance </name></var>
+<parm><name> ConductancePatent </name><val> 10.0 </val></parm>
+<parm><name> ConductanceNotPatent </name><val> 100.0 </val></parm>
+
+<var><name> Gradient </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Vol </name>
+  <integralname> Vol </integralname>
+  <initialval> 150.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.50 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> VolOnPressure </name>
+  <point><x>    0 </x><y> -100 </y><slope> 2.00 </slope></point>
+  <point><x>  150 </x><y>   14 </y><slope> 0.05 </slope></point>
+  <point><x> 1200 </x><y>   50 </y><slope> 0.15 </slope></point>
+</curve>
+
+<curve>
+  <name> AlphaAgonistEffect </name>
+  <point><x> 0 </x><y> -1 </y><slope> 0 </slope></point>
+  <point><x> 1 </x><y>  0 </y><slope> 2.0 </slope></point>
+  <point><x> 5 </x><y> 10 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> CalcPressure </name>
+
+<def>
+  <name> AlphaAgonistEffect </name>
+  <val> AlphaAgonistEffect [ BVSeqAlphaReceptors.Activity ] </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> VolOnPressure [ Vol ] + AlphaAgonistEffect </val>
+</def>
+
+<def>
+  <name> Pressure </name>
+  <val> TMP + LowerExternalPressure.Pressure </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> DxMax </name>
+  <val> 0.8 </val>
+</def>
+
+<conditional>
+  <name> Conductance </name>
+  <test> VenousValves.PatentValves </test>
+  <true> ConductancePatent </true>
+  <false> ConductanceNotPatent </false>
+</conditional>
+
+<def>
+  <name> Gradient </name>
+  <val> RegionalPressure.LowerVein - Pressure </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Conductance * Gradient </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

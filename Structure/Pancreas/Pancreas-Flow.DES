@@ -1,0 +1,115 @@
+HumMod / Pancreas-Flow
+
+Created : 2012-11-02
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Pancreas-Flow </name>
+
+<variables>
+
+<var><name> TotalFlow </name></var>
+
+<var><name> EndocrineFlow </name></var>
+
+<var><name> AlphaCellFlow </name></var>
+<parm><name> AlphaCellCond/G </name><val> 0.009 </val></parm>
+<var><name> AlphaCellPlasmaFlow </name></var>
+
+<var><name> BetaCellFlow </name></var>
+<parm><name> BetaCellCond/G </name><val> 0.009 </val></parm>
+<var><name> BetaCellPlasmaFlow </name></var>
+
+<var><name> DeltaCellFlow </name></var>
+<parm><name> DeltaCellCond/G </name><val> 0.009 </val></parm>
+
+<var><name> OtherCellFlow </name></var>
+<parm><name> OtherCellCond/G </name><val> 0.009 </val></parm>
+
+<var><name> ExocrineFlow </name></var>
+<parm><name> ExocrineCond/G </name><val> 0.009 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> AlphaCellFlow </name>
+  <val>
+      AlphaCellCond/G
+    * Pancreas-Size.AlphaCellMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> AlphaCellPlasmaFlow </name>
+  <val> AlphaCellFlow * BloodVol.PVCrit </val>
+</def>
+
+<def>
+  <name> BetaCellFlow </name>
+  <val>
+      BetaCellCond/G
+    * Pancreas-Size.BetaCellMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> BetaCellPlasmaFlow </name>
+  <val> BetaCellFlow * BloodVol.PVCrit </val>
+</def>
+
+<def>
+  <name> DeltaCellFlow </name>
+  <val>
+      DeltaCellCond/G
+    * Pancreas-Size.DeltaCellMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> OtherCellFlow </name>
+  <val>
+      OtherCellCond/G
+    * Pancreas-Size.OtherCellMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> EndocrineFlow </name>
+  <val> AlphaCellFlow + BetaCellFlow + DeltaCellFlow + OtherCellFlow </val>
+</def>
+
+<def>
+  <name> ExocrineFlow </name>
+  <val>
+      ExocrineCond/G
+    * Pancreas-Size.ExocrineMass
+    * GITract-Flow.Conductance_X_Normal
+    * GITract-Pressure.PressureGradient
+  </val>
+</def>
+
+<def>
+  <name> TotalFlow </name>
+  <val> EndocrineFlow + ExocrineFlow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

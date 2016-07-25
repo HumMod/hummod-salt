@@ -1,0 +1,122 @@
+HumMod / CanrenonePool
+
+Created : 2013-03-15
+Revised : 2013-03-16
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> CanrenonePool </name>
+
+<variables>
+
+<var><name> [Canrenone(nG/mL)] </name></var>
+<var><name> [Canrenone(nMol/L)] </name></var>
+
+<var><name> Conversion </name></var>
+<var><name> Disposal </name></var>
+
+<parm><name> K </name><val> 0.0010 </val></parm>
+
+<parm><name> Binding(%) </name><val> 90 </val></parm>
+
+<var><name> Free </name></var>
+<var><name> Bound </name></var>
+
+<var><name> Free-F </name></var>
+<var><name> Bound-F </name></var>
+
+<constant><name> MW </name><val> 340.5 </val></constant>
+<var><name> NG_ML_TO_NMOL_L </name></var>
+
+<var><name> VolDist </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass(uG) </name>
+  <integralname> Mass(uG) </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 30 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> Bound-F </name>
+  <val> Binding(%) / 100 </val>
+</def>
+
+<def>
+  <name> Free-F </name>
+  <val> 1 - Bound-F </val>
+</def>
+
+<def>
+  <name> NG_ML_TO_NMOL_L </name>
+  <val> 1000 / MW </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> Bound </name>
+  <val> Bound-F * Mass(uG) </val>
+</def>
+
+<def>
+  <name> Free </name>
+  <val> Free-F * Mass(uG) </val>
+</def>
+
+<def>
+  <name> VolDist </name>
+  <val> ECFV.Vol </val>
+</def>
+
+<def>
+  <name> [Canrenone(nG/mL)] </name>
+  <val> 1000 * Free / VolDist </val>
+</def>
+
+<def>
+  <name> [Canrenone(nMol/L)] </name>
+  <val> [Canrenone(nG/mL)] * NG_ML_TO_NMOL_L </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Conversion </name>
+  <val> SpironolactonePool.Conversion
+  </val>
+</def>
+
+<def>
+  <name> Disposal </name>
+  <val> K * Mass(uG)
+  </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Conversion - Disposal </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

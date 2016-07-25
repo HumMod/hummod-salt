@@ -1,0 +1,119 @@
+HumMod / Bone-FixedCalcium
+
+Created : 2011-08-08
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Bone-FixedCalcium </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Deposition </name></var>
+<var><name> Resorption </name></var>
+
+<var><name> Stress </name></var>
+<parm><name> StressAdjustment </name><val> 1.0 </val></parm>
+<parm><name> StressK </name><val> 0.0667 </val></parm>
+
+<parm><name> DepositionK </name><val> 0.064 </val></parm>
+<parm><name> ResorptionK </name><val> 0.00025 </val></parm>
+
+<var><name> [Calcitonin]Effect </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 10 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> [Calcitonin]Effect </name>
+  <point><x>    0 </x><y> 0 </y><slope> 0 </slope></point>
+  <point><x> 0.01 </x><y> 1 </y><slope> 150 </slope></point>
+  <point><x> 0.02 </x><y> 2 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Mass </name>
+  <val>
+       Bone-Composition.CA_FRACT_MINERAL
+     * Bone-Composition.FRACT_FIXED
+     * Bone-Size.InitialMineralMass </val>
+</def>
+
+</block>
+
+<block><name> Calc  </name>
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Stress </name>
+  <val>
+    ( StressK * StressAdjustment * Gravity.Gz * Weight.Weight(kG) )
+  / ( Bone-Composition.Mass(kG) )
+  </val>
+</def>
+
+<def>
+  <name> [Calcitonin]Effect </name>
+  <val> [Calcitonin]Effect [ Calcitonin.[Conc(nG/mL)] ] </val>
+</def>
+
+<def>
+  <name> Deposition </name>
+  <val>
+       DepositionK
+     * Bone-ExchangeableCalcium.[Conc(mG/dL)]
+     * [Calcitonin]Effect
+     * Stress
+  </val>
+</def>
+
+<def>
+  <name> Resorption </name>
+  <val> ResorptionK * Mass </val>
+</def>
+
+<def>
+  <name> Gain </name>
+  <val> Deposition </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> Resorption </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,122 @@
+HumMod / EPOPool
+
+Created : 07-Apr-05
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> EPOPool </name>
+
+<variables>
+
+<var><name> [EPO] </name></var>
+<var><name> Log10Conc </name></var>
+<var><name> [EPO(pG/mL)] </name></var>
+
+<constant><name> MU_TO_PG </name><val> 7.69 </val></constant>
+<constant><name> PERCENT_TO_FRACTION </name><val> 0.01 </val></constant>
+
+<parm><name> VolDist(%ECFV) </name><val> 33 </val></parm>
+<var><name> VolDist(FractionECFV) </name></var>
+
+<var><name> VolDist </name></var>
+<var><name> InitialVolDist </name></var>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Target[EPO] </name><val> 18.0 </val></var>
+<var><name> InitialMass </name></var>
+
+<parm><name> Switch </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 1.20 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+  <def>
+    <name> InitialVolDist </name>
+    <val> PERCENT_TO_FRACTION * VolDist(%ECFV) * ECFV.InitialVol(L) </val>
+  </def>
+
+  <def>
+    <name> InitialMass </name>
+    <val> Target[EPO] * InitialVolDist </val>
+  </def>
+
+  <def><name> Mass </name><val> InitialMass </val></def>
+</block>
+
+<block><name> Parms </name>
+  <def>
+    <name> VolDist(FractionECFV) </name>
+    <val> PERCENT_TO_FRACTION * VolDist(%ECFV) </val>
+  </def>
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> VolDist </name>
+  <val> VolDist(FractionECFV) * ECFV.Vol(L) </val>
+</def>
+
+ <conditional>
+  <name> [EPO] </name>
+  <test> Switch </test>
+  <true> Level </true>
+  <false> Mass / VolDist </false>
+</conditional>
+ 
+
+<conditional>
+  <name> Log10Conc </name>
+  <test> [EPO] GT 1.0 </test>
+  <true> LOG10 ( [EPO] ) </true>
+  <false> 0.0 </false>
+</conditional>
+
+<def>
+  <name> [EPO(pG/mL)] </name>
+  <val> MU_TO_PG * [EPO] </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Gain </name>
+  <val> EPOSecretion.Rate + EPOPump.Rate </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> EPODisposal.Rate </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,79 @@
+HumMod / Change
+
+Created : 2012-02-13
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 14.8 </high>
+   <wide> 30.0 </wide>
+   <title> Change </title>
+
+<structurename> CO2Total </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Change(mMol/Min) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Change(mMol/Min) </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> -2 </min><max> 2 </max><inc> 2 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> Change(mL/Min) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change (mL/Min) </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> Inflow(mMol/Min) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Generated </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> Outflow(mMol/Min) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Exhaled </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 1.0 </col>
+   <name> Urineflow(mMol/Min) </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Excreted </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Units are mMol/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End

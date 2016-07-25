@@ -1,0 +1,45 @@
+HumMod / Lungs
+
+Created : 2013-01-27
+Revised : 2013-01-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> BloodVessels-Lungs </name>
+  <label> Lungs </label>
+  <parent> BloodVessels </parent>
+</branch>
+
+<leaf>
+  <name> Lungs-PulmonaryArtery </name>
+  <label> Pulmonary Artery </label>
+  <parent> BloodVessels-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Lungs-PulmonaryCapillaries </name>
+  <label> Pulmonary Capillaries </label>
+  <parent> BloodVessels-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Lungs-PulmonaryVeins </name>
+  <label> Pulmonary Veins </label>
+  <parent> BloodVessels-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Lungs-LeftAtrium </name>
+  <label> Left Atrium </label>
+  <parent> BloodVessels-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Lungs-LeftVentricle </name>
+  <label> LeftVentricle </label>
+  <parent> BloodVessels-Lungs </parent>
+</leaf>
+
+End

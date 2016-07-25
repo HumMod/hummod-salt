@@ -1,0 +1,67 @@
+HumMod / Altitude
+
+Created : 21-Oct-04
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> Altitude </name>
+
+<variables>
+
+<parm><name> Feet </name><val> 0.0 </val></parm>
+<var><name> Meters </name></var>
+<parm><name> AscentRate </name><val> 0 </val></parm>
+<var><name> BeginAscent </name></var>
+<var><name> AscentSwitch </name><val> 0 </val></var>
+
+</variables>
+
+<definitions>
+<block><name> Parms </name>
+
+<def>
+  <name> Meters </name>
+  <val> 0.3048 * Feet </val>
+</def>
+
+</block>
+
+<block><name> BeginAscent </name>
+
+<def>
+  <name> AscentSwitch </name>
+  <val> 1 </val>
+</def>
+
+<def>
+  <name> BeginAscent </name>
+  <val> System.X  </val>
+</def>
+
+</block>
+
+<block><name> StopAscent </name>
+
+<def>
+  <name> AscentSwitch </name>
+  <val> 0 </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Feet </name>
+  <val> AscentRate * ( System.X - BeginAscent ) * AscentSwitch + Feet </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

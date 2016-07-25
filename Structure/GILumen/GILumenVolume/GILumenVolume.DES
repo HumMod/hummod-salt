@@ -1,0 +1,55 @@
+HumMod / GILumenVolume
+
+Created : 2012-02-13
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> GILumenVolume </name>
+
+<variables>
+
+<var><name> Mass </name></var>
+<var><name> Mass(kG) </name></var>
+
+<var><name> MassSolids </name></var>
+<var><name> MassH2O </name></var>
+
+</variables> 
+
+<definitions>
+
+<block><name> Mass </name>
+
+<def>
+  <name> MassSolids </name>
+  <val> 0.001 *
+   ( GILumenCarbohydrates.Mass
+   + GILumenFat.Mass
+   + GILumenProtein.Mass
+   )
+  </val>
+</def>
+
+<def>
+  <name> MassH2O </name>
+  <val> GILumenH2O.Mass </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> MassSolids + MassH2O </val>
+</def>
+
+<def>
+  <name> Mass(kG) </name>
+  <val> 0.001 * Mass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

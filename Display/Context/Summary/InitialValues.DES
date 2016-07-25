@@ -1,0 +1,60 @@
+HumMod | InitialValues
+
+Created : 2012-03-10
+Revised : 2012-03-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 7.4 </high>
+   <wide> 30.0 </wide>
+   <title> Initial Values </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Context-Age.Age(Years) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Age (Years) </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> Context-Height.Height(cM) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Height (cM) </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.8 </row><col> 1.0 </col>
+   <name> Context-Adiposity.Mass(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Adiposity (kG) </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.8 </row><col> 1.0 </col>
+   <name> Context-Muscularity.Mass(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Muscularity (kG) </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.8 </row><col> 1.0 </col>
+   <name> Context-OtherMass.Mass(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> OtherMass (kG) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 27.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

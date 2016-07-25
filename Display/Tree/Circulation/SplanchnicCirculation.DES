@@ -1,0 +1,33 @@
+HumMod / SplanchnicCirculation
+
+Created : 2013-03-09
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> SplanchnicCirculation </name>
+  <label> Splanchnic Circulation </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> SplanchnicCirculation-PortalVein </name>
+  <label> Portal Vein </label>
+  <parent> SplanchnicCirculation </parent>
+</leaf>
+
+<leaf>
+  <name> SplanchnicCirculation-HepaticArtery </name>
+  <label> Hepatic Artery </label>
+  <parent> SplanchnicCirculation </parent>
+</leaf>
+
+<leaf>
+  <name> SplanchnicCirculation-HepaticVein </name>
+  <label> Hepatic Vein </label>
+  <parent> SplanchnicCirculation </parent>
+</leaf>
+
+End

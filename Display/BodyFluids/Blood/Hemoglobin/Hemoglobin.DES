@@ -1,0 +1,15 @@
+HumMod / Hemoglobin
+
+Created : 27-Apr-05
+Revised : 2012-09-13
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<?path Display\BodyFluids\Blood\Hemoglobin\ ?>
+
+<?include Properties\Properties.DES ?>
+<?include Loading\Loading.DES ?>
+<?include Calculator\Calculator.DES ?>
+
+End

@@ -1,0 +1,130 @@
+HumMod / InsulinInjection
+
+Created : 01-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> InsulinInjection </name>
+
+<variables>
+
+<parm><name> Dose </name><val> 0.0 </val></parm>
+<parm><name> Type </name><val> 0 </val></parm>
+
+<parm><name> Dummy </name><val> 0 </val></parm>
+
+<var><name> TotalInjections </name><val> 0 </val></var>
+<var><name> TotalDose </name><val> 0.0 </val></var>
+
+<parm><name> AbsorbTau </name><val> 4 </val></parm>
+<var><name> AbsorbK </name></var>
+
+<parm><name> DegradeK </name><val> 0.004 </val></parm>
+
+<var><name> AbsorbRate </name></var>
+<var><name> AbsorbRate(mU/Min) </name></var>
+<var><name> DegradeRate </name></var>
+
+<constant><name> UNITS_TO_MILLIUNITS </name><val> 1000 </val></constant>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<testcase>
+
+<case><test> Type EQ 0 </test>
+<def><name> AbsorbTau </name><val> 4 </val></def>
+</case>
+
+<case><test> Type EQ 1 </test>
+<def><name> AbsorbTau </name><val> 10 </val></def>
+</case>
+
+<case><test> Type EQ 2 </test>
+<def><name> AbsorbTau </name><val> 18 </val></def>
+</case>
+
+</testcase>
+
+<def>
+  <name> AbsorbK </name>
+  <val> INVERT ( AbsorbTau * 60 ) </val>
+</def>
+
+<onjustchanged>
+  <name> Dummy </name>
+<def><name> Mass </name><val> Mass + ( Dummy * Dose ) </val></def>
+<def><name> TotalInjections </name><val> TotalInjections + Dummy </val></def>
+<def><name> TotalDose </name><val> TotalDose + ( Dummy * Dose ) </val></def>
+
+<def><name> Dummy </name><val> 0 </val></def>
+</onjustchanged>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> AbsorbRate </name>
+  <val> AbsorbK * Mass </val>
+</def>
+
+<def>
+  <name> DegradeRate </name>
+  <val> DegradeK * Mass </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> - ( AbsorbRate + DegradeRate ) </val>
+</def>
+
+<def>
+  <name> AbsorbRate(mU/Min) </name>
+  <val> UNITS_TO_MILLIUNITS * AbsorbRate </val>
+</def>
+
+</block>
+
+<block><name> InjectInsulinNow </name>
+
+<def>
+  <name> TotalInjections </name>
+  <val> TotalInjections + 1 </val>
+</def>
+
+<def>
+  <name> TotalDose </name>
+  <val> TotalDose + Dose </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> Mass + Dose </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

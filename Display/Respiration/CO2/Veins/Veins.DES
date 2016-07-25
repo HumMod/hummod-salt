@@ -1,0 +1,32 @@
+HumMod / Veins
+
+Created : 27-Apr-05
+Revised : 2012-10-27
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<panel><name> CO2_Veins </name>
+
+<label>
+  <row> 0.3 </row><col> 1.0 </col>
+  <text> CO2 | Veins </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Respiration\CO2\Veins\ ?>
+
+<?include LeftBox.DES ?>
+<?include Technical.DES ?>
+<?include RightBox.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,41 @@
+HumMod | ACTH
+
+Created : 2011-07-30
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<panel><name> ACTH </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Hormone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Hormones | ACTH </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Hormones\ACTH\ ?>
+
+<?include Box.DES ?>
+
+<?include Pump.DES ?>
+<?include Secretion.DES ?>
+<?include Disposal.DES ?>
+
+</panel>
+
+End

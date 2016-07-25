@@ -1,0 +1,76 @@
+HumMod / FuelSelector
+
+Created : 2012-11-04
+Revised : 2012-11-04
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+The fuel selector is relevant only to aerobic metabolism. Anaerobic
+metabolism uses only glucose, so there is no fuel selection.
+
+Each of the major organs has a fuel selector in the structure
+Organ-Fuel. The fuel selector is called with the number of calories
+needed already defined, so the task is to calculate how much of
+which fuel will be used to supply the needed number of calories.
+
+Organs preferentially metabolise lactate but usually only a limited
+amount is available. After that the selection involves fatty acid vs.
+glucose.
+
+The amount of each metabolite used depends on the rate of delivery
+and the organ's preference. Delivery of both metabolites uses the
+same blood flow, so we can actually compare delivered concentrations.
+
+  [Glucose] = 100 mG/dL
+  [Fatty Acid] = 15 mG/dL
+
+The fuel selector first calculates the calories delivered using
+
+[Conc] - Concentration in the circulating pool (mg/mL)
+Available(%) - Fraction of delivered that makes it to the cytosol.
+Delivered - Amount Delivered (mG/Min)
+Calories Delivered - Amount Delivered * Caloric Value
+
+So we first calculate the lactate supplied calories, then the fatty
+acid supplied calories and then glucose supplies the rest if it can.
+
+We need an algorithm at this point to calculate the amount of FA
+calories used (as a fraction of total delivered) as a function of
+the fatty acid calories delivered (as a fraction of the total
+calories delivered).
+
+When the fraction delivered is 0, the fraction used is zero. When
+the fraction delivered is 1, the fraction used is 1. When the
+fraction delivered is normal, the fraction used is the organs
+preference for fatty acid (converted from % to fraction).
+
+The normal calories delivered (for Other Tissue) are around
+
+  Glucose = 550
+  Fatty Acid = 250
+  Lactate = 1
+  Total = 800
+
+These numbers indicate that a typical fatty acid delivered fraction
+is 0.31.
+
+Maybe the best way to implement this is to use a curve. The organ's
+preference will be embedded and will not be a working parameter.
+
+Organ Preference (% Of Total Cals Delivered)
+--------------------------------------------
+Bone = 60
+Brain = 90 (KA-)
+Fat = 60
+GI Tract = 60
+Kidney = 60
+Left Heart = 70
+Liver = 60
+Other Tissue = 60
+Respiratory Muscle = 50
+Right Heart = 70
+Skeletal Muscle = 50
+Skin = 60
+
+End

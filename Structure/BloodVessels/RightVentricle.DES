@@ -1,0 +1,46 @@
+HumMod / RightVentricle-Compartment
+
+Created : 16-May-05
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> RightVentricle </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+
+<var><name> Vol </name></var>
+
+<var><name> InitialVolume </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Vol </name><val> InitialVolume </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+  <def>
+    <name> Inflow </name>
+    <val> RightHeartPumping-Pumping.BloodFlow </val>
+  </def>
+
+  <def>
+    <name> Outflow </name>
+    <val> RightHeartPumping-Pumping.BloodFlow </val>
+  </def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

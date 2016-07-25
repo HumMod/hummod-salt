@@ -1,0 +1,154 @@
+HumMod / RightKidney-EfferentArtery DES
+
+Created : 16-Nov-04
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> RightKidney-EfferentArtery </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<constant><name> Conductance(/G) </name><val> 0.06218 </val></constant>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<var><name> A2Effect </name></var>
+<var><name> SympEffect </name></var>
+
+<var><name> PressureGradient </name><val> 50.0 </val></var>
+<var><name> BloodFlow </name></var>
+<var><name> Resistance </name></var>
+
+<var><name> OuterVesselsInflow </name></var>
+<var><name> OuterVesselsOutflow </name></var>
+
+<var><name> VasaRectaInflow </name></var>
+<var><name> VasaRectaOutflow </name></var>
+</variables>
+
+<functions>
+
+<curve>
+  <name> A2Effect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point><!-- 1.5  -->
+  <point><x> 0.5 </x><y> 1.2 </y><slope> 0.0 </slope></point><!-- 1.5  -->
+  <point><x> 1. </x><y> 1.0 </y><slope> -0.75 </slope></point><!-- 0.4  --> -1
+  <point><x> 1.5 </x><y> 0.3 </y><slope> 0.0 </slope></point><!-- 3, 0.6  -->
+  <point><x> 3 </x><y> 0.1 </y><slope> 0.0 </slope></point><!-- 3, 0.6  -->
+
+</curve>
+
+<curve>
+  <name> SympEffect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 3.0 </x><y> 0.3 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * RightKidney-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+
+
+<!--  
+<def><name> SympEffect </name><val> SympEffect [ RightKidney-AlphaReceptors.Activity ] </val></def>
+<def><name> A2Effect </name><val> A2Effect [ A2Pool.Log10Conc ] </val></def> 
+<def><name> A2Effect </name><val> ( LeftKidney-EfferentArtery.A2_A * ( A2Pool.Log10Conc ^ LeftKidney-EfferentArtery.A2_m ) / ( ( A2Pool.Log10Conc ^ LeftKidney-EfferentArtery.A2_m ) + ( LeftKidney-EfferentArtery.A2_S ^ LeftKidney-EfferentArtery.A2_m ) ) ) + LeftKidney-EfferentArtery.A2_B  </val></def>
+-->
+
+<def><name> SympEffect </name><val> ( LeftKidney-EfferentArtery.Symp_A * ( LeftKidney-EfferentArtery.Symp_S ^ LeftKidney-EfferentArtery.Symp_m ) / ( ( RightKidney-AlphaReceptors.Activity ^ LeftKidney-EfferentArtery.Symp_m ) + ( LeftKidney-EfferentArtery.Symp_S ^ LeftKidney-EfferentArtery.Symp_m ) ) ) + LeftKidney-EfferentArtery.Symp_B  </val></def>
+<def><name> A2Effect </name><val> LeftKidney-EfferentArtery.A2Effect </val></def>
+
+<conditional><name> Conductance </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicConductance
+  * RightKidney-NephronCount.Total(xNormal)
+  * A2Effect
+  * SympEffect
+  * Anesthesia.VascularConductance
+  * Viscosity.ConductanceEffect
+</false>
+</conditional>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> PressureGradient </name>
+  <val> RightGlomerulusFiltrate.Pressure - SystemicVeins.Pressure </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> PressureGradient * Conductance </val>
+</def>
+
+<if><test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def>
+  <name> Resistance </name>
+  <val> 1 / Conductance </val>
+</def>
+</true>
+<false>
+<def>
+  <name> Resistance </name>
+  <val> 0 </val>
+</def>
+</false>
+</if>
+
+<def>
+  <name> VasaRectaInflow </name>
+  <val> RightVasaRecta.Inflow </val>
+</def>
+
+<def>
+  <name> VasaRectaOutflow </name>
+  <val> RightVasaRecta.Outflow </val>
+</def>
+
+<def>
+  <name> OuterVesselsInflow </name>
+  <val> BloodFlow - RightGlomerulusFiltrate.GFR - VasaRectaInflow </val>
+</def>
+
+<def>
+  <name> OuterVesselsOutflow </name>
+  <val> BloodFlow - VasaRectaOutflow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

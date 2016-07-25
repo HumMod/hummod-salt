@@ -1,0 +1,117 @@
+HumMod / Sizing-ExternalH2O DES
+
+Created : 2012-03-21
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Sizing-ExternalH2O </name>
+
+<variables>
+
+<constant><name> GILumen_Percent    </name><val> 3.452 </val></constant>
+<constant><name> Peritoneum_Percent </name><val> 0.0 </val></constant>
+<constant><name> Lung_Percent       </name><val> 0.0 </val></constant>
+<constant><name> LeftPleural_Percent       </name><val> 0.024 </val></constant>
+<constant><name> RightPleural_Percent       </name><val> 0.024 </val></constant>
+
+<var><name> GILumen_Mass    </name></var>
+<var><name> Peritoneum_Mass </name></var>
+<var><name> Lung_Mass       </name></var>
+<var><name> LeftPleural_Mass       </name></var>
+<var><name> RightPleural_Mass       </name></var>
+
+<var><name> Total_Mass      </name></var>
+
+<var><name> ExternalCore </name></var>
+<var><name> ExternalOther </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> GILumen_Mass </name>
+  <val> ( GILumen_Percent / 100 ) * Sizing-OrganMass.BaseMass(G) </val>
+</def>
+
+<def>
+  <name> Peritoneum_Mass </name>
+  <val> ( Peritoneum_Percent / 100 ) * Sizing-OrganMass.BaseMass(G) </val>
+</def>
+
+<def>
+  <name> Lung_Mass </name>
+  <val> ( Lung_Percent / 100 ) * Sizing-OrganMass.BaseMass(G) </val>
+</def>
+
+<def>
+  <name> LeftPleural_Mass </name>
+  <val> ( LeftPleural_Percent / 100 ) * Sizing-OrganMass.BaseMass(G) </val>
+</def>
+
+<def>
+  <name> RightPleural_Mass </name>
+  <val> ( RightPleural_Percent / 100 ) * Sizing-OrganMass.BaseMass(G) </val>
+</def>
+
+<def>
+  <name> GILumenH2O.InitialMass </name>
+  <val> GILumen_Mass </val>
+</def>
+
+<call> GILumenH2O.Init </call>
+
+<def>
+  <name> PeritoneumSpace.InitialVolume </name>
+  <val> Peritoneum_Mass </val>
+</def>
+
+<call> PeritoneumSpace.Init </call>
+
+<def>
+  <name> ExcessLungWater.InitialVolume </name>
+  <val> Lung_Mass </val>
+</def>
+
+<call> ExcessLungWater.Init </call>
+
+<def>
+  <name> LeftPleuralCavity.InitialVolume </name>
+  <val> LeftPleural_Mass </val>
+</def>
+
+<def>
+  <name> RightPleuralCavity.InitialVolume </name>
+  <val> RightPleural_Mass </val>
+</def>
+
+<call> LeftPleuralCavity.Init </call>
+<call> RightPleuralCavity.Init </call>
+
+<call> ExternalH2O.Init </call>
+
+<def>
+  <name> Total_Mass </name>
+  <val> GILumen_Mass + Peritoneum_Mass + Lung_Mass + LeftPleural_Mass + RightPleural_Mass </val>
+</def>
+
+<def>
+  <name> ExternalCore </name>
+  <val> Peritoneum_Mass + Lung_Mass + LeftPleural_Mass + RightPleural_Mass </val>
+</def>
+
+<def>
+  <name> ExternalOther </name>
+  <val> GILumen_Mass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

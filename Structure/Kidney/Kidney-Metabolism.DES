@@ -1,0 +1,94 @@
+HumMod / Kidney-Metabolism
+
+Created : 31-Mar-05
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Kidney-Metabolism </name>
+
+<variables>
+
+<var><name> BasalCalsUsed </name></var>
+<var><name> TotalCalsUsed </name></var>
+
+<var><name> ProximalTubuleCals </name></var>
+<var><name> LoopOfHenleCals </name></var>
+<var><name> DistalTubuleCals </name></var>
+
+<var><name> AerobicCals </name></var>
+<var><name> AnaerobicCals </name></var>
+
+<var><name> O2Need </name></var>
+<var><name> O2Lack </name></var>
+<var><name> O2Use </name></var>
+
+</variables>
+
+<definitions>
+
+
+<block><name> CalcCals </name>
+
+-Metabolism
+
+<def>
+  <name> BasalCalsUsed </name>
+  <val> LeftKidney-Metabolism.BasalCalsUsed + RightKidney-Metabolism.BasalCalsUsed </val>
+</def>
+
+
+<def>
+  <name> ProximalTubuleCals </name>
+  <val> LeftKidney-Metabolism.ProximalTubuleCals + RightKidney-Metabolism.ProximalTubuleCals </val>
+</def>
+
+<def>
+  <name> LoopOfHenleCals </name>
+  <val> LeftKidney-Metabolism.LoopOfHenleCals + RightKidney-Metabolism.LoopOfHenleCals </val>
+</def>
+
+<def>
+  <name> DistalTubuleCals </name>
+  <val> LeftKidney-Metabolism.DistalTubuleCals + RightKidney-Metabolism.DistalTubuleCals </val>
+</def>
+
+<def>
+  <name> TotalCalsUsed </name>
+  <val> LeftKidney-Metabolism.TotalCalsUsed + RightKidney-Metabolism.TotalCalsUsed </val>
+</def>
+
+<def>
+  <name> O2Need </name>
+  <val> LeftKidney-Metabolism.O2Need + RightKidney-Metabolism.O2Need </val>
+</def>
+
+<def>
+  <name> O2Use </name>
+  <val> LeftKidney-Metabolism.O2Use + RightKidney-Metabolism.O2Use </val>
+</def>
+</block>
+
+<block><name> SplitCals </name>
+<def>
+  <name> O2Lack </name>
+  <val> LeftKidney-Metabolism.O2Lack + RightKidney-Metabolism.O2Lack </val>
+</def>
+
+<def>
+  <name> AerobicCals </name>
+  <val> LeftKidney-Metabolism.AerobicCals + RightKidney-Metabolism.AerobicCals </val>
+</def>
+
+<def>
+  <name> AnaerobicCals </name>
+  <val> LeftKidney-Metabolism.AnaerobicCals + RightKidney-Metabolism.AnaerobicCals </val>
+</def>
+
+</block>
+</definitions>
+
+</structure>
+
+End

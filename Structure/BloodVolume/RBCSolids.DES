@@ -1,0 +1,47 @@
+HumMod / RBCSolids
+
+Created : 26-Jun-06
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RBCSolids </name>
+
+<variables>
+
+<var><name> Mass </name></var>
+<var><name> InitialMass </name></var>
+
+<var><name> FractSolids </name></var>
+<var><name> InitialFractSolids </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> FractSolids </name>
+  <val> 1 - RBCH2O.FractH2O </val>
+</def>
+
+</block>
+
+<block><name> Init </name>
+</block>
+
+<block><name> CalcVol </name>
+
+<def>
+  <name> Mass </name>
+  <val> FractSolids * RBCVol.Vol </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

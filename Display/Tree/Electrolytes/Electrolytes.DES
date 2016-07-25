@@ -1,0 +1,97 @@
+HumMod / Electrolytes
+
+Created : 2012-03-11
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> ELECTROLYTES </name>
+  <label> Electrolytes </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<leaf>
+  <name> Electrolytes_Summary </name>
+  <label> Summary </label>
+  <parent> ELECTROLYTES </parent>
+</leaf>
+
+<separatorbar>
+  <parent> ELECTROLYTES </parent>
+</separatorbar>
+
+<leaf>
+  <name> Electrolytes_Na </name>
+  <label> Na+ </label>
+  <parent> ELECTROLYTES </parent>
+</leaf>
+
+<branch>
+  <name> K+ </name>
+  <label> K+ </label>
+  <parent> ELECTROLYTES </parent>
+</branch>
+
+<leaf>
+  <name> K+ECFV </name>
+  <label> ECFV </label>
+  <parent> K+ </parent>
+</leaf>
+
+<leaf>
+  <name> K+Membrane </name>
+  <label> Membrane </label>
+  <parent> K+ </parent>
+</leaf>
+
+<leaf>
+  <name> K+Cell </name>
+  <label> Cell </label>
+  <parent> K+ </parent>
+</leaf>
+
+<leaf>
+  <name> Electrolytes_Cl </name>
+  <label> Cl- </label>
+  <parent> ELECTROLYTES </parent>
+</leaf>
+
+<leaf>
+  <name> Electrolytes_Ca </name>
+  <label> Ca++ </label>
+  <parent> ELECTROLYTES </parent>
+</leaf>
+
+<leaf>
+  <name> Electrolytes_PO4 </name>
+  <label> PO4-- </label>
+  <parent> ELECTROLYTES </parent>
+</leaf>
+
+<leaf>
+  <name> Electrolytes_SO4 </name>
+  <label> SO4-- </label>
+  <parent> ELECTROLYTES </parent>
+</leaf>
+
+<branch>
+  <name> Lactate </name>
+  <label> Lactate </label>
+  <parent> ELECTROLYTES </parent>
+</branch>
+
+<leaf>
+  <name> Lactate-Blood </name>
+  <label> Blood </label>
+  <parent> Lactate </parent>
+</leaf>
+
+<leaf>
+  <name> Lactate-Tissue </name>
+  <label> Tissue </label>
+  <parent> Lactate </parent>
+</leaf>
+
+End

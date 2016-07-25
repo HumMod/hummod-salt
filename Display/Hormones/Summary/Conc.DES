@@ -1,0 +1,188 @@
+HumMod / Conc
+
+Created : 2012-03-12
+Revised : 2012-03-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 21.0 </high>
+   <wide> 37.0 </wide>
+
+<showtable>
+<row> 1.0 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 12 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Hormones </textcell>
+<textcell> -------------------------------- </textcell>
+<textcell> [ACTH] </textcell>
+<textcell> [ADH] </textcell>
+<textcell> [Aldosterone] </textcell>
+<textcell> [Angiotensin] </textcell>
+<textcell> [ANP] </textcell>
+<textcell> [Calcitonin] </textcell>
+<textcell> [CRF] </textcell>
+<textcell> [Cortisol] </textcell>
+<textcell> [EPO] </textcell>
+<textcell> [Glucagon] </textcell>
+<textcell> [Insulin] </textcell>
+<textcell> [Leptin] </textcell>
+<textcell> [PTH] </textcell>
+<textcell> [Renin] </textcell>
+<textcell> [T4-T3] </textcell>
+<textcell> [TSH] </textcell>
+<textcell> [Vitamin D] </textcell>
+
+</column>
+
+<column>
+<indent> 13 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Initial </textcell>
+<textcell> -------- </textcell>
+
+<!--
+<valuecell>
+  <name>  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+-->
+
+</column>
+
+<column>
+<indent> 20 </indent>
+<fieldwidth> 7.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Current </textcell>
+<textcell> ------------ </textcell>
+
+<valuecell>
+  <name> ACTH.[Conc(nG/dL)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ADHPool.[ADH] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> AldoPool.[Aldo(pMol/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> A2Pool.[A2(pG/mL)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ANPPool.[ANP] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Calcitonin.[Conc(nG/mL)] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> CorticotropinReleasingFactor.[CRF(pG/mL)] </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Cortisol.[Conc(uG/dL)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> EPOPool.[EPO] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> GlucagonPool.[Glucagon] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> InsulinPool.[Insulin] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeptinPool.[Leptin(nG/mL)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ParathyroidHormone.[Conc(pG/mL)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ReninPool.[PRA] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ThyroidPool.[Total_T4-T3] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ThyroidTSH.[TSH] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> VitaminD3.[Conc(nG/mL)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 27 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Units </textcell>
+<textcell> ------------ </textcell>
+<textcell> nG/dL </textcell>
+<textcell> pG/mL </textcell>
+<textcell> pMol/L </textcell>
+<textcell> pG/mL </textcell>
+<textcell> pMol/L </textcell>
+<textcell> nG/mL </textcell>
+<textcell> pG/mL </textcell>
+<textcell> uG/dL </textcell>
+<textcell> mU/mL </textcell>
+<textcell> pG/mL </textcell>
+<textcell> uU/mL </textcell>
+<textcell> nG/mL </textcell>
+<textcell> pG/mL </textcell>
+<textcell> GU/mL </textcell>
+<textcell> uG/dL </textcell>
+<textcell> uU/mL </textcell>
+<textcell> nG/mL </textcell>
+
+</column>
+
+</showtable>
+
+</groupbox>
+
+End

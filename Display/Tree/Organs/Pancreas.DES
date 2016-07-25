@@ -1,0 +1,39 @@
+HumMod / Pancreas
+
+Created : 2012-01-28
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> Pancreas </name>
+  <label> Pancreas </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<leaf>
+  <name> Pancreas-Circulation </name>
+  <label> Circulation </label>
+  <parent> Pancreas </parent>
+</leaf>
+
+<leaf>
+  <name> Pancreas-Insulin </name>
+  <label> Insulin </label>
+  <parent> Pancreas </parent>
+</leaf>
+
+<leaf>
+  <name> Pancreas-Glucagon </name>
+  <label> Glucagon </label>
+  <parent> Pancreas </parent>
+</leaf>
+
+<leaf>
+  <name> Pancreas-Size </name>
+  <label> Size </label>
+  <parent> Pancreas </parent>
+</leaf>
+
+End

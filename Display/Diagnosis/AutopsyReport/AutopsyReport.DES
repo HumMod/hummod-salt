@@ -1,0 +1,14 @@
+HumMod / AutopsyReport
+
+Created : 15-Apr-05
+Revised : 2013-02-13
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Display\Diagnosis\AutopsyReport\ ?>
+
+<?include Autopsy-Examination\Autopsy-Examination.DES ?>
+<?include Autopsy-Chemistry\Autopsy-Chemistry.DES ?>
+
+End

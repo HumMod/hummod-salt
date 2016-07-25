@@ -1,0 +1,41 @@
+/* HumMod / ProximalTubuleO2
+
+   Created : 2014-03-03
+   Revised : 2014-03-03
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<panel><name> Kidney-TubuleO2 </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Kidney </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Kidney | Tubule O2 </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\Kidney\TubuleO2\ ?>
+
+<?include Tubules.DES ?>
+
+<?include pO2.DES ?>
+<?include [O2].DES ?>
+
+</panel>
+
+/* End */

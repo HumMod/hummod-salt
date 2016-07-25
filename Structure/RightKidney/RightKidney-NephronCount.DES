@@ -1,0 +1,60 @@
+HumMod / RightKidney-NephronCount
+
+Created : 20-Dec-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> RightKidney-NephronCount </name>
+
+<variables>
+
+<parm>
+  <name> Total </name>
+  <val> 1200000 </val>2400000
+</parm>
+
+<var>
+  <name> Total(xNormal) </name>
+</var>
+
+<constant>
+  <name> Normal </name>
+  <val> 1200000 </val>
+</constant>
+
+<parm>
+  <name> Filtering(%) </name>
+  <val> 100.0 </val>
+</parm>
+
+<var>
+  <name> Filtering(xNormal) </name>
+</var>
+
+<var><name> NumFiltering </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Total(xNormal) </name>
+  <val> Total / Normal </val>
+</def>
+
+<def>
+  <name> Filtering(xNormal) </name>
+  <val> 0.01 * Filtering(%) * Total(xNormal) </val>
+</def>
+
+<def><name> NumFiltering </name><val> Total * Filtering(%) * 0.01 </val></def> 
+
+</block>
+</definitions>
+</structure>
+
+End

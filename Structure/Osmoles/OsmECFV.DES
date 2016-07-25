@@ -1,0 +1,198 @@
+HumMod / OsmECFV
+
+Created : 26-May-05
+Revised : 2013-03-04
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> OsmECFV </name>
+
+<variables>
+
+<var><name> Total </name></var>
+<var><name> Active </name></var>
+
+<var><name> Anions </name></var>
+<var><name> OtherAnions </name></var>
+
+<var><name> Cations </name></var>
+<var><name> OtherCations </name></var>
+
+<var><name> Electrolytes </name></var>
+
+<var><name> Non-Electrolytes </name></var>
+<var><name> OtherOsmoles </name></var>
+
+<var><name> [Total] </name></var>
+<var><name> [Active] </name></var>
+
+<var><name> [Cations] </name></var>
+<var><name> [Na+] </name></var>
+<var><name> [K+] </name></var>
+<var><name> [OtherCations] </name></var>
+
+<var><name> [Anions] </name></var>
+<var><name> [Cl-] </name></var>
+<var><name> [Lac-] </name></var>
+<var><name> [KA-] </name></var>
+<var><name> [SO4--] </name></var>
+<var><name> [PO4--] </name></var>
+<var><name> [OtherAnions] </name></var>
+
+
+<var><name> [Electrolytes] </name></var>
+
+<var><name> [Non-Electrolytes] </name></var>
+<var><name> [Glucose] </name></var>
+<var><name> [Urea] </name></var>
+<var><name> [OtherOsmoles] </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+</block>
+
+<block><name> Calc </name>
+
+<def><name> Cations </name>
+  <val>
+      NaPool.Mass
+    + KPool.Mass
+    + OtherCations
+  </val>
+</def>
+
+<def><name> Anions </name>
+  <val>
+      ClPool.Mass
+    + LacPool.Mass
+    + KAPool.Osmoles
+    + SO4Pool.Osmoles
+    + PO4Pool.Osmoles
+    + OtherAnions
+  </val>
+</def>
+
+<def><name> Non-Electrolytes </name>
+  <val>
+      GlucosePool.Osmoles
+    + UreaPool.Osmoles
+    + OtherOsmoles
+  </val>
+</def>
+
+<def><name> Electrolytes </name>
+  <val> Cations + Anions </val>
+</def>
+
+<def><name> Total </name>
+  <val> Electrolytes + Non-Electrolytes </val>
+</def>
+
+<def><name> Active </name>
+  <val> ( OsmBody.Dissociation * Electrolytes ) + Non-Electrolytes </val>
+</def>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> [Total] </name>
+  <val> Total / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Active] </name>
+  <val> Active / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Cations] </name>
+  <val> Cations / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Na+] </name>
+  <val> NaPool.Mass / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [K+] </name>
+  <val> KPool.Mass / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [OtherCations] </name>
+  <val> OtherCations / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Anions] </name>
+  <val> Anions / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Cl-] </name>
+  <val> ClPool.Mass / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Lac-] </name>
+  <val> LacPool.Mass / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [KA-] </name>
+  <val> KAPool.Osmoles / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [SO4--] </name>
+  <val> SO4Pool.Osmoles / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [PO4--] </name>
+  <val> PO4Pool.Osmoles / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [OtherAnions] </name>
+  <val> OtherAnions / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Electrolytes] </name>
+  <val> Electrolytes / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Non-Electrolytes] </name>
+  <val>Non-Electrolytes / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Glucose] </name>
+  <val> GlucosePool.Osmoles / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Urea] </name>
+  <val> UreaPool.Osmoles / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [OtherOsmoles] </name>
+  <val> OtherOsmoles / ECFV.Vol(L) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

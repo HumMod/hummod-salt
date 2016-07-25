@@ -1,0 +1,34 @@
+HumMod / InsulinReceptors-Liver
+
+Created : 2012-11-03
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+Hepatic insulin receptors can really scarf up
+the insulin. So net binding is always flow
+limited to some extent. This is very important
+when hepatic plasma flow is low.
+
+[Insulin] - Hepatic insulin concentration.
+[Portal Vein] - Portal vein insulin concentration.
+PlasmaFlow - Portal vein plasma flow.
+Binding - Rate of hepatic insulin binding.
+K1 - Insulin binding constant.
+K2 - Insulin unbinding constant.
+Free - Mass of free insulin receptors.
+Bound - Mass of bound insulin receptors.
+
+We apply mass balance and solve for [Insulin]
+
+[PortalVein] * PlasmaFlow = Binding - Unbinding + [Insulin] * PlasmaFlow
+Binding = [Insulin] * K * Free
+Unbinding = K2 * Bound
+
+N = [PortalVein] * PlasmaFlow + K2 * Bound
+D = K1 * Free + PlasmaFlow
+
+[Insulin] = N / D
+
+End

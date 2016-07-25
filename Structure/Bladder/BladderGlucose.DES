@@ -1,0 +1,61 @@
+HumMod / BladderGlucose
+
+Created : 16-Mar-08
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BladderGlucose </name>
+<variables>
+
+<var><name> [Glucose] </name></var>
+<var><name> [Glucose(mMol/L)] </name></var>
+
+<constant><name> InitialConc </name><val> 0.0 </val></constant>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> InitialMass </name><val> InitialConc * BladderVolume.InitialVolume </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_Glucose.Outflow </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+  <def><name> [Glucose] </name><val> Mass / BladderVolume.Mass </val></def>
+  <def><name> [Glucose(mMol/L)] </name><val> 100.0 * [Glucose] </val></def>
+
+</block>
+
+<block><name> Void </name>
+
+  <def><name> Mass </name><val> Mass - ( BladderVolume.VolumeVoid * [Glucose] ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

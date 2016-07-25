@@ -1,0 +1,23 @@
+HumMod / Diabetes DES
+
+
+
+<branch>
+  <name> AdrenalInsufficiency </name>
+  <label> Adrenal Insufficiency </label>
+  <parent> PATHOLOGY </parent>
+</branch>
+
+<leaf>
+  <name> Primary</name>
+  <label> Primary </label>
+  <parent> AdrenalInsufficiency </parent>
+</leaf>
+
+<leaf>
+  <name> Secondary </name>
+  <label> Secondary </label>
+  <parent> AdrenalInsufficiency</parent>
+</leaf>
+
+End

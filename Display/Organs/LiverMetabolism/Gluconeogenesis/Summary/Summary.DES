@@ -1,0 +1,126 @@
+HumMod | Gluconeogenesis | Summary
+
+Created : 2011-07-31
+Last Modified : 2011-07-31
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<panel><name> Gluconeogenesis-Summary </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Liver </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Liver | Gluconeogenesis | Summary </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> LiverMetabolism_Gluconeogenesis </structurename>
+
+<showvalue>
+  <row> 3.0 </row><col> 1.0 </col>
+  <name> Rate </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Glucose Synthesis </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Rate </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 10 </min><max> 30 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 11.4 </row><col> 1.0 </col>
+  <name> AminoAcidUptake </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Amino Acid Uptake </label>
+</showvalue>
+
+<showbargraph>
+  <row> 12.8 </row><col> 1.0 </col><high> 8.0 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> CortisolEffect </name>
+    <label> [Cortisol] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> InsulinEffect </name>
+    <label> [Insulin] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> GlucagonEffect </name>
+    <label> [Glucagon] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> GlucoseEffect </name>
+    <label> [Glucose] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> AminoAcidEffect </name>
+    <label> [Amino Acids] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Liver-Function.Effect </name>
+    <label> Liver Function </label>
+    <color> BLUE </color>
+  </bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<repeatlist>
+  <name> LiverMetabolism_Gluconeogenesis.BasicUptake </name>
+  <repeat><reps> 100 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 21.6 </row><col> 1.0 </col>
+  <name> BasicUptake </name>
+  <listname> LiverMetabolism_Gluconeogenesis.BasicUptake </listname>
+  <label> Basic </label>
+</slidebar>
+
+<infobutton>
+  <row> 2.8 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</panel>
+
+End

@@ -1,0 +1,78 @@
+HumMod / LeftKidney-Flow
+
+Created : 09-Apr-05
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftKidney-Flow </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+<var><name> BloodFlow </name></var>
+<var><name> PlasmaFlow </name></var>
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+  <call> LeftKidney-ArcuateArtery.Init </call>
+  <call> LeftKidney-AfferentArtery.Init </call>
+  <call> LeftKidney-EfferentArtery.Init </call>
+</block>
+
+<block><name> Calc </name>
+
+<!--
+<if>
+<test> LeftKidney-ArcuateArtery.Conductance * LeftKidney-AfferentArtery.Conductance * LeftKidney-EfferentArtery.Conductance GT 0 </test>
+<true>
+<def>
+  <name> Conductance </name>
+  <val>
+  </val>
+</def>
+</true>
+<false>
+<def>
+  <name> Conductance </name>
+  <val> 0 </val>
+</def>
+</false>
+</if> 
+  -->
+
+
+<conditional><name> Conductance </name>
+<test> Clamp </test>
+<true> Level </true>
+<false> 
+    INVERT (
+      ( INVERT LeftKidney-ArcuateArtery.Conductance )
+    + ( INVERT LeftKidney-AfferentArtery.Conductance )
+    + ( INVERT LeftKidney-EfferentArtery.Conductance )
+    )
+</false>
+</conditional>
+
+
+<def>
+  <name> BloodFlow </name>
+  <val> ( LeftKidney-Pressure.PressureGradient * Conductance ) MAX 0.0 </val>
+</def>
+
+<def>
+  <name> PlasmaFlow </name>
+  <val> BloodVol.PVCrit * BloodFlow </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,36 @@
+HumMod / Erythropoietin
+
+Created : 2011-07-27
+Last Modified : 2011-07-27
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<panel><name> InfusionPumps-Erythropoietin </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Gear </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Infusion Pumps | Erythropoietin </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Intervention\InfusionPumps\Erythropoietin\ ?>
+
+<?include Pump.DES ?>
+
+</panel>
+
+End

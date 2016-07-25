@@ -1,0 +1,166 @@
+HumMod / LeftBox
+
+Created : 10-May-05
+Revised : 2012-10-28
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 24.6 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Kidney-CO2 </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightKidney-CO2.[HCO3(mEq/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [HCO3] </label>
+</showvalue>
+
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftKidney-CO2.[HCO3(mEq/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [HCO3] </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-CO2.[HCO3(mEq/L)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-CO2.[HCO3(mEq/L)] </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale>
+      <min> 10 </min><max> 20 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showtable>
+<row> 4.8 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Mass </textcell>
+<textcell> Change </textcell>
+<textcell> Inflow</textcell>
+<textcell> Outflow</textcell>
+
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+<valuecell>
+  <name> LeftKidney-CO2.Mass  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-CO2.Change  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-CO2.InflowBase</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-CO2.OutflowBase</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 15.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightKidney-CO2.Mass  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-CO2.Change  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-CO2.InflowBase</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-CO2.OutflowBase</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+</column>
+</showtable>
+
+
+<showgraph>
+  <row> 14.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-CO2.PCO2 </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-CO2.PCO2 </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale>
+      <min> 30 </min><max> 50 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

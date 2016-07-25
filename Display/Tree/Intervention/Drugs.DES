@@ -1,0 +1,249 @@
+HumMod / Drugs
+
+Created : 10-Oct-08
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> Drugs </name>
+  <label> Drugs </label>
+  <parent> INTERVENTION </parent>
+</branch>
+
+<branch>
+  <name> Drugs-Chlorothiazide </name>
+  <label> Chlorothiazide </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Chlorothiazide-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Chlorothiazide </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Chlorothiazide-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Chlorothiazide </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Digoxin </name>
+  <label> Digoxin </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Digoxin-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Digoxin </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Digoxin-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Digoxin </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Furosemide </name>
+  <label> Furosemide </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Furosemide-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Furosemide </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Furosemide-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Furosemide </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Midodrine </name>
+  <label> Midodrine </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Midodrine-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Midodrine </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Midodrine-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Midodrine </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Acetazolamide </name>
+  <label> Acetazolamide </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Acetazolamide-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Acetazolamide </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Acetazolamide-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Acetazolamide </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Spironolactone </name>
+  <label> Spironolactone </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Spironolactone-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Spironolactone </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Spironolactone-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Spironolactone </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Epi </name>
+  <label> Epinephrine Bolus </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Epi-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Epi</parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Epi-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Epi</parent>
+</leaf>
+
+<branch>
+  <name> Drugs-NE </name>
+  <label> NE Bolus </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-NE-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-NE </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-NE-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-NE </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Atropine </name>
+  <label> Atropine </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Atropine-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Atropine </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Atropine-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Atropine </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Acetylcholine </name>
+  <label> Acetylcholine</label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Acetylcholine-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Acetylcholine</parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Acetylcholine-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Acetylcholine</parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Phenylephrine </name>
+  <label> Phenylephrine </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Phenylephrine-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Phenylephrine</parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Phenylephrine-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Phenylephrine </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Isoproterenol </name>
+  <label> Isoproterenol </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Isoproterenol-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Isoproterenol </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Isoproterenol-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Isoproterenol </parent>
+</leaf>
+
+<branch>
+  <name> Drugs-Propranolol </name>
+  <label> Propranolol </label>
+  <parent> Drugs </parent>
+</branch>
+
+<leaf>
+  <name> Drugs-Propranolol-Dosing </name>
+  <label> Dosing </label>
+  <parent> Drugs-Propranolol </parent>
+</leaf>
+
+<leaf>
+  <name> Drugs-Propranolol-Kinetics </name>
+  <label> Kinetics </label>
+  <parent> Drugs-Propranolol </parent>
+</leaf>
+
+End

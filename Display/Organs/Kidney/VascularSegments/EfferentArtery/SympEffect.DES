@@ -1,0 +1,94 @@
+HumMod / SympEffect
+
+Created : 12-Apr-08
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 13.8 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 60.0 </wide>
+   <title> Symp's Effect </title>
+
+<structurename> LeftKidney-EfferentArtery </structurename>
+<label><row> 1.4 </row><col> 15 </col><text> Left </text></label>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> SympEffect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> LeftKidney-AlphaReceptors.Activity </name>
+    <label> Symp's </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1.2 </max></scale>
+  </yaxis>
+
+  <curvename> SympEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> LeftKidney-AlphaReceptors.Activity </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Symp's </label>
+</showvalue>
+
+<structurename> RightKidney-EfferentArtery </structurename>
+<label><row> 1.4 </row><col> 45 </col><text> Right </text></label>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> SympEffect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.4 </row><col> 31.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> RightKidney-AlphaReceptors.Activity </name>
+    <label> Symp's </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1.2 </max></scale>
+  </yaxis>
+
+  <curvename> SympEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 10.8 </row><col> 31.0 </col>
+   <name> RightKidney-AlphaReceptors.Activity </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Symp's </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Effect is normally 1.0. </line>
+</infobutton>
+
+</groupbox>
+
+End

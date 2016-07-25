@@ -1,0 +1,139 @@
+HumMod / InsulinSythesis
+
+Created : 21-Jun-06
+Last Modified : 2011-10-17
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<structure><name> InsulinSynthesis </name>
+
+<variables>
+
+<parm>
+  <name> Tau </name>
+  <val> 20.0 </val>
+</parm>
+
+<parm>
+  <name> ME_A </name>
+  <val> 200.0 </val>
+</parm>
+
+<parm>
+  <name> ME_m </name>
+  <val> 4.25 </val>
+</parm>
+
+<parm>
+  <name> ME_S </name>
+  <val> 1150.0 </val>
+</parm>
+
+<var>
+  <name> K </name>
+</var>
+
+<var>
+  <name> A </name>
+</var>
+
+<var>
+  <name> S </name>
+</var>
+
+<var>
+  <name> m </name>
+</var>
+
+<var>
+  <name> TargetSynthesis </name>
+</var>
+
+<var>
+  <name> sizeModification </name>
+</var>
+
+<var>
+  <name> MassEffect </name>
+</var>
+
+<parm>
+  <name> Base </name>
+  <val> 0.67 </val>
+</parm>
+
+<var>
+  <name> Rate </name>
+</var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Synthesis </name>
+  <integralname> Synthesis </integralname>
+  <initialval> 17.0 </initialval>
+  <dervname> dSynthesis </dervname>
+  <errorlim> 0.17 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> MassEffect </name>
+  <point><x>    0 </x><y> 200 </y><slope> 0 </slope></point>
+  <point><x> 2000 </x><y>  17 </y><slope> -0.02 </slope></point>
+  <point><x> 3000 </x><y>   0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Init </name>
+
+<def><name> A </name><val> ME_A * sizeModification </val></def>
+<def><name> S </name><val> ME_S * sizeModification </val></def>
+<def><name> m </name><val> ME_m  </val></def>
+
+</block>
+<block><name> Parms </name>
+
+<def>
+  <name> K </name>
+  <val> INVERT Tau </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+<!--
+<def>
+  <name> MassEffect </name>
+  <val> MassEffect [ InsulinStorage.Mass ] </val>
+</def>
+-->
+
+<def>
+  <name> MassEffect </name>
+  <val> A * ( S ^ m ) / ( ( InsulinStorage.Mass ^ m ) + ( S ^ m ) ) </val>
+</def>
+
+<def><name> TargetSynthesis </name><val> MassEffect * Pancreas-BetaCells.DamageMultiplier </val></def>
+<def><name> dSynthesis </name><val> K * ( TargetSynthesis - Synthesis ) </val></def>
+
+<def><name> Rate </name>
+  <val> ( Level * Clamp ) + ( ( NOT Clamp ) + ( Synthesis * Pancreas-BetaCells.DamageMultiplier ) ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

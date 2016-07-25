@@ -1,0 +1,43 @@
+HumMod / Size DES
+
+Created : 10-Oct-08
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> Size </name>
+  <label> Size </label>
+  <parent> DIAGNOSIS </parent>
+</branch>
+
+<leaf>
+  <name> Size-Summary </name>
+  <label> Summary </label>
+  <parent> Size </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Size </parent>
+</separatorbar>
+
+<leaf>
+  <name> Size-Mass </name>
+  <label> Mass </label>
+  <parent> Size </parent>
+</leaf>
+
+<leaf>
+  <name> Size-Volume </name>
+  <label> Volume </label>
+  <parent> Size </parent>
+</leaf>
+
+<leaf>
+  <name> Size-Density </name>
+  <label> Density </label>
+  <parent> Size </parent>
+</leaf>
+
+End

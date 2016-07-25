@@ -1,0 +1,106 @@
+/* HumMod / ADHClearance
+
+   Created : 2014-02-27
+   Revised : 2014-02-27
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structure><name> ADHClearance </name>
+
+<variables>
+
+<var><name> Total </name></var>
+<var><name> Liver </name></var>
+<var><name> Kidney </name></var>
+<var><name> LeftKidney </name></var>
+<var><name> RightKidney </name></var>
+
+<var><name> LeftGlomeruli </name></var>
+<var><name> RightGlomeruli </name></var>
+<var><name> Glomerular </name></var>
+<var><name> OtherKidney </name></var>
+<var><name> Other </name></var>
+
+<!--
+<parm><name> LiverK </name><val> 0.0005 </val></parm>  0.0005
+<parm><name> KidneyK </name><val> .00055 </val></parm> 0.00059
+<parm><name> OtherK </name><val> 0.00108 </val></parm>
+-->
+
+<parm><name> LiverK </name><val> 0.0006 </val></parm>
+<parm><name> KidneyK </name><val> 0.0010 </val></parm>
+<parm><name> OtherK </name><val> 0.0012 </val></parm>
+
+
+</variables>
+
+<definitions>
+<block><name> Dervs </name>
+
+<def>
+  <name> Liver </name>
+  <val> LiverK * GITract-Flow.PlasmaFlow * ADHPool.[ADH] * Liver-Function.Effect  </val>
+</def>
+
+
+<def>
+  <name> LeftGlomeruli </name>
+  <val> LeftGlomerulusFiltrate.GFR * ADHPool.[ADH] * LeftKidney-Function.Effect * 0.001 </val>
+</def>
+
+<def>
+  <name> LeftKidney </name>
+  <val> (  KidneyK * ( LeftKidney-Flow.PlasmaFlow - LeftGlomerulusFiltrate.GFR ) )  * ADHPool.[ADH] * LeftKidney-Function.Effect </val>
+</def>
+
+<def>
+  <name> RightGlomeruli </name>
+  <val> RightGlomerulusFiltrate.GFR * ADHPool.[ADH] * RightKidney-Function.Effect * 0.001 </val>
+</def>
+
+<def>
+  <name> RightKidney </name>
+  <val> ( KidneyK * ( RightKidney-Flow.PlasmaFlow - RightGlomerulusFiltrate.GFR ) )  * ADHPool.[ADH] * RightKidney-Function.Effect </val>
+</def>
+
+<def><name> Glomerular </name><val> RightGlomeruli + LeftGlomeruli </val></def>
+
+<def>
+  <name> Kidney </name>
+  <val> RightKidney + LeftKidney + Glomerular </val>
+</def>
+
+<!--
+
+<def>
+  <name> Kidney </name>
+  <val> KidneyK * ( LeftKidney-Flow.BloodFlow + RightKidney-Flow.BloodFlow  ) * ADHPool.[ADH] </val>
+</def>
+-->
+<!--
+<def>
+  <name> Other </name>
+  <val> OtherK * ADHPool.[ADH]  </val>
+</def>
+-->
+<def>
+  <name> Other </name>
+  <val> OtherK * OtherTissue-Flow.BloodFlow * ADHPool.[ADH] </val>
+</def>
+
+
+
+<def>
+  <name> Total </name>
+  <val> Liver + Kidney + Other </val>
+</def>
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

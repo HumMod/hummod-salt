@@ -1,0 +1,49 @@
+HumMod / PlasmaProtein
+
+Created : 07-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2005-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> PlasmaProtein </name>
+
+<variables>
+
+<var><name> [Total] </name></var>
+<var><name> [Protein] </name></var>
+
+<var><name> IgGFrac </name></var>
+
+<var><name> Mass </name></var>
+<var><name> Change </name></var>
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+<var><name> Synthesis </name></var>
+<var><name> COP </name></var>
+<var><name> [Protein(G/dL)] </name></var>
+<var><name> Degradation </name></var>
+</variables>
+
+<definitions>
+
+
+<block><name> CalcPressure </name>
+<def><name> Mass </name><val> AlbuminPool.Mass + IgGPool.Mass + AGPPool.Mass + HetaPool.highMass + HetaPool.lowMass </val></def>
+<def><name> Change </name><val>  AlbuminPool.Change + IgGPool.Change + AGPPool.Change + HetaPool.ChangeHW  + HetaPool.ChangeLW  </val></def>
+<def><name> Gain </name><val>  AlbuminPool.Gain + IgGPool.Gain + AGPPool.Gain + HetaPool.GainHW  + HetaPool.GainLW  </val></def>
+<def><name> Loss </name><val>  AlbuminPool.Loss + IgGPool.Loss + AGPPool.Loss + HetaPool.LossHW  + HetaPool.LossLW  </val></def>
+<def><name> Synthesis </name><val> AlbuminPool.Synthesis + IgGPool.Synthesis + AGPPool.Synthesis </val></def>
+<def><name> COP </name><val> AlbuminPool.pCOP + IgGPool.pCOP + HetaPool.pCOP + AGPPool.pCOP </val></def>
+<def><name> Degradation </name><val> AlbuminPool.Degradation + IgGPool.Degradation + HetaPool.Degradation + AGPPool.Degradation </val></def>
+
+<def><name> [Total] </name><val> Mass / PlasmaVol.Vol </val></def>
+<def><name> [Protein] </name><val> AlbuminPool.[Alb(mmol/mL)] + IgGPool.[IgG(mmol/mL)] + HetaPool.[HetaLW(mmol/mL)] + HetaPool.[HetaHW(mmol/mL)] + AGPPool.[AGP(mmol/mL)] </val></def>
+<def><name> [Protein(G/dL)] </name><val> 100 * [Total] </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,55 @@
+HumMod | Mass
+
+Created : 2012-01-28
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 8.4 </high>
+   <wide> 30.0 </wide>
+   <title> Mass </title>
+
+<structurename> Pancreas-Size </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> ExocrineMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Exocrine (G) </label>
+</showvalue>
+
+<slidebar>
+  <row> 4.2 </row><col> 3.0 </col>
+  <name> ExocrineMassPercent </name>
+  <listname> Common.Percent </listname>
+  <label> % </label>
+</slidebar>
+
+<showvalue>
+   <row> 5.8 </row><col> 1.0 </col>
+   <name> EndocrineMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Endocrine (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.8 </row><col> 3.0 </col>
+   <name> EndocrineMassPercent </name>
+   <format><integer/></format>
+   <label> % </label>
+</showvalue>
+
+</groupbox>
+
+End

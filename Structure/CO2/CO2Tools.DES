@@ -1,0 +1,23 @@
+HumMod / CO2Tools
+
+Created : 02-Apr-05
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> CO2Tools </name>
+<variables>
+
+<constant><name> MolsToLiters </name><val> 22.4 </val></constant>
+<constant><name> LitersToMols </name><val> 0.0446 </val></constant>
+
+<constant><name> MMOL_TO_ML </name><val> 22.4 </val></constant>
+<constant><name> ML_TO_MMOL </name><val> 0.0446 </val></constant>
+
+<constant><name> d[HCO3]/dpCO2 </name><val> 0.00036 </val></constant>
+
+</variables>
+</structure>
+
+End

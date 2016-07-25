@@ -1,0 +1,158 @@
+HumMod / Box
+
+Created : 2013-03-18
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 26.2 </high>
+   <wide> 60.0 </wide>
+
+<structurename> LeftCollectingDuct_Na </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> LoadEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Load Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Inflow </name>
+    <label> Na+ Inflow </label>
+    <scale><min> 0 </min><max> 0.4 </max><inc> 0.2 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> LoadOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 11.6</row><col> 1 </col>
+  <name> Inflow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Na+ Inflow </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 1 </col>
+  <name> ANPEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [ANP] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 14.2 </row><col> 1 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightNephronANP.Log10Conc </name>
+    <label> log10 [ANP] </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> ANPOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 23.4 </row><col> 1 </col>
+  <name> LeftNephronANP.Log10Conc </name>
+  <format><decimal> 1 </decimal></format>
+  <label> log10 [ANP] </label>
+</showvalue>
+
+==================================================================================
+
+<structurename> RightCollectingDuct_Na </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 31 </col>
+  <name> LoadEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Load Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 31 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Inflow </name>
+    <label> Na+ Inflow </label>
+    <scale><min> 0 </min><max> 1 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> LoadOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 11.6</row><col> 31 </col>
+  <name> Inflow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Na+ Inflow </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 31 </col>
+  <name> ANPEffect </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [ANP] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 14.2 </row><col> 31 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftNephronANP.Log10Conc </name>
+    <label> log10 [ANP] </label>
+    <scale><min> 0 </min><max> 3 </max><inc> 1 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> ANPOnFract </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 23.4 </row><col> 1 </col>
+  <name> RightNephronANP.Log10Conc </name>
+  <format><decimal> 1 </decimal></format>
+  <label> log10 [ANP] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,462 @@
+HumMod / Summary
+
+Created : 2013-02-28
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> Interstitium-Summary </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Interstitium | Summary </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<showtable>
+<row> 2.0 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 30 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell></textcell>
+<textcell> Capillary Pressure </textcell>
+<textcell> Interstitial Pressure </textcell>
+<textcell> Capillary COP </textcell>
+<textcell> Interstitial COP </textcell>
+<textcell> Pressure Gradient </textcell>
+<textcell> Conductance </textcell>
+<textcell> H2O Flow </textcell>
+<textcell></textcell>
+<textcell> Capillary [Protein] </textcell>
+<textcell> Interstitial [Protein] </textcell>
+<textcell> Gradient</textcell>
+<textcell> DC</textcell>
+<textcell> Protein Leak </textcell>
+<textcell></textcell>
+<textcell> Lymph H2O Flow </textcell>
+<textcell> Lymph [Protein] </textcell>
+<textcell> Lymph Protein Flow </textcell>
+<textcell></textcell>
+<textcell> Interstitial Volume </textcell>
+<textcell></textcell>
+<textcell> Interstitial Protein Mass </textcell>
+<textcell> Change</textcell>
+
+</column>
+
+<column>
+<indent> 21 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Upper </textcell>
+
+<valuecell>
+  <name> RegionalPressure.UpperCapy </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_InterstitialWater.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> PlasmaProtein.COP </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_InterstitialProtein.COP </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_CapillaryWater.Gradient </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_CapillaryWater.Perm </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_CapillaryWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> PlasmaProtein.[Total] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_InterstitialProtein.[Total] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_CapillaryProtein.AlbGradient </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_CapillaryProtein.Perm </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_CapillaryProtein.Rate </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Upper_LymphWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_LymphProtein.[Conc] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_LymphProtein.Rate </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Upper_InterstitialWater.Vol </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Upper_InterstitialProtein.Mass </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Upper_InterstitialProtein.Change </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+</column>
+
+<column>
+<indent> 30 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Middle </textcell>
+
+<valuecell>
+  <name> RegionalPressure.MiddleCapy </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_InterstitialWater.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> PlasmaProtein.COP </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_InterstitialProtein.COP </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_CapillaryWater.Gradient </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_CapillaryWater.Perm </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_CapillaryWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> PlasmaProtein.[Total] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_InterstitialProtein.[Total] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_CapillaryProtein.AlbGradient </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_CapillaryProtein.Perm </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_CapillaryProtein.Rate </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Middle_LymphWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_LymphProtein.[Conc] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_LymphProtein.Rate </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Middle_InterstitialWater.Vol </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Middle_InterstitialProtein.Mass </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Middle_InterstitialProtein.Change </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+</column>
+
+<column>
+<indent> 39 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Lower </textcell>
+
+<valuecell>
+  <name> RegionalPressure.LowerCapy </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_InterstitialWater.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> PlasmaProtein.COP </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_InterstitialProtein.COP </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_CapillaryWater.Gradient </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_CapillaryWater.Perm </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_CapillaryWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> PlasmaProtein.[Total] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_InterstitialProtein.[Total] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_CapillaryProtein.AlbGradient </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_CapillaryProtein.Perm </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_CapillaryProtein.Rate </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Lower_LymphWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_LymphProtein.[Conc] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+
+<valuecell>
+  <name> Torso_Lower_LymphProtein.Rate </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Lower_InterstitialWater.Vol </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> Torso_Lower_InterstitialProtein.Mass </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Torso_Lower_InterstitialProtein.Change </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+</column>
+
+<column>
+<indent> 48 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Total </textcell>
+
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+
+<valuecell>
+  <name> CapillaryWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+<textcell></textcell>
+
+<valuecell>
+  <name> CapillaryProtein.Rate </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> LymphWater.Rate </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> LymphProtein.Rate </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> InterstitialWater.Vol </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+<valuecell>
+  <name> InterstitialProtein.Mass </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> InterstitialProtein.Change </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+</showtable>
+
+</panel>
+
+End

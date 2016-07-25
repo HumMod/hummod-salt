@@ -1,0 +1,37 @@
+HumMod / MetabolicUnits
+
+Created : 2012-10-19
+Revised : 2012-10-19
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> MetabolicUnits </name>
+
+<variables>
+
+<constant><name> MET </name><val> 3.5 </val></constant>
+<var><name> O2_Uptake_Normalized </name></var>
+<var><name> METs </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> O2_Uptake_Normalized </name>
+  <val> Lung_O2.Uptake / Weight.Weight(kG) </val>
+</def>
+
+<def>
+  <name> METs </name>
+  <val> O2_Uptake_Normalized / MET </val>
+</def>
+
+
+</block>
+</definitions>
+</structure>
+
+End

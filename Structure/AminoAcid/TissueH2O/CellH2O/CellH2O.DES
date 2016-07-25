@@ -1,0 +1,45 @@
+HumMod / CellH2O
+
+Created : 07-Apr-05
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> CellH2O </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> InitialVol </name></var>
+<var><name> Vol(L) </name></var>
+
+<var><name> Torso_Upper_Vol </name></var>
+<var><name> Torso_Middle_Vol </name></var>
+<var><name> Torso_Lower_Vol </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> InitialVol </name><val> ICFV.InitialVol  </val></def>- Sizing-BloodVolume.RBC-H2O
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> Vol </name><val> ICFV.Vol  </val></def>- RBCH2O.Vol
+<def><name> Vol(L) </name><val> Vol / 1000.0 </val></def>
+
+<def><name> Torso_Upper_Vol </name><val> TissueH2O.Torso_Upper_SizeFract * Vol </val></def>
+<def><name> Torso_Middle_Vol </name><val> TissueH2O.Torso_Middle_SizeFract * Vol </val></def>
+<def><name> Torso_Lower_Vol </name><val> TissueH2O.Torso_Lower_SizeFract * Vol </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,99 @@
+HumMod / Vein
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 7.0 </row>
+   <col> 32.0 </col>
+   <high> 8.4 </high>
+   <wide> 30.0 </wide>
+   <title> Vein </title>
+
+<structurename> BloodChemistry-BloodGases </structurename>
+
+<showtable>
+<row> 2.4 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> pO2 </textcell>
+
+<valuecell>
+  <name> Vein_pO2 </name>
+  <format><integer/></format>
+</valuecell>
+
+<textcell> </textcell>
+<textcell> pCO2 </textcell>
+
+<valuecell>
+  <name> Vein_pCO2 </name>
+  <format><integer/></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 9 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> [O2] </textcell>
+
+<valuecell>
+  <name> Vein_[O2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<textcell> </textcell>
+<textcell> [CO2] </textcell>
+
+<valuecell>
+  <name> Vein_[CO2]</name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 18 </indent>
+<fieldwidth> 8 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Sat % </textcell>
+
+<valuecell>
+  <name> Vein_Sat(%) </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+</showtable>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical Values </line>
+  <line> </line>
+  <line> O2 </line>
+  <line> |  pO2 = 42 mmHg</line>
+  <line> |  [O2] = 0.150 mL/mL </line>
+  <line> |  Saturation = 74% </line>
+  <line> </line>
+  <line> CO2 </line>
+  <line> |  pCO2 = 46 mmHg </line>
+  <line> |  [CO2] = 29 mEq/L HCO3- </line>
+</infobutton>
+
+</groupbox>
+
+End

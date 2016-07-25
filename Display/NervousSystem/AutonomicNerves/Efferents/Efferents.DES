@@ -1,0 +1,22 @@
+HumMod / Efferents
+
+Created : 24-Apr-05
+Revised : 2013-03-08
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Display\NervousSystem\AutonomicNerves\Efferents\ ?>
+
+<?include Ganglia-Sympathetic\Ganglia-Sympathetic.DES ?>
+<?include Ganglia-General\Ganglia-General.DES ?>
+<?include Ganglia-Adrenal\Ganglia-Adrenal.DES ?>
+<?include Ganglia-Cardiac\Ganglia-Cardiac.DES ?>
+<?include Ganglia-Renal\Ganglia-Renal.DES ?>
+<?include Ganglia-Hepatic\Ganglia-Hepatic.DES ?>
+<?include Ganglia-Mesenteric\Ganglia-Mesenteric.DES ?>
+<?include VagusNerve\VagusNerve.DES ?>
+<?include AdrenalNerve\AdrenalNerve.DES ?>
+<?include SystemicVeins\SystemicVeins.DES ?>
+
+End

@@ -1,0 +1,84 @@
+HumMod / AA-Lysine
+
+Created : 2013-02-18
+Revised : 2013-02-18
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> AA-Lysine </name>
+
+<variables>
+
+<constant><name> MW </name><val> 146 </val></constant>
+
+<constant><name> UMOL_L_TO_UG_DL </name><val> 14.6 </val></constant>
+<constant><name> UG_DL_TO_UMOL_L </name><val> 0.0685 </val></constant>
+
+<var><name> Target[Conc(uMol/L)] </name><val> 195 </val></var>
+<var><name> InitialMass </name></var>
+
+<var><name> [Conc(uMol/L)] </name></var>
+<var><name> [Conc(uG/dL)] </name></var>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 29 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+  <def>
+    <name> InitialMass </name>
+    <val> Target[Conc(uMol/L)] * ECFV.Vol(L) </val>
+  </def>
+
+  <def><name> Mass </name><val> InitialMass </val></def>
+</block>
+
+<block><name> Conc </name>
+
+<def>
+  <name> [Conc(uMol/L)] </name>
+  <val> Mass / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Conc(uG/dL)] </name>
+  <val> UMOL_L_TO_UG_DL * [Conc(uMol/L)] </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Gain </name>
+  <val> 0 </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> 0 </val>
+</def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

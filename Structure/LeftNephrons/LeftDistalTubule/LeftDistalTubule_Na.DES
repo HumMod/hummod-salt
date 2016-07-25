@@ -1,0 +1,152 @@
+HumMod / LeftDistalTubule_Na
+
+Created : 10-Apr-05
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftDistalTubule_Na </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> ModifiedInflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> LeftFractReab </name></var>
+<var><name> Reab </name></var>
+<parm><name> BasicFract </name><val> 0.75 </val></parm>0.75
+<var><name> TotalEffect </name></var>
+<var><name> LoadEffect </name></var>
+<var><name> AldoEffect </name></var>
+<var><name> ThiazideEffect </name></var>
+<parm><name> AldoSwitch </name><val> FALSE </val></parm>
+<parm><name> AldoLevel </name><val> 0.0 </val></parm>
+<var><name> [Na+] </name></var>
+<parm><name> NormMaxReab </name><val> 3 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> LoadOnFract </name>
+  <point><x> 0 </x><y> 3 </y><slope> 0 </slope></point>
+  <point><x> 6e-7 </x><y> 1.0 </y><slope> -1250000 </slope></point>6.6
+  <point><x> 15e-7 </x><y> 0.75 </y><slope> 0 </slope></point>18 0.5
+</curve>
+
+<curve>
+  <name> AldoOnFract </name>
+  <point><x>  0.0 </x><y> 0.5 </y><slope> 0 </slope></point>0.5
+  <point><x> 12.0 </x><y> 1.0 </y><slope> 0.08 </slope></point>
+  <point><x> 50.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ThiazideOnFract </name>
+  <point><x> 0.0 </x><y> 1.0 </y><slope> 0 </slope></point>-2.0
+  <point><x> 0.1 </x><y> 0.55 </y><slope> -2.0 </slope></point>
+  <point><x> 0.6 </x><y> 0.2 </y><slope>  0.0 </slope></point>0.6
+  <point><x> 1 </x><y> 0.2 </y><slope>  0.0 </slope></point>0.6
+</curve> ???Check Units
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Inflow </name>
+  <val> LeftLoopOfHenle_Na.Outflow </val>
+</def>
+
+<if><test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def><name> ModifiedInflow </name><val> Inflow /  ( LeftKidney-NephronCount.NumFiltering ) </val></def>
+</true>
+<false>
+  <def><name> ModifiedInflow </name><val> 0 </val></def>
+</false>
+</if>
+<!--
+
+<def>
+  <name> LoadEffect </name>
+  <val> LoadOnFract [ ModifiedInflow ] </val>
+</def>
+-->
+
+<conditional>
+  <name> LoadEffect </name>
+  <test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+  <true> ( RightDistalTubule_Na.LoadA * ( RightDistalTubule_Na.LoadS ^ RightDistalTubule_Na.LoadN ) / ( ( RightDistalTubule_Na.LoadS ^ RightDistalTubule_Na.LoadN ) + ( ModifiedInflow ^ RightDistalTubule_Na.LoadN ) ) + RightDistalTubule_Na.LoadB ) MAX 0.75  </true>
+  <false> 0 </false>
+</conditional>
+
+<def>
+  <name> AldoEffect </name>
+  <val> RightDistalTubule_Na.AldoA * ( LeftNephronAldo.[Aldo(nG/dL)-Nucleus] ^ RightDistalTubule_Na.AldoN ) / ( ( RightDistalTubule_Na.AldoS ^ RightDistalTubule_Na.AldoN ) + ( LeftNephronAldo.[Aldo(nG/dL)-Nucleus] ^ RightDistalTubule_Na.AldoN ) ) + RightDistalTubule_Na.AldoB </val>
+</def>
+
+<def>
+  <name> ThiazideEffect </name>
+  <val> ThiazideOnFract [ ThiazidePool.[Thiazide] ] </val>
+</def>
+
+<def>
+  <name> TotalEffect </name>
+  <val>
+       LoadEffect
+    * AldoEffect
+    * ThiazideEffect
+    * LeftKidney-Function.Effect
+  </val>
+</def>
+
+<copy>
+  <from> BasicFract </from>
+  <to> LeftFractReab.Normal </to>
+</copy>
+
+<copy>
+  <from> TotalEffect </from>
+  <to> LeftFractReab.Effects </to>
+</copy>
+
+<call> LeftFractReab.GetFract </call>
+
+<copy>
+  <from> LeftFractReab.Fract </from>
+  <to> LeftFractReab </to>
+</copy>
+
+<def>
+  <name> Reab </name>
+  <val>
+    ( LeftFractReab * Inflow )
+    MIN
+    ( NormMaxReab * AldoEffect ) </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Na+] </name>
+  <val> 1000.0 * LeftDistalTubule_H2O.ADHEffect </val>
+</def>
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

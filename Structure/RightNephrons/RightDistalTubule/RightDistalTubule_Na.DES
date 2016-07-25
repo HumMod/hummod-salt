@@ -1,0 +1,173 @@
+HumMod / RightDistalTubule_Na
+
+Created : 10-Apr-05
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RightDistalTubule_Na </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> ModifiedInflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> RightFractReab </name></var>
+<var><name> Reab </name></var>
+<parm><name> BasicFract </name><val> 0.75 </val></parm>0.75
+<var><name> TotalEffect </name></var>
+<var><name> LoadEffect </name></var>
+<var><name> AldoEffect </name></var>
+<var><name> ThiazideEffect </name></var>
+<parm><name> AldoSwitch </name><val> FALSE </val></parm>
+<parm><name> AldoLevel </name><val> 0.0 </val></parm>
+<var><name> [Na+] </name></var>
+<parm><name> NormMaxReab </name><val> 4 </val></parm>3
+
+<parm><name> L </name><val> 1.3 </val></parm>constant to multiply S to balance load deliveries
+
+<parm><name> AldoA </name><val> 2.5 </val></parm>
+<parm><name> AldoB </name><val> 0.5 </val></parm>
+<parm><name> AldoS </name><val> 20 </val></parm>
+<parm><name> AldoN </name><val> 2.75 </val></parm>
+
+<parm><name> LoadA </name><val> 2.76 </val></parm>
+<parm><name> LoadB </name><val> 0.4 </val></parm>
+<parm><name> LoadS </name><val> 3.85e-7 </val></parm>3.5
+<parm><name> LoadN </name><val> 2.4 </val></parm>
+
+<parm><name> RLoadA </name><val> 2.68 </val></parm>
+<parm><name> RLoadB </name><val> 0.32 </val></parm>
+<parm><name> RLoadS </name><val> 5.98e-7 </val></parm>5.75
+<parm><name> RLoadN </name><val> 2.7 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> LoadOnFract </name>
+  <point><x> 0 </x><y> 3 </y><slope> 0 </slope></point>
+  <point><x> 6.6e-7 </x><y> 1.0 </y><slope> -125000 </slope></point>
+  <point><x> 16e-7 </x><y> 0.75 </y><slope> 0 </slope></point>18 0.5
+</curve>
+
+<curve>
+  <name> AldoOnFract </name>
+  <point><x>  0.0 </x><y> 0.5 </y><slope> 0 </slope></point>0.5
+  <point><x> 12.0 </x><y> 1.0 </y><slope> 0.08 </slope></point>
+  <point><x> 50.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ThiazideOnFract </name>
+  <point><x> 0.0 </x><y> 1.0 </y><slope> 0 </slope></point>-2.0
+  <point><x> 0.1 </x><y> 0.55 </y><slope> -2.0 </slope></point>
+  <point><x> 0.6 </x><y> 0.2 </y><slope>  0.0 </slope></point>0.6
+  <point><x> 1 </x><y> 0.2 </y><slope>  0.0 </slope></point>0.6
+</curve> ???Check Units
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Inflow </name>
+  <val> RightLoopOfHenle_Na.Outflow </val>
+</def>
+
+<if><test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def><name> ModifiedInflow </name><val> Inflow /  ( RightKidney-NephronCount.NumFiltering ) </val></def>
+</true>
+<false>
+  <def><name> ModifiedInflow </name><val> 0 </val></def>
+</false>
+</if>
+
+<!--
+<def>
+  <name> LoadEffect </name>
+  <val> LoadOnFract [ ModifiedInflow ] </val>
+</def>
+-->
+
+
+<conditional>
+  <name> LoadEffect </name>
+  <test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+  <true> ( RLoadA * ( ( RLoadS ^ RLoadN ) / ( ( RLoadS ^ RLoadN ) + ( ModifiedInflow ^ RLoadN ) ) ) + RLoadB ) MAX 0.75 </true>
+  <false> 0 </false>
+</conditional>
+
+
+<def>
+  <name> AldoEffect </name>
+  <val> AldoA * ( RightNephronAldo.[Aldo(nG/dL)-Nucleus] ^ AldoN ) / ( ( AldoS ^ AldoN ) + ( RightNephronAldo.[Aldo(nG/dL)-Nucleus] ^ AldoN ) ) + AldoB </val>
+</def>
+
+<def>
+  <name> ThiazideEffect </name>
+  <val> ThiazideOnFract [ ThiazidePool.[Thiazide] ] </val>
+</def>
+
+<def>
+  <name> TotalEffect </name>
+  <val>
+       LoadEffect
+    * AldoEffect
+    * ThiazideEffect
+    * RightKidney-Function.Effect
+  </val>
+</def>
+
+<def><name> BasicFract </name><val> LeftDistalTubule_Na.BasicFract </val></def>
+
+<copy>
+  <from> BasicFract </from>
+  <to> RightFractReab.Normal </to>
+</copy>
+
+<copy>
+  <from> TotalEffect </from>
+  <to> RightFractReab.Effects </to>
+</copy>
+
+<call> RightFractReab.GetFract </call>
+
+<copy>
+  <from> RightFractReab.Fract </from>
+  <to> RightFractReab </to>
+</copy>
+
+<def>
+  <name> Reab </name>
+  <val>
+    ( RightFractReab * Inflow )
+    MIN
+    ( NormMaxReab * AldoEffect ) </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Na+] </name>
+  <val> 1000.0 * RightDistalTubule_H2O.ADHEffect </val>
+</def>
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

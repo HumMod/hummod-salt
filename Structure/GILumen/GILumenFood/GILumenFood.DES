@@ -1,0 +1,87 @@
+HumMod / GILumenFood
+
+Created : 13-Mar-08
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\GILumen\GILumenFood\ ?>
+
+<?include GILumenCarbohydrates.DES ?>
+<?include GILumenFat.DES ?>
+<?include GILumenProtein.DES ?>
+
+<structure><name> GILumenFood </name>
+
+<variables>
+
+<var><name> Intake(mG/Min) </name></var>
+<var><name> Intake(G/Min) </name></var>
+
+<var><name> Absorption(mG/Min) </name></var>
+<var><name> Absorption(G/Min) </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Conc </name>
+  <call> GILumenCarbohydrates.Conc </call>
+  <call> GILumenFat.Conc </call>
+  <call> GILumenProtein.Conc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> GILumenCarbohydrates.Dervs </call>
+  <call> GILumenFat.Dervs </call>
+  <call> GILumenProtein.Dervs </call>
+
+<def>
+  <name> Intake(mG/Min) </name>
+  <val>
+      GILumenCarbohydrates.Intake
+    + GILumenFat.Intake
+    + GILumenProtein.Intake
+  </val>
+</def>
+
+<def>
+  <name> Intake(G/Min) </name>
+  <val> 0.001 * Intake(mG/Min) </val>
+</def>
+
+<def>
+  <name> Intake(mG/Min) </name>
+  <val>
+      GILumenCarbohydrates.Intake
+    + GILumenFat.Intake
+    + GILumenProtein.Intake
+  </val>
+</def>
+
+<def>
+  <name> Intake(G/Min) </name>
+  <val> 0.001 * Intake(mG/Min) </val>
+</def>
+
+<def>
+  <name> Absorption(mG/Min) </name>
+  <val>
+      GILumenCarbohydrates.Absorption
+    + GILumenFat.Absorption
+    + GILumenProtein.Absorption
+  </val>
+</def>
+
+<def>
+  <name> Absorption(G/Min) </name>
+  <val> 0.001 * Absorption(mG/Min) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,62 @@
+HumMod / Arteries
+
+Created : 2013-02-16
+Revised : 2013-02-16
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structurename> Kidney-ProximalTubuleO2 </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 11.0 </high>
+   <wide> 30.0 </wide>
+   <title> Arteries </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> O2Artys.[O2] </name>
+   <format><decimal> 3 </decimal></format>
+   <label> [O2] </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> PO2Artys.Pressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> pO2 </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> PO2Artys.Pressure </name>
+      <label> pO2 </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 80 </min><max> 100 </max><inc> 20 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,80 @@
+HumMod / NephronCount
+
+Created : 20-Dec-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 14.8 </row>
+   <col> 1.0 </col>
+   <high> 9.0 </high>
+   <wide> 30.0 </wide>
+   <title> Nephron Count </title>
+
+<repeatlist>
+  <name> Kidney-NephronCount.Total </name>
+  <repeat>
+    <reps> 15 </reps>
+    <stepsize> 100000 </stepsize>
+  </repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 1.4 </row><col> 1.0 </col>
+  <wide> 8 </wide>
+  <name> RightKidney-NephronCount.Total </name>
+  <listname> Kidney-NephronCount.Total </listname>
+  <label> Right Total </label>
+</slidebar>
+
+<slidebar>
+  <row> 2.8 </row><col> 1.0 </col>
+  <wide> 8 </wide>
+  <name> LeftKidney-NephronCount.Total </name>
+  <listname> Kidney-NephronCount.Total </listname>
+  <label> Left Total </label>
+</slidebar>
+
+<showvalue>
+  <row> 3.8 </row><col> 1.0 </col>
+  <name> RightKidney-NephronCount.Total(xNormal) </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right X Normal </label>
+</showvalue>
+
+<showvalue>
+  <row> 4.8 </row><col> 1.0 </col>
+  <name> LeftKidney-NephronCount.Total(xNormal) </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left X Normal </label>
+</showvalue>
+
+<slidebar>
+  <row> 6.2 </row><col> 1.0 </col>
+  <name> RightKidney-NephronCount.Filtering(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Right % Filtering </label>
+</slidebar>
+
+<slidebar>
+  <row> 7.6 </row><col> 1.0 </col>
+  <name> LeftKidney-NephronCount.Filtering(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Left % Filtering </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Normal nephron count is 2400000 nephrons. </line>
+  <line>  </line>
+  <line> Normal % of nephrons filtering is 100%. </line>
+</infobutton>
+
+</groupbox>
+
+End

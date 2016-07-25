@@ -1,0 +1,38 @@
+HumMod / CoronarySinus
+
+Created : 10-Apr-08
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<panel><name> CoronarySinus </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> Heart </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Coronary Sinus </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Circulation\GreatVeins\CoronarySinus\ ?>
+
+
+<?include BloodFlow.DES ?>
+<?include O2.DES ?>
+<?include PO2.DES ?>
+
+</panel>
+
+End

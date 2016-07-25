@@ -1,0 +1,51 @@
+HumMod / Sizing-PotassiumPool
+
+Created : 2013-03-02
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-PotassiumPool </name>
+
+<variables>
+
+<var><name> Mass </name></var>
+<var><name> Volume </name></var>
+
+<constant><name> [K+] </name><val> 4.4 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-ECFV.Vol / 1000 </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> [K+] * Volume </val>
+</def>
+
+<def>
+  <name> KPool.InitialMass  </name>
+  <val> Mass </val>
+</def>
+
+<def>
+  <name> KPool.[K+(mEq/L)-Initial] </name>
+  <val> [K+] </val>
+</def>
+
+<call> KPool.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,20 @@
+HumMod / HeatInsensibleLung REF
+
+Created : 2012-02-14
+Revised : 2012-02-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+We can calculate the amount of water loss in
+breathing as the gas swept up and out of the
+lungs. But for water balance, we need to know
+this volume in mL of H2O.
+
+H2O has a M.W. of 18.  So, 18 G forms 22.4 L
+of vapor.
+
+ML_GAS_TO_ML_H2O = 18.0 / ( 22.4 * 1000 ) or
+0.80 E-3.
+
+End

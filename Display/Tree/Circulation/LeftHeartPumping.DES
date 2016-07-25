@@ -1,0 +1,59 @@
+HumMod / LeftHeartPumping
+
+Created : 2010-05-24
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2010-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> LeftHeartPumping </name>
+  <label> Left Heart Pumping </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> LeftHeartPumping-Output </name>
+  <label> Output </label>
+  <parent> LeftHeartPumping </parent>
+</leaf>
+
+<leaf>
+  <name> LeftHeartPumping-Systole </name>
+  <label> Systole </label>
+  <parent> LeftHeartPumping </parent>
+</leaf>
+
+<leaf>
+  <name> LeftHeartPumping-Diastole </name>
+  <label> Diastole </label>
+  <parent> LeftHeartPumping </parent>
+</leaf>
+
+<separatorbar>
+  <parent> LeftHeartPumping </parent>
+</separatorbar>
+
+<leaf>
+  <name> LeftHeartPumping-HeartStrength </name>
+  <label> Heart Strength </label>
+  <parent> LeftHeartPumping </parent>
+</leaf>
+
+<leaf>
+  <name> LeftHeartPumping-ContractileProtein </name>
+  <label> Contractile Protein </label>
+  <parent> LeftHeartPumping </parent>
+</leaf>
+
+<separatorbar>
+  <parent> LeftHeartPumping </parent>
+</separatorbar>
+
+<leaf>
+  <name> LeftHeartPumping-Cardiopathy </name>
+  <label> Cardiopathy </label>
+  <parent> LeftHeartPumping </parent>
+</leaf>
+
+End

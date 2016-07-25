@@ -1,0 +1,127 @@
+HumMod | Cortisol
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> Cortisol </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Secretion </name></var>
+<var><name> Degradation </name></var>
+<parm><name> SecondaryInsufficiency </name><val> 1 </val></parm>
+
+<parm><name> TargetConc </name><val> 0.2 </val></parm>
+<var><name> InitialMass </name></var>
+
+<var><name> [Conc(uG/mL)] </name></var>
+<var><name> [Conc(uG/dL)] </name></var>
+<var><name> [Conc(nMol/L)] </name></var>
+
+<constant><name> UG/DL_TO_NMOL/L </name><val> 27.6 </val></constant>
+
+<parm><name> PumpSwitch </name><val> FALSE </val></parm>
+<parm><name> PumpSetting </name><val> 0.0 </val></parm>
+<var><name> PumpRate </name></var>
+
+<parm><name> ClampSwitch </name><val> FALSE </val></parm>
+<parm><name> ClampSetting </name><val> 0.0 </val></parm>
+
+<var><name> [ACTH]Effect </name></var>
+<var><name> Secretion-Basic </name></var>
+<parm><name> Secretion-Basic(/G) </name><val> 1.1556 </val></parm>
+
+<parm><name> K </name><val> 52.0 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 30.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve><name> [ACTH]Effect </name>
+<point><x>  0 </x><y> 0 </y><slope> 0 </slope></point>
+<point><x>  5 </x><y> 1 </y><slope> 0.6 </slope></point>
+<point><x> 20 </x><y> 10 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> InitialMass </name>
+  <val> TargetConc * ECFV.InitialVol </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Conc </name>
+<if><test> ClampSwitch </test>
+<true>
+  <def><name> [Conc(uG/mL)] </name><val> ClampSetting / 100 </val></def>
+</true>
+<false>
+  <def><name> [Conc(uG/mL)] </name><val> Mass / ECFV.Vol </val></def>
+</false>
+</if>
+
+<def><name> [Conc(uG/dL)] </name><val> 100.0 * [Conc(uG/mL)] </val></def>
+<def><name> [Conc(nMol/L)] </name><val> [Conc(uG/dL)] * UG/DL_TO_NMOL/L </val></def>
+</block>
+
+<block><name> Dervs </name>
+
+<def><name> Secretion-Basic </name><val> Secretion-Basic(/G) * AdrenalGland-Size.FasciculataMass </val></def>
+
+<conditional><name> PumpRate </name>
+<test> PumpSwitch </test>
+<true> PumpSetting </true>
+<false> 0 </false>
+</conditional>
+
+<def>
+  <name> [ACTH]Effect </name>
+  <val> [ACTH]Effect [ ACTH.[Conc(nG/dL)] ] </val>
+</def>
+
+<def>
+  <name> Secretion </name>
+  <val> Secretion-Basic * [ACTH]Effect * ( ( InsulinPump.T2D * 4 ) + 1 ) * SecondaryInsufficiency </val>
+</def>
+
+<def><name> Degradation </name><val> K * [Conc(uG/mL)] </val></def>
+
+<def><name> Gain </name><val> Secretion + PumpRate </val></def>
+<def><name> Loss </name><val> Degradation </val></def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

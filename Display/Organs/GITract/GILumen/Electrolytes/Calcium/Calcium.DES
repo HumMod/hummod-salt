@@ -1,0 +1,38 @@
+HumMod / Calcium
+
+Created : 2011-08-06
+Last Modified : 2011-08-06
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<panel><name> GILumenCalcium </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> GILumen </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> GI Lumen | Electrolytes | Calcium </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\GITract\GILumen\Electrolytes\Calcium\ ?>
+
+<?include LeftColumn.DES ?>
+<?include RightColumn.DES ?>
+
+</panel>
+
+End

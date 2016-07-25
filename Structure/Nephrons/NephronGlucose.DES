@@ -1,0 +1,49 @@
+HumMod / NephronGlucose
+
+Created : 11-Apr-05
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> NephronGlucose </name>
+
+<variables>
+
+<var><name> Reab </name></var>
+
+<var><name> TMax </name></var>
+<var><name> Spillover </name></var>
+<var><name> Spillover(mMol/Min) </name></var>
+<constant><name> MG_TO_MMOL </name><val> 0.00555 </val></constant>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+  <call> LeftNephronGlucose.CalcSpillover </call>
+  <call> RightNephronGlucose.CalcSpillover </call>
+
+<def>
+  <name> Spillover </name>
+  <val> LeftNephronGlucose.Spillover + RightNephronGlucose.Spillover </val>
+</def>
+
+<def>
+  <name> Spillover(mMol/Min) </name>
+  <val> MG_TO_MMOL * Spillover </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> LeftNephronGlucose.Reab + RightNephronGlucose.Reab </val>
+</def>
+
+<def><name> TMax </name><val> LeftNephronGlucose.TMax + RightNephronGlucose.TMax </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

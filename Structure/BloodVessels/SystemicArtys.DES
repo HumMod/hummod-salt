@@ -1,0 +1,169 @@
+HumMod / SystemicArtys
+
+Created : 21-Oct-04
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> SystemicArtys </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> V0 </name></var>
+<var><name> StressedVol </name></var>
+<var><name> Pressure </name></var>
+<var><name> ExternalPressure </name></var>
+<!--<var><name> Compliance </name></var>-->
+<var><name> Conductance </name></var>
+
+<constant><name> MMHG_TO_KPA </name><val> 0.133 </val></constant>
+
+<var><name> KS </name></var>
+<var><name> KD </name></var>
+
+<var><name> SBP </name></var>
+<var><name> DBP </name></var>
+
+<var><name> SBP(kPa) </name></var>
+<var><name> MeanBP(kPa) </name></var>
+<var><name> DBP(kPa) </name></var>
+
+<var><name> InitialVolume </name></var>
+<var><name> InitialV0 </name></var>
+<var><name> InitialCompliance </name></var>
+<var><name> InitialConductance </name></var>
+
+<var><name> InitialKS </name></var>
+<var><name> InitialKD </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Vol </name>
+  <integralname> Vol </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 10.0 </errorlim>10
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+<diffeq>
+  <name> Compliance </name>
+  <integralname> Compliance </integralname>
+  <dervname> dCompliance </dervname>
+  <errorlim>0.001 </errorlim>0.001
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Vol </name><val> InitialVolume </val></def>
+<def><name> V0 </name><val> InitialV0 </val></def>
+<def><name> Compliance </name><val> InitialCompliance </val></def>
+<def><name> Conductance </name><val> InitialConductance </val></def>
+
+<def><name> KS </name><val> InitialKS </val></def>
+<def><name> KD </name><val> InitialKD </val></def>
+
+</block>
+
+<block><name> CalcPressure </name>
+
+<def>
+  <name> dCompliance </name>
+  <val> 0.1 * (  InitialCompliance / Sympathetics-General.NA - Compliance ) * 0</val>
+</def>
+
+<def>
+  <name> StressedVol </name>
+  <val> ( Vol - V0 ) MAX 0.0 </val>
+</def>
+
+<def>
+  <name> ExternalPressure </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> Pressure </name>
+  <val> ( StressedVol / Compliance ) + ExternalPressure </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<conditional>
+  <name> DxMax </name>
+  <test> Conductance GT 0.0 </test>
+  <true> 0.2 * Compliance / Conductance </true>
+  <false> 1e10 </false>
+</conditional>
+
+<def>
+  <name> Inflow </name>
+  <val> LeftVentricle.Outflow </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val>
+      OrganFlow.HepaticVeinFlow
+    + OrganFlow.PeripheralFlow
+    + OrganFlow.CoronarySinusFlow
+  </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Inflow - Outflow </val>
+</def>
+
+</block>
+
+<block><name> SBP </name>
+
+<def><name> SBP </name>
+  <val> Pressure + ( KS * ( LeftHeartPumping-Pumping.ForwardStroke / Compliance ) ) </val>
+</def>
+
+</block>
+
+<block><name> DBP </name>
+
+<def><name> DBP </name>
+  <val> Pressure - ( KD * ( LeftHeartPumping-Pumping.ForwardStroke / Compliance ) ) </val>
+</def>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> SBP(kPa) </name>
+  <val> MMHG_TO_KPA * SBP </val>
+</def>
+
+<def>
+  <name> MeanBP(kPa) </name>
+  <val> MMHG_TO_KPA * Pressure </val>
+</def>
+
+<def>
+  <name> DBP(kPa) </name>
+  <val> MMHG_TO_KPA * DBP </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,120 @@
+HumMod | Mass
+
+Created : 2012-01-28
+Revised : 2012-01-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 22.2 </high>
+   <wide> 30.0 </wide>
+   <title> Mass </title>
+
+<structurename> VitaminD3Stored </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass (uG) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 1000 </min><max> 2000 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> Change </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Change (uG/Min) </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> Gain(nG/Min) </name>
+   <format><integer/></format>
+   <label> Gain (nG/Min) </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> Loss(nG/Min) </name>
+   <format><integer/></format>
+   <label> Loss (nG/Min) </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> Sequestration </name>
+   <format><integer/></format>
+   <label> Sequestration </label>
+</showvalue>
+
+<repeatlist>
+  <name> KIn </name>
+  <repeat><reps> 100 </reps><stepsize> 0.01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15.0 </row><col> 3.0 </col>
+  <name> KIn </name>
+  <listname> KIn </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 16.4 </row><col> 3.0 </col>
+   <name> VitaminD3.Mass </name>
+   <format><integer/></format>
+   <label> Vitamin D3 Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.8 </row><col> 1.0 </col>
+   <name> Mobilization </name>
+   <format><integer/></format>
+   <label> Mobilization </label>
+</showvalue>
+
+<repeatlist>
+  <name> KOut </name>
+  <repeat><reps> 100 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 19.2 </row><col> 3.0 </col>
+  <name> KOut </name>
+  <listname> KOut </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 20.6 </row><col> 3.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+</groupbox>
+
+End

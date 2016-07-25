@@ -1,0 +1,128 @@
+HumMod / Bone-ExchangeableCalcium
+
+Created : 2011-08-08
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Bone-ExchangeableCalcium </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Influx </name></var>
+<var><name> Outflux </name></var>
+
+<var><name> Deposition </name></var>
+<var><name> Resorption </name></var>
+
+<constant><name> G_TO_MG </name><val> 1000 </val></constant>
+
+<var><name> [Conc(mG/dL)] </name></var>
+<parm><name> Solubility </name><val> 0.000393 </val></parm>
+
+<parm><name> InfluxK </name><val> 0.064 </val></parm>
+<parm><name> OutfluxK </name><val> 0.064 </val></parm>
+
+<var><name> [PTH]Effect </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 10 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> [PTH]Effect </name>
+  <point><x>  0 </x><y> 0 </y><slope> 0 </slope></point>
+  <point><x> 40 </x><y> 1 </y><slope> 0.05 </slope></point>
+  <point><x> 80 </x><y> 2 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Mass </name>
+  <val>
+       G_TO_MG
+     * Bone-Composition.CA_FRACT_MINERAL
+     * ( 1 - Bone-Composition.FRACT_FIXED )
+     * Bone-Size.InitialMineralMass
+  </val>
+</def>
+
+</block>
+
+<block><name> Calc  </name>
+
+<def>
+  <name> [Conc(mG/dL)] </name>
+  <val> Solubility * Mass </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> [PTH]Effect </name>
+  <val> [PTH]Effect [ ParathyroidHormone.[Conc(pG/mL)] ] </val>
+</def>
+
+<def>
+  <name> Influx </name>
+  <val> InfluxK * Ca.[Diffusing(mG/dL)] </val>
+</def>
+
+<def>
+  <name> Outflux </name>
+  <val> OutfluxK * [Conc(mG/dL)] * [PTH]Effect </val>
+</def>
+
+<def>
+  <name> Resorption </name>
+  <val> Bone-FixedCalcium.Resorption </val>
+</def>
+
+<def>
+  <name> Deposition </name>
+  <val> Bone-FixedCalcium.Deposition </val>
+</def>
+
+<def>
+  <name> Gain </name>
+  <val> Influx + Resorption </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> Outflux + Deposition </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

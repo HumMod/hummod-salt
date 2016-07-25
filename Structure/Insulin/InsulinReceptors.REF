@@ -1,0 +1,27 @@
+HumMod / InsulinReceptors
+
+Created : 2012-11-03
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+We must be careful here with units. The traditional
+unit for insulin is International Unit (U) where
+mass and concentration in the body are milli (mU)
+and micro (uU).
+
+Pool = 300 mU
+Secretion = 17 mU/Min and 17000 uU/Min
+[Insulin] = 20 uU/mL
+
+The physical units for insulin receptors are mU.
+
+There is a total mass of receptors (mU) with part
+of the mass bound and the remainder free.
+
+Binding = K1 * [Insulin] * Free
+Unbinding = K2 * Bound
+Degradation = K3 * Bound
+
+End

@@ -1,0 +1,29 @@
+HumMod / Size-Insulin DES
+
+Created : 22-Aug-09
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> Size-Insulin </name>
+<variables>
+<var><name> SizeModification </name></var>
+<constant><name>  BasicVD </name><val> 15312 </val></constant> <!-- ECFV -->
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+  <def><name> SizeModification </name><val> Sizing-ECFV.Vol / BasicVD </val></def>
+  <def><name> InsulinSynthesis.sizeModification </name><val> SizeModification </val></def>
+
+  <call> InsulinSynthesis.Init </call>
+  <call> InsulinPool.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,38 @@
+HumMod / SkeletalMuscle
+
+Created : 21-Oct-04
+Revised : 2012-09-13
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\SkeletalMuscle\ ?>
+
+<?include SkeletalMuscle-Flow.DES ?>
+<?include SkeletalMuscle-MetabolicVasodilation.DES ?>
+<?include SkeletalMuscle-Pressure.DES ?>
+<?include SkeletalMuscle-ContractileProtein.DES ?>
+<?include SkeletalMuscle-Size.DES ?>
+
+<?include SkeletalMuscle-CO2.DES ?>
+<?include SkeletalMuscle-Lactate.DES ?>
+<?include SkeletalMuscle-Ph.DES ?>
+
+<?include SkeletalMuscle-Fuel.DES ?>
+<?include SkeletalMuscle-Function.DES ?>
+<?include SkeletalMuscle-Metabolism.DES ?>
+<?include SkeletalMuscle-AlphaReceptors.DES ?>
+<?include SkeletalMuscle-BetaReceptors.DES ?>
+
+<?include SkeletalMuscle-Structure.DES ?>
+<?include SkeletalMuscle-Vasculature.DES ?>
+
+<?include SkeletalMuscle-Work.DES ?>
+<?include SkeletalMuscle-MusclePumping.DES ?>
+<?include SkeletalMuscle-Metaboreflex.DES ?>
+
+<?include SkeletalMuscle-Glycogen\SkeletalMuscle-Glycogen.DES ?>
+
+<?include SkeletalMuscle-Energy.DES ?>
+
+End

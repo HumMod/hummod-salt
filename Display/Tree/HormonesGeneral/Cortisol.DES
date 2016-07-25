@@ -1,0 +1,16 @@
+HumMod | Cortisol
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+
+<leaf>
+  <name> Cortisol </name>
+  <label> Cortisol </label>
+  <parent> HORMONESGENERAL </parent>
+</leaf>
+
+End

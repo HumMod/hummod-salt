@@ -1,0 +1,39 @@
+HumMod / BodyDensity
+
+Created : 2012-01-29
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BodyDensity </name>
+
+<variables>
+
+<var><name> Total </name></var>
+
+<var><name> Organs </name></var>
+<constant><name> Fluids </name><val> 1.0 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Organs </name>
+  <val> Weight.OrganMass / BodyVolume.Organs </val>
+</def>
+
+<def>
+  <name> Total </name>
+  <val> Weight.Weight / BodyVolume.Total </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,43 @@
+HumMod / ProximalTubule_NH3
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> ProximalTubule_Na </name>
+
+<variables>
+
+<var>
+  <name> Inflow </name>
+</var>
+
+<var>
+  <name> Outflow </name>
+</var>
+
+<var>
+  <name> Reab </name>
+</var>
+
+</variables>
+
+
+
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> Inflow </name><val> RightProximalTubule_Na.Inflow + LeftProximalTubule_Na.Inflow  </val></def>
+<def><name> Outflow </name><val> RightProximalTubule_Na.Outflow + LeftProximalTubule_Na.Outflow  </val></def>
+<def><name> Reab </name><val> RightProximalTubule_Na.Reab + LeftProximalTubule_Na.Reab  </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,153 @@
+HumMod / PlasmaProtein
+
+Created : 07-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2005-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> HetaPool </name>
+
+<variables>
+
+<var><name> GainHW </name><val> 0 </val></var>
+<var><name> LossHW </name><val> 0 </val></var>
+<var><name> GainLW </name><val> 0 </val></var>
+<var><name> LossLW </name><val> 0 </val></var>
+<var><name> Degradation </name><val> 0 </val></var>
+
+
+<parm><name> HepaticConversion </name><val> 0.0001 </val></parm>
+<constant><name> highMW </name><val> 288000 </val></constant>
+<constant><name> lowMW </name><val> 12500 </val></constant>
+
+<var><name> [HetaHW] </name></var>
+<var><name> [HetaHW(G/dL)] </name></var>
+<var><name> [HetaHW(mmol/mL)] </name></var>
+<var><name> [HetaLW] </name></var>
+<var><name> [HetaLW(G/dL)] </name></var>
+<var><name> [HetaLW(mmol/mL)] </name></var>
+
+<constant><name> PER_ML_TO_PER_DL </name><val> 100.0 </val></constant>
+
+<var><name> COP </name></var>
+
+<parm><name> SynthesisBasic </name><val> 0.01 </val></parm>
+<var><name> COPEffect </name></var>
+
+<var><name> Synthesis </name><val> 0 </val></var>
+
+
+<var><name> Target[Heta] </name><val> 0 </val></var>
+<var><name> InitialMass </name></var>
+<var><name> pCOP </name></var>
+<parm><name> sigmaHWHeta </name><val> 0.9 </val></parm>
+<parm><name> sigmaLWHeta </name><val> 0.9 </val></parm>
+
+<var><name> HetaHWFrac </name><val> 0 </val></var>
+<var><name> HetaLWFrac </name><val> 0 </val></var>
+
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> highMass </name>
+  <integralname> highMass </integralname>
+  <dervname> ChangeHW </dervname>
+  <errorlim> 1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> lowMass </name>
+  <integralname> lowMass </integralname>
+  <dervname> ChangeLW </dervname>
+  <errorlim> 1 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> COPEffect </name>
+  <point><x> 20.0 </x><y> 3.0 </y><slope> 0.0 </slope></point>
+  <point><x> 28.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 40.0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+  <def><name> InitialMass </name><val> Target[Heta] * PlasmaVol.Vol </val></def>
+  <def><name> highMass </name><val> 0.5 * InitialMass </val></def>
+  <def><name> lowMass </name><val> 0.5 * InitialMass </val></def>
+  <def><name> ChangeHW </name><val> 0 </val></def>
+  <def><name> ChangeLW </name><val> 0 </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def><name> [HetaHW] </name><val> highMass / PlasmaVol.Vol </val></def>
+<def><name> [HetaHW(G/dL)] </name><val> PER_ML_TO_PER_DL * [HetaHW] </val></def>
+<def><name> [HetaHW(mmol/mL)] </name><val> highMass / PlasmaVol.Vol(L) / highMW </val></def>
+
+<def><name> [HetaLW] </name><val> lowMass / PlasmaVol.Vol </val></def>
+<def><name> [HetaLW(G/dL)] </name><val> PER_ML_TO_PER_DL * [HetaLW] </val></def>
+<def><name> [HetaLW(mmol/mL)] </name><val> lowMass / PlasmaVol.Vol(L) / lowMW </val></def>
+
+<def><name> pCOP </name><val> ( ( [HetaHW(mmol/mL)] * sigmaHWHeta ) + ( [HetaLW(mmol/mL)] * sigmaLWHeta )  ) * 62.36367 * HeatCore.Temp(K) </val></def>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<def><name> GainHW </name>
+  <val>
+    LymphProtein.HetaHWRate 
+    + PeritoneumProtein.HetaHWLoss 
+    + IVDrip.HetaHWRate
+  </val></def>
+
+<def><name> LossHW </name>
+  <val>
+    CapillaryProtein.HetaHWRate
+    + ( Hemorrhage.ProteinRate * HetaHWFrac )
+    + PeritoneumProtein.HetaHWGain 
+    + ( HepaticConversion * [HetaHW] )
+  </val></def>
+
+<def><name> GainLW </name>
+  <val>
+     ( HepaticConversion * [HetaHW] )
+    + LymphProtein.HetaLWRate 
+    + PeritoneumProtein.HetaLWLoss 
+    + IVDrip.HetaLWRate 
+  </val></def>
+
+<def><name> LossLW </name>
+  <val>
+    CapillaryProtein.HetaLWRate
+    + ( Hemorrhage.ProteinRate * HetaLWFrac )
+    + PeritoneumProtein.HetaLWGain 
+    + CollectingDuct_Protein.HetaLWOutflow 
+  </val></def>
+
+<def><name> ChangeHW </name><val> GainHW - LossHW </val></def>
+<def><name> ChangeLW </name><val> GainLW - LossLW </val></def>
+
+<def><name> HetaHWFrac </name><val> [HetaHW(mmol/mL)] / PlasmaProtein.[Total] </val></def>
+<def><name> HetaLWFrac </name><val> [HetaLW(mmol/mL)] / PlasmaProtein.[Total] </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End
+

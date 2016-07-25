@@ -1,0 +1,27 @@
+HumMod / Energy
+
+Created : 2012-02-11
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\Energy\ ?>
+
+<?include Energy-Stores.DES ?>
+<?include Energy-Tools.DES ?>
+
+<structure><name> Energy </name>
+
+<definitions>
+
+<block><name> Wrapup </name>
+
+  <call> Energy-Stores.Wrapup </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

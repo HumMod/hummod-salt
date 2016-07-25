@@ -1,0 +1,339 @@
+HumMod / AutonomicNerves-CNS
+
+Created : 2013-03-06
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> AutonomicNerves-CNS </name>
+  <label> CNS </label>
+  <parent> AutonomicNerves </parent>
+</branch>
+
+<leaf>
+  <name> AutonomicNerves-CNS-Sympathetics </name>
+  <label> Sympathetics </label>
+  <parent> AutonomicNerves-CNS </parent>
+</leaf>
+
+<branch>
+  <name> CNS-Sympathetics-General </name>
+  <label> ... General </label>
+  <parent> AutonomicNerves-CNS </parent>
+</branch>
+
+<leaf>
+  <name> CNS-General-Integration </name>
+  <label> Integration </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-General-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-General-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-General-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-General-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-General-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-General-Exercise </name>
+  <label> Exercise </label>
+  <parent> CNS-Sympathetics-General </parent>
+</leaf>
+
+<branch>
+  <name> CNS-Sympathetics-Adrenal </name>
+  <label> ... Adrenal </label>
+  <parent> AutonomicNerves-CNS </parent>
+</branch>
+
+<leaf>
+  <name> CNS-Adrenal-Integration </name>
+  <label> Integration </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Adrenal-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Adrenal-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Adrenal-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Adrenal-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Adrenal-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Adrenal-Exercise </name>
+  <label> Exercise </label>
+  <parent> CNS-Sympathetics-Adrenal </parent>
+</leaf>
+
+<branch>
+  <name> CNS-Sympathetics-Cardiac </name>
+  <label> ... Cardiac </label>
+  <parent> AutonomicNerves-CNS </parent>
+</branch>
+
+<leaf>
+  <name> CNS-Cardiac-Integration </name>
+  <label> Integration </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Cardiac-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Cardiac-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Cardiac-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Cardiac-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Cardiac-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Cardiac-Exercise </name>
+  <label> Exercise </label>
+  <parent> CNS-Sympathetics-Cardiac </parent>
+</leaf>
+
+<branch>
+  <name> CNS-Sympathetics-Renal </name>
+  <label> ... Renal </label>
+  <parent> AutonomicNerves-CNS </parent>
+</branch>
+
+<leaf>
+  <name> CNS-Renal-Integration </name>
+  <label> Integration </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Renal-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Renal-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Renal-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Renal-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Renal-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Renal-Exercise </name>
+  <label> Exercise </label>
+  <parent> CNS-Sympathetics-Renal </parent>
+</leaf>
+
+<branch>
+  <name> CNS-Sympathetics-Hepatic </name>
+  <label> ... Hepatic </label>
+  <parent> AutonomicNerves-CNS </parent>
+</branch>
+
+<leaf>
+  <name> CNS-Hepatic-Integration </name>
+  <label> Integration </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Hepatic-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Hepatic-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Hepatic-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Hepatic-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Hepatic-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Hepatic-Exercise </name>
+  <label> Exercise </label>
+  <parent> CNS-Sympathetics-Hepatic </parent>
+</leaf>
+
+<branch>
+  <name> CNS-Sympathetics-Mesenteric </name>
+  <label> ... Mesenteric </label>
+  <parent> AutonomicNerves-CNS </parent>
+</branch>
+
+<leaf>
+  <name> CNS-Mesenteric-Integration </name>
+  <label> Integration </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Mesenteric-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Mesenteric-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Mesenteric-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Mesenteric-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Mesenteric-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> CNS-Mesenteric-Exercise </name>
+  <label> Exercise </label>
+  <parent> CNS-Sympathetics-Mesenteric </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-CNS-Cushing </name>
+  <label> Cushing Response </label>
+  <parent> AutonomicNerves-CNS </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-CNS-TrophicFactor </name>
+  <label> Trophic Factor </label>
+  <parent> AutonomicNerves-CNS </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-CNS-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> AutonomicNerves-CNS </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-CNS-Nucleus-ADH </name>
+  <label> Nucleus - ADH </label>
+  <parent> AutonomicNerves-CNS </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-CNS-Nucleus-CRF </name>
+  <label> Nucleus - CRF </label>
+  <parent> AutonomicNerves-CNS </parent>
+</leaf>
+
+End

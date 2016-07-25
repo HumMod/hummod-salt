@@ -1,0 +1,59 @@
+HumMod / Hemorrhage
+
+Created : 30-May-05
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Pain </name>
+
+<variables>
+
+<parm><name> TargetPain </name><val> 0 </val></parm>
+<var><name> Pain </name></var>
+<var><name> PainEffect </name></var>
+<var><name> CombinedMorphine </name></var>
+</variables>
+
+<functions>
+
+<curve>
+  <name> MorphineOnPain </name>
+  <point><x> 0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 0.7 </x><y> 0.4 </y><slope> 0 </slope></point>
+</curve>
+
+
+</functions>
+
+<equations>
+
+<diffeq>
+  <name> AbsPain </name>
+  <integralname> AbsPain </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 0.03  </errorlim>
+</diffeq>
+
+</equations>
+
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> Change </name><val> 0.75 * ( TargetPain - AbsPain ) </val></def>     
+<def><name> CombinedMorphine </name><val> OR.[MR] + ( 0.25 * OR.[M6GR] ) </val></def>
+
+<def><name> Pain </name><val> AbsPain * MorphineOnPain [ CombinedMorphine ] </val></def>
+
+</block>
+
+
+
+</definitions>
+</structure>
+
+End

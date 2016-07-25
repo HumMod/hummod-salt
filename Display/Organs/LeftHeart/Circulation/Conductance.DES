@@ -1,0 +1,204 @@
+HumMod / Conductance
+
+Created : 23-May-05
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 38.2 </high>
+   <wide> 30.0 </wide>
+   <title> Vascular Conductance </title>
+
+<structurename> LeftHeart-Flow </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Conductance </name>
+  <label> Total Conductance </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Conductance </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 2 </min><max> 3 </max><inc> 1.0 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> LargeVesselConductance </name>
+  <label> Large Vessel Cond </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showbargraph>
+  <row> 11.2 </row><col> 1.0 </col><high> 3.0 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> Viscosity.ConductanceEffect </name>
+    <label> Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<showvalue>
+  <row> 14.4 </row><col> 1.0 </col>
+  <name> BasicLargeConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Basic Conductance </label>
+</showvalue>
+
+<slidebar>
+  <row> 15.8 </row><col> 3.0 </col>
+  <name> LargeMultiplierTarget </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<showvalue>
+  <row> 17.2 </row><col> 3.0 </col>
+  <name> NominalLargeConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.2 </row><col> 3.0 </col>
+  <name> LargeConductance(/G) </name>
+  <format><decimal> 5 </decimal></format>
+  <label> /G </label>
+</showvalue>
+
+<showvalue>
+  <row> 19.6 </row><col> 1.0 </col>
+  <name> SmallVesselConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Small Vessel Cond </label>
+</showvalue>
+
+<showbargraph>
+  <row> 21.0 </row><col> 1.0 </col><high> 10 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> PO2Effect </name>
+    <label> pO2 </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> SympsEffect </name>
+    <label> Symps </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> ADHEffect </name>
+    <label> [ADH] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Viscosity.ConductanceEffect </name>
+    <label> Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Anesthesia.VascularConductance </name>
+    <label> Anesthesia </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftHeart-Vasculature.Effect </name>
+    <label> Vascularity </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> MetabolismEffect </name>
+    <label> Metabolism </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftHeart-Infarction.Effect </name>
+    <label> Infarction </label>
+    <color> BLUE </color>
+  </bar>
+  <scale>
+    <min> 0 </min><max> 2 </max><inc> 1 </inc>
+  </scale>
+</showbargraph>
+
+<showvalue>
+  <row> 31.4 </row><col> 1.0 </col>
+  <name> BasicSmallConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Basic Conductance </label>
+</showvalue>
+
+<slidebar>
+  <row> 32.8 </row><col> 3.0 </col>
+  <name> SmallMultiplierTarget </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<showvalue>
+  <row> 34.2 </row><col> 3.0 </col>
+  <name> NominalSmallConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal </label>
+</showvalue>
+
+<showvalue>
+  <row> 35.2 </row><col> 3.0 </col>
+  <name> SmallConductance(/G) </name>
+  <format><decimal> 5 </decimal></format>
+  <label> /G </label>
+</showvalue>
+
+<showvalue>
+  <row> 36.6 </row><col> 1.0 </col>
+  <name> LeftHeart-Size.InitialMass </name>
+  <format><integer/></format>
+  <label> Mass </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Total vascular conductance is typically </line>
+  <line> 2.2 ( mL / Min ) / mmHg </line>
+  <line>  </line>
+  <line> Small vessel conductance is ~ 2.2. </line>
+  <line>  </line>
+  <line> Large vessel conductance is ~ 50.0 </line>
+  <line>  </line>
+  <line> Conductances are connected in series. </line>
+  <line>  </line>
+  <line> Conductance effects are normally </line>
+  <line> 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

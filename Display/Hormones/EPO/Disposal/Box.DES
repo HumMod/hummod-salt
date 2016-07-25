@@ -1,0 +1,60 @@
+HumMod / Box
+
+Created : 2013-02-17
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 6.8 </high>
+   <wide> 30.0 </wide>
+
+<structurename> EPODisposal </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Rate </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Rate </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3 </col>
+   <name> K </name>
+   <format><decimal> 5 </decimal></format>
+   <label> K </label>
+</showvalue>
+
+<repeatlist>
+  <name> HalfLife(Hrs) </name>
+  <repeat><reps> 200 </reps><stepsize>  0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.8 </row><col> 3 </col>
+  <name> HalfLife(Hrs) </name>
+  <listname> HalfLife(Hrs) </listname>
+  <label> 1/2 Life (Hrs) </label>
+</slidebar>
+
+<showvalue>
+   <row> 5.2 </row><col> 3 </col>
+   <name> EPOPool.Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical disposal rate (U/Min) is </line>
+  <line> 0.15 for a 1/2 life of 7.8 hours. </line>
+</infobutton>
+
+</groupbox>
+
+End

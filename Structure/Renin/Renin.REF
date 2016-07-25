@@ -1,0 +1,40 @@
+HumMod / Renin Reference
+
+Created : 23-Jun-06
+Last Modified : 2012-01-25
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+The general organization for renal renin is
+as follows. Renin synthesis adds to the free
+renin and renin secretion takes from it.
+
+There is also a shuttle between free renin
+and renin granules that implements storage.
+
+   Units for renin are nG AI/Hr or
+   Goldblatt units GU.
+
+                  Renin
+                 ------
+      Free        87000
+      Granules   870000
+      --------   ------
+      Total      957000
+
+   I assume that granules can refill
+   free stores in 100 min.  This is
+   a flow of 870 GU/Min and it defines
+   the rate constants.
+
+   Units for flow are GU/Min.
+
+      To Granules    870
+      From Granules  870
+
+      ToGranK = 0.01 /Min
+      FromGranK = 0.001 /Min
+
+
+End

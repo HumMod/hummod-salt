@@ -1,0 +1,33 @@
+HumMod / Hormones
+
+Created : 2011-07-26
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<?path Display\Hormones\ ?> -->
+
+<?include Summary\Summary.DES ?>
+
+<?include Gender\Gender.DES ?>
+
+<!-- Separator Bar -->
+
+<?include ACTH\ACTH.DES ?>
+<?include ADH\ADH.DES ?>
+<?include Aldosterone\Aldosterone.DES ?>
+<?include ANP\ANP.DES ?>
+<?include Calcitonin\Calcitonin.DES ?>
+<?include CorticotropinReleasingFactor\CorticotropinReleasingFactor.DES ?>
+<?include Cortisol\Cortisol.DES ?>
+<?include EPO\EPO.DES ?>
+<?include Glucagon\Glucagon.DES ?>
+<?include Insulin\Insulin.DES ?>
+<?include Leptin\Leptin.DES ?>
+<?include ParathyroidHormone\ParathyroidHormone.DES ?>
+<?include Renin\Renin.DES ?>
+<?include ThyroidGland\ThyroidGland.DES ?>
+<?include VitaminD\VitaminD.DES ?>
+
+End

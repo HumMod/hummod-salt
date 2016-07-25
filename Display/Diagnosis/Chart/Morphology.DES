@@ -1,0 +1,171 @@
+HumMod / Morphology
+
+Created : 2014-02-25
+Revised : 2014-02-25
+Author : Tom Coleman
+Copyright : 2014-2014
+By : Tom Coleman
+
+<showvalue>
+   <row> 2.0 </row><col> 1.0 </col>
+   <name> Gender.Index </name>
+   <format><list> Common.Gender </list></format>
+   <label> Gender </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> Age.Age(Years) </name>
+   <format> <integer/> </format>
+   <label> Age </label>
+</showvalue>
+
+<showvalue>
+  <row> 4.0 </row><col> 1.0 </col>
+  <name> Height.Height(In) </name>
+  <label> Height </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showvalue>
+   <row> 5.0 </row><col> 1.0 </col>
+   <name> Weight.Weight(Lb) </name>
+   <format> <integer/> </format>
+   <label> Weight </label>
+</showvalue>
+
+
+<groupbox>
+   <row> 0.5 </row>
+   <col> 65.0 </col>
+   <high> 26.0 </high>
+   <wide> 59.0 </wide>
+   <title> Renal Perturbations </title>
+
+
+<radiobuttons>
+   <row> 2.0 </row><col> 1.0 </col>
+  <name> Sympathetics-Renal.ClampSwitch</name>
+  <listname> Common.Switch </listname>
+  <label> Renal Sympathetic Clamp Switch </label>
+</radiobuttons>
+
+<editbox>
+   <row> 3.5 </row><col> 1.0 </col>
+  <name> Sympathetics-Renal.ClampLevel</name>
+  <label>Renal Sympathetic Clamp Level </label>
+</editbox>
+
+
+
+
+<editbox>
+   <row> 7.0 </row><col> 1.0 </col>
+  <name> LeftKidney-Structure.Fraction </name>
+  <label> Fraction Removed (left) </label>
+</editbox>
+
+<actionbutton>
+  <row> 7 </row><col> 35.0 </col>
+  <blockname> LeftKidney-Structure.Nephrectomize </blockname>
+  <label> Nephrectomize! </label>
+</actionbutton>
+
+<showvalue>
+   <row> 8.5 </row><col> 1 </col>
+   <name> LeftKidney-Structure.Remaining </name>
+   <label> Intact kidney fraction </label>
+</showvalue>
+
+<editbox>
+   <row> 10 </row><col> 1.0 </col>
+  <name> RightKidney-Structure.Fraction </name>
+  <label> Fraction Removed (right) </label>
+</editbox>
+
+<actionbutton>
+  <row> 10 </row><col> 35.0 </col>
+  <blockname> RightKidney-Structure.Nephrectomize </blockname>
+  <label> Nephrectomize! </label>
+</actionbutton>
+
+<showvalue>
+   <row> 11.5 </row><col> 1 </col>
+   <name> RightKidney-Structure.Remaining </name>
+   <label> Intact kidney fraction </label>
+</showvalue>
+
+
+
+
+
+
+<radiobuttons>
+  <row> 15 </row><col> 1.0 </col>
+  <name> A2Pool.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Plasma Ang II Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> ChartA2Pool.Level </name>
+  <repeat><reps> 100 </reps><stepsize> 0.5 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 16.5 </row><col> 1.0 </col>
+  <name> A2Pool.Level </name>
+  <listname> ChartA2Pool.Level </listname>
+  <label> [Ang II] </label>
+</slidebar>
+
+
+
+
+
+
+<maplist>
+  <name> Chart-ArcuateArtery.Stenosis </name>
+  <map><val>  1.0 </val><img> No change in preglomerular resistance </img></map>
+  <map><val>  5.0 </val><img> 5x Increase in Resistance </img></map>
+  <map><val> 12.0 </val><img> 12x Increase in Resistance </img></map>
+  <map><val> 20.0 </val><img> 20x Increase in Resistance </img></map>
+  <map><val> 60.0 </val><img> 60x Increase in Resistance </img></map>
+</maplist>
+
+<slidebar>
+  <row> 20 </row><col> 1.0 </col>
+  <name> RightKidney-ArcuateArtery.Stenosis </name>
+  <listname> Chart-ArcuateArtery.Stenosis </listname>
+  <label> Right Stenosis </label>
+</slidebar>
+
+<showvalue>
+  <row> 21 </row><col> 1.0 </col>
+  <name> RightKidney-ArcuateArtery.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Right Arcuate Artery Pressure </label>
+</showvalue>
+
+<slidebar>
+  <row> 23 </row><col> 1.0 </col>
+  <name> LeftKidney-ArcuateArtery.Stenosis </name>
+  <listname> Chart-ArcuateArtery.Stenosis </listname>
+  <label> Left Stenosis </label>
+</slidebar>
+
+<showvalue>
+  <row> 24 </row><col> 1.0 </col>
+  <name> LeftKidney-ArcuateArtery.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Left Arcuate Artery Pressure </label>
+</showvalue>
+
+
+
+</groupbox>
+
+
+
+
+End

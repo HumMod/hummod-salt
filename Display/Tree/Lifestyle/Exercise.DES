@@ -1,0 +1,40 @@
+HumMod / Exercise
+
+Created : 10-Oct-08
+Last Modified : 2011-08-12
+Author : Tom Coleman
+Copyright : 2008-2011
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> LifestyleExercise </name>
+  <label> Exercise </label>
+  <parent> LIFESTYLE </parent>
+</branch>
+
+<leaf>
+  <name> ExerciseControl </name>
+  <label> Control </label>
+  <parent> LifestyleExercise </parent>
+</leaf>
+
+<leaf>
+  <name> ExerciseBike </name>
+  <label> Exercise Bike </label>
+  <parent> LifestyleExercise </parent>
+</leaf>
+
+<leaf>
+  <name> ExerciseTreadmill </name>
+  <label> Treadmill </label>
+  <parent> LifestyleExercise </parent>
+</leaf>
+
+<leaf>
+  <name> ExerciseTransition </name>
+  <label> Transition </label>
+  <parent> LifestyleExercise </parent>
+</leaf>
+
+
+End

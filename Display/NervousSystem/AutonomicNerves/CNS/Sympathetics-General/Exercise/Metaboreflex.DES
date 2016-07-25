@@ -1,0 +1,69 @@
+HumMod / Metaboreflex
+
+Created : 26-Jun-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 14.8 </row>
+   <col> 32.0 </col>
+   <high> 12.8 </high>
+   <wide> 30.0 </wide>
+   <title> Metaboreflex </title>
+
+<structurename> ExerciseSymps </structurename>
+
+<showvalue>
+   <row> 1.4 </row>
+   <col> 1.0 </col>
+   <name> MetaboreflexEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> MetaboreflexEffect </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+</showgraph>
+
+<slidebar>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> ExerciseSymps.MetaboreflexScaler </name>
+  <listname> Common.Fraction </listname>
+  <label> Scaler </label>
+</slidebar>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> SkeletalMuscle-Metaboreflex.NerveActivity </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Afferent Nerve Activity </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Effects are additive with units of x Normal. </line>
+  <line>  </line>
+  <line> Resting effect is 0.0. </line>
+</infobutton>
+
+</groupbox>
+
+End

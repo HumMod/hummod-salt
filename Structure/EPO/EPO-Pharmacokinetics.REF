@@ -1,0 +1,44 @@
+EPO-Pharmacokinetics.REF
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+We need the volume of distribution for EPO. Since it is a 30.4
+kD protein, the volume of distribution is expected to be ECFV
+or less.
+
+Halstenson used 21 healthy young males and IV administration.
+Volume of distribution is mL/kG. The clearance 1/2 time is
+hours.
+
+                VD   1/2 Time  % ECFV
+-------------  ----  --------  ------
+Epoetin Alpha  63.8    6.77     31.9
+Epoetin Beta   70.0    8.79     35.0
+-------------  ----  --------  ------
+Average        66.9    7.78     33.4
+
+I used an ECFV of 200 mL/kG. Therefore, the volume of
+distribution as % of ECFV is 33.
+
+Eckardt et.al. observed 1/2 times of 4.7 hours and 5.6 hours in
+2 subjects changing from a hypobaric to normal environment.
+
+References =====================================================
+
+Eckardt, K-U. et.al. Rate of erythropoietin formation in humans
+in response to acute hypobaric hypoxia. J. Appl. Physiol.
+66(4):1785-1788, 1989.
+
+Halstenson, C.E. et.al. Comparative pharmacokinetics and
+pharmacodynamics of epoetin alpha and epoetin beta. Clin.
+Pharmacol. Ther. 50:702-712, 1991.
+
+Woo, S. and W.J. Jusko. Interspecies comparisons of
+pharmacokinetics and pharmacodynamics of recombinant human
+erythropoietin. Drug Metab. Dispos. 35:1672-1678, 2007.
+
+End

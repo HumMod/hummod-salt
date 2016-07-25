@@ -1,0 +1,37 @@
+HumMod / GlomerulusCalcium
+
+Created : 2011-08-07
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> GlomerulusCalcium </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<var><name> [Ca++(mG/mL)] </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> [Ca++(mG/mL)] </name><val> 0.01 * Ca.[Diffusing(mG/dL)] </val></def>
+<def><name> Rate </name><val> [Ca++(mG/mL)] * GlomerulusFiltrate.GFR </val></def>
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> [Ca++(mG/mL)] </name><val> 0.0 </val></def>
+<def><name> Rate </name><val> 0.0 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

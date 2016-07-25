@@ -1,0 +1,109 @@
+HumMod / LiverMetabolism_Ketoacids
+
+Created : 29-Mar-08
+Revised : 2013-01-30
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> LiverMetabolism_Ketoacids </name>
+
+<variables>
+
+<var><name> Synthesis </name></var>
+
+<var><name> FattyAcidEffect </name></var>
+<var><name> GlucagonEffect </name></var>
+<var><name> InsulinEffect </name></var>
+
+<var><name> T2DEffect </name></var>
+
+<var><name> FattyAcidUse </name></var>
+
+<constant><name> KA_TO_FA </name><val> 0.98 </val></constant>
+
+<parm><name> Synthesis(/G) </name><val> 0.000872 </val></parm>
+<var><name> SynthesisNominal </name></var>
+<parm><name> SynthesisMultiplier </name><val> 1.0 </val></parm>
+<var><name> SynthesisBasic </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> FattyAcidEffect </name>
+  <point><x>  0 </x><y>  0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 17 </x><y>  1.0 </y><slope> 0.4 </slope></point>15
+  <point><x> 80 </x><y> 25.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> GlucagonEffect </name>
+  <point><x> 200 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+  <point><x> 800 </x><y> 3.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> InsulinEffect </name>
+  <point><x>   0 </x><y> 2.0 </y><slope> 0.0 </slope></point>
+  <point><x>  10 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> T2DEffect </name>
+  <point><x>   0 </x><y> 1 </y><slope> 0 </slope></point>
+  <point><x>  5 </x><y> 10 </y><slope> 0 </slope></point>
+
+</curve>
+
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> SynthesisNominal </name>
+  <val> Synthesis(/G) * Liver-Size.Mass </val>
+</def>
+
+<def>
+  <name> SynthesisBasic </name>
+  <val> SynthesisNominal * SynthesisMultiplier </val>
+</def>
+
+<def>
+  <name> FattyAcidEffect </name>
+  <val> FattyAcidEffect [ FAPool.[FA(mG/dL)] ] </val>
+</def>
+
+<def>
+  <name> GlucagonEffect </name>
+  <val> GlucagonEffect [ PortalVein-Glucagon.[Glucagon] ] </val>
+</def>
+
+<def>
+  <name> InsulinEffect </name>
+  <val> InsulinEffect [ InsulinReceptors-Liver.BoundFraction(%) ] / T2DEffect [ InsulinPump.T2D ] </val>
+</def>
+
+<def><name> Synthesis </name>
+  <val>
+      SynthesisBasic
+    * FattyAcidEffect
+    * InsulinEffect
+    * GlucagonEffect
+    * Liver-Function.Effect
+  </val>
+</def>
+
+<def><name> FattyAcidUse </name><val> KA_TO_FA * Synthesis </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

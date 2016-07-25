@@ -1,0 +1,150 @@
+HumMod / Kidney-Fuel
+
+Created : 2012-02-17
+Revised : 2013-02-05
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Kidney-Fuel </name>
+
+<variables>
+
+<var><name> FAAvailable </name></var>
+<var><name> LacAvailable </name></var>
+
+<var><name> GlucoseAvailable </name></var>
+
+<var><name> GlucoseDelivered(mG/Min) </name></var>
+<var><name> FADelivered(mG/Min) </name></var>
+<var><name> LacDelivered(mG/Min) </name></var>
+
+<var><name> GlucoseDelivered(Cals/Min) </name></var>
+<var><name> FADelivered(Cals/Min) </name></var>
+<var><name> LacDelivered(Cals/Min) </name></var>
+<var><name> TotalDelivered(Cals/Min) </name></var>
+
+<var><name> FADeliveredFraction </name></var>
+<var><name> FAUsedFraction </name></var>
+
+<var><name> AerobicGlucoseUsed(Cals/Min) </name></var>
+<var><name> AnaerobicGlucoseUsed(Cals/Min) </name></var>
+<var><name> FAUsed(Cals/Min) </name></var>
+<var><name> LacUsed(Cals/Min) </name></var>
+<var><name> TotalGlucoseUsed(Cals/Min) </name></var>
+<var><name> TotalUsed(Cals/Min) </name></var>
+
+<var><name> FAUsed(mG/Min) </name></var>
+<var><name> AerobicGlucoseUsed(mG/Min) </name></var>
+<var><name> AnaerobicGlucoseUsed(mG/Min) </name></var>
+<var><name> LacUsed(mG/Min) </name></var>
+
+<var><name> TotalGlucoseUsed(mG/Min) </name></var>
+
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> FAAvailable </name><val> LeftKidney-Fuel.FAAvailable + RightKidney-Fuel.FAAvailable  </val></def>
+<def><name> LacAvailable </name><val> LeftKidney-Fuel.LacAvailable + RightKidney-Fuel.LacAvailable  </val></def>
+
+<def>
+  <name> GlucoseDelivered(mG/Min) </name>
+  <val> RightKidney-Fuel.GlucoseDelivered(mG/Min)  + LeftKidney-Fuel.GlucoseDelivered(mG/Min) </val>
+</def>
+
+<def>
+  <name> FADelivered(mG/Min) </name>
+  <val> RightKidney-Fuel.FADelivered(mG/Min)  + LeftKidney-Fuel.FADelivered(mG/Min) </val>
+</def>
+
+<def>
+  <name> LacDelivered(mG/Min) </name>
+  <val> RightKidney-Fuel.LacDelivered(mG/Min)  + LeftKidney-Fuel.LacDelivered(mG/Min)  </val>
+</def>
+
+<def>
+  <name> GlucoseDelivered(Cals/Min) </name>
+  <val> RightKidney-Fuel.GlucoseDelivered(Cals/Min)  + LeftKidney-Fuel.GlucoseDelivered(Cals/Min) </val>
+</def>
+
+<def>
+  <name> FADelivered(Cals/Min) </name>
+  <val> RightKidney-Fuel.FADelivered(Cals/Min)   + LeftKidney-Fuel.FADelivered(Cals/Min)  </val>
+</def>
+
+<def>
+  <name> LacDelivered(Cals/Min) </name>
+  <val> RightKidney-Fuel.LacDelivered(Cals/Min)   + LeftKidney-Fuel.LacDelivered(Cals/Min)  </val>
+</def>
+
+<def>
+  <name> TotalDelivered(Cals/Min) </name>
+  <val> RightKidney-Fuel.TotalDelivered(Cals/Min)   + LeftKidney-Fuel.TotalDelivered(Cals/Min)  </val>
+</def>
+
+
+<def>
+  <name> LacUsed(Cals/Min) </name>
+  <val> RightKidney-Fuel.LacUsed(Cals/Min)   + LeftKidney-Fuel.LacUsed(Cals/Min)   </val>
+</def>
+
+<def>
+  <name> FAUsed(Cals/Min) </name>
+  <val> RightKidney-Fuel.FAUsed(Cals/Min)   + LeftKidney-Fuel.FAUsed(Cals/Min)   </val>
+</def>
+
+<def>
+  <name> AerobicGlucoseUsed(Cals/Min) </name>
+  <val> RightKidney-Fuel.AerobicGlucoseUsed(Cals/Min) + LeftKidney-Fuel.AerobicGlucoseUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> AnaerobicGlucoseUsed(Cals/Min) </name>
+  <val> 0 </val>
+</def>
+
+<def>
+  <name> TotalGlucoseUsed(Cals/Min) </name>
+  <val> RightKidney-Fuel.TotalGlucoseUsed(Cals/Min) + LeftKidney-Fuel.TotalGlucoseUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> TotalUsed(Cals/Min) </name>
+  <val> RightKidney-Fuel.TotalUsed(Cals/Min)  + LeftKidney-Fuel.TotalUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> FAUsed(mG/Min) </name>
+  <val> FAUsed(Cals/Min) * Metabolism-Tools.Fat(mG/Cal) </val>
+</def>
+
+<def>
+  <name> AerobicGlucoseUsed(mG/Min) </name>
+  <val> AerobicGlucoseUsed(Cals/Min) * Metabolism-Tools.CarboAerobic(mG/Cal) </val>
+</def>
+
+<def>
+  <name> LacUsed(mG/Min) </name>
+  <val> LacUsed(Cals/Min) * Metabolism-Tools.Lac-(mG/Cal) </val>
+</def>
+
+<def>
+  <name> AnaerobicGlucoseUsed(mG/Min) </name>
+  <val> AnaerobicGlucoseUsed(Cals/Min) * Metabolism-Tools.CarboAnaerobic(mG/Cal) </val>
+</def>
+
+<def>
+  <name> TotalGlucoseUsed(mG/Min) </name>
+  <val> AerobicGlucoseUsed(mG/Min) + AnaerobicGlucoseUsed(mG/Min) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

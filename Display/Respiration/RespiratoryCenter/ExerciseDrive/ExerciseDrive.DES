@@ -1,0 +1,40 @@
+HumMod / ExerciseDrive
+
+Created : 29-Apr-05
+Revised : 2012-01-31
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<panel><name> RespiratoryCenter-ExerciseDrive </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> RespiratoryCenter </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Resp Center - Exercise Drive </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Respiration\RespiratoryCenter\ExerciseDrive\ ?>
+
+<?include Summary.DES ?>
+
+<?include Radiation.DES ?>
+<?include Metaboreflex.DES ?>
+
+</panel>
+
+End

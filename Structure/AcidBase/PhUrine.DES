@@ -1,0 +1,47 @@
+HumMod / PhUrine
+
+Created : 2013-02-03
+Revised : 2013-02-03
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> PhUrine </name>
+
+<variables>
+
+<var><name> pH </name></var>
+<var><name> SID </name></var>
+<var><name> H+ </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> pH </name>
+  <point><x> -200 </x><y> 4.0 </y><slope> 0 </slope></point>
+  <point><x>   50 </x><y> 6.0 </y><slope> 0.02 </slope></point>
+  <point><x>  200 </x><y> 9.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> [K+]Effect </name>
+  <point><x> 3.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+  <point><x> 4.4 </x><y> 1.0 </y><slope> 1.0 </slope></point>
+  <point><x> 6.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def><name> pH </name><val> pH [ SID ] </val></def>
+<def><name> H+ </name><val> 10 ^ ( 9.0 - pH ) </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

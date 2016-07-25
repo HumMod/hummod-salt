@@ -1,0 +1,61 @@
+HumMod / BladderCreatinine
+
+Created : 16-Mar-08
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BladderCreatinine </name>
+<variables>
+
+<var><name> [Creatinine] </name></var>
+<var><name> [Creatinine(mG/dL)] </name></var>
+
+<constant><name> InitialConc </name><val> 0.347 </val></constant>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> InitialMass </name><val> InitialConc * BladderVolume.InitialVolume </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_Creatinine.Outflow </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+  <def><name> [Creatinine] </name><val> Mass / BladderVolume.Mass </val></def>
+  <def><name> [Creatinine(mG/dL)] </name><val> 100.0 * [Creatinine] </val></def>
+
+</block>
+
+<block><name> Void </name>
+
+  <def><name> Mass </name><val> Mass - ( BladderVolume.VolumeVoid * [Creatinine] ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,63 @@
+RightNephronKetoacids.TXT
+
+Created : 2013-02-23
+Revised : 2013-02-23
+Author : Tom Coleman
+
+Wildenhoff infused 3-hydroxybutyrate (3-HB) into normal
+subjects. Fractional reabsorption and fractional excretion
+were constant and showed no signs of saturation. Fraction
+meaning fraction of the filtered load.
+
+87% of filtered 3-HB was reabsorbed and 17% was excreted up
+to 130 (uMol/Min)/M^2). GFR ~ 100 mL/Min)/M^2. So maximum
+plasma [3-HB] was 1.3 mMol/L in this study.
+
+Sapir and Owen looked at starvation for up to 24 days.
+
+Day     GFR [3-HB] Load  Reab Urine  Reab-F
+------- --- ------ ----- ---- -----  ------
+Control 101  0.28    28    29   ~0     100
+3       105  2.39   251   154   97      61
+10      107  5.15   551   419  132      76
+17       98  5.14   504   399  105      79
+24       91  6.10   555   436  119      78
+
+Sapir et.al. studied 15-24 days of total starvation. They
+then added glucose, but it is their control data that we
+want.
+
+[AcAc] (mMol/L)     1.27
+[3-HB] (mMol/L)     5.00
+KA Urine (mMol/Day)  122
+KA Urine (mMol/Day)  118 - /100 mL GFR
+NH3 Urine (mMol/Day) 148 - /100 mL GFR
+AA Reab (uMol/Min)    79
+3-HB Reab (uMol/Min) 279
+
+KA mG/dL * 0.098 = mMol/L
+
+Martin and Wick's data indicates that reabsorption is
+starting to saturate at ~ 5 mMol/L, but this is built on
+one data point in one subject.
+
+
+
+References ==================================================
+
+Martin, H.E. and A.N. Wick. Quantitative relationships
+between blood and urine ketone levels in diabetic ketosis.
+JCI 22(2):235-241, 1943.
+
+Sapir, D.G. et.al. The effect of carbohydrates on ammonium
+and ketoacid excretion during starvation. JCI 51:2093-2102,
+1972.
+
+Sapir, D.G. and O.E.Owen. Renal conservation of ketone bodies
+during starvation. Metabolism 24:23-33, 1975.
+
+Wildenhoff, K.E. Tubular reabsorption and uriny excretion of
+acetoacetate and 3-hydroxybutyrate in normal subjects and
+juvenile diabetics. Acta Med. Scand. 201:63-67, 1977.
+
+End

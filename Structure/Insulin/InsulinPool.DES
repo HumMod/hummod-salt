@@ -1,0 +1,78 @@
+HumMod / InsulinPool
+
+Created : 07-Apr-05
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> InsulinPool </name>
+
+<variables>
+
+<var><name> [Insulin] </name></var>
+<var><name> [Insulin(pMol/L)] </name></var>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Target[Insulin] </name><val> 20.0 </val></var>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 1.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+  <def><name> InitialMass </name><val> Target[Insulin] * ECFV.InitialVol(L) </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Insulin] </name>
+  <val> Mass / ECFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Insulin(pMol/L)] </name>
+  <val> [Insulin] * InsulinTools.UU/ML_TO_PMOL/L </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Gain </name>
+  <val>
+       InsulinSecretion.Rate
+     + InsulinPump.Rate
+     + InsulinInjection.AbsorbRate(mU/Min)
+     + InsulinReceptors-General.Unbinding
+     + InsulinReceptors-Liver.Unbinding
+  </val>
+</def>
+
+<def><name> Loss </name><val> InsulinClearance.Rate </val></def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

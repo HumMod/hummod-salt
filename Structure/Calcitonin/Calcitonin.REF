@@ -1,0 +1,29 @@
+HumMod | Calcitonin Reference
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+32 A.A.
+M.W. : 3454
+
+[Conc(nG/mL)] = 0.010 nG/mL or 10 pG/mL
+
+Volume Distribution = 15,000 (ECFV)
+Mass = 0.010 * 15000 or 150 nG.
+
+Tau = 70 Min
+K = 0.0143
+
+Secretion = 2.145 nG/Min
+
+NG/ML_TO_PMOL/L = 290
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

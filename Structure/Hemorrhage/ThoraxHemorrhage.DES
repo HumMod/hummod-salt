@@ -1,0 +1,121 @@
+HumMod / Hemorrhage
+
+Created : 30-May-05
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> ThoraxHemorrhage </name>
+
+<variables>
+
+<constant><name> CONSTANTRATE </name><val> 0 </val></constant>
+<constant><name> PRESSUREDRIVEN </name><val> 1 </val></constant>
+
+<parm><name> RightSwitch </name><val> FALSE </val></parm>
+<parm><name> RightTargetRate </name><val> 0 </val></parm>
+<var><name> RightRate </name></var>
+<parm><name> LeftSwitch </name><val> FALSE </val></parm>
+<parm><name> LeftTargetRate </name><val> 0 </val></parm>
+<var><name> LeftRate </name></var>
+<var><name> PlasmaRate </name><val> 0 </val></var>
+<var><name> ProteinRate </name><val> 0 </val></var>
+<var><name> RBCRate </name></var>
+<var><name> NaRate </name></var>
+<var><name> KRate </name></var>
+<var><name> ClRate </name></var>
+
+<var><name> RightPlasmaRate </name><val> 0 </val></var>
+<var><name> RightProteinRate </name><val> 0 </val></var>
+<var><name> RightRBCRate </name><val> 0 </val></var>
+
+<var><name> LeftPlasmaRate </name><val> 0 </val></var>
+<var><name> LeftProteinRate </name><val> 0 </val></var>
+<var><name> LeftRBCRate </name><val> 0 </val></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Volume </name>
+  <integralname> Volume </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Rate </dervname>
+  <errorlim> 10.0  </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<if>
+  <test> RightSwitch </test>
+  <true>
+        <def><name> RightRate </name><val> RightTargetRate </val></def>
+  </true>
+  <false>
+    <def><name> RightRate </name><val> 0 </val></def>
+  </false>
+</if>
+
+<if>
+  <test> LeftSwitch </test>
+  <true>
+        <def><name> LeftRate </name><val> LeftTargetRate </val></def>
+  </true>
+  <false>
+    <def><name> LeftRate </name><val> 0 </val></def>
+  </false>
+</if>
+
+<def><name> RightPlasmaRate </name><val> BloodVol.PVCrit * RightRate </val></def>
+<def><name> RightProteinRate </name><val> PlasmaProtein.[Total] * RightPlasmaRate </val></def>
+<def><name> RightRBCRate </name><val> BloodVol.Hct * RightRate </val></def>
+
+<def><name> LeftPlasmaRate </name><val> BloodVol.PVCrit * LeftRate </val></def>
+<def><name> LeftProteinRate </name><val> PlasmaProtein.[Total] * LeftPlasmaRate </val></def>
+<def><name> LeftRBCRate </name><val> BloodVol.Hct * LeftRate </val></def>
+
+<def><name> PlasmaRate </name><val> RightPlasmaRate + LeftPlasmaRate</val></def>
+<def><name> ProteinRate </name><val> RightProteinRate + LeftProteinRate</val></def>
+<def><name> RBCRate </name><val> RightRBCRate + LeftRBCRate</val></def>
+
+
+<def><name> NaRate </name><val> NaPool.[Na+] * PlasmaRate </val></def>
+<def><name> KRate </name><val> KPool.[K+] * PlasmaRate </val></def>
+<def><name> ClRate </name><val> ClPool.[Cl-] * PlasmaRate </val></def>
+
+<def><name> Rate </name><val> LeftRate + RightRate </val></def>
+</block>
+
+<block><name> Wrapup </name>
+
+<if>
+  <test> NOT ( RightSwitch OR LeftSwitch ) </test>
+  <true><exitblock/></true>
+</if>
+
+<if>
+  <test> SystemicArtys.Pressure LE 10 </test>
+  <true>
+    <def><name> Switch </name><val> 0 </val></def>
+ <!--   <page> Arterial collapse. Hemorrhage has stopped. </page>-->
+  </true>
+</if>
+
+</block>
+
+<block><name> ResetVolume </name>
+
+<def><name> Volume </name><val> 0.0 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

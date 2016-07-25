@@ -1,0 +1,42 @@
+HumMod / Selection
+
+Created : 2012-02-14
+Revised : 2012-11-05
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Liver-Fuel </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Liver </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Liver - Fuel </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Liver-Fuel </structurename>
+
+<?path Display\Organs\Liver\Fuel\ ?>
+
+<?include Delivery.DES ?>
+<?include Use.DES ?>
+
+<?include InsulinEffect.DES ?>
+<?include FAFraction.DES ?>
+
+</panel>
+

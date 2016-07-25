@@ -1,0 +1,160 @@
+HumMod / PeritoneumProtein
+
+Created : 19-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> PeritoneumProtein </name>
+
+<variables>
+
+<var><name> [Alb] </name></var>
+<var><name> [IgG] </name></var>
+<var><name> [AGP] </name></var>
+<var><name> [HetaLW] </name></var>
+<var><name> [HetaHW] </name></var>
+
+<var><name> AlbGain </name></var>
+<var><name> AlbLoss </name></var>
+<var><name> AGPGain </name></var>
+<var><name> AGPLoss </name></var>
+<var><name> IgGGain </name></var>
+<var><name> IgGLoss </name></var>
+<var><name> HetaLWGain </name></var>
+<var><name> HetaLWLoss </name></var>
+<var><name> HetaHWGain </name></var>
+<var><name> HetaHWLoss </name></var>
+
+<var><name> Mass </name></var>
+<var><name> AlbFrac </name></var>
+<var><name> AGPFrac </name></var>
+<var><name> IgGFrac </name></var>
+<var><name> HetaLWFrac </name></var>
+<var><name> HetaHWFrac </name></var>
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+<var><name> Change </name></var>
+<var><name> [Protein] </name></var>
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> AlbMass </name>
+  <integralname> AlbMass </integralname>
+  <initialval> 0.64 </initialval>
+  <dervname> AlbChange </dervname>
+  <errorlim> 0.064 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> IgGMass </name>
+  <integralname> IgGMass </integralname>
+  <initialval> 0.34 </initialval>
+  <dervname> IgGChange </dervname>
+  <errorlim> 0.034 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> AGPMass </name>
+  <integralname> AGPMass </integralname>
+  <initialval> 0.038 </initialval>
+  <dervname> AGPChange </dervname>
+  <errorlim> 0.003 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> HetaLWMass </name>
+  <integralname> HetaLWMass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> HetaLWChange </dervname>
+  <errorlim> 10.0 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> HetaHWMass </name>
+  <integralname> HetaHWMass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> HetaHWChange </dervname>
+  <errorlim> 10.0 </errorlim>
+</diffeq>
+
+
+</equations>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> Mass </name><val> AlbMass + IgGMass + AGPMass + HetaLWMass + HetaHWMass </val></def>
+
+<if>   <test> PeritoneumSpace.Volume GT 0.0 </test>
+  <true>
+<def><name> [Alb] </name><val> AlbMass / PeritoneumSpace.Volume </val></def>
+<def><name> [IgG] </name><val> IgGMass / PeritoneumSpace.Volume </val></def>
+<def><name> [AGP] </name><val> AGPMass / PeritoneumSpace.Volume </val></def>
+<def><name> [HetaLW] </name><val> HetaLWMass / PeritoneumSpace.Volume </val></def>
+<def><name> [HetaHW] </name><val> HetaHWMass / PeritoneumSpace.Volume </val></def>
+<def><name> [Protein] </name><val> Mass / PeritoneumSpace.Volume </val></def>
+</true>
+<false>
+<def><name> [Alb] </name><val> 0  </val></def>
+<def><name> [IgG] </name><val> 0  </val></def>
+<def><name> [AGP] </name><val> 0  </val></def>
+<def><name> [HetaLW] </name><val> 0  </val></def>
+<def><name> [HetaHW] </name><val> 0  </val></def>
+<def><name> [Protein] </name><val> 0 </val></def>
+
+</false>
+</if>
+
+<def><name> AlbGain </name><val> PeritoneumSpace.Gain * AlbuminPool.[Alb] </val></def>
+<def><name> AlbLoss </name><val> PeritoneumSpace.Loss * [Alb] </val></def>
+
+<def><name> IgGGain </name><val> PeritoneumSpace.Gain * IgGPool.[IgG] </val></def>
+<def><name> IgGLoss </name><val> PeritoneumSpace.Loss * [IgG] </val></def>
+
+<def><name> AGPGain </name><val> PeritoneumSpace.Gain * AGPPool.[AGP] </val></def>
+<def><name> AGPLoss </name><val> PeritoneumSpace.Loss * [AGP] </val></def>
+
+<def><name> HetaLWGain </name><val> PeritoneumSpace.Gain * HetaPool.[HetaLW] </val></def>
+<def><name> HetaLWLoss </name><val> PeritoneumSpace.Loss * [HetaLW] </val></def>
+
+<def><name> HetaHWGain </name><val> PeritoneumSpace.Gain * HetaPool.[HetaHW] </val></def>
+<def><name> HetaHWLoss </name><val> PeritoneumSpace.Loss * [HetaHW] </val></def>
+
+<def><name> AlbChange </name><val> AlbGain - AlbLoss  </val></def>
+<def><name> AGPChange </name><val> AGPGain - AGPLoss  </val></def>
+<def><name> IgGChange </name><val> IgGGain - IgGLoss  </val></def>
+<def><name> HetaLWChange </name><val> HetaLWGain - HetaLWLoss  </val></def>
+<def><name> HetaHWChange </name><val> HetaHWGain - HetaHWLoss  </val></def>
+
+<if><test> Mass GT 0 </test>
+  <true>
+    <def><name> AlbFrac </name><val> AlbMass / Mass </val></def>
+    <def><name> AGPFrac </name><val> AGPMass / Mass </val></def>
+    <def><name> IgGFrac </name><val> IgGMass / Mass </val></def>
+    <def><name> HetaLWFrac </name><val> HetaLWMass / Mass </val></def>
+    <def><name> HetaHWFrac </name><val> HetaHWMass / Mass </val></def>
+  </true>
+  <false>
+     <def><name> AlbFrac </name><val> 0</val></def>
+    <def><name> AGPFrac </name><val> 0</val></def>
+    <def><name> IgGFrac </name><val> 0</val></def>
+    <def><name> HetaLWFrac </name><val> 0</val></def>
+    <def><name> HetaHWFrac </name><val> 0</val></def>
+  </false>
+</if>
+
+<def><name> Gain </name><val> AlbGain + IgGGain + AGPGain + HetaLWGain + HetaHWGain </val></def>
+<def><name> Loss </name><val> AlbLoss  + IgGLoss  + AGPLoss  + HetaLWLoss  + HetaHWLoss  </val></def>
+<def><name> Change </name><val> Gain - Loss </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

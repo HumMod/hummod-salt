@@ -1,0 +1,71 @@
+HumMod / Box
+
+Created : 2012-07-10
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 16.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> CerebrospinalFluid </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.8 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 200 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1 </col>
+   <name> Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.6 </row><col> 1 </col>
+   <name> Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

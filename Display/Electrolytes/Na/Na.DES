@@ -1,0 +1,36 @@
+HumMod / Na
+
+Created : 27-Apr-05
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+
+<panel><name> Electrolytes_Na </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> Electrolytes </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> ECFV Sodium </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Electrolytes\Na\ ?>
+
+<?include Concentration.DES ?>
+<?include Balance.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,26 @@
+HumMod / Kidney-Zones
+
+Created : 2012-08-06
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\Kidney\Kidney-Zones\ ?>
+
+<?include Kidney-ZonesAnatomy.DES ?>
+<?include Kidney-ZonesCirculation.DES ?>
+<?include Kidney-ZonesTransport.DES ?>
+
+<structure><name> Kidney-Zones </name>
+
+<definitions>
+<block><name> Calc </name>
+  <call> Kidney-ZonesAnatomy.Calc </call>
+  <call> Kidney-ZonesCirculation.Calc </call>
+  <call> Kidney-ZonesTransport.Calc </call>
+</block>
+
+</definitions>
+</structure>
+End

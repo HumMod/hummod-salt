@@ -1,0 +1,106 @@
+HumMod / RespiratoryCenterPh
+
+Created : 2010-05-18
+Revised : 2012-07-16
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 14.8 </row>
+   <col> 1.0 </col>
+   <high> 18.2 </high>
+   <wide> 30.0 </wide>
+   <title> Respiratory Center pH </title>
+
+<structurename> RespiratoryCenter-Chemical </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> pH </name>
+  <format><decimal> 2 </decimal></format>
+  <label> pH </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> pH </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 7 </min><max> 7.4 </max><inc> 0.2 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> pCO2 </name>
+  <format><decimal> 1 </decimal></format>
+  <label> pCO2 </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.8 </row><col> 3.0 </col>
+  <name> CO2Artys.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Arterial pCO2 </label>
+</showvalue>
+
+<showvalue>
+  <row> 11.8 </row><col> 3.0 </col>
+  <name> CO2Veins.Pressure </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Venous pCO2 </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> [SID] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [SID] </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.2 </row><col> 3.0 </col>
+  <name> BloodIons.[SID(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Blood [SID] </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.2 </row><col> 3.0 </col>
+  <name> [ReferenceSID] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Reference [SID] </label>
+</showvalue>
+
+<repeatlist>
+  <name> K </name>
+  <repeat><reps> 10 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 16.6 </row><col> 3.0 </col>
+  <name> K </name>
+  <listname> K </listname>
+  <label> K </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

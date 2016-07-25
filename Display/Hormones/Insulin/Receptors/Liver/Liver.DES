@@ -1,0 +1,38 @@
+HumMod / Liver
+
+Created : 2012-07-01
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> Insulin_Receptors_Liver </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Liver </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Insulin Receptors | Liver </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Hormones\Insulin\Receptors\Liver\ ?>
+
+<?include Box.DES ?>
+<?include HepaticInsulin.DES ?>
+
+</panel>
+
+End

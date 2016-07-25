@@ -1,0 +1,105 @@
+HumMod / VenousValves
+
+Created : 2012-09-11
+Revised : 2012-09-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 20.2 </row>
+   <col> 1.0 </col>
+   <high> 23.8 </high>
+   <wide> 30.0 </wide>
+   <title> Venous Valves </title>
+
+<structurename> VenousValves </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> PatentValves </name>
+  <listname> Common.NoYes </listname>
+  <label> Patent Valves? </label>
+</radiobuttons>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> ValvesEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Valves Effect </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.4 </row><col> 1.0 </col>
+   <name> WattsEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Watts Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 5.6 </row><col> 1.0 </col><high> 7 </high><wide> 27 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> Exercise-Metabolism.MotionWatts </name>
+    <label> Motion Watts </label>
+    <scale><min> 0 </min><max> 200 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> WattsEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> Exercise-Metabolism.MotionWatts </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Motion Watts </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.0 </row><col> 1.0 </col>
+   <name> RateEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Rate Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 15.2 </row><col> 1.0 </col><high> 7 </high><wide> 27 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> Exercise-Metabolism.ContractionRate </name>
+    <label> Contraction Rate </label>
+    <scale><min> 0 </min><max> 40 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> RateEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 22.2 </row><col> 1.0 </col>
+   <name> Exercise-Metabolism.ContractionRate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Contraction Rate </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> </line>
+</infobutton>
+
+</groupbox>
+
+End

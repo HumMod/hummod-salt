@@ -1,0 +1,99 @@
+HumMod / Pancreas-Size
+
+Created : 2012-01-28
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Pancreas-Size </name>
+
+<variables>
+
+<var><name> InitialMass </name></var>
+<var><name> Mass </name></var>
+
+<constant><name> LiquidDensity </name><val> 1.00 </val></constant>
+<constant><name> SolidDensity </name><val> 1.17 </val></constant>
+<constant><name> H2OFractMass </name><val> 0.67 </val></constant>
+
+<var><name> ExocrineMass </name></var>
+<parm><name> ExocrineMassPercent </name><val> 80 </val></parm>
+
+<var><name> EndocrineMass </name></var>
+<var><name> EndocrineMassPercent </name></var>
+
+<var><name> AlphaCellMass </name></var>
+<parm><name>AlphaCellMassPercent </name><val> 60 </val></parm>
+
+<var><name> BetaCellMass </name></var>
+<var><name> BetaCellMassPercent </name></var>
+
+<var><name> DeltaCellMass </name></var>
+<parm><name> DeltaCellMassPercent </name><val> 10 </val></parm>
+
+<var><name> OtherCellMass </name></var>
+<parm><name> OtherCellMassPercent </name><val> 5 </val></parm>
+
+<var><name> dummy </name></var>
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Parms </name>
+<def>
+  <name> ExocrineMass </name>
+  <val> Mass * ( ExocrineMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> EndocrineMassPercent </name>
+  <val> 100 - ExocrineMassPercent </val>
+</def>
+
+<def>
+  <name> EndocrineMass </name>
+  <val> Mass * ( EndocrineMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> AlphaCellMass </name>
+  <val> EndocrineMass * ( AlphaCellMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> BetaCellMassPercent </name>
+  <val> 100 - AlphaCellMassPercent - DeltaCellMassPercent - OtherCellMassPercent </val>
+</def>
+
+<def>
+  <name> BetaCellMass </name>
+  <val> EndocrineMass * ( BetaCellMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> DeltaCellMass </name>
+  <val> EndocrineMass * ( DeltaCellMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> OtherCellMass </name>
+  <val> EndocrineMass * ( OtherCellMassPercent / 100 ) </val>
+</def>
+
+<def><name> dummy </name><val> System.X </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

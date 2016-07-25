@@ -1,0 +1,27 @@
+HumMod / ANP
+
+Created : 10-Oct-08
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> Hormones-ANP </name>
+  <label> ANP </label>
+  <parent> HORMONESGENERAL </parent>
+</branch>
+
+<leaf>
+  <name> ANP-Pool </name>
+  <label> Pool </label>
+  <parent> Hormones-ANP </parent>
+</leaf>
+
+<leaf>
+  <name> ANP-Secretion </name>
+  <label> Secretion </label>
+  <parent> Hormones-ANP </parent>
+</leaf>
+
+End

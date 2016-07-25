@@ -1,0 +1,34 @@
+HumMod / LeftNephrons
+
+Created : 21-Oct-04
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2004-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<?path Structure\LeftNephrons\ ?>
+
+<?include LeftFractReab.DES ?>
+
+<?include LeftCollectingDuct\LeftCollectingDuct.DES ?>
+<?include LeftDistalTubule\LeftDistalTubule.DES ?>
+<?include LeftGlomerulus\LeftGlomerulus.DES ?>
+<?include LeftLoopOfHenle\LeftLoopOfHenle.DES ?>
+<?include LeftMedulla\LeftMedulla.DES ?>
+<?include LeftMaculaDensa\LeftMaculaDensa.DES ?>
+<?include LeftProximalTubule\LeftProximalTubule.DES ?>
+
+<?include LeftNephronIFP.DES ?>
+<?include LeftNephronAldo.DES ?>
+<?include LeftNephronADH.DES ?>
+<?include LeftVasaRecta.DES ?>
+<?include LeftNephronGlucose.DES ?>
+<?include LeftNephronKetoacids.DES ?>
+<?include LeftNephronANP.DES ?>
+
+<?include LeftNephronCalciumLeftProximal.DES ?>
+<?include LeftNephronCalciumLeftDistal.DES ?>
+
+End

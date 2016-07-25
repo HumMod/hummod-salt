@@ -1,0 +1,29 @@
+HumMod / RightHeartWallStress
+
+Created : 2013-02-24
+Revised : 2013-02-24
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Structure\RightHeartWallStress\ ?>
+
+<?include RightHeartWallStress-Mass.DES ?>
+<?include RightHeartWallStress-Diastole.DES ?>
+<?include RightHeartWallStress-Systole.DES ?>
+
+<structure><name> RightHeartWallStress </name>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<call> RightHeartWallStress-Mass.Calc </call>
+<call> RightHeartWallStress-Diastole.Calc </call>
+<call> RightHeartWallStress-Systole.Calc </call>
+
+</block>
+
+</definitions>
+</structure>
+End

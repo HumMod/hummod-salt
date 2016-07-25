@@ -1,0 +1,22 @@
+HumMod / Miscellaneous DES
+
+Created : 2011-07-26
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> MISCELLANEOUS </name>
+  <label> Miscellaneous </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Miscellaneous\ ?>
+
+<?include CarbonMonoxide.DES ?>
+<?include CellProtein.DES ?>
+<?include Orthostasis.DES ?>
+<?include Torso.DES ?>
+
+End

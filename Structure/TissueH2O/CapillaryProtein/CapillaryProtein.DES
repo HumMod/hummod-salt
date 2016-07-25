@@ -1,0 +1,84 @@
+HumMod / CapillaryProtein
+
+Created : 25-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<?path Structure\TissueH2O\CapillaryProtein\ ?>
+
+<?include Torso_Upper_CapillaryProtein.DES ?>
+<?include Torso_Middle_CapillaryProtein.DES ?>
+<?include Torso_Lower_CapillaryProtein.DES ?>
+
+<structure><name> CapillaryProtein </name>
+
+<variables>
+
+<var><name> AlbRate </name></var>
+<var><name> IgGRate </name></var>
+<var><name> AGPRate </name></var>
+<var><name> HetaLWRate </name></var>
+<var><name> HetaHWRate </name></var>
+<var><name> Rate </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<call> Torso_Upper_CapillaryProtein.Dervs </call>
+<call> Torso_Middle_CapillaryProtein.Dervs </call>
+<call> Torso_Lower_CapillaryProtein.Dervs </call>
+
+<def><name> AlbRate </name>
+  <val>
+      Torso_Upper_CapillaryProtein.AlbRate
+    + Torso_Middle_CapillaryProtein.AlbRate
+    + Torso_Lower_CapillaryProtein.AlbRate
+  </val>
+</def>
+
+<def><name> IgGRate </name>
+  <val>
+      Torso_Upper_CapillaryProtein.IgGRate
+    + Torso_Middle_CapillaryProtein.IgGRate
+    + Torso_Lower_CapillaryProtein.IgGRate
+  </val>
+</def>
+
+<def><name> AGPRate </name>
+  <val>
+      Torso_Upper_CapillaryProtein.AGPRate
+    + Torso_Middle_CapillaryProtein.AGPRate
+    + Torso_Lower_CapillaryProtein.AGPRate
+  </val>
+</def>
+
+<def><name> HetaLWRate </name>
+  <val>
+      Torso_Upper_CapillaryProtein.HetaLWRate
+    + Torso_Middle_CapillaryProtein.HetaLWRate
+    + Torso_Lower_CapillaryProtein.HetaLWRate
+  </val>
+</def>
+
+<def><name> HetaHWRate </name>
+  <val>
+      Torso_Upper_CapillaryProtein.HetaHWRate
+    + Torso_Middle_CapillaryProtein.HetaHWRate
+    + Torso_Lower_CapillaryProtein.HetaHWRate
+  </val>
+</def>
+
+<def><name> Rate </name><val> AlbRate + IgGRate + AGPRate + HetaLWRate + HetaHWRate </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

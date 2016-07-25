@@ -1,0 +1,52 @@
+HumMod / Injection
+
+Created : 04-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 5.8 </high>
+   <wide> 30.0 </wide>
+   <title> Continuous IV </title>
+
+<structurename> PhenylephrineIV </structurename>
+
+<repeatlist>
+  <name> PhenylephrineIVRate.Rate </name>
+  <repeat><reps> 5 </reps><stepsize> 20 </stepsize></repeat>
+  <repeat><reps> 6 </reps><stepsize> 50 </stepsize></repeat>
+  <repeat><reps> 6 </reps><stepsize> 100 </stepsize></repeat>
+  <repeat><reps> 2 </reps><stepsize> 500 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Rate </name>
+  <listname> PhenylephrineIVRate.Rate </listname>
+  <label> Dose (ug/kg) </label>
+</slidebar>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> CumulativeDose </name>
+   <format> <integer/> </format>
+   <label> Cumulative Dose </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Rate is given in ug </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End
+
+

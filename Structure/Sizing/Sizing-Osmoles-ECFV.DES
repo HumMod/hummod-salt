@@ -1,0 +1,115 @@
+HumMod / Sizing-Osmoles-ECFV
+
+Created : 2013-03-05
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Osmoles-ECFV </name>
+
+<variables>
+
+<var><name> Dissociation </name></var>
+
+<var><name> [Active] </name></var>
+<var><name> Active </name></var>
+
+<var><name> Volume </name></var>
+
+<var><name> Unspecified </name></var>
+
+<constant><name> F-Cations </name><val> 0.0 </val></constant>
+<constant><name> F-Anions </name><val> 0.7 </val></constant>
+<var><name> F-Osmoles </name></var>
+
+<var><name> Total </name></var>
+<var><name> Cations </name></var>
+<var><name> Anions </name></var>
+<var><name> Osmoles </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Dissociation </name>
+  <val> Sizing-Osmoles-Total.Dissociation </val>
+</def>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-ECFV.Vol / 1000 </val>
+</def>
+
+<def>
+  <name> [Active] </name>
+  <val> Sizing-Osmoles-Total.[Active] </val>
+</def>
+
+<def>
+  <name> Active </name>
+  <val> [Active] * Volume </val>
+</def>
+
+<def>
+  <name> Unspecified </name>
+  <val> 
+   Active - ( Dissociation *
+    (
+      Sizing-SodiumPool.Mass
+    + Sizing-PotassiumPool.Mass
+    + Sizing-ChloridePool.Mass
+    + Sizing-LactatePool.Mass
+    + Sizing-KetoacidPool.Osmoles
+    + Sizing-SulfatePool.Osmoles
+    + Sizing-PhosphatePool.Osmoles
+    ) )
+    - Sizing-Glucose.Osmoles
+    - Sizing-UreaPool.Osmoles
+  </val>
+</def>
+
+<def>
+  <name> F-Osmoles </name>
+  <val> 1 - F-Cations - F-Anions </val>
+</def>
+
+<def>
+  <name> Cations </name>
+  <val> F-Cations * Unspecified / Dissociation </val>
+</def>
+
+<def>
+  <name> Anions </name>
+  <val> F-Anions * Unspecified / Dissociation </val>
+</def>
+
+<def>
+  <name> Osmoles </name>
+  <val> F-Osmoles * Unspecified </val>
+</def>
+
+<def>
+  <name> OsmECFV.OtherCations </name>
+  <val> Cations </val>
+</def>
+
+<def>
+  <name> OsmECFV.OtherAnions </name>
+  <val> Anions </val>
+</def>
+
+<def>
+  <name> OsmECFV.OtherOsmoles </name>
+  <val> Osmoles </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

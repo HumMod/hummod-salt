@@ -1,0 +1,76 @@
+HumMod / SkeletalMuscle-Energy
+
+Created : 2012-09-13
+Revised : 2012-09-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> SkeletalMuscle-Energy </name>
+
+<variables>
+
+<var><name> [ATP] </name></var>
+<var><name> [PCr] </name></var>
+<var><name> [Pi] </name></var>
+
+<parm><name> [Total_Pi] </name><val> 23.0 </val></parm>
+
+<parm><name> ATP_Base </name><val> 0.22 </val></parm>
+<parm><name> ATP_Slope </name><val> 0.025 </val></parm>
+
+<parm><name> PCr_Base </name><val> 0.74 </val></parm>
+<parm><name> PCr_Slope </name><val> 0.325 </val></parm>
+
+<var><name> ATP_Turnover(mMol/Min) </name></var>
+<var><name> ATP_Turnover((mMol/Min)/kG) </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> ATP_Turnover(mMol/Min) </name>
+  <val>
+      SkeletalMuscle-Metabolism.O2Need
+    * Metabolism-Tools.O2_ML_TO_ATP_MMOL
+  </val>
+</def>
+
+<def>
+  <name> ATP_Turnover((mMol/Min)/kG) </name>
+  <val>
+      ATP_Turnover(mMol/Min)
+    / SkeletalMuscle-Size.Mass(kG)
+  </val>
+</def>
+
+<def>
+  <name> [ATP] </name>
+  <val>
+      ( [Total_Pi] * ATP_Base )
+    - ( ATP_Slope * ATP_Turnover((mMol/Min)/kG) )
+  </val>
+</def>
+
+<def>
+  <name> [PCr] </name>
+  <val>
+      ( [Total_Pi] * PCr_Base )
+    - ( PCr_Slope * ATP_Turnover((mMol/Min)/kG) )
+  </val>
+</def>
+
+<def>
+  <name> [Pi] </name>
+  <val> [Total_Pi] - ( [ATP] + [PCr] ) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

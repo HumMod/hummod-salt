@@ -1,0 +1,36 @@
+HumMod / ANPClearance
+
+Created : 20-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> ANPClearance </name>
+
+<variables>
+<var><name> K </name></var>
+
+<var><name> Rate </name></var>
+<parm><name> KTarget </name><val> 0.1675 </val></parm>0.223
+
+</variables>
+
+
+<definitions>
+<block><name> Dervs </name>
+
+<def><name> K  </name><val> KTarget  </val></def>
+
+<def>
+  <name> Rate </name>
+  <val> K * ANPPool.Mass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

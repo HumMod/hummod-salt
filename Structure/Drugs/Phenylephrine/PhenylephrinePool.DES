@@ -1,0 +1,114 @@
+HumMod / MidodrinePool
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> PhenylephrinePool </name>
+
+<variables>
+
+<var>
+  <name> [Phenylephrine] </name>
+</var>
+
+<var>
+  <name> [Phenylephrine(pG/mL)] </name>
+</var>
+
+<var>
+  <name> [Phenylephrine(nMol)] </name>
+</var>
+
+<constant><name> MW </name><val> 160 </val></constant>
+
+<var>
+  <name> Gain </name>
+</var>
+
+<var>
+  <name> Loss </name>
+</var>
+
+<var>
+  <name> Mass(nG) </name>
+</var>
+
+<parm>
+  <name> K </name>
+  <val> 0.02 </val>
+</parm>
+
+<parm>
+  <name> VolDist </name>
+  <val> 35 </val>
+</parm>
+<!-- 0.5 L/kg -->
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 0.00025 </errorlim>
+</diffeq>
+<!-- in ug-->
+
+</equations>
+
+<definitions>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Phenylephrine] </name>
+  <val> Mass / VolDist </val>
+</def>
+<!-- ug/L=ng/mL-->
+
+<def>
+  <name> [Phenylephrine(pG/mL)] </name>
+  <val> [Phenylephrine] * 1000 </val>
+</def>
+
+<def>
+  <name> Mass(nG) </name>
+  <val> Mass * 1000 </val>
+</def>
+
+<def>
+  <name> [Phenylephrine(nMol)] </name>
+  <val> 1000 * [Phenylephrine] / MW </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Gain </name>
+  <val> PhenylephrineIV.Rate - PhenylephrineLung.Loss + PhenylephrineGILumen.Loss </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> PhenylephrineLiver.Loss   </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

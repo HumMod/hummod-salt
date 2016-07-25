@@ -1,0 +1,14 @@
+HumMod / NervousSystem
+
+Created : 2011-07-27
+Last Modified : 2011-07-27
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<?path Display\NervousSystem\ ?>
+
+<?include AutonomicNerves\AutonomicNerves.DES ?>
+<?include Catechols\Catechols.DES ?>
+
+End

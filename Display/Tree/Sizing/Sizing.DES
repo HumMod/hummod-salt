@@ -1,0 +1,205 @@
+HumMod / Sizing DES
+
+Created : 2012-03-10
+Revised : 2013-03-04
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> SIZING </name>
+  <label> Sizing </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<leaf>
+  <name> Sizing-OrganMass </name>
+  <label> Organ Mass </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-OrganComposition </name>
+  <label> Organ Composition </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-BloodVolume </name>
+  <label> Blood Volume </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-H2O </name>
+  <label> H2O </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Osmoles </name>
+  <label> Osmoles </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Electrolytes </name>
+  <label> Electrolytes </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Metabolism </name>
+  <label> Metabolism </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Hormones </name>
+  <label> Hormones </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Pressures </name>
+  <label> Pressures </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-BloodFlow </name>
+  <label> Blood Flow </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-HeartChambers </name>
+  <label> Heart Chambers </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-HeartPumping </name>
+  <label> Heart Pumping </label>
+  <parent> SIZING </parent>
+</leaf>
+
+<branch>
+  <name> Sizing-BloodVessels </name>
+  <label> Blood Vessels </label>
+  <parent> SIZING </parent>
+</branch>
+
+<leaf>
+  <name> Sizing-BloodVessels-Total </name>
+  <label> Total </label>
+  <parent> Sizing-BloodVessels </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Sizing-BloodVessels </parent>
+</separatorbar>
+
+<branch>
+  <name> Sizing-Arteries </name>
+  <label> Arteries </label>
+  <parent> Sizing-BloodVessels </parent>
+</branch>
+
+<leaf>
+  <name> Sizing-Arteries-Total </name>
+  <label> Total </label>
+  <parent> Sizing-Arteries </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Sizing-Arteries </parent>
+</separatorbar>
+
+<leaf>
+  <name> Sizing-Arteries-SystemicArteries </name>
+  <label> Systemic Arteries </label>
+  <parent> Sizing-Arteries </parent>
+</leaf>
+
+<branch>
+  <name> Sizing-Veins </name>
+  <label> Veins </label>
+  <parent> Sizing-BloodVessels </parent>
+</branch>
+
+<leaf>
+  <name> Sizing-Veins-Total </name>
+  <label> Total </label>
+  <parent> Sizing-Veins </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Sizing-Veins </parent>
+</separatorbar>
+
+<leaf>
+  <name> Sizing-Veins-PeripheralVeins </name>
+  <label> Peripheral Veins </label>
+  <parent> Sizing-Veins </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Veins-SplanchnicVeins </name>
+  <label> Splanchnic Veins </label>
+  <parent> Sizing-Veins </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Veins-RightAtrium </name>
+  <label> Right Atrium </label>
+  <parent> Sizing-Veins </parent>
+</leaf>
+
+<branch>
+  <name> Sizing-Lungs </name>
+  <label> Lungs </label>
+  <parent> Sizing-BloodVessels </parent>
+</branch>
+
+<leaf>
+  <name> Sizing-Lungs-Total </name>
+  <label> Total </label>
+  <parent> Sizing-Lungs </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Sizing-Lungs </parent>
+</separatorbar>
+
+<leaf>
+  <name> Sizing-Lungs-PulmonaryArtery </name>
+  <label> Pulmonary Artery </label>
+  <parent> Sizing-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Lungs-PulmonaryCapillaries </name>
+  <label> Pulmonary Capillaries </label>
+  <parent> Sizing-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Lungs-PulmonaryVeins </name>
+  <label> Pulmonary Veins </label>
+  <parent> Sizing-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Lungs-LeftAtrium </name>
+  <label> Left Atrium </label>
+  <parent> Sizing-Lungs </parent>
+</leaf>
+
+<leaf>
+  <name> Sizing-Pericardium </name>
+  <label> Pericardium </label>
+  <parent> SIZING </parent>
+</leaf>
+
+End

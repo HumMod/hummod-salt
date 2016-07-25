@@ -1,0 +1,54 @@
+HumMod / Energy-Stores
+
+Created : 2012-02-11
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Energy-Stores </name>
+
+<variables>
+
+<var><name> TotalCals </name></var>
+<var><name> CarboCals </name></var>
+<var><name> FatCals </name></var>
+<var><name> LiverGlycogenCals </name></var>
+<var><name> MuscleGlycogenCals </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Wrapup </name>
+
+<def>
+  <name> LiverGlycogenCals </name>
+  <val> Energy-Tools.CARBO_KCAL_PER_G * LiverMetabolism_Glycogen.Mass </val>
+</def>
+
+<def>
+  <name> MuscleGlycogenCals </name>
+  <val> Energy-Tools.CARBO_KCAL_PER_G * SkeletalMuscle-Glycogen.Mass </val>
+</def>
+
+<def>
+  <name> CarboCals </name>
+  <val> LiverGlycogenCals + MuscleGlycogenCals </val>
+</def>
+
+<def>
+  <name> FatCals </name>
+  <val> Energy-Tools.FAT_KCAL_PER_G * LipidDeposits.Mass </val>
+</def>
+
+<def>
+  <name> TotalCals </name>
+  <val> CarboCals + FatCals </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

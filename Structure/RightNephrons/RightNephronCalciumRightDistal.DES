@@ -1,0 +1,77 @@
+HumMod / RightNephronCalciumRightDistal
+
+Created : 2011-08-07
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<structure><name> RightNephronCalciumDistal </name>
+
+<variables>
+
+<parm><name> BasicReab </name><val> 0.9 </val></parm>
+<var><name> FractionalReab </name></var>
+
+
+<var><name> Inflow </name></var>
+<var><name> Reab </name></var>
+<var><name> Outflow </name></var>
+
+<var><name> Excretion </name></var>
+
+<var><name> [PTH]Effect </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> [PTH]Effect </name>
+  <point><x>  0 </x><y> 0 </y><slope> 0 </slope></point>
+  <point><x> 40 </x><y> 1 </y><slope> 0.05 </slope></point>
+  <point><x> 80 </x><y> 2 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> [PTH]Effect </name>
+  <val> [PTH]Effect [ ParathyroidHormone.[Conc(pG/mL)] ] </val>
+</def>
+
+<copy><from> BasicReab </from><to> RightFractReab.Normal </to></copy>
+<copy><from> [PTH]Effect </from><to> RightFractReab.Effects </to></copy>
+
+<call> RightFractReab.GetFract </call>
+
+<copy><from> RightFractReab.Fract </from><to> FractionalReab </to></copy>
+
+<def>
+  <name> Inflow </name>
+  <val> RightNephronCalciumProximal.Outflow </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> FractionalReab * Inflow </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+<def>
+  <name> Excretion </name>
+  <val> Outflow </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,76 @@
+HumMod / OGTT
+
+Created : 30-Oct-16
+Last Modified : 30 Oct-16
+Author : Pruett
+Copyright : 2016-2016
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<panel><name> Test-OGTT </name>
+
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 11.8 </high>
+   <wide> 30.0 </wide>
+   <title> Oral Glucose </title>
+
+<structurename> OGTT </structurename>
+
+
+<actionbutton>
+  <row> 1.4 </row><col> 1.0 </col>
+  <blockname> TakeNow </blockname>
+  <label> Take Now </label>
+</actionbutton>
+
+<repeatlist>
+  <name> OGTT.Timespan </name>
+  <firstval> 1.0 </firstval>
+  <repeat><reps> 3 </reps><stepsize> 2 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.4 </row><col> 1.0 </col>
+  <name> Timespan </name>
+  <listname> OGTT.Timespan </listname>
+  <label> Timespan (Min) </label>
+</slidebar>
+
+<showvalue>
+   <row> 4.8 </row><col> 1.0 </col>
+   <name> TimeLastDose </name>
+   <format>
+      <timestamp/>
+      <fieldwidth> 14 </fieldwidth>
+   </format>
+   <label> Last Dose </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.2 </row><col> 1.0 </col>
+   <name> TotalDoses </name>
+   <format> <integer/> </format>
+   <label> Total Doses </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.6 </row><col> 1.0 </col>
+   <name> CumulativeDose </name>
+   <format> <integer/> </format>
+   <label> Cumulative Dose </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Typical dose is 75 G. </line>
+  <line> Taken in less than 5 minutes. </line>
+</infobutton>
+
+</groupbox>
+</panel>
+End
+

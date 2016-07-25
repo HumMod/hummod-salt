@@ -1,0 +1,13 @@
+HumMod / Arteries
+
+Created : 2013-01-28
+Revised : 2013-02-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Circulation\BloodVessels\Arteries\ ?>
+
+<?include SystemicArteries\SystemicArteries.DES ?>
+
+End

@@ -1,0 +1,72 @@
+HumMod / Pump
+
+Created : 23-May-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 24.2 </row>
+   <col> 1.0 </col>
+   <high> 10 </high>
+   <wide> 30.0 </wide>
+   <title> Pressure Clamp </title>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightKidney-Pressure.PumpSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Right Switch </label>
+</radiobuttons>
+
+<slidebar>
+  <row> 2.8 </row><col> 1.0 </col>
+  <name> RightKidney-Pressure.PumpSetting </name>
+  <listname> Common.PerfusionPump </listname>
+  <label> Right Pressure </label>
+</slidebar>
+
+<radiobuttons>
+  <row> 4.2 </row><col> 1.0 </col>
+  <name> LeftKidney-Pressure.PumpSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Left Switch </label>
+</radiobuttons>
+
+<slidebar>
+  <row> 5.6 </row><col> 1.0 </col>
+  <name> LeftKidney-Pressure.PumpSetting </name>
+  <listname> Common.PerfusionPump </listname>
+  <label> Left Pressure </label>
+</slidebar>
+
+
+<radiobuttons>
+  <row> 7. </row><col> 1.0 </col>
+  <name> Kidney-Pressure.PumpSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Both Switch </label>
+</radiobuttons>
+
+<slidebar>
+  <row> 8.4 </row><col> 1.0 </col>
+  <name> Kidney-Pressure.PumpSetting </name>
+  <listname> Common.PerfusionPump </listname>
+  <label> Both Pressure </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> This is a constant pressure </line>
+  <line> system. </line>
+  <line>  </line>
+  <line> Pressure units are mmHg. </line>
+</infobutton>
+
+</groupbox>
+
+End

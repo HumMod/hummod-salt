@@ -1,0 +1,56 @@
+HumMod / DietHunger-Glucose
+
+Created : 2012-02-13
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> DietHunger-Glucose </name>
+
+<variables>
+
+<var><name> Effect </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> Effect </name>
+  <point><x>   0 </x><y> 3.0 </y><slope> 0 </slope></point>
+  <point><x> 100 </x><y> 1.0 </y><slope> -0.02 </slope></point>
+  <point><x> 200 </x><y> 0.5 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Dervs </name>
+
+<conditional>
+  <name> Effect </name>
+  <test> InsulinPump.T2D GE 1 </test>
+  <true> 1 </true>
+  <false> Effect [ GlucosePool.[Glucose(mG/dL)] ] </false>
+</conditional>
+
+<!-- 
+
+<conditional>
+  <name> Effect </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false> Effect [ GlucosePool.[Glucose(mG/dL)] ] </false>
+</conditional>
+ -->
+
+</block>
+
+</definitions>
+</structure>
+
+End

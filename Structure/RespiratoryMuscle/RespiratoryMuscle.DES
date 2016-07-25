@@ -1,0 +1,34 @@
+HumMod / RespiratoryMuscle
+
+Created : 21-Oct-04
+Revised : 2012-07-18
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\RespiratoryMuscle\ ?>
+
+<?include RespiratoryMuscle-Breathing.DES ?>
+
+<?include RespiratoryMuscle-Flow.DES ?>
+<?include RespiratoryMuscle-Function.DES ?>
+<?include RespiratoryMuscle-Pressure.DES ?>
+<?include RespiratoryMuscle-ContractileProtein.DES ?>
+<?include RespiratoryMuscle-Size.DES ?>
+
+<?include RespiratoryMuscle-CO2.DES ?>
+<?include RespiratoryMuscle-Lactate.DES ?>
+<?include RespiratoryMuscle-Ph.DES ?>
+
+<?include RespiratoryMuscle-Fuel.DES ?>
+<?include RespiratoryMuscle-Metabolism.DES ?>
+<?include RespiratoryMuscle-AlphaReceptors.DES ?>
+<?include RespiratoryMuscle-Structure.DES ?>
+<?include RespiratoryMuscle-Vasculature.DES ?>
+
+<?include RespiratoryMuscle-Work.DES ?>
+<?include RespiratoryMuscle-Glycogen\RespiratoryMuscle-Glycogen.DES ?>
+
+<?include RespiratoryMuscle-Energy.DES ?>
+
+End

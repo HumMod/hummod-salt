@@ -1,0 +1,25 @@
+HumMod / Nephrons
+
+Created : 15-Apr-05
+Revised : 2013-02-02
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+
+<?path Display\Organs\KidneyNephrons\ ?>
+
+<?include ADH\ADH.DES ?>
+<?include Aldosterone\Aldosterone.DES ?>
+<?include ANP\ANP.DES ?>
+<?include Balances\Balances.DES ?>
+<?include CollectingDuct\CollectingDuct.DES ?>
+<?include DistalTubule\DistalTubule.DES ?>
+<?include Glomerulus\Glomerulus.DES ?>
+<?include Interstitium\Interstitium.DES ?>
+<?include LoopOfHenle\LoopOfHenle.DES ?>
+<?include MaculaDensa\MaculaDensa.DES ?>
+<?include Medulla\Medulla.DES ?>
+<?include ProximalTubule\ProximalTubule.DES ?>
+<?include VasaRecta\VasaRecta.DES ?>
+
+End

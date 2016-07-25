@@ -1,0 +1,71 @@
+HumMod / Na+FractionalReabsorption
+
+Created : 17-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 18.2 </row>
+   <col> 1.0 </col>
+   <high> 20.6 </high>
+   <wide> 30.0 </wide>
+   <title> Na+ Fractional Reabsorption </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightDistalTubule_Na.RightFractReab </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Right Fraction </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> LeftDistalTubule_Na.LeftFractReab </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Left Fraction </label>
+</showvalue>
+
+
+<showbargraph>
+  <row> 3.8 </row><col> 1.0 </col><high> 10.0 </high><wide> 28 </wide>
+  <leftmargin> 8 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar><name> RightDistalTubule_Na.LoadEffect </name><label> Na+ Load </label><color> BLUE </color></bar>
+  <bar><name> LeftDistalTubule_Na.LoadEffect </name><label> Na+ Load </label><color> GREEN </color></bar>
+  <bar><name> RightDistalTubule_Na.AldoEffect </name><label> [Aldo] </label><color> BLUE </color></bar>
+  <bar><name> LeftDistalTubule_Na.AldoEffect </name><label> [Aldo] </label><color> GREEN </color></bar>
+  <bar><name> RightDistalTubule_Na.ThiazideEffect </name><label> Thiazide </label><color> BLUE </color></bar>
+  <bar><name> LeftDistalTubule_Na.ThiazideEffect </name><label> Thiazide </label><color> GREEN </color></bar>
+  <bar><name> RightKidney-Function.Effect </name><label> Function </label><color> BLUE </color></bar>
+  <bar><name> LeftKidney-Function.Effect </name><label> Function </label><color> GREEN </color></bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<repeatlist>
+  <name> DistalTubule_Na.BasicFract </name>
+  <repeat><reps> 100 </reps><stepsize>  0.01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15 </row><col> 1.0 </col>
+  <name> LeftDistalTubule_Na.BasicFract </name>
+  <listname> DistalTubule_Na.BasicFract </listname>
+  <label> Basic Fraction </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical fraction is 0.750. </line>
+  <line>  </line>
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

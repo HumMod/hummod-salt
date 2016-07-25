@@ -1,0 +1,58 @@
+HumMod / LungVeinCO2
+
+Created : 10-Feb-06
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LungVeinCO2 </name>
+
+<variables>
+
+<var><name> [CO2] </name></var>
+<var><name> [CO2(mEq/L)] </name></var>
+<var><name> PCO2 </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<conditional>
+  <name> [CO2] </name>
+  <test> LungBloodFlow.Total GT 0.0 </test>
+  <true>
+      ( ( LungBloodFlow.AlveolarVentilated
+    * Lung_CO2.[Capy] )
+    + ( LungBloodFlow.TotalShunt
+    * LungArtyCO2.[CO2] ) )
+    / LungBloodFlow.Total
+  </true>
+  <false> 0.0 </false>
+</conditional>
+
+<def><name> [CO2(mEq/L)] </name><val> 1000.0 * [CO2] </val></def>
+
+<copy>
+  <from> [CO2] </from>
+  <to> CO2Blood.[HCO3]-Inverse </to>
+</copy>
+
+<copy>
+  <from> BloodIons.[SID] </from>
+  <to> CO2Blood.[SID]-Inverse </to>
+</copy>
+
+<call> CO2Blood.[HCO3]_To_pCO2 </call>
+
+<copy>
+  <from> CO2Blood.pCO2-Inverse </from>
+  <to> PCO2 </to>
+</copy>
+
+</block>
+</definitions>
+</structure>
+
+End

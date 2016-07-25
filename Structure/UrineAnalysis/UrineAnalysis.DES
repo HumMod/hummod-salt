@@ -1,0 +1,67 @@
+HumMod / UrineAnalysis
+
+Created : 2012-10-31
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> UrineAnalysis </name>
+
+<variables>
+
+<var><name> Timestamp </name><val> 0 </val></var>
+
+<var><name> Sodium </name><val> UNDEFINED </val></var>
+<var><name> Chloride </name><val> UNDEFINED </val></var>
+<var><name> Creatinine </name><val> UNDEFINED </val></var>
+<var><name> Glucose </name><val> UNDEFINED </val></var>
+<var><name> Bicarbonate </name><val> UNDEFINED </val></var>
+<var><name> Potassium </name><val> UNDEFINED </val></var>
+<var><name> Ketoacid </name><val> UNDEFINED </val></var>
+<var><name> Ammonia </name><val> UNDEFINED </val></var>
+<var><name> Phosphate </name><val> UNDEFINED </val></var>
+<var><name> Protein </name><val> UNDEFINED </val></var>
+<var><name> Sulphate </name><val> UNDEFINED </val></var>
+<var><name> Urea </name><val> UNDEFINED </val></var>
+
+</variables>
+
+<definitions>
+
+<block><name> GetSpecimen </name>
+
+<call> BladderVolume.TestVolume </call>
+
+<if>
+  <test> BladderVolume.CanVoid </test>
+  <true>
+    <call> Bladder.CalcConc </call>
+    <call> Bladder.Void </call>
+
+    <def><name> Timestamp </name><val> System.X </val></def>
+
+    <def><name> Sodium </name><val> BladderSodium.[Na+(mEq/L)] </val></def>
+    <def><name> Chloride </name><val> BladderChloride.[Cl-(mEq/L)] </val></def>
+    <def><name> Creatinine </name><val> BladderCreatinine.[Creatinine(mG/dL)] </val></def>
+    <def><name> Glucose </name><val> BladderGlucose.[Glucose(mMol/L)] </val></def>
+    <def><name> Bicarbonate </name><val> BladderBicarbonate.[HCO3-(mEq/L)] </val></def>
+    <def><name> Potassium </name><val> BladderPotassium.[K+(mEq/L)] </val></def>
+    <def><name> Ketoacid </name><val> BladderKetoacid.[KA-(mMol/L)] </val></def>
+    <def><name> Ammonia </name><val> BladderAmmonia.[NH4+(mEq/L)] </val></def>
+    <def><name> Phosphate </name><val> BladderPhosphate.[PO4--(mEq/L)] </val></def>
+    <def><name> Protein </name><val> BladderProtein.[Protein(G/mL)] </val></def>
+    <def><name> Sulphate </name><val> BladderSulphate.[SO4--(mEq/L)] </val></def>
+    <def><name> Urea </name><val> BladderUrea.[Urea(mG/dL)] </val></def>
+  </true>
+  <false>
+<!--    <page> I can't pee right now. </page>-->
+  </false>
+</if>
+
+</block>
+
+</definitions>
+</structure>
+
+End

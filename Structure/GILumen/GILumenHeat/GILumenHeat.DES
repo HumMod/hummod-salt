@@ -1,0 +1,158 @@
+HumMod / GILumenHeat
+
+Created : 05-Jun-06
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<structure><name> GILumenHeat </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Intake </name></var>
+<var><name> IntakeFood </name></var>
+<var><name> IntakeH2O </name></var>
+<var><name> IntakeH2ODiet </name></var>
+<var><name> IntakeH2OLoading </name></var>
+
+<var><name> Absorption </name></var>
+<var><name> Conduction </name></var>
+<var><name> Convection </name></var> 
+<var><name> ConvectionFood </name></var>
+<var><name> ConvectionH2O </name></var>
+
+<var><name> Vomitus </name></var>
+<var><name> Diarrhea </name></var>
+
+<var><name> DegK </name></var>
+<var><name> DegC </name></var>
+<var><name> DegF </name></var>
+
+<parm><name> Cond </name><val> 0.01 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 310 </initialval>310
+  <dervname> Change </dervname>
+  <errorlim> 3.1 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Initialize </name>
+  <def><name> Mass </name><val> 310 * ( ( ( GILumenCarbohydrates.Mass + GILumenFat.Mass + GILumenProtein.Mass ) * 0.001 * SpecificHeat.Food(kCal/G) ) + ( GILumenH2O.Mass * SpecificHeat.Water(kCal/G)  ) ) </val></def>  
+</block>
+
+<block><name> Temperature </name>
+
+<def>
+  <name> DegK </name>
+  <val> 310 </val> 1000 * Mass / GILumenVolume.Mass 
+</def>
+
+<def>
+  <name> DegC </name>
+  <val> DegK - 273.15 </val>
+</def>
+
+<def>
+  <name> DegF </name>
+  <val> ( 9 / 5 ) * DegC + 32 </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Conduction </name>
+  <val> Cond * ( DegK - HeatCore.Temp(K) ) </val>
+</def>
+
+<def>
+  <name> ConvectionFood </name>
+  <val> SpecificHeat.Food(kCal/G) * DegK * GILumenFood.Absorption(G/Min) </val>
+</def>
+
+<def>
+  <name> ConvectionH2O </name>
+  <val> SpecificHeat.Water(kCal/G) * DegK * GILumenH2O.Absorption </val>
+</def>
+
+<def>
+  <name> Convection </name>
+  <val> ConvectionFood + ConvectionH2O </val>
+</def>
+
+<def>
+  <name> IntakeFood </name>
+  <val> SpecificHeat.Food(kCal/G) * DietGoalNutrition.DegK * GILumenFood.Intake(G/Min) </val>
+</def>
+
+<def>
+  <name> IntakeH2ODiet </name>
+  <val> SpecificHeat.Water(kCal/G) * DietGoalH2O.DegK * GILumenH2O.IntakeDiet </val>
+</def>
+
+<def>
+  <name> IntakeH2OLoading </name>
+  <val> SpecificHeat.Water(kCal/G) * DietGoalH2O.DegK * GILumenH2O.IntakeLoading </val>
+</def>
+
+<def>
+  <name> IntakeH2O </name>
+  <val> IntakeH2ODiet + IntakeH2OLoading </val>
+</def>
+
+<def>
+  <name> Intake </name>
+  <val> IntakeFood + IntakeH2O </val>
+</def>
+
+<def>
+  <name> Absorption </name>
+  <val> Conduction + Convection </val>
+</def>
+
+<def>
+  <name> Vomitus </name>
+  <val> GILumenVomitus.HeatLoss </val>
+</def>
+
+<def>
+  <name> Diarrhea </name>
+  <val> GILumenDiarrhea.HeatLoss </val>
+</def>
+
+<def>
+  <name> Gain </name>
+  <val> Intake + HeatCore.FluxToGI </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> Absorption + Vomitus + Diarrhea </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss  </val> 
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

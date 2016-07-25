@@ -1,0 +1,33 @@
+HumMod / LeftHeartWallStress
+
+Created : 2013-02-24
+Revised : 2013-02-24
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> LeftHeartWallStress </name>
+  <label> Left Heart Wall Stress </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> LeftHeartWallStress-Mass </name>
+  <label> Mass </label>
+  <parent> LeftHeartWallStress </parent>
+</leaf>
+
+<leaf>
+  <name> LeftHeartWallStress-Diastole </name>
+  <label> Diastole </label>
+  <parent> LeftHeartWallStress </parent>
+</leaf>
+
+<leaf>
+  <name> LeftHeartWallStress-Systole </name>
+  <label> Systole </label>
+  <parent> LeftHeartWallStress </parent>
+</leaf>
+
+End

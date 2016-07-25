@@ -1,0 +1,135 @@
+HumMod / Kidney
+
+Created : 2012-11-01
+Revised : 2013-02-16
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> Kidney </name>
+  <label> Kidney </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<leaf>
+  <name> Kidney-Circulation </name>
+  <label> Circulation </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<branch>
+  <name> Kidney-VascularSegments </name>
+  <label> Vascular Segments </label>
+  <parent> Kidney </parent>
+</branch>
+
+<leaf>
+  <name> VascularSegments-ArcuateArtery </name>
+  <label> Arcuate Artery </label>
+  <parent> Kidney-VascularSegments </parent>
+</leaf>
+
+<leaf>
+  <name> VascularSegments-AfferentArtery </name>
+  <label> Afferent Artery </label>
+  <parent> Kidney-VascularSegments </parent>
+</leaf>
+
+<leaf>
+  <name> VascularSegments-MyogenicResponse </name>
+  <label> Myogenic Response </label>
+  <parent> Kidney-VascularSegments </parent>
+</leaf>
+
+<leaf>
+  <name> VascularSegments-EfferentArtery </name>
+  <label> Efferent Artery </label>
+  <parent> Kidney-VascularSegments </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Metabolism </name>
+  <label> Metabolism </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Fuel </name>
+  <label> Fuel </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-CO2 </name>
+  <label> CO2 </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Lactate </name>
+  <label> Lactate </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-AcidBase </name>
+  <label> Acid-Base </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Nerves </name>
+  <label> Nerves </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-TubuleO2 </name>
+  <label> Tubule O2 </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Function </name>
+  <label> Function </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Structure </name>
+  <label> Structure </label>
+  <parent> Kidney </parent>
+</leaf>
+
+<branch>
+  <name> Kidney-Zones </name>
+  <label> Zones </label>
+  <parent> Kidney </parent>
+</branch>
+
+<leaf>
+  <name> Kidney-ZonesAnatomy </name>
+  <label> Anatomy </label>
+  <parent> Kidney-Zones </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-ZonesCirculation </name>
+  <label> Circulation </label>
+  <parent> Kidney-Zones </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-ZonesTransport </name>
+  <label> Transport </label>
+  <parent> Kidney-Zones </parent>
+</leaf>
+
+<leaf>
+  <name> Kidney-Size </name>
+  <label> Size </label>
+  <parent> Kidney </parent>
+</leaf>
+
+End

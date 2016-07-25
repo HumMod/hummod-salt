@@ -1,0 +1,31 @@
+HumMod / Pancreas-Size
+
+Created : 2012-01-28
+Revised : 2012-01-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+The December 1994 report by the EPA reports
+that the pancreas is 0.14% of body weight.
+
+Using a nominal body weight of 75 kG, this
+yields a pancreas mass of 105G.
+
+We scale using a nominal base mass of the sum
+of all organ masses excluding adipose tissue
+and skeletal muscle. For a male with normal
+body size, adiposity and musclarity, the base
+mass is 25 kG. In G, this is Weight.InitialOtherMass.
+
+  MassFractBase = 105 / 25,000 or 0.0042
+
+Some typical values to use for now are
+
+  SolidDensity = 1.17
+  LiquidDensity = 1.00
+  H2OFractMass = 0.67
+
+
+
+End

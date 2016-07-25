@@ -1,0 +1,15 @@
+HumMod / Acidosis DES
+
+Created : 2012-07-18
+Revised : 2012-07-18
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<leaf>
+  <name> Acidosis </name>
+  <label> Acidosis </label>
+  <parent> TRAUMA </parent>
+</leaf>
+
+End

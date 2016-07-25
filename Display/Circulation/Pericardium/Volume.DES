@@ -1,0 +1,104 @@
+HumMod / Volume
+
+Created : 2010-05-24
+Revised : 2013-02-21
+Author : Tom Coleman
+Copyright : 2010-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 20.2 </high>
+   <wide> 30.0 </wide>
+   <title> Volume </title>
+
+<structurename> Pericardium </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> TotalVol </name>
+  <format><decimal> 0 </decimal></format>
+  <label> Total Volume </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TotalVol </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1000 </max></scale>
+  </yaxis>
+</showgraph>
+
+<label>
+  <row> 9.8 </row><col> 1.0 </col>
+  <text> Right Heart </text>
+</label>
+
+<showvalue>
+  <row> 10.8 </row><col> 3 </col>
+  <name> RightHeart-Size.Vol </name>
+  <format><integer/></format>
+  <label> Tissue </label>
+</showvalue>
+
+<showvalue>
+  <row> 11.8 </row><col> 3 </col>
+  <name> RightAtrium.Vol </name>
+  <format><integer/></format>
+  <label> Atria Volume </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.8 </row><col> 3 </col>
+  <name> RightHeartPumping-Diastole.EDV </name>
+  <format><integer/></format>
+  <label> EDV </label>
+</showvalue>
+
+<label>
+  <row> 14.2 </row><col> 1.0 </col>
+  <text> Left Heart </text>
+</label>
+
+<showvalue>
+  <row> 15.2 </row><col> 3 </col>
+  <name> LeftHeart-Size.Vol </name>
+  <format><integer/></format>
+  <label> Tissue </label>
+</showvalue>
+
+<showvalue>
+  <row> 16.2 </row><col> 3 </col>
+  <name> LeftAtrium.Vol </name>
+  <format><integer/></format>
+  <label> Atria Volume </label>
+</showvalue>
+
+<showvalue>
+  <row> 17.2 </row><col> 3 </col>
+  <name>  LeftHeartPumping-Diastole.EDV </name>
+  <format><integer/></format>
+  <label> EDV </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.6 </row><col> 1.0 </col>
+  <name> Pericardium-Cavity.Vol </name>
+  <format><decimal> 0 </decimal></format>
+  <label> Pericardial Fluid </label>
+</showvalue>
+
+</groupbox>
+
+End

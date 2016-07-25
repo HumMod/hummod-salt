@@ -1,0 +1,22 @@
+Serine.TXT
+
+Created : 2013-02-10
+Revised : 2012-02-10
+Author : Tom Coleman
+
+M.W. 105
+Non-Essential
+% (by Mol) in generic protein : 7.9
+
+3-Phosphoglycerate --> Serine
+
+with some intermediate steps that send a
+glutamate to alpha-ketoglutarate and throw
+off a phosphate.
+
+Serine <--> Glycine
+
+coupled with tetrahydrofolate (THF) going to
+N5,N10-methylene-THF.
+
+End

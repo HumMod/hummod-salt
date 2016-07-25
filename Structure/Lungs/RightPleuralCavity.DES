@@ -1,0 +1,241 @@
+HumMod / ExcessLungWater
+
+Created : 27-Mar-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> RightPleuralCavity </name>
+
+<variables>
+
+<var><name> InitialVolume </name></var>
+<parm><name> InitialProtein </name><val> .162 </val></parm>
+<var><name> Protein </name></var>
+<var><name> COP </name><val> 10 </val></var>
+<parm><name> Perm </name><val> 3.0 </val></parm>
+
+<var><name> Grad </name></var>
+<var><name> Flux </name></var>
+<var><name> Lymph </name></var>
+
+<var><name> TotalVolume </name></var>
+
+<parm><name> Production </name><val> 0.025833 </val></parm>
+<parm><name> BaseOutflow </name><val> 3.23 </val></parm>0.275833
+
+<parm><name> SerousAlb </name><val> 0.00045 </val></parm>
+<parm><name> SerousAGP </name><val> 0.00000675 </val></parm>
+<parm><name> SerousIgG </name><val> 0.00022275 </val></parm>
+
+
+<var><name> [Alb(mmol/mL)] </name></var>
+<var><name> [AGP(mmol/mL)] </name></var>
+<var><name> [IgG(mmol/mL)] </name></var>
+
+
+<var><name> [Alb] </name></var>
+<var><name> [AGP] </name></var>
+<var><name> [IgG] </name></var>
+
+
+<var><name> AGPRate </name></var>
+<var><name> AlbuminRate </name></var>
+<var><name> IgGRate </name></var>
+<var><name> AGPGradient </name></var>
+<var><name> AlbuminGradient </name></var>
+<var><name> IgGGradient </name></var>
+<parm><name> ProteinPerm </name><val> 0.11 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Volume </name>
+  <integralname> Volume </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> RBCVolume </name>
+  <integralname> RBCVolume </integralname>
+  <dervname> RBCChange </dervname>
+  <errorlim> 0.5 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Albumin </name>
+  <integralname> Albumin </integralname>
+  <dervname> AlbuminChange </dervname>
+  <errorlim> 0.0025 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> AGP </name>
+  <integralname> AGP </integralname>
+  <dervname> AGPChange </dervname>
+  <errorlim> 0.000025 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> IgG </name>
+  <integralname> IgG </integralname>
+  <dervname> IgGChange </dervname>
+  <errorlim> 0.00025 </errorlim>
+</diffeq>
+
+<!-- goal [Pro] is around 2.7 g/dL; so given 6 mL=0.06dL initial volume, we need .162 g-->
+<!-- we make the usual assumptions about its composition vis a vis albumin/IgG/AGP ratios-->
+
+
+</equations>
+
+<functions>
+
+<!--
+
+<curve>
+  <name> Lymph </name>
+  <point><x>   0.0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 23 </x><y> 1.0 </y><slope> 0.08 </slope></point>23.2
+  <point><x> 250.0 </x><y> 40.0 </y><slope> 0.0 </slope></point>
+</curve>
+  -->
+
+
+<curve>
+  <name> Lymph </name>
+  <point><x>   0.0 </x><y> 0 </y><slope> 0.0 </slope></point>
+  <point><x> 23 </x><y> 1.0 </y><slope> 0 </slope></point>23.2
+  <point><x> 250.0 </x><y> 1.5 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Volume </name><val> InitialVolume </val></def>
+
+<def><name> RBCVolume </name><val> 0 </val></def>
+<def><name> Protein </name><val> InitialProtein </val></def>
+<def><name> Albumin </name><val> Protein * AlbuminPool.AlbFrac </val></def>
+<def><name> IgG </name><val> Protein * IgGPool.IgGFrac </val></def>
+<def><name> AGP </name><val> Protein * AGPPool.AGPFrac </val></def>
+
+<def><name> [Alb] </name><val> Albumin / Volume </val></def>
+<def><name> [AGP] </name><val> AGP / Volume </val></def>
+<def><name> [IgG] </name><val> IgG / Volume </val></def>
+
+<def><name> TotalVolume </name><val> Volume + RBCVolume </val></def>
+
+</block>
+
+
+<block><name> Dervs </name>
+
+
+
+<if>
+<test> OtherTissue-Function.Failed </test>
+<true><call> Failed </call></true>
+<false><call> NotFailed </call></false>
+</if>
+
+<!-- <def><name> Change </name><val> Flux - Lymph </val></def> -->
+
+
+<def><name> Change </name><val> 0 </val></def>
+
+<def><name> AlbuminChange </name><val> AlbuminRate  + SerousAlb - ( Lymph * [Alb] ) + ( ThoraxHemorrhage.RightProteinRate * AlbuminPool.AlbFrac ) * 0 </val></def>
+<def><name> IgGChange </name><val> IgGRate + SerousIgG - ( Lymph * [IgG] ) + ( ThoraxHemorrhage.RightProteinRate * IgGPool.IgGFrac )  * 0 </val></def>
+<def><name> AGPChange </name><val> AGPRate + SerousAGP - ( Lymph * [AGP] ) + ( ThoraxHemorrhage.RightProteinRate * AGPPool.AGPFrac )  * 0 </val></def>
+<def><name> RBCChange </name><val> ThoraxHemorrhage.RightRBCRate </val></def>
+
+<def><name> TotalVolume </name><val> Volume + RBCVolume </val></def>
+
+<def><name> [Alb] </name><val> Albumin / Volume </val></def>
+<def><name> [AGP] </name><val> AGP / Volume </val></def>
+<def><name> [IgG] </name><val> IgG / Volume </val></def>
+<def><name> [Alb(mmol/mL)] </name><val> 1000 * [Alb] / AlbuminPool.MW  </val></def>
+<def><name> [AGP(mmol/mL)] </name><val> 1000 * [AGP] / AGPPool.MW  </val></def>
+<def><name> [IgG(mmol/mL)] </name><val> 1000 * [IgG] / IgGPool.MW  </val></def>
+
+<def>
+  <name> COP </name>
+  <val> ( ( [Alb(mmol/mL)] * AlbuminPool.sigmaAlb ) 
+            + ( [IgG(mmol/mL)] * IgGPool.sigmaIgG ) 
+            + ( [AGP(mmol/mL)] * AGPPool.sigmaAGP ) ) 
+              * 62.36367 * HeatCore.Temp(K)
+</val></def>
+
+<call> RightHemithorax.Calc </call>
+<call> Thorax.Calc </call>
+
+</block>
+
+<block><name> NotFailed </name>
+
+<def>
+  <name> AGPGradient </name>
+  <val> AGPPool.[AGP] - [AGP] </val>
+</def>
+
+<def>
+  <name> AGPRate </name>
+  <val> ProteinPerm * AGPPool.sigmaAGP * AGPGradient </val>
+</def>
+
+<def>
+  <name> AlbuminGradient </name>
+  <val> AlbuminPool.[Alb] - [Alb] </val>
+</def>
+
+<def>
+  <name> AlbuminRate </name>
+  <val> ProteinPerm * AlbuminPool.sigmaAlb * AlbuminGradient </val>
+</def>
+
+<def>
+  <name> IgGGradient </name>
+  <val> IgGPool.[IgG] - [IgG] </val>
+</def>
+
+<def>
+  <name> IgGRate </name>
+  <val> ProteinPerm * IgGPool.sigmaIgG * IgGGradient </val>
+</def>
+
+<def><name> Grad </name><val> RegionalPressure.MiddleCapy - PlasmaProtein.COP + COP </val></def>
+
+<!--  
+
+<def><name> Flux </name><val> ( ( Perm * Grad ) MAX 0.0 ) + Production + ThoraxHemorrhage.RightPlasmaRate</val></def>
+
+<def><name> Lymph </name><val> BaseOutflow *  Lymph [ Volume ] </val></def>
+
+-->
+
+<def><name> Flux </name><val> 1 </val></def>
+
+<def><name> Lymph </name><val> 1 </val></def>
+
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> Grad </name><val> 0.0 </val></def>
+<def><name> Flux </name><val> 0.0 </val></def>
+<def><name> Lymph </name><val> 0.0 </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

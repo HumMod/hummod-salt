@@ -1,0 +1,53 @@
+HumMod / Sizing-UreaPool
+
+Created : 2013-03-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-UreaPool </name>
+
+<variables>
+
+<constant><name> [Urea] </name><val> 330 </val></constant>240
+<constant><name> MG_TO_MOSM </name><val> 0.01667 </val></constant>
+
+<var><name> Mass </name></var>
+<var><name> Volume </name></var>
+<var><name> Osmoles </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-ECFV.Vol / 1000 </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> [Urea] * Volume </val>
+</def>
+
+<def>
+  <name> Osmoles </name>
+  <val> Mass * MG_TO_MOSM </val>
+</def>
+
+<def>
+  <name> UreaPool.InitialMass </name>
+  <val> Mass </val>
+</def>
+
+<call> UreaPool.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

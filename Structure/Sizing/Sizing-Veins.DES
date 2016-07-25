@@ -1,0 +1,86 @@
+HumMod / Sizing-Veins
+
+Created : 2013-02-19
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Veins </name>
+
+<variables>
+
+<var><name> TotalVolume </name></var>
+<var><name> CirculatingVolume </name></var>
+<var><name> BSA </name></var>
+
+<constant><name> SequesteredVolume </name><val> 150 </val></constant>
+
+<parm><name> RightVentricleVolumeMult </name><val> 52 </val></parm>
+<var><name> RightVentricleVolume </name></var>
+
+<var><name> PeripheralVeins-F </name></var>
+<var><name> PeripheralVeinsVolume </name></var>
+
+<parm><name> SplanchnicVeins-F </name><val> 0.3 </val></parm>
+<var><name> SplanchnicVeinsVolume </name></var>
+
+<constant><name> RightAtrium-F </name><val> 0.015 </val></constant>0.015
+<var><name> RightAtriumVolume </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> BSA </name><val> Weight.BSA</val></def>
+
+<def>
+  <name> RightVentricleVolume </name>
+  <val> RightVentricleVolumeMult * BSA </val>
+</def>
+
+<def>
+  <name> TotalVolume </name>
+  <val> Sizing-BloodVessels.VeinVolume </val>
+</def>
+
+<def>
+  <name> CirculatingVolume </name>
+  <val> TotalVolume - SequesteredVolume - RightVentricleVolume </val>
+</def>
+
+<def>
+  <name> PeripheralVeins-F </name>
+  <val> 1 - SplanchnicVeins-F - RightAtrium-F </val>
+</def>
+
+<def>
+  <name> PeripheralVeinsVolume </name>
+  <val> PeripheralVeins-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> SplanchnicVeinsVolume </name>
+  <val> SplanchnicVeins-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> RightAtriumVolume </name>
+  <val> RightAtrium-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> RightVentricle.InitialVolume </name>
+  <val> RightVentricleVolume </val>
+</def>
+
+<call> RightVentricle.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

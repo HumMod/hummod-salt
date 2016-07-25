@@ -1,0 +1,55 @@
+HumMod / Stenosis
+
+Created : 2012-02-17
+Revised : 2012-07-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 6.4 </high>
+   <wide> 30.0 </wide>
+   <title> Stenosis </title>
+
+<structurename> LeftHeartPumping-Diastole </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> EDP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> End-Diastolic Pressure </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3.0 </col>
+   <name> MitralStenosis </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mitral Stenosis </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3.0 </col>
+   <name> LeftAtrium.Pressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Atrial Pressure </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.8 </row><col> 3.0 </col>
+   <name> Pericardium-Cavity.Pressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Pericardial Pressure </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,40 @@
+HumMod | VitaminD(1,25-Dihydroxy)
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<panel><name> VitaminD(1,25-Dihydroxy) </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Hormone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> 1,25-Dihydroxy Vitamin D </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Hormones\VitaminD\VitaminD(1,25-Dihydroxy)\ ?>
+
+<?include Pool.DES ?>
+
+<?include Mass.DES ?>
+<?include Pump.DES ?>
+
+</panel>
+
+End

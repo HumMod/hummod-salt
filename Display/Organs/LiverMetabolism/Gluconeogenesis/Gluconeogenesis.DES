@@ -1,0 +1,14 @@
+HumMod / Gluconeogenesis
+
+Created : 29-Mar-08
+Revised : 2013-02-02
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Organs\LiverMetabolism\Gluconeogenesis\ ?>
+
+<?include Summary\Summary.DES ?>
+<?include Stimuli\Stimuli.DES ?>
+
+End

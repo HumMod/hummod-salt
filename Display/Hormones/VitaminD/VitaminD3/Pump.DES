@@ -1,0 +1,46 @@
+HumMod | Pump
+
+Created : 2012-01-28
+Revised : 2012-01-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 29.4 </row>
+   <col> 32.0 </col>
+   <high> 5.8 </high>
+   <wide> 30.0 </wide>
+   <title> Pump </title>
+
+<structurename> VitaminD3 </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> PumpSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Switch </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Pump </name>
+  <repeat><reps> 100 </reps><stepsize>  1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.8 </row><col> 1.0 </col>
+  <name> PumpSetting </name>
+  <listname> Pump </listname>
+  <label> Setting </label>
+</slidebar>
+
+<showvalue>
+   <row> 4.2 </row><col> 1.0 </col>
+   <name> PumpRate </name>
+   <format><integer/></format>
+   <label> Pump Rate </label>
+</showvalue>
+
+</groupbox>
+
+End

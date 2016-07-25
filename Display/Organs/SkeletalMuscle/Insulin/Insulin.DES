@@ -1,0 +1,37 @@
+HumMod / Insulin
+
+Created : 30-Mar-08
+Revised : 2012-07-07
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<panel><name> SkeletalMuscle-Insulin </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> SkeletalMuscle </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Skeletal Muscle - Insulin </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\SkeletalMuscle\Insulin\ ?>
+
+<?include InsulinReceptor.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,138 @@
+HumMod / ADHSlowMass
+
+Created : 20-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> ADHSlowMass </name>
+
+<variables>
+
+<parm>
+  <name> FluxK </name>
+  <val> 0.0000185 </val>0.00002
+</parm>
+
+<var>
+  <name> Flux </name>
+</var>
+
+<var>
+  <name> Mass </name>
+ </var>
+
+<var>
+  <name> DamagedSecretionTarget </name>
+ </var>
+
+<parm>
+  <name> k </name>
+  <val> 0.5 </val>
+ </parm>
+
+
+<var>
+  <name> InitialDamagedMass </name>
+  <val> 0 </val>
+ </var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> UndamagedMass </name>
+  <integralname> UndamagedMass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 1700.0 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> DamagedMass </name>
+  <integralname> DamagedMass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> DamagedChange </dervname>
+  <errorlim> 1.70 </errorlim>
+</diffeq>
+
+
+<diffeq>
+  <name> DamagedSecretion </name>
+  <integralname> DamagedSecretion </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> dDamagedSecretion </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+
+</equations>
+
+<definitions>
+<block><name> Flux </name>
+
+<def>
+  <name> Flux </name>
+  <val> FluxK * ( 5 * ( ADHSynthesis.SigVal - .9 ) + 1 ) * UndamagedMass </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+
+
+<def>
+  <name> Change </name>
+  <val> ADHSynthesis.Rate - Flux </val>
+</def>
+
+
+
+<if> <test> HypothalamusMagnocellularNeurons.DamageFraction GT 0 </test>
+ <true>
+
+   <def>
+     <name> DamagedSecretionTarget </name>
+     <val> InitialDamagedMass * HypothalamusMagnocellularNeurons.dNecroticRadius / HypothalamusMagnocellularNeurons.DamageFraction </val>
+   </def>
+
+   <def>
+     <name> dDamagedSecretion  </name>
+     <val> k * ( DmagedSecetionTarget - DamagedSecretion ) </val>
+   </def>
+
+   <def>
+     <name> DamagedChange </name>
+     <val> - DamagedSecretion </val>
+   </def>
+
+ </true>
+
+ <false>
+
+   <def>
+     <name> DamagedChange </name>
+     <val> 0</val>
+   </def>
+
+   <def>
+     <name> dDamagedSecretion  </name>
+     <val>0 </val>
+   </def>
+
+ </false>
+</if>
+
+<def>
+  <name> Mass </name>
+  <val> UndamagedMass + DamagedMass </val>
+</def>y
+</block>
+
+</definitions>
+</structure>
+
+End

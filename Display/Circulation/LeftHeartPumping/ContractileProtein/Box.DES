@@ -1,0 +1,129 @@
+HumMod / Box
+
+Created : 2011-08-10
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<structurename> LeftHeartPumping-ContractileProtein </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 27.0 </high>
+   <wide> 30.0 </wide>
+
+<showvalue>
+   <row> 1.0 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 20 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.4 </row><col> 1.0 </col>
+   <name> Functional </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Functional </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.4 </row><col> 1.0 </col>
+   <name> Ischemic </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Ischemic </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.4 </row><col> 1.0 </col>
+   <name> Dead </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Dead </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 1.0 </col>
+   <name> Protein-Base </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Protein-Base </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 1.0 </col>
+   <name> Protein-Ratio </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Protein Ratio </label>
+</showvalue>
+
+<repeatlist>
+  <name> Delay(Days) </name>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15.6 </row><col> 1.0 </col>
+  <name> Delay(Days) </name>
+  <listname> Delay(Days) </listname>
+  <label> Delay (Days) </label>
+</slidebar>
+
+<showvalue>
+   <row> 17.0 </row><col> 1.0 </col>
+   <name> Protein-Ratio-SS </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Protein Ratio (SS) </label>
+</showvalue>
+
+<showcurve>
+  <row> 18.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftHeartWallStress-Systole.Stress-Ratio </name>
+    <label> Wall Stress Ratio </label>
+    <scale>
+      <min> 1 </min><max> 1.5 </max><inc> 0.1 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 1 </min><max> 4 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> Protein-Ratio-SS </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 25.4 </row><col> 1.0 </col>
+   <name> LeftHeartWallStress-Systole.Stress-Ratio </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Wall Stress Ratio </label>
+</showvalue>
+
+</groupbox>
+
+End

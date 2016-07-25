@@ -1,0 +1,193 @@
+HumMod / RightLoopOfHenle_Na
+
+Created : 10-Apr-05
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RightLoopOfHenle_Na </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> ModifiedInflow </name></var>
+
+<var><name> Outflow </name></var>
+<var><name> RightFractReab </name></var>
+<var><name> Reab </name></var>
+
+<parm><name> BasicFract </name><val> 0.75 </val></parm>0.75
+
+<var><name> TotalEffect </name></var>
+<var><name> FlowEffect </name></var>
+<var><name> LoadEffect </name></var>
+<var><name> AldoEffect </name></var>
+<var><name> FurosemideEffect </name></var>
+<var><name> [Na+] </name></var>
+
+<parm><name> MaxReab </name><val> 4.5 </val></parm>
+
+
+<parm><name> LoadA </name><val> 1.8 </val></parm>
+<parm><name> LoadB </name><val> 0.2 </val></parm>
+<parm><name> LoadS </name><val> 3.9 </val></parm>
+<parm><name> LoadN </name><val> 2.35 </val></parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> LoadOnFract </name>
+  <point><x>  0.0 </x><y> 2.0 </y><slope> 0 </slope></point>
+  <point><x>  4.18 </x><y> 1.0 </y><slope> -0.1 </slope></point>-.3
+  <point><x> 10.5 </x><y> 0.9 </y><slope> 0 </slope></point>
+</curve>
+
+<!--
+<curve>
+  <name> LoadOnFract </name>
+  <point><x>  6 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 12 </x><y> 0.85 </y><slope> 0 </slope></point>
+</curve>
+-->
+
+<curve>
+  <name> AldoOnFract </name>
+  <point><x>  0.0 </x><y> 0.7 </y><slope> 0 </slope></point>0.7
+  <point><x> 10.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> FurosemideOnFract </name>
+  <point><x> 0.0 </x><y> 0.0 </y><slope> 1 </slope></point>
+  <point><x> 0.1 </x><y> 1.0 </y><slope> 0 </slope></point>
+</curve>??? Check [Furosemide] PD
+
+<curve>
+  <name> FlowOnFract </name>
+  <point><x>  0 </x><y> 3.0 </y><slope> 0 </slope></point>
+  <point><x> 5.1e-5 </x><y> 1 </y><slope> -5e3 </slope></point>
+  <point><x> 20e-5 </x><y> .75 </y><slope> 0 </slope></point>0.75
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+
+<def>
+  <name> Inflow </name>
+  <val> RightProximalTubule_Na.Outflow </val>
+</def>
+
+
+
+<def>
+  <name> AldoEffect </name>
+  <val> AldoOnFract [ RightNephronAldo.[Aldo(nG/dL)-Nucleus] ] </val>
+</def>
+
+
+<if><test> RightKidney-Structure.Remaining GT 0 </test>
+<true>
+  <def><name> ModifiedInflow </name><val> Inflow / RightKidney-Structure.Remaining </val></def>
+</true>
+<false>
+  <def><name> ModifiedInflow </name><val> 0 </val></def>
+</false>
+</if>
+
+<!--
+<def>
+  <name> LoadEffect </name>
+  <val> LoadOnFract [ ModifiedInflow ] </val>
+</def>
+
+<def>
+  <name> AldoEffect </name>
+  <val> AldoOnFract [ RightNephronAldo.[Aldo(nG/dL)-Nucleus] ] </val>
+</def>
+-->
+
+
+<def>
+  <name> LoadEffect </name>
+  <val> ( ( LoadA * ( LoadS ^  LoadN ) / ( ( LoadS ^ LoadN ) + ( Inflow ^ LoadN ) ) + LoadB ) MAX 0.5 ) MIN 1 </val>
+</def>
+
+<def>
+  <name> AldoEffect </name>
+  <val> ( LeftLoopOfHenle_Na.AldoA * ( RightNephronAldo.[Aldo(nG/dL)-Nucleus] ^ LeftLoopOfHenle_Na.AldoN ) / ( ( LeftLoopOfHenle_Na.AldoS ^ LeftLoopOfHenle_Na.AldoN ) + ( RightNephronAldo.[Aldo(nG/dL)-Nucleus] ^ LeftLoopOfHenle_Na.AldoN ) ) + LeftLoopOfHenle_Na.AldoB ) MIN 1 </val>
+</def>
+
+
+<conditional>
+  <name> FlowEffect </name>
+  <test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+  <true> FlowOnFract [ RightGlomerulusFiltrate.SNGFR ] </true>
+  <false> 0 </false>
+</conditional>
+
+
+<def>
+  <name> FurosemideEffect </name><val>1 - ( RightKidney-Function.Effect * RightKidney-NephronCount.Filtering(xNormal) * FurosemideOnFract [ FurosemidePool.[Furosemide] ] ) </val>
+</def>
+
+<def>
+  <name> TotalEffect </name>
+  <val>
+      FlowEffect
+    * AldoEffect
+    * FurosemideEffect * LoadEffect
+    * RightKidney-Function.Effect </val> 
+</def>
+
+<def><name> BasicFract </name><val> LeftLoopOfHenle_Na.BasicFract </val></def>
+
+<copy>
+  <from> BasicFract </from>
+  <to> RightFractReab.Normal </to>
+</copy>
+
+<copy>
+  <from> TotalEffect </from>
+  <to> RightFractReab.Effects </to>
+</copy>
+
+<call> RightFractReab.GetFract </call>
+
+<copy>
+  <from> RightFractReab.Fract </from>
+  <to> RightFractReab </to>
+</copy>
+
+<def>
+  <name> Reab </name>
+  <val> ( RightFractReab * Inflow ) MIN MaxReab </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<conditional>
+  <name> [Na+] </name>
+  <test> RightLoopOfHenle_H2O.Outflow GT 0.0 </test>
+  <true> 1000.0 * Outflow / RightLoopOfHenle_H2O.Outflow </true>
+  <false> UNDEFINED </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

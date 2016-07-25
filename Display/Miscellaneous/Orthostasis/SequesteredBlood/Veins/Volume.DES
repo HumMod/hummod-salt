@@ -1,0 +1,103 @@
+HumMod / Volume
+
+Created : 19-Jun-05
+Revised : 2012-09-11
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 17.8 </high>
+   <wide> 30.0 </wide>
+   <title> Volume </title>
+
+<structurename> BVSeqVeins </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Vol </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Volume </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Vol </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 140 </min><max> 160 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> Conductance </name>
+   <format><integer/></format>
+   <label> Conductance </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> Gradient </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gradient </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 3.0 </col>
+   <name> Pressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Sequestered </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 3.0 </col>
+   <name> RegionalPressure.LowerVein </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Lower Torso </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.2 </row><col> 5.0 </col>
+   <name> Hydrostatics.LowerTorsoVeinGradient </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Hydrostatic </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 5.0 </col>
+   <name> VenousValves.ValvesEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Valves Effect </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Normal recumbent volume is 150 mL. </line>
+</infobutton>
+
+</groupbox>
+
+End

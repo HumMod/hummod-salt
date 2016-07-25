@@ -1,0 +1,45 @@
+HumMod / Acetazolamide
+
+Created : 2013-02-08
+Revised : 2013-02-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Structure\Drugs\Acetazolamide\ ?>
+
+<?include AcetazolamidePool.DES ?>
+<?include AcetazolamideBound.DES ?>
+<?include AcetazolamideKidney.DES ?>
+<?include AcetazolamideGILumen.DES ?>
+<?include AcetazolamideSingleDose.DES ?>
+<?include AcetazolamideDailyDose.DES ?>
+
+<structure><name> Acetazolamide </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> AcetazolamideDailyDose.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> AcetazolamideGILumen.CalcConc </call>
+  <call> AcetazolamidePool.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> AcetazolamideBound.Dervs </call>
+  <call> AcetazolamideGILumen.Dervs </call>
+  <call> AcetazolamideKidney.Dervs </call>
+  <call> AcetazolamidePool.Dervs </call>
+</block>
+
+<block><name> Wrapup </name>
+  <call> AcetazolamideDailyDose.Wrapup </call>
+</block>
+
+</definitions>
+</structure>
+
+End

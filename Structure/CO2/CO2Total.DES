@@ -1,0 +1,116 @@
+HumMod / CO2Total
+
+Created : 10-May-05
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<structure><name> CO2Total </name>
+
+<variables>
+
+<var><name> Change(mL/Min) </name></var>
+<var><name> Change(mMol/Min) </name></var>
+
+<var><name> Gain(mL/Min) </name></var>
+<var><name> Gain(mMol/Min) </name></var>
+
+<var><name> Loss(mL/Min) </name></var>
+<var><name> Loss(mMol/Min) </name></var>
+
+<var><name> Inflow(mL/Min) </name></var>
+<var><name> Inflow(mMol/Min) </name></var>
+
+<var><name> Outflow(mL/Min) </name></var>
+<var><name> Outflow(mMol/Min) </name></var>
+
+<var><name> Urineflow(mL/Min) </name></var>
+<var><name> Urineflow(mMol/Min) </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Inflow(mMol/Min) </name>
+  <val>
+      Bone-CO2.OutflowBase
+    + Brain-CO2.OutflowBase
+    + Fat-CO2.OutflowBase
+    + GITract-CO2.OutflowBase
+    + RightKidney-CO2.OutflowBase
+    + LeftKidney-CO2.OutflowBase
+    + LeftHeart-CO2.OutflowBase
+    + Liver-CO2.OutflowBase
+    + OtherTissue-CO2.OutflowBase
+    + RespiratoryMuscle-CO2.OutflowBase
+    + RightHeart-CO2.OutflowBase
+    + SkeletalMuscle-CO2.OutflowBase
+    + Skin-CO2.OutflowBase
+  </val>
+</def>
+
+<def>
+  <name> Inflow(mL/Min) </name>
+  <val> Inflow(mMol/Min) * CO2Tools.MMOL_TO_ML </val>
+</def>
+
+<def>
+  <name> Outflow(mL/Min) </name>
+  <val> Lung_CO2.Loss </val>
+</def>
+
+<def>
+  <name> Outflow(mMol/Min) </name>
+  <val> Outflow(mL/Min) * CO2Tools.ML_TO_MMOL </val>
+</def>
+
+<def>
+  <name> Urineflow(mMol/Min) </name>
+  <val> CollectingDuct_HCO3.Outflow </val>
+</def>
+
+<def>
+  <name> Urineflow(mL/Min) </name>
+  <val> Urineflow(mMol/Min) * CO2Tools.MMOL_TO_ML </val>
+</def>
+
+<def>
+  <name> Gain(mMol/Min) </name>
+  <val> Inflow(mMol/Min) </val>
+</def>
+
+<def>
+  <name> Gain(mL/Min) </name>
+  <val> Inflow(mL/Min) </val>
+</def>
+
+<def>
+  <name> Loss(mMol/Min) </name>
+  <val> Outflow(mMol/Min) +  Urineflow(mMol/Min) </val>
+</def>
+
+<def>
+  <name> Loss(mL/Min) </name>
+  <val> Outflow(mL/Min) + Urineflow(mL/Min) </val>
+</def>
+
+<def>
+  <name> Change(mMol/Min) </name>
+  <val> Gain(mMol/Min) -  Loss(mMol/Min) </val>
+</def>
+
+<def>
+  <name> Change(mL/Min) </name>
+  <val> Gain(mL/Min) - Loss(mL/Min) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

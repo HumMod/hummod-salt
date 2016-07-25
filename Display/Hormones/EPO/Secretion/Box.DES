@@ -1,0 +1,119 @@
+/* HumMod / Box
+
+   Created : 2014-03-02
+   Revised : 2014-03-03
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 19.6 </high>
+   <wide> 30.0 </wide>
+
+<structurename> EPOSecretion </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Rate </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Rate </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Rate </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 10.0 </row><col> 1.0 </col>
+   <name> RightpO2Effect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Right pO2 Effect </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.0 </row><col> 1.0 </col>
+   <name> LeftpO2Effect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Left pO2 Effect </label>
+</showvalue>
+
+<repeatlist>
+  <name> Tau </name>
+  <repeat><reps> 100 </reps><stepsize>  1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 12.6 </row><col> 1.0 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Tau (Hrs) </label>
+</slidebar>
+
+<showvalue>
+   <row> 14.0 </row><col> 3.0 </col>
+   <name> lK </name>
+   <format><decimal> 5 </decimal></format>
+   <label> K (1/Min) </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.4 </row><col> 1.0 </col>
+   <name> RightpO2Effect(Steady-State) </name>
+   <format>
+     <decimal> 2 </decimal>
+     <fieldwidth> 6 </fieldwidth>
+   </format>
+   <label> Right pO2 Effect (Steady-State) </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.4 </row><col> 1.0 </col>
+   <name> LeftpO2Effect(Steady-State) </name>
+   <format>
+     <decimal> 2 </decimal>
+     <fieldwidth> 6 </fieldwidth>
+   </format>
+   <label> LeFt pO2 Effect (Steady-State) </label>
+</showvalue>
+
+<repeatlist>
+  <name> Base </name>
+  <repeat><reps> 100 </reps><stepsize>  0.01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 18.0 </row><col> 1.0 </col>
+  <name> Base </name>
+  <listname> Base </listname>
+  <label> Base </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical secretion rate (U/Min) is </line>
+  <line> 0.15 with a tubule pO2 effect of 1.0 </line>
+  <line> at a pO2 of 43 mmHg </line>
+</infobutton>
+
+</groupbox>
+
+End

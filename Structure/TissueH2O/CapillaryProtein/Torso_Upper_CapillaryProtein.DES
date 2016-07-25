@@ -1,0 +1,90 @@
+HumMod / Torso_Upper_CapillaryProtein
+
+Created : 21-Oct-04
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2004-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Upper_CapillaryProtein </name>
+
+<variables>
+
+<var><name> AlbRate </name></var>
+<var><name> AlbGradient </name></var>
+<var><name> AGPRate </name></var>
+<var><name> AGPGradient </name></var>
+<var><name> IgGRate </name></var>
+<var><name> IgGGradient </name></var>
+<var><name> HetaLWRate </name></var>
+<var><name> HetaLWGradient </name></var>
+<var><name> HetaHWRate </name></var>
+<var><name> HetaHWGradient </name></var>
+<var><name> Rate </name></var>
+
+<parm><name> Perm </name><val> 5.4 </val></parm>2.6
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> AlbGradient </name>
+  <val> AlbuminPool.[Alb] - Torso_Upper_InterstitialProtein.[Alb]  </val>
+</def>
+
+<def>
+  <name> AlbRate </name>
+  <val> Perm * AlbuminPool.sigmaAlb * AlbGradient </val>
+</def>
+
+<def>
+  <name> IgGGradient </name>
+  <val> IgGPool.[IgG] - Torso_Upper_InterstitialProtein.[IgG]   </val>
+</def>
+
+<def>
+  <name> IgGRate </name>
+  <val> Perm * IgGPool.sigmaIgG * IgGGradient   </val>
+</def>
+
+<def>
+  <name> AGPGradient </name>
+  <val> AGPPool.[AGP] - Torso_Upper_InterstitialProtein.[AGP] </val>
+</def>
+
+<def>
+  <name> AGPRate </name>
+  <val> Perm * AGPPool.sigmaAGP * AGPGradient </val>
+</def>
+
+<def>
+  <name> HetaLWGradient </name>
+  <val> HetaPool.[HetaLW] - Torso_Upper_InterstitialProtein.[HetaLW]    </val>
+</def>
+
+<def>
+  <name> HetaLWRate </name>
+  <val> Perm * HetaPool.sigmaLWHeta * HetaLWGradient </val>
+</def>
+
+<def>
+  <name> HetaHWGradient </name>
+  <val> HetaPool.[HetaHW] - Torso_Upper_InterstitialProtein.[HetaHW]    </val>
+</def>
+
+<!--  * Torso_Upper_CapillaryWater.Rate  -->
+<def>
+  <name> HetaHWRate </name>
+  <val> Perm * HetaPool.sigmaHWHeta * HetaHWGradient </val>
+</def>
+
+<def><name> Rate </name><val> AlbRate + AGPRate + IgGRate + HetaLWRate + HetaHWRate </val></def>
+</block>
+
+</definitions>
+</structure>
+
+End

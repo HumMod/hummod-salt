@@ -1,0 +1,37 @@
+HumMod / Cushing
+
+Created : 27-Apr-05
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> AutonomicNerves-CNS-Cushing </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> NerveCNS </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> CNS - Cushing Response </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\NervousSystem\AutonomicNerves\CNS\Cushing\ ?>
+
+<?include Summary.DES ?>
+
+</panel>
+
+End

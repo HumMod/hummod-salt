@@ -1,0 +1,15 @@
+HumMod / Template
+
+Created : 2011-07-26
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<?path Display\BodyFluids\ ?>
+
+<?include Blood\Blood.DES ?>
+<?include H2O\H2O.DES ?>
+<?include Osmoles\Osmoles.DES ?>
+
+End

@@ -1,0 +1,141 @@
+HumMod / RightCollectingDuct_H2O
+
+Created : 10-Apr-05
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RightCollectingDuct_H2O </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> RightFractReab </name></var>
+<var><name> Reab </name></var>
+<var><name> OutflowMin </name></var>
+<var><name> ADHEffect </name></var>
+<var><name> Perm </name></var>
+
+<parm><name> BasicPerm </name><val> 1.0 </val></parm>
+<var><name> ModPerm </name></var>
+<parm><name> PermSwitch </name><val> FALSE </val></parm>
+<parm><name> PermLevel </name><val> 0.0 </val></parm>
+
+<var><name> PermEffect </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> ADHOnPerm </name>
+  <point><x>  0.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+  <point><x>  2.0 </x><y> 1.0 </y><slope> 0.5 </slope></point>
+  <point><x> 10.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> PermOnOutflow </name>
+  <point><x> 0.3 </x><y> 0.00 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 0.93 </y><slope> 0.05 </slope></point>0.93
+  <point><x> 3.0 </x><y> 1 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> CalcInflow </name>
+
+<def>
+  <name> Inflow </name>
+  <val> RightDistalTubule_H2O.Outflow </val>
+</def>
+
+</block>
+
+<block><name> CalcFlux </name>
+
+<if><test> RightKidney-Structure.Remaining GT 0 </test>
+<true>
+<def>
+  <name> OutflowMin </name>
+  <val>
+    ( RightCollectingDuct_Na.Outflow
+    + RightCollectingDuct_K.Outflow
+    + RightCollectingDuct_NH4.Outflow
+    + ( 0.5 * RightCollectingDuct_Glucose.Outflow ) )
+    / ( RightMedulla.[Osm] / 1000 )
+  </val>
+</def>
+</true>
+<false>
+  <def><name> OutflowMin </name><val> 0 </val></def>
+</false>
+</if>
+
+
+
+
+<def><name> ADHEffect </name><val> ( LeftCollectingDuct_H2O.ADH_A * ( ( RightNephronADH.[ADH] ^ LeftCollectingDuct_H2O.ADH_m ) / ( ( RightNephronADH.[ADH] ^ LeftCollectingDuct_H2O.ADH_m ) + ( LeftCollectingDuct_H2O.ADH_S ^ LeftCollectingDuct_H2O.ADH_m ) ) ) ) + LeftCollectingDuct_H2O.ADH_B  </val></def>
+
+<def><name> ModPerm </name><val> CollectingDuct_H2O.RightPerm </val></def>
+
+<conditional>
+  <name> Perm </name>
+  <test> PermSwitch </test>
+  <true> PermLevel </true>
+  <false>
+      BasicPerm
+    * ADHEffect
+    * RightCollectingDuct_H2OChannels.Active
+  </false>
+</conditional>
+
+
+<def><name> PermEffect </name><val> ( LeftCollectingDuct_H2O.Perm_A * ( ( Perm ^ LeftCollectingDuct_H2O.Perm_m ) / ( ( Perm ^ LeftCollectingDuct_H2O.Perm_m ) + ( LeftCollectingDuct_H2O.Perm_S ^ LeftCollectingDuct_H2O.Perm_m ) ) ) ) + LeftCollectingDuct_H2O.Perm_B  </val></def>
+
+
+
+
+<def>
+  <name> Outflow </name>
+  <val>
+      ( PermEffect * OutflowMin )
+    + ( ( 1.0 - PermEffect ) * Inflow )
+  </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> Inflow - Outflow </val>
+</def>
+
+<conditional>
+  <name> RightFractReab </name>
+  <test> Inflow GT 0.0 </test>
+  <true> ( Reab / Inflow ) MIN 1.0 </true>
+  <false> 0.0 </false>
+</conditional>
+
+</block>
+
+<block><name> NoFlow </name>
+
+<def>
+  <name> Outflow </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> 0.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

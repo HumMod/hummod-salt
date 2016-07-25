@@ -1,0 +1,39 @@
+HumMod / Isoproterenol Kidney
+
+Created : 05-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> IsoproterenolKidney </name>
+
+<variables>
+
+<var>
+  <name> Loss </name>
+</var>
+
+<constant>
+  <name> K </name>
+  <val> .5 </val>
+</constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Loss </name> 
+  <val> K * GlomerulusFiltrate.GFR * IsoproterenolPool.[Isoproterenol] </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

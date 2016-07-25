@@ -1,0 +1,81 @@
+HumMod / DietGoalNutrition
+
+Created : 2011-08-01
+Last Modified : 2011-08-01
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+Diet goals (kCal/Day) for
+
+# Carbo's (900)
+# Fat (800)
+# Protein (500)
+
+scale as a funtion of the three basic tissue
+masses (kG)
+
+# Fat (16.6)
+# SkeletalMuscle (27.4)
+# OtherMass (25.0)
+
+These three mass have different matabolic rates,
+with fat being the lowest and other mass being
+the highest. Here are the metabolic rates decribed
+as a multiple of fat's metabolic rate.
+(kCal/Day)/kG Mass)
+
+# Fat (1.0)
+# SkeletalMuscle (2.8)
+# OtherMass (20.5)
+
+We can now use normal data for mass, ratio of
+metabolic rates and calores per day to calculate a
+set of 3 coefficients for each source of calories.
+
+For carbo's, it is
+
+16.6 * 1.0 * K + 27.4 * 2.8 * K + 25.0 * 20.5 * K = 900
+K = 1.48
+
+Repeat for fat and protein.
+
+Mass (kG)  Fat   Muscle  Other
+---------  ----  ------  ------
+Carbo's    1.48   4.14    30.3
+Fat        1.32   3.70    27.1
+Protein    0.82   2.30    16.8
+
+The XML is shown below.
+
+<def>
+  <name> Carbo_kCal/Day </name>
+  <val>
+    (   ( 1.48 * Fat-Size.InitialMass(kG) )
+      + ( 4.14 * SkeletalMuscle-Size.InitialMass(kG) )
+      + ( 30.3 * Weight.InitialOtherMass(kG) )
+    ) ROUNDAT 10
+  </val>
+</def>
+
+<def>
+  <name> Fat_kCal/Day </name>
+  <val>
+    (   ( 1.32 * Fat-Size.InitialMass(kG) )
+      + ( 3.70 * SkeletalMuscle-Size.InitialMass(kG) )
+      + ( 27.1 * Weight.InitialOtherMass(kG) )
+    ) ROUNDAT 10
+  </val>
+</def>
+
+<def>
+  <name> Protein_kCal/Day </name>
+  <val>
+    (   ( 0.82 * Fat-Size.InitialMass(kG) )
+      + ( 2.30 * SkeletalMuscle-Size.InitialMass(kG) )
+      + ( 16.8 * Weight.InitialOtherMass(kG) )
+    ) ROUNDAT 10
+  </val>
+</def>
+
+End

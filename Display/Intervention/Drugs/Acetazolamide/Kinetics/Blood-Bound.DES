@@ -1,0 +1,92 @@
+HumMod / Blood-Bound
+
+Created : 2013-02-08
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 24.6 </row>
+   <col> 32.0 </col>
+   <high> 15.8 </high>
+   <wide> 30.0 </wide>
+   <title> Blood - Bound </title>
+
+<structurename> AcetazolamideBound </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> Gain </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> Loss </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 1.0 </col>
+   <name> Binding-K </name>
+   <format><integer/></format>
+   <label> Binding-K </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 1.0 </col>
+   <name> Unbinding-K </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Unbinding-K </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units are </line>
+  <line> </line>
+  <line> [Conc] = uG/mL </line>
+  <line> Mass = mG </line>
+  <line> Various Rates = mG/Min </line>
+  <line> ECFV = L </line>
+</infobutton>
+
+</groupbox>
+
+End

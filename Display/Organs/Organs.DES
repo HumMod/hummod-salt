@@ -1,0 +1,40 @@
+HumMod / Organs
+
+Created : 2011-07-26
+Revised : 2013-02-04
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Organs\ ?>
+
+<?include AdrenalGland\AdrenalGland.DES ?>
+<?include Bladder\Bladder.DES ?>
+<?include Bone\Bone.DES ?>
+<?include Brain\Brain.DES ?>
+<?include CerebrospinalFluid\CerebrospinalFluid.DES ?>
+<?include Fat\Fat.DES ?>
+<?include GITract\GITract.DES ?>
+<?include Hypothalamus\Hypothalamus.DES ?>
+<?include Kidney\Kidney.DES ?>
+<?include KidneyNephrons\KidneyNephrons.DES ?> 
+<?include KidneyExcretion\KidneyExcretion.DES ?>
+<?include KidneyMetabolism\KidneyMetabolism.DES ?>
+<?include LeftHeart\LeftHeart.DES ?>
+<?include LipidDeposits\LipidDeposits.DES ?>
+<?include Liver\Liver.DES ?>
+<?include LiverMetabolism\LiverMetabolism.DES ?>
+<?include OtherTissue\OtherTissue.DES ?>
+<?include Ovaries\Ovaries.DES ?>
+<?include Pancreas\Pancreas.DES ?>
+<?include Peritoneum\Peritoneum.DES ?>
+<?include PituitaryGland\PituitaryGland.DES ?>
+<?include PortalVein\PortalVein.DES ?>
+<?include RespiratoryMuscle\RespiratoryMuscle.DES ?>
+<?include RightHeart\RightHeart.DES ?>
+<?include SkeletalMuscle\SkeletalMuscle.DES ?>
+<?include Skin\Skin.DES ?>
+<?include Testes\Testes.DES ?>
+<?include Uterus\Uterus.DES ?>
+
+End

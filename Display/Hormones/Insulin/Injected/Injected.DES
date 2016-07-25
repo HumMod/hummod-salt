@@ -1,0 +1,124 @@
+HumMod / Circulating
+
+Created : 2011-08-12
+Last Modified : 2011-08-12
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+
+<panel><name> Hormones_Insulin_Injected </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Hormone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Insulin | Injected </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> InsulinInjection </structurename>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.4 </row><col> 1 </col>
+   <name> Change </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 1 </col>
+   <name> AbsorbRate </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Absorption Rate </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 3 </col>
+   <name> AbsorbK </name>
+   <format><decimal> 4 </decimal></format>
+   <label> K </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.2 </row><col> 1 </col>
+   <name> DegradeRate </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Degradation Rate </label>
+</showvalue>
+
+<repeatlist>
+  <name> DegradeK </name>
+  <repeat><reps> 100 </reps><stepsize> 0.0001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 16.6 </row><col> 3.0 </col>
+  <name> DegradeK </name>
+  <listname> DegradeK </listname>
+  <label> K </label>
+</slidebar>
+
+
+<showvalue>
+   <row> 18.0 </row><col> 1 </col>
+   <name> TotalInjections </name>
+   <format><integer/></format>
+   <label> Number Of Injections </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.0 </row><col> 1 </col>
+   <name> TotalDose </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total Units Injected </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.0 </row><col> 1 </col>
+   <name> AbsorbTau </name>
+   <format><integer/></format>
+   <label> Duration (Hours) </label>
+</showvalue>
+
+</panel>
+
+End

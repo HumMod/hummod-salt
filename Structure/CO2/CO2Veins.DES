@@ -1,0 +1,112 @@
+HumMod / CO2Veins
+
+Created : 29-Mar-05
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<structure><name> CO2Veins </name>
+
+<variables>
+
+<var><name> [HCO3(mEq/L)] </name></var>
+<var><name> Pressure </name></var>
+<var><name> Mass </name></var>
+
+</variables>
+
+<equations>
+
+<stabledelay>
+  <name> [HCO3] </name>
+  <outputname> [HCO3] </outputname>
+  <initialval> 0.0248 </initialval>0.0256
+  <inputname> [HCO3-SteadyState] </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Change </dervname>
+  <errorlim> 0.000256 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stabledelay>
+
+</equations>
+
+<definitions>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [HCO3(mEq/L)] </name>
+  <val> 1000.0 * [HCO3] </val>
+</def>
+
+<copy>
+  <from> [HCO3] </from>
+  <to> CO2Blood.[HCO3]-Inverse </to>
+</copy>
+
+<copy>
+  <from> BloodIons.[SID] </from>
+  <to> CO2Blood.[SID]-Inverse </to>
+</copy>
+
+<call> CO2Blood.[HCO3]_To_pCO2 </call>
+
+<copy>
+  <from> CO2Blood.pCO2-Inverse </from>
+  <to> Pressure </to>
+</copy>
+
+<def>
+  <name> Mass </name>
+  <val> [HCO3] * VeinsVol.Vol </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> K </name>
+  <val> 5.0 </val>
+</def>
+
+<def>
+  <name> DxMax </name>
+  <val> INVERT K </val>
+</def>
+
+<conditional>
+  <name> [HCO3-SteadyState] </name>
+  <test> CardiacOutput.Flow GT 0.0 </test>
+  <true> CO2Artys.[HCO3] + ( CO2Total.Inflow(mMol/Min) / CardiacOutput.Flow ) </true>
+  <false> 0.0 </false>
+</conditional>
+
+</block>
+
+<block><name> MapperBlock </name>
+
+<copy>
+  <from> Pressure </from>
+  <to> CO2Blood.pCO2 </to>
+</copy>
+
+<copy>
+  <from> BloodIons.[SID] </from>
+  <to> CO2Blood.[SID] </to>
+</copy>
+
+<call> CO2Blood.pCO2_To_[HCO3] </call>
+
+<copy>
+  <from> CO2Blood.[HCO3] </from>
+  <to> [HCO3] </to>
+</copy>
+
+</block>
+
+</definitions>
+</structure>
+
+End

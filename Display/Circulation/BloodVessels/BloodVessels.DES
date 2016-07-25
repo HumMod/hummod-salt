@@ -1,0 +1,18 @@
+HumMod / BloodVessels
+
+Created : 24-Apr-05
+Revised : 2013-01-28
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Circulation\BloodVessels\ ?>
+
+<?include Arteries\Arteries.DES ?>
+<?include Lungs\Lungs.DES ?>
+<?include Veins\Veins.DES ?>
+
+<?include VascularConductance\VascularConductance.DES ?>
+<?include VascularCompliance\VascularCompliance.DES ?>
+
+End

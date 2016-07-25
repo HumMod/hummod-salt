@@ -1,0 +1,91 @@
+HumMod / Drugs
+
+Created : 21-Oct-04
+Revised : 2013-03-15
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\ ?>
+
+<?include Acetazolamide\Acetazolamide.DES ?>
+<?include Atropine\Atropine.DES ?>
+<?include Chlorothiazide\Chlorothiazide.DES ?>
+<?include Digoxin\Digoxin.DES ?>
+<?include Furosemide\Furosemide.DES ?>
+<?include Midodrine\Midodrine.DES ?>
+<?include Spironolactone\Spironolactone.DES ?>
+<?include Propranolol\Propranolol.DES ?>
+<?include Isoproterenol\Isoproterenol.DES ?>
+<?include Phenylephrine\Phenylephrine.DES ?>
+<?include Reserpine\Reserpine.DES ?>
+<?include Morphine\Morphine.DES ?>
+<?include Narcan\Narcan.DES ?>
+
+<structure><name> Drugs </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> Acetazolamide.Parms </call>
+  <call> Chlorothiazide.Parms </call>
+  <call> Digoxin.Parms </call>
+  <call> Furosemide.Parms </call>
+  <call> Midodrine.Parms </call>
+  <call> Spironolactone.Parms </call>
+  <call> Propranolol.Parms </call>
+  <call> Phenylephrine.Parms </call>
+  <call> Reserpine.Parms </call>
+  <call> Atropine.Parms </call>
+  <call> Morphine.Parms </call>
+  <call> Narcan.Parms </call>
+
+</block>
+
+<block><name> CalcConc </name>
+  <call> Acetazolamide.CalcConc </call>
+  <call> Chlorothiazide.CalcConc </call>
+  <call> Digoxin.CalcConc </call>
+  <call> Furosemide.CalcConc </call>
+  <call> Midodrine.CalcConc </call>
+  <call> Spironolactone.CalcConc </call>
+  <call> Propranolol.CalcConc </call>
+  <call> Isoproterenol.CalcConc </call>
+  <call> Phenylephrine.CalcConc </call>
+  <call> Reserpine.CalcConc </call>
+  <call> Atropine.CalcConc </call>
+  <call> Morphine.CalcConc </call>
+  <call> Narcan.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> Acetazolamide.Dervs </call>
+  <call> Chlorothiazide.Dervs </call>
+  <call> Digoxin.Dervs </call>
+  <call> Furosemide.Dervs </call>
+  <call> Midodrine.Dervs </call>
+  <call> Spironolactone.Dervs </call>
+  <call> Propranolol.Dervs </call>
+  <call> Isoproterenol.Dervs </call>
+  <call> Phenylephrine.Dervs </call>
+  <call> Reserpine.Dervs </call>
+  <call> Atropine.Dervs </call>
+  <call> Morphine.Dervs </call>
+  <call> Narcan.Dervs </call>
+</block>
+
+<block><name> Wrapup </name>
+  <call> Acetazolamide.Wrapup </call>
+  <call> Chlorothiazide.Wrapup </call>
+  <call> Digoxin.Wrapup </call>
+  <call> Midodrine.Wrapup </call>
+  <call> Spironolactone.Wrapup </call>
+  <call> Propranolol.WrapUp </call>
+  <call> Phenylephrine.Wrapup </call>
+  <call> Reserpine.Wrapup </call>
+</block>
+
+</definitions>
+</structure>
+
+End

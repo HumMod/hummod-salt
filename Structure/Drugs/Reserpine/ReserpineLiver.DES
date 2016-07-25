@@ -1,0 +1,52 @@
+HumMod / FurosemideKidney
+
+Created : 05-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> ReserpineLiver </name>
+
+<variables>
+
+<var>
+  <name> Loss </name>
+</var>
+
+<var>
+  <name> PortalMass </name>
+</var>
+
+<var>
+  <name> [PortalMass] </name>
+</var>
+
+<var>
+  <name> [PortalMass(uMol)] </name>
+</var>
+
+<constant>
+  <name> K </name>
+  <val> .0001 </val>
+</constant>
+<!-- this is inconsistent; ordinary metabolism is primarily foecal....-->
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Loss </name>
+  <val> K * GITract-Flow.BloodFlow * ReserpinePool.[Reserpine] / 1000  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

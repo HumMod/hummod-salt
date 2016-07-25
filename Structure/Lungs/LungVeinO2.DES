@@ -1,0 +1,63 @@
+HumMod / LungVeinO2
+
+Created : 30-Mar-05
+Revised : 2012-10-30
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LungVeinO2 </name>
+
+<variables>
+
+<var><name> [O2] </name></var>
+<var><name> PO2 </name></var>
+<var><name> Saturation </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<conditional>
+  <name> [O2] </name>
+  <test> LungBloodFlow.Total GT 0.0 </test>
+  <true>
+      ( ( LungBloodFlow.AlveolarVentilated
+    * Lung_O2.[Capy] )
+    + ( LungBloodFlow.TotalShunt
+    * LungArtyO2.[O2] ) )
+    / LungBloodFlow.Total
+  </true>
+  <false> 0.0 </false>
+</conditional>
+
+<copy>
+  <from> [O2] </from>
+  <to> HgbTissue.[O2] </to>
+</copy>
+
+<call> HgbTissue.O2ToPO2 </call>
+
+<copy>
+  <from> HgbTissue.pO2 </from>
+  <to> PO2 </to>
+</copy>
+
+<copy>
+  <from> [O2] </from>
+  <to> HgbConc.[O2] </to>
+</copy>
+
+<call> HgbConc.Sat(%) </call>
+
+<copy>
+  <from> HgbConc.Sat(%) </from>
+  <to> Saturation </to>
+</copy>
+
+</block>
+</definitions>
+</structure>
+
+End

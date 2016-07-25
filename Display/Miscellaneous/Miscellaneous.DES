@@ -1,0 +1,16 @@
+HumMod / Miscellaneous
+
+Created : 2011-07-26
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Miscellaneous\ ?>
+
+<?include CarbonMonoxide\CarbonMonoxide.DES ?>
+<?include CellProtein\CellProtein.DES ?>
+<?include Orthostasis\Orthostasis.DES ?>
+<?include Torso\Torso.DES ?>
+
+End

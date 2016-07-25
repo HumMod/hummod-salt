@@ -1,0 +1,161 @@
+
+
+HumMod / LeftGlomerulusFiltrate
+
+Created : 09-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> LeftGlomerulusFiltrate </name>
+
+<variables>
+
+<var><name> GFRxNormal </name></var>
+<constant><name> GFRNORMAL </name><val> 55.5 </val></constant>
+<var><name> AnionAdjustment </name></var>
+<var><name> CationAdjustment </name></var>
+<var><name> KAdjustment </name></var>
+<var><name> Pressure </name></var>
+<var><name> FiltrationFraction </name></var>
+<var><name> EffCOP </name></var>
+<var><name> [EffProtein] </name></var>
+<var><name> PressureGradient </name></var>
+<parm><name> Perm </name><val> 8.89 </val></parm>
+<var><name> Kf </name></var>
+<var><name> LeftProximalTubule_Pressure </name></var>
+<parm><name> LeftProximalTubule_Conductance </name><val> 2.55e-6 </val></parm>3.06
+<parm><name> PelvisPressure </name><val> 0.0 </val></parm>
+<var><name> SNGFR </name></var>
+
+
+</variables>
+
+<equations>
+
+<impliciteq>
+  <name> GFR </name>
+  <startname> GFR </startname>
+  <initialval> 55.55 </initialval>
+  <endname> EndGFR </endname>
+  <errorlim> 0.555 </errorlim>
+  <searchmin> 0.0 </searchmin>
+  <searchmaxname> SearchMax </searchmaxname>
+</impliciteq>
+
+</equations>
+
+<definitions>
+
+<block><name> AdjustIons </name>
+
+<def><name> KAdjustment </name>
+  <val> ( BloodIons.Cations - BloodIons.AnionsLessProtein )  / ( BloodIons.Cations + BloodIons.AnionsLessProtein ) </val>
+</def>
+
+<def><name> AnionAdjustment </name><val> 1.0 + KAdjustment </val></def>
+<def><name> CationAdjustment </name><val> 1.0 - KAdjustment </val></def>
+
+</block>
+
+<block><name> Calc </name>
+
+
+
+<call> AdjustIons </call>
+
+<if>
+  <test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+  <true>
+<def><name> Pressure </name><val> LeftKidney-Pressure.VeinPressure + ( LeftKidney-Flow.BloodFlow  / LeftKidney-EfferentArtery.Conductance ) </val></def>
+</true>
+<false>
+<def><name> Pressure </name><val> 0 </val></def>
+</false>
+</if>
+
+<if>
+  <test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+  <true>
+    <def><name> Kf </name><val> LeftKidney-NephronCount.Filtering(xNormal) * Perm </val></def></true>
+<false>
+<def><name> Kf </name><val> 0 </val></def>
+</false>
+</if>
+
+
+<def><name> SearchMax </name>
+  <val>
+    ( Kf * ( Pressure - PlasmaProtein.COP - PelvisPressure ) )
+    MIN
+    ( 0.8 * LeftKidney-Flow.PlasmaFlow )
+  </val>
+</def>
+
+<if>
+  <test> SearchMax LE 0.0 </test>
+  <true><call> Failed </call><exitblock/></true>
+</if>
+
+<implicitmath><name> GFR </name>
+
+<def><name> FiltrationFraction </name><val> GFR / LeftKidney-Flow.PlasmaFlow </val></def>
+<def><name> [EffProtein] </name><val> PlasmaProtein.[Protein] / ( 1.0 - FiltrationFraction ) </val></def>
+<def><name> EffCOP </name><val> PlasmaProtein.COP / ( 1 - FiltrationFraction ) </val></def>
+<def><name> SNGFR </name><val> ( GFR / LeftKidney-NephronCount.NumFiltering ) </val></def>
+<def><name> LeftProximalTubule_Pressure </name><val> PelvisPressure + ( SNGFR / LeftProximalTubule_Conductance ) </val></def>
+<def><name> PressureGradient </name><val> Pressure - EffCOP - LeftProximalTubule_Pressure </val></def>
+<def><name> EndGFR </name><val> Kf * PressureGradient </val></def>
+
+</implicitmath>
+
+<def><name> GFRxNormal </name><val> GFR / GFRNORMAL </val></def>
+<call> LeftGlomerulusBicarbonate.Calc </call>
+<call> LeftGlomerulusCalcium.Calc </call>
+<call> LeftGlomerulusChloride.Calc </call>
+<call> LeftGlomerulusCreatinine.Calc </call>
+<call> LeftGlomerulusGlucose.Calc </call>
+<call> LeftGlomerulusKetoacid.Calc </call>
+<call> LeftGlomerulusPhosphate.Calc </call>
+<call> LeftGlomerulusProtein.Calc </call>
+<call> LeftGlomerulusSodium.Calc </call>
+<call> LeftGlomerulusSulphate.Calc </call>
+<call> LeftGlomerulusUrea.Calc </call>
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> GFR </name><val> 0.0 </val></def>
+<def><name> Kf </name><val> 0.0 </val></def>
+<def><name> SNGFR </name><val> 0 </val></def>
+<def><name> EndGFR </name><val> 0.0 </val></def>
+<def><name> GFRxNormal </name><val> 0.0 </val></def>
+<def><name> FiltrationFraction </name><val> UNDEFINED </val></def>
+
+<def><name> [EffProtein] </name><val> PlasmaProtein.[Protein] / ( 1.0 - FiltrationFraction ) </val></def>
+<def><name> EffCOP </name><val> PlasmaProtein.COP / ( 1 - FiltrationFraction ) </val></def>
+
+<def><name> LeftProximalTubule_Pressure </name><val> 0.0 </val></def>
+<def><name> PressureGradient </name><val> 0.0 </val></def>
+
+<call> LeftGlomerulusBicarbonate.Failed </call>
+<call> LeftGlomerulusCalcium.Failed </call>
+<call> LeftGlomerulusChloride.Failed </call>
+<call> LeftGlomerulusCreatinine.Failed </call>
+<call> LeftGlomerulusGlucose.Failed </call>
+<call> LeftGlomerulusKetoacid.Failed </call>
+<call> LeftGlomerulusPhosphate.Failed </call>
+<call> LeftGlomerulusProtein.Failed </call>
+<call> LeftGlomerulusSodium.Failed </call>
+<call> LeftGlomerulusSulphate.Failed </call>
+<call> LeftGlomerulusUrea.Failed </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

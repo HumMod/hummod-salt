@@ -1,0 +1,105 @@
+HumMod | Pool
+
+Created : 2012-01-29
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 23.6 </high>
+   <wide> 30.0 </wide>
+   <title> Pool </title>
+
+<structurename> VitaminD3 </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Conc(nG/mL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Conc (nG/mL)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Conc(nG/mL)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 20 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> [Conc(nMol/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Conc (nMol/L)] </label>
+</showvalue>
+
+<radiobuttons>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> ClampSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp Switch </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Clamp </name>
+  <repeat><reps> 100 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 12.6 </row><col> 1.0 </col>
+  <name> ClampSetting </name>
+  <listname> Clamp </listname>
+  <label> Setting </label>
+</slidebar>
+
+<showvalue>
+   <row> 14.0 </row><col> 1.0 </col>
+   <name> [25-H]Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [25-H]Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 15.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> VitaminD(25-Hydroxy).[Conc(nG/mL)] </name>
+    <label> [25-H] </label>
+    <scale><min> 0 </min><max> 40 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> [25-H]Effect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 22.0 </row><col> 1.0 </col>
+   <name> VitaminD(25-Hydroxy).[Conc(nG/mL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [25-H] </label>
+</showvalue>
+
+</groupbox>
+
+End

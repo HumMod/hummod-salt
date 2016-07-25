@@ -1,0 +1,37 @@
+HumMod / BloodFlow
+
+Created : 2012-11-02
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> PortalVein-BloodFlow </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> GICirculation </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> PortalVein | BloodFlow </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\PortalVein\BloodFlow\ ?>
+
+<?include Box.DES ?>
+
+</panel>
+
+End

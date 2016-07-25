@@ -1,0 +1,43 @@
+HumMod / K
+
+Created : 21-Oct-04
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\K\ ?>
+
+<?include KCell.DES ?>
+<?include KPool.DES ?>
+<?include KMembrane.DES ?>
+<?include KFluxToCell.DES ?>
+<?include KFluxToPool.DES ?>
+<?include KAldoEffect.DES ?>
+
+<structure><name> K </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> KAldoEffect.Parms </call>
+</block>
+
+<block><name> Conc </name>
+  <call> KPool.Conc </call>
+  <call> KCell.Conc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> KAldoEffect.Dervs </call>
+  <call> KFluxToCell.Dervs </call>
+  <call> KFluxToPool.Dervs </call>
+  <call> KMembrane.Dervs </call>
+  <call> KPool.Dervs </call>
+  <call> KCell.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

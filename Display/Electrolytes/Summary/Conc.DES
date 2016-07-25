@@ -1,0 +1,158 @@
+HumMod / Conc
+
+Created : 2012-03-11
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 11.6 </high>
+   <wide> 37.0 </wide>
+
+<showtable>
+<row> 1.0 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 12 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Electrolytes </textcell>
+<textcell> -------------------------------- </textcell>
+<textcell> [Na+] </textcell>
+<textcell> [K+ Pool] </textcell>
+<textcell> [K+ Cell] </textcell>
+<textcell> [Cl-] </textcell>
+<textcell> [Ca++]  </textcell>
+<textcell> [PO4--]  </textcell>
+<textcell> [SO4--] </textcell>
+<textcell> [Lac-]  </textcell>
+
+</column>
+
+<column>
+<indent> 13 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Initial </textcell>
+<textcell> -------- </textcell>
+
+<valuecell>
+  <name>  NaPool.[Na+(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> KPool.[K+(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> KCell.[K+(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ClPool.[Cl-(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Ca.[Conc(mMol/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> PO4Pool.[PO4--(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> SO4Pool.[SO4--(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LacPool.[Lac-(mEq/L)-Initial] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 20 </indent>
+<fieldwidth> 7.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Current </textcell>
+<textcell> ------------ </textcell>
+
+<valuecell>
+  <name> NaPool.[Na+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> KPool.[K+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> KCell.[K+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> ClPool.[Cl-(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Ca.[Conc(mMol/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> PO4Pool.[PO4--(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> SO4Pool.[SO4--(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LacPool.[Lac-(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 27 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Units </textcell>
+<textcell> ------------ </textcell>
+<textcell> mEq/L </textcell>
+<textcell> mEq/L </textcell>
+<textcell> mEq/L </textcell>
+<textcell> mEq/L </textcell>
+<textcell> mMol/L </textcell>
+<textcell> mEq/L </textcell>
+<textcell> mEq/L </textcell>
+<textcell> mEq/L </textcell>
+
+</column>
+
+</showtable>
+
+</groupbox>
+
+End

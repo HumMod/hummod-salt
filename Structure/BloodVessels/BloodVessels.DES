@@ -1,0 +1,63 @@
+HumMod / BloodVessels
+
+Created : 16-May-05
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\BloodVessels\ ?>
+
+<?include LeftAtrium.DES ?>
+<?include LeftVentricle.DES ?>
+<?include PulmArty.DES ?>
+<?include PulmCapys.DES ?>
+<?include PulmVeins.DES ?>
+<?include RightAtrium.DES ?>
+<?include RightVentricle.DES ?>
+<?include SplanchnicVeins.DES ?>
+<?include SystemicArtys.DES ?>
+<?include SystemicVeins.DES ?>
+
+<?include PulmVessels.DES ?>
+
+<structure><name> BloodVessels </name>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> CalcPressure(1) </name>
+  <call> RightAtrium.CalcPressure </call>
+  <call> LeftAtrium.CalcPressure </call>
+  <call> SystemicArtys.CalcPressure </call>
+</block>
+
+<block><name> CalcPressure(2) </name>
+  <call> SystemicVeins.CalcPressure </call>
+  <call> SplanchnicVeins.CalcPressure </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> RightVentricle.Dervs </call>
+  <call> LeftVentricle.Dervs </call>
+
+  <call> SystemicVeins.Dervs </call>
+  <call> SplanchnicVeins.Dervs </call>
+
+  <call> RightAtrium.Dervs </call>
+
+  <call> PulmVessels.Dervs </call>
+  <call> PulmVeins.Dervs </call>
+  <call> PulmCapys.Dervs </call>
+  <call> PulmArty.Dervs </call>
+
+  <call> LeftAtrium.Dervs </call>
+  <call> SystemicArtys.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

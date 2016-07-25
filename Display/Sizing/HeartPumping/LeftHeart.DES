@@ -1,0 +1,118 @@
+HumMod / LeftHeart
+
+Created : 2013-02-26
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 18.0 </high>
+   <wide> 30.0 </wide>
+   <title> Left Heart </title>
+
+<structurename> Sizing-HeartPumping-Left-Diastole </structurename>
+
+<label>
+   <row> 1.4 </row><col> 1 </col>
+   <text> Diastole </text>
+</label>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> EDV </name>
+   <format><decimal> 1 </decimal></format>
+   <label> EDV </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.8 </row><col> 1.0 </col>
+   <name> TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> TMP </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.8 </row><col> 1.0 </col>
+   <name> Slope </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Slope </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.8 </row><col> 1.0 </col>
+   <name> BreakVolume </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Break Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.8 </row><col> 1.0 </col>
+   <name> BreakPressure-Basic </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Break Pressure Basic </label>
+</showvalue>
+
+<structurename> Sizing-HeartPumping-Left-Systole </structurename>
+
+<label>
+   <row> 8.2 </row><col> 1 </col>
+   <text> Systole </text>
+</label>
+
+<showvalue>
+   <row> 9.6 </row><col> 1.0 </col>
+   <name> ESV </name>
+   <format><decimal> 1 </decimal></format>
+   <label> ESV </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.6 </row><col> 1.0 </col>
+   <name> TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> TMP </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.6 </row><col> 1.0 </col>
+   <name> Slope </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Slope </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> Passive-TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Passive TMP </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> Active-TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Active TMP </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.6 </row><col> 1.0 </col>
+   <name> K-Basic </name>
+   <format><decimal> 1 </decimal></format>
+   <label> K Basic </label>
+</showvalue>
+
+<structurename> Sizing-HeartPumping-Left-ContractileProtein </structurename>
+
+<showvalue>
+   <row> 16.4 </row><col> 1.0 </col>
+   <name> Protein-Base </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Protein-Base </label>
+</showvalue>
+
+</groupbox>
+
+End

@@ -1,0 +1,54 @@
+HumMod / Gender
+
+Created : 2012-03-10
+Revised : 2012-03-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Context-Gender </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Context | Gender </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Context-Gender </structurename>
+
+<checkmark>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> IsMale </name>
+   <label> Male </label>
+</checkmark>
+
+<checkmark>
+   <row> 3.4 </row><col> 1.0 </col>
+   <name> IsFemale </name>
+   <label> Female </label>
+</checkmark>
+
+<radiobuttons>
+  <row> 5.0 </row><col> 1.0 </col>
+  <name> Index </name>
+  <listname> Common.Gender </listname>
+  <label> Gender </label>
+</radiobuttons>
+
+</panel>
+
+End

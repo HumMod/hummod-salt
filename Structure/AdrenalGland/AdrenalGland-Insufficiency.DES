@@ -1,0 +1,31 @@
+HumMod / AdrenalGland-Size
+
+Created : 2012-01-28
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> AdrenalGland-Insufficiency </name>
+
+<variables>
+
+<parm><name> CortexAtrophy </name><val> 0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<onjustchanged><name> CortexAtrophy </name>
+<def><name> AdrenalGland-Size.FibrosisMassPercent </name><val> 100 * CortexAtrophy </val></def>
+<call> AdrenalGland-Size.Parms </call>
+
+</onjustchanged>
+</block>
+
+</definitions>
+</structure>
+
+End

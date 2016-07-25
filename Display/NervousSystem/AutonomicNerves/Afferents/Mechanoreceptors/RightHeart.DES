@@ -1,0 +1,88 @@
+HumMod / RightHeart
+
+Created : 08-Feb-06
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structurename> Mechanoreceptors </structurename>
+
+<groupbox>
+   <row> 18.4 </row>
+   <col> 1.0 </col>
+   <high> 19.4 </high>
+   <wide> 30.0 </wide>
+   <title> Right Heart </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightHeartFiring </name>
+  <label> Firing Rate </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightHeartFiring </name>
+      <label> Rate </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 10 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showcurve>
+  <row> 9.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+
+  <xaxis>
+    <name> RightHeartPumping-Systole.ESV </name>
+    <label> End Systolic Volume </label>
+    <scale><min> 0 </min><max> 60 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Rate </label>
+    <scale><min> 0 </min><max> 20 </max></scale>
+  </yaxis>
+
+  <curvename> RightHeartFiring </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 16.8 </row><col> 1.0 </col>
+  <name> RightHeartPumping-Systole.ESV </name>
+  <label> End Systolic Volume </label>
+  <format><integer/></format>
+</showvalue>
+
+<showvalue>
+  <row> 17.8 </row><col> 1.0 </col>
+  <name> RightHeart-Function.Failed </name>
+  <label> Heart Failed? </label>
+  <noequals/>
+  <format><list> Common.NoYes </list></format>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Firing starts at low end-systolic volume. </line>
+  <line> Firing stops when heart fails. </line>
+</infobutton>
+
+</groupbox>
+
+End

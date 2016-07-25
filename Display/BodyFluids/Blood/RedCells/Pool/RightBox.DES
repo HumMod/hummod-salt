@@ -1,0 +1,67 @@
+HumMod / RightBox
+
+Created : 2013-02-17
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 8.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> RBCVol </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1 </col>
+   <name> RBCVol.Vol </name>
+   <format> <integer/> </format>
+   <label> Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1 </col>
+   <name> RBCSolids.Mass </name>
+   <format> <integer/> </format>
+   <label> Solids </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.8 </row><col> 3 </col>
+   <name> RBCSolids.FractSolids </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Fraction </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.2 </row><col> 1.0 </col>
+   <name> RBCH2O.Vol </name>
+   <format> <integer/> </format>
+   <label> H2O </label>
+</showvalue>
+
+<slidebar>
+  <row> 6.6 </row><col> 3 </col>
+  <name> RBCH2O.FractH2O </name>
+  <listname> Common.Fraction </listname>
+  <label> Fraction </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Units are mL. </line>
+  <line>  </line>
+  <line> NORMAL VALUES </line>
+  <line>  </line>
+  <line> Solids - 820 </line>
+  <line> Fraction Solids - 0.34 </line>
+  <line>  </line>
+  <line> H2O - 1580 </line>
+</infobutton>
+
+</groupbox>
+
+End

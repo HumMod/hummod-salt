@@ -1,0 +1,68 @@
+HumMod / Sizing-HeartPumping-Right-Diastole
+
+Created : 2013-02-26
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-HeartPumping-Right-Diastole </name>
+
+<variables>
+
+<var><name> TMP </name></var>
+<var><name> EDV </name></var>
+
+<var><name> Slope </name></var>
+<var><name> BreakPressure-Basic </name></var>
+<var><name> BreakVolume </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> TMP </name>
+  <val> Sizing-Pressures.RightVentricle-EDP-TMP </val>
+</def>
+
+<def>
+  <name> EDV </name>
+  <val> Sizing-HeartChambers.RightHeart-EDV </val>
+</def>
+
+<def>
+  <name> Slope </name>
+  <val> TMP / EDV </val>
+</def>
+
+<def>
+  <name> BreakVolume </name>
+  <val> 1.2 * EDV </val>
+</def>
+
+<def>
+  <name> BreakPressure-Basic </name>
+  <val> Slope * BreakVolume </val>
+</def>
+
+<def>
+  <name> RightHeartPumping-Diastole.Initial-BreakVolume </name>
+  <val> BreakVolume </val>
+</def>
+
+<def>
+  <name> RightHeartPumping-Diastole.Initial-BreakPressure-Basic </name>
+  <val> BreakPressure-Basic </val>
+</def>
+
+<call> RightHeartPumping-Diastole.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End
