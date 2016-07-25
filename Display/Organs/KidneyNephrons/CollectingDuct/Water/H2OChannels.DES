@@ -1,0 +1,204 @@
+HumMod / H2OChannels
+
+Created : 2013-03-18
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 17.6 </row>
+   <col> 1.0 </col>
+   <high> 20.6 </high>
+   <wide> 30.0 </wide>
+   <title> H2O Channels </title>
+
+<structurename> CollectingDuct_H2OChannels </structurename>
+
+
+<showtable>
+<row> 1.4 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 9 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Total </textcell>
+<textcell> Active </textcell>
+<textcell> Inactive </textcell>
+
+</column>
+
+<column>
+<indent> 9.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.Total </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.Active </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.Inactive </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 9.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.Total </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.Active </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.Inactive </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<showgraph>
+  <row> 4.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name><label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar><name> RightCollectingDuct_H2OChannels.Inactive </name><nolabel/><linecolor> BLUE </linecolor></yvar>
+    <yvar><name> LeftCollectingDuct_H2OChannels.Inactive </name><nolabel/><linecolor> GREEN </linecolor></yvar>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showtable>
+<row> 12.4 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 9 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Change </textcell>
+<textcell> Gain </textcell>
+<textcell> InactivateK </textcell>
+<textcell> Channels </textcell>
+<textcell> Loss </textcell>
+<textcell> ReactivateK </textcell>
+
+</column>
+
+<column>
+<indent> 9.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.Change </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.Gain </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.InactivateK </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2O.Reab </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.Loss </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_H2OChannels.ReactivateK </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 17.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.Change </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.Gain </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.InactivateK </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2O.Reab </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.Loss </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_H2OChannels.ReactivateK </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

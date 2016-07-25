@@ -1,0 +1,60 @@
+HumMod / Symptoms
+
+Created : 02-Apr-09
+Revised : 2013-02-05
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<maplist>
+  <name> Symptoms.Number </name>
+  <map><val>  0 </val><img> - I'm feeling OK. - </img></map>
+  <map><val>  1 </val><img> - Your patient is not responding. - </img></map>
+  <map><val>  2 </val><img> - I've got a bad chest pain. - </img></map>
+  <map><val>  3 </val><img> - I can't get enough air. - </img></map>
+  <map><val>  4 </val><img> - I get tired real easy. - </img></map>
+  <map><val>  5 </val><img> - I'm confused. - </img></map>
+  <map><val>  6 </val><img> - I'm dizzy - </img></map>
+  <map><val>  7 </val><img> - I've got swelling in my head. - </img></map>
+  <map><val>  8 </val><img> - I've got swelling in my gut. - </img></map>
+  <map><val>  9 </val><img> - I've got swelling in my feet. - </img></map>
+  <map><val> 10 </val><img> - My urine gives me trouble. - </img></map>
+  <map><val> 11 </val><img> - I'm at work. - </img></map>
+  <map><val> 12 </val><img> - I'm in aerobics. - </img></map>
+  <map><val> 13 </val><img> - I'm on the bike. - </img></map>
+  <map><val> 14 </val><img> - I'm on the treadmill. - </img></map>
+  <map><val> 15 </val><img> - I can't go on exercising. - </img></map>
+  <map><val> 16 </val><img> - Heart is asystole/can't fibrillate - </img></map>
+  <map><val> 17 </val><img> - Heart is fibrillating! - </img></map>
+  <map><val> 18 </val><img> - Flat ECG - </img></map>
+  <map><val> 19 </val><img> - Your patient is convulsing - </img></map>
+  <map><val> 20 </val><img> - Must breathe again - </img></map>
+  <map><val> 21 </val><img> - I'm getting nauseated - </img></map>
+  <map><val> 22 </val><img> - Heart is beating again- </img></map>
+  <map><val> 23 </val><img> - Still no heartbeat - </img></map>
+  <map><val> 24 </val><img> - Ovulation just occured - </img></map>
+</maplist>
+
+
+<showvalue>
+  <row> 6.4 </row><col> 1.0 </col>
+  <name> Symptoms.Number </name>
+  <nolabel/>
+  <format>
+    <list> Symptoms.Number </list>
+    <fieldwidth> 26 </fieldwidth>
+  </format>
+</showvalue>
+
+<!--
+<showvalue>
+  <row> 7.0 </row><col> 1.0 </col>
+  <name> Symptoms.TestElement </name>
+</showvalue>
+
+<showvalue>
+  <row> 7.0 </row><col> 31.0 </col>
+  <name> Symptoms.ExhaustedQ </name>
+</showvalue>
+-->
+End

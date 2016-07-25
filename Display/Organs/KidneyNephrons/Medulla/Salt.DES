@@ -1,0 +1,172 @@
+HumMod / Salt
+
+Created : 29-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 14.4 </row>
+   <col> 1.0 </col>
+   <high> 21.2 </high>
+   <wide> 30.0 </wide>
+   <title> Salt </title>
+
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightMedullaNa.Osmolarity </name>
+  <format><decimal> 1 </decimal></format>
+   <label> Right [Osm (mOsm/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftMedullaNa.Osmolarity </name>
+  <format><decimal> 1 </decimal></format>
+   <label> Left [Osm (mOsm/L)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 8 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightMedullaNa.Osmolarity </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftMedullaNa.Osmolarity </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1000 </max></scale>
+  </yaxis>
+</showgraph>
+
+
+<showtable>
+<row> 12.8 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Mass </textcell>
+<textcell> Change</textcell>
+<textcell> CD reab </textcell>
+<textcell> Washup </textcell>
+<textcell> CC eff </textcell>
+<textcell> Medula Vol </textcell>
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+
+<valuecell>
+  <name> LeftMedullaNa.Mass </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftMedullaNa.Change </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftCollectingDuct_Na.Reab </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftMedullaNa.Washup  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftMedullaNa.CCEfficiency </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftMedulla.Volume  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 15.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightMedullaNa.Mass </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightMedullaNa.Change </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightCollectingDuct_Na.Reab </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightMedullaNa.Washup  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightMedullaNa.CCEfficiency </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightMedulla.Volume  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Typical values are </line>
+  <line>  </line>
+  <line> [Osm (mOsm/L)] = 700.0 </line>
+  <line>  </line>
+  <line> Na+ Mass = 11.0 mEq </line>
+  <line> Coll. Duct Flux = 0.28 mEq / Min </line>
+  <line> Washup = 0.28 mEq / Min </line>
+  <line> Countercurrent Efficiency = 97 % </line>
+  <line>  </line>
+  <line> Volume = 30.0 </line>
+</infobutton>
+
+</groupbox>
+
+End

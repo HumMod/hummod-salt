@@ -1,0 +1,51 @@
+HumMod | VitaminD(25-Hydroxy).TXT
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Other names : calcifediol, calcidiol
+
+MW : 400.6
+Remove H+ and add OH-. MMW increases by 16.
+
+[Conc] = 20 nG/mL or 50 nMol/L
+
+NG/ML_TO_NMOL/L = 2.5
+
+Volume distribution : 15000 (ECFV)
+
+Tau ~ 18 days or 26000 minutes, which is much,
+much longer than 1,25-D.
+
+K = 1/26000 or 0.000039 which goes to 0.039
+with uG.
+
+Mass is 300 uG or 750 nMol
+
+Degradation is Mass * K = 11.7 nG/Min or 29.2
+nMol/Min.
+
+Compare this rate to 1,25-D and it is clear
+most of the rate is due to degradation and
+not hydoxylation.
+
+
+With exp(-K*t) when t = 1/K, we have exp(-1)
+which is 0.37. The exponential is 63% of the
+way to completion, with 37% remaining. This
+is the time constant (tau).
+
+The half-time is the time when an exponential
+is 50% of the way to completion.
+
+T 1/2 = 0.69 * Tau
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

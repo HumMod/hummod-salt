@@ -1,0 +1,77 @@
+HumMod / ECFV-ICFV
+
+Created : 2013-03-02
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 10.6 </high>
+   <wide> 30.0 </wide>
+   <title> ECFV - ICFV </title>
+
+<structurename> Sizing-BodyH2O </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> Core </name>
+  <format><integer/></format>
+  <label> Core </label>
+</showvalue>
+
+<structurename> Sizing-ECFV </structurename>
+
+<showvalue>
+  <row> 2.8 </row><col> 1 </col>
+  <name> Vol </name>
+  <format><integer/></format>
+  <label> ECFV </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.8 </row><col> 3 </col>
+  <name> FractBodyH2O </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Fraction </label>
+</showvalue>
+
+<structurename> Sizing-ICFV </structurename>
+
+<showvalue>
+  <row> 5.2 </row><col> 1 </col>
+  <name> Vol </name>
+  <format><integer/></format>
+  <label> ICFV </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.2 </row><col> 3 </col>
+  <name> FractBodyH2O </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Fraction </label>
+</showvalue>
+
+<structurename> Sizing-InterstitialWater </structurename>
+
+<showvalue>
+  <row> 7.6 </row><col> 1 </col>
+  <name> Vol </name>
+  <format><integer/></format>
+  <label> IFV </label>
+</showvalue>
+
+<structurename> Sizing-CellH2O </structurename>
+
+<showvalue>
+  <row> 9.0 </row><col> 1 </col>
+  <name> Vol </name>
+  <format><integer/></format>
+  <label> Cell H2O </label>
+</showvalue>
+
+</groupbox>
+
+End

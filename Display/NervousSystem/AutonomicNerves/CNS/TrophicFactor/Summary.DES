@@ -1,0 +1,103 @@
+HumMod / Summary
+
+Created : 08-Feb-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structurename> CNSTrophicFactor </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 20.8 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Effect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Effect </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Effect </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<repeatlist>
+  <name> Tau </name>
+  <repeat><reps> 24 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Delay </label>
+</slidebar>
+
+<showvalue>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> SteadyState </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Steady State </label>
+</showvalue>
+
+<showcurve>
+  <row> 12.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 10 </leftmargin>
+
+  <xaxis>
+    <name> Brain-Function.Effect </name>
+    <label> Brain Function </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Steady State </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> SteadyState </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 19.2 </row><col> 1.0 </col>
+  <name> Brain-Function.Effect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Brain Function </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> A trophic factor from the CNS appears to </line>
+  <line> help maintain normal sympathetic activity. </line>
+  <line> When the brain fails, this trophic factor </line>
+  <line> declines slowly to zero. The delay parameter </line>
+  <line> determines the rate of decline. </line>
+</infobutton>
+
+</groupbox>
+
+End

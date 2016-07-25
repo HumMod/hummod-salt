@@ -1,0 +1,82 @@
+HumMod / InferiorVenaCava
+
+Created : 2012-02-09
+Revised : 2012-02-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> InferiorVenaCava </name>
+
+<variables>
+
+<var><name> TotalFlow </name></var>
+
+<var><name> BoneFlow </name></var>
+<var><name> FatFlow </name></var>
+<var><name> HepaticVeinFlow </name></var>
+<var><name> KidneyFlow </name></var>
+<var><name> OtherTissueFlow </name></var>
+<var><name> SkeletalMuscleFlow </name></var>
+<var><name> SkinFlow </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> BoneFlow </name>
+  <val> VenaeCava.InferiorFraction * Bone-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> FatFlow </name>
+  <val> VenaeCava.InferiorFraction * Fat-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> HepaticVeinFlow </name>
+  <val> HepaticVein.BloodFlow </val>
+</def>
+
+<def>
+  <name> KidneyFlow </name>
+  <val> Kidney-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> OtherTissueFlow </name>
+  <val> VenaeCava.InferiorFraction * OtherTissue-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> SkeletalMuscleFlow </name>
+  <val> VenaeCava.InferiorFraction * SkeletalMuscle-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> SkinFlow </name>
+  <val> VenaeCava.InferiorFraction * Skin-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> TotalFlow </name>
+  <val> 
+      BoneFlow
+    + FatFlow
+    + HepaticVeinFlow
+    + KidneyFlow
+    + OtherTissueFlow
+    + SkeletalMuscleFlow
+    + SkinFlow
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

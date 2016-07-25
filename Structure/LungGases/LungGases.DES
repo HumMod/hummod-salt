@@ -1,0 +1,85 @@
+HumMod / LungGases
+
+Created : 2012-07-12
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\LungGases\ ?>
+
+<?include Lung_Anesthetic.DES ?>
+<?include Lung_CO.DES ?>
+<?include Lung_CO2.DES ?>
+<?include Lung_H2O.DES ?>
+<?include Lung_N2.DES ?>
+<?include Lung_O2.DES ?>
+
+<?include MetabolicUnits.DES ?>
+
+<structure><name> LungGases </name>
+
+<variables>
+  <var><name> TotalVolume </name></var>
+  <var><name> K </name></var>
+  <var><name> DxMax </name></var>
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> Lung_Anesthetic.Parms </call>
+  <call> Lung_CO.Parms </call>
+  <call> Lung_CO2.Parms </call>
+  <call> Lung_H2O.Parms </call>
+  <call> Lung_N2.Parms </call>
+  <call> Lung_O2.Parms </call>
+</block>
+
+<block><name> Calc </name>
+  <def>
+    <name> TotalVolume </name>
+    <val>
+        Lung_O2.Mass
+      + Lung_N2.Mass
+      + Lung_CO2.Mass
+      + Lung_H2O.Mass
+      + Lung_CO.Mass
+      + Lung_Anesthetic.Mass
+    </val>
+  </def>
+
+  <call> Lung_Anesthetic.Calc </call>
+  <call> Lung_CO.Calc </call>
+  <call> Lung_CO2.Calc </call>
+  <call> Lung_H2O.Calc </call>
+  <call> Lung_N2.Calc </call>
+  <call> Lung_O2.Calc </call>
+  <call> MetabolicUnits.Calc </call>
+</block>
+
+<block><name> Dervs </name>
+  <conditional>
+    <name> K </name>
+    <test> Breathing.AlveolarVentilation GT 0 </test>
+    <true> Breathing.AlveolarVentilation / LungVolumes.FunctionalResidualCapacity </true>
+    <false> 1 </false>
+  </conditional>
+
+  <def>
+    <name> DxMax </name>
+    <val> 0.5 * INVERT ( K ) </val>
+  </def>
+
+  <call> Lung_Anesthetic.Dervs </call>
+  <call> Lung_CO.Dervs </call>
+  <call> Lung_CO2.Dervs </call>
+  <call> Lung_H2O.Dervs </call>
+  <call> Lung_N2.Dervs </call>
+  <call> Lung_O2.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

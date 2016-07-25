@@ -1,0 +1,164 @@
+HumMod / Delivery
+
+Created : 2012-02-14
+Revised : 2012-02-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 9.8 </high>
+   <wide> 30.0 </wide>
+   <title> Delivery </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> SkeletalMuscle-Flow.PlasmaFlow </name>
+   <format><integer/></format>
+   <label> Plasma Flow </label>
+</showvalue>
+
+<showtable>
+<row> 2.8 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Glucose </textcell>
+<textcell> Fat </textcell>
+<textcell> Lactate </textcell>
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> [Conc] </textcell>
+
+<valuecell>
+  <name> GlucosePool.[Glucose] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> FAPool.[FA] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LacPool.[Lac-] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 13.0 </indent>
+<fieldwidth> 4.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> % </textcell>
+
+<valuecell>
+  <name> GlucoseAvailable</name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> FAAvailable </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> LacAvailable </name>
+  <format><integer/></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 17.0 </indent>
+<fieldwidth> 5.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> mG </textcell>
+
+<valuecell>
+  <name> GlucoseDelivered(mG/Min) </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> FADelivered(mG/Min) </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> LacDelivered(mG/Min) </name>
+  <format><integer/></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 22 </indent>
+<fieldwidth> 5.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Cals </textcell>
+
+<valuecell>
+  <name> GlucoseDelivered(Cals/Min) </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> FADelivered(Cals/Min) </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> LacDelivered(Cals/Min) </name>
+  <format><integer/></format>
+</valuecell>
+
+</column>
+
+</showtable>
+
+<showvalue>
+   <row> 7.2 </row><col> 1.0 </col>
+   <name> InsulinEffect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Insulin Effect </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> InsulinPool.[Insulin] </name>
+   <format><decimal> 0 </decimal></format>
+   <label> [Insulin] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> [Conc] = Nutrient conc in pool (mG/mL) </line>
+  <line> % = % Nutrient availability at cytoplasm </line>
+  <line> mG = Nutrient delivered (mG/Min) </line>
+  <line> Cals = Nutrient delivered (Cals/Min) </line>
+  <line>  </line>
+  <line> ========PUT NORMAL VALUES HERE============= </line>
+</infobutton>
+
+</groupbox>
+
+End

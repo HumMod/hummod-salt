@@ -1,0 +1,39 @@
+HumMod / HeartRate
+
+Created : 2010-05-25
+Last Modified : 2010-05-25
+Author : Tom Coleman
+Copyright : 2010-2010
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> HeartRate </name>
+  <label> Heart Rate </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> HeartRate-Atria </name>
+  <label> Atria </label>
+  <parent> HeartRate </parent>
+</leaf>
+
+<leaf>
+  <name> HeartRate-Ventricles </name>
+  <label> Ventricles </label>
+  <parent> HeartRate </parent>
+</leaf>
+
+<leaf>
+  <name> HeartRate-Intervals </name>
+  <label> Intervals </label>
+  <parent> HeartRate </parent>
+</leaf>
+
+<leaf>
+  <name> HeartRate-Tachyarrhythmia </name>
+  <label> Tachyarrhythmia </label>
+  <parent> HeartRate </parent>
+</leaf>
+
+End

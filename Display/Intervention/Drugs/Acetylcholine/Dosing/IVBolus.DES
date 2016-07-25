@@ -1,0 +1,50 @@
+HumMod / Injection
+
+Created : 04-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 11.8 </high>
+   <wide> 30.0 </wide>
+   <title> Injection </title>
+
+<structurename> Acetylcholine </structurename>
+
+<actionbutton>
+  <row> 1.4 </row><col> 1.0 </col>
+  <blockname> InjectNow </blockname>
+  <label> Push Now </label>
+</actionbutton>
+
+<repeatlist>
+  <name> Acetylcholine.Dose </name>
+  <firstval> 0 </firstval>
+  <repeat><reps> 2 </reps><stepsize> 200 </stepsize></repeat>
+  <repeat><reps> 2 </reps><stepsize> 300 </stepsize></repeat>
+
+</repeatlist>
+
+<slidebar>
+  <row> 3.2 </row><col> 1.0 </col>
+  <name> BolusAmount </name>
+  <listname> Acetylcholine.Dose </listname>
+  <label> Bolus amount </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Typical dose is 400 mG over as bolus </line>
+
+</infobutton>
+
+</groupbox>
+
+End
+

@@ -1,0 +1,46 @@
+HumMod / CapillaryWater
+
+Created : 26-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<?path Structure\TissueH2O\CapillaryWater\ ?>
+
+<?include Torso_Upper_CapillaryWater.DES ?>
+<?include Torso_Middle_CapillaryWater.DES ?>
+<?include Torso_Lower_CapillaryWater.DES ?>
+
+<structure><name> CapillaryWater </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<call> Torso_Upper_CapillaryWater.Dervs </call>
+<call> Torso_Middle_CapillaryWater.Dervs </call>
+<call> Torso_Lower_CapillaryWater.Dervs </call>
+
+<def><name> Rate </name>
+  <val>
+      Torso_Upper_CapillaryWater.Rate
+    + Torso_Middle_CapillaryWater.Rate
+    + Torso_Lower_CapillaryWater.Rate
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

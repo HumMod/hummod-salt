@@ -1,0 +1,41 @@
+HumMod / VolumeDistribution
+
+Created : 2013-02-17
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 5.8 </high>
+   <wide> 30.0 </wide>
+   <title> Volume Of Distribution </title>
+
+<structurename> EPOPool </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> VolDist </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Volume (L) </label>
+</showvalue>
+
+<slidebar>
+  <row> 2.8 </row><col> 3.0 </col>
+  <name> VolDist(%ECFV) </name>
+  <listname> Common.Percent </listname>
+  <label> % ECFV </label>
+</slidebar>
+
+<showvalue>
+   <row> 4.2 </row><col> 3 </col>
+   <name> ECFV.Vol(L) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> ECFV (L) </label>
+</showvalue>
+
+</groupbox>
+
+End

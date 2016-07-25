@@ -1,0 +1,38 @@
+<?xml version = '1.0' ?>
+<model>
+
+<!--
+HumMod / HumMod.DES
+
+Created : 06-Sep-08
+Revised : 2014-02-27
+Author : Tom Coleman
+Copyright : 2008-2014
+By : University of Mississippi Medical Center
+-->
+
+<title>
+   <basic> Integrative Biomedicine (v3.0.4) </basic>
+   <navigator> HumMod - Integrative Biomedicine (v3.0.2) </navigator>
+</title>
+
+
+<?include Structure\Structure.DES ?>
+
+<math>
+
+  <context> Structure.Context </context>
+  <parms> Structure.Parms </parms>
+  <dervs> Structure.Dervs </dervs>
+  <wrapup> Structure.Wrapup </wrapup>
+
+</math>
+
+<?include Control\Control.DES ?>
+<?include Display\Display.DES ?>
+
+<?attach Docs\Docs.DOCS ?>
+
+End
+
+</model>

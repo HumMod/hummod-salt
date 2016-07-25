@@ -1,0 +1,42 @@
+HumMod | ACTH Reference
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+ACTH (adrenocorticotropic hormone) is also
+know as corticotropin.
+
+MW = 4540
+39 amino acids
+
+[ACTH] = 30 pG/mL or 3 nG/dL or 11 pMol/L
+
+nG/dL * 2.20 = pMol/L
+
+Volume of distribution = 15000 (ECFV, assumed).
+
+Mass = 750 nG
+
+ACTH 1/2 life = 10 Min.
+
+Secretion is 40 uG/24 hours or 28 nG/Min.
+
+Clearance = K * [ACTH]
+
+28 = K * 0.05
+K = 560
+
+[Cortisol] may go up 4x as [ACTH] goes up 4x.
+
+With maximum stimulation [ACTH] can go up to 150
+pG/mL from a base of 30.
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

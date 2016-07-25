@@ -1,0 +1,15 @@
+HumMod / PericardialDrain DES
+
+Created : 10-Oct-08
+Last Modified : 2011-07-26
+Author : Tom Coleman
+Copyright : 2008-2011
+By : University of Mississippi Medical Center
+
+<leaf>
+  <name> PericardialDrain </name>
+  <label> Pericardial Drain </label>
+  <parent> INTERVENTION </parent>
+</leaf>
+
+End

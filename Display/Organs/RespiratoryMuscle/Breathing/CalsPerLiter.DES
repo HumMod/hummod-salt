@@ -1,0 +1,102 @@
+ HumMod / CalsPerLiter
+
+Created : 2012-07-18
+Revised : 2012-07-18
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structurename> RespiratoryMuscle-Breathing </structurename>
+
+<groupbox>
+   <row> 18.6 </row>
+   <col> 32.0 </col>
+   <high> 21.4 </high>
+   <wide> 30.0 </wide>
+   <title> Cals / Liter </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Cals/L </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Cals / L </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Cals/L </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 3 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> VentilationEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Ventilation Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 10.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Breathing.TotalVentilation(L) </name>
+    <label> Ventilation (L/Min) </label>
+    <scale>
+      <min> 0 </min><max> 150 </max><inc> 10 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 0 </min><max> 3 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> VentilationEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 18.0 </row><col> 1.0 </col>
+   <name> Breathing.TotalVentilation(L) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Ventilation (L/Min) </label>
+</showvalue>
+
+<repeatlist>
+  <name> Cals/L-Basic </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 19.6 </row><col> 1.0 </col>
+  <name> Cals/L-Basic </name>
+  <listname> Cals/L-Basic </listname>
+  <label> Basic </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

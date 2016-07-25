@@ -1,0 +1,193 @@
+HumMod / Box
+
+Created : 2012-07-15
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.0 </high>
+   <wide> 30.0 </wide>
+
+<showtable>
+<row> 1.4 </row><col> 1.0 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 6 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> Gas </textcell>
+<textcell> -------- </textcell>
+<textcell> O2 </textcell>
+<textcell> N2 </textcell>
+<textcell> CO2 </textcell>
+<textcell> H2O </textcell>
+<textcell> CO </textcell>
+<textcell> Anest. </textcell>
+
+</column>
+
+<column>
+<indent> 6 </indent>
+<fieldwidth> 6 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> p </textcell>
+<textcell> ---- </textcell>
+
+<valuecell>
+  <name> Lung_O2.pO2 </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_N2.pN2 </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_CO2.pCO2 </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_H2O.pH2O </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_CO.pCO </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_Anesthetic.pAnesthetic </name>
+  <format><decimal> 2 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 12 </indent>
+<fieldwidth> 6 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> Vol </textcell>
+<textcell> ------ </textcell>
+
+<valuecell>
+  <name> Lung_O2.Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_N2.Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_CO2.Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_H2O.Mass </name>
+  <format><integer/></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_CO.Mass </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_Anesthetic.Mass </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 18 </indent>
+<fieldwidth> 6 </fieldwidth>
+<justify> CENTER </justify>
+
+<textcell> [Conc] </textcell>
+<textcell> -------- </textcell>
+
+<valuecell>
+  <name> Lung_O2.[O2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_N2.[N2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_CO2.[CO2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_H2O.[H2O] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_CO.[CO] </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> Lung_Anesthetic.[Anesthetic] </name>
+  <format><decimal> 4 </decimal></format>
+</valuecell>
+
+</column>
+
+</showtable>
+
+<showvalue>
+   <row> 10.0 </row><col> 1.0 </col>
+   <name> LungGases.TotalVolume </name>
+   <format><integer/></format>
+   <label> Total Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.4 </row><col> 1.0 </col>
+   <name> Breathing.AlveolarVentilation </name>
+   <format><integer/></format>
+   <label> Alveolar Ventilation </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.4 </row><col> 1.0 </col>
+   <name> LungBloodFlow.AlveolarVentilated </name>
+   <format><integer/></format>
+   <label> Ventilated Blood Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.4 </row><col> 1.0 </col>
+   <name> LungVolumes.FunctionalResidualCapacity </name>
+   <format><integer/></format>
+   <label> Residual Capacity </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

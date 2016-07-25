@@ -1,0 +1,55 @@
+HumMod / CollectingDuct_Glucose
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> CollectingDuct_Glucose </name>
+
+<variables>
+
+<var>
+  <name> Outflow </name>
+</var>
+
+<var>
+  <name>  [Glucose(mMol/L)] </name>
+</var>
+
+</variables>
+
+<definitions>
+<block><name> CalcFlux </name>
+
+<def>
+  <name> Outflow </name>
+  <val>  LeftCollectingDuct_Glucose.Outflow + RightCollectingDuct_Glucose.Outflow  </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<if><test> CollectingDuct_H2O.Outflow GT 0 </test>
+<true>
+  <def><name> [Glucose(mMol/L)] </name><val> Outflow / CollectingDuct_H2O.Outflow </val></def>
+</true>
+<false>
+  <def><name> [Glucose(mMol/L)] </name><val> 0</val></def>
+</false>
+</if>
+</block>
+
+<block><name> NoFlow </name>
+  <def><name> Outflow </name><val> 0.0 </val></def>
+  <def><name>  [Glucose(mMol/L)]  </name><val> UNDEFINED </val></def>
+</block>
+
+
+</definitions>
+</structure>
+
+End

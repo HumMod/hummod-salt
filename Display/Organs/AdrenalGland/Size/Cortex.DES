@@ -1,0 +1,74 @@
+HumMod | Cortex
+
+Created : 2012-01-28
+Revised : 2012-01-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 10.8 </high>
+   <wide> 30.0 </wide>
+   <title> Cortex </title>
+
+<structurename> AdrenalGland-Size </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> CortexMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> GlomerulosaMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Zona Glomerulosa (G) </label>
+</showvalue>
+
+<repeatlist>
+  <name> GlomerulosaMassPercent </name>
+  <repeat><reps> 90 </reps><stepsize>  1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.2 </row><col> 3.0 </col>
+  <name> GlomerulosaMassPercent </name>
+  <listname> GlomerulosaMassPercent </listname>
+  <label> % </label>
+</slidebar>
+
+<showvalue>
+   <row> 5.8 </row><col> 1.0 </col>
+   <name> FasciculataMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Zona Fasciculata (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.8 </row><col> 3.0 </col>
+   <name> FasciculataMassPercent </name>
+   <format><integer/></format>
+   <label> % </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> ReticularisMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Zona Reticularis (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.2 </row><col> 3.0 </col>
+   <name> ReticularisMassPercent </name>
+   <format><integer/></format>
+   <label> % </label>
+</showvalue>
+
+</groupbox>
+
+End

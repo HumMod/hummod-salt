@@ -1,0 +1,96 @@
+HumMod / FAFraction
+
+Created : 2012-11-05
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 17.2 </high>
+   <wide> 30.0 </wide>
+   <title> KA Fraction </title>
+
+<structurename> Brain-Fuel </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> KAUsedFraction </name>
+  <format><decimal> 2 </decimal></format>
+   <label> Use </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> KADeliveredFraction </name>
+    <label> Delivery </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Use </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> KAFraction </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> KADeliveredFraction </name>
+  <format><decimal> 2 </decimal></format>
+   <label> Delivery </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> TotalDelivered(Cals/Min) </name>
+  <format><integer/></format>
+   <label> Total Cals Delivered </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 3.0 </col>
+   <name> GlucoseDelivered(Cals/Min) </name>
+  <format><integer/></format>
+   <label> Glucose </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 3.0 </col>
+   <name> KADelivered(Cals/Min) </name>
+  <format><integer/></format>
+   <label> Ketoacid </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 3.0 </col>
+   <name> LacDelivered(Cals/Min) </name>
+  <format><integer/></format>
+   <label> Lactate </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> The insulin effect determines the fraction of glucose </line>
+  <line> delivered to the organ that can make it into the </line>
+  <line> cellular cytosol. </line>
+  <line>  </line>
+  <line> A typical value is 0.5, with a maximum value of 1.0 </line>
+  <line> and a minimum value of 0.15. </line>
+</infobutton>
+
+</groupbox>
+
+End

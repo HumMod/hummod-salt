@@ -1,0 +1,36 @@
+HumMod / Organs-ScaleConductance
+
+Created : 29-Aug-09
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Organs-ScaleConductance </name>
+
+<definitions>
+
+<block><name> Calc </name>
+
+  <call> Bone-Flow.Init </call>
+  <call> Brain-Flow.Init </call>
+  <call> Fat-Flow.Init </call>
+  <call> GITract-Flow.Init </call>
+  <call> LeftKidney-Flow.Init </call>
+  <call> RightKidney-Flow.Init </call>
+  <call> LeftHeart-Flow.Init </call>
+  <call> OtherTissue-Flow.Init </call>
+  <call> RespiratoryMuscle-Flow.Init </call>
+  <call> RightHeart-Flow.Init </call>
+  <call> SkeletalMuscle-Flow.Init </call>
+  <call> Skin-Flow.Init </call>
+  
+  <call> HepaticArtery.Init </call>
+  <call> HepaticVein.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

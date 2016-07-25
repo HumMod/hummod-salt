@@ -1,0 +1,113 @@
+HumMod / Lung_CO
+
+Created : 2012-07-15
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Lung_CO </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+<var><name> Expired </name></var>
+<var><name> [CO] </name></var>
+<var><name> pCO </name></var>
+
+<var><name> K </name></var>
+<var><name> Uptake </name><val> 0 </val></var>
+<var><name> Gradient </name></var>
+<var><name> Permeability </name></var>
+
+<parm>
+  <name> CO_O2Ratio </name>
+  <val> 0.81 </val>
+</parm>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.004 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+
+
+
+  <def>
+    <name> [CO] </name>
+    <val> Mass / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> pCO </name>
+    <val> [CO] * Barometer.Pressure </val>
+  </def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Permeability </name>
+  <val> CO_O2Ratio * PulmonaryMembrane.DiffusingCapacity / 1.23 </val>
+</def>
+
+<def>
+  <name> Gradient </name>
+  <val> pCO - CO.pCO </val>
+</def>
+
+<def> 
+  <name> Uptake </name>
+  <val> Permeability * Gradient </val>
+</def>
+
+  <def>
+    <name> Gain </name>
+    <val> Breathing.AlveolarVentilation * ( Bronchi.[CO] - [CO] ) </val>
+  </def>
+
+  <def>
+    <name> Expired </name>
+    <val>  ( Breathing.AlveolarVentilation * [CO] ) </val>
+  </def>
+
+  <def>
+    <name> Loss </name>
+    <val> Uptake + Expired </val>
+  </def>
+
+  <def><name> Change </name><val> Gain - Loss </val></def>
+
+  <def>
+    <name> K </name>
+    <val> Barometer.Pressure * Permeability / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> DxMax </name>
+    <val> 0.5 * INVERT ( LungGases.K + K ) </val>
+  </def>
+</block>
+
+</definitions>
+</structure>
+
+End

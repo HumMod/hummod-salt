@@ -1,0 +1,125 @@
+HumMod / LeftHeartPumping-Contractility
+
+Created : 2011-08-11
+Last Modified : 2011-08-10
+Author : Tom Coleman
+Copyright : 2010-2011
+By : University of Mississippi Medical Center
+
+<structure><name> LeftHeartPumping-Contractility </name>
+
+<variables>
+
+<var><name> Contractility </name></var>
+
+<var><name> BetaSymps </name></var>
+<var><name> pH </name></var>
+<var><name> Protein </name></var>
+<var><name> Digoxin </name></var>
+<var><name> Anesthetic </name></var>
+<parm><name> BasicTarget </name><val> 1 </val></parm>
+
+<parm><name> ClampSwitch </name><val> FALSE </val></parm>
+<parm><name> ClampSetting </name><val> 0 </val></parm>
+
+<parm><name> FailureSwitch </name><val> 0 </val></parm>
+<parm><name> FailureRate </name><val> 0 </val></parm>
+
+<var><name> StartTime </name><val> 0 </val></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Basic </name>
+  <integralname> Basic </integralname>
+  <initialval> 1.0 </initialval>
+  <dervname> dBasic   </dervname>
+  <errorlim> 0.03 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve><name> PhEffect </name>
+<point><x> 6.6 </x><y> 0 </y><slope> 0 </slope></point>
+<point><x> 6.75 </x><y> 1 </y><slope> 0 </slope></point>
+</curve>
+
+<curve><name> DigoxinEffect </name>
+<point><x>   0 </x><y> 1 </y><slope> 1 </slope></point>
+<point><x> 2.5 </x><y> 2 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Parms </name>
+  <onjustchanged><name> FailureSwitch </name>
+  <conditional>
+    <name> StartTime </name>
+    <test> FailureSwitch </test>
+    <true> System.X </true>
+  </conditional>
+  </onjustchanged>
+</block>
+
+<block><name> Calc </name>
+
+<def><name> dBasic </name><val> 0.05 * ( BasicTarget - Basic ) </val></def>
+
+<def>
+  <name> BetaSymps </name>
+  <val> ( 2.5 * ( LeftHeart-BetaReceptors.Activity - 1 ) ) + 1 </val>
+</def>
+
+<def>
+  <name> pH </name>
+  <val> PhEffect [ LeftHeart-Ph.Ph ] </val>
+</def>
+
+<def>
+  <name> Protein </name>
+  <val>
+       LeftHeartPumping-ContractileProtein.Functional
+     / LeftHeartPumping-ContractileProtein.Protein-Base
+  </val>
+</def>
+
+<def>
+  <name> Digoxin </name>
+  <val> DigoxinEffect [ DigoxinPool.[Digoxin] ] </val>
+</def>
+
+<def>
+  <name> Anesthetic </name>
+  <val> Anesthesia.HeartContractility </val>
+</def>
+
+<conditional>
+<name> Contractility </name>
+<test> ClampSwitch </test>
+<true> ClampSetting </true>
+<false>
+ (  BetaSymps
+  * pH
+  * Protein
+  * Digoxin
+  * Anesthetic
+  * Basic
+ )
+ *
+ ( 1 - ( FailureSwitch * FailureRate * ( System.X - StartTime ) / 144000 )
+ )
+</false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

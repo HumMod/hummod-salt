@@ -1,0 +1,82 @@
+HumMod / Box
+
+Created : 2013-03-19
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 21.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> GlucoseReceptors </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> NA </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Receptor Activity </label>
+</showvalue>
+
+<showgraph>  <row> 2.4 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>  <leftmargin> 5 </leftmargin>  <xaxis>    <name> System.X </name>    <label> Time </label>    <scale><min> 0 </min><max> 2 </max></scale>  </xaxis>  <yaxis>    <yvar>      <name> NA </name>      <label> NA </label>      <linecolor> BLUE </linecolor>    </yvar>    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>  </yaxis></showgraph><radiobuttons>
+  <row> 9.8 </row><col> 1 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat>
+    <reps> 50 </reps>
+    <stepsize> 0.1 </stepsize>
+  </repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<showcurve>
+  <row> 12.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> GlucosePool.[Glucose(mMol/L)] </name>
+    <label> [Glucose (mMol/L)] </label>
+    <scale><min> 0 </min><max> 20 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> NA </label>
+    <scale>
+      <min> 0 </min><max> 4 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+
+  <curvename> NA </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 19.8 </row><col> 1.0 </col>
+  <name> GlucosePool.[Glucose(mMol/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glucose (mMol/L)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

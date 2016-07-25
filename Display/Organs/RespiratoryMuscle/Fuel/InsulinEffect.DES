@@ -1,0 +1,73 @@
+HumMod / InsulinEffect
+
+Created : 2012-02-14
+Revised : 2012-02-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 12.8 </high>
+   <wide> 30.0 </wide>
+   <title> Insulin Effect </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> InsulinEffect </name>
+  <format><decimal> 2 </decimal></format>
+   <label> Insulin Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> InsulinReceptors-General.BoundFraction(%) </name>
+    <label> Bound (%) </label>
+    <scale>
+      <min> 0 </min><max> 100 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> InsulinEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> InsulinReceptors-General.BoundFraction(%) </name>
+  <format><decimal> 1 </decimal></format>
+   <label> Bound Fraction (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> InsulinPool.[Insulin] </name>
+  <format><integer/></format>
+   <label> [Insulin] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> The insulin effect determines the fraction of glucose </line>
+  <line> delivered to the organ that can make it into the </line>
+  <line> cellular cytosol. </line>
+  <line>  </line>
+  <line> A typical value is 0.5, with a maximum value of 1.0 </line>
+  <line> and a minimum value of 0.15. </line>
+</infobutton>
+
+</groupbox>
+
+End

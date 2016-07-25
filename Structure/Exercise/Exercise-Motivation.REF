@@ -1,0 +1,91 @@
+HumMod / Exercise-Motivation (REF)
+
+Created : 2012-07-22
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+Cellular pH in resting skeletal muscle is typically
+7.15 (Harmer et.al. 2000, Sullivan et.al. 1994,
+Hermansen and Osnes 1972).
+
+Cellular pH falls in exercise in proportion to the
+intensity of the exercise, with increased pCO2 and
+increased lactic acid concentrations both contributing
+to the acidity. The skeletal muscle pH at exhaustion
+is ~6.6 (Harmer et.el, 2000) with [Lac-] around 30 mMol
+and pCO2 around 80 mmHg (Sun et.al, 2001).
+
+A subject might tolerate a lower pH with high
+motivation -- but force generation is probably
+impaired.
+
+  Motivation  pH(i)
+  ----------  -----
+  Extreme     6.55
+  High        6.60
+  Normal      6.65
+  Low         6.70
+
+[Lac-] ==============================================
+
+Bangsbo etal. J. Physiol. 462:115-133, 1993
+
+Bangsbo anecdotally reports tissue lactate
+of 45 mEq/L and more generally intracellular
+to extracellular gradients of 30 mEq/L.
+
+Generally, exercise subjects are well trained
+and motivated. This may bias data toward higher
+performance results.
+
+Also, biopsy plugs contain interstitial fluid,
+so the intracellular concentration may be a
+bit higher.
+
+DURATION =============================================
+
+Here is some duration data from Astrand (1961) and
+Karlsson (1970) that might be useful.
+
+  Intensity (W) Duration (Min)
+  ------------- --------------
+       250           16
+       300            6
+       350            3
+       400            2
+       450            2
+
+REFERENCES ===========================================
+
+Åstrand, P.-O. and B. Saltin.  Oxygen uptake during
+the first minutes of heavy muscular exercise.
+J. Appl. Physiol. 16:971-976, 1961.
+
+Harmer, A.R., M.J. McKenna, J.R. Sutton, R.J. Snow,
+P.A. Ruell, J. Booth, M.W. Thompson, N.A. Mackey,
+C.G. Stathis, R.M. Cremeri, M.F. Carey and D.M. Eager.
+Skeletal muscle metabolic and ionic adaptations during
+intense exercise following sprint training in humans.
+J. Appl. Physiol. 89:1793-1803, 2000.
+
+Hermansen, L. and J.-B. Osnes.  Blood and pH after
+maximal exercise in man. J. Appl. Physiol. 32:304-308,
+1972.
+
+Karlsson, J. and B. Saltin.  Lactate, ATP, and CP in
+working muscles during exhaustive exercise in man.
+J. Appl. Physiol. 29:598-602, 1970.
+
+Sullivan, M.J., B. Saltin, R. Negro-Vilar, B.D. Duscha
+and H.C. Charles.  Skeletal muscle pH assessed by
+biochemical and 31P-MRS ,methods during exercise and
+recovery in men. J. Appl. Physiol. 77:2194-2200, 1994.
+
+Sun, X.-G., J.E. Hansen, W.W. Stringer, H. Ting and
+K. Wasserman.  Carbon dioxide pressure-concentration
+relationship in arterial and mixed venous blood during
+exercise. J. Appl. Physiol. 90:1798-1810, 2001.
+
+End

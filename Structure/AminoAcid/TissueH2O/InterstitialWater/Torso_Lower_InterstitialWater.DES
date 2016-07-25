@@ -1,0 +1,57 @@
+HumMod / Torso_Lower_InterstitialWater
+
+Created : 24-Mar-08
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Lower_InterstitialWater </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> Vol(L) </name></var>
+
+<var><name> Pressure </name></var>
+
+</variables>
+
+<functions>
+
+<!-- 
+
+<curve>
+  <name> PressureVolume </name>
+  <point><x>   600.0 </x><y> -30.0 </y><slope>  0.02 </slope></point>
+  <point><x>  2000.0 </x><y>  -4.8 </y><slope>  0.0004 </slope></point>
+  <point><x>  3500.0 </x><y>  -3.0 </y><slope>  0.0004 </slope></point>
+  <point><x>  6000.0 </x><y>  50.0 </y><slope>  0.03 </slope></point>
+</curve>
+ -->
+
+<curve>
+  <name> PressureVolume </name>
+  <point><x>  600.0 </x><y> -30.0 </y><slope>  0.01 </slope></point>1200
+  <point><x>  2800.0 </x><y>  -2 </y><slope>  0.0004 </slope></point>4800   5400   -4.8
+  <point><x> 4000.0 </x><y>   0.0 </y><slope>  0.0004 </slope></point>12000
+  <point><x> 6000.0 </x><y>  50.0 </y><slope>  0.01 </slope></point>24000
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> Vol </name><val> Torso_Lower_H2O.Vol - CellH2O.Torso_Lower_Vol </val></def>
+<def><name> Vol(L) </name><val> Vol / 1000.0 </val></def>
+
+<def><name> Pressure </name><val> PressureVolume [ Vol ] </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

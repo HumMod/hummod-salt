@@ -1,0 +1,18 @@
+HumMod / CO2
+
+Created : 24-Apr-05
+Revised : 2012-10-27
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Display\Respiration\CO2\ ?>
+
+<?include Balance\Balance.DES ?>
+<?include Arteries\Arteries.DES ?>
+<?include Veins\Veins.DES ?>
+<?include Lungs\Lungs.DES ?>
+<?include Tissue\Tissue.DES ?>
+<?include Calculator\Calculator.DES ?>
+
+End

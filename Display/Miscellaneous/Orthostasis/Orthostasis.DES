@@ -1,0 +1,15 @@
+HumMod / Orthostasis
+
+Created : 15-Apr-05
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Display\Miscellaneous\Orthostasis\ ?>
+
+<?include RegionalPressures\RegionalPressures.DES ?>
+<?include SequesteredBlood\SequesteredBlood.DES ?>
+<?include PostureEnergy\PostureEnergy.DES ?>
+
+End

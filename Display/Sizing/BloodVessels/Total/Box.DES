@@ -1,0 +1,75 @@
+HumMod / Box
+
+Created : 2013-02-19
+Revised : 2013-02-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 10.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Sizing-BloodVessels </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> BloodVolume </name>
+   <format><integer/></format>
+   <label> Blood Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> ArteryVolume </name>
+   <format><integer/></format>
+   <label> Artery Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.8 </row><col> 3.0 </col>
+   <name> Artery-F </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Fraction </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.2 </row><col> 1.0 </col>
+   <name> VeinVolume </name>
+   <format><integer/></format>
+   <label> Vein Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.2 </row><col> 3.0 </col>
+   <name> Vein-F </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Fraction </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.6 </row><col> 1.0 </col>
+   <name> LungVolume </name>
+   <format><integer/></format>
+   <label> Lung Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.6 </row><col> 3.0 </col>
+   <name> Lung-F </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Fraction </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> </line>
+</infobutton>
+
+</groupbox>
+
+End

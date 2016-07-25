@@ -1,0 +1,22 @@
+HumMod / Exercise-Motivation
+
+Created : 10-Mar-08
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Exercise-Motivation </name>
+
+<variables>
+
+<parm>
+  <name> Motivation </name>
+  <val> 6.65 </val>
+</parm>
+
+</variables>
+
+</structure>
+
+End

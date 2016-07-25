@@ -1,0 +1,42 @@
+HumMod / EPODisposal
+
+Created : 20-Jun-06
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> EPODisposal </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<var><name> K </name></var>
+
+<parm><name> HalfLife(Hrs) </name><val> 7.8 </val></parm>
+<constant><name> HALFLIFE_TO_TAU </name><val> 1.26 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+  <def>
+    <name> K </name>
+    <val> 1 / ( HALFLIFE_TO_TAU * 60 * HalfLife(Hrs) ) </val>
+  </def>
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Rate </name>
+  <val> K * EPOPool.Mass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

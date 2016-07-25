@@ -1,0 +1,16 @@
+
+<groupbox>
+   <row> 17.4 </row>
+   <col> 32.0 </col>
+   <high> 3.2 </high>
+   <wide> 30.0 </wide>
+   <title> Clothes </title>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Submerged.SubmergedQ </name>
+  <listname> Common.Switch </listname>
+  <label> Submerged? </label>
+</radiobuttons>
+
+</groupbox>

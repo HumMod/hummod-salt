@@ -1,0 +1,61 @@
+HumMod / Space
+
+Created : 2012-07-08
+Revised : 2012-07-08
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 14.8 </high>
+   <wide> 30.0 </wide>
+   <title> Space </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Space </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Space Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Mass </name>
+    <label> Mass (G) </label>
+    <scale>
+      <min> 0 </min><max> 500 </max><inc> 100 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 0 </min><max> 4 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> Space </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> Mass </name>
+  <format><integer/></format>
+   <label> Mass (G) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

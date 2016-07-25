@@ -1,0 +1,108 @@
+Heart Wall Stress.TXT
+
+Created : 2013-02-23
+Revised : 2013-02-24
+Author : Tom Coleman
+
+The focus here is on left ventricle end-systolic stress.
+The reason for this focus is that
+
+1. Estimates of left ventricle end-systolic stress can be
+made directly from ultrasound data.
+
+2. End-systolic stress is either correlated with or a direct
+cause of cardiac hypertrophy. Note that significant hypertrophy
+is seen in athletes that train for strength and in aortic
+stenosis (concentric hypertropy).
+
+Grossman developed the idea of applying Laplace's law to the
+left ventricle.
+
+Stress (S) kDynes/cM^2
+Inner Radius (Ri) cM
+Outer Radius (Ro) cM
+Wall Thickness (h) cM
+Pressure (P) Dynes/cM^2
+
+1 mmHg = 1333.2 Dynes/cM^2
+
+Laplace's law :
+  P * Pi * Ri^2 = S * Pi * (Ro^2 - Ri^2)
+  S = P * Ri / 2 * h * (1 + h/2 * Ri)
+
+This data can come straight from an echo. An alternative is
+
+  S = P / (Ro/Ri)^2 - 1
+
+HumMod has a heart mass (G), an EDV (mmHg) and an ESV (mmHg).
+
+Assume LV-Mass = 0.8 total mass. And the volume of tissue
+(LV-T) = LV-Mass / Density.
+
+Assume the ventricle is a cylinder with fixed length (from
+base to apex). I assume that this dimension is proportional
+to ventricle volume.
+
+  Length = K * TissueVolume
+
+  LV-Inner-K = 0.050
+  LV-Outer-K = 0.055
+
+  RV-Inner-K = 0.187
+  RV-Outer-K = 0.207
+
+Then volume of blood (V-B) is
+
+  V-B = Inner-L * Pi * InnerRadius^2
+  InnerRadius = SQRT (V-B / (Inner-L * Pi))
+
+VolumeTotal = V-B + VolumeTissue (V-T)
+
+
+  VolumeTotal = Outer-L * Pi * OuterRadius^2
+  OuterRadius = SQRT (VolumeTotal / (Inner-L * Pi))
+
+  WallThickness = OuterRadius - InnerRadius  
+
+Then S = P ... can be applied.
+
+                              S(kDynes/cM^2)
+                                   Systole
+                      P(mmHg) EDV Peak Mean h(cM) Ri(cM) Mass
+                      ------- --- ---- ---- ----- ------ ----
+Normal Load             117    17  151  79    0.9    2.4   71
+Aortic Stenosis         220    23  161  91    1.7    2.5  206
+Aortic/Mitral Regurg    139    41  175  80    1.1    2.8  197
+
+Mass is G/M^2
+
+Reichek et.al. compared this method to an invasive method
+and got good correlations.
+
+Serneri
+                    Mass S-EDV S-ESV EDD EDP EDV ESV
+                    ---- ----- ----- --- --- --- ---
+Control              110   14   70   2.7  8  86  32
+Aortic Stenosis (1)  189   19   69   2.9 19  78  31
+Aortic Stenosis (2)  189   35  109   3.0 29  99  44
+Regurg (1)           150   30   82   3.2 18 109  38
+Regurg (2)           205   49  115   3.5 30 138  67
+Mitral Stenosis      113   11   64   2.8  9  79  36
+
+Size data are /M^2. (1) means better wall stress and (2)
+means worse wall stress.
+
+References ==================================================
+
+Grossman, W. et.al. Wall stress and patterns of hypertrophy
+in the human left ventricle. JCI 56:56-64, 1975.
+
+Reichek, N. et.al. Noninvasive determination of left
+ventricular end-systolic stress : validation of the method
+and initial application. Circulation 65(1):99-108, 1982.
+
+Serneri, G.G.N. et.al. Cardiac growth factors in human
+hypertrophy. Relations with myocardial contractility and wall
+stress. Circ. Res. 85:57-67, 1999.
+
+End

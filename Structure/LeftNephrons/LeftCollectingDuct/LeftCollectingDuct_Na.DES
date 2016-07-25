@@ -1,0 +1,279 @@
+HumMod / LeftCollectingDuct_Na
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> LeftCollectingDuct_Na </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> ModifiedInflow </name></var>
+<var><name> LeftFractReab </name></var>
+<parm><name> BasicFract </name><val> 0.75 </val></parm>0.75
+<var><name> Reab </name></var>
+<var><name> Outflow </name></var>
+<var><name> [Na+] </name></var>
+<var><name> [Na+(mEq/L)] </name></var>
+<var><name> Osmolarity </name></var>
+<var><name> TotalEffect </name></var>
+<var><name> LoadEffect </name></var>
+<var><name> ANPEffect </name></var>
+<parm><name> MaxReab </name><val> 0.3 </val></parm>
+<parm><name> ANPClamp </name><val> FALSE </val></parm>
+<parm><name> ANPLevel </name><val> 0.0 </val></parm>
+<parm><name> ANPRightShift </name><val> 0.0 </val></parm>
+<var><name> ShiftedANP </name></var>
+
+<parm><name> Load_A1Target </name><val> 1 </val></parm>
+<parm><name> Load_m1Target </name><val> 4 </val></parm>
+<parm><name> Load_S1Target </name><val> 0.85e-7 </val></parm>
+<parm><name> Load_B1Target </name><val> 0.7 </val></parm>
+<parm><name> Load_ATarget </name><val> 0.35 </val></parm>
+<parm><name> Load_mTarget </name><val> 5 </val></parm>
+<parm><name> Load_STarget </name><val> 3.8e-7 </val></parm>
+<parm><name> Load_BTarget </name><val> -0.08 </val></parm>
+
+<parm><name> ANP_ATarget </name><val> 1.15 </val></parm>
+<parm><name> ANP_mTarget </name><val> 4.8 </val></parm>
+<parm><name> ANP_STarget </name><val> 1.94 </val></parm>
+<parm><name> ANP_BTarget </name><val> 0 </val></parm>
+
+
+
+</variables>
+
+
+<equations>
+
+
+
+<diffeq>
+  <name> Load_A1 </name>
+  <integralname> Load_A1 </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dLoadA1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_m1 </name>
+  <integralname> Load_m1 </integralname>
+  <initialval> 4 </initialval>
+  <dervname> dLoadm1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_S1 </name>
+  <integralname> Load_S1 </integralname>
+  <initialval> 0.85e-7 </initialval>
+  <dervname> dLoadS1 </dervname>
+  <errorlim> 1e-9 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_B1 </name>
+  <integralname> Load_B1 </integralname>
+  <initialval> 0.7 </initialval>
+  <dervname> dLoadB1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_A </name>
+  <integralname> Load_A </integralname>
+  <initialval> 0.35 </initialval>
+  <dervname> dLoadA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_m </name>
+  <integralname> Load_m </integralname>
+  <initialval> 5 </initialval>
+  <dervname> dLoadm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_S </name>
+  <integralname> Load_S </integralname>
+  <initialval> 3.8e-7 </initialval>
+  <dervname> dLoadS </dervname>
+  <errorlim> 1e-9 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Load_B </name>
+  <integralname> Load_B </integralname>
+  <initialval> -0.08 </initialval>
+  <dervname> dLoadB </dervname>
+  <errorlim> 0.0005 </errorlim>
+</diffeq>
+
+
+---------------------------------------------------------------------
+
+<diffeq>
+  <name> ANP_A </name>
+  <integralname> ANP_A </integralname>
+  <initialval> 1.15 </initialval>
+  <dervname> dANPA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_m </name>
+  <integralname> ANP_m </integralname>
+  <initialval> 4.8 </initialval>
+  <dervname> dANPm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_S </name>
+  <integralname> ANP_S </integralname>
+  <initialval> 1.94 </initialval>
+  <dervname> dANPS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_B </name>
+  <integralname> ANP_B </integralname>
+  <initialval> 0 </initialval>
+  <dervname> dANPB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+</equations>
+
+
+
+<functions>
+
+<curve>
+  <name> LoadOnFract </name>
+  <point><x> 0.0 </x><y> 2.0 </y><slope> 0 </slope></point>
+  <point><x> 1.67e-7 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 5e-7 </x><y> 0.8 </y><slope> 0 </slope></point>0.7
+</curve>
+
+<curve>
+  <name> ANPOnFract </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0 </slope></point>0,1.2,0
+  <point><x> 1.3 </x><y> 1.0 </y><slope> -0.4 </slope></point>1.3,1,-0.4
+  <point><x> 2.7 </x><y> 0.2 </y><slope> 0 </slope></point>2.7,0.2,0
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> CalcFlux </name>
+
+<def><name> dLoadA1 </name><val> 0.05 * ( Load_A1Target - Load_A1 ) </val></def>
+<def><name> dLoadm1 </name><val> 0.05 * ( Load_m1Target - Load_m1 ) </val></def>
+<def><name> dLoadS1 </name><val> 0.05 * ( Load_S1Target - Load_S1 ) </val></def>
+<def><name> dLoadB1 </name><val> 0.05 * ( Load_B1Target - Load_B1 ) </val></def>
+<def><name> dLoadA </name><val> 0.05 * ( Load_ATarget - Load_A ) </val></def>
+<def><name> dLoadm </name><val> 0.05 * ( Load_mTarget - Load_m ) </val></def>
+<def><name> dLoadS </name><val> 0.05 * ( Load_STarget - Load_S ) </val></def>
+<def><name> dLoadB </name><val> 0.05 * ( Load_BTarget - Load_B ) </val></def>
+
+<def><name> dANPA </name><val> 0.05 * ( ANP_ATarget - ANP_A ) </val></def>
+<def><name> dANPm </name><val> 0.05 * ( ANP_mTarget - ANP_m ) </val></def>
+<def><name> dANPS </name><val> 0.05 * ( ANP_STarget - ANP_S ) </val></def>
+<def><name> dANPB </name><val> 0.05 * ( ANP_BTarget - ANP_B ) </val></def>
+
+<!-- <def><name> ModifiedInflow </name><val> Inflow /  ( LeftKidney-NephronCount.Total * LeftKidney-NephronCount.Filtering(xNormal) )  </val></def>  -->
+
+
+
+<def><name> Inflow </name><val> LeftDistalTubule_Na.Outflow </val></def>
+
+<if><test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+<true><def><name> ModifiedInflow </name><val> Inflow /  ( LeftKidney-NephronCount.NumFiltering )  </val></def>
+ </true>
+<false>
+  <def><name> ModifiedInflow </name><val> 0 </val></def>
+</false>
+</if>
+
+<def><name> ShiftedANP </name><val> LeftNephronANP.Log10Conc - ANPRightShift </val></def>
+
+
+<def><name> LoadEffect </name><val> LoadOnFract [ ModifiedInflow ] </val></def>
+
+---------------------------------------
+<conditional>
+  <name> LoadEffect </name>
+  <test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+  <true> ( ( ( Load_A * ( ( Load_S ^ Load_m ) / ( ( ModifiedInflow ^ Load_m ) + ( Load_S ^ Load_m ) ) ) ) + Load_B ) + ( ( Load_A1 * ( ( Load_S1 ^ Load_m1 ) / ( ( ModifiedInflow ^ Load_m1 ) + ( Load_S1 ^ Load_m1 ) ) ) ) + Load_B1 ) ) MAX 0.8  </true>
+  <false> 0 </false>
+</conditional>
+
+
+<conditional>
+  <name> ANPEffect </name>
+  <test> ANPClamp </test>
+  <true> ANPLevel </true>
+  <false> ANPOnFract [ ShiftedANP ] </false>
+</conditional>
+---------------------
+<conditional>
+  <name> ANPEffect </name>
+  <test> ANPClamp </test>
+  <true> ANPLevel </true>
+  <false> ( ( ANP_A * ( ( ANP_S ^ ANP_m ) / ( ( ShiftedANP ^ ANP_m ) + ( ANP_S ^ ANP_m ) ) ) ) + ANP_B ) MAX 0.2 </false>
+</conditional>
+
+
+
+
+<def>
+  <name> TotalEffect </name>
+  <val>
+      LoadEffect
+    * ANPEffect
+    * LeftKidney-Function.Effect
+  </val>
+</def>
+
+<copy><from> BasicFract </from><to> LeftFractReab.Normal </to></copy>
+<copy><from> TotalEffect </from><to> LeftFractReab.Effects </to></copy>
+  <call> LeftFractReab.GetFract </call>
+<copy><from> LeftFractReab.Fract </from><to> LeftFractReab </to></copy>
+
+<def><name> Reab </name><val> ( LeftFractReab * Inflow ) MIN MaxReab </val></def>
+<def><name> Outflow </name><val> Inflow - Reab </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def><name> [Na+] </name><val> Outflow / LeftCollectingDuct_H2O.Outflow </val></def>
+<def><name> [Na+(mEq/L)] </name><val> 1000.0 * [Na+] </val></def>
+<def><name> Osmolarity </name><val> [Na+(mEq/L)] </val></def>
+
+</block>
+
+<block><name> NoFlow </name>
+
+<def><name> Inflow </name><val> 0.0 </val></def>
+<def><name> Reab </name><val> 0.0 </val></def>
+<def><name> Outflow </name><val> 0.0 </val></def>
+<def><name> [Na+] </name><val> UNDEFINED </val></def>
+<def><name> [Na+(mEq/L)] </name><val> UNDEFINED </val></def>
+<def><name> Osmolarity </name><val> 0.0 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

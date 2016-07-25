@@ -1,0 +1,62 @@
+HumMod / Sizing-Composition-Bone
+
+Created : 2013-03-01
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Composition-Bone </name>
+
+<variables>
+
+<var><name> Mass </name></var>
+<var><name> LiquidVol </name></var>
+<var><name> SolidMass </name></var>
+
+<constant><name> H2OFractMass </name><val> 0.32 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Mass </name>
+  <val> Sizing-OrganMass.Bone_Mass </val>
+</def>
+
+<def>
+  <name> LiquidVol </name>
+  <val> H2OFractMass * Mass / Density.H2O </val>
+</def>
+
+<def>
+  <name> SolidMass </name>
+  <val> ( 1 - H2OFractMass ) * Mass </val>
+</def>
+
+<def>
+  <name> Bone-Size.InitialMass </name>
+  <val> Mass </val>
+</def>
+
+<def>
+  <name> Bone-Size.InitialLiquidVol </name>
+  <val> LiquidVol </val>
+</def>
+
+<def>
+  <name> Bone-Size.InitialSolidMass </name>
+  <val> SolidMass </val>
+</def>
+
+<call> Bone-Size.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

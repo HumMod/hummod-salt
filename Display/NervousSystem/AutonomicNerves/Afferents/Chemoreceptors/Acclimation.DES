@@ -1,0 +1,103 @@
+HumMod / Acclimation
+
+Created : 08-Feb-06
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structurename> ChemoreceptorAcclimation </structurename>
+
+<groupbox>
+   <row> 18.0 </row>
+   <col> 1.0 </col>
+   <high> 20.8 </high>
+   <wide> 30.0 </wide>
+   <title> Acclimation </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Multiplier </name>
+  <label> Multiplier </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Multiplier </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<repeatlist>
+  <name> Tau </name>
+  <firstval> 1.0 </firstval>
+  <repeat><reps> 39 </reps><stepsize>   1.0 </stepsize></repeat>
+  <repeat><reps>  6 </reps><stepsize>  10.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 9.8 </row><col> 1 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Delay </label>
+</slidebar>
+
+<showvalue>
+  <row> 11.2 </row><col> 1 </col>
+  <name> SteadyState </name>
+  <label> Multiplier Steady State </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showcurve>
+  <row> 12.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+
+  <xaxis>
+    <name> Chemoreceptors.BasicFiringRate </name>
+    <label> Basic Firing Rate </label>
+    <scale><min> 0 </min><max> 10 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> X </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> SteadyState </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 19.2 </row><col> 1 </col>
+  <name> Chemoreceptors.BasicFiringRate </name>
+  <label> Basic Firing Rate </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Acclimation slowly increases the chemoreceptor </line>
+  <line> response to its steady state level. </line>
+  <line>  </line>
+  <line> Units for the delay time constant are hours. </line>
+</infobutton>
+
+</groupbox>
+
+End

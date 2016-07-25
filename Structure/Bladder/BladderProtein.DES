@@ -1,0 +1,91 @@
+HumMod / BladderProtein
+
+Created : 16-Mar-08
+Revised : 2013-02-01
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> BladderProtein </name>
+<variables>
+
+<var><name> [Protein] </name></var>
+<var><name> [Protein(G/mL)] </name></var>
+
+<var><name> [Protein(mG/dL)] </name></var>
+<var><name> Proteinuria </name><val> 0 </val></var>
+
+<constant><name> InitialConc </name><val> 0.0 </val></constant>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> InitialMass </name><val> InitialConc * BladderVolume.InitialVolume </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_Protein.Outflow </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+  <def><name> [Protein] </name><val> Mass / BladderVolume.Mass </val></def>
+  <def><name> [Protein(G/mL)] </name><val> [Protein] </val></def>
+  <def><name> [Protein(mG/dL)] </name><val> 100000 * [Protein(G/mL)] </val></def>
+
+  <testcase>
+  <case>
+  <test> [Protein(mG/dL)] GE 2000 </test>
+  <def><name> Proteinuria </name><val> 4 </val></def>
+  </case>
+
+  <case>
+  <test> [Protein(mG/dL)] GE 300 </test>
+  <def><name> Proteinuria </name><val> 3 </val></def>
+  </case>
+
+  <case>
+  <test> [Protein(mG/dL)] GE 100 </test>
+  <def><name> Proteinuria </name><val> 2 </val></def>
+  </case>
+
+  <case>
+  <test> [Protein(mG/dL)] GE 30 </test>
+  <def><name> Proteinuria </name><val> 1 </val></def>
+  </case>
+
+  <case>
+  <test> TRUE </test>
+  <def><name> Proteinuria </name><val> 0 </val></def>
+  </case>
+  </testcase>
+</block>
+
+<block><name> Void </name>
+
+  <def><name> Mass </name><val> Mass - ( BladderVolume.VolumeVoid * [Protein] ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

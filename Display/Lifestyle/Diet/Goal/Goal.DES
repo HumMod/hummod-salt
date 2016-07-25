@@ -1,0 +1,199 @@
+HumMod / Goal
+
+Created : 24-Jun-06
+Revised : 2013-03-15
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<panel><name> Diet_Goal </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Diet </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Diet | Goal </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> DietGoalNutrition </structurename>
+
+<label>
+  <row> 3.0 </row><col> 1.0 </col>
+  <text> Nutrition (kCal / Day) </text>
+</label>
+
+<repeatlist>
+  <name> DietGoalNutrition.Rate </name>
+  <repeat><reps> 200 </reps><stepsize>   10.0 </stepsize></repeat>
+  <repeat><reps>  40 </reps><stepsize>  100.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> Carbo_kCal/Day </name>
+  <listname> DietGoalNutrition.Rate </listname>
+  <label> Carbo's </label>
+</slidebar>
+
+<slidebar>
+  <row> 6.0 </row><col> 1.0 </col>
+  <name> Fat_kCal/Day </name>
+  <listname> DietGoalNutrition.Rate </listname>
+  <label> Fat </label>
+</slidebar>
+
+<slidebar>
+  <row> 7.4 </row><col> 1.0 </col>
+  <name> Protein_kCal/Day </name>
+  <listname> DietGoalNutrition.Rate </listname>
+  <label> Protein </label>
+</slidebar>
+
+<showvalue>
+   <row> 8.8 </row><col> 1.0 </col>
+   <name> Total_kCal/Day </name>
+   <format><integer/></format>
+   <label> Total </label>
+</showvalue>
+
+<label>
+  <row> 10.4 </row><col> 1.0 </col>
+  <text> G / Day </text>
+</label>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> Carbo_G/Day </name>
+   <format><integer/></format>
+   <label> Carbo's </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 1.0 </col>
+   <name> Fat_G/Day </name>
+   <format><integer/></format>
+   <label> Fat </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 1.0 </col>
+   <name> Protein_G/Day </name>
+   <format><integer/></format>
+   <label> Protein </label>
+</showvalue>
+
+<infobutton>
+  <row> 2.8 </row>
+  <col> 26.0 </col>
+
+  <line> Typical values for kCal/Day are </line>
+  <line> </line>
+  <line> Carbo's = 900 </line>
+  <line> Fat = 800 </line>
+  <line> Protein = 500 </line>
+  <line> </line>
+  <line> Total = 2200 </line>
+</infobutton>
+
+<structurename> DietGoalElectrolytes </structurename>
+
+<label>
+  <row> 3.0 </row><col> 32.0 </col>
+  <text> Electrolytes (mMol / Day) </text>
+</label>
+
+<repeatlist>
+  <name> Rate </name>
+  <repeat><reps> 10 </reps><stepsize>  1.0 </stepsize></repeat>
+  <repeat><reps> 29 </reps><stepsize> 10.0 </stepsize></repeat>
+  <repeat><reps>  4 </reps><stepsize> 50.0 </stepsize></repeat>
+  <repeat><reps>  4 </reps><stepsize> 250.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.6 </row><col> 32.0 </col>
+  <name> Salt_mMol/Day </name>
+  <listname> Rate </listname>
+  <label> Salt </label>
+</slidebar>
+
+<slidebar>
+  <row> 6.0 </row><col> 32.0 </col>
+  <name> KCl_mMol/Day </name>
+  <listname> Rate </listname>
+  <label> KCl </label>
+</slidebar>
+
+<slidebar>
+  <row> 7.4 </row><col> 32.0 </col>
+  <name> DietaryK+_mMol/Day </name>
+  <listname> Rate </listname>
+  <label> Dietary K+ </label>
+</slidebar>
+
+<repeatlist>
+  <name> Calcium </name>
+  <repeat><reps> 100 </reps><stepsize>  1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 8.8 </row><col> 32.0 </col>
+  <name> Ca++_mMol/Day </name>
+  <listname> Calcium </listname>
+  <label> Ca++ </label>
+</slidebar>
+
+<slidebar>
+  <row> 10.2 </row><col> 32.0 </col>
+  <name> PO4---_mMol/Day </name>
+  <listname> Rate </listname>
+  <label> PO4--- </label>
+</slidebar>
+
+<slidebar>
+  <row> 11.6 </row><col> 32.0 </col>
+  <name> SO4--_mMol/Day </name>
+  <listname> Rate </listname>
+  <label> SO4-- </label>
+</slidebar>
+
+<showvalue>
+   <row> 13.0 </row><col> 43 </col>
+   <name> NH4+_mMol/Day </name>
+   <format><integer/></format>
+   <label> NH4+ </label>
+</showvalue> <showvalue>
+   <row> 14.4 </row><col> 43 </col>
+   <name> HCO3-_mMol/Day </name>
+   <format><integer/></format>
+   <label> HCO3- </label>
+</showvalue> <infobutton>
+  <row> 2.8 </row>
+  <col> 58.0 </col>
+
+  <line> Typical values for mMol/Day are </line>
+  <line> </line>
+  <line> Na+ = 180 </line>
+  <line> Cl- = 200 </line>
+  <line> K+ = 70 </line>
+  <line> Ca++ = 30 </line>
+  <line> PO4--- = 20 </line>
+  <line> SO4-- = 35 </line>
+</infobutton>
+
+</panel>
+
+End

@@ -1,0 +1,14 @@
+HumMod / Posture DES
+
+Created : 21-Oct-04
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\Posture\ ?>
+
+<?include PostureControl.DES ?>
+<?include PostureEnergy.DES ?>
+
+End

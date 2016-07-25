@@ -1,0 +1,86 @@
+HumMod / Accumulation
+
+Created : 2010-05-26
+Last Modified : 2010-05-26
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 14.5 </row>
+   <col> 32.0 </col>
+   <high> 14.6 </high>
+   <wide> 30.0 </wide>
+   <title> Oncotic/Osmotic Details </title>
+
+<structurename> IVDrip </structurename>
+
+<label>
+  <row> 1.4 </row><col> 1.0 </col>
+  <text> Protein </text>
+</label>
+
+<slidebar>
+  <row> 2.8 </row><col> 2.0 </col>
+  <name> [Protein] </name>
+  <listname> Conc </listname>
+  <label> [Protein] </label>
+</slidebar>
+
+<showvalue>
+  <row> 4.8 </row><col> 2.0 </col>
+  <name> ProteinRate </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Rate </label>
+</showvalue>
+
+<maplist><name> ProteinRatios </name>
+  <map><val>  0.5  </val><img> 50% Albumin, 50% Globulins</img></map>
+  <map><val>  0.75 </val><img> 75% Albumin, 25% Globulins </img></map>
+  <map><val>   1 </val><img> Albumin </img></map>
+</maplist>
+
+<slidebar>
+  <row> 6.2 </row><col> 2.0 </col>
+  <name> AlbFrac </name>
+  <listname> ProteinRatios </listname>
+  <label> Albumin content </label>
+</slidebar>
+
+
+<label>
+  <row> 8.0 </row><col> 1.0 </col>
+  <text> HetaStarch </text>
+</label>
+
+<maplist><name> MolarSubstitution  </name>
+  <map><val>  0.35  </val><img> 50% Albumin, 50% Globulins</img></map>
+  <map><val>  0.4 </val><img> HexStarch</img></map>
+  <map><val>   0.5 </val><img> Voluven </img></map>
+</maplist>
+
+<radiobuttons>
+  <row> 9.4 </row><col> 1.0 </col>
+  <name> HexStarch </name>
+  <listname> Common.Switch </listname>
+  <label> 6% HetaStarch On? </label>
+</radiobuttons>
+
+<slidebar>
+  <row> 11.2 </row><col> 2.0 </col>
+  <name> HWFrac </name>
+  <listname> MolarSubstitution </listname>
+  <label> Product </label>
+</slidebar>
+
+<showvalue>
+  <row> 12.6 </row><col> 1.0 </col>
+  <name> [Osm] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Osm] </label>
+</showvalue>
+
+</groupbox>
+
+End
+

@@ -1,0 +1,92 @@
+HumMod / Sizing-Lungs
+
+Created : 2013-02-19
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Lungs </name>
+
+<variables>
+
+<var><name> TotalVolume </name></var>
+<var><name> CirculatingVolume </name></var>
+
+<var><name> BSA </name></var>
+<parm><name> LeftVentricleVolumeMult </name><val> 52 </val></parm>
+<var><name> LeftVentricleVolume </name></var>
+
+<constant><name> PulmonaryArtery-F </name><val> 0.31 </val></constant>
+<var><name> PulmonaryArteryVolume </name></var>
+
+<constant><name> PulmonaryCapillaries-F </name><val> 0.30 </val></constant>
+<var><name> PulmonaryCapillariesVolume </name></var>
+
+<var><name> PulmonaryVeins-F </name></var>
+<var><name> PulmonaryVeinsVolume </name></var>
+
+<constant><name> LeftAtrium-F </name><val> 0.07 </val></constant>
+<var><name> LeftAtriumVolume </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> BSA </name><val> Weight.BSA</val></def>
+
+<def>
+  <name> LeftVentricleVolume </name>
+  <val> LeftVentricleVolumeMult * BSA </val>
+</def>
+
+<def>
+  <name> TotalVolume </name>
+  <val> Sizing-BloodVessels.LungVolume </val>
+</def>
+
+<def>
+  <name> CirculatingVolume </name>
+  <val> TotalVolume - LeftVentricleVolume </val>
+</def>
+
+<def>
+  <name> PulmonaryVeins-F </name>
+  <val> 1 - PulmonaryArtery-F - PulmonaryCapillaries-F - LeftAtrium-F </val>
+</def>
+
+<def>
+  <name> PulmonaryArteryVolume </name>
+  <val> PulmonaryArtery-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> PulmonaryCapillariesVolume </name>
+  <val> PulmonaryCapillaries-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> PulmonaryVeinsVolume </name>
+  <val> PulmonaryVeins-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> LeftAtriumVolume </name>
+  <val> LeftAtrium-F * CirculatingVolume </val>
+</def>
+
+<def>
+  <name> LeftVentricle.InitialVolume </name>
+  <val> LeftVentricleVolume </val>
+</def>
+
+<call> LeftVentricle.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,15 @@
+HumMod / Apnea
+
+Created : 2013-03-20
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Apnea </name>
+
+<variables>
+<parm><name> EventRate </name><val> 0 </val></parm>
+</variables>
+
+</structure>

@@ -1,0 +1,15 @@
+HumMod / PituitaryGland
+
+Created : 2012-06-30
+Revised : 2012-06-30
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<leaf>
+  <name> PituitaryGland </name>
+  <label> Pituitary Gland </label>
+  <parent> ORGANS </parent>
+</leaf>
+
+End

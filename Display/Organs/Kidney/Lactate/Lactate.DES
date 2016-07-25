@@ -1,0 +1,41 @@
+HumMod / Lactate
+
+Created : 12-Dec-05
+Revised : 2013-03-28Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<panel><name> Kidney-Lactate </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Kidney </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Kidney | Lactate </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Kidney-Lactate </structurename>
+
+<?path Display\Organs\Kidney\Lactate\ ?>
+
+<?include TissueLactate.DES ?>
+
+<?include LactateMade.DES ?>
+<?include LactateUsed.DES ?>
+
+</panel>
+
+End

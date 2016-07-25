@@ -1,0 +1,26 @@
+HumMod / RightBox
+
+Created : 2012-07-22
+Revised : 2012-07-22
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 7.0 </row>
+   <col> 32.0 </col>
+   <high> 30.0 </high>
+   <wide> 30.0 </wide>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> </line>
+  <line> </line>
+</infobutton>
+
+</groupbox>
+
+End

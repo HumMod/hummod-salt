@@ -1,0 +1,88 @@
+HumMod | Endocrine
+
+Created : 2012-01-28
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 5.4 </row>
+   <col> 32.0 </col>
+   <high> 13.2 </high>
+   <wide> 30.0 </wide>
+   <title> Endocrine ( Islets of Langerhans ) </title>
+
+<structurename> Pancreas-Size </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> EndocrineMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> AlphaCellMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Alpha Cells (G) </label>
+</showvalue>
+
+<repeatlist>
+  <name> AlphaCellMassPercent </name>
+  <repeat><reps> 85 </reps><stepsize>  1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.2 </row><col> 3.0 </col>
+  <name> AlphaCellMassPercent </name>
+  <listname> AlphaCellMassPercent </listname>
+  <label> % </label>
+</slidebar>
+
+<showvalue>
+   <row> 5.8 </row><col> 1.0 </col>
+   <name> BetaCellMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Beta Cells (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.8 </row><col> 3.0 </col>
+   <name> BetaCellMassPercent </name>
+   <format><integer/></format>
+   <label> % </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> DeltaCellMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Delta Cells (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.2 </row><col> 3.0 </col>
+   <name> DeltaCellMassPercent </name>
+   <format><integer/></format>
+   <label> % </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.6 </row><col> 1.0 </col>
+   <name> OtherCellMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Other Cells (G) </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.6 </row><col> 3.0 </col>
+   <name> OtherCellMassPercent </name>
+   <format><integer/></format>
+   <label> % </label>
+</showvalue>
+
+</groupbox>
+
+End

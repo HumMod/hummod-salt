@@ -1,0 +1,43 @@
+HumMod / HormonesGeneral
+
+Created : 2014-01-15
+Revised : 2014-02-25
+Author : Tom Coleman
+Copyright : 2014-2014
+By : Tom Coleman
+
+<branch>
+  <name> HORMONESGENERAL </name>
+  <label> Hormones </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<leaf>
+  <name> Hormones-Summary </name>
+  <label> Summary </label>
+  <parent> HORMONESGENERAL </parent>
+</leaf>
+
+<separatorbar>
+  <parent> HORMONESGENERAL </parent>
+</separatorbar>
+
+<?path Display\Tree\HormonesGeneral\ ?>
+
+<?include ACTH.DES ?>
+<?include ADH.DES ?>
+<?include Aldosterone.DES ?>
+<?include ANP.DES ?>
+<?include Calcitonin.DES ?>
+<?include CorticotropinReleasingFactor.DES ?>
+<?include Cortisol.DES ?>
+<?include EPO.DES ?>
+<?include Glucagon.DES ?>
+<?include Insulin.DES ?>
+<?include Leptin.DES ?>
+<?include ParathyroidHormone.DES ?>
+<?include Renin.DES ?>
+<?include ThyroidGland.DES ?>
+<?include VitaminD.DES ?>
+
+End

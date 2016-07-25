@@ -1,0 +1,51 @@
+HumMod / Torso_Middle_LymphWater
+
+Created : 26-Mar-08
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Middle_LymphWater </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<var><name> PressureEffect </name></var>
+
+<parm><name> NormalRate </name><val> 5.2 </val></parm>4.85
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> PressureFlow </name>
+  <point><x> -14.0 </x><y>  0.0 </y><slope> 0.0 </slope></point>-14
+  <point><x>  -3. </x><y>  1.0 </y><slope> 0.1 </slope></point>-5, -3.5
+  <point><x>   2 </x><y>  8.0 </y><slope> 4.0 </slope></point>2
+  <point><x>   6.0 </x><y> 25.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> PressureEffect </name>
+  <val> PressureFlow [ Torso_Middle_InterstitialWater.Pressure ] </val>
+</def>
+
+<def>
+  <name> Rate </name>
+  <val> PressureEffect * NormalRate </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

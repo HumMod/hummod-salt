@@ -1,0 +1,63 @@
+HumMod / Lung_H2O
+
+Created : 2012-07-14
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Lung_H2O </name>
+
+<variables>
+
+<var><name> [H2O] </name></var>
+<var><name> pH2O </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 148 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 15 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+  <def>
+    <name> [H2O] </name>
+    <val> Mass / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> pH2O </name>
+    <val> [H2O] * Barometer.Pressure </val>
+  </def>
+</block>
+
+<block><name> Dervs </name>
+  <def>
+    <name> Change </name>
+    <val> Breathing.AlveolarVentilation * ( Bronchi.[H2O] - [H2O] ) </val>
+  </def>
+
+  <def>
+    <name> DxMax </name>
+    <val> LungGases.DxMax </val>
+  </def>
+</block>
+
+</definitions>
+</structure>
+
+End

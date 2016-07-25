@@ -1,0 +1,14 @@
+HumMod / ANP
+
+Created : 2013-03-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Hormones\ANP\ ?> -->
+
+<?include Pool\Pool.DES ?>
+<?include Secretion\Secretion.DES ?>
+
+End

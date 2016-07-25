@@ -1,0 +1,69 @@
+HumMod / NephronKetoacids
+
+Created : 11-Apr-05
+Revised : 2013-02-04
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> NephronKetoacids </name>
+
+<variables>
+
+<var><name> Filtration </name></var>
+<var><name> Filtration(mMol/Min) </name></var>
+
+<var><name> Reabsorption </name></var>
+<var><name> Reabsorption(mMol/Min) </name></var>
+
+<var><name> Excretion </name></var>
+<var><name> Excretion(mMol/Min) </name></var>
+
+
+<constant><name> MG_TO_MMOL </name><val> 0.0098 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+  <call> LeftNephronKetoacids.CalcExcretion </call>
+  <call> RightNephronKetoacids.CalcExcretion </call>
+
+<def>
+  <name> Filtration </name>
+  <val> LeftNephronKetoacids.Filtration  + RightNephronKetoacids.Filtration  </val>
+</def>
+
+<def>
+  <name> Filtration(mMol/Min) </name>
+  <val> GlomerulusKetoacid.Rate(mMol/Min) </val>
+</def>
+
+<def>
+  <name> Reabsorption </name>
+  <val> LeftNephronKetoacids.Reabsorption  + RightNephronKetoacids.Reabsorption  </val>
+</def>
+
+<def>
+  <name> Reabsorption(mMol/Min) </name>
+  <val> MG_TO_MMOL * Reabsorption </val>
+</def>
+
+<def>
+  <name> Excretion </name>
+  <val> LeftNephronKetoacids.Excretion  + RightNephronKetoacids.Excretion  </val>
+</def>
+
+<def>
+  <name> Excretion(mMol/Min) </name>
+  <val> MG_TO_MMOL * Excretion </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

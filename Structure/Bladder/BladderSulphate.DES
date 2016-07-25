@@ -1,0 +1,61 @@
+HumMod / BladderSulphate
+
+Created : 16-Mar-08
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BladderSulphate </name>
+<variables>
+
+<var><name> [SO4--] </name></var>
+<var><name> [SO4--(mEq/L)] </name></var>
+
+<constant><name> InitialConc </name><val> 0.0103 </val></constant>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> InitialMass </name><val> InitialConc * BladderVolume.InitialVolume </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_SO4.Outflow </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+  <def><name> [SO4--] </name><val> Mass / BladderVolume.Mass </val></def>
+  <def><name> [SO4--(mEq/L)] </name><val> 1000.0 * [SO4--] </val></def>
+
+</block>
+
+<block><name> Void </name>
+
+  <def><name> Mass </name><val> Mass - ( BladderVolume.VolumeVoid * [SO4--] ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

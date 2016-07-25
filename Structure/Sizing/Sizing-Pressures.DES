@@ -1,0 +1,182 @@
+HumMod / Sizing-Pressures
+
+Created : 2013-02-19
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Pressures </name>
+
+<variables>
+
+<constant><name> SystemicArteries </name><val> 95 </val></constant>97
+
+<constant><name> PeripheralVeins </name><val> 7 </val></constant>10,8
+<constant><name> SplanchnicVeins </name><val> 6 </val></constant>8,6
+
+<constant><name> RightAtrium </name><val> 0. </val></constant>4
+<constant><name> LeftAtrium </name><val> 4. </val></constant>8
+
+
+<constant><name> PulmonaryArtery </name><val> 14 </val></constant>
+<constant><name> PulmonaryCapillaries </name><val> 10 </val></constant>
+<constant><name> PulmonaryVeins </name><val> 9 </val></constant>
+
+<constant><name> Thorax </name><val> -5 </val></constant>
+<constant><name> Pericardium </name><val> -4 </val></constant>-3
+
+<constant><name> Systemic-SBP </name><val> 120 </val></constant>
+<constant><name> Systemic-DBP </name><val> 80 </val></constant>
+
+<constant><name> Pulmonary-SBP </name><val> 21 </val></constant>
+<constant><name> Pulmonary-DBP </name><val> 9 </val></constant>
+
+<var><name> SystemicArteries-TMP </name></var>
+<var><name> PeripheralVeins-TMP </name></var>
+<var><name> SplanchnicVeins-TMP </name></var>
+<var><name> RightAtrium-TMP </name></var>
+<var><name> LeftAtrium-TMP </name></var>
+<var><name> PulmonaryArtery-TMP </name></var>
+<var><name> PulmonaryCapillaries-TMP </name></var>
+<var><name> PulmonaryVeins-TMP </name></var>
+
+<var><name> Systemic-SBP-TMP </name></var>
+<var><name> Systemic-DBP-TMP </name></var>
+<var><name> Pulmonary-SBP-TMP </name></var>
+<var><name> Pulmonary-DBP-TMP </name></var>
+
+<var><name> RightVentricle-ESP </name></var>
+<var><name> RightVentricle-EDP </name></var>
+
+<var><name> LeftVentricle-ESP </name></var>
+<var><name> LeftVentricle-EDP </name></var>
+
+<var><name> RightVentricle-ESP-TMP </name></var>
+<var><name> RightVentricle-EDP-TMP </name></var>
+
+<var><name> LeftVentricle-ESP-TMP </name></var>
+<var><name> LeftVentricle-EDP-TMP </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> SystemicArteries-TMP </name>
+  <val> SystemicArteries </val>
+</def>
+
+<def>
+  <name> PeripheralVeins-TMP </name>
+  <val> PeripheralVeins </val>
+</def>
+
+<def>
+  <name> SplanchnicVeins-TMP </name>
+  <val> SplanchnicVeins </val>
+</def>
+
+<def>
+  <name> RightAtrium-TMP </name>
+  <val> RightAtrium - Pericardium </val>
+</def>
+
+<def>
+  <name> Pressures.Initial-RightAtrium-TMP </name>
+  <val> RightAtrium-TMP </val>
+</def>
+
+<def>
+  <name> LeftAtrium-TMP </name>
+  <val> LeftAtrium - Pericardium </val>
+</def>
+
+<def>
+  <name> Pressures.Initial-LeftAtrium-TMP </name>
+  <val> LeftAtrium-TMP </val>
+</def>
+
+<def>
+  <name> PulmonaryArtery-TMP </name>
+  <val> PulmonaryArtery - Thorax </val>
+</def>
+
+<def>
+  <name> PulmonaryCapillaries-TMP </name>
+  <val> PulmonaryCapillaries - Thorax </val>
+</def>
+
+<def>
+  <name> PulmonaryVeins-TMP </name>
+  <val> PulmonaryVeins - Thorax </val>
+</def>
+
+<def>
+  <name> Systemic-SBP-TMP </name>
+  <val> Systemic-SBP </val>
+</def>
+
+<def>
+  <name> Systemic-DBP-TMP </name>
+  <val> Systemic-DBP </val>
+</def>
+
+<def>
+  <name> Pulmonary-SBP-TMP </name>
+  <val> Pulmonary-SBP - Thorax </val>
+</def>
+
+<def>
+  <name> Pulmonary-DBP-TMP </name>
+  <val> Pulmonary-DBP - Thorax </val>
+</def>
+
+<def>
+  <name> RightVentricle-ESP </name>
+  <val> Pulmonary-SBP </val>
+</def>
+
+<def>
+  <name> RightVentricle-EDP </name>
+  <val> RightAtrium </val>
+</def>
+
+<def>
+  <name> LeftVentricle-ESP </name>
+  <val> Systemic-SBP </val>
+</def>
+
+<def>
+  <name> LeftVentricle-EDP </name>
+  <val> LeftAtrium </val>
+</def>
+
+<def>
+  <name> RightVentricle-ESP-TMP </name>
+  <val> Pulmonary-SBP - Pericardium </val>
+</def>
+
+<def>
+  <name> RightVentricle-EDP-TMP </name>
+  <val> RightAtrium - Pericardium </val>
+</def>
+
+<def>
+  <name> LeftVentricle-ESP-TMP </name>
+  <val> Systemic-SBP - Pericardium </val>
+</def>
+
+<def>
+  <name> LeftVentricle-EDP-TMP </name>
+  <val> LeftAtrium - Pericardium </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

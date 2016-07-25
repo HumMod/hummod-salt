@@ -1,0 +1,68 @@
+HumMod / RightHeartPumping
+
+Created : 2010-05-25
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2010-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\RightHeartPumping\ ?>
+
+<?include RightHeartPumping-Pumping.DES ?>
+<?include RightHeartPumping-Diastole.DES ?>
+<?include RightHeartPumping-Systole.DES ?>
+<?include RightHeartPumping-ContractileProtein.DES ?>
+<?include RightHeartPumping-Contractility.DES ?>
+
+<structure><name> RightHeartPumping </name>
+
+<equations>
+
+<impliciteq>
+  <name> SBP </name>
+  <startname> SBP </startname>
+  <initialval> 20.6 </initialval>
+  <endname> SBPEnd </endname>
+  <errorlim> 0.21 </errorlim>
+  <searchmin> -4.0 </searchmin>
+</impliciteq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+ <call> RightHeartPumping-ContractileProtein.Parms </call>
+ <call> RightHeartPumping-Contractility.Parms </call>
+
+ <call> RightHeartPumping-Diastole.Parms </call>
+</block>
+
+<block><name> Calc </name>
+  <call> RightHeartPumping-ContractileProtein.Calc </call>
+  <call> RightHeartPumping-Contractility.Calc </call>
+  <call> RightHeartPumping-Diastole.Calc </call>
+
+  <implicitmath><name> SBP </name>
+
+  <def><name> RightHeartPumping-Systole.SBP </name><val> SBP </val></def>
+
+  <call> RightHeartPumping-Systole.Calc </call>
+  <call> RightHeartPumping-Pumping.Calc </call>
+  <call> PulmArty.SBP </call>
+
+  <def><name> SBPEnd </name><val> PulmArty.SBP </val></def>
+
+  </implicitmath>
+
+  <call> RightHeartPumping-ContractileProtein.Calc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> RightHeartPumping-ContractileProtein.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

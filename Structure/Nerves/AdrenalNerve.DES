@@ -1,0 +1,42 @@
+HumMod / AdrenalNerve
+
+Created : 23-Jun-06
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> AdrenalNerve </name>
+
+<variables>
+
+<var><name> NA(Hz) </name></var>
+<var><name> NA </name></var>
+
+<parm><name> Switch </name><val> FALSE </val></parm>
+<parm><name> Setting </name><val> 0.0 </val></parm>
+<parm><name> Block(%) </name><val> 0.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<conditional>
+  <name> NA(Hz) </name>
+  <test> Switch </test>
+  <true> Setting </true>
+  <false> Ganglia-Adrenal.NA(Hz) * ( 1.0 - ( Block(%) / 100.0 ) ) </false>
+</conditional>
+
+<def>
+  <name> NA </name>
+  <val> 0.667 * NA(Hz) </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

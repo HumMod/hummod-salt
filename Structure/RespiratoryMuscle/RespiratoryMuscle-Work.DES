@@ -1,0 +1,41 @@
+HumMod / RespiratoryMuscle-Work
+
+Created : 23-May-05
+Revised : 2012-07-18
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> RespiratoryMuscle-Work </name>
+
+<variables>
+
+<var><name> TotalCals </name></var>
+<var><name> MotionCals </name></var>
+<var><name> HeatCals </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> TotalCals </name>
+  <val> RespiratoryMuscle-Breathing.TotalCals </val>
+</def>
+
+<def>
+  <name> MotionCals </name>
+  <val> RespiratoryMuscle-Breathing.MotionCals </val>
+</def>
+
+<def>
+  <name> HeatCals </name>
+  <val> RespiratoryMuscle-Breathing.HeatCals </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

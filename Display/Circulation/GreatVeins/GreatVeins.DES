@@ -1,0 +1,15 @@
+HumMod / GreatVeins
+
+Created : 2012-02-10
+Revised : 2013-01-28
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<?path Display\Circulation\GreatVeins\ ?>
+
+<?include SuperiorVenaCava\SuperiorVenaCava.DES ?>
+<?include CoronarySinus\CoronarySinus.DES ?>
+<?include InferiorVenaCava\InferiorVenaCava.DES ?>
+
+End

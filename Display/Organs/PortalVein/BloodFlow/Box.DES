@@ -1,0 +1,117 @@
+HumMod / Box
+
+Created : 2012-11-02
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 32.8 </high>
+   <wide> 30.0 </wide>
+
+<structurename> PortalVein </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> BloodFlow </name>
+   <format><integer/></format>
+   <label> Portal Vein </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> BloodFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 900 </min><max> 1100 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<structurename> HepaticArtery-Flow </structurename>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> BloodFlow </name>
+   <format><integer/></format>
+   <label> Hepatic Artery </label>
+</showvalue>
+
+<showgraph>
+  <row> 12.8 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> BloodFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 200 </min><max> 400 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<structurename> HepaticVein </structurename>
+
+<showvalue>
+   <row> 22.2 </row><col> 1.0 </col>
+   <name> BloodFlow </name>
+   <format><integer/></format>
+   <label> Hepatic Vein </label>
+</showvalue>
+
+<showgraph>
+  <row> 23.2 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> BloodFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 1200 </min><max> 1400 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Typical Values (mL/Min) </line>
+  <line>  </line>
+  <line> Male </line>
+  <line>  </line>
+  <line> Portal Vein = 1030 </line>
+  <line> Hepatic Artery = 320 </line>
+  <line> Hepatic Vein = 1350 </line>
+  <line>  </line>
+  <line> Female </line>
+  <line>  </line>
+  <line> Portal Vein = 910 </line>
+  <line> Hepatic Artery = 260 </line>
+  <line> Hepatic Vein = 1170 </line>
+</infobutton>
+
+</groupbox>
+
+End

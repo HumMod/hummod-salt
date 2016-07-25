@@ -1,0 +1,112 @@
+HumMod / GILumenCarbohydrates
+
+Created : 05-Jun-06
+Last Modified : 2011-07-27
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University of Mississippi Medical Center
+
+<structure><name> GILumenCarbohydrates </name>
+
+<variables>
+
+<var><name> Intake </name></var>
+<var><name> IntakeDiet </name></var>
+<var><name> IntakeLoading </name></var>
+
+<var><name> Absorption </name></var>
+
+<var><name> BasicAbsorption </name></var>
+<parm><name> Transporter </name><val> 1.0 </val></parm>
+
+<var>
+  <name> PlasmaFlowEffect </name>
+</var>
+
+<var><name> [Carbo] </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 1930.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 19.3 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve><name> BasicAbsorption </name>
+  <point><x>    0 </x><y>   0 </y><slope> 0.0 </slope></point>
+  <point><x> 1900 </x><y> 150 </y><slope> 0.08 </slope></point>
+  <point><x> 6000 </x><y> 600 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> PlasmaFlowEffect </name>
+  <point><x>  10 </x><y> 0 </y><slope> 0 </slope></point>
+  <point><x> 100 </x><y> 1 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Conc </name>
+
+<def><name> [Carbo] </name><val> Mass / GILumenH2O.Mass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> IntakeDiet </name>
+  <val> DietIntakeNutrition.Carbo_mG/Min </val>
+</def>
+
+<def>
+  <name> IntakeLoading </name>
+  <val> OralH2OGlucoseLoad.GlucoseRate + OGTT.Loss</val>
+</def>
+
+<def>
+  <name> Intake </name>
+  <val> IntakeDiet + IntakeLoading </val>
+</def>
+
+<def>
+  <name> BasicAbsorption </name>
+  <val> BasicAbsorption [ Mass ] </val>
+</def>
+
+<def>
+  <name> PlasmaFlowEffect </name>
+  <val> PlasmaFlowEffect [ GITract-Flow.PlasmaFlow ] </val>
+</def>
+
+<def>
+  <name> Absorption </name>
+  <val>
+       Transporter
+     * PlasmaFlowEffect
+     * BasicAbsorption
+   </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Intake - Absorption </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

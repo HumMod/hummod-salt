@@ -1,0 +1,77 @@
+HumMod / LeftNephronGlucose
+
+Created : 11-Apr-05
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftNephronGlucose </name>
+
+<variables>
+
+<parm><name> TMaxBasic </name><val> 165 </val></parm>
+<parm><name> TMaxMultiplier </name><val> 1 </val></parm>
+<var><name> TMax </name></var>
+
+<var><name> Reab </name></var>
+<var><name> Spillover </name></var>
+<var><name> Spillover(mMol/Min) </name></var>
+
+<var><name> FractionalFiltration </name></var>
+<var><name> FractionalReabsorption </name></var>
+
+<constant><name> MG_TO_MMOL </name><val> 0.00555 </val></constant>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> TMax </name>
+  <point><x> 0.8 </x><y> 0.8 </y><slope> 1 </slope></point>
+  <point><x> 1.2 </x><y> 1.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> CalcSpillover </name>
+
+<def>
+  <name> TMax </name>
+  <val> TMaxMultiplier * TMaxBasic * LeftKidney-NephronCount.Total(xNormal) </val>
+</def>
+
+<conditional>
+  <name> FractionalFiltration </name>
+  <test> TMax GT 0 </test>
+  <true> LeftGlomerulusGlucose.Rate / TMax </true>
+  <false> 0 </false>
+</conditional>
+
+<def>
+  <name> FractionalReabsorption </name>
+  <val> TMax [ FractionalFiltration ] </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> FractionalReabsorption * TMax </val>
+</def>
+
+<def>
+  <name> Spillover </name>
+  <val> LeftGlomerulusGlucose.Rate - Reab </val>
+</def>
+
+<def>
+  <name> Spillover(mMol/Min) </name>
+  <val> MG_TO_MMOL * Spillover </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

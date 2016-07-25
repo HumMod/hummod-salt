@@ -1,0 +1,115 @@
+HumMod / Interstitium
+
+Created : 2013-02-28
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> Interstitium </name>
+  <label> Interstitium </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> Interstitium-Summary </name>
+  <label> Summary </label>
+  <parent> Interstitium </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Interstitium </parent>
+</separatorbar>
+
+<branch>
+  <name> Interstitium-Upper </name>
+  <label> Upper </label>
+  <parent> Interstitium </parent>
+</branch>
+
+<leaf>
+  <name> Interstitium-Upper-BloodPressure </name>
+  <label> Blood Pressure </label>
+  <parent> Interstitium-Upper </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Upper-H2O </name>
+  <label> H2O </label>
+  <parent> Interstitium-Upper </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Upper-Capillaries_Lymph </name>
+  <label> Capillaries - Lymph </label>
+  <parent> Interstitium-Upper </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Upper-InterstitialProtein </name>
+  <label> Interstitial Protein </label>
+  <parent> Interstitium-Upper </parent>
+</leaf>
+
+<branch>
+  <name> Interstitium-Middle </name>
+  <label> Middle </label>
+  <parent> Interstitium </parent>
+</branch>
+
+<leaf>
+  <name> Interstitium-Middle-BloodPressure </name>
+  <label> Blood Pressure </label>
+  <parent> Interstitium-Middle </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Middle-H2O </name>
+  <label> H2O </label>
+  <parent> Interstitium-Middle </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Middle-Capillaries_Lymph </name>
+  <label> Capillaries - Lymph </label>
+  <parent> Interstitium-Middle </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Middle-InterstitialProtein </name>
+  <label> Interstitial Protein </label>
+  <parent> Interstitium-Middle </parent>
+</leaf>
+
+<branch>
+  <name> Interstitium-Lower </name>
+  <label> Lower </label>
+  <parent> Interstitium </parent>
+</branch>
+
+<leaf>
+  <name> Interstitium-Lower-BloodPressure </name>
+  <label> Blood Pressure </label>
+  <parent> Interstitium-Lower </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Lower-H2O </name>
+  <label> H2O </label>
+  <parent> Interstitium-Lower </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Lower-Capillaries_Lymph </name>
+  <label> Capillaries - Lymph </label>
+  <parent> Interstitium-Lower </parent>
+</leaf>
+
+<leaf>
+  <name> Interstitium-Lower-InterstitialProtein </name>
+  <label> Interstitial Protein </label>
+  <parent> Interstitium-Lower </parent>
+</leaf>
+
+End

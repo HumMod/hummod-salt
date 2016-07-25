@@ -1,0 +1,40 @@
+HumMod / Pressures
+
+Created : 2013-03-02
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Pressures </name>
+
+<variables>
+
+<var><name> RightAtrium-TMP </name></var>
+<var><name> LeftAtrium-TMP </name></var>
+
+<var><name> Initial-RightAtrium-TMP </name></var>
+<var><name> Initial-LeftAtrium-TMP </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> RightAtrium-TMP </name>
+  <val> Initial-RightAtrium-TMP </val>
+</def>
+
+<def>
+  <name> LeftAtrium-TMP </name>
+  <val> Initial-LeftAtrium-TMP </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

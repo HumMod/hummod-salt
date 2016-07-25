@@ -1,0 +1,16 @@
+HumMod | ParathyroidHormone
+
+Created : 2011-08-01
+Last Modified : 2011-08-01
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+
+<leaf>
+  <name> ParathyroidHormone </name>
+  <label> Parathyroid Hormone </label>
+  <parent> HORMONESGENERAL </parent>
+</leaf>
+
+End

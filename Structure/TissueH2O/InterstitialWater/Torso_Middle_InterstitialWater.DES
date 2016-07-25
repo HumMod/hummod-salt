@@ -1,0 +1,72 @@
+HumMod / Torso_Middle_InterstitialWater
+
+Created : 24-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> Torso_Middle_InterstitialWater </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> Vol(L) </name></var>
+
+<var><name> Pressure </name></var>
+
+<var><name> Slope </name></var>
+<var><name> V0 </name></var>
+<parm><name> P0 </name><val> -1.2 </val></parm>
+
+</variables>
+
+<functions>
+<!--
+<curve>
+  <name> PressureVolume </name>
+  <point><x>  2400.0 </x><y> -30.0 </y><slope>  0.01 </slope></point>1200
+  <point><x>  5100.0 </x><y>  -4.8 </y><slope>  0.0004 </slope></point>4800   5400   -4.8
+  <point><x> 7000.0 </x><y>   -3. </y><slope>  0.0004 </slope></point>12000
+  <point><x> 24000.0 </x><y>  50.0 </y><slope>  0.01 </slope></point>24000
+</curve>
+
+<curve>
+  <name> PressureVolume </name>
+  <point><x>   2400 </x><y> -30.0 </y><slope>  0.02 </slope></point>
+  <point><x>  4000 </x><y>  -1.9 </y><slope>  0.0056 </slope></point>
+  <point><x>  5000 </x><y>  -1 </y><slope>  0.00112 </slope></point>
+  <point><x>  6000 </x><y>  1.1 </y><slope>  0.0056 </slope></point>
+  <point><x>  15000 </x><y>  50.0 </y><slope>  0.02 </slope></point>
+</curve>
+
+-->
+<curve>
+  <name> PressureVolume </name>
+  <point><x>   1250 </x><y> -30.0 </y><slope>  0.02 </slope></point>
+  <point><x>  4000 </x><y>  -2.9 </y><slope>  0.00225 </slope></point>
+  <point><x>  5000 </x><y>  -1 </y><slope>  0.002 </slope></point>
+  <point><x>  6000 </x><y>  1.1 </y><slope>  0.00225 </slope></point>
+  <point><x>  15000 </x><y>  50.0 </y><slope>  0.01 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> Vol </name><val> Torso_Middle_H2O.Vol - CellH2O.Torso_Middle_Vol </val></def>
+<def><name> Vol(L) </name><val> Vol / 1000.0 </val></def>
+
+<def><name> P0 </name><val> Vol + 5040 - V0 </val></def>
+<def><name> Pressure </name><val> PressureVolume [ P0 ] </val></def>
+<!--<def><name> Pressure </name><val> Slope * ( Vol - V0 ) + P0</val></def>-->
+</block>
+
+</definitions>
+</structure>
+
+End

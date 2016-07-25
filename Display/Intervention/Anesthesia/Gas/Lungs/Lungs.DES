@@ -1,0 +1,40 @@
+HumMod / Lungs
+
+Created : 15-Apr-05
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> GasAnesthesiaLungs </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> GasAnesthesia </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Lungs </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/><secs/><days/>
+</showclock>
+
+<?path Display\Intervention\Anesthesia\Gas\Lungs\ ?>
+
+<?include Concentrations.DES ?>
+<?include Alveoli.DES ?>
+<?include Technical.DES ?>
+
+<?include Pressures.DES ?>
+<?include PulmonaryUptake.DES ?>
+
+</panel>
+
+End

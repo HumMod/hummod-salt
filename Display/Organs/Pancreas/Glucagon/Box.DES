@@ -1,0 +1,88 @@
+HumMod | Box
+
+Created : 2012-11-03
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Pancreas-Glucagon </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Glucagon] </name>
+   <format><integer/></format>
+   <label> [Glucagon] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Glucagon] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 10000 </max><inc> 1000 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> [Glucagon(pMol/L)] </name>
+   <format><integer/></format>
+   <label> [Glucagon (pMol/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> GlucagonSecretion.Rate(pG/Min) </name>
+   <format><integer/></format>
+   <label> Secretion </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> GlucagonPool.[Glucagon] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Pool] </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> Pancreas-Flow.AlphaCellPlasmaFlow </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Plasma Flow </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical Values For Alpha Cell Venules </line>
+  <line>  </line>
+  <line> [Glucagon] = 8900 pG/mL </line>
+  <line> [Glucagon (pMol/L)] = 2500 </line>
+  <line>  </line>
+  <line> Secretion = 50000 pG/Min </line>
+  <line> [Pool] = 70 pG/mL </line>
+  <line>  </line>
+  <line> Plasma Flow = 5.7 mL/Min </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

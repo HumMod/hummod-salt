@@ -1,0 +1,42 @@
+<groupbox>
+   <row> 15.9 </row>
+   <col> 32.0 </col>
+   <high> 9.4 </high>
+   <wide> 45.0 </wide>
+   <title> TMax Glucose </title>
+
+<repeatlist>
+  <name> TMaxBasic </name>
+  <repeat><reps> 20 </reps><stepsize>  0.1 </stepsize></repeat>
+  <repeat><reps> 8 </reps><stepsize>  0.25 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> LeftNephronGlucose.TMaxMultiplier </name>
+  <listname> TMaxBasic </listname>
+  <label> TMax Glucose </label>
+</slidebar>
+
+<showvalue>
+   <row> 3.1 </row><col> 3.0 </col>
+   <name> NephronGlucose.TMax </name>
+   <format><decimal> 1 </decimal></format>
+   <label> TMax </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.5 </row><col> 3.0 </col>
+   <name> LeftKidney-NephronCount.Total(xNormal) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Nephrons (x Normal) </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.5 </row><col> 3.0 </col>
+   <name> RightKidney-NephronCount.Total(xNormal) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Nephrons (x Normal) </label>
+</showvalue>
+
+</groupbox>

@@ -1,0 +1,77 @@
+HumMod / Acetylcholine
+
+Created : 23-Jun-06
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> Acetylcholine </name>
+
+<variables>
+
+
+<var><name> NicotinicAntagonism </name><val> 0 </val></var>
+<var><name> MuscarinicAntagonism </name><val> 00 </val></var>
+
+<parm>
+  <name> NicBlock(%) </name>
+  <val> 60.0 </val>
+</parm>
+
+<parm>
+  <name> MusBlock(%) </name>
+  <val> 60.0 </val>
+</parm>
+
+
+<parm><name> NicSwitch </name><val> FALSE </val></parm>
+<parm><name> MusSwitch </name><val> FALSE </val></parm>
+<parm><name> BolusAmount </name><val> 400 </val></parm>
+<parm><name> Kclearance </name><val> 0.99 </val></parm>
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> InjectNow </name>
+
+<def><name> Mass </name><val> Mass + BolusAmount </val></def>
+
+</block>
+
+<block><name> Calc </name>
+
+
+<conditional>
+  <name> NicotinicAntagonism </name>
+  <test> NicSwitch </test>
+  <true> 1 - ( NicBlock(%) / 100 ) </true>
+  <false> 1 </false>
+</conditional>
+
+<conditional>
+  <name> MuscarinicAntagonism </name>
+  <test> MusSwitch </test>
+  <true> 1 - ( MusBlock(%) / 100 ) </true>
+  <false> 1 </false>
+</conditional>
+
+<def><name> Change </name><val> - Kclearance * Mass </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

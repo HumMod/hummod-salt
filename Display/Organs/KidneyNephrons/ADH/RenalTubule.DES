@@ -1,0 +1,135 @@
+HumMod / RenalTubule
+
+Created : 09-Apr-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 20.2 </high>
+   <wide> 30.0 </wide>
+   <title> Renal Tubule </title>
+
+<structurename> NephronADH </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightNephronADH.[ADH] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right [ADH] </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftNephronADH.[ADH] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left [ADH] </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 8 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightNephronADH.[ADH] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftNephronADH.[ADH] </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+   <scale><min> 1 </min><max> 3 </max><inc> 1 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 11.8 </row><col> 1.0 </col>
+  <name> RightNephronADH.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> NephronADH.Level </name>
+  <repeat><reps> 40 </reps><stepsize>  0.1 </stepsize></repeat>
+  <repeat><reps>  6 </reps><stepsize>  1.0 </stepsize></repeat>
+  <repeat><reps>  9 </reps><stepsize> 10.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> RightNephronADH.Level </name>
+  <listname> NephronADH.Level </listname>
+  <label> Right Level </label>
+</slidebar>
+
+<radiobuttons>
+  <row> 14.6 </row><col> 1.0 </col>
+  <name> RightNephronADH.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<slidebar>
+  <row> 16.0 </row><col> 1.0 </col>
+  <name> LeftNephronADH.Level </name>
+  <listname> NephronADH.Level </listname>
+  <label> Left Level </label>
+</slidebar>
+
+<repeatlist>
+  <name> NephronADH.Tau </name>
+  <repeat><reps> 40 </reps><stepsize>   1.0 </stepsize></repeat>
+  <repeat><reps>  6 </reps><stepsize>  10.0 </stepsize></repeat>
+  <repeat><reps>  9 </reps><stepsize> 100.0 </stepsize></repeat>
+</repeatlist>
+<!--
+<slidebar>
+  <row> 17.4 </row><col> 1.0 </col>
+  <name> Tau </name>
+  <listname> NephronADH.Tau </listname>
+  <label> Tau </label>
+</slidebar>
+-->
+<showvalue>
+   <row> 17.4 </row><col> 1.0 </col>
+   <name> ADHPool.[ADH] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Plasma ADH] </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.6 </row><col> 1.0 </col>
+   <name> RightNephronADH.Log10Conc </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Right log10 [ADH] </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.6 </row><col> 1.0 </col>
+   <name> LeftNephronADH.Log10Conc </name>
+   <format><decimal> 2 </decimal></format>
+   <label>Left  log10 [ADH] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> A typical delay (Tau) is 20 minutes. </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,90 @@
+HumMod / Composition
+
+Created : 2011-08-08
+Last Modified : 2011-08-08
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<panel><name> Mineral-Composition </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Bone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Bone | Mineral | Composition </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Bone-Composition </structurename>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 4000 </min><max> 6000 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.4 </row><col> 1.0 </col>
+   <name> Matrix </name>
+   <format><integer/></format>
+   <label> Matrix </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.4 </row><col> 1.0 </col>
+   <name> Salts </name>
+   <format><integer/></format>
+   <label> Salts </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.4 </row><col> 3.0 </col>
+   <name> Calcium </name>
+   <format><integer/></format>
+   <label> Calcium </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 3.0 </col>
+   <name> Phosphate </name>
+   <format><integer/></format>
+   <label> Phosphate </label>
+</showvalue>
+
+</panel>
+
+End

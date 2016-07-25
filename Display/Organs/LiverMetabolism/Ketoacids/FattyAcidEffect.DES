@@ -1,0 +1,56 @@
+HumMod | FattyAcidEffect
+
+Created : 2012-07-08
+Revised : 2013-01-30
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 25.6 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 30.0 </wide>
+   <title> Fatty Acid Effect </title>
+
+<structurename> LiverMetabolism_Ketoacids </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> FattyAcidEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> FAPool.[FA(mG/dL)] </name>
+    <label> [FA (mG/dL)] </label>
+    <scale><min> 0 </min><max> 80 </max></scale>
+  </xaxis>
+  <yaxis>
+    <label> Effect </label>
+    <linecolor> BLUE </linecolor>
+    <scale><min> 0 </min><max> 25 </max></scale>
+  </yaxis>
+  <curvename> FattyAcidEffect </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> FAPool.[FA(mG/dL)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [FA (mG/dL)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

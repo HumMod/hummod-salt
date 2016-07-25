@@ -1,0 +1,101 @@
+HumMod / Lung_CO2
+
+Created : 2012-07-14
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Lung_CO2 </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> [CO2] </name></var>
+<var><name> pCO2 </name></var>
+
+<var><name> [Capy] </name></var>
+<var><name> pCapy </name></var>
+
+<var><name> Diffused </name></var>
+
+<var><name> K </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 122 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.2 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+  <def>
+    <name> [CO2] </name>
+    <val> Mass / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> pCO2 </name>
+    <val> [CO2] * Barometer.Pressure </val>
+  </def>
+
+  <def><name> pCapy </name><val> pCO2 </val></def>
+
+  <copy><from> pCapy </from><to> CO2Blood.pCO2 </to></copy>
+  <copy><from> BloodIons.[SID] </from><to> CO2Blood.[SID] </to></copy>
+    <call> CO2Blood.pCO2_To_[HCO3] </call>
+  <copy><from> CO2Blood.[HCO3] </from><to> [Capy] </to></copy>
+
+  <def><name> Diffused </name>
+    <val> LungBloodFlow.AlveolarVentilated * ( LungArtyCO2.[CO2] - [Capy] ) * CO2Tools.MolsToLiters </val>
+  </def>
+</block>
+
+<block><name> Dervs </name>
+  <def>
+    <name> Loss </name>
+    <val> Breathing.AlveolarVentilation * ( [CO2] - Bronchi.[CO2] ) </val>
+  </def>
+
+  <def>
+    <name> Gain </name>
+    <val> Diffused </val>
+  </def>
+
+  <def><name> Change </name><val> Gain - Loss </val></def>
+
+  <def>
+    <name> K </name>
+    <val>
+        Barometer.Pressure
+      * CO2Tools.d[HCO3]/dpCO2
+      * LungBloodFlow.AlveolarVentilated
+      * CO2Tools.MolsToLiters
+      / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> DxMax </name>
+    <val> 0.5 * INVERT ( LungGases.K + K ) </val>
+  </def>
+</block>
+
+</definitions>
+</structure>
+
+End

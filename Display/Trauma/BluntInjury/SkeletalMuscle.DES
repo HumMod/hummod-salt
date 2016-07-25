@@ -1,0 +1,185 @@
+HumMod / Control
+
+Created : 16-Jan-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 17.6 </high>
+   <wide> 45.0 </wide>
+   <title> Control </title>
+
+<structurename> BluntInjury </structurename>
+
+<label>
+  <row> 1.6 </row><col> 1.0 </col>
+  <text> Right Arm </text>
+</label>
+
+<radiobuttons>
+  <row> 1.6 </row><col> 13.0 </col>
+  <name> RIGHT_ARM </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<slidebar>
+  <row> 1.6 </row><col> 25.0 </col>
+  <name> RightArmDamage </name>
+  <listname> Common.Fraction </listname>
+  <nolabel/>
+</slidebar>
+
+
+<label>
+  <row> 3.0 </row><col> 1.0 </col>
+  <text> Left Arm </text>
+</label>
+
+<radiobuttons>
+  <row> 3.0 </row><col> 13.0 </col>
+  <name> LEFT_ARM </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<slidebar>
+  <row> 3.0 </row><col> 25.0 </col>
+  <name> LeftArmDamage </name>
+  <listname> Common.Fraction </listname>
+  <nolabel/>
+</slidebar>
+
+<label>
+  <row> 4.4 </row><col> 1.0 </col>
+  <text> Right Leg </text>
+</label>
+
+<radiobuttons>
+  <row> 4.4 </row><col> 13.0 </col>
+  <name> RIGHT_LEG </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<slidebar>
+  <row> 4.4 </row><col> 25.0 </col>
+  <name> RightLegDamage </name>
+  <listname> Common.Fraction </listname>
+  <nolabel/>
+</slidebar>
+
+
+<label>
+  <row> 5.8 </row><col> 1.0 </col>
+  <text> Left Leg </text>
+</label>
+
+<radiobuttons>
+  <row> 5.8 </row><col> 13.0 </col>
+  <name> LEFT_LEG </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<slidebar>
+  <row> 5.8 </row><col> 25.0 </col>
+  <name> LeftLegDamage </name>
+  <listname> Common.Fraction </listname>
+  <nolabel/>
+</slidebar>
+
+<label>
+  <row> 7.2 </row><col> 1.0 </col>
+  <text> Right Chest </text>
+</label>
+
+<radiobuttons>
+  <row> 7.2 </row><col> 13.0 </col>
+  <name> RIGHT_CHEST </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<slidebar>
+  <row> 7.2 </row><col> 25.0 </col>
+  <name> RightRMDamage</name>
+  <listname> Common.Fraction </listname>
+  <nolabel/>
+</slidebar>
+
+
+<label>
+  <row> 8.6 </row><col> 1.0 </col>
+  <text> Left Chest </text>
+</label>
+
+<radiobuttons>
+  <row> 8.6 </row><col> 13.0 </col>
+  <name> LEFT_CHEST </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<slidebar>
+  <row> 8.6 </row><col> 25.0 </col>
+  <name> LeftRMDamage </name>
+  <listname> Common.Fraction </listname>
+  <nolabel/>
+</slidebar>
+
+<actionbutton>
+  <row> 10.4 </row><col> 1.0 </col>
+  <blockname> BluntInjury.DamageRespiratory </blockname>
+  <label> Respiratory Damage Now </label>
+</actionbutton>
+
+<actionbutton>
+  <row> 11.6 </row><col> 1.0 </col>
+  <blockname> BluntInjury.DamageSkeletal </blockname>
+  <label> Skeletal Damage Now </label>
+</actionbutton>
+
+<label>
+  <row> 13.4 </row><col> 1.0 </col>
+  <text> Damage </text>
+</label>
+
+<showvalue>
+   <row> 14.4 </row><col> 2.0 </col>
+   <name> SkeletalMuscle-Structure.Effect</name>
+   <format><decimal> 1 </decimal></format>
+   <label> SM Structure </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.4 </row><col> 2.0 </col>
+   <name> CumulativeSkeletalDamage </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Cumulative Damage </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.4 </row><col> 2.0 </col>
+   <name> Hemorrhage.Rate</name>
+   <format><decimal> 1 </decimal></format>
+   <label> Hemorrhage Rate </label>
+</showvalue>
+
+
+<infobutton>
+  <row> 11.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units for rates are mL/Min. </line>
+  <line> Units for volume are mL. </line>
+</infobutton>
+
+</groupbox>
+
+End

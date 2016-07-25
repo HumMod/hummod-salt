@@ -1,0 +1,46 @@
+HumMod | Disposal
+
+Created : 2013-03-18
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 22.8 </row>
+   <col> 32.0 </col>
+   <high> 5.8 </high>
+   <wide> 30.0 </wide>
+   <title> Disposal </title>
+
+<structurename> Cortisol </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1 </col>
+   <name> Degradation </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Rate </label>
+</showvalue>
+
+<repeatlist>
+  <name> K </name>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.8 </row><col> 3 </col>
+  <name> K </name>
+  <listname> K </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 4.2 </row><col> 3 </col>
+   <name> [Conc(uG/mL)] </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Conc (uG/mL)] </label>
+</showvalue>
+
+</groupbox>
+
+End

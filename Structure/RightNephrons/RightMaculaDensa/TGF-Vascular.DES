@@ -1,0 +1,229 @@
+/* HumMod / TGF-Vascular
+
+   Created : 2014-02-26
+   Revised : 2014-02-26
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structure><name> RightTGF-Vascular </name>
+
+<variables>
+
+<parm><name> BasicSignal </name><val> 1.0 </val></parm>
+
+<var><name> NaEffect </name></var>
+<var><name> A2Effect </name></var>
+<var><name> ANPEffect </name></var>
+<var><name> FurosemideEffect </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<parm><name> Na_A1Target </name><val> 1.35 </val></parm>
+<parm><name> Na_m1Target </name><val> 10.2 </val></parm>
+<parm><name> Na_S1Target </name><val> 42.8 </val></parm>
+<parm><name> Na_B1Target </name><val> 0.09 </val></parm>
+<parm><name> Na_ATarget </name><val> 0.61 </val></parm>
+<parm><name> Na_mTarget </name><val> 10 </val></parm>
+<parm><name> Na_STarget </name><val> 63.5 </val></parm>
+<parm><name> Na_BTarget </name><val> -0.1 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Na_A1 </name>
+  <integralname> Na_A1 </integralname>
+  <initialval> 1.35 </initialval>
+  <dervname> dNaA1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_m1 </name>
+  <integralname> Na_m1 </integralname>
+  <initialval> 10.2 </initialval>
+  <dervname> dNam1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_S1 </name>
+  <integralname> Na_S1 </integralname>
+  <initialval> 42.8 </initialval>
+  <dervname> dNaS1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_B1 </name>
+  <integralname> Na_B1 </integralname>
+  <initialval> 0.09 </initialval>
+  <dervname> dNaB1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_A </name>
+  <integralname> Na_A </integralname>
+  <initialval> 0.61 </initialval>
+  <dervname> dNaA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_m </name>
+  <integralname> Na_m </integralname>
+  <initialval> 10 </initialval>
+  <dervname> dNam </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_S </name>
+  <integralname> Na_S </integralname>
+  <initialval> 63.5 </initialval>
+  <dervname> dNaS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_B </name>
+  <integralname> Na_B </integralname>
+  <initialval> -0.1 </initialval>
+  <dervname> dNaB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+<stabledelay>
+  <name> Signal </name>
+  <outputname> Signal </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> Steady-State </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.1 </errorlim>
+ <dxmaxname> DxMax </dxmaxname>
+</stabledelay>
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> NaEffect </name>
+  <point><x>   33 </x><y> 0.1 </y><slope> 0.0 </slope></point>0
+  <point><x>  47 </x><y> 1.0 </y><slope> 0.05 </slope></point>
+  <point><x> 100 </x><y> 3 </y><slope> 0.0 </slope></point>3
+</curve>
+
+<!--  
+<curve>
+  <name> NaEffect </name>
+  <point><x>   10 </x><y> 0.4 </y><slope> 0.0 </slope></point>0
+  <point><x>  45 </x><y> 1.0 </y><slope> 0.03 </slope></point>,0.03
+  <point><x> 100 </x><y> 3.0 </y><slope> 0.0 </slope></point>
+</curve>
+-->
+
+<curve>
+  <name> A2Effect </name>
+  <point><x> 0.4 </x><y> 0.4 </y><slope> 0 </slope></point>0.4 0.3
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0 </slope></point>1,1,.1
+  <point><x> 1.8 </x><y> 1.5 </y><slope> 1.75 </slope></point>1,1,.1
+  <point><x> 3.0 </x><y> 8.0 </y><slope> 0.0 </slope></point>3,8,0
+</curve>
+
+<!-- 
+<curve>
+  <name> A2Effect </name>
+  <point><x> 0.0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 0.2 </x><y> 0.6 </y><slope> 1.5 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0.15 </slope></point>1,1,.1
+  <point><x> 1.8 </x><y> 1.5 </y><slope> 1.75 </slope></point>1,1,.1
+  <point><x> 3.0 </x><y> 8.0 </y><slope> 0.0 </slope></point>3,8,0
+</curve>
+ -->
+
+<curve>
+  <name> ANPEffect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x> 1.3 </x><y> 1.0 </y><slope> -0.3 </slope></point>
+  <point><x> 2.7 </x><y> 0.8 </y><slope> 0.0 </slope></point>0.8
+</curve>
+
+
+<curve>
+  <name> FurosemideEffect </name>
+  <point><x> 0.0 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+  <point><x> 1.3 </x><y> 0.2 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> K </name><val> 0.5 </val></def>
+<def><name> DxMax </name><val> 0.2 </val></def>
+
+<def><name> dNaA1 </name><val> 0.05 * ( Na_A1Target - Na_A1 ) </val></def>
+<def><name> dNam1 </name><val> 0.05 * ( Na_m1Target - Na_m1 ) </val></def>
+<def><name> dNaS1 </name><val> 0.05 * ( Na_S1Target - Na_S1 ) </val></def>
+<def><name> dNaB1 </name><val> 0.05 * ( Na_B1Target - Na_B1 ) </val></def>
+<def><name> dNaA </name><val> 0.05 * ( Na_ATarget - Na_A ) </val></def>
+<def><name> dNam </name><val> 0.05 * ( Na_mTarget - Na_m ) </val></def>
+<def><name> dNaS </name><val> 0.05 * ( Na_STarget - Na_S ) </val></def>
+<def><name> dNaB </name><val> 0.05 * ( Na_BTarget - Na_B ) </val></def>
+
+<!--
+<def>
+  <name> ANPEffect </name>
+  <val> ANPEffect [ ANPPool.Log10Conc ] * 0 + 1 </val>
+</def>
+<def>
+  <name> NaEffect </name>
+  <val> NaEffect [ RightMaculaDensa_Na.[Na+(mEq/L)] ] </val>
+</def>
+
+
+<def>
+  <name> A2Effect </name>
+  <val> A2Effect [ A2Pool.Log10Conc ] </val>
+</def>
+  -->
+
+<def><name> FurosemideEffect </name><val> FurosemideEffect [ FurosemidePool.Loss ] </val></def>
+
+<def><name> A2Effect </name><val> ( ( ( LeftTGF-Vascular.A2_A * ( ( A2Pool.Log10Conc ^ LeftTGF-Vascular.A2_m ) / ( ( A2Pool.Log10Conc ^ LeftTGF-Vascular.A2_m ) + ( LeftTGF-Vascular.A2_S ^ LeftTGF-Vascular.A2_m ) ) ) ) + LeftTGF-Vascular.A2_B ) + ( ( LeftTGF-Vascular.A2_A1 * ( ( A2Pool.Log10Conc ^ LeftTGF-Vascular.A2_m1 ) / ( ( A2Pool.Log10Conc ^ LeftTGF-Vascular.A2_m1 ) + ( LeftTGF-Vascular.A2_S1 ^ LeftTGF-Vascular.A2_m1 ) ) ) ) + LeftTGF-Vascular.A2_B1 ) )  </val></def>MAX 0.5
+
+<def><name> ANPEffect </name><val> ( LeftTGF-Vascular.ANP_A * ( ( LeftTGF-Vascular.ANP_S ^ LeftTGF-Vascular.ANP_m ) / ( ( ANPPool.Log10Conc ^ LeftTGF-Vascular.ANP_m ) + ( LeftTGF-Vascular.ANP_S ^ LeftTGF-Vascular.ANP_m ) ) ) ) + LeftTGF-Vascular.ANP_B  </val></def>
+
+<def><name> NaEffect </name><val> ( ( ( Na_A * ( ( RightMaculaDensa_Na.[Na+(mEq/L)] ^ Na_m ) / ( ( RightMaculaDensa_Na.[Na+(mEq/L)] ^ Na_m ) + ( Na_S ^ Na_m ) ) ) ) + Na_B ) + ( ( Na_A1 * ( ( RightMaculaDensa_Na.[Na+(mEq/L)] ^ Na_m1 ) / ( ( RightMaculaDensa_Na.[Na+(mEq/L)] ^ Na_m1 ) + ( Na_S1 ^ Na_m1 ) ) ) ) + Na_B1 ) )  MAX 0.1 </val></def>
+
+
+
+<conditional><name> Steady-State </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicSignal
+  * NaEffect
+  * A2Effect
+  * ANPEffect
+  * FurosemideEffect
+</false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

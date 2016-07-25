@@ -1,0 +1,183 @@
+HumMod / Use
+
+Created : 2012-02-14
+Revised : 2012-07-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 12.2 </row>
+   <col> 1.0 </col>
+   <high> 18.6 </high>
+   <wide> 30.0 </wide>
+   <title> Use </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Brain-Metabolism.TotalCalsUsed </name>
+   <format><integer/></format>
+   <label> Calories Needed </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3.0 </col>
+   <name> Brain-Metabolism.AerobicCals </name>
+   <format><integer/></format>
+   <label> Aerobic </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3.0 </col>
+   <name> Brain-Metabolism.AnaerobicCals </name>
+   <format><integer/></format>
+   <label> Anaerobic </label>
+</showvalue>
+
+<showtable>
+<row> 4.8 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Glucose </textcell>
+<textcell> Aerobic </textcell>
+<textcell> Anerobic </textcell>
+<textcell> Ketoacid </textcell>
+<textcell> Lactate </textcell>
+<textcell> Total </textcell>
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Cals/Min </textcell>
+
+<valuecell>
+  <name> TotalGlucoseUsed(Cals/Min) </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> AerobicGlucoseUsed(Cals/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> AnaerobicGlucoseUsed(Cals/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> KAUsed(Cals/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LacUsed(Cals/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> TotalUsed(Cals/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 15.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> mG/Min </textcell>
+
+<valuecell>
+  <name> TotalGlucoseUsed(mG/Min) </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> AerobicGlucoseUsed(mG/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> AnaerobicGlucoseUsed(mG/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> KAUsed(mG/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LacUsed(mG/Min)  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<textcell></textcell>
+
+</column>
+
+</showtable>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> Glucose(%) </name>
+   <format><integer/></format>
+   <label> Glucose (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1.0 </col>
+   <name> Fat(%) </name>
+   <format><integer/></format>
+   <label> Ketoacid (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.6 </row><col> 1.0 </col>
+   <name> Lactate(%) </name>
+   <format><integer/></format>
+   <label> Lactate (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.6 </row><col> 1.0 </col>
+   <name> Total(%) </name>
+   <format><integer/></format>
+   <label> Total (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.0 </row><col> 1.0 </col>
+   <name> Adequacy </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Adequacy </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Every tissue has its own preference for fatty acid. </line>
+  <line> This preference is honored when nutrient supplies are </line>
+  <line> adequate. When fuel availability changes, the fuel mix </line>
+  <line> adjusts in response to prevailing availability. </line>
+  <line> </line>
+  <line> Lactate is metabolised preferentially over glucose </line>
+  <line> when pool concentration is greater than intracellular </line>
+  <line> concentration. </line>
+</infobutton>
+
+</groupbox>
+
+End

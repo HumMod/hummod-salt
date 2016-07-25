@@ -1,0 +1,305 @@
+HumMod / AminoAcid
+
+Created : 2013-03-22
+Revised : 2013-03-22
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+Diet =======================================================
+
+For total protein, the dietary recommendation is 0.8
+(G/Day)/kG Body Weight.
+
+I took some of these values from an equal weight mix
+of cheddar cheese, fried beef and tuna in oil. Dietary
+recommendations are marked with a *. Values taken from
+a protein structure database are marked with a #. Values
+are mG Amino Acid / G Protein.
+
+Essential
+
+Arginine        # 60
+Histidine       * 18
+Isoleucine        52
+Leucine           88
+Lysine            92
+Methionine        17
+Phenylalanine     57
+Threonine         40
+Tryptophan        13
+Valine            64
+--------------  -----
+Subtotal         501
+
+Non-Essential
+
+Alanine         # 70
+Asparagine      # 33
+Aspartate       # 43
+Cysteine          17
+Glutamate       # 65
+Glutamine       # 43
+Glycine         # 65
+Proline         # 60
+Serine          # 76
+Tyrosine          27
+--------------  -----
+Subtotal         499 
+--------------  -----
+Total           1000
+
+Protein Composition ========================================
+
+Taken from many sequences in a large protein database -- as
+found on the Web.
+
+Amino acid        (%)
+
+Essential
+
+Arginine          5.8
+Histidine         2.6
+Isoleucine        4.4
+Leucine          10.1
+Lysine            5.8
+Methionine        2.3
+Phenylalanine     3.8
+Threonine         5.1
+Tryptophan        1.3
+Valine            6.0
+--------------  -----
+Subtotal         47.2
+
+Non-Essential
+
+Alanine           7.2
+Asparagine        3.5
+Aspartate         4.6
+Cysteine          2.5
+Glutamate         6.8
+Glutamine         4.6
+Glycine           6.7
+Proline           6.2
+Serine            7.9
+Tyrosine          2.8
+--------------  -----
+Subtotal         52.8
+--------------  -----
+Total           100.0
+
+Concentration ============================================
+
+Kohlmeier has total plasma amino acid concentration at 2.3 mMol/L.
+Data is from Divino-Filho. Concentration in uMol/L. Taurine in
+muscle is 19194 and is not included in muscle sum.
+
+          Plasma Muscle RBC's
+--------- ------ ------ -----
+Alanine     316    2249   419
+Glutamate    32    4015   446
+Glutamine   655   20050   758
+Other      1299     896  1757
+--------- ------ ------ -----
+Total      2303   27165  3380
+
+Data from Bergstrom. Concentration in uMol/L.
+
+          Plasma Muscle
+--------- ------ ------
+Alanine     330    2340
+Glutamate    60    4380
+Glutamine   570   19450
+
+Metabolism ==================================================
+
+Maybe all amino acids can get their carbons into the Krebs (citric
+acid) cycle. Alanine, serine, cysteine and asparagine goto
+oxaloacetate. Glutamine, proline, arginine and histidine go to 
+a-ketoglutarate via glutamate. Non polar amino acids like methionine,
+valine and isoleucine go to succinyl CoA. Leucine goes to acetyl CoA
+and acetoacetate. Tryptophan, lysine, leucine, phenylalanine, tyrosine
+and isoleucine go to acetyl CoA.
+
+Acetoacetate =================================================
+
+M.W. 102.009. C4-H6-O3
+
+    CH3
+    |
+    C=O
+    |
+    CH2
+    |
+    C
+   / \\
+ OH   O
+
+Acetoacetate is synthesized in the mitochrondria from acetyl-CoA.
+Three acetyl-CoA are consumed and 1 is returned. The net then
+is to take two 2-carbon molecules and condense them into one
+4-carbon molecule.
+
+Acetone ======================================================
+
+M.W. 58.08 C3-H6-O
+
+    CH3
+    |
+    C=O
+    |
+    CH3
+
+
+Ammonia ======================================================
+
+M.W. 17.03 N-H3
+
+NH3
+
+Beta-Hydroxybutyrate =========================================
+
+M.W. 104.1. C4-H8-O3
+
+    CH3
+    |
+  H-C-OH
+    |
+    CH2
+    |
+    C
+   / \\
+ OH   O
+
+Beta-hydroxybutyrate substrate is acetoacetate. Two protons
+are required and they come from NADH.
+
+Acetoacetate + 2 NADH <--> beta-hydroxybutyrate + 2 NAD
+
+Fatty Acid Synthesis =========================================
+
+It appears that any tissue can synthesize fatty acids
+using amino acids as substrate. Fatty acid synthesis
+uses acetyl-CoA from the mitochondria as a substrate.
+
+Acetyl-CoA goes to malonyl-CoA with the addition of a
+CO2 (from HCO3-) enzymatically controlled by acetyl CoA
+carboxylase (ACC). This is a committing step because
+malonyl-CoA only goes into fatty acid.
+
+Fatty acid in made in the cytosol while acetyl-CoA is
+made in the mitochrondria. Acetyl-CoA is shuttled out
+of the mitochondria as citrate. In the cytosol, citrate
+is cleaved to its 2- and 4-carbon components by citrate
+lyase to make acetyl-CoA again and oxaloacetate.
+Citrate lyase requires ATP. 
+
+The rate of fatty acid synthesis is controlled by the
+equilibrium between monomeric ACC and polymeric ACC.
+The activity of ACC requires polymerization. This
+conformational change is enhanced by citrate and
+inhibited by long-chain fatty acids. ACC is also
+controlled through hormone mediated phosphorylation.
+
+Need a control scheme.
+
+Use in adipose tissue : leucine > alanine > isoleucine >
+valine (Vernon, R.G. et.al. 1985).
+
+In rat lung, alanine, valine, leucine, isoleucine,
+aspartate, and glutamate were used, while glycine and
+phenylalanine were not (Scholz and Evans, 1977).
+
+Gluconeogenesis ==============================================
+
+I'm not totally clear on the kidney, which uses glutamate for
+gluconeogenesis.
+
+Skeletal muscle releases alanine into the blood. The liver absorbs the
+alanine and deaminates it to pyruvate.
+
+  2 alanine --> 2 pyruvate + 1 urea
+
+These are 3-carbon molecules all the way. Then the liver condenses 2
+pyruvate to a glucose by running glycolysis backward.
+
+  2 pyruvate --> 1 glucose
+
+From Strumvol, summarized in Gerich. Units are (uMol/Min)/kG.
+
+                      Lactate Glycerol Glutamine Alanine
+--------------------- ------- -------- --------- -------
+Total Gluconeogenesis   1.88    0.53      0.58     0.68
+Hepatic "               0.97    0.39      0.23     0.67
+Renal "                 0.89    0.17      0.36     0.02
+
+Hepatic Glycogenolysis    4.8
+Hepatic Gluconeogenesis   2.8
+Renal Gluconeogenesis     2.4
+-----------------------  ----
+Total                    10.0
+
+Gerich, J.E. Role of the kidney in normal glucose homoestasis and
+in the hyperglycaemia of diabetes mellitus: therapeutic implications.
+Diabet. Med. 27:136-142, 2010.
+
+Meyer, C. et.al. Effects of physiological hyperinsulinemia on
+systemic, renal, and hepatic substrate metabolism. Am. J. Physiol.
+275:F915-F921, 1998.
+
+Strumvol, M. et.al. Human kidney and liver gluconeogenesis: evidence
+for organ substrate selectivity. Am. J. Physiol. 274:E817-E826,
+1998.
+
+Glycerol ======================================================
+
+M.W. 92.09. C3-H8-O3
+
+ H2-C-OH
+    |
+  H-C-OH
+    |
+ H2-C-OH
+
+Lactate ======================================================
+
+M.W. 90.08. C3-H6-O3
+
+    COOH
+    |
+ HO-C-H
+    |
+    CH3
+
+Urea =========================================================
+
+M.W. 60.06. C-H4-N2-0.
+
+NH2
+|
+C=O
+|
+NH2
+
+2 NH4+ plus 2 HCO3- yields urea plus CO2 plus 2 H2O.
+
+References ===================================================
+
+Bergstrom, J. et.al. Intracellular free amino acid concentration in
+human muscle tissue. J. Appl. Physiol. 36(6):693-697, 1974.
+
+Divino-Filho, J.C. et.al. Free amino-acid levels simultaneously
+collected in plasma, muscle, and erythrocytes of uraemic patients.
+Nephrol. Dial. Transplant. 12:2339-2348, 1997.
+
+Kohlmeier, M. Nutrient Metabolism. Academic Press 2003.
+
+Scholz, R.W. and R.M. Evans. Pulmonary fatty acid
+synthesis. II. Amino acids as fatty acid precursors in
+rat lung. Amer. J. Physiol. 232(4):E364-E ???, 1977.
+
+Vernon, R.G. et.al. Fatty acid synthesis from amino acids
+in sheep adipose tissue. Comp Biochem Physiol B. 82(1):
+133-136, 1985.
+
+End

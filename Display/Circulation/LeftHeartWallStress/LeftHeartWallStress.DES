@@ -1,0 +1,15 @@
+HumMod / LeftHeartWallStress
+
+Created : 2013-02-24
+Revised : 2013-02-24
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Circulation\LeftHeartWallStress\ ?>
+
+<?include Mass\Mass.DES ?>
+<?include Diastole\Diastole.DES ?>
+<?include Systole\Systole.DES ?>
+
+End

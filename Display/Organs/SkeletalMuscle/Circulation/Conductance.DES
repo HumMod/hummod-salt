@@ -1,0 +1,148 @@
+HumMod / Conductance
+
+Created : 23-May-05
+Revised : 2012-02-18
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 27.6 </high>
+   <wide> 30.0 </wide>
+   <title> Vascular Conductance </title>
+
+<structurename> SkeletalMuscle-Flow </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Conductance </name>
+  <label> Conductance </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Conductance </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 5 </min><max> 10 </max><inc> 5 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showbargraph>
+  <row> 9.8 </row><col> 1.0 </col><high> 11 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> PO2Effect </name>
+    <label> pO2 </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> SympsEffect </name>
+    <label> Symps </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> A2Effect </name>
+    <label> [AII] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> ADHEffect </name>
+    <label> [ADH] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Viscosity.ConductanceEffect </name>
+    <label> Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Anesthesia.VascularConductance </name>
+    <label> Anesthesia </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> SkeletalMuscle-Vasculature.Effect </name>
+    <label> Vascularity </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> SkeletalMuscle-MetabolicVasodilation.Effect </name>
+    <label> Metabolism </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> SkeletalMuscle-MusclePumping.Effect </name>
+    <label> Muscle Pump </label>
+    <color> BLUE </color>
+  </bar>
+  <scale>
+    <min> 0 </min><max> 2 </max><inc> 1 </inc>
+  </scale>
+</showbargraph>
+
+<showvalue>
+  <row> 21.2 </row><col> 1.0 </col>
+  <name> BasicConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Basic Conductance </label>
+</showvalue>
+
+<slidebar>
+  <row> 22.6 </row><col> 3.0 </col>
+  <name> Multiplier </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<showvalue>
+  <row> 24.0 </row><col> 3.0 </col>
+  <name> NominalConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal </label>
+</showvalue>
+
+<showvalue>
+  <row> 25.0 </row><col> 3.0 </col>
+  <name> Conductance(/G) </name>
+  <format><decimal> 5 </decimal></format>
+  <label> /G </label>
+</showvalue>
+
+<showvalue>
+  <row> 26.0 </row><col> 3.0 </col>
+  <name> SkeletalMuscle-Size.InitialMass </name>
+  <format><integer/></format>
+  <label> Mass </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Vascular conductance is normally </line>
+  <line> 7.2 ( mL / Min ) / mmHg </line>
+  <line>  </line>
+  <line> Conductance effects are normally </line>
+  <line> 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,22 @@
+HumMod / PO4.REF
+
+Created : 2012-03-11
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+A good source of information is
+
+Kohlmeier, M. Nutrient Matabolism. Academic Press. 2003.
+
+P has a molecular weight of 29.97 while PO4--- weighs
+94.
+
+Hall and Guyton have PO4's at 2 mOsm/L which is also 2
+mMol/L. PO4's are mostly divalent, so that is a conc of
+4 mEq/L.
+
+Apply mass balance to mMol.
+
+End

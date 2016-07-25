@@ -1,0 +1,102 @@
+HumMod / Summary
+
+Created : 2012-07-07
+Revised : 2012-07-22
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 19.6 </high>
+   <wide> 30.0 </wide>
+
+<structurename> SkeletalMuscle-Glycogen </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Mass (G) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 500 </min><max> 600 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 11.8 </row><col> 1.0 </col>
+  <name> Change </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Change </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> Synthesis </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Synthesis </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.2 </row><col> 1.0 </col>
+  <name> Metabolism </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Metabolism </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.6 </row><col> 1.0 </col>
+  <name> Mass(mMol) </name>
+  <format><integer/></format>
+  <label> Mass (mMol) </label>
+</showvalue>
+
+<showvalue>
+  <row> 17.0 </row><col> 1.0 </col>
+  <name> [Glycogen(G/100G)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glycogen (G/100G)] </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.0 </row><col> 1.0 </col>
+  <name> [Glycogen(mMol/kG)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glycogen (mMol/kG)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> A typical mass is 530 G. </line>
+  <line>  </line>
+  <line> Molar glycogen is quantitated in glycosyl units. </line>
+  <line>  </line>
+  <line> Glycosyl : C6-H10-O5  M.W. = 162 </line>
+  <line> Water :    H2-O       M.W. = 18 </line>
+  <line> Glucose :  C6-H12-O6  M.W. = 180 </line>
+  <line>  </line>
+  <line> Glycosyl unit conversion : </line>
+  <line> 162 mG  =      1 mMol </line>
+  <line> 1 mG  = 0.0062 mMol </line>
+</infobutton>
+
+</groupbox>
+
+End

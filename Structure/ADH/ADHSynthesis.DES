@@ -1,0 +1,118 @@
+HumMod / ADHSynthesis
+
+Created : 20-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> ADHSynthesis </name>
+
+<variables>
+
+<parm>
+  <name> Base </name>
+  <val> 2.9 </val>
+</parm>
+
+<var>
+  <name> Rate </name>
+</var>
+
+<var>
+  <name> CortisolEffect </name>
+</var>
+
+<var>
+  <name> Feedback </name>
+</var>
+
+<var>
+  <name> NormalizedUndamagedMass </name>
+</var>
+
+<var><name> test </name></var>
+<var><name> SigVal </name><val> 0.9 </val></var>
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> mRNA </name>
+  <integralname> mRNA </integralname>
+  <initialval> 100.0 </initialval>
+  <dervname> dmRNA </dervname>
+  <errorlim> 3 </errorlim>
+</diffeq> 
+
+<diffeq>
+  <name> Signal </name>
+  <integralname> Signal </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dSignal </dervname>
+  <errorlim> 0.03 </errorlim>
+</diffeq> 
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> Feedback </name>
+  <point><x>     0 </x><y> 4.0 </y><slope> 0 </slope></point>
+  <point><x> 170000 </x><y> 1.0 </y><slope> -0.000045 </slope></point>0.00003
+  <point><x> 200000 </x><y> 0.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> test </name><val> (  ADHSlowMass.UndamagedMass /  HypothalamusMagnocellularNeurons.Intact )  </val></def>
+<if><test> HypothalamusMagnocellularNeurons.Intact GT 0 </test>
+  <true>
+  <def><name> NormalizedUndamagedMass </name><val> (  ADHSlowMass.UndamagedMass /  HypothalamusMagnocellularNeurons.Intact ) MIN 200000 </val></def>
+  </true>
+  <false>
+  <def><name> NormalizedUndamagedMass </name><val> 200000 </val></def>
+  </false>
+</if>
+
+<def><name> Gain </name><val> ( 10.0 * ( OsmBody.Osmoreceptors - .27 ) ) MAX 0 </val></def>
+<def><name> Loss </name><val> 0.015 * Signal </val></def>
+
+
+<def>
+  <name> dSignal </name>
+  <val> Gain - Loss </val>
+</def>
+
+<if><test> Signal GE 1.8 </test>
+<true>
+<def><name> SigVal </name><val> Signal / 2 </val></def>
+</true>
+<false>
+<def><name> SigVal </name><val> 0.9 </val></def>
+</false>
+</if>
+<def>
+  <name> dmRNA </name>
+  <val> ( SigVal * ( 1 - HypothalamusMagnocellularNeurons.DamageFraction ) ) - ( 0.01 * mRNA ) </val>
+</def>
+
+<def>
+  <name> Rate </name>
+  <val> 0.032 * mRNA </val>
+</def>
+</block>
+
+</definitions>
+</structure>
+
+End

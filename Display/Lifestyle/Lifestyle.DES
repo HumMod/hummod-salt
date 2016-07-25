@@ -1,0 +1,19 @@
+HumMod / Lifestyle
+
+Created : 2011-07-26
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Lifestyle\ ?>
+
+<?include AirSupply\AirSupply.DES ?>
+<?include BreathHolding\BreathHolding.DES ?>
+<?include DailyPlanner\DailyPlanner.DES ?>
+<?include Diet\Diet.DES ?>
+<?include Environment\Environment.DES ?>
+<?include Exercise\Exercise.DES ?>
+<?include Posture\Posture.DES ?>
+
+End

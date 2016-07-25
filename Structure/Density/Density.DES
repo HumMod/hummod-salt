@@ -1,0 +1,30 @@
+HumMod / Density
+
+Created : 2013-03-01
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Density </name>
+
+<variables>
+
+<constant><name> H2O </name><val> 1.0 </val></constant>
+<constant><name> Tissue </name><val> 1.17 </val></constant>
+
+<constant><name> BoneMineral </name><val> 2.30 </val></constant>
+<constant><name> BoneNotMineral </name><val> 1.05 </val></constant>
+
+<constant><name> FatLipid </name><val> 0.905</val></constant>
+<constant><name> FatNotLipid </name><val> 1.38 </val></constant>
+
+<!--
+<constant><name> Blood </name><val> </val></constant>
+-->
+
+</variables>
+
+</structure>
+
+End

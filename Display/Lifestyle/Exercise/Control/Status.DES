@@ -1,0 +1,250 @@
+HumMod / Status
+
+Created : 25-May-05
+Last Modified : 2011-10-15
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 15.8 </high>
+   <wide> 90.0 </wide>
+   <title> Status </title>
+
+<label>
+  <row> 1.4 </row><col> 1.0 </col>
+  <text> Request </text>
+</label>
+
+<maplist>
+  <name> Exercise-Control.Request </name>
+  <map><val> 0 </val><img> Resting </img></map>
+  <map><val> 1 </val><img> Exercise Bike </img></map>
+  <map><val> 2 </val><img> Treadmill </img></map>
+</maplist>
+
+<radiobuttons>
+  <row> 2.6 </row><col> 1.0 </col>
+  <name> Exercise-Control.Request </name>
+  <listname> Exercise-Control.Request </listname>
+  <nolabel/>
+  <layout> VERT </layout>
+</radiobuttons>
+
+<label>
+  <row> 6.0 </row><col> 1.0 </col>
+  <text> Status </text>
+</label>
+
+<checkmark>
+   <row> 7.2 </row><col> 1.0 </col>
+   <name> Status.Resting </name>
+   <label> Resting </label>
+</checkmark>
+
+<checkmark>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> Status.ExerciseBike </name>
+   <label> Exercise Bike </label>
+</checkmark>
+
+<checkmark>
+   <row> 9.2 </row><col> 1.0 </col>
+   <name> Status.Treadmill </name>
+   <label> Treadmill </label>
+</checkmark>
+
+<checkmark>
+   <row> 10.2 </row><col> 1.0 </col>
+   <name> Status.Working </name>
+   <label> Working </label>
+</checkmark>
+
+<checkmark>
+   <row> 11.2 </row><col> 1.0 </col>
+   <name> Status.Aerobics </name>
+   <label> Aerobics </label>
+</checkmark>
+
+<!-- 
+
+<infobutton>
+  <row> 1.4 </row>
+  <col> 26.0 </col>
+  <line> A request for exercise is not executed </line>
+  <line> when exercise is being controlled by the daily </line>
+  <line> planner or when the subject is comatose. </line>
+</infobutton>
+
+ -->
+
+<structurename> Exercise-Bike </structurename>
+
+<label>
+  <row> 1.4 </row><col> 35 </col>
+  <text> Exercise Bike </text>
+</label>
+
+<showvalue>
+  <row> 3.4 </row><col> 30.0 </col>
+  <name> Status </name>
+  <format><list> Common.Active </list></format>
+  <label> Status </label>
+</showvalue>
+
+<maplist>
+  <name> Exercise-Bike.Level </name>
+  <map><val>   0 </val><img> Resting </img></map>
+  <map><val>  50 </val><img> Warmup </img></map>
+  <map><val> 100 </val><img> 100 </img></map>
+  <map><val> 150 </val><img> Moderate </img></map>
+  <map><val> 200 </val><img> 200 </img></map>
+  <map><val> 250 </val><img> Heavy </img></map>
+  <map><val> 300 </val><img> 300 </img></map>
+  <map><val> 350 </val><img> Maximum </img></map>
+</maplist>
+
+<slidebar>
+  <row> 4.8 </row><col> 30.0 </col>
+  <wide> 8.0 </wide>
+  <name> Power(W) </name>
+  <listname> Exercise-Bike.Level </listname>
+  <label> Level </label>
+  <fieldwidth> 10 </fieldwidth>
+</slidebar>
+
+<showvalue>
+   <row> 6.2 </row><col> 30.0 </col>
+   <name> Power(W) </name>
+   <format> <integer/> </format>
+   <label> Power (Watts) </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.2 </row><col> 33 </col>
+   <name> Power(kPM/Min) </name>
+   <format> <integer/> </format>
+   <label> kP M/Min </label>
+</showvalue>
+
+<repeatlist>
+  <name> Exercise-Bike.RPM </name>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 8.6 </row><col> 30.0 </col>
+  <name> RPM </name>
+  <listname> Exercise-Bike.RPM </listname>
+  <label> RPM </label>
+</slidebar>
+
+<showvalue>
+   <row> 10.0 </row><col> 30.0 </col>
+   <name> ElapsedTime </name>
+   <format>
+     <timer/>
+     <fieldwidth> 10 </fieldwidth>
+   </format>
+   <label> Elapsed Time </label>
+</showvalue>
+
+<actionbutton>
+   <row> 11.4 </row><col> 30.0 </col>
+   <blockname> ResetElapsedTime </blockname>
+   <label> Reset Elapsed Time </label>
+</actionbutton>
+
+<repeatlist>
+  <name> Exercise-Bike.Efficiency(%) </name>
+  <firstval> 1 </firstval>
+  <repeat><reps> 99 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 30.0 </col>
+  <name> Efficiency(%) </name>
+  <listname> Exercise-Bike.Efficiency(%) </listname>
+  <label> Efficiency (%) </label>
+  <fieldwidth> 5 </fieldwidth>
+</slidebar>
+
+<!-- 
+
+<showvalue>
+   <row> 14.6 </row><col> 30.0 </col>
+   <name> TotalWatts </name>
+   <format> <integer/> </format>
+   <label> Total Watts </label>
+</showvalue>
+
+ -->
+
+<infobutton>
+  <row> 1.4 </row>
+  <col> 26.0 </col>
+
+  <line> Select bike in exercise type </line>
+  <line> to start the bike. </line>
+  <line> </line>
+  <line> kP M/Min is the very British </line>
+  <line> kiloPound-Meters/Min. </line>
+</infobutton>
+
+===============================================================
+
+<label>
+  <row> 1.4 </row><col> 65 </col>
+  <text> Blood Pressure </text>
+</label>
+
+
+<showgraph>
+  <row> 3 </row><col> 61.0 </col><high> 7 </high><wide> 26 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+
+    <yvar>
+      <name> SystemicArtys.SBP </name>
+      <label> S </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+
+    <yvar>
+      <name> SystemicArtys.Pressure </name>
+      <label> M </label>
+      <linecolor> BLACK </linecolor>
+    </yvar>
+
+    <yvar>
+      <name> SystemicArtys.DBP </name>
+      <label> D </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+
+    <scale><min> 80 </min><max> 120 </max><inc> 10 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11 </row><col> 60 </col>
+   <name> Heart-Rate.Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Heart Rate </label>
+</showvalue>
+
+
+
+
+
+
+</groupbox>
+
+End

@@ -1,0 +1,55 @@
+HumMod / Setup
+
+Created : 16-Jan-06
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 10.8 </row>
+   <col> 32.0 </col>
+   <high> 6.8 </high>
+   <wide> 30.0 </wide>
+   <title> Intrathorax hemorrhage rates </title>
+
+<structurename> ThoraxHemorrhage </structurename>
+
+<repeatlist>
+  <name> ThoraxHemorrhage.TargetRate </name>
+  <repeat><reps> 10 </reps><stepsize> 1.0 </stepsize></repeat>
+  <repeat><reps> 9 </reps><stepsize> 10.0 </stepsize></repeat>
+  <repeat><reps> 1 </reps><stepsize> 100.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.8 </row>
+  <col> 1.0 </col>
+  <wide> 8.0 </wide>
+  <name> LeftTargetRate </name>
+  <listname> ThoraxHemorrhage.TargetRate </listname>
+  <label> Left Target Rate </label>
+</slidebar>
+
+<slidebar>
+  <row> 4.8 </row>
+  <col> 1.0 </col>
+  <wide> 8.0 </wide>
+  <name> RightTargetRate </name>
+  <listname> ThoraxHemorrhage.TargetRate </listname>
+  <label> Right Target Rate </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Set the target hemorrhage rate here </line>
+  <line> and then go to hemorrhage control. </line>
+  <line> </line>
+  <line> Units for target rate are mL/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End

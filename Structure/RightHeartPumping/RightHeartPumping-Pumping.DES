@@ -1,0 +1,90 @@
+HumMod / RightHeartPumping-Pumping
+
+Created : 2010-05-25
+Last Modified : 2011-08-13
+Author : Tom Coleman
+Copyright : 2010-2011
+By : University of Mississippi Medical Center
+
+<structure><name> RightHeartPumping-Pumping </name>
+
+<variables>
+
+<var><name> BloodFlow </name></var>
+<var><name> StrokeVolume </name></var>
+<var><name> EjectionFraction </name></var>
+
+<var><name> BasicStroke </name></var>
+<var><name> ForwardStroke </name></var>
+<var><name> NetStroke </name></var>
+
+<var><name> PulmonicStenosis </name></var>
+<var><name> PulmonicRegurgitation </name></var>
+
+<var><name> TricuspidRegurgitation </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<conditional>
+<name> BasicStroke </name>
+<test> Heart-Ventricles.Rate GT 0 </test>
+<true> ( RightHeartPumping-Diastole.EDV - RightHeartPumping-Systole.ESV ) MAX 0 </true>
+<false> 0 </false>
+</conditional>
+
+<def>
+  <name> PulmonicStenosis </name>
+  <val> PulmonicValve-Stenosis.Effect </val>
+</def>
+
+<def>
+  <name> PulmonicRegurgitation </name>
+  <val> PulmonicValve-Regurgitation.Effect </val>
+</def>
+
+<def>
+  <name> TricuspidRegurgitation </name>
+  <val> TricuspidValve-Regurgitation.Effect </val>
+</def>
+
+<def>
+  <name> ForwardStroke </name>
+  <val>
+      BasicStroke
+    * PulmonicStenosis
+    * TricuspidRegurgitation
+  </val>
+</def>
+
+<def>
+  <name> NetStroke </name>
+  <val> ForwardStroke * PulmonicRegurgitation </val>
+</def>
+
+<def>
+  <name> StrokeVolume </name>
+  <val> NetStroke </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> Heart-Ventricles.Rate * StrokeVolume </val>
+</def>
+
+<conditional>
+<name> EjectionFraction </name>
+<test> RightHeartPumping-Diastole.EDV GT 0 </test>
+<true> ForwardStroke / RightHeartPumping-Diastole.EDV </true>
+<false> 0 </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

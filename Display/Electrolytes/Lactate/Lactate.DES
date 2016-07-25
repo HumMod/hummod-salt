@@ -1,0 +1,14 @@
+HumMod / Lactate
+
+Created : 24-Apr-05
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Display\Electrolytes\Lactate\ ?>
+
+<?include Blood\Blood.DES ?>
+<?include Tissue\Tissue.DES ?>
+
+End

@@ -1,0 +1,84 @@
+HumMod / Box
+
+Created : 2012-07-12
+Revised : 2012-07-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structurename> BodyN2 </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 17.2 </high>
+   <wide> 30.0 </wide>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass (mL STPD) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1000 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<repeatlist>
+  <name> Solubility </name>
+  <repeat><reps> 100 </reps><stepsize>  0.000001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> Solubility </name>
+  <listname> Solubility </listname>
+  <label> Solubility </label>
+</slidebar>
+
+<showvalue>
+   <row> 14.6 </row><col> 1.0 </col>
+   <name> [N2] </name>
+   <format><decimal> 4 </decimal></format>
+   <label> [N2] </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.6 </row><col> 1.0 </col>
+   <name> pN2 </name>
+   <format><integer/></format>
+   <label> pN2 </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> NORMAL VALUES AND UNITS </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,43 @@
+HumMod / NephronCalciumProximal
+
+Created : 2011-08-07
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<structure><name> NephronCalciumProximal </name>
+
+<variables>
+
+<parm><name> FractionalReab </name><val> 0.9 </val></parm>
+
+<var><name> Inflow </name></var>
+<var><name> Reab </name></var>
+<var><name> Outflow </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Inflow </name>
+  <val> LeftNephronCalciumProximal.Inflow + RightNephronCalciumProximal.Inflow </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> ( LeftNephronCalciumProximal.Inflow  * LeftNephronCalciumProximal.FractionalReab ) +  ( RightNephronCalciumProximal.Inflow  * RightNephronCalciumProximal.FractionalReab ) </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

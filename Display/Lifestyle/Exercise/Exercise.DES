@@ -1,0 +1,16 @@
+HumMod / Exercise
+
+Created : 24-Apr-05
+Last Modified : 2011-08-12
+Author : Tom Coleman
+Copyright : 2008-2011
+By : University of Mississippi Medical Center
+
+<?path Display\Lifestyle\Exercise\ ?>
+
+<?include Control\Control.DES ?>
+<?include Bike\Bike.DES ?>
+<?include Treadmill\Treadmill.DES ?>
+<?include Transition\Transition.DES ?>
+
+End

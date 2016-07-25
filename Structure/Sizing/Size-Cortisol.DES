@@ -1,0 +1,20 @@
+HumMod | Size-Cortisol
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> Size-Cortisol </name>
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> Cortisol.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

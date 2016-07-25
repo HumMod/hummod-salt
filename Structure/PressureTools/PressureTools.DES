@@ -1,0 +1,20 @@
+HumMod / PressureTools
+
+Created : 2013-02-24
+Revised : 2013-02-24
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> PressureTools </name>
+
+<variables>
+
+<constant><name> MMHG_TO_KDYNES_CM2 </name><val> 1.332 </val></constant>
+<constant><name> KDYNES_CM2_TO_MMHG </name><val> 0.751 </val></constant>
+
+</variables>
+
+</structure>
+
+End

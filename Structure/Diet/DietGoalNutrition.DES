@@ -1,0 +1,98 @@
+HumMod / DietGoalNutrition
+
+Created : 24-Jun-06
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> DietGoalNutrition </name>
+
+<variables>
+
+<parm><name> Carbo_kCal/Day </name><val> 920.0 </val></parm>900
+<parm><name> Fat_kCal/Day </name><val> 820.0 </val></parm>800
+<parm><name> Protein_kCal/Day </name><val> 510.0 </val></parm>500
+<var><name> Total_kCal/Day </name></var>
+<var><name> Carbo_G/Day </name></var>
+<var><name> Fat_G/Day </name></var>
+<var><name> Protein_G/Day </name></var>
+
+<parm><name> DegF </name><val> 70.0 </val></parm>
+
+<var><name> DegC </name></var>
+<var><name> DegK </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Carbo_kCal/Day </name>
+  <val>
+    (   ( 1.48 * Fat-Size.InitialMass(kG) )
+      + ( 4.14 * SkeletalMuscle-Size.InitialMass(kG) )
+      + ( 30.3 * Weight.InitialOtherMass(kG) )
+    ) ROUNDAT 10
+  </val>
+</def>
+
+<def>
+  <name> Fat_kCal/Day </name>
+  <val>
+    (   ( 1.32 * Fat-Size.InitialMass(kG) )
+      + ( 3.70 * SkeletalMuscle-Size.InitialMass(kG) )
+      + ( 27.1 * Weight.InitialOtherMass(kG) )
+    ) ROUNDAT 10
+  </val>
+</def>
+
+<def>
+  <name> Protein_kCal/Day </name>
+  <val>
+    (   ( 0.82 * Fat-Size.InitialMass(kG) )
+      + ( 2.30 * SkeletalMuscle-Size.InitialMass(kG) )
+      + ( 16.8 * Weight.InitialOtherMass(kG) )
+    ) ROUNDAT 10
+  </val>
+</def>
+
+</block>
+
+<block><name> Parms </name>
+
+<def>
+  <name> Total_kCal/Day </name>
+  <val>
+      Carbo_kCal/Day
+    + Fat_kCal/Day
+    + Protein_kCal/Day
+  </val>
+</def>
+
+<def>
+  <name> Carbo_G/Day </name>
+  <val> Carbo_kCal/Day / Energy-Tools.CARBO_KCAL_PER_G </val>
+</def>
+
+<def>
+  <name> Fat_G/Day </name>
+  <val> Fat_kCal/Day / Energy-Tools.FAT_KCAL_PER_G </val>
+</def>
+
+<def>
+  <name> Protein_G/Day </name>
+  <val> Protein_kCal/Day / Energy-Tools.PROTEIN_KCAL_PER_G </val>
+</def>
+
+<def><name> DegC  </name><val> ( 5 / 9 ) * ( DegF - 32 ) </val></def>
+<def><name> DegK </name><val> DegC + 273.15 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

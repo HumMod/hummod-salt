@@ -1,0 +1,39 @@
+HumMod / Narcan
+
+Created : 1-Dec-15
+Revised : 
+Author : W Pruett
+Copyright : 2015-2015
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\Narcan\ ?>
+
+<?include NarcanPool.DES ?>
+<?include NarcanLiver.DES ?>
+<?include NarcanKidney.DES ?>
+<?include NarcanIV.DES ?>
+<?include NarcanBolus.DES ?>
+
+<structure><name> Narcan </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> NarcanBolus.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> NarcanPool.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> NarcanIV.Dervs </call>
+  <call> NarcanBolus.Dervs </call>
+  <call> NarcanLiver.Dervs </call>
+  <call> NarcanKidney.Dervs </call>
+  <call> NarcanPool.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+

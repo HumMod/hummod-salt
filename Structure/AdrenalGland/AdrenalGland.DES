@@ -1,0 +1,27 @@
+HumMod / AdrenalGland
+
+Created : 2012-01-28
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\AdrenalGland\ ?>
+
+<?include AdrenalGland-Flow.DES ?>
+<?include AdrenalGland-Size.DES ?>
+<?include AdrenalGland-Insufficiency.DES ?>
+
+<structure><name> AdrenalGland </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> AdrenalGland-Size.Parms </call>
+  <call> AdrenalGland-Insufficiency.Parms </call>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,186 @@
+HumMod / RightCollectingDuct
+
+Created : 09-Apr-05
+Revised : 2013-02-03
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\RightNephrons\RightCollectingDuct\ ?>
+
+<?include RightCollectingDuct_H2O.DES ?>
+<?include RightCollectingDuct_Glucose.DES ?>
+<?include RightCollectingDuct_KA.DES ?>
+<?include RightCollectingDuct_NH4.DES ?>
+<?include RightCollectingDuct_PO4.DES ?>
+<?include RightCollectingDuct_SO4.DES ?>
+<?include RightCollectingDuct_Na.DES ?>
+<?include RightCollectingDuct_K.DES ?>
+<?include RightCollectingDuct_Cl.DES ?>
+<?include RightCollectingDuct_HCO3.DES ?>
+<?include RightCollectingDuct_Urea.DES ?>
+<?include RightCollectingDuct_Creatinine.DES ?>
+<?include RightCollectingDuct_Protein.DES ?>
+
+<?include RightCollectingDuct_H2OChannels.DES ?>
+
+<?include RightCollectingDuct_Ph.DES ?>
+
+<structure><name> RightCollectingDuct </name>
+
+<variables>
+
+<var><name> Osmolarity </name></var>
+<var><name> ClAndHCO3 </name></var>
+<var><name> ClFract </name></var>
+<var><name> NetSumCats </name></var>
+
+</variables>
+
+<functions>
+
+
+
+<curve>
+  <name> PhOnClFract </name>
+  <point><x> 7.00 </x><y> 1 </y><slope> 0 </slope></point>
+  <point><x> 7.45 </x><y> 0.93 </y><slope> -0.5 </slope></point>7.45
+  <point><x> 7.8 </x><y> 0 </y><slope> 0 </slope></point>
+</curve>
+
+
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<call> RightCollectingDuct_H2O.CalcInflow </call>
+
+<if>
+  <test> RightCollectingDuct_H2O.Inflow LT 0.001 </test>
+  <true>
+    <call> RightCollectingDuct_Cl.NoFlow </call>
+    <call> RightCollectingDuct_Glucose.NoFlow </call>
+    <call> RightCollectingDuct_H2O.NoFlow </call>
+    <call> RightCollectingDuct_HCO3.NoFlow </call>
+    <call> RightCollectingDuct_K.NoFlow </call>
+    <call> RightCollectingDuct_KA.NoFlow </call>
+    <call> RightCollectingDuct_Na.NoFlow </call>
+    <call> RightCollectingDuct_NH4.NoFlow </call>
+    <call> RightCollectingDuct_PO4.NoFlow </call>
+    <call> RightCollectingDuct_SO4.NoFlow </call>
+    <call> RightCollectingDuct_Urea.NoFlow </call>
+    <call> RightCollectingDuct_Creatinine.NoFlow </call>
+    <call> RightCollectingDuct_Protein.NoFlow </call>
+
+    <def><name> Osmolarity </name><val> 0.0 </val></def>
+
+    <exitblock/>
+  </true>
+</if>
+
+<call> RightCollectingDuct_Glucose.CalcFlux </call>
+<call> RightCollectingDuct_KA.CalcFlux </call>
+<call> RightCollectingDuct_NH4.CalcFlux </call>
+<call> RightCollectingDuct_PO4.CalcFlux </call>
+<call> RightCollectingDuct_K.CalcFlux </call>
+<call> RightCollectingDuct_SO4.CalcFlux </call>
+<call> RightCollectingDuct_Na.CalcFlux </call>
+<call> RightCollectingDuct_Creatinine.CalcFlux </call>
+<call> RightCollectingDuct_Protein.CalcFlux </call>
+
+<call> RightCollectingDuct_H2OChannels.CalcActive </call>
+
+<def>
+  <name> NetSumCats </name>
+  <val>
+      RightCollectingDuct_Na.Outflow
+    + RightCollectingDuct_K.Outflow
+    + RightCollectingDuct_NH4.Outflow
+    - RightCollectingDuct_KA.Outflow
+    - RightCollectingDuct_PO4.Outflow
+    - RightCollectingDuct_SO4.Outflow
+  </val>
+</def>
+
+<if>
+  <test> NetSumCats GT 0.0 </test>
+  <true>
+
+    <def>
+      <name> ClAndHCO3 </name>
+      <val> NetSumCats </val>
+    </def>
+
+  </true>
+  <false>
+
+    <def>
+      <name> ClAndHCO3 </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> RightCollectingDuct_NH4.Flux </name>
+      <val> RightCollectingDuct_NH4.Flux - NetSumCats </val>
+    </def>
+
+    <def>
+      <name> RightCollectingDuct_NH4.Outflow </name>
+      <val> RightCollectingDuct_NH4.Inflow + RightCollectingDuct_NH4.Flux </val>
+    </def>
+
+  </false>
+</if>
+
+<def>
+  <name> ClFract </name>
+  <val> PhOnClFract [ BloodPhValues.ArtysPh ] </val>
+</def>
+
+<call> RightCollectingDuct_Cl.CalcFlux </call>
+<call> RightCollectingDuct_HCO3.CalcFlux </call>
+<call> RightCollectingDuct_H2O.CalcFlux </call>
+
+<call> RightCollectingDuct_Cl.CalcConc </call>
+<call> RightCollectingDuct_Glucose.CalcConc </call>
+<call> RightCollectingDuct_HCO3.CalcConc </call>
+<call> RightCollectingDuct_KA.CalcConc </call>
+<call> RightCollectingDuct_NH4.CalcConc </call>
+<call> RightCollectingDuct_PO4.CalcConc </call>
+<call> RightCollectingDuct_K.CalcConc </call>
+<call> RightCollectingDuct_SO4.CalcConc </call>
+<call> RightCollectingDuct_Na.CalcConc </call>
+<call> RightCollectingDuct_Creatinine.CalcConc </call>
+<call> RightCollectingDuct_Protein.CalcConc </call>
+
+<call> RightCollectingDuct_Urea.CalcFlux </call>
+<call> RightCollectingDuct_Urea.CalcConc </call>
+
+<def>
+  <name> Osmolarity </name>
+  <val>
+      RightCollectingDuct_Cl.Osmolarity
+    + RightCollectingDuct_Glucose.Osmolarity
+    + RightCollectingDuct_HCO3.Osmolarity
+    + RightCollectingDuct_KA.Osmolarity
+    + RightCollectingDuct_NH4.Osmolarity
+    + RightCollectingDuct_PO4.Osmolarity
+    + RightCollectingDuct_K.Osmolarity
+    + RightCollectingDuct_SO4.Osmolarity
+    + RightCollectingDuct_Na.Osmolarity
+    + RightCollectingDuct_Urea.Osmolarity
+  </val>
+</def>
+
+<call> RightCollectingDuct_H2OChannels.CalcDervs </call>
+
+<call> RightCollectingDuct_Ph.Calc </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

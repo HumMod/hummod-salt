@@ -1,0 +1,16 @@
+HumMod / CerebrospinalFluid
+
+Created : 2012-07-10
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<leaf>
+  <name> CerebrospinalFluid </name>
+  <label> Cerebrospinal Fluid </label>
+  <parent> ORGANS </parent>
+</leaf>
+
+
+End

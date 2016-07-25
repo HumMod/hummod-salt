@@ -1,0 +1,63 @@
+HumMod / Insulin
+
+Created : 10-Oct-08
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> Hormones_Insulin </name>
+  <label> Insulin </label>
+  <parent> HORMONESGENERAL </parent>
+</branch>
+
+<leaf>
+  <name> Hormones_Insulin_Circulating </name>
+  <label> Circulating </label>
+  <parent> Hormones_Insulin </parent>
+</leaf>
+
+<branch>
+  <name> Insulin_BetaCells </name>
+  <label> Beta Cells </label>
+  <parent> Hormones_Insulin </parent>
+</branch>
+
+<leaf>
+  <name> BetaCells_Synthesis </name>
+  <label> Synthesis </label>
+  <parent> Insulin_BetaCells </parent>
+</leaf>
+
+<leaf>
+  <name> BetaCells_Secretion </name>
+  <label> Secretion </label>
+  <parent> Insulin_BetaCells </parent>
+</leaf>
+
+<leaf>
+  <name> Hormones_Insulin_Injected </name>
+  <label> Injected </label>
+  <parent> Hormones_Insulin </parent>
+</leaf>
+
+<branch>
+  <name> Insulin_Receptors </name>
+  <label> Receptors </label>
+  <parent> Hormones_Insulin </parent>
+</branch>
+
+<leaf>
+  <name> Insulin_Receptors_General </name>
+  <label> General </label>
+  <parent> Insulin_Receptors </parent>
+</leaf>
+
+<leaf>
+  <name> Insulin_Receptors_Liver </name>
+  <label> Liver </label>
+  <parent> Insulin_Receptors </parent>
+</leaf>
+
+End

@@ -1,0 +1,61 @@
+HumMod / LungGases
+
+Created : 2012-07-12
+Revised : 2012-07-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> LungGases </name>
+  <label> Lung Gases </label>
+  <parent> RESPIRATION </parent>
+</branch>
+
+<leaf>
+  <name> LungGases_Summary </name>
+  <label> Summary </label>
+  <parent> LungGases </parent>
+</leaf>
+
+<separatorbar>
+  <parent> LungGases </parent>
+</separatorbar>
+
+<leaf>
+  <name> LungGases_O2 </name>
+  <label> O2 </label>
+  <parent> LungGases </parent>
+</leaf>
+
+<leaf>
+  <name> LungGases_N2 </name>
+  <label> N2 </label>
+  <parent> LungGases </parent>
+</leaf>
+
+<leaf>
+  <name> LungGases_CO2 </name>
+  <label> CO2 </label>
+  <parent> LungGases </parent>
+</leaf>
+
+<leaf>
+  <name> LungGases_H2O </name>
+  <label> H2O </label>
+  <parent> LungGases </parent>
+</leaf>
+
+<leaf>
+  <name> LungGases_CO </name>
+  <label> CO </label>
+  <parent> LungGases </parent>
+</leaf>
+
+<leaf>
+  <name> LungGases_Anesthetic </name>
+  <label> Anesthetic </label>
+  <parent> LungGases </parent>
+</leaf>
+
+End

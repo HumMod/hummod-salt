@@ -1,0 +1,110 @@
+HumMod / LeftHeartWallStress-Diastole
+
+Created : 2013-02-24
+Revised : 2013-04-07
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> LeftHeartWallStress-Diastole </name>
+
+<variables>
+
+<var><name> Pressure(mmHg) </name></var>
+<var><name> Pressure(kDynes/cM2) </name></var>
+
+<var><name> BloodVolume </name></var>
+<var><name> TissueVolume </name></var>
+<var><name> TotalVolume </name></var>
+
+<var><name> InnerRadius </name></var>
+<var><name> OuterRadius </name></var>
+
+<var><name> InnerLength </name></var>
+<var><name> OuterLength </name></var>
+
+<var><name> WallThickness </name></var>
+<var><name> Stress </name></var>
+
+<var><name> Stress-Ratio </name></var>
+<parm><name> Stress-Base </name><val> 10 </val></parm>
+
+<var><name> Partial </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Pressure(mmHg) </name>
+  <val> LeftHeartPumping-Diastole.TMP </val>
+</def>
+
+<def>
+  <name> Pressure(kDynes/cM2) </name>
+  <val> PressureTools.MMHG_TO_KDYNES_CM2 * Pressure(mmHg) </val>
+</def>
+
+<def>
+  <name> BloodVolume </name>
+  <val> LeftHeartPumping-Diastole.EDV </val>
+</def>
+
+<def>
+  <name> TissueVolume </name>
+  <val> LeftHeartWallStress-Mass.VentricleVolume </val>
+</def>
+
+<def>
+  <name> TotalVolume </name>
+  <val> BloodVolume + TissueVolume </val>
+</def>
+
+<def>
+  <name> InnerLength </name>
+  <val> LeftHeartWallStress-Mass.InnerLength </val>
+</def>
+
+<def>
+  <name> OuterLength </name>
+  <val> LeftHeartWallStress-Mass.OuterLength </val>
+</def>
+
+<def>
+  <name> InnerRadius </name>
+  <val> SQRT ( BloodVolume / ( InnerLength * System.Pi ) ) </val>
+</def>
+
+<def>
+  <name> OuterRadius </name>
+  <val> SQRT ( TotalVolume / ( OuterLength * System.Pi ) ) </val>
+</def>
+
+<def>
+  <name> WallThickness </name>
+  <val> OuterRadius - InnerRadius </val>
+</def>
+
+<def>
+  <name> Partial </name>
+  <val> ( OuterRadius / InnerRadius ) ^ 2 </val>
+</def>
+
+<def>
+  <name> Stress </name>
+  <val> Pressure(kDynes/cM2) / ( Partial - 1 ) </val>
+</def>
+
+<def>
+  <name> Stress-Ratio </name>
+  <val> Stress / Stress-Base </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,155 @@
+HumMod | Box
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 22.8 </high>
+   <wide> 30.0 </wide>
+
+<structurename> AdrenalGland-Flow </structurename>
+
+<repeatlist>
+  <name> Cond/G </name>
+  <repeat><reps> 40 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> TotalFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Total Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> CortexFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Cortex Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.2 </row><col> 1.0 </col>
+   <name> GlomerulosaFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Glomerulosa Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 5.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> GlomerulosaCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 6.8 </row><col> 3.0 </col>
+   <name> AdrenalGland-Size.GlomerulosaMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> FasciculataFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Fasciculata Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 9.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> FasciculataCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 10.8 </row><col> 3.0 </col>
+   <name> AdrenalGland-Size.FasciculataMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> ReticularisFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Reticularis Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 13.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> ReticularisCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 14.8 </row><col> 3.0 </col>
+   <name> AdrenalGland-Size.ReticularisMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 1.0 </col>
+   <name> MedullaFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Medulla Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 17.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> MedullaCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 18.8 </row><col> 3.0 </col>
+   <name> AdrenalGland-Size.MedullaMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 20.2 </row><col> 1.0 </col>
+  <name> GITract-Flow.Conductance_X_Normal </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Conductance (x Normal) </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.2 </row><col> 1.0 </col>
+   <name> GITract-Pressure.PressureGradient </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Pressure Gradient </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical Blood Flows (mL/Min) </line>
+  <line>  </line>
+  <line> Total = 11.7 </line>
+  <line>  </line>
+  <line> Cortex = 9.4 </line>
+  <line>  </line>
+  <line> Zona Glomerulosa = 1.4 </line>
+  <line> Zona Fasciculata = 7.0 </line>
+  <line> Zona Reticularis = 1.0 </line>
+  <line>  </line>
+  <line> Medulla = 2.3 </line>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

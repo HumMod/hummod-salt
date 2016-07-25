@@ -1,0 +1,35 @@
+HumMod / Disposal
+
+Created : 2013-02-17
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> RedCells_Disposal </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> Blood </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Red Cells | Disposal </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\BodyFluids\Blood\RedCells\Disposal\ ?>
+
+<?include Box.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,41 @@
+EPO-Units.REF
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+MW ==========================================================
+
+M.W. : 30.4 kD. 165 AA (Merck Index)
+
+IU Units ====================================================
+
+Cloned EPO may have the same MW as human EPO but different
+potency, so units of potency have been defined.
+
+130,000 Units (U) = 1 mG human EPO.
+
+Concentration units are mU/mL (typical value ~ 13) and pG/mL.
+
+Milli : 10^-3
+Micro : 10^-6
+Nano  : 10^-9
+Pico  : 10^-12
+
+We convert U to mU and mG to pG to get
+
+0.130 mU = 1 pG
+
+mU * 7.69 = pG
+pG * 0.130 = mU
+
+Therefore, a typical plasma EPO concentration of 13 mU/mL is
+equal to 100 pG/mL.
+
+Mole references are not of much use with proteins.
+
+References =====================================================
+
+End

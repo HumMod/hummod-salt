@@ -1,0 +1,42 @@
+Alanine.TXT
+
+Created : 2013-02-07
+Revised : 2013-02-07
+Author : Tom Coleman
+
+M.W. 89.09 C3-H7-N-O2
+Non-Essential
+% (by Mol) in generic protein : 7.2
+
+    COOH
+    |
+H2N-CH
+    |
+    CH3
+
+With a 3 carbon backbone, it can be deaminated to pryruvate.
+
+Pyruvate (M.W. 88)
+
+    COOH
+    |
+  H-C=O
+    |
+    CH3
+
+
+Non-essential. Food protein is about 5% alanine.
+
+Muscle makes alanine as follows.
+
+Glutamate + 2 Pyruvate <--> 2 Alanine + Alpha-Ketoglutarate
+
+The glutamate supplies the needed amines. Then in
+liver gluconeogenesis
+
+2 Alanine --> 2 Pyruvate --> Glucose
+
+with Alpha-Ketoglutarate going to Glutamate to carry
+the 2 Amines but then giving them up form Urea.
+
+End

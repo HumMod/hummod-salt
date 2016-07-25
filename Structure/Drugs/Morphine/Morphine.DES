@@ -1,0 +1,44 @@
+HumMod / Morphine
+
+Created : 1-Dec-15
+Revised : 
+Author : W Pruett
+Copyright : 2015-2015
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\Morphine\ ?>
+
+<?include MorphinePool.DES ?>
+<?include MorphineLiver.DES ?>
+<?include MorphineKidney.DES ?>
+<?include MorphineIV.DES ?>
+<?include MorphineIMBolus.DES ?>
+<?include MorphineGILumen.DES ?>
+<?include MorphineSingleDose.DES ?>
+
+<structure><name> Morphine </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> MorphineSingleDose.Parms </call>
+  <call> MorphineIMBolus.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> MorphinePool.CalcConc </call>
+  <call> MorphineGILumen.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> MorphineIV.Dervs </call>
+  <call> MorphineIMBolus.Dervs </call>
+  <call> MorphineLiver.Dervs </call>
+  <call> MorphineKidney.Dervs </call>
+  <call> MorphineGILumen.Dervs </call>
+  <call> MorphinePool.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+

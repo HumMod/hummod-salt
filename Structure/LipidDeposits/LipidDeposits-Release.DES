@@ -1,0 +1,123 @@
+HumMod / LipidDeposits-Release
+
+Created : 30-Mar-08
+Revised : 2012-07-08
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> LipidDeposits-Release </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<parm><name> Fraction </name><val> 0.0075 </val></parm>
+<var><name> BasicRate </name></var>
+
+<var><name> InsulinEffect </name></var>
+<var><name> GlucagonEffect </name></var>
+<var><name> EpinephrineEffect </name></var>
+<var><name> FattyAcidEffect </name></var>
+
+<var><name> insulin </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> InsulinEffect </name>
+  <point><x>  0 </x><y> 3.0 </y><slope> 0.0 </slope></point>
+  <point><x>  10 </x><y> 1.0 </y><slope> -0.04 </slope></point>8
+  <point><x> 30 </x><y> 0.3 </y><slope> 0.0 </slope></point>0.4
+</curve>
+
+<curve>
+  <name> GlucagonEffect </name>
+  <point><x> 120 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+  <point><x> 200 </x><y> 3.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> EpinephrineEffect </name>
+  <point><x>   0 </x><y> 0.5 </y><slope> 0.0 </slope></point>
+  <point><x>  40 </x><y> 1.0 </y><slope> 0.013 </slope></point>
+  <point><x> 400 </x><y> 4.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> FattyAcidEffect </name>
+  <point><x>   0 </x><y> 3.0 </y><slope> 0.0 </slope></point>
+  <point><x>  15 </x><y> 1.0 </y><slope> -0.04 </slope></point>
+  <point><x> 100 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+
+<curve>
+  <name> T2DEffect </name>
+  <point><x>   0 </x><y> 1 </y><slope> 0 </slope></point>
+  <point><x>  8 </x><y> 20 </y><slope> 0 </slope></point>
+
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> BasicRate </name><val> Fraction * LipidDeposits.Mass </val></def>
+
+<!--  
+
+<def>
+  <name> InsulinEffect </name>
+  <val> InsulinEffect [ InsulinReceptors-General.BoundFraction(%) ] </val>
+</def>
+
+-->
+
+<def>
+  <name> insulin </name>
+  <val> InsulinReceptors-General.BoundFraction(%) * ( InsulinPump.T2D + 1 )  </val>
+</def><!-- Removing insulin resistance in adipose tissue -->
+
+
+
+<def>
+  <name> InsulinEffect </name>
+  <val> InsulinEffect [ insulin ] </val>
+</def>
+
+<def>
+  <name> GlucagonEffect </name>
+  <val> GlucagonEffect [ GlucagonPool.[Glucagon] ] </val>
+</def>
+
+<def>
+  <name> EpinephrineEffect </name>
+  <val> EpinephrineEffect [ EpiPool.[Epi(pG/mL)] ] </val>
+</def>
+
+<def>
+  <name> FattyAcidEffect </name>
+  <val> FattyAcidEffect [ FAPool.[FA(mG/dL)] ] </val>
+</def>
+
+<def>
+  <name> Rate </name>
+  <val>
+       BasicRate
+     * InsulinEffect
+     * GlucagonEffect
+     * EpinephrineEffect
+     * FattyAcidEffect
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

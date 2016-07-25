@@ -1,0 +1,42 @@
+HumMod / Selection
+
+Created : 2012-02-14
+Revised : 2012-11-05
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> LeftHeart-Fuel </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> LeftHeart </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Left Heart - Fuel </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> LeftHeart-Fuel </structurename>
+
+<?path Display\Organs\LeftHeart\Fuel\ ?>
+
+<?include Delivery.DES ?>
+<?include Use.DES ?>
+
+<?include InsulinEffect.DES ?>
+<?include FAFraction.DES ?>
+
+</panel>
+

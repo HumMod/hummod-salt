@@ -1,0 +1,56 @@
+HumMod / CoronarySinus
+
+Created : 2012-02-02
+Revised : 2012-02-09
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> CoronarySinus </name>
+
+<variables>
+
+<var><name> BloodFlow </name></var>
+<var><name> pO2 </name></var>
+<var><name> [O2] </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> BloodFlow </name>
+  <val> OrganFlow.CoronarySinusFlow </val>
+</def>
+
+<conditional>
+  <name> [O2] </name>
+  <test> BloodFlow GT 0.0 </test>
+  <true> 
+    ( ( RightHeart-Flow.[O2] * RightHeart-Flow.BloodFlow )
+    + ( LeftHeart-Flow.[O2] * LeftHeart-Flow.BloodFlow ) )
+    / BloodFlow
+  </true>
+  <false> ( RightHeart-Flow.[O2] + LeftHeart-Flow.[O2] ) / 2 </false>
+</conditional>
+
+<copy>
+  <from> [O2] </from>
+  <to> HgbTissue.[O2] </to>
+</copy>
+
+<call> HgbTissue.O2ToPO2 </call>
+
+<copy>
+  <from> HgbTissue.pO2 </from>
+  <to> pO2 </to>
+</copy>
+
+</block>
+
+</definitions>
+</structure>
+
+End

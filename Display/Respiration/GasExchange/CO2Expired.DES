@@ -1,0 +1,54 @@
+HumMod / CO2Expired
+
+Created : 10-Feb-06
+Revised : 2012-10-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 12.0 </high>
+   <wide> 30.0 </wide>
+   <title> CO2 Expired </title>
+
+<structurename> Lung_CO2 </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Loss </name>
+  <label> Expired </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Loss </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 200 </min><max> 300 </max><inc> 100 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Normal CO2 expired is 200 mL/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End

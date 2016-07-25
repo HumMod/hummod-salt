@@ -1,0 +1,172 @@
+HumMod | ACTH
+
+Created : 2011-07-30
+Last Modified : 2011-07-30
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> ACTH </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Secretion </name></var>
+<var><name> Degradation </name></var>
+
+<parm><name> TargetConc </name><val> 0.05 </val></parm>
+<var><name> InitialMass </name></var>
+
+<var><name> [Conc(nG/mL)] </name></var>
+<var><name> [Conc(nG/dL)] </name></var>
+<var><name> [Conc(pMol/L)] </name></var>
+
+<constant><name> NG/DL_TO_PMOL/L </name><val> 2.2 </val></constant>
+
+<parm><name> PumpSwitch </name><val> FALSE </val></parm>
+<parm><name> PumpSetting </name><val> 0.0 </val></parm>
+<var><name> PumpRate </name></var>
+
+<parm><name> ClampSwitch </name><val> FALSE </val></parm>
+<parm><name> ClampSetting </name><val> 0.0 </val></parm>
+
+<var><name> [CRF]Effect </name></var>
+<var><name> [ANP]Effect </name></var>
+
+<var><name> [ADH]Effect </name></var>
+
+<parm><name> Secretion-Basic </name><val> 28.0 </val></parm>
+
+<parm><name> K </name><val> 560 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 7.5 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> NormalADH </name>
+  <integralname> NormalADH </integralname>
+  <initialval> 2 </initialval>
+  <dervname> dNormal </dervname>
+  <errorlim> 0.03 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve><name> [CRF]Effect </name>
+<point><x>    0 </x><y> 0 </y><slope> 0 </slope></point>
+<point><x>   80 </x><y> 1 </y><slope> 0.015 </slope></point>
+<point><x> 1000 </x><y> 8 </y><slope> 0 </slope></point>
+</curve>
+
+<curve><name> [ANP]Effect </name>
+<point><x>    2 </x><y> 1.33 </y><slope> 0 </slope></point>
+<point><x>   20 </x><y> 1 </y><slope> -0.0025 </slope></point>
+<point><x> 200 </x><y> 0.66 </y><slope> 0 </slope></point>
+</curve>
+
+<curve><name> [ADH]Effect </name>
+<point><x>   0 </x><y> 0 </y><slope> 0 </slope></point>
+<point><x> 0.3 </x><y> 1 </y><slope> 3.0 </slope></point>
+<point><x> 1.2 </x><y> 4 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> InitialMass </name>
+  <val> TargetConc * ECFV.InitialVol </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Conc </name>
+
+<conditional>
+  <name> [Conc(nG/mL)] </name>
+  <test> ClampSwitch </test>
+  <true> ClampSetting / 100 </true>
+  <false> Mass / ECFV.Vol </false>
+</conditional>
+
+<def>
+  <name> [Conc(nG/dL)] </name>
+  <val> 100 * [Conc(nG/mL)] </val>
+</def>
+
+<def>
+  <name> [Conc(pMol/L)] </name>
+  <val> [Conc(nG/dL)] * NG/DL_TO_PMOL/L </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<conditional>
+  <name> PumpRate </name>
+  <test> PumpSwitch </test>
+  <true> PumpSetting </true>
+  <false> 0 </false>
+</conditional>
+
+<def>
+  <name> [CRF]Effect </name>
+  <val> [CRF]Effect [ CorticotropinReleasingFactor.[CRF(pG/mL)] ] </val>
+</def>
+
+<def>
+  <name> [ANP]Effect </name>
+  <val> [ANP]Effect [ ANPPool.[ANP] ] </val>
+</def>
+
+
+<def><name> dNormal </name><val> 0.01 * ( ADHPool.Log10Conc - NormalADH ) </val></def>
+
+<def>
+  <name> [ADH]Effect </name>
+  <val> [ADH]Effect [ ADHPool.Log10Conc ] </val>
+</def>
+
+<def>
+  <name> Secretion </name>
+  <val>
+      Secretion-Basic
+    * [CRF]Effect
+    * [ANP]Effect    
+    * Brain-Function.Effect
+  </val>   <!--   * [ADH]Effect -->
+</def>
+
+<def><name> Degradation </name><val> K * [Conc(nG/mL)] </val></def>
+
+<def><name> Gain </name><val> Secretion + PumpRate + ACTHTest.Loss</val></def>
+<def><name> Loss </name><val> Degradation </val></def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,26 @@
+HumMod / Colloids.TXT
+
+Created : 2013-02-27
+Revised : 2013-02-27
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+COP = 320 [Prt] + 1160 [Prt]^2
+
+For the inverse, use quadratic formula and then simplify.
+
+Units are mmHg for COP and G/mL for [Prt].
+                      */
+
+C1 320.0
+C2 1160.0
+
+K1 = C1 / (2.0 * C2)
+K2 = K1 * K1
+
+K1  0.138
+K2  0.019
+
+
+End

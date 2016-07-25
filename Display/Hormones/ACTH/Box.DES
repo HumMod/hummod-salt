@@ -1,0 +1,120 @@
+HumMod | Pool
+
+Created : 2012-01-28
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> ACTH </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Conc(nG/dL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Conc (nG/dL)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Conc(nG/dL)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 10 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> ClampSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp Switch </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Clamp </name>
+  <repeat><reps> 100 </reps><stepsize>  1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> ClampSetting </name>
+  <listname> Clamp </listname>
+  <label> Setting </label>
+</slidebar>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> [Conc(pMol/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Conc (nMol/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass (nG) </label>
+</showvalue>
+
+<showgraph>
+  <row> 15.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 700 </min><max> 800 </max><inc> 100 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 22.4 </row><col> 1 </col>
+   <name> Change </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.8 </row><col> 1 </col>
+   <name> Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 24.8 </row><col> 1 </col>
+   <name> Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+</groupbox>
+
+End

@@ -1,0 +1,55 @@
+HumMod / Technical
+
+Created : 2012-07-21
+Revised : 2012-07-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 35.0 </row>
+   <col> 1.0 </col>
+   <high> 6.4 </high>
+   <wide> 30.0 </wide>
+   <title> Technical - Passive </title>
+
+<structurename> RightHeartPumping-Diastole </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> BreakVolume </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Break Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> BreakPressure </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Break Pressure </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.8 </row><col> 1.0 </col>
+   <name> Slope </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Slope </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.8 </row><col> 1.0 </col>
+   <name> K-Basic </name>
+   <format><decimal> 4 </decimal></format>
+   <label> K - Basic </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

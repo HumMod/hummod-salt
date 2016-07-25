@@ -1,0 +1,39 @@
+HumMod / Water
+
+Created : 17-Apr-05
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<panel><name> CDWater </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Nephron </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Collecting Duct | Water </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\KidneyNephrons\CollectingDuct\Water\ ?>
+
+<?include WaterMovement.DES ?>
+<?include Permeability.DES ?>
+<?include H2OChannels.DES ?>
+
+</panel>
+
+End

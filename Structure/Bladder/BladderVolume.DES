@@ -1,0 +1,87 @@
+HumMod / BladderVolume
+
+Created : 16-Mar-08
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BladderVolume </name>
+<variables>
+
+<var><name> VolumeVoid </name><val> 0.0 </val></var>
+
+<constant><name> NORMAL_RESIDUAL_VOLUME </name><val> 100 </val></constant>
+<constant><name> NORMAL_INITIAL_VOLUME </name><val> 200 </val></constant>
+<constant><name> NORMAL_CAN_VOID_VOLUME </name><val> 300 </val></constant>
+<constant><name> NORMAL_MUST_VOID_VOLUME </name><val> 700 </val></constant>
+
+<var><name> ResidualVolume </name></var>
+<var><name> InitialVolume </name></var>
+<var><name> CanVoidVolume </name></var>
+<var><name> MustVoidVolume </name></var>
+
+<var><name> CanVoid </name><val> FALSE </val></var>
+<var><name> MustVoid </name><val> FALSE </val></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 10.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> ResidualVolume </name><val> NORMAL_RESIDUAL_VOLUME * Bladder.Sizer </val></def>
+  <def><name> InitialVolume </name><val> NORMAL_INITIAL_VOLUME * Bladder.Sizer </val></def>
+  <def><name> CanVoidVolume </name><val> NORMAL_CAN_VOID_VOLUME * Bladder.Sizer </val></def>
+  <def><name> MustVoidVolume </name><val> NORMAL_MUST_VOID_VOLUME * Bladder.Sizer </val></def>
+
+  <def><name> Mass </name><val> InitialVolume </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_H2O.Outflow </val></def>
+
+</block>
+
+<block><name> TestVolume </name>
+
+<conditional>
+  <name> CanVoid </name>
+  <test> Mass GE CanVoidVolume </test>
+  <true> TRUE </true>
+  <false> FALSE </false>
+</conditional>
+
+<conditional>
+  <name> MustVoid </name>
+  <test> Mass GE MustVoidVolume </test>
+  <true> TRUE </true>
+  <false> FALSE </false>
+</conditional>
+
+</block>
+
+<block><name> Void </name>
+
+  <def><name> VolumeVoid </name><val> Mass - ResidualVolume </val></def>
+  <def><name> Mass </name><val> ResidualVolume </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

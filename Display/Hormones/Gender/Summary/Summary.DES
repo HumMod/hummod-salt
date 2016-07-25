@@ -1,0 +1,37 @@
+HumMod / Summary
+
+Created : 2012-03-10
+Revised : 2012-03-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Gender-Summary </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Hormone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Gender | Summary </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Hormones\Gender\Summary\ ?>
+
+<?include Conc.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,44 @@
+HumMod / Sizing-ECFV
+
+Created : 2013-02-27
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-ECFV </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<constant><name> FractBodyH2O </name><val> 0.367 </val></constant>0.357
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> ECFV.InitialFractBodyH2O </name>
+  <val> FractBodyH2O </val>
+</def>
+
+<def>
+  <name> Vol </name>
+  <val> FractBodyH2O * Sizing-BodyH2O.Core </val>
+</def>
+
+<def>
+  <name> ECFV.InitialVol </name>
+  <val> Vol </val>
+</def>
+
+<call> ECFV.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

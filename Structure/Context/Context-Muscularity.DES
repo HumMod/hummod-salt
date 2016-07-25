@@ -1,0 +1,184 @@
+HumMod / Context-Muscularity
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Context-Muscularity </name>
+
+<variables>
+
+<parm><name> Index </name><val> 1 </val></parm>
+<parm><name> PlusMinus </name><val> 0 </val></parm>
+
+<constant><name> MALE_BELOWNORMAL    </name><val> 18.0 </val></constant>
+<constant><name> MALE_NORMAL         </name><val> 26.4 </val></constant>
+<constant><name> MALE_ABOVENORMAL    </name><val> 40.0 </val></constant>
+<constant><name> MALE_TRAINEDATHLETE </name><val> 58.0 </val></constant>
+
+<constant><name> FEMALE_BELOWNORMAL    </name><val> 12.0 </val></constant>
+<constant><name> FEMALE_NORMAL         </name><val> 16.8 </val></constant> 14.6
+<constant><name> FEMALE_ABOVENORMAL    </name><val> 23.0 </val></constant>
+<constant><name> FEMALE_TRAINEDATHLETE </name><val> 34.0 </val></constant>
+
+<var><name> NominalMass </name></var>
+<var><name> Mass </name></var>
+<var><name> Mass(kG) </name></var>
+
+<var><name> IsBelowNormal    </name></var>
+<var><name> IsNormal         </name></var>
+<var><name> IsAboveNormal    </name></var>
+<var><name> IsTrainedAthlete </name></var>
+
+<var><name> Stochasm </name></var>
+
+<normaldist>
+  <name> Normal </name>
+  <mean> 0 </mean>
+  <stddev> 25 </stddev>
+</normaldist>
+
+<whitenoise>
+  <name> Flat </name>
+  <lowerlim> -50 </lowerlim>
+  <upperlim> 50 </upperlim>
+</whitenoise>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<onjustchanged><name> Index </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+<onjustchanged><name> PlusMinus </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> IsBelowNormal    </name><val> FALSE </val></def>
+<def><name> IsNormal         </name><val> FALSE </val></def>
+<def><name> IsAboveNormal    </name><val> FALSE </val></def>
+<def><name> IsTrainedAthlete </name><val> FALSE </val></def>
+
+<if><test> Context-Gender.IsFemale </test>
+  <true><call> CalcFemale </call></true>
+  <false><call> CalcMale </call></false>
+</if>
+
+<call> CalcStochasm </call>
+
+<def>
+  <name> Mass(kG) </name>
+  <val>
+     NominalMass
+     * ( 1.0 + ( PlusMinus / 100 ) )
+     * ( 1.0 + ( Stochasm / 100 ) )
+  </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> 1000 * Mass(kG) </val>
+</def>
+
+</block>
+
+<block><name> CalcMale </name>
+
+<testcase>
+
+<case><test> Index EQ 0 </test>
+<def><name> NominalMass </name><val> MALE_BELOWNORMAL </val></def>
+<def><name> IsBelowNormal </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 1 </test>
+<def><name> NominalMass </name><val> MALE_NORMAL </val></def>
+<def><name> IsNormal </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 2 </test>
+<def><name> NominalMass </name><val> MALE_ABOVENORMAL </val></def>
+<def><name> IsAboveNormal </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 3 </test>
+<def><name> NominalMass </name><val> MALE_TRAINEDATHLETE </val></def>
+<def><name> IsTrainedAthlete </name><val> TRUE </val></def>
+</case>
+
+</testcase>
+
+</block>
+
+<block><name> CalcFemale </name>
+
+<testcase>
+
+<case><test> Index EQ 0 </test>
+<def><name> NominalMass </name><val> FEMALE_BELOWNORMAL </val></def>
+<def><name> IsBelowNormal </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 1 </test>
+<def><name> NominalMass </name><val> FEMALE_NORMAL </val></def>
+<def><name> IsNormal </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 2 </test>
+<def><name> NominalMass </name><val> FEMALE_ABOVENORMAL </val></def>
+<def><name> IsAboveNormal </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 3 </test>
+<def><name> NominalMass </name><val> FEMALE_TRAINEDATHLETE </val></def>
+<def><name> IsTrainedAthlete </name><val> TRUE </val></def>
+</case>
+
+</testcase>
+
+</block>
+
+<block><name> CalcStochasm </name>
+
+<def>
+  <name> Stochasm </name>
+  <val> 0 </val>
+</def>
+
+<if>
+  <test> NOT Random.Adiposity </test>
+  <true>
+    <exitblock/>
+  </true>
+</if>
+
+<if>
+  <test> Random.State EQ Random.IS_DETERMINISTIC </test>
+  <true>
+    <exitblock/>
+  </true>
+</if>
+
+<conditional>
+  <name> Stochasm </name>
+  <test> Random.Distribution EQ Random.IS_NORMAL </test>
+  <true> Normal </true>
+  <false> Flat </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

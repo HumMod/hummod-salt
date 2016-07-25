@@ -1,0 +1,191 @@
+HumMod / LeftKidney-Structure
+
+Created : 31-Mar-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> LeftKidney-Structure </name>
+
+<variables>
+
+<var>
+  <name> PhEffect </name>
+</var>
+
+<var>
+  <name> FuelEffect </name>
+</var>
+
+<var>
+  <name> TemperatureEffect </name>
+</var>
+
+<parm><name> Fraction </name><val> 0 </val></parm>
+<var><name> Remaining </name><val> 1 </val></var>
+<var><name> InterstitialLoss </name></var>
+<var><name> InterstitialLoss(L) </name></var>
+<var><name> IntracellularLoss </name></var>
+</variables>
+
+<equations>
+
+<backwardeuler>
+  <name> Effect </name>
+  <integralname> Effect </integralname>
+  <initialval> 1.0 </initialval>
+  <f1name> F1 </f1name>
+  <f2name> F2 </f2name>
+  <dervname> Change </dervname>
+</backwardeuler>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> PhOnStructure </name>
+  <point><x> 6.5 </x><y> 0.1 </y><slope> 0 </slope></point>
+  <point><x> 6.6 </x><y> 0.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> FuelOnStructure </name>
+  <point><x> 0.5 </x><y> 0.05 </y><slope> 0 </slope></point>
+  <point><x> 0.8 </x><y> 0.00 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> TemperatureOnStructure </name>
+  <point><x> 44.0 </x><y> 0.00 </y><slope> 0 </slope></point>
+  <point><x> 46.0 </x><y> 0.05 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> PhEffect </name>
+  <val> PhOnStructure [ LeftKidney-Ph.Ph ] </val>
+</def>
+
+
+<conditional>
+  <name> FuelEffect </name>
+  <test> LeftKidney-NephronCount.Total(xNormal) LE 0.2 </test>
+  <true> 0 </true>
+  <false> FuelOnStructure [ LeftKidney-Fuel.FractUseDelay ] </false>
+</conditional>
+
+
+<def>
+  <name> TemperatureEffect </name>
+  <val> TemperatureOnStructure [ HeatCore.Temp(C) ] </val>
+</def>
+
+<def>
+  <name> F1 </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> F2 </name>
+  <val>
+      PhEffect
+    + TemperatureEffect
+    + FuelEffect
+  </val>
+</def>
+
+</block>
+
+<block><name> Nephrectomize </name>
+
+<def><name> Remaining </name><val> 1 - Fraction </val></def>
+<def><name> LeftKidney-Size.FractTotal </name><val> LeftKidney-Size.FractTotal * Remaining </val></def>
+<def><name> InterstitialLoss </name><val>  Fraction * LeftKidney-Size.IFV </val></def>
+<def><name> InterstitialLoss(L) </name><val>  Fraction * LeftKidney-Size.IFV / 1000 </val></def>
+<def><name> IntracellularLoss </name><val>  Fraction * LeftKidney-Size.CellH2O </val></def>
+
+<def><name> Torso_Middle_H2O.Vol </name><val> Torso_Middle_H2O.Vol - InterstitialLoss </val></def>
+<def><name> CellH2O.Vol </name><val> CellH2O.Vol - IntracellularLoss </val></def>
+<def><name> Torso_Middle_InterstitialProtein.AlbMass  </name><val> Torso_Middle_InterstitialProtein.AlbMass  - ( Torso_Middle_InterstitialProtein.[Alb] * InterstitialLoss ) </val></def>
+<def><name> Torso_Middle_InterstitialProtein.AGPMass  </name><val> Torso_Middle_InterstitialProtein.AGPMass  - ( Torso_Middle_InterstitialProtein.[AGP] * InterstitialLoss ) </val></def>
+<def><name> Torso_Middle_InterstitialProtein.IgGMass  </name><val> Torso_Middle_InterstitialProtein.IgGMass  - ( Torso_Middle_InterstitialProtein.[IgG] * InterstitialLoss ) </val></def>
+
+
+<def><name> LeftKidney-Size.SolidMass </name><val> LeftKidney-Size.SolidMass * Remaining </val></def>
+<def><name> LeftKidney-Size.SolidVol </name><val> LeftKidney-Size.SolidVol * Remaining </val></def>
+<def><name> LeftKidney-NephronCount.Total </name><val> LeftKidney-NephronCount.Total * Remaining </val></def>
+<def><name> LeftMedulla.Volume </name><val> Remaining * LeftMedulla.Volume </val></def>
+
+
+<def><name> LeftReninSynthesis.Rate </name><val> LeftReninSynthesis.Rate * Remaining </val></def>
+<def><name> LeftReninFree.Mass </name><val> LeftReninFree.Mass * Remaining </val></def>
+<def><name> LeftReninGranules.Mass </name><val> LeftReninGranules.Mass * Remaining </val></def>
+<def><name> LeftKidney-Lactate.Mass </name><val> LeftKidney-Lactate.Mass * Remaining </val></def>
+<def><name> LeftKidney-CO2.Mass </name><val> LeftKidney-CO2.Mass * Remaining </val></def>
+
+<def><name> LeftKidney-ArcuateArtery.NominalConductance </name><val> LeftKidney-ArcuateArtery.Conductance(/G) * LeftKidney-Size.Mass * Remaining </val></def>
+<!--
+<def><name> LeftKidney-AfferentArtery.NominalConductance </name><val> LeftKidney-AfferentArtery.Conductance(/G) * LeftKidney-Size.Mass * Remaining </val></def>
+<def><name> LeftKidney-EfferentArtery.NominalConductance </name><val> LeftKidney-EfferentArtery.Conductance(/G) * LeftKidney-Size.Mass * Remaining </val></def>
+-->
+
+<!-- electrolytes, extracellular-->
+<def><name> NaPool.Mass </name><val> NaPool.Mass - ( NaPool.[Na+] * InterstitialLoss ) </val></def>
+<def><name> KPool.Mass </name><val> KPool.Mass - ( KPool.[K+] * InterstitialLoss ) </val></def>
+<def><name> PO4Pool.Mass </name><val> PO4Pool.Mass - ( PO4Pool.[PO4--] * InterstitialLoss ) </val></def>
+<def><name> SO4Pool.Mass </name><val> SO4Pool.Mass - ( SO4Pool.[SO4--] * InterstitialLoss ) </val></def>
+<def><name> LacPool.Mass </name><val> LacPool.Mass - ( LacPool.[Lac-] * InterstitialLoss ) </val></def>
+<def><name> ClPool.Mass </name><val> ClPool.Mass - ( ClPool.[Cl-] * InterstitialLoss ) </val></def>
+<def><name> LeftMedullaUrea.Mass </name><val> LeftMedullaUrea.Mass * Remaining </val></def>
+<def><name> LeftMedullaNa.Mass </name><val> LeftMedullaNa.Mass * Remaining </val></def>
+
+
+<!-- electrolytes, intracellular-->
+<def><name> KCell.Mass </name><val> KCell.Mass - ( KCell.[K+] * IntracellularLoss ) </val></def>
+<def><name> UreaCell.Mass </name><val> UreaCell.Mass - ( UreaCell.[Urea] * IntracellularLoss ) </val></def>
+
+<!-- metabolites -->
+
+<def><name> UreaPool.Mass </name><val> UreaPool.Mass - ( UreaPool.[Urea] * InterstitialLoss ) </val></def>
+<def><name> KAPool.Mass </name><val> KAPool.Mass - ( KAPool.[KA] * InterstitialLoss ) </val></def>
+<def><name> FAPool.Mass </name><val> FAPool.Mass - ( FAPool.[FA] * InterstitialLoss ) </val></def>
+<def><name> GlucosePool.Mass </name><val> GlucosePool.Mass - ( GlucosePool.[Glucose] * InterstitialLoss ) </val></def>
+<def><name> CreatininePool.Mass </name><val> CreatininePool.Mass - ( CreatininePool.[Creatinine] * InterstitialLoss ) </val></def>
+
+<!-- other osmolar players -->
+<def><name> OsmECFV.OtherCations </name><val> OsmECFV.OtherCations - ( OsmECFV.[OtherCations] * InterstitialLoss(L) ) </val></def>
+<def><name> OsmECFV.OtherAnions </name><val> OsmECFV.OtherAnions - ( OsmECFV.[OtherAnions] * InterstitialLoss(L) ) </val></def>
+<def><name> OsmCell.OtherCations </name><val> OsmCell.OtherCations - ( OsmCell.[OtherCations] * IntracellularLoss / 1000 ) </val></def>
+<def><name> OsmCell.OtherAnions </name><val> OsmCell.OtherAnions - ( OsmCell.[OtherAnions] * IntracellularLoss / 1000 ) </val></def>
+
+
+<!--circulating  hormones-->
+
+<def><name> ReninPool.Mass </name><val> ReninPool.Mass - ( ReninPool.[PRA] * InterstitialLoss * ReninPool.VOLDIST ) </val></def>
+<def><name> EPOPool.Mass </name><val> EPOPool.Mass - ( EPOPool.[EPO] * InterstitialLoss *  EPOPool.VolDist(FractionECFV)  ) </val></def>
+<def><name> ACTH.Mass </name><val> ACTH.Mass - ( ACTH.[Conc(nG/mL)] * InterstitialLoss ) </val></def>
+<def><name> Cortisol.Mass </name><val> Cortisol.Mass - ( Cortisol.[Conc(uG/mL)]  * InterstitialLoss ) </val></def>
+<def><name> ParathyroidHormone.Mass </name><val> ParathyroidHormone.Mass - ( ParathyroidHormone.[Conc(nG/mL)] * InterstitialLoss ) </val></def>
+<def><name> ANPPool.Mass </name><val> ANPPool.Mass - ( ANPPool.[ANP] * InterstitialLoss(L) ) </val></def>
+<def><name> InsulinPool.Mass </name><val> InsulinPool.Mass - ( InsulinPool.[Insulin] * InterstitialLoss(L) ) </val></def>
+<def><name> GlucagonPool.Mass </name><val> GlucagonPool.Mass - ( GlucagonPool.[Glucagon] * InterstitialLoss(L) ) </val></def>
+<def><name> ANPPool.Mass </name><val> ANPPool.Mass - ( ANPPool.[ANP] * InterstitialLoss(L) ) </val></def>
+<def><name> LeptinPool.Mass </name><val> LeptinPool.Mass - ( LeptinPool.[Leptin(nG/mL)] * InterstitialLoss(L) ) </val></def>
+<def><name> ADHPool.Mass </name><val> ADHPool.Mass - ( ADHPool.[ADH] * InterstitialLoss(L) ) </val></def>
+<def><name> AldoPool.Mass </name><val> AldoPool.Mass - ( AldoPool.[Aldo] * ( InterstitialLoss + IntracellularLoss ) ) </val></def>
+
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,78 @@
+HumMod / CushingResponse DES
+
+Created : 21-Oct-04
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> CushingResponse </name>
+
+<variables>
+
+<var><name> Effect </name></var>
+<var><name> PO2Effect </name></var>
+
+<parm><name> Strength </name><val> 8.0 </val></parm>
+<parm><name> Tau </name><val> 10.0 </val></parm>
+
+</variables>
+
+<equations>
+
+<delay>
+  <name> Fatigue </name>
+  <outputname> Fatigue </outputname>
+  <initialval> 0.0 </initialval>
+  <inputname> BasicEffect </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.01 </errorlim>
+</delay>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> PO2Effect </name>
+  <point><x>  0 </x><y> 1 </y><slope> 0 </slope></point>
+  <point><x> 20 </x><y> 0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> K </name>
+  <val> INVERT ( 60.0 * Tau ) </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> PO2Effect </name>
+  <val> PO2Effect [ Brain-Flow.PO2 ] </val>
+</def>
+
+<def>
+  <name> BasicEffect </name>
+  <val> PO2Effect * Strength </val>
+</def>
+
+<def>
+  <name> Effect </name>
+  <val> BasicEffect - Fatigue </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

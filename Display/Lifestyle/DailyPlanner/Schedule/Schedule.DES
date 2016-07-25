@@ -1,0 +1,379 @@
+HumMod / Schedule
+
+Created : 24-Apr-05
+Revised : 2012-08-07
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> DailyPlannerSchedule </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Clock </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Daily Planner - Schedule </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/><secs/><days/>
+</showclock>
+
+
+<maplist>
+  <name> DailyPlannerSchedule.Activity </name>
+  <map><val> 0 </val><img> Sleep </img></map>
+  <map><val> 1 </val><img> Rest </img></map>
+  <map><val> 2 </val><img> Work </img></map>
+  <map><val> 3 </val><img> Aerobics </img></map>
+  <map><val> 4 </val><img> Eat Meal </img></map>
+</maplist>
+
+<structurename> DailyPlannerSchedule </structurename>
+
+<groupbox>
+   <row> 1.8 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.0 </col>
+  <name> Hour12AM-1AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 12 AM - 1 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 3.4 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour1AM-2AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 1 AM - 2 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 5.0 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour2AM-3AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 2 AM - 3 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 6.6 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour3AM-4AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 3 AM - 4 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 8.2 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour4AM-5AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 4 AM - 5 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 9.8 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour5AM-6AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 5 AM - 6 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 11.4 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour6AM-7AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 6 AM - 7 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 13.0 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour7AM-8AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 7 AM - 8 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 14.6 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour8AM-9AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 8 AM - 9 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 16.2 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.0 </col>
+  <name> Hour9AM-10AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 9 AM - 10 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 17.8 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 1.2 </col>
+  <name> Hour10AM-11AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 10 AM - 11 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 19.4 </row><col> 1.2 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 1.0 </col>
+  <name> Hour11AM-12PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 11 AM - 12 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 21.0 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.0 </col>
+  <name> Hour12PM-1PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 12 PM - 1 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 22.6 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour1PM-2PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 1 PM - 2 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 24.2 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour2PM-3PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 2 PM - 3 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 25.8 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour3PM-4PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 3 PM - 4 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 27.4 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour4PM-5PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 4 PM - 5 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 29.0 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour5PM-6PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 5 PM - 6 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 30.6 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour6PM-7PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 6 PM - 7 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 32.2 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour7PM-8PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 7 PM - 8 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 33.8 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.9 </col>
+  <name> Hour8PM-9PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 8 PM - 9 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 35.4 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 2.0 </col>
+  <name> Hour9PM-10PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 9 PM - 10 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 37.0 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 1.0 </col>
+  <name> Hour10PM-11PM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 10 PM - 11 PM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+<groupbox>
+   <row> 38.6 </row><col> 1.0 </col>
+   <high> 1.8 </high><wide> 50.0 </wide>
+
+<radiobuttons>
+  <row> 0.5 </row><col> 1.0 </col>
+  <name> Hour11PM-12AM </name>
+  <listname> DailyPlannerSchedule.Activity </listname>
+  <label> 11 PM - 12 AM </label>
+  <layout> HORZ </layout>
+</radiobuttons>
+
+</groupbox>
+
+</panel>
+
+End

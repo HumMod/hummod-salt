@@ -1,0 +1,38 @@
+HumMod / Kinetics
+
+Created : 2013-03-19
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> Drugs-Chlorothiazide-Kinetics </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> PillPK </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Chlorothiazide Kinetics </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Intervention\Drugs\Chlorothiazide\Kinetics\ ?>
+
+<?include GILumen.DES ?>
+<?include ECFV.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,155 @@
+HumMod / Cardiac
+
+Created : 26-Jun-05
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 30 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Sympathetics-Cardiac </structurename>
+
+<showvalue>
+   <row> 1.4 </row>
+   <col> 1.0 </col>
+   <name> NA(Hz) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Nerve Activity (Hz) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> NA(Hz) </name>
+      <label> NA </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> ClampSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> ClampLevel </name>
+  <repeat><reps> 29 </reps><stepsize> 0.1 </stepsize></repeat>
+  <repeat><reps>  7 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> ClampLevel </name>
+  <listname> ClampLevel </listname>
+  <label> Level </label>
+</slidebar>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> CNSTrophicFactor.Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Trophic Factor </label>
+</showvalue>
+
+<showbargraph>
+  <row> 14.0 </row><col> 1.0 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 10 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> ReflexNA </name>
+    <label> Reflex </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> ExerciseSymps.TotalEffect </name>
+    <label> Exercise </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> FuelEffect </name>
+    <label> Brain Fuel </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> CushingResponse.Effect </name>
+    <label> Cushing </label>
+    <color> BLUE </color>
+  </bar>
+  <scale>
+    <min> 0 </min><max> 2 </max><inc> 1 </inc>
+  </scale>
+</showbargraph>
+
+<showvalue>
+   <row> 20.6 </row><col> 1.0 </col>
+   <name> A2Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [AII] Effect </label>
+</showvalue>
+
+<showbargraph>
+  <row> 22.0 </row><col> 1.0 </col><high> 6 </high><wide> 28 </wide>
+  <leftmargin> 10 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> BaroEffect </name>
+    <label> Baro's </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LowPressureEffect </name>
+    <label> Low Pres </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> MechanoEffect </name>
+    <label> Mechano's </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> ChemoreceptorsCNS.Effect </name>
+    <label> Chemo's </label>
+    <color> BLUE </color>
+  </bar>
+  <scale>
+    <min> 0 </min><max> 2 </max><inc> 1 </inc>
+  </scale>
+</showbargraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Most multiplicative effects are 1.0 </line>
+  <line> x Normal. </line>
+  <line>  </line>
+  <line>  </line>
+  <line>  </line>
+  <line>  </line>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

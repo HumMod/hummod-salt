@@ -1,0 +1,17 @@
+HumMod / Lungs
+
+Created : 2013-01-28
+Revised : 2013-01-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Circulation\BloodVessels\Lungs\ ?>
+
+<?include PulmonaryArtery\PulmonaryArtery.DES ?>
+<?include PulmonaryCapillaries\PulmonaryCapillaries.DES ?>
+<?include PulmonaryVeins\PulmonaryVeins.DES ?>
+<?include LeftAtrium\LeftAtrium.DES ?>
+<?include LeftVentricle\LeftVentricle.DES ?>
+
+End

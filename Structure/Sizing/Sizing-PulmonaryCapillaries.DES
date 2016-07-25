@@ -1,0 +1,93 @@
+HumMod / Sizing-PulmonaryCapillaries
+
+Created : 2013-02-20
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-PulmonaryCapillaries </name>
+
+<variables>
+
+<var><name> Volume </name></var>
+
+<var><name> V0 </name></var>
+<constant><name> V0-F </name><val> 0.6 </val></constant>
+
+<var><name> Compliance </name></var>
+<var><name> TMP </name></var>
+
+<var><name> Conductance </name></var>
+<var><name> Flow </name></var>
+<var><name> Gradient </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-Lungs.PulmonaryCapillariesVolume </val>
+</def>
+
+<def>
+  <name> V0 </name>
+  <val> V0-F * Volume </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> Sizing-Pressures.PulmonaryCapillaries-TMP </val>
+</def>
+
+<def>
+  <name> Compliance </name>
+  <val> ( 1 / TMP ) * ( Volume - V0 ) </val>
+</def>
+
+<def>
+  <name> Flow </name>
+  <val> Sizing-BloodFlow.CardiacOutput </val>
+</def>
+
+<def>
+  <name> Gradient </name>
+  <val> Sizing-Pressures.PulmonaryCapillaries - Sizing-Pressures.PulmonaryVeins </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val> Flow / Gradient </val>
+</def>
+
+<def>
+  <name> PulmCapys.InitialVolume </name>
+  <val> Volume </val>
+</def>
+
+<def>
+  <name> PulmCapys.InitialV0 </name>
+  <val> V0 </val>
+</def>
+
+<def>
+  <name> PulmCapys.InitialCompliance </name>
+  <val> Compliance </val>
+</def>
+
+<def>
+  <name> PulmCapys.InitialConductance </name>
+  <val> Conductance </val>
+</def>
+
+<call> PulmCapys.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,70 @@
+HumMod / Sizing-Glucose
+
+Created : 2013-03-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-O2 </name>
+
+<variables>
+
+<constant><name> Arty[O2] </name><val> 0.19633 </val></constant>
+<constant><name> Vein[O2] </name><val> 0.14833 </val></constant>
+
+<var><name> ArtyMass </name></var>
+<var><name> VeinMass </name></var>
+
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> ArtyMass </name>
+  <val> Arty[O2] * 
+  ( 
+      PulmCapys.Vol
+    + PulmVeins.Vol
+    + LeftAtrium.Vol
+    + LeftVentricle.Vol
+    + SystemicArtys.Vol
+    + BVSeqArtys.Vol ) 
+ </val>
+</def>
+
+<def>
+  <name> VeinMass </name>
+  <val> Vein[O2] * 
+(      SystemicVeins.Vol
+    + SplanchnicVeins.Vol
+    + RightAtrium.Vol
+    + RightVentricle.Vol
+    + PulmArty.Vol
+    + BVSeqVeins.Vol )
+
+</val>
+</def>
+
+<def>
+  <name> O2Artys.InitialMass </name>
+  <val> ArtyMass</val>
+</def>
+
+<def>
+  <name> O2Veins.InitialMass </name>
+  <val> VeinMass</val>
+</def>
+
+<call> O2Artys.Init </call>
+<call> O2Veins.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,15 @@
+HumMod / Glycogen
+
+Created : 2012-07-07
+Revised : 2012-07-07
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Display\Organs\SkeletalMuscle\Glycogen\ ?>
+
+<?include Summary\Summary.DES ?>
+<?include Synthesis\Synthesis.DES ?>
+<?include Metabolism\Metabolism.DES ?>
+
+End

@@ -1,0 +1,62 @@
+HumMod / CO2_[HCO3]_To_pCO2
+
+Created : 2012-10-29
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> CO2_[HCO3]_To_pCO2 </name>
+
+<variables>
+
+<var><name> pCO2 </name></var>
+<var><name> [HCO3] </name></var>
+<var><name> p50 </name></var>
+<var><name> K </name></var>
+
+<constant><name> PCO2_LARGE </name><val> 1000 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<testcase>
+
+<case>
+<test> [HCO3] LE 0.0 </test>
+
+<def>
+  <name> pCO2 </name>
+  <val> 0.0 </val>
+</def>
+</case>
+
+<case>
+<test> [HCO3] GE K </test>
+
+<def>
+  <name> pCO2 </name>
+  <val> PCO2_LARGE </val>
+</def>
+</case>
+
+<case>
+<test> TRUE </test>
+
+<def>
+  <name> pCO2 </name>
+  <val> ( p50 * [HCO3] ) / ( K - [HCO3] ) </val>
+</def>
+</case>
+
+</testcase>
+
+</block>
+
+</definitions>
+</structure>
+
+End

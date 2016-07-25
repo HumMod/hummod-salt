@@ -1,0 +1,75 @@
+HumMod / Bone-Composition
+
+Created : 2011-08-08
+Last Modified : 2011-08-08
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<structure><name> Bone-Composition </name>
+
+<variables>
+
+<var><name> Mass </name></var>
+<var><name> Mass(kG) </name></var>
+<var><name> Matrix </name></var>
+<var><name> Salts </name></var>
+<var><name> Calcium </name></var>
+<var><name> Phosphate </name></var>
+
+<constant><name> CA_FRACT_MINERAL </name><val> 0.28 </val></constant>
+<constant><name> FRACT_FIXED </name><val> 0.99 </val></constant>
+<constant><name> PO4_CA_RATIO </name><val> 1.5 </val></constant>
+<constant><name> MATRIX_SALTS_RATIO </name><val> 0.4286 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Initialize </name>
+</block>
+
+<block><name> Calc  </name>
+
+<def>
+  <name> Calcium </name>
+  <val>
+       Bone-FixedCalcium.Mass
+     + ( 0.001 * Bone-ExchangeableCalcium.Mass )
+  </val>
+</def>
+
+<def>
+  <name> Phosphate </name>
+  <val> PO4_CA_RATIO * Calcium </val>
+</def>
+
+<def>
+  <name> Salts </name>
+  <val> Calcium + Phosphate </val>
+</def>
+
+<def>
+  <name> Matrix </name>
+  <val> MATRIX_SALTS_RATIO * Salts </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> Salts + Matrix </val>
+</def>
+
+<def>
+  <name> Mass(kG) </name>
+  <val> 0.001 * Mass </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+</block>
+
+</definitions>
+</structure>
+
+End

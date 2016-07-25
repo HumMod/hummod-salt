@@ -1,0 +1,44 @@
+HumMod / PropranololDailyDose
+
+Created : 15-Jul-13
+Revised : 
+Author : W Pruett
+Copyright : 2013-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\Propranolol\ ?>
+
+<?include PropranololPool.DES ?>
+<?include PropranololLiver.DES ?>
+<?include PropranololGILumen.DES ?>
+<?include PropranololSingleDose.DES ?>
+<?include PropranololDailyDose.DES ?>
+
+<structure><name> Propranolol </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> PropranololDailyDose.Parms </call>
+  <call> PropranololSingleDose.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> PropranololGILumen.CalcConc </call>
+  <call> PropranololPool.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> PropranololGILumen.Dervs </call>
+  <call> PropranololSingleDose.Dervs </call>
+  <call> PropranololLiver.Dervs </call>
+  <call> PropranololPool.Dervs </call>
+</block>
+
+<block><name> WrapUp </name>
+  <call> PropranololDailyDose.Wrapup </call>
+</block>
+
+</definitions>
+</structure>
+

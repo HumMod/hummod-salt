@@ -1,0 +1,42 @@
+HumMod / Sizing-InterstitialWater
+
+Created : 2013-02-27
+Revised : 2013-02-27
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-InterstitialWater </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Vol </name>
+  <val>
+      Sizing-ECFV.Vol
+    - Sizing-BodyH2O.Plasma
+    - Sizing-BodyH2O.ExternalCore
+ </val>
+</def>
+
+<def>
+  <name> InterstitialWater.InitialVol </name>
+  <val> Vol </val>
+</def>
+
+<call> InterstitialWater.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

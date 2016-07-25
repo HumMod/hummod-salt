@@ -1,0 +1,104 @@
+HumMod / Box
+
+Created : 20-Jun-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 17.6 </high>
+   <wide> 30.0 </wide>
+
+<structurename> ANPPool </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [ANP] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [ANP] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [ANP] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 10 </min><max> 30 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 100 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<showvalue>
+   <row> 12.6 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 3 </col>
+   <name> Change </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.0 </row><col> 1.0 </col>
+   <name> Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.0 </row><col> 1.0 </col>
+   <name> Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> [ANP] is typically 20 pMol/L. </line>
+  <line>  </line>
+  <line> 1 pMol/L = 3 pG/mL </line>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,157 @@
+HumMod / RightGlomerulusFiltrate
+
+Created : 09-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> RightGlomerulusFiltrate </name>
+
+<variables>
+
+<var><name> GFRxNormal </name></var>
+<constant><name> GFRNORMAL </name><val> 70 </val></constant>
+<var><name> SNGFR </name></var>
+<var><name> AnionAdjustment </name></var>
+<var><name> CationAdjustment </name></var>
+<var><name> KAdjustment </name></var>
+<var><name> Pressure </name></var>
+<var><name> FiltrationFraction </name></var>
+<var><name> EffCOP </name></var>
+<var><name> [EffProtein] </name></var>
+<var><name> PressureGradient </name></var>
+<parm><name> Perm </name><val> 11.11 </val></parm>
+<var><name> Kf </name></var>
+<var><name> RightProximalTubule_Pressure </name></var>
+<parm><name> RightProximalTubule_Conductance </name><val> 3.28e-6 </val></parm>
+<parm><name> PelvisPressure </name><val> 0.0 </val></parm>
+
+</variables>
+
+<equations>
+
+<impliciteq>
+  <name> GFR </name>
+  <startname> GFR </startname>
+  <initialval> 70.0 </initialval>
+  <endname> EndGFR </endname>
+  <errorlim> 0.70 </errorlim>
+  <searchmin> 0.0 </searchmin>
+  <searchmaxname> SearchMax </searchmaxname>
+</impliciteq>
+
+</equations>
+
+<definitions>
+
+<block><name> AdjustIons </name>
+
+<def><name> KAdjustment </name>
+  <val> ( BloodIons.Cations - BloodIons.AnionsLessProtein )  / ( BloodIons.Cations + BloodIons.AnionsLessProtein ) </val>
+</def>
+
+<def><name> AnionAdjustment </name><val> 1.0 + KAdjustment </val></def>
+<def><name> CationAdjustment </name><val> 1.0 - KAdjustment </val></def>
+
+</block>
+
+<block><name> Calc </name>
+
+<call> AdjustIons </call>
+
+<if><test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def><name> Pressure </name><val> RightKidney-Pressure.VeinPressure + ( RightKidney-Flow.BloodFlow  / RightKidney-EfferentArtery.Conductance ) </val></def>
+</true>
+<false>
+<def><name> Pressure </name><val> 0 </val></def>
+</false>
+</if>
+
+<if>
+  <test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+  <true>
+    <def><name> Kf </name><val> RightKidney-NephronCount.Filtering(xNormal) * Perm </val></def>
+    </true>
+<false>
+<def><name> Kf </name><val> 0 </val></def>
+</false>
+</if>
+
+
+
+<def><name> SearchMax </name>
+  <val>
+    ( Kf * ( Pressure - PlasmaProtein.COP - PelvisPressure ) )
+    MIN
+    ( 0.8 * RightKidney-Flow.PlasmaFlow )
+  </val>
+</def>
+
+<if>
+  <test> SearchMax LE 0.0 </test>
+  <true><call> Failed </call><exitblock/></true>
+</if>
+
+<implicitmath><name> GFR </name>
+
+<def><name> FiltrationFraction </name><val> GFR / RightKidney-Flow.PlasmaFlow </val></def>
+<def><name> [EffProtein] </name><val> PlasmaProtein.[Protein] / ( 1.0 - FiltrationFraction ) </val></def>
+<def><name> EffCOP </name><val> PlasmaProtein.COP / ( 1 - FiltrationFraction ) </val></def>
+<def><name> SNGFR </name><val> ( GFR / RightKidney-NephronCount.NumFiltering ) </val></def>
+<def><name> RightProximalTubule_Pressure </name><val> PelvisPressure + ( SNGFR / RightProximalTubule_Conductance ) </val></def>
+<def><name> PressureGradient </name><val> Pressure - EffCOP - RightProximalTubule_Pressure </val></def>
+<def><name> EndGFR </name><val> Kf * PressureGradient </val></def>
+
+</implicitmath>
+
+<def><name> GFRxNormal </name><val> GFR / GFRNORMAL </val></def>
+
+<call> RightGlomerulusBicarbonate.Calc </call>
+<call> RightGlomerulusCalcium.Calc </call>
+<call> RightGlomerulusChloride.Calc </call>
+<call> RightGlomerulusCreatinine.Calc </call>
+<call> RightGlomerulusGlucose.Calc </call>
+<call> RightGlomerulusKetoacid.Calc </call>
+<call> RightGlomerulusPhosphate.Calc </call>
+<call> RightGlomerulusProtein.Calc </call>
+<call> RightGlomerulusSodium.Calc </call>
+<call> RightGlomerulusSulphate.Calc </call>
+<call> RightGlomerulusUrea.Calc </call>
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> Kf </name><val> 0.0 </val></def>
+<def><name> GFR </name><val> 0.0 </val></def>
+<def><name> SNGFR </name><val> 0 </val></def>
+<def><name> EndGFR </name><val> 0.0 </val></def>
+<def><name> GFRxNormal </name><val> 0.0 </val></def>
+<def><name> FiltrationFraction </name><val> UNDEFINED </val></def>
+<def><name> [EffProtein] </name><val> PlasmaProtein.[Protein] / ( 1.0 - FiltrationFraction ) </val></def>
+<def><name> EffCOP </name><val> PlasmaProtein.COP / ( 1 - FiltrationFraction ) </val></def>
+
+<def><name> RightProximalTubule_Pressure </name><val> 0.0 </val></def>
+<def><name> PressureGradient </name><val> 0.0 </val></def>
+
+<call> RightGlomerulusBicarbonate.Failed </call>
+<call> RightGlomerulusCalcium.Failed </call>
+<call> RightGlomerulusChloride.Failed </call>
+<call> RightGlomerulusCreatinine.Failed </call>
+<call> RightGlomerulusGlucose.Failed </call>
+<call> RightGlomerulusKetoacid.Failed </call>
+<call> RightGlomerulusPhosphate.Failed </call>
+<call> RightGlomerulusProtein.Failed </call>
+<call> RightGlomerulusSodium.Failed </call>
+<call> RightGlomerulusSulphate.Failed </call>
+<call> RightGlomerulusUrea.Failed </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

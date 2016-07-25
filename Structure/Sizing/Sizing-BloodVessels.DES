@@ -1,0 +1,62 @@
+HumMod / Sizing-BloodVessels
+
+Created : 2013-02-19
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-BloodVessels </name>
+
+<variables>
+
+<var><name> Installed </name><val> FALSE </val></var>
+
+<var><name> BloodVolume </name></var>
+
+<var><name> ArteryVolume </name></var>
+<var><name> VeinVolume </name></var>
+<var><name> LungVolume </name></var>
+
+<constant><name> Artery-F </name><val> 0.180 </val></constant>0.18
+<constant><name> Lung-F   </name><val> 0.150 </val></constant>
+
+<var><name> Vein-F </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BloodVolume </name>
+  <val> Sizing-BloodVolume.BloodVolume </val>
+</def>
+
+<def>
+  <name> ArteryVolume </name>
+  <val> Artery-F * BloodVolume </val>
+</def>
+
+<def>
+  <name> Vein-F </name>
+  <val> 1 - Artery-F - Lung-F </val>
+</def>
+
+<def>
+  <name> VeinVolume </name>
+  <val> Vein-F * BloodVolume </val>
+</def>
+
+<def>
+  <name> LungVolume </name>
+  <val> Lung-F * BloodVolume </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

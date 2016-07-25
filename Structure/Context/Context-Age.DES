@@ -1,0 +1,151 @@
+HumMod / Context-Age
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Context-Age </name>
+
+<variables>
+
+<parm><name> Index </name><val> 2 </val></parm>
+<parm><name> PlusMinus </name><val> 0 </val></parm>
+
+<constant><name> YOUNG      </name><val> 19.0 </val></constant>
+<constant><name> YOUNGISH   </name><val> 28.0 </val></constant>
+<constant><name> MIDDLEAGED </name><val> 37.0 </val></constant>
+<constant><name> OLD        </name><val> 65.0 </val></constant>
+<constant><name> VERYOLD    </name><val> 89.0 </val></constant>
+
+<var><name> NominalAge </name></var>
+<var><name> Age(Years) </name></var>
+
+<var><name> IsYoung      </name></var>
+<var><name> IsYoungish   </name></var>
+<var><name> IsMiddleaged </name></var>
+<var><name> IsOld        </name></var>
+<var><name> IsVeryOld    </name></var>
+
+<var><name> Stochasm </name></var>
+
+<normaldist>
+  <name> Normal </name>
+  <mean> 0 </mean>
+  <stddev> 25 </stddev>
+</normaldist>
+
+<whitenoise>
+  <name> Flat </name>
+  <lowerlim> -50 </lowerlim>
+  <upperlim> 50 </upperlim>
+</whitenoise>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<onjustchanged><name> Index </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+<onjustchanged><name> PlusMinus </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> IsYoung      </name><val> FALSE </val></def>
+<def><name> IsYoungish   </name><val> FALSE </val></def>
+<def><name> IsMiddleaged </name><val> FALSE </val></def>
+<def><name> IsOld        </name><val> FALSE </val></def>
+<def><name> IsVeryOld    </name><val> FALSE </val></def>
+
+<testcase>
+
+<case><test> Index EQ 0 </test>
+<def><name> NominalAge </name><val> YOUNG </val></def>
+<def><name> IsYoung </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 1 </test>
+<def><name> NominalAge </name><val> YOUNGISH </val></def>
+<def><name> IsYoungish </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 2 </test>
+<def><name> NominalAge </name><val> MIDDLEAGED </val></def>
+<def><name> IsMiddleaged </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 3 </test>
+<def><name> NominalAge </name><val> OLD </val></def>
+<def><name> IsOld </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 4 </test>
+<def><name> NominalAge </name><val> VERYOLD </val></def>
+<def><name> IsVeryOld </name><val> TRUE </val></def>
+</case>
+
+</testcase>
+
+<call> CalcStochasm </call>
+
+<def>
+  <name> Age(Years) </name>
+  <val>
+     NominalAge
+     * ( 1.0 + ( PlusMinus / 100 ) )
+     * ( 1.0 + ( Stochasm / 100 ) )
+  </val>
+</def>
+
+<def>
+  <name> Age.InitialAge(Years) </name>
+  <val> Age(Years) </val>
+</def>
+
+<call> Age.Init </call>
+
+</block>
+
+<block><name> CalcStochasm </name>
+
+<def>
+  <name> Stochasm </name>
+  <val> 0 </val>
+</def>
+
+<if>
+  <test> NOT Random.Adiposity </test>
+  <true>
+    <exitblock/>
+  </true>
+</if>
+
+<if>
+  <test> Random.State EQ Random.IS_DETERMINISTIC </test>
+  <true>
+    <exitblock/>
+  </true>
+</if>
+
+<conditional>
+  <name> Stochasm </name>
+  <test> Random.Distribution EQ Random.IS_NORMAL </test>
+  <true> Normal </true>
+  <false> Flat </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

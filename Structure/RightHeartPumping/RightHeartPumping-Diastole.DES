@@ -1,0 +1,178 @@
+HumMod / RightHeartPumping-Diastole
+
+Created : 2010-05-25
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2010-2013
+By : University of Mississippi Medical Center
+
+<structure><name> RightHeartPumping-Diastole </name>
+
+<variables>
+
+<var><name> EDV </name></var>
+<var><name> EDP </name></var>
+<var><name> TMP </name></var>
+
+<parm><name> StiffnessTarget </name><val> 1.0 </val></parm>
+
+<var><name> BreakVolume </name></var>
+
+<var><name> BreakPressure-Basic </name></var>
+<var><name> BreakPressure </name></var>
+
+<var><name> Slope </name></var>
+
+<parm><name> K-BasicTarget </name><val> 0.01 </val></parm>
+<var><name> K </name></var>
+
+<var><name> Del </name></var>
+
+<var><name> TricuspidStenosis </name></var>
+
+<var><name> Initial-BreakPressure-Basic </name></var>
+<var><name> Initial-BreakVolume </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Stiffness </name>
+  <integralname> Stiffness </integralname>
+  <initialval> 1.0 </initialval>
+  <dervname> dStiffness   </dervname>
+  <errorlim> 0.03 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> K-Basic </name>
+  <integralname> K-Basic </integralname>
+  <initialval> 0.01 </initialval>
+  <dervname> dK-Basic   </dervname>
+  <errorlim> 0.0003 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> BreakVolume </name>
+  <val> Initial-BreakVolume </val>
+</def>
+
+<def>
+  <name> BreakPressure-Basic </name>
+  <val> Initial-BreakPressure-Basic </val>
+</def>
+
+</block>
+
+<block><name> Parms </name>
+
+<def>
+  <name> BreakPressure </name>
+  <val> Stiffness * BreakPressure-Basic </val>
+</def>
+
+<def>
+  <name> Slope </name>
+  <val> BreakPressure / BreakVolume </val>
+</def>
+
+<def>
+  <name> K </name>
+  <val> Stiffness * K-Basic </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> dStiffness </name><val> 0.05 * ( StiffnessTarget - Stiffness ) </val></def>
+<def><name> dK-Basic </name><val> 0.05 * ( K-BasicTarget - K-Basic ) </val></def>
+
+
+<def>
+  <name> TricuspidStenosis </name>
+  <val> TricuspidValve-Stenosis.Effect </val>
+</def>
+
+<def>
+  <name> EDP </name>
+  <val> 
+      ( TricuspidStenosis * RightAtrium.Pressure )
+    + ( ( 1 - TricuspidStenosis ) * Pericardium-Cavity.Pressure )
+  </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> ( EDP - Pericardium-Cavity.Pressure ) MAX 0 </val>
+</def>
+
+<call> TMP-Passive-Inverse </call>
+
+</block>
+
+<block><name> TMP-Passive </name>
+
+<if>
+<test> EDV GT BreakVolume </test>
+<true> 
+  <def>
+    <name> Del </name>
+    <val> EDV - BreakVolume </val>
+  </def>
+
+  <def>
+    <name> TMP </name>
+    <val> BreakPressure + ( K * Del * Del ) </val>
+  </def>
+</true>
+
+<false> 
+  <def>
+    <name> TMP </name>
+    <val> Slope * EDV </val>
+  </def>
+</false>
+
+</if>
+
+</block>
+
+<block><name> TMP-Passive-Inverse </name>
+
+<if>
+<test> TMP GT BreakPressure </test>
+<true> 
+  <def>
+    <name> Del </name>
+    <val> TMP - BreakPressure </val>
+  </def>
+
+  <def>
+    <name> EDV </name>
+    <val> BreakVolume + SQRT ( Del / K ) </val>
+  </def>
+</true>
+
+<false> 
+  <def>
+    <name> EDV </name>
+    <val> TMP / Slope </val>
+  </def>
+</false>
+
+</if>
+
+</block>
+
+</definitions>
+</structure>
+
+End

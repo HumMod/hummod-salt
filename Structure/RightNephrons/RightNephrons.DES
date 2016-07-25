@@ -1,0 +1,34 @@
+HumMod / RightNephrons
+
+Created : 21-Oct-04
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2004-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<?path Structure\RightNephrons\ ?>
+
+<?include RightFractReab.DES ?>
+
+<?include RightCollectingDuct\RightCollectingDuct.DES ?>
+<?include RightDistalTubule\RightDistalTubule.DES ?>
+<?include RightGlomerulus\RightGlomerulus.DES ?>
+<?include RightLoopOfHenle\RightLoopOfHenle.DES ?>
+<?include RightMedulla\RightMedulla.DES ?>
+<?include RightMaculaDensa\RightMaculaDensa.DES ?>
+<?include RightProximalTubule\RightProximalTubule.DES ?>
+
+<?include RightNephronIFP.DES ?>
+<?include RightNephronAldo.DES ?>
+<?include RightNephronADH.DES ?>
+<?include RightVasaRecta.DES ?>
+<?include RightNephronGlucose.DES ?>
+<?include RightNephronKetoacids.DES ?>
+<?include RightNephronANP.DES ?>
+
+<?include RightNephronCalciumRightProximal.DES ?>
+<?include RightNephronCalciumRightDistal.DES ?>
+
+End

@@ -1,0 +1,44 @@
+HumMod / LiverMetabolism_FattyAcids
+
+Created : 30-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<?path Structure\LiverMetabolism\ ?>
+
+<?include LiverMetabolism_FA_AminoAcids.DES ?>
+<?include LiverMetabolism_FA_Glucose.DES ?>
+
+<structure><name> LiverMetabolism_FattyAcids </name>
+
+<variables>
+
+<var><name> NetRelease </name></var>
+
+<var><name> Uptake </name></var>
+<var><name> Release </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<call> LiverMetabolism_FA_AminoAcids.Dervs </call>
+<call> LiverMetabolism_FA_Glucose.Dervs </call>
+
+<def><name> Uptake </name><val> LiverMetabolism_Ketoacids.FattyAcidUse </val></def>
+<def><name> Release </name><val> LiverMetabolism_FA_AminoAcids.Rate + LiverMetabolism_FA_Glucose.Rate </val></def>
+
+<def><name> NetRelease </name><val> Release - Uptake </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

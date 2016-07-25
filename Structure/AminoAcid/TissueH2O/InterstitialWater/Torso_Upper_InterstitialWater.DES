@@ -1,0 +1,57 @@
+HumMod / Torso_Upper_InterstitialWater
+
+Created : 24-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> Torso_Upper_InterstitialWater </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> Vol(L) </name></var>
+
+<var><name> Pressure </name></var>
+
+</variables>
+
+<functions>
+<!--  
+
+<curve>
+  <name> PressureVolume </name>
+  <point><x>   600.0 </x><y> -30.0 </y><slope>  0.01 </slope></point>
+  <point><x>  2200.0 </x><y>  -4.8 </y><slope>  0.0004 </slope></point>2000
+  <point><x>  5000.0 </x><y>   0.0 </y><slope>  0.0004 </slope></point>
+  <point><x> 12000.0 </x><y>  50.0 </y><slope>  0.01 </slope></point>
+</curve>
+-->
+<curve>
+  <name> PressureVolume </name>
+  <point><x>  600.0 </x><y> -30.0 </y><slope>  0.01 </slope></point>1200
+  <point><x>  2400.0 </x><y>  -2 </y><slope>  0.0004 </slope></point>4800   5400   -4.8
+  <point><x> 6000.0 </x><y>   0.0 </y><slope>  0.0004 </slope></point>12000
+  <point><x> 12000.0 </x><y>  50.0 </y><slope>  0.01 </slope></point>24000
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> Vol </name><val> Torso_Upper_H2O.Vol - CellH2O.Torso_Upper_Vol </val></def>
+<def><name> Vol(L) </name><val> Vol / 1000.0 </val></def>
+
+<def><name> Pressure </name><val> PressureVolume [ Vol ] </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

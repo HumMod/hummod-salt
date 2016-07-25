@@ -1,0 +1,96 @@
+HumMod / MotorNerveActivity
+
+Created : 08-Feb-06
+Last Modified : 2011-08-13
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 18.2 </high>
+   <wide> 30.0 </wide>
+   <title> Motor Nerve Activity </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> MotorNerveActivity </name>
+  <label> NA </label>
+  <format><decimal> 1 </decimal></format>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> MotorNerveActivity </name>
+      <label> NA </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 4 </min><max> 5 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> NerveClampSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp Switch </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> NerveClampSetting </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> NerveClampSetting </name>
+  <listname> NerveClampSetting </listname>
+  <label> Setting </label>
+</slidebar>
+
+<showbargraph>
+  <row> 12.6 </row><col> 1.0 </col><high> 5 </high><wide> 28 </wide>
+  <leftmargin> 10 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> RespiratoryCenter-Integration.TotalDrive </name>
+    <label> Drive </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Brain-Function.Effect </name>
+    <label> Brain Func </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Anesthesia.TidalVolume </name>
+    <label> Anesthesia </label>
+    <color> BLUE </color>
+  </bar>
+  <scale>
+    <min> 0 </min><max> 2 </max><inc> 1 </inc>
+  </scale>
+</showbargraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Normal motor nerve activity is 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

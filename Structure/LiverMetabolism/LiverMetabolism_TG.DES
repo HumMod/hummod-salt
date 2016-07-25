@@ -1,0 +1,99 @@
+<?path Structure\LiverMetabolism\ ?>
+
+
+
+<structure><name> LiverMetabolism_TG </name>
+
+<variables>
+
+<parm><name> InitSize(uMol/G) </name><val> 100 </val></parm>1000
+<parm><name> uMolToMG </name><val> 0.803 </val></parm>
+
+<parm><name>r0</name><val> 7.5 </val></parm><!-- uM-->
+<parm><name>TAGcrit</name><val> 50</val></parm>><!-- mg-->
+
+<parm><name> vs</name><val> 180</val></parm>
+<parm><name> alpha </name><val> 0.05</val></parm>
+
+<parm><name> Kin </name><val> 0.094 </val></parm>0.094
+
+
+
+
+
+
+<parm><name>FA</name><val>0.002</val></parm>
+<parm><name> oxy </name><val> 0.0001 </val></parm>
+<parm><name> Kox </name><val> 0.065 </val></parm>
+<parm><name> n </name><val> 12</val></parm>
+<parm><name> K0 </name><val> 2.6</val></parm>
+<parm><name> Kex </name><val> 0.0000113</val></parm>0.00000113
+
+<var><name> [TG] </name></var>
+<var><name> NetRelease </name></var>
+
+<var><name> InsulinEffect </name></var>
+<var><name> InsulinEffectOnExport </name></var>
+
+<var><name> Uptake </name></var>
+<var><name> Release </name></var>
+
+<var><name> TAGimport </name></var>
+<var><name> TAGexport </name></var>
+
+<var><name> TAGoxidation </name><val> 0 </val></var>
+
+</variables>
+
+<equations>
+<diffeq>
+<name> TG </name>
+<integralname> TG </integralname>
+<dervname> Change </dervname>
+<errorlim> 3000 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> InsulinEffect </name>
+  <point><x>  0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 20 </x><y> 1.0 </y><slope> 0.075 </slope></point>
+  <point><x> 100 </x><y> 2.0 </y><slope> 0.0 </slope></point>4
+</curve>
+
+
+<curve>
+  <name> InsulinEffectOnExport </name>
+  <point><x> 20 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+  <point><x> 100 </x><y> 0.33 </y><slope> 0.0 </slope></point>4
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+<def><name> TG </name><val> InitSize(uMol/G) * uMolToMG * Sizing-OrganMass.Liver_Mass </val></def>
+</block>
+
+
+<block><name> Dervs </name>
+
+<def><name> InsulinEffect </name><val> InsulinEffect [ InsulinReceptors-Liver.NetBinding ] </val></def>
+<def><name> InsulinEffectOnExport </name><val> InsulinEffectOnExport [ InsulinReceptors-Liver.NetBinding ] </val></def>
+
+<def><name> TAGoxidation </name><val> 0 </val></def>
+<def><name> TAGimport </name><val> Kin * PortalVein-FattyAcid.[FattyAcid(mG/dL)] * PortalVein.PlasmaFlow * InsulinEffect</val></def>
+<def><name> TAGexport </name><val> Kex * TG * HepaticVein.PlasmaFlow * InsulinEffectOnExport   </val></def>
+
+<def><name> Change </name><val> TAGoxidation  + TAGimport - TAGexport </val></def>
+
+
+
+</block>
+
+</definitions>
+</structure>

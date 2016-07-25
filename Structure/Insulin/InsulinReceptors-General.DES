@@ -1,0 +1,83 @@
+HumMod / InsulinReceptors-General
+
+Created : 2012-07-01
+Revised : 2012-07-07
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> InsulinReceptors-General </name>
+
+<variables>
+
+<parm><name> Total </name><val> 19000 </val></parm>
+<parm><name> RSec </name><val> 16 </val></parm>
+
+<!--<var><name> Free </name></var>-->
+
+<var><name> BoundFraction </name></var>
+<var><name> BoundFraction(%) </name></var>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Binding </name></var>
+<var><name> Unbinding </name></var>
+<var><name> NetBinding </name></var>
+
+<var><name> Degradation </name></var>
+
+<parm><name> K1 </name><val> 0.0000489 </val></parm>0.0000489
+<parm><name> K2 </name><val> 0.000394 </val></parm>.000594
+<parm><name> K3 </name><val>  0.005526 </val></parm>.010526
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Bound </name>
+  <integralname> Bound </integralname>
+  <initialval> 1520 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 15 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Free </name>
+  <integralname> Free </integralname>
+  <initialval> 17480 </initialval>
+  <dervname> FChange </dervname>
+  <errorlim> 150 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+<block><name> Calc </name>
+
+<def><name> Total </name><val> Free + Bound - ( InsulinPump.T2D * 10 )   </val></def>
+
+<def><name> BoundFraction </name><val> Bound / Total </val></def>
+<def><name> BoundFraction(%) </name><val> 100 * BoundFraction / ( InsulinPump.T2D + 1 )  </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def><name> Binding </name><val> K1 * InsulinPool.[Insulin] * Free </val></def>0.001
+<def><name> Unbinding </name><val> K2 * Bound </val></def>
+<def><name> Degradation </name><val> K3 * Bound </val></def>
+<def><name> Gain </name><val> Binding </val></def>
+<def><name> Loss </name><val> Unbinding + Degradation </val></def>
+<def><name> Change </name><val> Gain - Loss </val></def>
+<def><name> FChange </name><val> Unbinding - Binding + Degradation </val></def>
+
+<def><name> NetBinding </name><val> Binding - Unbinding </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

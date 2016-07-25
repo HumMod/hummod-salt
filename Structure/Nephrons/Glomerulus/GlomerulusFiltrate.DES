@@ -1,0 +1,66 @@
+HumMod / GlomerulusFiltrate
+
+Created : 09-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> GlomerulusFiltrate </name>
+
+<variables>
+
+<var><name> GFR </name></var>
+<constant><name> GFRNORMAL </name><val> 125.0 </val></constant>
+<var><name> AnionAdjustment </name></var>
+<var><name> CationAdjustment </name></var>
+<var><name> KAdjustment </name></var>
+<var><name> Pressure </name></var>
+<var><name> FiltrationFraction </name></var>
+<var><name> EffCOP </name></var>
+<var><name> [EffProtein] </name></var>
+<var><name> PressureGradient </name></var>
+<parm><name> Perm </name><val> 20.0 </val></parm>
+<var><name> Kf </name></var>
+<var><name> ProximalTubule_Pressure </name></var>
+<parm><name> ProximalTubule_Conductance </name><val> 7.0 </val></parm>
+<parm><name> PelvisPressure </name><val> 0.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> GFR </name><val> LeftGlomerulusFiltrate.GFR + RightGlomerulusFiltrate.GFR </val></def>
+<call> GlomerulusKetoacid.Calc </call>
+<call> GlomerulusCreatinine.Calc </call>
+<call> GlomerulusGlucose.Calc </call>
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> GFR </name><val> 0.0 </val></def>
+<def><name> ProximalTubule_Pressure </name><val> 0.0 </val></def>
+<def><name> PressureGradient </name><val> 0.0 </val></def>
+
+<call> GlomerulusBicarbonate.Failed </call>
+<call> GlomerulusCalcium.Failed </call>
+<call> GlomerulusChloride.Failed </call>
+<call> GlomerulusCreatinine.Failed </call>
+<call> GlomerulusGlucose.Failed </call>
+<call> GlomerulusKetoacid.Failed </call>
+<call> GlomerulusPhosphate.Failed </call>
+<call> GlomerulusProtein.Failed </call>
+<call> GlomerulusSodium.Failed </call>
+<call> GlomerulusSulphate.Failed </call>
+<call> GlomerulusUrea.Failed </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

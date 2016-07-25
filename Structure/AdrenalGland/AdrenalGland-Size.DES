@@ -1,0 +1,99 @@
+HumMod / AdrenalGland-Size
+
+Created : 2012-01-28
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> AdrenalGland-Size </name>
+
+<variables>
+
+<var><name> InitialMass </name></var>
+<var><name> Mass </name></var>
+
+<constant><name> LiquidDensity </name><val> 1.00 </val></constant>
+<constant><name> SolidDensity </name><val> 1.17 </val></constant>
+<constant><name> H2OFractMass </name><val> 0.67 </val></constant>
+
+<var><name> CortexMass </name></var>
+<parm><name> CortexMassPercent </name><val> 80 </val></parm>
+
+<var><name> MedullaMass </name></var>
+<parm><name> MedullaMassPercent </name><val> 20 </val></parm>
+
+<var><name> GlomerulosaMass </name></var>
+<parm><name> GlomerulosaMassPercent </name><val> 15 </val></parm>
+
+<var><name> FasciculataMass </name></var>
+<var><name> FasciculataMassPercent </name></var>
+
+<var><name> FibrosisMass </name></var>
+<parm><name> FibrosisMassPercent </name><val> 0 </val></parm>
+
+<var><name> ReticularisMass </name></var>
+<parm><name> ReticularisMassPercent </name><val> 10 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Parms </name>
+
+<def>
+  <name> MedullaMass </name>
+  <val> Mass * ( MedullaMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> CortexMassPercent </name>
+  <val> 100 - MedullaMassPercent - FibrosisMassPercent </val>
+</def>
+
+
+<def>
+  <name> CortexMass </name>
+  <val> Mass * ( CortexMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> FibrosisMass </name>
+  <val> Mass * ( FibrosisMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> GlomerulosaMass </name>
+  <val> CortexMass * ( GlomerulosaMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> FasciculataMassPercent </name>
+  <val> 100 - GlomerulosaMassPercent - ReticularisMassPercent </val>
+</def>
+
+<def>
+  <name> FasciculataMass </name>
+  <val> CortexMass * ( FasciculataMassPercent / 100 ) </val>
+</def>
+
+<def>
+  <name> ReticularisMass </name>
+  <val> CortexMass * ( ReticularisMassPercent / 100 ) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

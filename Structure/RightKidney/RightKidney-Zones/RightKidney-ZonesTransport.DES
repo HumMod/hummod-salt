@@ -1,0 +1,137 @@
+HumMod / RightKidney-ZonesTransport
+
+Created : 2012-08-06
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> RightKidney-ZonesTransport </name>
+
+<variables>
+
+<var><name> Total </name></var>
+<var><name> Total_PT </name></var>
+<var><name> Total_LH </name></var>
+<var><name> Total_DT </name></var>
+<var><name> Total_CD </name></var>
+
+<var><name> OuterCortex </name></var>
+<var><name> OuterCortex_PT </name></var>
+<var><name> OuterCortex_LH </name></var>
+<var><name> OuterCortex_DT </name></var>
+<var><name> OuterCortex_CD </name></var>
+
+<var><name> Juxtamedullary </name></var>
+<var><name> Juxtamedullary_PT </name></var>
+<var><name> Juxtamedullary_LH </name></var>
+<var><name> Juxtamedullary_DT </name></var>
+<var><name> Juxtamedullary_CD </name></var>
+
+<var><name> OuterCortexFraction </name></var>
+<parm><name> OuterCortexFraction(%) </name><val> 82 </val></parm>
+
+<var><name> JuxtamedullaryFraction </name></var>
+<var><name> JuxtamedullaryFraction(%) </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> OuterCortexFraction </name>
+  <val> OuterCortexFraction(%) / 100 </val>
+</def>
+
+<def>
+  <name> JuxtamedullaryFraction(%) </name>
+  <val> 100 - OuterCortexFraction(%) </val>
+</def>
+
+<def>
+  <name> JuxtamedullaryFraction </name>
+  <val> JuxtamedullaryFraction(%) / 100 </val>
+</def>
+
+<def>
+  <name> Total_PT </name>
+  <val> RightProximalTubule_Na.Reab </val>
+</def>
+
+<def>
+  <name> Total_LH </name>
+  <val> RightLoopOfHenle_Na.Reab </val>
+</def>
+
+<def>
+  <name> Total_DT </name>
+  <val> RightDistalTubule_Na.Reab </val>
+</def>
+
+<def>
+  <name> Total_CD </name>
+  <val> RightCollectingDuct_Na.Reab </val>
+</def>
+
+<def>
+  <name> Total </name>
+  <val> Total_PT + Total_LH + Total_DT + Total_CD </val>
+</def>
+
+<def>
+  <name> OuterCortex </name>
+  <val> OuterCortexFraction * Total </val>
+</def>
+
+<def>
+  <name> OuterCortex_PT </name>
+  <val> OuterCortexFraction * Total_PT </val>
+</def>
+
+<def>
+  <name> OuterCortex_LH </name>
+  <val> OuterCortexFraction * Total_LH </val>
+</def>
+
+<def>
+  <name> OuterCortex_DT </name>
+  <val> OuterCortexFraction * Total_DT </val>
+</def>
+
+<def>
+  <name> OuterCortex_CD </name>
+  <val> OuterCortexFraction * Total_CD </val>
+</def>
+
+<def>
+  <name> Juxtamedullary </name>
+  <val> JuxtamedullaryFraction * Total </val>
+</def>
+
+<def>
+  <name> Juxtamedullary_PT </name>
+  <val> JuxtamedullaryFraction * Total_PT </val>
+</def>
+
+<def>
+  <name> Juxtamedullary_LH </name>
+  <val> JuxtamedullaryFraction * Total_LH </val>
+</def>
+
+<def>
+  <name> Juxtamedullary_DT </name>
+  <val> JuxtamedullaryFraction * Total_DT </val>
+</def>
+
+<def>
+  <name> Juxtamedullary_CD </name>
+  <val> JuxtamedullaryFraction * Total_CD </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

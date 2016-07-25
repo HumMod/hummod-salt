@@ -1,0 +1,14 @@
+HumMod / Digoxin
+
+Created : 2013-03-19
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Intervention\Drugs\Digoxin\ ?>
+
+<?include Dosing\Dosing.DES ?>
+<?include Kinetics\Kinetics.DES ?>
+
+End

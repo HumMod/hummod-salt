@@ -1,0 +1,17 @@
+HumMod / Pathology.DES
+
+
+
+<branch>
+  <name> PATHOLOGY </name>
+  <label> Pathology </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\Pathology\ ?>
+
+<?include Diabetes.DES ?>
+<?include AdrenalInsufficiency.DES ?>
+
+End
+

@@ -1,0 +1,141 @@
+/* HumMod / [O2]
+
+   Created : 2014-03-03
+   Revised : 2014-03-03
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structurename> Kidney-TubuleO2 </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 19.8 </high>
+   <wide> 30.0 </wide>
+   <title> [O2] </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> O2Artys.[O2] </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Arteries </label>
+</showvalue>
+
+<showtable>
+<row> 2.4 </row><col> 1 </col>
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Tubule[O2] </textcell>
+<textcell> Vein[O2]</textcell>
+
+
+</column>
+
+<column>
+<indent> 5.0 </indent>
+<fieldwidth> 11.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+<valuecell>
+  <name> LeftKidney-TubuleO2.Tubule[O2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-TubuleO2.Vein[O2]</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 16.0 </indent>
+<fieldwidth> 11.0 </fieldwidth>
+<justify> RIGHT </justify>
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightKidney-TubuleO2.Tubule[O2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-TubuleO2.Vein[O2]</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<showvalue>
+   <row> 5.8 </row><col> 1.0 </col>
+   <name> O2Veins.[O2] </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Mixed Venous </label>
+</showvalue>
+
+<showgraph>
+  <row> 7.0 </row><col> 1.0 </col><high> 11 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> O2Artys.[O2] </name>
+      <label> A </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+    <yvar>
+      <name> RightKidney-TubuleO2.Tubule[O2] </name>
+      <label> T </label>
+      <linecolor> BLACK </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-TubuleO2.Tubule[O2] </name>
+      <label> T </label>
+      <linetype> DOT </linetype>
+      <linecolor> BLACK </linecolor>
+    </yvar>
+    <yvar>
+      <name> RightKidney-TubuleO2.Vein[O2] </name>
+      <label> RV </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-TubuleO2.Vein[O2] </name>
+      <label> RV </label>
+      <linetype> DOT </linetype>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> O2Veins.[O2] </name>
+      <label> MV </label>
+      <linecolor> MAGENTA </linecolor>
+    </yvar>
+    <scale>
+      <min> 0.14 </min><max> 0.20 </max><inc> 0.01 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units are mL O2 / mL Blood. </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

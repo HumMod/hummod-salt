@@ -1,0 +1,51 @@
+HumMod / RightMedulla
+
+Created : 11-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<?path Structure\RightNephrons\RightMedulla\ ?>
+
+<?include RightMedullaNa.DES ?>
+<?include RightMedullaUrea.DES ?>
+
+<structure><name> RightMedulla </name>
+
+<variables>
+
+<parm>
+  <name> Volume </name>
+  <val> 17.2 </val>
+</parm>
+
+<var><name> [Osm] </name><val> 1100 </val></var>
+
+</variables>
+
+<definitions>
+
+<block><name> CalcOsm </name>
+
+<if><test> RightKidney-Structure.Remaining GT 0 </test>
+<true>
+<def>
+  <name> [Osm] </name>
+  <val> RightMedullaNa.Osmolarity + RightMedullaUrea.Osmolarity </val>
+</def>
+</true>
+<false>
+  <def><name> [Osm] </name><val> 0 </val></def>
+</false>
+</if>
+
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

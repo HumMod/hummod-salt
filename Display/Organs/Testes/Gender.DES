@@ -1,0 +1,26 @@
+HumMod / Gender
+
+Created : 2012-02-03
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 3.0 </high>
+   <wide> 30.0 </wide>
+   <title> Gender </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name>  Gender.Index </name>
+   <format><list> Common.Gender </list></format>
+   <nolabel/>
+</showvalue>
+
+
+</groupbox>
+
+End

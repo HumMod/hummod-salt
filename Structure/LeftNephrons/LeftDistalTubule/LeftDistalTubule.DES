@@ -1,0 +1,17 @@
+HumMod / LeftDistalTubule
+
+Created : 09-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<?path Structure\LeftNephrons\LeftDistalTubule\ ?>
+
+<?include LeftDistalTubule_Na.DES ?>
+<?include LeftDistalTubule_H2O.DES ?>
+<?include LeftDistalTubule_H2OChannels.DES ?>
+<?include LeftDistalTubule_K.DES ?>
+
+End

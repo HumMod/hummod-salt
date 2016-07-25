@@ -1,0 +1,28 @@
+HumMod / Glomerulus
+
+Created : 09-Apr-05
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2005-2011
+By : University of Mississippi Medical Center
+
+<?path Structure\Nephrons\Glomerulus\ ?>
+
+<?include GlomerulusFiltrate.DES ?>
+<?include GlomerulusKetoacid.DES ?>
+<?include GlomerulusCreatinine.DES ?>
+<?include GlomerulusGlucose.DES ?>
+<?include GlomerulusProtein.DES ?>
+<!--
+<?include GlomerulusBicarbonate.DES ?>
+<?include GlomerulusCalcium.DES ?>
+<?include GlomerulusChloride.DES ?>
+<?include GlomerulusCreatinine.DES ?>
+<?include GlomerulusGlucose.DES ?>
+<?include GlomerulusPhosphate.DES ?>
+
+<?include GlomerulusSodium.DES ?>
+<?include GlomerulusSulphate.DES ?>
+<?include GlomerulusUrea.DES ?>
+-->
+End

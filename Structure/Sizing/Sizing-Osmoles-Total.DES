@@ -1,0 +1,33 @@
+HumMod / Sizing-Osmoles-Total
+
+Created : 2013-03-05
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Osmoles-Total </name>
+
+<variables>
+
+<constant><name> [Active] </name><val> 276.5 </val></constant>282
+<constant><name> Dissociation </name><val> 0.9 </val></constant>.9
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> OsmBody.Dissociation </name>
+  <val> Dissociation </val>
+</def>
+
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,53 @@
+HumMod / RightCollectingDuct_Ph
+
+Created : 2013-02-03
+Revised : 2013-02-03
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> RightCollectingDuct_Ph </name>
+<variables>
+
+<var><name> SID </name></var>
+
+<var><name> StrongCations </name></var>
+<var><name> StrongAnions </name></var>
+
+<var><name> pH </name></var>
+<var><name> [H+] </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+  <def>
+    <name> StrongCations </name>
+    <val> RightCollectingDuct_Na.[Na+(mEq/L)] + RightCollectingDuct_K.[K+(mEq/L)] </val>
+  </def>
+
+  <def>
+    <name> StrongAnions </name>
+    <val> RightCollectingDuct_Cl.[Cl-(mEq/L)] + RightCollectingDuct_KA.[KA(mMol/L)] </val>
+  </def>
+
+  <def>
+    <name> SID </name>
+    <val> StrongCations - StrongAnions </val>
+  </def>
+
+  <copy><from> SID </from><to> PhUrine.SID </to></copy>
+
+  <call> PhUrine.Calc </call>
+
+  <copy><from> PhUrine.pH </from><to> pH </to></copy>
+  <copy><from> PhUrine.H+ </from><to> [H+] </to></copy>
+
+</block>
+
+</definitions>
+</structure>
+
+End

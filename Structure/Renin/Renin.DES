@@ -1,0 +1,76 @@
+HumMod / Renin
+
+Created : 21-Oct-04
+Last Modified : 2012-01-28
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\Renin\ ?>
+
+<?include ReninPool.DES ?>
+<?include LeftReninSecretion.DES ?>
+<?include RightReninSecretion.DES ?>
+<?include LeftReninSynthesis.DES ?>
+<?include RightReninSynthesis.DES ?>
+
+<?include ReninClearance.DES ?>
+<?include ReninTumor.DES ?>
+
+<?include A2Pool.DES ?>
+<?include A2Pump.DES ?>
+
+<?include LeftReninFree.DES ?>
+<?include RightReninFree.DES ?>
+
+<?include LeftReninGranules.DES ?>
+<?include RightReninGranules.DES ?>
+
+<structure><name> Renin </name>
+
+<definitions>
+
+<block><name> Parms </name>
+
+  <call> A2Pump.Parms </call>
+  <call> ReninTumor.Parms </call>
+  <call> LeftReninSynthesis.Parms </call>
+  <call> RightReninSynthesis.Parms </call>
+
+</block>
+
+<block><name> CalcConc </name>
+
+  <call> ReninPool.CalcConc </call>
+  <call> A2Pool.CalcConc </call>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <call> LeftReninFree.OutFlux </call>
+  <call> RightReninFree.OutFlux </call>
+
+  <call> LeftReninGranules.OutFlux </call>
+  <call> RightReninGranules.OutFlux </call>
+
+  <call> LeftReninSecretion.Dervs </call>
+  <call> RightReninSecretion.Dervs </call>
+
+  <call> LeftReninSynthesis.Dervs </call>
+  <call> RightReninSynthesis.Dervs </call>
+
+  <call> LeftReninFree.Dervs </call>
+  <call> RightReninFree.Dervs </call>
+  <call> LeftReninGranules.Dervs </call>
+  <call> RightReninGranules.Dervs </call>
+
+  <call> ReninClearance.Dervs </call>
+  <call> ReninPool.Dervs </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

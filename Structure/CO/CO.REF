@@ -1,0 +1,40 @@
+HumMod / CO.REF
+
+Created : 2010-06-04
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2010-2012
+By : University Of Mississippi Medical Center
+
+The affinity of hemoglobin for CO is 230 ! times
+its affinity for oxygen.
+
+Allen, T.A. & W.S. Root. Partition of carbon
+monoxide and oxygen between air and whole blood
+of rats, dogs and men as affected by pH.
+J.Appl.Physiol. 10:186-190, 1957.
+   
+Because of this great affinity, all of the CO
+in the body is assumed to be carboxyhemoglobin.
+
+Binding is as follows : 1.334 ml of CO binds
+to 1 G Hgb.
+
+CO and O2 bind to hemoglobim competitively.
+CO in the blood only has a pCO when O2 is
+trying to displace it.  The relationship is
+
+   SCALE * pCO             Blood CO Conc
+   -------------------------  = -----------------------------------
+            pO2                 Pulm Cap O2 Conc
+
+where SCALE is 230.
+
+Endogenous CO production is 0.4 mL/Hr or 0.007
+mL/Min.
+
+Coburn, etal. J. Clin. Invest. 42:1172, 1963.
+
+CO ventilation is now in Lung_CO.
+
+End

@@ -1,0 +1,199 @@
+HumMod / Nucleus-ADH
+
+Created : 2013-03-20
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Nucleus-ADH </name>
+
+<variables>
+
+<var><name> NA </name></var>
+<parm><name> NA-Basic </name><val> 1.0 </val></parm>
+
+<var><name> BaroEffect </name></var>
+<var><name> LowPressureEffect </name></var>
+<var><name> [Glucose]Effect </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+<parm><name> TargetMasterS </name><val> 1 </val></parm>
+
+
+<parm><name> targetLPR_A </name><val> 2.4 </val></parm>
+<parm><name> targetLPR_B </name><val> 0.6 </val></parm>
+<parm><name> targetLPR_S </name><val> 0.55 </val></parm>
+<parm><name> targetLPR_m </name><val> 2.3 </val></parm>
+
+<parm><name> targetBaro_A </name><val> 1 </val></parm>
+<parm><name> targetBaro_B </name><val> 0.5 </val></parm>
+<parm><name> targetBaro_S </name><val> 1 </val></parm>
+<parm><name> targetBaro_m </name><val> 3 </val></parm>
+
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> masterS </name>
+  <integralname> masterS </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dmasterS </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> LPR_A </name>
+  <integralname> LPR_A </integralname>
+  <initialval> 2.4 </initialval>
+  <dervname> dLPR_A  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> LPR_B </name>
+  <integralname> LPR_B </integralname>
+  <initialval> .6 </initialval>
+  <dervname> dLPR_B  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> LPR_m </name>
+  <integralname> LPR_m </integralname>
+  <initialval> 2.3 </initialval>
+  <dervname> dLPR_m  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> LPR_S </name>
+  <integralname> LPR_S </integralname>
+  <initialval> 0.55 </initialval>
+  <dervname> dLPR_S  </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_A </name>
+  <integralname> Baro_A </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dBaro_A  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_B </name>
+  <integralname> Baro_B </integralname>
+  <initialval> .5 </initialval>
+  <dervname> dBaro_B  </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_m </name>
+  <integralname> Baro_m </integralname>
+  <initialval> 3 </initialval>
+  <dervname> dBaro_m  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_S </name>
+  <integralname> Baro_S </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dBaro_S  </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> BaroEffect </name>
+  <point><x> 0.5 </x><y> 1.5 </y><slope> 0 </slope></point>1,1.5,0
+  <point><x> 1.0 </x><y> 1. </y><slope> -0.5 </slope></point>1,-.5
+  <point><x> 2.0 </x><y> 0.5 </y><slope> 0 </slope></point>2,.5,0
+</curve>
+
+<curve>
+  <name> LowPressureEffect </name>
+  <point><x> 0.5 </x><y> 1.5 </y><slope> 0 </slope></point>0,1.5,0
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.1 </slope></point>1,1,-.1
+  <point><x> 4.0 </x><y> 0.6 </y><slope> 0 </slope></point>4,.6,0
+
+
+<!--
+  <point><x> 0.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 4.0 </x><y> 0.6 </y><slope> 0 </slope></point>
+-->
+
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> dmasterS </name><val> 0.05 * ( TargetMasterS - masterS ) </val></def>
+<def><name> dLPR_A </name><val> 0.05 * ( targetLPR_A - LPR_A ) </val></def>
+<def><name> dLPR_B </name><val> 0.05 * ( targetLPR_B - LPR_B ) </val></def>
+<def><name> dLPR_S </name><val> 0.05 * ( targetLPR_S - LPR_S ) </val></def>
+<def><name> dLPR_m </name><val> 0.05 * ( targetLPR_m - LPR_m ) </val></def>
+<def><name> dBaro_A </name><val> 0.05 * ( targetBaro_A - Baro_A ) </val></def>
+<def><name> dBaro_B </name><val> 0.05 * ( targetBaro_B - Baro_B ) </val></def>
+<def><name> dBaro_S </name><val> 0.05 * ( targetBaro_S - Baro_S ) </val></def>
+<def><name> dBaro_m </name><val> 0.05 * ( targetBaro_m - Baro_m ) </val></def>
+
+
+
+<def><name> BaroEffect </name>
+  <val> Baro_A * ( ( masterS * Baro_S ) ^ Baro_m ) / ( ( ( masterS * Baro_S ) ^ Baro_m ) + ( Baroreflex.NA ^ Baro_m ) ) + Baro_B </val>
+</def>
+
+<def>
+  <name> BaroEffect </name>
+  <val> BaroEffect [ Baroreflex.NA ] </val>
+</def>
+
+
+<def><name> LowPressureEffect </name>
+  <val> LPR_A * ( ( masterS * LPR_S ) ^ LPR_m ) / ( ( ( masterS * LPR_S ) ^ LPR_m ) + ( LowPressureReceptors.NA ^ LPR_m ) ) + LPR_B </val>
+</def>
+
+<def>
+  <name> LowPressureEffect </name>
+  <val> LowPressureEffect [ LowPressureReceptors.NA ] </val>
+</def>
+
+<def>
+  <name> [Glucose]Effect </name>
+  <val>  GlucoseReceptors.NA * 0 + 1</val>
+<!--  <val>  GlucoseReceptors.NA </val>-->
+</def>
+
+<conditional>
+  <name> NA </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false>
+      NA-Basic
+    * LowPressureEffect 
+    * [Glucose]Effect 
+    * Brain-Function.Effect
+  </false>  <!--    * BaroEffect -->
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

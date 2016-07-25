@@ -1,0 +1,45 @@
+HumMod | VitaminD(1,25-Dihydroxy).TXT
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Other names : calcitriol
+
+MW : 416.6
+Remove H+ and add OH-. MMW increases by 16.
+
+[Conc] =  37 pG/mL or 90 pMol/L
+
+PG/ML_TO_PMOL/L = 2.4
+
+Volume distribution : 15000 (ECFV)
+
+Tau ~ 7 hours or 420 minutes, which is much
+shorter than 25-H.
+
+K = 1/420 or 0.0024
+
+Mass is 555 nG or 1350 pMol
+
+Degradation is Mass * K = 1.33 nG/Min or 3.24
+pMol/Min.
+
+With exp(-K*t) when t = 1/K, we have exp(-1)
+which is 0.37. The exponential is 63% of the
+way to completion, with 37% remaining. This
+is the time constant (tau).
+
+The half-time is the time when an exponential
+is 50% of the way to completion.
+
+T 1/2 = 0.69 * Tau
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

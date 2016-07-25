@@ -1,0 +1,30 @@
+HumMod / ParathyroidHormone Reference
+
+Created : 2011-08-01
+Last Modified : 2011-08-01
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+MW = 9400 (9.4 kDa)
+84 amino acids
+
+Half-life = 4 minutes
+K = 0.17
+
+[Conc(pG/mL)] = 38
+Mass = 570,000 pG or 570 nG
+
+[Conc(nG/mL)] = 0.038
+
+Secretion = K * Mass
+Secretion = 0.17 * 570000 or 96900 pG/Min or 97 nG/Min
+
+Secretion is controlled by free Ca++.
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+End

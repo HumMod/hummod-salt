@@ -1,0 +1,55 @@
+HumMod / Tree-Orthostasis
+
+Created : 08-Dec-05
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<branch>
+  <name> Orthostasis </name>
+  <label> Orthostasis </label>
+  <parent> MISCELLANEOUS </parent>
+</branch>
+
+<leaf>
+  <name> OrthostasisRegionalPressures </name>
+  <label> Regional Pressures </label>
+  <parent> Orthostasis </parent>
+</leaf>
+
+<branch>
+  <name> SequesteredBlood </name>
+  <label> Sequestered Blood </label>
+  <parent> Orthostasis </parent>
+</branch>
+
+<leaf>
+  <name> SequesteredBloodArteries </name>
+  <label> Arteries </label>
+  <parent> SequesteredBlood </parent>
+</leaf>
+
+<leaf>
+  <name> SequesteredBloodVeins </name>
+  <label> Veins </label>
+  <parent> SequesteredBlood </parent>
+</leaf>
+
+<separatorbar>
+  <parent> SequesteredBlood </parent>
+</separatorbar>
+
+<leaf>
+  <name> SequesteredBloodAlphaReceptors </name>
+  <label> Alpha Receptors </label>
+  <parent> SequesteredBlood </parent>
+</leaf>
+
+<leaf>
+  <name> OrthostasisPostureEnergy </name>
+  <label> Posture Energy </label>
+  <parent> Orthostasis </parent>
+</leaf>
+
+End

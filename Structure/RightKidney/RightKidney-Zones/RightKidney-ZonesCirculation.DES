@@ -1,0 +1,150 @@
+HumMod / RightKidney-ZonesCirculation
+
+Created : 2012-08-06
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> RightKidney-ZonesCirculation </name>
+
+<variables>
+
+<var><name> Cortex </name></var>
+<var><name> Cortex(/G) </name></var>
+
+<var><name> OuterCortex </name></var>
+<var><name> OuterCortexFraction </name></var>
+<parm><name> OuterCortexFraction(%) </name><val> 87 </val></parm>
+<var><name> OuterCortex(/G) </name></var>
+
+<var><name> InnerCortex </name></var>
+<var><name> InnerCortexFraction(%) </name></var>
+<var><name> InnerCortex(/G) </name></var>
+
+<var><name> Medulla </name></var>
+<var><name> Medulla(/G) </name></var>
+
+<var><name> OuterMedulla </name></var>
+<var><name> OuterMedullaFraction </name></var>
+<parm><name> OuterMedullaFraction(%) </name><val> 57 </val></parm>
+<var><name> OuterMedulla(/G) </name></var>
+
+<var><name> DeepMedulla </name></var>
+
+<constant><name> DEEP_MEDULLA_FRACTION_INNER </name><val> 0.89 </val></constant>
+
+<var><name> InnerMedulla </name></var>
+<var><name> InnerMedulla(/G) </name></var>
+
+<var><name> Papilla </name></var>
+<var><name> Papilla(/G) </name></var>
+
+<var><name> RightKidney(/G) </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Cortex </name>
+  <val> RightKidney-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> Cortex(/G) </name>
+  <val> Cortex / RightKidney-ZonesAnatomy.Cortex </val>
+</def>
+
+<def>
+  <name> OuterCortexFraction </name>
+  <val> OuterCortexFraction(%) / 100 </val>
+</def>
+
+<def>
+  <name> OuterCortex </name>
+  <val> OuterCortexFraction * Cortex </val>
+</def>
+
+<def>
+  <name> OuterCortex(/G) </name>
+  <val> OuterCortex / RightKidney-ZonesAnatomy.OuterCortex </val>
+</def>
+
+<def>
+  <name> InnerCortex </name>
+  <val> Cortex - OuterCortex </val>
+</def>
+
+<def>
+  <name> InnerCortexFraction(%) </name>
+  <val> 100 - OuterCortexFraction(%) </val>
+</def>
+
+<def>
+  <name> InnerCortex(/G) </name>
+  <val> InnerCortex / RightKidney-ZonesAnatomy.InnerCortex </val>
+</def>
+
+<def>
+  <name> Medulla </name>
+  <val> InnerCortex </val>
+</def>
+
+<def>
+  <name> Medulla(/G) </name>
+  <val> Medulla / RightKidney-ZonesAnatomy.Medulla </val>
+</def>
+
+<def>
+  <name> OuterMedullaFraction </name>
+  <val> OuterMedullaFraction(%) / 100 </val>
+</def>
+
+<def>
+  <name> OuterMedulla </name>
+  <val> OuterMedullaFraction * Medulla </val>
+</def>
+
+<def>
+  <name> OuterMedulla(/G) </name>
+  <val> OuterMedulla / RightKidney-ZonesAnatomy.OuterMedulla </val>
+</def>
+
+<def>
+  <name> DeepMedulla </name>
+  <val> Medulla - OuterMedulla </val>
+</def>
+
+<def>
+  <name> InnerMedulla </name>
+  <val> DEEP_MEDULLA_FRACTION_INNER * DeepMedulla </val>
+</def>
+
+<def>
+  <name> InnerMedulla(/G) </name>
+  <val> InnerMedulla / RightKidney-ZonesAnatomy.InnerMedulla </val>
+</def>
+
+<def>
+  <name> Papilla </name>
+  <val> DeepMedulla - InnerMedulla </val>
+</def>
+
+<def>
+  <name> Papilla(/G) </name>
+  <val> Papilla / RightKidney-ZonesAnatomy.Papilla </val>
+</def>
+
+<def>
+  <name> RightKidney(/G) </name>
+  <val> RightKidney-Flow.BloodFlow / RightKidney-Size.Mass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

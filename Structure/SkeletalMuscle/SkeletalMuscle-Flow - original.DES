@@ -1,0 +1,222 @@
+HumMod / SkeletalMuscle-Flow
+
+Created : 23-May-05
+Revised : 2012-09-12
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> SkeletalMuscle-Flow </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<constant><name> Conductance(/G) </name><val> 0.00029 </val></constant>0.00035
+
+<var><name> A2Effect </name></var>
+<var><name> SympsEffect </name></var>
+<var><name> BetaEffect </name></var>
+<var><name> ADHEffect </name></var>
+<var><name> PO2Effect </name></var>
+<var><name> AerobicFraction </name></var>
+
+<var><name> O2Use </name></var>
+<var><name> [O2] </name></var>
+
+<var><name> BloodFlow </name></var>
+<var><name> PlasmaFlow </name></var>
+
+</variables>
+
+<equations>
+
+<impliciteq>
+  <name> PO2 </name>
+  <startname> PO2 </startname>
+  <initialval> 38.0 </initialval>
+  <endname> PO2End </endname>
+  <errorlim> 0.38 </errorlim>
+  <searchmin> 0.0 </searchmin>
+  <searchmaxname> SearchMax </searchmaxname>
+</impliciteq>
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> A2OnConductance </name>
+  <point><x> 0.0 </x><y> 1.05 </y><slope> 0 </slope></point>
+  <point><x> 1. </x><y> 1.00 </y><slope> -0.08 </slope></point>
+  <point><x> 3.5 </x><y> 0.50 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> SympsOnConductance </name>
+  <point><x> 0.0 </x><y> 1.3 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 4.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> BetaOnConductance </name>
+  <point><x> 0.0 </x><y> 0.5 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0.5 </slope></point>.2
+  <point><x> 2.5 </x><y> 1.75 </y><slope> 0 </slope></point>2.25
+</curve>
+
+<curve>
+  <name> PO2OnConductance </name>
+  <point><x>  0 </x><y> 6.0 </y><slope> 0 </slope></point>,4,;0,7,0
+  <point><x> 25 </x><y> 3.5 </y><slope> -0.35 </slope></point>,,-.2;25,35,-.35
+  <point><x> 35 </x><y> 1.0 </y><slope> 0 </slope></point><!-- adding too high po2 -->
+
+</curve>
+
+<curve>
+  <name> ADHOnConductance </name>
+  <point><x> 0.8 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 3.0 </x><y> 0.1 </y><slope> 0 </slope></point>
+</curve>
+<!--
+<curve>
+  <name> PO2OnAerobicFraction </name>
+  <point><x> 0.0 </x><y> 0.0 </y><slope> 0 </slope></point>
+  <point><x> 10.0 </x><y> 0.999 </y><slope> 0 </slope></point>28(8),1,0
+</curve>
+-->
+
+<curve>
+  <name> PO2OnAerobicFraction </name>
+  <point><x> 0.0 </x><y> 0.0 </y><slope> 0 </slope></point>
+  <point><x> 10.0 </x><y> 0.87 </y><slope> 0.008 </slope></point>
+  <point><x> 20.0 </x><y> 0.95 </y><slope> 0.008 </slope></point>
+  <point><x> 28.0 </x><y> 0.99 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * SkeletalMuscle-Size.InitialMass </val>
+</def>
+
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+<def>
+  <name> A2Effect </name>
+  <val> A2OnConductance [ A2Pool.Log10Conc ] </val>
+</def>
+
+<def>
+  <name> SympsEffect </name>
+  <val> SympsOnConductance [ SkeletalMuscle-AlphaReceptors.Activity ] </val>
+</def>
+
+<def>
+  <name> BetaEffect </name>
+  <val> BetaOnConductance [ Beta2Pool.Effect ] </val>
+</def>
+
+<def>
+  <name> ADHEffect </name>
+  <val> ADHOnConductance [ ADHPool.Log10Conc ] </val>
+</def>
+
+<def>
+  <name> SearchMax </name>
+  <val> PO2Artys.Pressure </val>
+</def>
+
+<implicitmath><name> PO2 </name>
+
+
+<def>
+  <name> PO2Effect </name>
+  <val> PO2OnConductance [ PO2 ] </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val>
+      BasicConductance
+    * A2Effect
+    * SympsEffect
+    * BetaEffect
+    * PO2Effect
+    * ADHEffect
+    * SkeletalMuscle-MetabolicVasodilation.Effect
+    * Viscosity.ConductanceEffect
+    * Anesthesia.VascularConductance
+    * SkeletalMuscle-Vasculature.Effect
+    * SkeletalMuscle-MusclePumping.Effect
+  </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> ( SkeletalMuscle-Pressure.PressureGradient * Conductance ) MAX 0.0 </val>
+</def>
+
+<def>
+  <name> AerobicFraction </name>
+  <val> PO2OnAerobicFraction [ PO2 ] </val>
+</def>
+
+<def>
+  <name> O2Use </name>
+  <val> SkeletalMuscle-Metabolism.O2Need * AerobicFraction </val>
+</def>
+
+<conditional>
+  <name> [O2] </name>
+  <test> BloodFlow GT 0.0 </test>
+  <true> O2Artys.[O2] - ( O2Use / BloodFlow ) </true>
+  <false> 0.0 </false>
+</conditional>
+
+<copy>
+  <from> [O2] </from>
+  <to> HgbTissue.[O2] </to>
+</copy>
+
+<call> HgbTissue.O2ToPO2 </call>
+
+<copy>
+  <from> HgbTissue.pO2 </from>
+  <to> PO2End </to>
+</copy>
+<!--
+<def>
+  <name> PO2End </name>
+  <val> PO2 </val>
+</def>
+-->
+</implicitmath>
+
+
+
+<def><name> PlasmaFlow </name><val> BloodFlow * BloodVol.PVCrit </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

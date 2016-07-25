@@ -1,0 +1,108 @@
+HumMod / Sizing-Osmoles-ICFV
+
+Created : 2013-03-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Osmoles-ICFV </name>
+
+<variables>
+
+<var><name> Dissociation </name></var>
+
+<var><name> [Active] </name></var>
+<var><name> Active </name></var>
+
+<var><name> Volume </name></var>
+
+<var><name> Unspecified </name></var>
+
+<constant><name> F-Cations </name><val> 0.24 </val></constant>
+<constant><name> F-Anions </name><val> 0.20 </val></constant>
+<var><name> F-Osmoles </name></var>
+
+<var><name> Total </name></var>
+<var><name> Cations </name></var>
+<var><name> Anions </name></var>
+<var><name> Osmoles </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Dissociation </name>
+  <val> Sizing-Osmoles-Total.Dissociation </val>
+</def>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-ICFV.Vol / 1000 </val>
+</def>
+
+<def>
+  <name> [Active] </name>
+  <val> Sizing-Osmoles-Total.[Active] </val>
+</def>
+
+<def>
+  <name> Active </name>
+  <val> [Active] * Volume </val>
+</def>
+
+<def>
+  <name> Unspecified </name>
+  <val> 
+    Active - ( Dissociation *
+    (
+      Sizing-PotassiumCell.Mass
+    ) )
+    - Sizing-UreaPool.Osmoles
+  </val>
+</def>
+
+<def>
+  <name> F-Osmoles </name>
+  <val> 1 - F-Cations - F-Anions </val>
+</def>
+
+<def>
+  <name> Cations </name>
+  <val> F-Cations * Unspecified / Dissociation </val>
+</def>
+
+<def>
+  <name> Anions </name>
+  <val> F-Anions * Unspecified / Dissociation </val>
+</def>
+
+<def>
+  <name> Osmoles </name>
+  <val> F-Osmoles * Unspecified </val>
+</def>
+
+<def>
+  <name> OsmCell.OtherCations </name>
+  <val> Cations </val>
+</def>
+
+<def>
+  <name> OsmCell.OtherAnions </name>
+  <val> Anions </val>
+</def>
+
+<def>
+  <name> OsmCell.OtherOsmoles </name>
+  <val> Osmoles </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

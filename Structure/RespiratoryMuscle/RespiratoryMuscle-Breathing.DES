@@ -1,0 +1,80 @@
+HumMod / RespiratoryMuscle-Breathing
+
+Created : 2012-07-18
+Revised : 2012-07-18
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> RespiratoryMuscle-Breathing </name>
+
+<variables>
+
+<parm><name> Efficiency(%) </name><val> 30.0 </val></parm>
+<var><name> Efficiency </name></var>
+
+<var><name> TotalCals </name></var>
+<var><name> MotionCals </name></var>
+<var><name> HeatCals </name></var>
+
+<var><name> VentilationEffect </name></var>
+
+<parm><name> Cals/L-Basic </name><val> 1.5 </val></parm>
+<var><name> Cals/L </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> VentilationEffect </name>
+  <point><x>  10 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 150 </x><y> 2.5 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> Efficiency </name>
+  <val> 0.01 * Efficiency(%) </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> VentilationEffect </name>
+  <val> VentilationEffect [ Breathing.TotalVentilation(L) ] </val>
+</def>
+
+<def>
+  <name> Cals/L </name>
+  <val> VentilationEffect * Cals/L-Basic </val>
+</def>
+
+<def>
+  <name> MotionCals </name>
+  <val> Cals/L * Breathing.TotalVentilation(L) </val>
+</def>
+
+<def>
+  <name> TotalCals </name>
+  <val> MotionCals / Efficiency </val>
+</def>
+
+<def>
+  <name> HeatCals </name>
+  <val> TotalCals - MotionCals </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

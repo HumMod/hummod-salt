@@ -1,0 +1,24 @@
+HumMod / PituitaryGland
+
+Created : 2012-06-30
+Revised : 2012-06-30
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\PituitaryGland\ ?>
+
+<?include PituitaryGland-Size.DES ?>
+
+<structure><name> PituitaryGland </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> PituitaryGland-Size.Parms </call>
+</block>
+
+</definitions>
+</structure>
+
+End

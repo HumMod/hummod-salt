@@ -1,0 +1,125 @@
+HumMod / GILumenCalcium
+
+Created : 2011-08-01
+Last Modified : 2011-08-01
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> GILumenCalcium </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> Diet </name></var>
+<var><name> Absorption </name></var>
+<parm><name> Secretion </name><val> 0.17 </val></parm>
+<var><name> Excretion </name></var>
+
+<var><name> [Ca++(mG/mL)] </name></var>
+<var><name> [Ca++(mMol/L)] </name></var>
+
+<constant><name> MG/ML_TO_MMOL/L </name><val> 25 </val></constant>
+<constant><name> MMOL_TO_MG </name><val> 40 </val></constant>
+
+<parm><name> PumpSwitch </name><val> FALSE </val></parm>
+<parm><name> PumpSetting </name><val> 0.0 </val></parm>
+<var><name> PumpRate </name></var>
+
+<parm><name> ClampSwitch </name><val> FALSE </val></parm>
+<parm><name> ClampSetting </name><val> 0.0 </val></parm>
+
+<parm><name> K </name><val> 5.0 </val></parm>
+<var><name> [1,25-D]Effect </name></var>
+
+<parm><name> Flow </name><val> 14.0 </val></parm>
+
+<var><name> FractionalAbsorption </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 50.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 0.50 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve><name> [1,25-D]Effect </name>
+<point><x>  0 </x><y> 0 </y><slope> 0 </slope></point>
+<point><x> 40 </x><y> 1 </y><slope> 0.05 </slope></point>
+<point><x> 80 </x><y> 2 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Conc </name>
+
+<if><test> ClampSwitch </test>
+<true>
+  <def><name> [Ca++(mG/mL)] </name><val> ClampSetting </val></def>
+</true>
+<false>
+  <def><name> [Ca++(mG/mL)] </name><val> Mass / GILumenH2O.Mass </val></def>
+</false>
+</if>
+
+<def>
+  <name> [Ca++(mMol/L)] </name>
+  <val> [Ca++(mG/mL)] * MG/ML_TO_MMOL/L </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<conditional><name> PumpRate </name>
+<test> PumpSwitch </test>
+<true> PumpSetting </true>
+<false> 0 </false>
+</conditional>
+
+<def>
+  <name> [1,25-D]Effect </name>
+  <val> [1,25-D]Effect [ VitaminD(1,25-Dihydroxy).[Conc(pG/mL)] ] </val>
+</def>
+
+<def>
+  <name> Diet </name>
+  <val> DietIntakeElectrolytes.Ca++_mMol/Min * MMOL_TO_MG </val>
+</def>
+
+<def>
+  <name> Absorption </name>
+  <val> [1,25-D]Effect * K * [Ca++(mG/mL)] </val>
+</def>
+
+<def><name> Excretion </name><val> [Ca++(mG/mL)] * Flow </val></def>
+
+<def><name> Gain </name><val> Diet + Secretion + PumpRate </val></def>
+<def><name> Loss </name><val> Excretion + Absorption </val></def>
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+<conditional><name> FractionalAbsorption </name>
+<test> Diet GT 0 </test>
+<true> Absorption / Diet </true>
+<false> UNDEFINED </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

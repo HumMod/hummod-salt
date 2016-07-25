@@ -1,0 +1,102 @@
+HumMod / RightAtrium
+
+Created : 31-Mar-05
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> RightAtrium </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> V0 </name></var>
+<var><name> StressedVol </name></var>
+<var><name> Pressure </name></var>
+<var><name> TMP </name></var>
+<var><name> ExternalPressure </name></var>
+<var><name> Compliance </name></var>
+
+<var><name> InitialVolume </name></var>
+<var><name> InitialV0 </name></var>
+<var><name> InitialCompliance </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Vol </name>
+  <integralname> Vol </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 2.0 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Vol </name><val> InitialVolume </val></def>
+<def><name> V0 </name><val> InitialV0 </val></def>
+<def><name> Compliance </name><val> InitialCompliance </val></def>
+
+</block>
+
+<block><name> CalcPressure </name>
+
+<def>
+  <name> StressedVol </name>
+  <val> Vol - V0 </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> ( StressedVol / Compliance ) MAX 0 </val>
+</def>
+
+<def>
+  <name> ExternalPressure </name>
+  <val> Pericardium-Cavity.Pressure </val>
+</def>
+
+<def>
+  <name> Pressure </name>
+  <val> TMP + ExternalPressure </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def><name> DxMax </name><val> 0.0001 * Compliance </val></def>
+
+<def>
+  <name> Inflow </name>
+  <val>
+      CoronarySinus.BloodFlow
+    + HepaticVein.BloodFlow
+    + SystemicVeins.Outflow
+  </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> RightVentricle.Outflow </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Inflow - Outflow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,50 @@
+Glutamine.TXT
+
+Created : 2013-02-07
+Revised : 2013-02-07
+Author : Tom Coleman
+
+M.W. 146.15. C5-H10-N2-O3.
+Non-Essential
+% (by Mol) in generic protein : 4.6
+
+    COOH
+    |
+H2N-CH
+    |
+    CH2
+    |
+    CH2
+    |
+    C
+  // \
+  O  NH2
+
+Glutamine is an aminated glutamate. Glutamate plus ammonia
+yields glutamine plus water.
+
+Two amino groups makes glutamine a useful source of ammonia
+in the renal cortex.
+
+After two de-aminations, the skeleton drops right into the
+Krebs cycle as oxoglutarate or alpla-ketoglutarate. It then
+spins to succinyl-CoA, oxaloacetate, pyruvate and glucose.
+
+    COOH
+    |
+    C=O
+    |
+    CH2
+    |
+    CH2
+    |
+    COOH
+
+But if Krebs substrate is not needed the glutamine
+can supply a single ammonium.
+
+Glutamine + H2O --> NH4+ + Glutimate
+
+Aspartate + Glutamate --> Asparagine + Glutamate
+
+End

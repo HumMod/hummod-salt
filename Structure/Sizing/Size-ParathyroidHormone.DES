@@ -1,0 +1,27 @@
+HumMod | Size-ParathyroidHormone
+
+Created : 2011-08-01
+Last Modified : 2011-08-01
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> Size-ParathyroidHormone </name>
+<variables>
+<var><name> SizeModification </name></var>
+<constant><name>  BasicVD </name><val> 15312 </val></constant> <!-- ECFV -->
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+  <def><name> SizeModification </name><val> Sizing-ECFV.Vol / BasicVD </val></def>
+  <def><name> ParathyroidHormone.sizeModification </name><val> SizeModification </val></def>
+
+  <call> ParathyroidHormone.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

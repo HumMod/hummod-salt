@@ -1,0 +1,114 @@
+/* EPOPhysiology.TXT
+
+   Created : 2014-02-26
+   Revised : 2014-02-27
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+Pagel etal. used renal artery clips in rats to reduce renal
+blood flow from control to 10% of control. [EPO] increaded
+linearly from 20 mU/mL to 70 mU/mL.
+
+Decreasing [Hgb] from 10 G/dL to 3 G/dL. [EPO] increased
+exponentially to 6000 mU/mL. This is 300x control.
+
+Authors think that hypoxia invokes an extra-renal mechanism
+of some sort.
+
+Lacombe etal. used an anemic mouse model. Hematocrit decreased
+to 10%. [EPO] increased from 20 - 30 mU/mL to 6000 - 10000
+mU/mL.
+
+Hypoxia (typically due to increased altitude) increases [EPO].
+
+Eckardt etal. exposed humans to 3000M (10000 feet) and 4000M
+(13000 feet) for 5 1/2 hours. Control [EPO] was 16 mU/mL with
+increases to 22 and 28 mU/mL at 3000M and 4000M. Alveolar pO2
+dropped to 60 mmHg and 50 mmHg.
+
+Ge etal. saw the same thing. It appears that the EPO response
+at higher altitudes requires more than 24 hours.
+
+  Altitude   [EPO] mU/mL
+  ---------  -----------
+  Sea Level  14.3
+  1780M      19.6
+  2085M      19.4
+  2454M      25.4
+  2800M      27.2
+
+Therefore, both anemia (anemic hypoxia) and altitude (hypoxic
+hypoxia) stimulate EPO secretion, but anemia is a much more
+potent stimulus.
+
+We next consider the concept that EPO stimuli are the balance
+between renal O2 delivery and renal O2 use. Altitude and anemia
+have different O2 use components.
+
+Singh etal. has data from 15 young males at 3500M (Day 10 and
+60) and 5800M (19000 feet) (Day 130). Units are mL/Min/1.73M^2.
+
+     Sea Level  3500M         5800M
+     ---------  -----  -----  ------
+RBF     924      824    801    715
+RPF     616      515    482    381
+
+Malpas etal. used 14% and 10% O2 on conscious rabbits.
+Sympathetic nerve activity increased while RBF and GFR fell.
+RBF and GFR values were read from a graph.
+
+             Room Air  14% O2  10% O2
+             --------  ------  ------
+pO2 (Alv)       90       55      41
+SNA (%)        100      114     138
+RBF (mL/Min)    75       50      60
+GFR (mL/Min)     6        4       5
+
+Johannes etal. used an acute rat protocol.
+
+            Control    1      2      3      4
+            -------  -----  -----  -----  -----
+Hct(%)        45       23     13      9      6
+RBF          6.0      7.9    7.5    5.0    1.4
+Urine       12.9    137.8   55.8   14.4    2.9
+pO2 (Cort)    71       37     20     17     12
+pO2 (Med)     53       28     15     12      9
+pO2 (Vein)    71       40     33     27     20
+O2 (In)      1.39     0.84   0.46   0.22   0.05
+VO2          0.13     0.28   0.20   0.11   0.03
+
+
+References ====================================================
+
+Pagel, H., W. Jelkmann and C.Weiss. A comparison of the effects
+of renal artery constriction and anemia on the production of
+erythropoietin. Pflugers Arch. 413:62-66, 1988.
+
+Lacombe, C. etal. Peritubular cells are the site of erythropoietin
+synthesis in the murine hypoxic kidney. J.Clin.Invest. 81:620-623,
+1988.
+
+Eckardt, K.-U. etal. Rate of erythropoietin formation in humans
+in response to acute hypobaric hypoxia. J.Appl.Physiol.
+66:1785-1788, 1989.
+
+Ge, R.-L. etal. Derterminants of erythropoietin release in
+response to short-term hypobaric hypoxia. J.Appl.Physiol.
+92:2361-2367, 2002.
+
+Singh, M.V. etal. Blood gases, hematology, and renal blood flow
+during prolonged mountain sojourns at 3500 and 5800 m. Avait.
+Space Env. Med. 74:533-536, 2003.
+
+Malpas, S.C. etal. Functional response to graded increases in
+renal reve activity during hypoxia in conscious rabbits. Am. J.
+Physiol. 271:R1489-R1499, 1996.
+
+Johannes, T. Acute decrease in renal microvascular pO2 during
+acute normovolemic hemodilution. Am. J. Physiol. 292:F796-F803,
+2007.
+
+
+/* End */

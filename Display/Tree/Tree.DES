@@ -1,0 +1,36 @@
+HumMod / Tree DES
+
+Created : 2004-10-04
+Revised : 2014-01-16
+Author : Tom Coleman
+Copyright : 2008-2014
+By : University of Mississippi Medical Center
+
+<?path Display\Tree\ ?>
+
+<tree>
+
+<?include Circulation\Circulation.DES ?>
+<?include Respiration\Respiration.DES ?>
+<?include Metabolism\Metabolism.DES ?>
+<?include BodyFluids\BodyFluids.DES ?>
+<?include Electrolytes\Electrolytes.DES ?>
+<?include HormonesGeneral\HormonesGeneral.DES ?>
+<?include HormonesGender\HormonesGender.DES ?>
+<?include NervousSystem\NervousSystem.DES ?>
+<?include AcidBase\AcidBase.DES ?>
+<?include Heat\Heat.DES ?>
+<?include Miscellaneous\Miscellaneous.DES ?>
+<?include Organs\Organs.DES ?>
+<?include Lifestyle\Lifestyle.DES ?>
+<?include Diagnosis\Diagnosis.DES ?>
+<?include Intervention\Intervention.DES ?>
+<?include Trauma\Trauma.DES ?>
+<?include Pathology\Pathology.DES ?>
+
+<?include Context\Context.DES ?>
+<?include Sizing\Sizing.DES ?>
+
+</tree>
+
+End

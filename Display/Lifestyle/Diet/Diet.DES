@@ -1,0 +1,16 @@
+HumMod / Diet
+
+Created : 24-Apr-05
+Revised : 2012-02-12
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Lifestyle\Diet\ ?>
+
+<?include Goal\Goal.DES ?>
+<?include Hunger-Thirst\Hunger-Thirst.DES ?>
+<?include Control\Control.DES ?>
+<?include Intake\Intake.DES ?>
+
+End

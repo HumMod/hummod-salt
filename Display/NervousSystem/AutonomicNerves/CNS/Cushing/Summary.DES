@@ -1,0 +1,120 @@
+HumMod / Summary
+
+Created : 08-Feb-06
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structurename> CushingResponse </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 24.0 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Effect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Effect </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Effect </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> Fatigue </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Fatigue </label>
+</showvalue>
+
+<repeatlist>
+  <name> Tau </name>
+  <repeat><reps> 50 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 3.0 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Tau </label>
+</slidebar>
+
+<showvalue>
+  <row> 12.6 </row><col> 1.0 </col>
+  <name> BasicEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Basic </label>
+</showvalue>
+
+<repeatlist>
+  <name> Strength </name>
+  <repeat><reps> 20 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 14.0 </row><col> 3.0 </col>
+  <name> Strength </name>
+  <listname> Strength </listname>
+  <label> Strength </label>
+</slidebar>
+
+<showcurve>
+  <row> 15.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> Brain-Flow.PO2 </name>
+    <label> Brain PO2 </label>
+    <scale><min> 0 </min><max> 40 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+
+  <curvename> PO2Effect </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 22.4 </row><col> 3.0 </col>
+  <name> Brain-Flow.PO2 </name>
+  <format><integer/></format>
+  <label> Brain PO2 </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> The Cushing response, a sympathetic storm, is </line>
+  <line> unleashed when brain pO2 falls to low levels. </line>
+  <line> The storm doesn't persist, however. It fatigues </line>
+  <line> with a time constant specified by Tau. </line>
+</infobutton>
+
+</groupbox>
+
+End

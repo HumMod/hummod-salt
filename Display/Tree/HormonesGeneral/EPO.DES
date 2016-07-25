@@ -1,0 +1,33 @@
+HumMod / EPO
+
+Created : 10-Oct-08
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> Hormones_EPO </name>
+  <label> EPO </label>
+  <parent> HORMONESGENERAL </parent>
+</branch>
+
+<leaf>
+  <name> EPO_Pool </name>
+  <label> Pool </label>
+  <parent> Hormones_EPO </parent>
+</leaf>
+
+<leaf>
+  <name> EPO_Secretion </name>
+  <label> Secretion </label>
+  <parent> Hormones_EPO </parent>
+</leaf>
+
+<leaf>
+  <name> EPO_Disposal </name>
+  <label> Disposal </label>
+  <parent> Hormones_EPO </parent>
+</leaf>
+
+End

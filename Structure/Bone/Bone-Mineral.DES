@@ -1,0 +1,37 @@
+HumMod / Bone-Mineral
+
+Created : 2011-08-08
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\Bone\ ?>
+
+<?include Bone-Composition.DES ?>
+<?include Bone-ExchangeableCalcium.DES ?>
+<?include Bone-FixedCalcium.DES ?>
+
+<structure><name> Bone-Mineral </name>
+
+<definitions>
+
+<block><name> Init </name>
+  <call> Bone-ExchangeableCalcium.Init </call>
+  <call> Bone-FixedCalcium.Init </call>
+</block>
+
+<block><name> Calc  </name>
+  <call> Bone-Composition.Calc </call>
+  <call> Bone-ExchangeableCalcium.Calc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> Bone-FixedCalcium.Dervs </call>
+  <call> Bone-ExchangeableCalcium.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

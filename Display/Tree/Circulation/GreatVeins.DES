@@ -1,0 +1,33 @@
+HumMod / GreatVeins
+
+Created : 2013-03-09
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> GreatVeins </name>
+  <label> Great Veins </label>
+  <parent> CIRCULATION </parent>
+</branch>
+
+<leaf>
+  <name> SuperiorVenaCava </name>
+  <label> Superior Vena Cava </label>
+  <parent> GreatVeins </parent>
+</leaf>
+
+<leaf>
+  <name> CoronarySinus </name>
+  <label> Coronary Sinus </label>
+  <parent> GreatVeins </parent>
+</leaf>
+
+<leaf>
+  <name> InferiorVenaCava </name>
+  <label> Inferior Vena Cava </label>
+  <parent> GreatVeins </parent>
+</leaf>
+
+End

@@ -1,0 +1,41 @@
+HumMod / Hunger-Thirst
+
+Created : 24-Jun-06
+Revised : 2012-02-12
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+
+<panel><name> Diet_Hunger-Thirst </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Diet </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Diet - Hunger | Thirst</text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Lifestyle\Diet\Hunger-Thirst\ ?>
+
+<?include Hunger.DES ?>
+<?include Glucose.DES ?>
+
+<?include Thirst.DES ?>
+<?include Leptin.DES ?>
+
+</panel>
+
+End

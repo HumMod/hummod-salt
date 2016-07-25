@@ -1,0 +1,33 @@
+HumMod / Organs-Flow
+
+Created : 02-Apr-08
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Organs-Flow </name>
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> A-VFistula-Flow.Calc </call>
+  <call> Bone-Flow.Calc </call>
+  <call> Brain-Flow.Calc </call>
+  <call> Fat-Flow.Calc </call>
+  <call> GITract-Flow.Calc </call>
+  <call> LeftHeart-Flow.Calc </call>
+  <call> OtherTissue-Flow.Calc </call>
+  <call> RespiratoryMuscle-Flow.Calc </call>
+  <call> RightHeart-Flow.Calc </call>
+  <call> SkeletalMuscle-Flow.Calc </call>
+  <call> Skin-Flow.Calc </call>
+
+  <call> AdrenalGland-Flow.Calc </call>
+  <call> Pancreas-Flow.Calc </call>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,21 @@
+HumMod / Arteries
+
+Created : 2013-01-27
+Revised : 2013-02-19
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> BloodVessels-Arteries </name>
+  <label> Arteries </label>
+  <parent> BloodVessels </parent>
+</branch>
+
+<leaf>
+  <name> Arteries-SystemicArteries </name>
+  <label> Systemic Arteries </label>
+  <parent> BloodVessels-Arteries </parent>
+</leaf>
+
+End

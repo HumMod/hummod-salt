@@ -1,0 +1,134 @@
+HumMod / Summary
+
+Created : 12-Apr-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 31.8 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<structurename> TGF-Renin </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightTGF-Renin.Signal </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Right Signal </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftTGF-Renin.Signal </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Left Signal </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 8 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightTGF-Renin.Signal </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftTGF-Renin.Signal </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 11.8 </row><col> 1.0 </col>
+  <name> RightTGF-Renin.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Right Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> TGF-Renin.Level </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> RightTGF-Renin.Level </name>
+  <listname> TGF-Renin.Level </listname>
+  <label> Right Level </label>
+</slidebar>
+
+
+<radiobuttons>
+  <row> 14.6 </row><col> 1.0 </col>
+  <name> LeftTGF-Renin.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Left Clamp </label>
+</radiobuttons>
+
+<slidebar>
+  <row> 16.0 </row><col> 1.0 </col>
+  <name> LeftTGF-Renin.Level </name>
+  <listname> TGF-Renin.Level </listname>
+  <label> Left Level </label>
+</slidebar>
+
+
+<showbargraph>
+  <row> 17.4 </row><col> 1.0 </col><high> 11 </high><wide> 28 </wide>
+  <leftmargin> 10 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar><name> RightTGF-Renin.NaEffect </name><label> [Na+] </label><color> BLUE </color></bar>
+  <bar><name> LeftTGF-Renin.NaEffect </name><label> [Na+] </label><color> GREEN </color></bar>
+  <bar><name> RightTGF-Renin.A2Effect </name><label> [A2] </label><color> BLUE </color></bar>
+  <bar><name> LeftTGF-Renin.A2Effect </name><label> [A2] </label><color> GREEN </color></bar>
+  <bar><name> RightTGF-Renin.ANPEffect </name><label> [ANP] </label><color> BLUE </color></bar>
+  <bar><name> LeftTGF-Renin.ANPEffect </name><label> [ANP] </label><color> GREEN </color></bar>
+  <bar><name> RightTGF-Renin.FurosemideEffect </name><label> Furosemide </label><color> BLUE </color></bar>
+  <bar><name> LeftTGF-Renin.FurosemideEffect </name><label> Furosemide </label><color> GREEN </color></bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<repeatlist>
+  <name> TGF-Renin.BasicSignal </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 28.4 </row><col> 1.0 </col>
+  <name> RightTGF-Renin.BasicSignal </name>
+  <listname> TGF-Renin.BasicSignal </listname>
+  <label> Right Basic </label>
+</slidebar>
+
+<slidebar>
+  <row> 29.8 </row><col> 1.0 </col>
+  <name> LeftTGF-Renin.BasicSignal </name>
+  <listname> TGF-Renin.BasicSignal </listname>
+  <label> Left Basic </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+  <line>  Blue = Right side, Green = left side</line>
+</infobutton>
+
+</groupbox>
+
+End

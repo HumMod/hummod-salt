@@ -1,0 +1,105 @@
+HumMod / CardiacArrest
+
+Created : 2012-07-18
+Revised : 2012-07-19
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> CardiacArrest </name>
+
+<variables>
+
+<constant><name> NEVER  </name><val> 0 </val></constant>
+<constant><name> CHANCE </name><val> 1 </val></constant>
+<constant><name> ALWAYS </name><val> 2 </val></constant>
+
+<parm><name> ArrestOnAcidosis </name><val> 1 </val></parm>
+
+<parm><name> SevereAcidosis </name><val> 7.10 </val></parm>
+
+<var><name> Risk </name></var>
+<var><name> LastRisk </name><val> 0 </val></var>
+
+<var><name> Del </name></var>
+
+<whitenoise>
+  <name> Chance </name>
+  <lowerlim> 0 </lowerlim>
+  <upperlim> 1 </upperlim>
+</whitenoise>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> Risk </name>
+  <point><x> 6.50 </x><y> 100 </y><slope> 0 </slope></point>
+  <point><x> 7.20 </x><y>   0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<if>
+<test> Heart-Arrest.Is_Arrested </test>
+<true><exitblock/></true>
+</if>
+
+<testcase>
+
+<case>
+  <test> ArrestOnAcidosis EQ CHANCE </test>
+  <call> Chance </call>
+</case>
+
+<case>
+  <test> ArrestOnAcidosis EQ ALWAYS </test>
+  <call> Always </call>
+</case>
+
+</testcase>
+
+</block>
+
+<block><name> Chance </name>
+
+<def>
+  <name> Risk </name>
+  <val> Risk [ BloodPhValues.ArtysPh ] </val>
+</def>
+
+<def>
+  <name> Del </name>
+  <val> Risk - LastRisk </val>
+</def>
+
+<if>
+<test> ( Chance LT ( 0.01 * Del ) ) OR ( Risk GE 100 ) </test>
+<true><call> Heart-VFib.Start </call></true>
+</if>
+
+<def>
+  <name> LastRisk </name>
+  <val> Risk </val>
+</def>
+
+</block>
+
+<block><name> Always </name>
+
+<if>
+<test> BloodPhValues.ArtysPh LE SevereAcidosis </test>
+<true><call> Heart-VFib.Start </call></true>
+</if>
+
+</block>
+
+</definitions>
+</structure>
+
+End

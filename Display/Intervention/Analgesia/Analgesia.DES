@@ -1,0 +1,16 @@
+HumMod / Analgesia
+
+Created : 24-Apr-05
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Display\Intervention\Analgesia\ ?>
+
+
+<?include Morphine\Morphine.DES ?>
+<?include Narcan\Narcan.DES ?>
+<?include OpioidReceptor\OpioidReceptor.DES ?>
+
+End

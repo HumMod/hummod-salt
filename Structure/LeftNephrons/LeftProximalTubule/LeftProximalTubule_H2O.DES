@@ -1,0 +1,59 @@
+HumMod / LeftProximalTubule_H2O
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> LeftProximalTubule_H2O </name>
+
+<variables>
+
+<var>
+  <name> Inflow </name>
+</var>
+
+<var>
+  <name> Outflow </name>
+</var>
+
+<var>
+  <name> LeftFractReab </name>
+</var>
+
+<var>
+  <name> Reab </name>
+</var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> Inflow </name>
+  <val> LeftGlomerulusFiltrate.GFR </val>
+</def>
+
+<def>
+  <name> LeftFractReab </name>
+  <val> LeftProximalTubule_Na.LeftFractReab </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> Inflow * LeftFractReab </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

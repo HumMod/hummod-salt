@@ -1,0 +1,103 @@
+HumMod / Mechanoreceptors DES
+
+Created : 21-Oct-04
+Revised : 2012-02-02
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Mechanoreceptors </name>
+
+<variables>
+
+<var><name> FiringRate </name></var>
+
+<var><name> RightHeartFiring </name></var>
+<var><name> LeftHeartFiring </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<parm><name> Tau </name><val> 0.2 </val></parm>
+
+</variables>
+
+<equations>
+
+<delay>
+  <name> FiringRate </name>
+  <outputname> CurrentValue </outputname>
+  <initialval> 2.0 </initialval>
+  <inputname> SteadyState </inputname>
+  <rateconstname> RateConst </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.1 </errorlim>
+</delay>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> RightHeartFiring </name>
+  <point><x> 10 </x><y> 20 </y><slope> 0 </slope></point>20
+  <point><x> 20 </x><y>  1 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> LeftHeartFiring </name>
+  <point><x> 10 </x><y> 20 </y><slope> 0 </slope></point>20
+  <point><x> 20 </x><y>  1 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> RateConst </name>
+  <val> INVERT ( Tau ) </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<conditional>
+  <name> FiringRate </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false> CurrentValue </false>
+</conditional>
+
+</block>
+
+<block><name> Dervs </name>
+
+<conditional>
+  <name> RightHeartFiring </name>
+  <test> RightHeart-Function.Failed </test>
+  <true> 0 </true>
+  <false> RightHeartFiring [ RightHeartPumping-Systole.ESV ] </false>
+</conditional>
+
+<conditional>
+  <name> LeftHeartFiring </name>
+  <test> LeftHeart-Function.Failed </test>
+  <true> 0 </true>
+  <false> LeftHeartFiring [ LeftHeartPumping-Systole.ESV ] </false>
+</conditional>
+
+<def>
+  <name> SteadyState </name>
+  <val> RightHeartFiring + LeftHeartFiring </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

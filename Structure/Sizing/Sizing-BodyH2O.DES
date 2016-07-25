@@ -1,0 +1,91 @@
+HumMod / Sizing-BodyH2O
+
+Created : 2013-03-01
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-BodyH2O </name>
+
+<variables>
+
+<var><name> Total </name></var>
+<var><name> Core </name></var>
+
+<var><name> Tissue </name></var>
+<var><name> Plasma </name></var>
+<var><name> RedCells </name></var>
+
+<var><name> ExternalTotal </name></var>
+<var><name> ExternalCore </name></var>
+<var><name> ExternalOther </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Tissue </name>
+  <val> Sizing-TissueH2O.Volume </val>
+</def>
+
+<def>
+  <name> Plasma </name>
+  <val> Sizing-BloodVolume.PlasmaVolume </val>
+</def>
+
+<def>
+  <name> RedCells </name>
+  <val> Sizing-BloodVolume.RBC-H2O </val>
+</def>
+
+<def>
+  <name> ExternalCore </name>
+  <val> Sizing-ExternalH2O.ExternalCore </val>
+</def>
+
+<def>
+  <name> ExternalOther </name>
+  <val> Sizing-ExternalH2O.ExternalOther </val>
+</def>
+
+<def>
+  <name> ExternalTotal </name>
+  <val> ExternalCore + ExternalOther </val>
+</def>
+
+<def><name> Core </name>
+  <val>
+      Tissue
+    + Plasma
+    + RedCells
+    + ExternalCore
+  </val>
+</def>
+
+<def>
+  <name> Total </name>
+  <val> Core + ExternalOther </val>
+</def>
+
+<def>
+  <name> BodyH2O.InitialVol </name>
+  <val> Core </val>
+</def>
+
+<def>
+  <name> BodyH2O.InitialTotalVol </name>
+  <val> Total </val>
+</def>
+
+<call> BodyH2O.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

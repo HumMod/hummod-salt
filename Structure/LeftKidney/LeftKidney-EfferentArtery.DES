@@ -1,0 +1,267 @@
+HumMod / LeftKidney-EfferentArtery DES
+
+Created : 16-Nov-04
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftKidney-EfferentArtery </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<constant><name> Conductance(/G) </name><val> 0.06218 </val></constant>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+<var><name> A2Effect </name></var>
+<var><name> SympEffect </name></var>
+<var><name> PressureGradient </name><val> 50 </val></var>
+<var><name> BloodFlow </name></var>
+
+<var><name> Resistance </name></var>
+
+<var><name> OuterVesselsInflow </name></var>
+<var><name> OuterVesselsOutflow </name></var>
+<var><name> VasaRectaInflow </name></var>
+<var><name> VasaRectaOutflow </name></var>
+
+<parm><name> A2_ATarget </name><val> 1.2 </val></parm>
+<parm><name> A2_mTarget </name><val> 7.5 </val></parm>
+<parm><name> A2_STarget </name><val> 1.24 </val></parm>
+
+<parm><name> A2_A1Target </name><val> 0.2 </val></parm>
+<parm><name> A2_m1Target </name><val> 25 </val></parm>
+<parm><name> A2_S1Target </name><val> 1.54 </val></parm>
+
+<parm><name> Symp_ATarget </name><val> 0.99 </val></parm>
+<parm><name> Symp_mTarget </name><val> 3.75 </val></parm>
+<parm><name> Symp_STarget </name><val> 2.05 </val></parm>
+<parm><name> Symp_BTarget </name><val> 0.08 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> A2_A </name>
+  <integralname> A2_A </integralname>
+  <initialval> 1.2 </initialval>
+  <dervname> dA2A </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_m </name>
+  <integralname> A2_m </integralname>
+  <initialval> 7.5 </initialval>
+  <dervname> dA2m </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_S </name>
+  <integralname> A2_S </integralname>
+  <initialval> 1.24 </initialval>
+  <dervname> dA2S </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+
+<diffeq>
+  <name> A2_A1 </name>
+  <integralname> A2_A1 </integralname>
+  <initialval> 0.2 </initialval>
+  <dervname> dA2A1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_m1 </name>
+  <integralname> A2_m1 </integralname>
+  <initialval> 25 </initialval>
+  <dervname> dA2m1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_S1 </name>
+  <integralname> A2_S1 </integralname>
+  <initialval> 1.54 </initialval>
+  <dervname> dA2S1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+--------------------------------------
+
+
+<diffeq>
+  <name> Symp_A </name>
+  <integralname> Symp_A </integralname>
+  <initialval> 0.99 </initialval>
+  <dervname> dSympA </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symp_m </name>
+  <integralname> Symp_m </integralname>
+  <initialval> 3.75 </initialval>
+  <dervname> dSympm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symp_S </name>
+  <integralname> Symp_S </integralname>
+  <initialval> 2.05 </initialval>
+  <dervname> dSympS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symp_B </name>
+  <integralname> Symp_B </integralname>
+  <initialval> 0.08 </initialval>
+  <dervname> dSympB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+</equations>
+
+
+<functions>
+
+<curve>
+  <name> A2Effect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point><!-- 1.5  -->
+  <point><x> 0.5 </x><y> 1.2 </y><slope> 0.0 </slope></point><!-- 1.5  -->
+  <point><x> 1. </x><y> 1.0 </y><slope> -0.75 </slope></point><!-- 0.4  --> -1
+  <point><x> 1.5 </x><y> 0.3 </y><slope> 0.0 </slope></point><!-- 3, 0.6  -->
+  <point><x> 3 </x><y> 0.1 </y><slope> 0.0 </slope></point><!-- 3, 0.6  -->
+
+</curve>
+
+
+<curve>
+  <name> SympEffect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 3.0 </x><y> 0.3 </y><slope> 0.0 </slope></point><!-- 3, 0.3  -->
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * LeftKidney-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+<def><name> dA2A </name><val> 0.05 * ( A2_ATarget - A2_A ) </val></def>
+<def><name> dA2m </name><val> 0.05 * ( A2_mTarget - A2_m ) </val></def>
+<def><name> dA2S </name><val> 0.05 * ( A2_STarget - A2_S ) </val></def>
+
+<def><name> dA2A1 </name><val> 0.05 * ( A2_A1Target - A2_A1 ) </val></def>
+<def><name> dA2m1 </name><val> 0.05 * ( A2_m1Target - A2_m1 ) </val></def>
+<def><name> dA2S1 </name><val> 0.05 * ( A2_S1Target - A2_S1 ) </val></def>
+
+<def><name> dSympA </name><val> 0.05 * ( Symp_ATarget - Symp_A ) </val></def>
+<def><name> dSympm </name><val> 0.05 * ( Symp_mTarget - Symp_m ) </val></def>
+<def><name> dSympS </name><val> 0.05 * ( Symp_STarget - Symp_S ) </val></def>
+<def><name> dSympB </name><val> 0.05 * ( Symp_BTarget - Symp_B ) </val></def>
+
+<!--  
+<def><name> A2Effect </name><val> A2Effect [ A2Pool.Log10Conc ] </val></def>
+<def><name> SympEffect </name><val> SympEffect [ LeftKidney-AlphaReceptors.Activity ] </val></def>
+<def><name> A2Effect </name><val> A2Effect [ A2Pool.Log10Conc ] </val></def>
+-->
+
+<def><name> SympEffect </name><val> ( Symp_A * ( Symp_S ^ Symp_m ) / ( ( LeftKidney-AlphaReceptors.Activity ^ Symp_m ) + ( Symp_S ^ Symp_m ) ) ) + Symp_B  </val></def>
+<def><name> A2Effect </name><val> ( ( A2_A * ( A2_S ^ A2_m ) / ( ( A2Pool.Log10Conc ^ A2_m ) + ( A2_S ^ A2_m ) ) ) + ( A2_A1 * ( A2Pool.Log10Conc ^ A2_m1 ) / ( ( A2Pool.Log10Conc ^ A2_m1 ) + ( A2_S1 ^ A2_m1 ) ) ) ) MAX 0.1 </val></def>
+
+<conditional><name> Conductance </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicConductance
+  * LeftKidney-NephronCount.Total(xNormal)
+  * A2Effect 
+  * SympEffect
+  * Anesthesia.VascularConductance
+  * Viscosity.ConductanceEffect
+</false>
+</conditional>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> PressureGradient </name>
+  <val> LeftGlomerulusFiltrate.Pressure - SystemicVeins.Pressure </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> PressureGradient * Conductance </val>
+</def>
+
+<if><test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def>
+  <name> Resistance </name>
+  <val> 1 / Conductance </val>
+</def>
+</true>
+<false>
+<def>
+  <name> Resistance </name>
+  <val> 0 </val>
+</def>
+</false>
+</if>
+
+
+<def>
+  <name> VasaRectaInflow </name>
+  <val> LeftVasaRecta.Inflow </val>
+</def>
+
+<def>
+  <name> VasaRectaOutflow </name>
+  <val> LeftVasaRecta.Outflow </val>
+</def>
+
+<def>
+  <name> OuterVesselsInflow </name>
+  <val> BloodFlow - LeftGlomerulusFiltrate.GFR - VasaRectaInflow </val>
+</def>
+
+<def>
+  <name> OuterVesselsOutflow </name>
+  <val> BloodFlow - VasaRectaOutflow </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,20 @@
+HumMod / Sympathetics-General
+
+Created : 2013-03-08
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\NervousSystem\AutonomicNerves\CNS\Sympathetics-General ?>
+
+<?include Integration\Integration.DES ?>
+
+<?include Baroreflex\Baroreflex.DES ?>
+<?include Chemoreceptors\Chemoreceptors.DES ?>
+<?include Exercise\Exercise.DES ?>
+<?include LowPressureReceptors\LowPressureReceptors.DES ?>
+<?include Mechanoreceptors\Mechanoreceptors.DES ?>
+<?include Metaboreflex\Metaboreflex.DES ?>
+
+End

@@ -1,0 +1,36 @@
+HumMod / RightKidney
+
+Created : 21-Oct-04
+Revised : 2013-02-16
+Author : Tom Coleman
+Copyright : 2004-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\RightKidney\ ?>
+
+<?include RightKidney-EfferentArtery.DES ?>
+<?include RightKidney-AfferentArtery.DES ?>
+<?include RightKidney-ArcuateArtery.DES ?>
+
+<?include RightKidney-Pressure.DES ?>
+<?include RightKidney-Flow.DES ?>
+<?include RightKidney-Size.DES ?>
+<?include RightKidney-Function.DES ?>
+
+<?include RightKidney-CO2.DES ?>
+<?include RightKidney-Lactate.DES ?>
+<?include RightKidney-Ph.DES ?>
+
+<?include RightKidney-Fuel.DES ?>
+<?include RightKidney-Metabolism.DES ?>
+<?include RightKidney-AlphaReceptors.DES ?>
+<?include RightKidney-BetaReceptors.DES ?>
+<?include RightKidney-Structure.DES ?>
+
+<?include RightKidney-NephronCount.DES ?>
+<?include RightKidney-TubuleO2.DES ?>
+
+<?include RightKidney-Myogenic.DES ?>
+<?include RightKidney-Zones\RightKidney-Zones.DES ?>
+
+End

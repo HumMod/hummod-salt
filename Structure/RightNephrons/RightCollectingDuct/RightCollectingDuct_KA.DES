@@ -1,0 +1,87 @@
+HumMod / RightCollectingDuct_KA
+
+Created : 10-Apr-05
+Revised : 2013-02-03
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RightCollectingDuct_KA </name>
+
+<variables>
+
+<var>
+  <name> Outflow </name>
+</var>
+
+<var>
+  <name> [KA] </name>
+</var>
+
+<var>
+  <name> [KA(mMol/L)] </name>
+</var>
+
+<var>
+  <name> Osmolarity </name>
+</var>
+
+</variables>
+
+<definitions>
+<block><name> CalcFlux </name>
+
+<def>
+  <name> Outflow </name>
+  <val> RightNephronKetoacids.Excretion(mMol/Min) </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [KA] </name>
+  <val> Outflow / RightCollectingDuct_H2O.Outflow </val>
+</def>
+
+<def>
+  <name> [KA(mMol/L)] </name>
+  <val> 1000.0 * [KA] </val>
+</def>
+
+<def>
+  <name> Osmolarity </name>
+  <val> [KA(mMol/L)] </val>
+</def>
+
+</block>
+
+<block><name> NoFlow </name>
+
+<def>
+  <name> Outflow </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> [KA] </name>
+  <val> UNDEFINED </val>
+</def>
+
+<def>
+  <name> [KA(mMol/L)] </name>
+  <val> UNDEFINED </val>
+</def>
+
+<def>
+  <name> Osmolarity </name>
+  <val> 0.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,224 @@
+HumMod / Electrolytes
+
+Created : 2013-03-02
+Revised : 2013-03-04
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> Sizing-Electrolytes </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Sizing | Electrolytes </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 28.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Sizing-SodiumPool </structurename>
+
+<showvalue>
+  <row> 1.0 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool Na+ Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.0 </row><col> 3 </col>
+  <name> [Na+] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Na+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.0 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-PotassiumPool </structurename>
+
+<showvalue>
+  <row> 4.4 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool K+ Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.4 </row><col> 3 </col>
+  <name> [K+] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.4 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-PotassiumCell </structurename>
+
+<showvalue>
+  <row> 7.8 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Cell K+ Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 8.8 </row><col> 3 </col>
+  <name> [K+] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.8 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-ChloridePool </structurename>
+
+<showvalue>
+  <row> 11.2 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool Cl- Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 3 </col>
+  <name> [Cl-] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Cl-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.2 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-LactatePool </structurename>
+
+<showvalue>
+  <row> 14.6 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool Lac- Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.6 </row><col> 3 </col>
+  <name> [Lac-] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Lac-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 16.6 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-KetoacidPool </structurename>
+
+<showvalue>
+  <row> 18.0 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool KA- Mass (mG) </label>
+</showvalue>
+
+<showvalue>
+  <row> 19.0 </row><col> 3 </col>
+  <name> [KA-] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [KA-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 20.0 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-SulfatePool </structurename>
+
+<showvalue>
+  <row> 21.4 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool SO4-- Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.4 </row><col> 3 </col>
+  <name> [SO4--] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [SO4--] </label>
+</showvalue>
+
+<showvalue>
+  <row> 23.4 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-PhosphatePool </structurename>
+
+<showvalue>
+  <row> 24.8 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool PO4-- Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 25.8 </row><col> 3 </col>
+  <name> [PO4--] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [PO4--] </label>
+</showvalue>
+
+<showvalue>
+  <row> 26.8 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+</groupbox>
+</panel>
+
+End

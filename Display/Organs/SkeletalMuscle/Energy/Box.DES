@@ -1,0 +1,118 @@
+HumMod / Box
+
+Created : 2012-09-13
+Revised : 2012-09-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 23.6 </high>
+   <wide> 30.0 </wide>
+
+<structurename> SkeletalMuscle-Energy </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [ATP] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [ATP] </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> [PCr] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [PCr] </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 1.0 </col>
+   <name> [Pi] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Pi] </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.8 </row><col> 1.0 </col><high> 12 </high><wide> 26 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+
+    <yvar>
+      <name> [PCr] </name>
+      <label> [PCr] </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+
+    <yvar>
+      <name> [ATP] </name>
+      <label> [ATP] </label>
+      <linecolor> RED </linecolor>
+    </yvar>
+
+    <yvar>
+      <name> [Pi] </name>
+      <label> [Pi] </label>
+      <linecolor> BLACK </linecolor>
+    </yvar>
+
+    <scale><min> 0 </min><max> 20 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 17.4 </row><col> 1.0 </col>
+   <name> ATP_Turnover((mMol/Min)/kG) </name>
+   <format><decimal> 2 </decimal></format>
+   <label> ATP Turnover (/kG) </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.4 </row><col> 3.0 </col>
+   <name> SkeletalMuscle-Size.Mass(kG) </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.0 </row><col> 1.0 </col>
+   <name> ATP_Turnover(mMol/Min) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> ATP Turnover </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.0 </row><col> 3.0 </col>
+   <name> SkeletalMuscle-Metabolism.O2Need </name>
+   <format><decimal> 1 </decimal></format>
+   <label> O2 Need </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.0 </row><col> 3.0 </col>
+   <name> Metabolism-Tools.O2_ML_TO_ATP_MMOL </name>
+   <format><decimal> 2 </decimal></format>
+   <label> O2 To ATP </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Concentrations are mMol/kG wet muscle </line>
+  <line> mass. </line>
+  <line>  </line>
+  <line> Units for turnover are mMol/Min and </line>
+  <line> (mMol/Min)/kG wet muscle mass. </line>
+</infobutton>
+
+</groupbox>
+
+End

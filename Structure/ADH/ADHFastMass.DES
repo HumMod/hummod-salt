@@ -1,0 +1,115 @@
+HumMod / ADHFastMass
+
+Created : 20-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> ADHFastMass </name>
+
+<variables>
+
+<parm>
+  <name> FluxK </name>
+  <val> 0.0043 </val>
+</parm>
+
+<var>
+  <name> Flux </name>
+</var>
+
+<var>
+  <name> Mass </name>
+</var>
+
+<parm>
+  <name> MA1 </name>
+  <val> 1 </val>
+</parm>
+
+<var>
+  <name> DamagedSecretionTarget </name>
+ </var>
+
+<parm>
+  <name> k </name>
+  <val> 0.5 </val>
+ </parm>
+
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> UndamagedMass </name>
+  <integralname> UndamagedMass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 170.0 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> DamagedMass </name>
+  <integralname> DamagedMass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> DamagedChange </dervname>
+  <errorlim> 0.1 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> DamagedSecretion </name>
+  <integralname> DamagedSecretion </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> dDamagedSecretion </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+<block><name> Flux </name>
+
+
+<def>
+  <name> Flux </name>
+  <val> FluxK * UndamagedMass </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+
+<def>
+  <name> Change </name>
+  <val> ADHSlowMass.Flux - ADHSecretion.UndamagedRate </val>
+</def>
+
+<def>
+  <name> DamagedSecretionTarget </name>
+  <val> ADHSecretion.BaseK * MA1 * 100 * DamagedMass </val>
+</def>
+
+<def>
+  <name> dDamagedSecretion </name>
+  <val> k * ( DamagedSecretionTarget - DamagedSecretion ) </val>
+</def>
+
+<def>
+  <name> DamagedChange </name>
+  <val> - DamagedSecretion </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> DamagedMass + UndamagedMass </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

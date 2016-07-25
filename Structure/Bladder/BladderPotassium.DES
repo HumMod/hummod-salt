@@ -1,0 +1,61 @@
+HumMod / BladderPotassium
+
+Created : 16-Mar-08
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BladderPotassium </name>
+<variables>
+
+<var><name> [K+] </name></var>
+<var><name> [K+(mEq/L)] </name></var>
+
+<constant><name> InitialConc </name><val> 0.0135 </val></constant>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> InitialMass </name><val> InitialConc * BladderVolume.InitialVolume </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_K.Outflow </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+  <def><name> [K+] </name><val> Mass / BladderVolume.Mass </val></def>
+  <def><name> [K+(mEq/L)] </name><val> 1000.0 * [K+] </val></def>
+
+</block>
+
+<block><name> Void </name>
+
+  <def><name> Mass </name><val> Mass - ( BladderVolume.VolumeVoid * [K+] ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

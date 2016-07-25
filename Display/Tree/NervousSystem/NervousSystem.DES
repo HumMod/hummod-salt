@@ -1,0 +1,23 @@
+HumMod / NervousSystem DES
+
+Created : 2011-07-26
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> NERVOUSSYSTEM </name>
+  <label> Nervous System </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\NervousSystem\ ?>
+
+<?include AutonomicNerves-Afferents.DES ?>
+<?include AutonomicNerves-CNS.DES ?>
+<?include AutonomicNerves-Efferents.DES ?>
+
+<?include Catechols.DES ?>
+
+End

@@ -1,0 +1,92 @@
+HumMod / BloodVessels
+
+Created : 30-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 40 </high>
+   <wide> 40.0 </wide>
+   <title> Blood Vessels </title>
+
+<structurename> VasaRecta </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightVasaRecta.Conductance </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right Vascular Conductance </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> LeftVasaRecta.Conductance </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Vascular Conductance </label>
+</showvalue>
+
+<showbargraph>
+  <row> 3.8 </row><col> 6.0 </col><high> 10 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title>  </title>
+  <showinitialvalues/>
+  <bar>
+    <name> RightVasaRecta.ADHEffect </name>
+    <label> Right [ADH] Effect </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftVasaRecta.ADHEffect </name>
+    <label> Left [ADH] Effect </label>
+    <color> GREEN  </color>
+  </bar>
+  <bar>
+    <name> RightVasaRecta.OsmEffect </name>
+    <label> Right Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftVasaRecta.OsmEffect </name>
+    <label> Left Viscosity </label>
+    <color> GREEN  </color>
+  </bar>
+  <bar>
+    <name> RightVasaRecta.A2Effect </name>
+    <label> Right [AII] Effect </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftVasaRecta.A2Effect </name>
+    <label> Left [AII] Effect </label>
+    <color> GREEN  </color>
+  </bar>
+  <bar>
+    <name> RightVasaRecta.SympsEffect </name>
+    <label> Right Symp's Effect </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftVasaRecta.SympsEffect </name>
+    <label> Left Symp's Effect </label>
+    <color> GREEN  </color>
+  </bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Typical values are </line>
+  <line>  </line>
+  <line> Conductance = 0.27 ( mL / Min ) / mmHg </line>
+  <line> Conductance Effects = 1.0 x Normal </line>
+</infobutton>
+
+</groupbox>
+
+End

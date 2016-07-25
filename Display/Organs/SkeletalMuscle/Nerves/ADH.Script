@@ -1,0 +1,37 @@
+<script>
+
+<launch>
+  <solver> C:\Users\HL\Documents\GitHub\HumMod3\Model Solver.exe </solver>
+  <model> C:\Users\HL\Documents\GitHub\HumMod3\HumMod.DES </model>
+</launch>
+
+<restart/>
+<loadics><filename> Lying.ICS </filename></loadics>
+
+
+<?include ADH-Roster.Script ?>
+
+<gofor>
+	<solutionint> 10.0 </solutionint>
+	<displayint> 1.0 </displayint>
+</gofor>
+
+<setvalue>
+  <var> ADHPool.ClampSetting </var>
+  <val> 0.4 </val>
+</setvalue>
+
+<setvalue>
+  <var> ADHPool.ClampSwitch </var>
+  <val> 1 </val>
+</setvalue>
+
+<gofor>
+	<solutionint> 1440.0 </solutionint>
+	<displayint> 10.0 </displayint>
+</gofor>
+
+<dumpsolution><filename> Solutions\ADH.CSV </filename></dumpsolution>
+
+<exit/>
+</script>

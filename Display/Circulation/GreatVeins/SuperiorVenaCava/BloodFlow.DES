@@ -1,0 +1,100 @@
+HumMod / BloodFlow
+
+Created : 2012-02-02
+Revised : 2012-02-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structurename> SuperiorVenaCava </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 17.4 </high>
+   <wide> 30.0 </wide>
+   <title> Blood Flow </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> TotalFlow </name>
+   <format><integer/></format>
+   <label> Total Flow </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TotalFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 1000 </min><max> 2000 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> BoneFlow </name>
+   <format><integer/></format>
+   <label> Bone </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> BrainFlow </name>
+   <format><integer/></format>
+   <label> Brain </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> FatFlow </name>
+   <format><integer/></format>
+   <label> Fat </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 1.0 </col>
+   <name> OtherTissueFlow </name>
+   <format><integer/></format>
+   <label> Other Tissue </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 1.0 </col>
+   <name> RespiratoryMuscleFlow </name>
+   <format><integer/></format>
+   <label> Respiratory Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.8 </row><col> 1.0 </col>
+   <name> SkeletalMuscleFlow </name>
+   <format><integer/></format>
+   <label> Skeletal Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 1.0 </col>
+   <name> SkinFlow </name>
+   <format><integer/></format>
+   <label> Skin </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

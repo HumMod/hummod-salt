@@ -1,0 +1,61 @@
+HumMod / BladderChloride
+
+Created : 16-Mar-08
+Revised : 2012-10-31
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BladderChloride </name>
+<variables>
+
+<var><name> [Cl-] </name></var>
+<var><name> [Cl-(mEq/L)] </name></var>
+
+<constant><name> InitialConc </name><val> 0.0355 </val></constant>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+  <def><name> InitialMass </name><val> InitialConc * BladderVolume.InitialVolume </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <def><name> Change </name><val> CollectingDuct_Cl.Outflow </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+  <def><name> [Cl-] </name><val> Mass / BladderVolume.Mass </val></def>
+  <def><name> [Cl-(mEq/L)] </name><val> 1000.0 * [Cl-] </val></def>
+
+</block>
+
+<block><name> Void </name>
+
+  <def><name> Mass </name><val> Mass - ( BladderVolume.VolumeVoid * [Cl-] ) </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

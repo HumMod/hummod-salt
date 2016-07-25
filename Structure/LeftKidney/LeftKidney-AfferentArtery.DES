@@ -1,0 +1,399 @@
+HumMod / LeftKidney-AfferentArtery DES
+
+Created : 16-Nov-04
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftKidney-AfferentArtery </name>
+
+<variables>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<constant><name> Conductance(/G) </name><val> 0.080883 </val></constant>.08883
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<var><name> TGFEffect </name></var>
+<var><name> SympEffect </name></var>
+<var><name> MyogenicEffect </name></var>
+<var><name> ANPEffect </name></var>
+
+<var><name> PressureGradient </name></var>
+<var><name> BloodFlow </name></var>
+<var><name> Resistance </name></var>
+
+<parm><name> TGF_ATarget </name><val> 0.45 </val></parm>
+<parm><name> TGF_mTarget </name><val> 9 </val></parm>-
+<parm><name> TGF_STarget </name><val> 0.7 </val></parm>
+<parm><name> TGF_BTarget </name><val> 0 </val></parm>.
+<parm><name> TGF_A1Target </name><val> 3.8 </val></parm>
+<parm><name> TGF_m1Target </name><val> 2 </val></parm>-
+<parm><name> TGF_S1Target </name><val> 0.54 </val></parm>
+<parm><name> TGF_B1Target </name><val> 0.14 </val></parm>.
+
+<parm><name> Symp_ATarget </name><val> 1.1 </val></parm>
+<parm><name> Symp_mTarget </name><val> -3 </val></parm>
+<parm><name> Symp_STarget </name><val> 1.85 </val></parm>
+<parm><name> Symp_BTarget </name><val> 0.1 </val></parm>
+
+<parm><name> Myo_ATarget </name><val> 0.48 </val></parm>
+<parm><name> Myo_mTarget </name><val> -2.8 </val></parm>
+<parm><name> Myo_STarget </name><val> 22 </val></parm>
+<parm><name> Myo_BTarget </name><val> 0.72 </val></parm>
+
+<parm><name> ANP_ATarget </name><val> 2.85 </val></parm>
+<parm><name> ANP_mTarget </name><val> 2.7 </val></parm>
+<parm><name> ANP_STarget </name><val> 136 </val></parm>
+<parm><name> ANP_BTarget </name><val> 0.984 </val></parm>
+
+
+</variables>
+
+
+<equations>
+
+<diffeq>
+  <name> TGF_A </name>
+  <integralname> TGF_A </integralname>
+  <initialval> 0.45 </initialval>
+  <dervname> dTGFA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_m </name>
+  <integralname> TGF_m </integralname>
+  <initialval> 9 </initialval>
+  <dervname> dTGFm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_S </name>
+  <integralname> TGF_S </integralname>
+  <initialval> 0.7 </initialval>
+  <dervname> dTGFS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_A1 </name>
+  <integralname> TGF_A1 </integralname>
+  <initialval> 3.8 </initialval>
+  <dervname> dTGFA1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_m1 </name>
+  <integralname> TGF_m1 </integralname>
+  <initialval> 2 </initialval>
+  <dervname> dTGFm1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_S1 </name>
+  <integralname> TGF_S1 </integralname>
+  <initialval> 0.54 </initialval>
+  <dervname> dTGFS1 </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> TGF_B1 </name>
+  <integralname> TGF_B1 </integralname>
+  <initialval> 0.14 </initialval>
+  <dervname> dTGFB1 </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+--------------------------------------
+
+
+<diffeq>
+  <name> Symp_A </name>
+  <integralname> Symp_A </integralname>
+  <initialval> 1.1 </initialval>
+  <dervname> dSympA </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symp_m </name>
+  <integralname> Symp_m </integralname>
+  <initialval> -3 </initialval>
+  <dervname> dSympm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symp_S </name>
+  <integralname> Symp_S </integralname>
+  <initialval> 1.85 </initialval>
+  <dervname> dSympS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Symp_B </name>
+  <integralname> Symp_B </integralname>
+  <initialval> 0.1 </initialval>
+  <dervname> dSympB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+-----------------------------------------------------
+
+<diffeq>
+  <name> Myo_A </name>
+  <integralname> Myo_A </integralname>
+  <initialval> 0.48 </initialval>
+  <dervname> dMyoA </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Myo_m </name>
+  <integralname> Myo_m </integralname>
+  <initialval> -2.8 </initialval>
+  <dervname> dMyom </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Myo_S </name>
+  <integralname> Myo_S </integralname>
+  <initialval> 22 </initialval>
+  <dervname> dMyoS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Myo_B </name>
+  <integralname> Myo_B </integralname>
+  <initialval> 0.72 </initialval>
+  <dervname> dMyoB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+-----------------------------------------------------
+
+<diffeq>
+  <name> ANP_A </name>
+  <integralname> ANP_A </integralname>
+  <initialval> 2.85 </initialval>
+  <dervname> dANPA </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_m </name>
+  <integralname> ANP_m </integralname>
+  <initialval> 2.7 </initialval>
+  <dervname> dANPm </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_S </name>
+  <integralname> ANP_S </integralname>
+  <initialval> 136 </initialval>
+  <dervname> dANPS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_B </name>
+  <integralname> ANP_B </integralname>
+  <initialval> 0.984 </initialval>
+  <dervname> dANPB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+</equations>
+
+
+
+<functions>
+
+<curve>
+  <name> ANPEffect </name>
+  <point><x> 0.0 </x><y> 0.9 </y><slope> 0.0 </slope></point>
+  <point><x> 20 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 200 </x><y> 3 </y><slope> 0.0 </slope></point>3
+</curve>
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 4 </y><slope> 0.0 </slope></point>8
+  <point><x> 1. </x><y> 1.0 </y><slope> -1 </slope></point>
+  <point><x> 3.0 </x><y> 0.35 </y><slope> 0.0 </slope></point>
+</curve>
+
+<!-- 
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 4 </y><slope> 0.0 </slope></point>
+  <point><x> 0.5 </x><y> 4 </y><slope> 0 </slope></point>0
+  <point><x> 1. </x><y> 1.0 </y><slope> -0.55 </slope></point>
+  <point><x> 3.0 </x><y> 0.35 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> TGFEffect </name>
+  <point><x> 0.0 </x><y> 1.75 </y><slope> 0.0 </slope></point>
+  <point><x> 1. </x><y> 1.0 </y><slope> -0.55 </slope></point>
+  <point><x> 3.0 </x><y> 0.35 </y><slope> 0.0 </slope></point>
+</curve>
+ -->
+
+<curve>
+  <name> SympEffect </name>
+  <point><x> 0.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+    <point><x> 3.0 </x><y> 0.3 </y><slope> 0.0 </slope></point><!-- 3, 0.3 0  -->
+</curve>
+
+<curve>
+  <name> MyogenicEffect </name>
+  <point><x> -20.0 </x><y> 1.2 </y><slope> 0.0 </slope></point>
+  <point><x>   0.0 </x><y> 1.0 </y><slope> -0.02 </slope></point>
+  <point><x>  20.0 </x><y> 0.8 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * LeftKidney-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+<def><name> dTGFA </name><val> 0.05 * ( TGF_ATarget - TGF_A ) </val></def>
+<def><name> dTGFm </name><val> 0.05 * ( TGF_mTarget - TGF_m ) </val></def>
+<def><name> dTGFS </name><val> 0.05 * ( TGF_STarget - TGF_S ) </val></def>
+
+<def><name> dTGFA1 </name><val> 0.05 * ( TGF_A1Target - TGF_A1 ) </val></def>
+<def><name> dTGFm1 </name><val> 0.05 * ( TGF_m1Target - TGF_m1 ) </val></def>
+<def><name> dTGFS1 </name><val> 0.05 * ( TGF_S1Target - TGF_S1 ) </val></def>
+<def><name> dTGFB1 </name><val> 0.05 * ( TGF_B1Target - TGF_B1 ) </val></def>
+
+<def><name> dSympA </name><val> 0.05 * ( Symp_ATarget - Symp_A ) </val></def>
+<def><name> dSympm </name><val> 0.05 * ( Symp_mTarget - Symp_m ) </val></def>
+<def><name> dSympS </name><val> 0.05 * ( Symp_STarget - Symp_S ) </val></def>
+<def><name> dSympB </name><val> 0.05 * ( Symp_BTarget - Symp_B ) </val></def>
+
+<def><name> dMyoA </name><val> 0.05 * ( Myo_ATarget - Myo_A ) </val></def>
+<def><name> dMyom </name><val> 0.05 * ( Myo_mTarget - Myo_m ) </val></def>
+<def><name> dMyoS </name><val> 0.05 * ( Myo_STarget - Myo_S ) </val></def>
+<def><name> dMyoB </name><val> 0.05 * ( Myo_BTarget - Myo_B ) </val></def>
+
+<def><name> dANPA </name><val> 0.05 * ( ANP_ATarget - ANP_A ) </val></def>
+<def><name> dANPm </name><val> 0.05 * ( ANP_mTarget - ANP_m ) </val></def>
+<def><name> dANPS </name><val> 0.05 * ( ANP_STarget - ANP_S ) </val></def>
+<def><name> dANPB </name><val> 0.05 * ( ANP_BTarget - ANP_B ) </val></def>
+
+----------------------------
+
+<!--
+
+<def><name> SympEffect </name><val> SympEffect [ LeftKidney-AlphaReceptors.Activity ] </val></def>
+<def><name> ANPEffect </name><val> ANPEffect [ ANPPool.[ANP] ] </val></def>
+<def><name> MyogenicEffect </name><val> ( Myo_A * ( ( ( LeftKidney-MyogenicDelay.PressureChange + 20 ) ^ Myo_m ) / ( ( ( LeftKidney-MyogenicDelay.PressureChange + 20 ) ^ Myo_m ) + ( Myo_S ^ Myo_m ) ) ) ) + Myo_B  </val></def>
+<def><name> TGFEffect </name><val> TGFEffect [ LeftTGF-Vascular.Signal ] </val></def>
+-->
+
+
+<def><name> MyogenicEffect </name><val> MyogenicEffect [ LeftKidney-MyogenicDelay.PressureChange ] </val></def>
+
+
+
+<if><test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def>
+<name> TGFEffect </name><val> ( ( TGF_A * ( ( TGF_S ^ TGF_m ) / ( ( LeftTGF-Vascular.Signal ^ TGF_m ) + ( TGF_S ^ TGF_m ) ) ) ) + ( TGF_A1 * ( ( TGF_S1 ^ TGF_m1 ) / ( ( LeftTGF-Vascular.Signal ^ TGF_m1 ) + ( TGF_S1 ^ TGF_m1 ) ) ) + TGF_B1 ) ) MAX 0.35 </val></def>
+</true>
+<false>
+<def>
+  <name> TGFEffect </name>
+  <val> 1 </val>
+</def>
+</false>
+</if>
+
+<def><name> SympEffect </name><val> ( Symp_A * ( ( LeftKidney-AlphaReceptors.Activity ^ Symp_m ) / ( ( LeftKidney-AlphaReceptors.Activity ^ Symp_m ) + ( Symp_S ^ Symp_m ) ) ) ) + Symp_B  </val></def>
+
+<def><name> ANPEffect </name><val> ( ANP_A * ( ( ANPPool.[ANP] ^ ANP_m ) / ( ( ANPPool.[ANP] ^ ANP_m ) + ( ANP_S ^ ANP_m ) ) ) ) + ANP_B </val></def>
+
+<conditional><name> Conductance </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicConductance
+  * TGFEffect
+  * SympEffect
+  * MyogenicEffect * ANPEffect
+  * Anesthesia.VascularConductance
+  * Viscosity.ConductanceEffect * LeftKidney-NephronCount.Total(xNormal)
+</false>
+</conditional>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> PressureGradient </name>
+  <val> LeftKidney-ArcuateArtery.Pressure - LeftGlomerulusFiltrate.Pressure </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> PressureGradient * Conductance </val>
+</def>
+
+<if><test> LeftKidney-NephronCount.NumFiltering GT 0 </test>
+<true>
+<def>
+  <name> Resistance </name>
+  <val> 1 / Conductance </val>
+</def>
+</true>
+<false>
+<def>
+  <name> Resistance </name>
+  <val> 0 </val>
+</def>
+</false>
+</if>
+
+</block>
+
+</definitions>
+</structure>
+
+End

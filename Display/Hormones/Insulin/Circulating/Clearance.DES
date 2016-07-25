@@ -1,0 +1,110 @@
+HumMod / Clearance
+
+Created : 20-Jun-06
+Revised : 2012-07-04
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 18.4 </high>
+   <wide> 30.0 </wide>
+   <title> Clearance </title>
+
+<structurename> InsulinClearance </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total Clearance </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Rate </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 20 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.8 </row><col> 1 </col>
+   <name> InsulinReceptors-Liver.NetBinding </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Liver Net Binding </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 1 </col>
+   <name> InsulinReceptors-General.NetBinding </name>
+   <format><decimal> 1 </decimal></format>
+   <label> General Net Binding </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 1 </col>
+   <name> RenalDegradation </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Renal Degradation </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.8 </row><col> 3 </col>
+   <name> K </name>
+   <format><decimal> 5 </decimal></format>
+   <label> K </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 3 </col>
+   <name> InsulinPool.[Insulin] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Pool Insulin] </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.8 </row><col> 3 </col>
+   <name> GlomerulusFiltrate.GFR </name>
+   <format><decimal> 1 </decimal></format>
+   <label> GFR </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Insulin clearance is the sum of net liver binding, </line>
+  <line> net general binding and renal degration. The units </line>
+  <line> are mU/Min. </line>
+  <line>  </line>
+  <line> Net binding is binding minus unbinding. </line>
+  <line>  </line>
+  <line> Renal degration = K * [Pool Insulin] * GFR  </line>
+  <line>  </line>
+  <line> Typical values are </line>
+  <line>  </line>
+  <line> Total = 17.0 </line>
+  <line>  </line>
+  <line> Liver = 13.5 </line>
+  <line> General = 2.0 </line>
+  <line> Kidney = 1.5 </line>
+</infobutton>
+
+</groupbox>
+
+End

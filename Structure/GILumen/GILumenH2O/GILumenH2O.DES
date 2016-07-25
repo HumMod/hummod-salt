@@ -1,0 +1,157 @@
+HumMod / GILumenVolume
+
+Created : 05-Jun-06
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<structure><name> GILumenH2O </name>
+
+<variables>
+
+<var><name> InitialMass </name></var>
+<var><name> Mass(L) </name></var>
+
+<var><name> Intake </name></var>
+<var><name> IntakeDiet </name></var>
+<var><name> IntakeLoading </name></var>
+
+
+<var><name> Vomitus </name></var>
+<var><name> Diarrhea </name></var>
+
+<var><name> [OsmNa] </name></var>
+<var><name> [OsmK] </name></var>
+<var><name> [Fiber] </name></var>
+<var><name> [Osm] </name></var>
+
+<parm><name> Fiber </name><val> 60.0 </val></parm>43
+
+<parm><name> Perm </name><val> 150.0 </val></parm> <!-- 150 -->
+
+
+<parm><name> ResidualVolume </name><val> 50.0 </val></parm>
+<var><name> IsEmpty </name><val> FALSE </val></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 10.0 </errorlim>
+</diffeq>
+
+<stabledelay>
+  <name> Absorption </name>
+  <outputname> Absorption </outputname>
+  <initialval> 0 </initialval>
+  <inputname> Steady-State </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.01 </errorlim>
+ <dxmaxname> DxMax </dxmaxname>
+</stabledelay>
+
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> Conc </name>
+
+<def><name> Mass(L) </name><val> Mass / 1000.0 </val></def>
+
+</block>
+
+<block><name> TestIsEmpty </name>
+
+<conditional>
+  <name> IsEmpty </name>
+  <test> Mass LE ResidualVolume </test>
+  <true> TRUE </true>
+  <false> FALSE </false>
+</conditional>
+
+</block>
+
+<block><name> Dervs </name>
+
+
+<def><name> K </name><val> 0.1 </val></def>
+<def><name> DxMax </name><val> 0.2 </val></def>
+
+<def>
+  <name> [OsmNa] </name>
+  <val> 2 * GILumenSodium.[Na+] </val> <!-- x2 -->
+
+</def>
+
+<def>
+  <name> [OsmK] </name>
+  <val> 2 * GILumenPotassium.[K+] </val>  <!-- x2 -->
+
+</def>
+
+<def>
+  <name> [Fiber]  </name>
+  <val> Fiber / Mass </val>
+</def>
+
+<def>
+  <name> [Osm] </name>
+  <val> [OsmNa] + [OsmK] + [Fiber] </val>
+</def>
+
+<def>
+  <name> IntakeDiet </name>
+  <val> DietIntakeH2O.Rate(mL/Min) </val>
+</def>
+
+<def>
+  <name> IntakeLoading </name>
+  <val> OralH2OGlucoseLoad.H2ORate * OralH2OGlucoseLoad.Switch </val>
+</def>
+
+<def>
+  <name> Intake </name>
+  <val> IntakeDiet + IntakeLoading </val>
+</def>
+
+<conditional>
+  <name> Steady-State </name>Absorption
+  <test> IsEmpty </test>
+  <true> 0 </true>
+  <false> Perm * ( OsmBody.CellWall - [Osm] ) </false>
+</conditional>
+
+<def>
+  <name> Vomitus </name>
+  <val> GILumenVomitus.H2OLoss </val>
+</def>
+
+<def>
+  <name> Diarrhea </name>
+  <val> GILumenDiarrhea.H2OLoss </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Intake - Absorption - Vomitus - Diarrhea </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

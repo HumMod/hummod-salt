@@ -1,0 +1,37 @@
+HumMod / Intake
+
+Created : 28-Jun-06
+Last Modified : 2011-07-27
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<panel><name> Heat-Movement-Intake </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Heat </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Heat Movement | Oral Intake </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Heat\Movement\OralIntake\ ?>
+
+<?include Summary.DES ?>
+
+</panel>
+
+End

@@ -1,0 +1,186 @@
+HumMod / Composition
+
+Created : 16-Mar-08
+Revised : 2013-02-05
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 24.6 </high>
+   <wide> 30.0 </wide>
+   <title> Composition </title>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> BladderChloride.[Cl-(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Cl-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> BladderCreatinine.[Creatinine(mG/dL)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Creatinine] </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.4 </row><col> 1.0 </col>
+  <name> BladderGlucose.[Glucose(mMol/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glucose] </label>
+</showvalue>
+
+<showvalue>
+  <row> 4.4 </row><col> 1.0 </col>
+  <name> BladderBicarbonate.[HCO3-(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [HCO3-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.4 </row><col> 1.0 </col>
+  <name> BladderPotassium.[K+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.4 </row><col> 1.0 </col>
+  <name> BladderKetoacid.[KA-(mMol/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [KA-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 7.4 </row><col> 1.0 </col>
+  <name> BladderSodium.[Na+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Na+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 8.4 </row><col> 1.0 </col>
+  <name> BladderAmmonia.[NH4+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [NH4+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.4 </row><col> 1.0 </col>
+  <name> BladderPhosphate.[PO4--(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [PO4--] </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.4 </row><col> 1.0 </col>
+  <name> BladderProtein.[Protein(G/mL)] </name>
+  <format><decimal> 2 </decimal></format>
+  <label> [Protein] </label>
+</showvalue>
+
+<showvalue>
+  <row> 11.4 </row><col> 1.0 </col>
+  <name> BladderSulphate.[SO4--(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [SO4--] </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.4 </row><col> 1.0 </col>
+  <name> BladderUrea.[Urea(mG/dL)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Urea] </label>
+</showvalue>
+
+<structurename> BladderPh </structurename>
+
+<showvalue>
+  <row> 13.8 </row><col> 1.0 </col>
+  <name> StrongCations </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Strong Cations </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.8 </row><col> 3.0 </col>
+  <name> BladderSodium.[Na+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Na+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.8 </row><col> 3.0 </col>
+  <name> BladderPotassium.[K+(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [K+] </label>
+</showvalue>
+
+<showvalue>
+  <row> 17.2 </row><col> 1.0 </col>
+  <name> StrongAnions </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Strong Anions </label>
+</showvalue>
+
+<showvalue>
+  <row> 18.2 </row><col> 3.0 </col>
+  <name> BladderChloride.[Cl-(mEq/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Cl-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 19.2 </row><col> 3.0 </col>
+  <name> BladderKetoacid.[KA-(mMol/L)] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [KA-] </label>
+</showvalue>
+
+<showvalue>
+  <row> 20.6 </row><col> 1.0 </col>
+  <name> SID </name>
+  <format><decimal> 1 </decimal></format>
+  <label> SID </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.0 </row><col> 1.0 </col>
+  <name> pH </name>
+  <format><decimal> 2 </decimal></format>
+  <label> pH </label>
+</showvalue>
+
+<showvalue>
+  <row> 23.0 </row><col> 1.0 </col>
+  <name> [H+] </name>
+  <format><integer/></format>
+  <label> [H+] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26 </col>
+  <line> Typical Values And Units </line>
+  <line>  </line>
+  <line> [Cl-] = 35.5 mEq/L </line>
+  <line> [Creatinine] = 34.7 mG/dL </line>
+  <line> [Glucose] = 0.0 mMol/L </line>
+  <line> [HCO3-] = 3.0 mEq/L </line>
+  <line> [K+] = 13.5 mEq/L </line>
+  <line> [KA-] = 0.0 mMol/L </line>
+  <line> [Na+] = 35.1 mEq/L </line>
+  <line> [NH4+] = 6.5 mEq/L </line>
+  <line> [PO4--] = 6.2 mEq/L </line>
+  <line> [Protein] = 0.0 G/mL </line>
+  <line> [SO4--] = 10.3 mEq/L </line>
+  <line> [Urea] = 646 mG/dL </line>
+</infobutton>
+
+</groupbox>
+
+End

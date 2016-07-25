@@ -1,0 +1,43 @@
+HumMod / Gender
+
+Created : 22-Nov-08
+Revised : 2012-03-21
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Gender </name>
+
+<variables>
+
+<var><name> Index </name></var>
+
+<var><name> IsMale </name></var>
+<var><name> IsFemale </name></var>
+
+<constant><name> IS_MALE </name><val> 0 </val></constant>
+<constant><name> IS_FEMALE </name><val> 1 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<if><test> Index EQ IS_MALE </test>
+<true>
+<def><name> IsMale </name><val> TRUE </val></def>
+<def><name> IsFemale </name><val> FALSE </val></def>
+</true>
+<false>
+<def><name> IsMale </name><val> FALSE </val></def>
+<def><name> IsFemale </name><val> TRUE </val></def>
+</false>
+</if>
+
+</block>
+
+</definitions>
+</structure>
+
+End

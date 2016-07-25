@@ -1,0 +1,108 @@
+HumMod / Box
+
+Created : 2013-02-17
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 19.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> RBCVol </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Vol </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Volume </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Vol </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 2300 </min><max> 2500 </max><inc> 100 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 10.0 </row><col> 1.0 </col>
+   <name> Change </name>
+   <format><decimal> 5 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.4 </row><col> 1.0 </col>
+   <name> Gain </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.4 </row><col> 3 </col>
+   <name> RBCSecretion.Rate </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Secretion </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.4 </row><col> 3 </col>
+   <name> Transfusion.Rate </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Transfusion </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.8 </row><col> 1.0 </col>
+   <name> Loss </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 3 </col>
+   <name> RBCClearance.Rate </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Disposal </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.8 </row><col> 3 </col>
+   <name> Hemorrhage.Rate </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Hemorrhage </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.8 </row><col> 3 </col>
+   <name> Pericardium-Hemorrhage.RBCFlow </name>
+   <format><decimal> 4 </decimal></format>
+   <label> Pericardial Bleed </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> A typical red cell volume is 2400 mL. </line>
+</infobutton>
+
+</groupbox>
+
+End

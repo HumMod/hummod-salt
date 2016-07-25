@@ -1,0 +1,33 @@
+HumMod / Organs-AlphaReceptors
+
+Created : 02-Apr-08
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Organs-AlphaReceptors </name>
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> Bone-AlphaReceptors.Calc </call>
+  <call> Fat-AlphaReceptors.Calc </call>
+  <call> GITract-AlphaReceptors.Calc </call>
+  <call> LeftKidney-AlphaReceptors.Calc </call>
+  <call> RightKidney-AlphaReceptors.Calc </call>
+  <call> LeftHeart-AlphaReceptors.Calc </call>
+  <call> Liver-AlphaReceptors.Calc </call>
+  <call> OtherTissue-AlphaReceptors.Calc </call>
+  <call> RespiratoryMuscle-AlphaReceptors.Calc </call>
+  <call> RightHeart-AlphaReceptors.Calc </call>
+  <call> SkeletalMuscle-AlphaReceptors.Calc </call>
+  <call> Skin-AlphaReceptors.Calc </call>
+
+  <call> BVSeqAlphaReceptors.Calc </call>
+</block>
+
+</definitions>
+</structure>
+
+End

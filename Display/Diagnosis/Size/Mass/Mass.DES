@@ -1,0 +1,214 @@
+HumMod / Mass
+
+Created : 2012-01-29
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> Size-Mass </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Size | Mass </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Weight </structurename>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> Weight(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Weight (kG) </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Weight(kG) </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 70 </min><max> 80 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> Weight(Lb) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Weight (Lbs) </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> OrganMass </name>
+   <format> <integer/> </format>
+   <label> Organs </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.2 </row><col> 3.0 </col>
+   <name> Bone-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Bone </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.2 </row><col> 3.0 </col>
+   <name> Brain-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Brain </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.2 </row><col> 3.0 </col>
+   <name> Fat-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Fat </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 3.0 </col>
+   <name> GITract-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> GI Tract </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.2 </row><col> 3.0 </col>
+   <name> Kidney-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Kidney </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.2 </row><col> 3.0 </col>
+   <name> LeftHeart-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Left Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.2 </row><col> 3.0 </col>
+   <name> Liver-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Liver </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.2 </row><col> 3.0 </col>
+   <name> OtherTissue-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Other Tissue </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.2 </row><col> 3.0 </col>
+   <name> RespiratoryMuscle-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Respiratory Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 22.2 </row><col> 3.0 </col>
+   <name> RightHeart-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Right Heart </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.2 </row><col> 3.0 </col>
+   <name> SkeletalMuscle-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Skeletal Muscle </label>
+</showvalue>
+
+<showvalue>
+   <row> 24.2 </row><col> 3.0 </col>
+   <name> Skin-Size.Mass </name>
+   <format> <integer/> </format>
+   <label> Skin </label>
+</showvalue>
+
+<showvalue>
+   <row> 25.6 </row><col> 1.0 </col>
+   <name> Weight-Fluids.Total </name>
+   <format> <integer/> </format>
+   <label> Fluids </label>
+</showvalue>
+
+<showvalue>
+   <row> 26.6 </row><col> 3.0 </col>
+   <name> Weight-Fluids.Blood </name>
+   <format> <integer/> </format>
+   <label> Blood </label>
+</showvalue>
+
+<showvalue>
+   <row> 27.6 </row><col> 3.0 </col>
+   <name> ExcessLungWater.Volume </name>
+   <format> <integer/> </format>
+   <label> Excess Lung H2O </label>
+</showvalue>
+
+<showvalue>
+   <row> 28.6 </row><col> 3.0 </col>
+   <name> PeritoneumSpace.Volume </name>
+   <format> <integer/> </format>
+   <label> Peritoneum </label>
+</showvalue>
+
+<showvalue>
+   <row> 29.6 </row><col> 3.0 </col>
+   <name> GILumenVolume.Mass </name>
+   <format> <integer/> </format>
+   <label> GI Lumen </label>
+</showvalue>
+
+<showvalue>
+   <row> 31.0 </row><col> 1.0 </col>
+   <name> Weight.Core(kG) </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Core (kG) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 27.0 </col>
+
+  <line> NORMAL VALUES AND UNITS </line>
+  <line>  </line>
+  <line> Weight = 76 kG </line>
+  <line> Weight (Lbs) = 167 Lbs </line>
+</infobutton>
+
+End
+
+</panel>
+
+End

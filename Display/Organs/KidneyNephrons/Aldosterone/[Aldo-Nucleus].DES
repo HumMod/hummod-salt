@@ -1,0 +1,161 @@
+HumMod / [Aldo-Nucleus]
+
+Created : 2013-03-17
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman 
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 17.8 </high>
+   <wide> 30.0 </wide>
+   <title> Left [Aldo-Nucleus] </title>
+
+<structurename> LeftNephronAldo </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)-Nucleus] </name>
+   <format><integer/></format>
+   <label> [Aldo (pMol/L) Nucleus] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Aldo(pMol/L)-Nucleus] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 400 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 11.8 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 100 </reps><stepsize> 10 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<repeatlist>
+  <name> Tau </name>
+  <repeat><reps> 100 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 14.8 </row><col> 1.0 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Tau </label>
+</slidebar>
+
+<showvalue>
+   <row> 16.2 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)-Bound] </name>
+   <format><integer/></format>
+   <label> [Aldo(pMol/L)-Bound] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+  <line> A typical value for the time delay (Tau) is 3 hours. </line>
+</infobutton>
+
+</groupbox>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 17.8 </high>
+   <wide> 30.0 </wide>
+   <title> Right [Aldo-Nucleus] </title>
+
+<structurename> RightNephronAldo </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)-Nucleus] </name>
+   <format><integer/></format>
+   <label> [Aldo (pMol/L) Nucleus] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Aldo(pMol/L)-Nucleus] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 400 </max><inc> 100 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 11.8 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 100 </reps><stepsize> 10 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 13.2 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<repeatlist>
+  <name> Tau </name>
+  <repeat><reps> 100 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 14.8 </row><col> 1.0 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Tau </label>
+</slidebar>
+
+<showvalue>
+   <row> 16.2 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)-Bound] </name>
+   <format><integer/></format>
+   <label> [Aldo(pMol/L)-Bound] </label>
+</showvalue>
+
+</groupbox>
+End

@@ -1,0 +1,57 @@
+HumMod | GlucagonEffect
+
+Created : 2012-06-19
+Revised : 2013-01-30
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 30.0 </wide>
+   <title> Glucagon Effect </title>
+
+<structurename> LiverMetabolism_Ketoacids </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> GlucagonEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> PortalVein-Glucagon.[Glucagon] </name>
+    <label> [Glucagon] </label>
+    <scale><min> 0 </min><max> 800 </max></scale>
+  </xaxis>
+  <yaxis>
+    <label> Effect </label>
+    <linecolor> BLUE </linecolor>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </yaxis>
+  <curvename> GlucagonEffect </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> PortalVein-Glucagon.[Glucagon] </name>
+  <format><decimal> 1 </decimal></format>
+  <label> [Glucagon] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Portal vein [Glucagon] is greater than  </line>
+  <line> peripheral pool [Glucagon]. </line>
+</infobutton>
+
+</groupbox>
+
+End

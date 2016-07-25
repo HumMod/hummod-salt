@@ -1,0 +1,37 @@
+HumMod / ANP
+
+Created : 09-Apr-08
+Revised : 2013-02-02
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<panel><name> NephronHormones-ANP </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Nephron </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Nephron Hormones | ANP </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\KidneyNephrons\ANP\ ?>
+
+<?include RenalTubule.DES ?>
+
+</panel>
+
+End

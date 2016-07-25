@@ -1,0 +1,21 @@
+HumMod / Context.REF
+
+Created : 2012-03-10
+Revised : 2012-03-22
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+Context sets the model's traits, which then
+scale the model.
+
+The context code is executed when the model
+is loaded (on restart) and any other time that
+a restart is requested. The call goes to
+Context.Calc.
+
+Traits are parameters. When any have a value
+change, they call Context.Calc and a complete
+scaling is again undertaken.
+
+End

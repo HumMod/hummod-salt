@@ -1,0 +1,73 @@
+HumMod / FurosemideKidney
+
+Created : 05-Jun-06
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> MorphineLiver </name>
+
+<variables>
+
+<var>
+  <name> Loss </name>
+</var>
+
+<var>
+  <name> LossToM6G </name>
+</var>
+
+<var>
+  <name> OtherLoss </name>
+</var>
+
+<var>
+  <name> TransferToM6G </name>
+</var>
+
+<parm>
+  <name> GlucK </name>
+  <val> 1. </val>
+</parm>
+
+<parm> 
+  <name> GlucM6G </name>
+  <val> 0.167 </val>
+</parm>
+
+<constant>
+  <name> K </name>
+  <val> .15 </val>
+</constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> LossToM6G </name> 
+  <val> GlucK * MorphinePool.[Morphine] * HepaticVein.PlasmaFlow / 1000 </val>
+</def>
+
+<def>
+  <name> OtherLoss </name> 
+  <val> K * MorphinePool.[Morphine] * HepaticVein.PlasmaFlow / 1000 </val>
+</def>
+
+<def><name>Loss </name><val> LossToM6G + OtherLoss </val></def>
+
+<def>
+  <name> TransferToM6G </name> 
+  <val> Loss * MorphinePool.transfer </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

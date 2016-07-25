@@ -1,0 +1,202 @@
+HumMod / Summary
+
+Created : 13-Mar-08
+Revised : 2012-02-13
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 36.8 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<structurename> GILumenHeat </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> DegF </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Temp (F) </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> DegF </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 90 </min><max> 100 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> DegC </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Temp (C) </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.8 </row><col> 1.0 </col>
+  <name> DegK </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Temp (K) </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 1.0 </col>
+  <name> Mass </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Heat </label>
+</showvalue>
+
+<showgraph>
+  <row> 13.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 200 </min><max> 400 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 20.6 </row><col> 1.0 </col>
+  <name> Change </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Change </label>
+</showvalue>
+
+<showvalue>
+  <row> 22.0 </row><col> 1.0 </col>
+  <name> Intake </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Oral Intake </label>
+</showvalue>
+
+<showvalue>
+  <row> 23.0 </row><col> 3.0 </col>
+  <name> IntakeFood </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Food </label>
+</showvalue>
+
+<showvalue>
+  <row> 24.0 </row><col> 3.0 </col>
+  <name> IntakeH2O </name>
+  <format><decimal> 3 </decimal></format>
+  <label> H2O </label>
+</showvalue>
+
+<showvalue>
+  <row> 25.0 </row><col> 5.0 </col>
+  <name> IntakeH2ODiet </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Diet </label>
+</showvalue>
+
+<showvalue>
+  <row> 26.0 </row><col> 5.0 </col>
+  <name> IntakeH2OLoading </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Loading </label>
+</showvalue>
+
+<showvalue>
+  <row> 27.4 </row><col> 1.0 </col>
+  <name> Absorption </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Absorption </label>
+</showvalue>
+
+<showvalue>
+  <row> 28.4 </row><col> 3.0 </col>
+  <name> Conduction </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Conduction </label>
+</showvalue>
+
+<showvalue>
+  <row> 29.4 </row><col> 3.0 </col>
+  <name> Convection </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Convection </label>
+</showvalue>
+
+<showvalue>
+  <row> 30.4 </row><col> 5.0 </col>
+  <name> ConvectionFood </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Food </label>
+</showvalue>
+
+<showvalue>
+  <row> 31.4 </row><col> 5.0 </col>
+  <name> ConvectionH2O </name>
+  <format><decimal> 3 </decimal></format>
+  <label> H2O </label>
+</showvalue>
+
+<showvalue>
+  <row> 32.8 </row><col> 1.0 </col>
+  <name> Vomitus </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Vomitus Loss </label>
+</showvalue>
+
+<showvalue>
+  <row> 33.8 </row><col> 1.0 </col>
+  <name> Diarrhea </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Diarrhea Loss </label>
+</showvalue>
+
+<repeatlist>
+  <name> Cond </name>
+  <repeat><reps> 20 </reps><stepsize>  0.001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 35.2 </row><col> 1.0 </col>
+  <name> Cond </name>
+  <listname> Cond </listname>
+  <label> Cond </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Lumen heat content is typically 310 kCal. </line>
+  <line>  </line>
+  <line> Lumen temperature is around 97 deg F. </line>
+  <line>  </line>
+  <line> Cond is thermal conductance from lumen to core. </line>
+</infobutton>
+
+</groupbox>
+
+End

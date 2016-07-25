@@ -1,0 +1,15 @@
+HumMod / LungVolumes
+
+Created : 2012-07-11
+Revised : 2012-07-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<leaf>
+  <name> LungVolumes </name>
+  <label> Lung Volumes </label>
+  <parent> RESPIRATION </parent>
+</leaf>
+
+End

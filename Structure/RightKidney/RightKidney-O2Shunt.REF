@@ -1,0 +1,87 @@
+RightKidney-O2Shunt.REF
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+Welch at.al. (Chris Wilcox's lab) used groups of WKY and SHR
+rats and measured pO2.
+
+WKY
+
+Body Weight (G) : 280
+RightKidney Weight (G) : 1.10
+Arterial Pressure (mmHg) : 118
+Hgb (G/dL) : 15.6
+Aortic pO2 : 79 (Read from graph)
+Efferent Artery pO2 : 45
+Proximal Tubule pO2 : 39
+Distal Tubule pO2 : 40
+Outer Cortex pO2 : 42
+Deep Cortex pO2 : 31
+[Arterial O2] (uMol/mL) : 8.8
+[Venous O2] (uMol/mL) : 7.3
+
+SHR
+
+Body Weight (G) : 262
+RightKidney Weight (G) : 1.05
+Arterial Pressure (mmHg) : 152
+Hgb (G/dL) : 17.1
+Aortic pO2 : 81 (Read from graph)
+Efferent Artery pO2 : 41
+Proximal Tubule pO2 : 30
+Distal Tubule pO2 : 29
+Outer Cortex pO2 : 31
+Deep Cortex pO2 : 20
+[Arterial O2] (uMol/mL) : 9.8
+[Venous O2] (uMol/mL) : 6.9
+
+The dramatic fall in pO2 between aorta and efferent artery
+(79 to 45 and 81 to 41) indicates significant O2 shunting.
+
+Johannes et.al. created normovolemic hemodilution by replacing
+red cells with a colloid solution. Hematocrit decreased from
+45 to 23.
+                             Control  Anemic
+                             -------  ------
+Hematocrit (%)                 44.7    22.7
+Arterial Pressure (mHg)        124      104
+Central Venous Pressure (mmHg) 4.3      4.6
+Renal Blood Flow (mL/Min)      6.0      7.9
+Urine Flow (uL/Min)           12.9    137.8
+Cortical pO2                  70.9     37.0
+Medullary pO2                 53.4     28.5
+Venous pO2                    71.4     39.9
+RightKidney O2 Delivery (mL/Min)   1.39     0.84
+RightKidney O2 Use ((mL/Min)/G)    0.13     0.28
+
+This data is not a compelling argument for shunting, but venous
+pO2 is at or below cortical and medullary pO2 in both
+observations. Measurement of tissue and venous pO2's used
+different phosphorimeters.
+
+Values from HumMod.
+
+Arterial pO2 : 93.6
+[Arterial O2] (mL/mL) : 0.195
+Venous pO2 : 65.9
+[Venous O2] (mL/mL) : 0.174
+Renal Blood Flow : 1014
+Renal O2 Delivery (mL/Min) : 198
+Renal O2 Consumption (mL/Min) : 21.0
+Consumption % Delivered : 11
+Renal O2 Returned : 176
+
+References =====================================================
+
+Johannes, T. et.al. Acute decrease in renal microvascular pO2
+during acute normovolumic hemodilution. Amer. J. Physiol. Renal
+Physiol. 292:F796-F803, 2007.
+
+Welch, W.J. et.at. Nephron pO2 and renal ozygen usage in the
+hypertensive rat kidney. RightKidney Int. 59:230-237, 2001.
+
+End

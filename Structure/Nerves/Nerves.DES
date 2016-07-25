@@ -1,0 +1,32 @@
+HumMod / Nerves
+
+Created : 21-Oct-04
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\Nerves\ ?>
+
+<?include AdrenalNerve.DES ?>
+<?include Baroreflex.DES ?>
+<?include Chemoreceptors.DES ?>
+<?include ChemoreceptorAcclimation.DES ?>
+<?include ChemoreceptorsCNS.DES ?>
+<?include CNSTrophicFactor.DES ?>
+<?include CushingResponse.DES ?>
+<?include ExerciseSymps.DES ?>
+<?include Ganglia-Sympathetic.DES ?>
+<?include GlucoseReceptors.DES ?>
+<?include LowPressureReceptors.DES ?>
+<?include Mechanoreceptors.DES ?>
+<?include Mechanoreflex-Renal.DES ?>
+<?include MotorRadiation.DES ?>
+<?include Nucleus-ADH.DES ?>
+<?include Nucleus-CRF.DES ?>
+<?include Sympathetics.DES ?>
+<?include SystemicVeins-AlphaReceptors.DES ?>
+<?include SplanchnicVeins-BetaReceptors.DES ?>
+<?include VagusNerve.DES ?>
+
+End

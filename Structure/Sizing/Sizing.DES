@@ -1,0 +1,259 @@
+HumMod / Sizing
+
+Created : 2012-03-10
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\Sizing\ ?>
+
+<?include Sizing-Pressures.DES ?>
+<?include Sizing-OrganMass.DES ?>
+
+<?include Sizing-Composition-Bone.DES ?>
+<?include Sizing-Composition-Brain.DES ?>
+<?include Sizing-Composition-Fat.DES ?>
+<?include Sizing-Composition-LeftHeart.DES ?>
+<?include Sizing-Composition-Liver.DES ?>
+<?include Sizing-Composition-LeftKidney.DES ?>
+<?include Sizing-Composition-RightKidney.DES ?>
+<?include Sizing-Composition-GITract.DES ?>
+<?include Sizing-Composition-OtherTissue.DES ?>
+<?include Sizing-Composition-RespiratoryMuscle.DES ?>
+<?include Sizing-Composition-RightHeart.DES ?>
+<?include Sizing-Composition-SkeletalMuscle.DES ?>
+<?include Sizing-Composition-Skin.DES ?>
+
+<?include Sizing-BloodVolume.DES ?>
+<?include Sizing-Heat.DES ?>
+
+
+<?include Sizing-TissueH2O.DES ?>
+<?include Sizing-ExternalH2O.DES ?>
+<?include Sizing-BodyH2O.DES ?>
+<?include Sizing-ECFV.DES ?>
+<?include Sizing-ICFV.DES ?>
+<?include Sizing-InterstitialWater.DES ?>
+<?include Sizing-CellH2O.DES ?>
+
+<?include Sizing-SodiumPool.DES ?>
+<?include Sizing-PotassiumPool.DES ?>
+<?include Sizing-PotassiumCell.DES ?>
+<?include Sizing-ChloridePool.DES ?>
+<?include Sizing-LactatePool.DES ?>
+<?include Sizing-KetoacidPool.DES ?>
+<?include Sizing-SulfatePool.DES ?>
+<?include Sizing-PhosphatePool.DES ?>
+<?include Sizing-Glucose.DES ?>
+<?include Sizing-UreaPool.DES ?>
+<?include Sizing-UreaCell.DES ?>
+
+<?include Sizing-Osmoles-Total.DES ?>
+<?include Sizing-Osmoles-ECFV.DES ?>
+<?include Sizing-Osmoles-ICFV.DES ?>
+
+<?include Sizing-BloodFlow.DES ?>
+<?include Sizing-HeartChambers.DES ?>
+
+<?include Sizing-HeartPumping-Right-Diastole.DES ?>
+<?include Sizing-HeartPumping-Right-Systole.DES ?>
+<?include Sizing-HeartPumping-Right-ContractileProtein.DES ?>
+<?include Sizing-HeartPumping-Left-Diastole.DES ?>
+<?include Sizing-HeartPumping-Left-Systole.DES ?>
+<?include Sizing-HeartPumping-Left-ContractileProtein.DES ?>
+
+<?include Sizing-BloodVessels.DES ?>
+<?include Sizing-Arteries.DES ?>
+<?include Sizing-SystemicArteries.DES ?>
+
+<?include Sizing-Veins.DES ?>
+<?include Sizing-PeripheralVeins.DES ?>
+<?include Sizing-SplanchnicVeins.DES ?>
+<?include Sizing-RightAtrium.DES ?>
+
+<?include Sizing-Lungs.DES ?>
+<?include Sizing-PulmonaryArtery.DES ?>
+<?include Sizing-PulmonaryCapillaries.DES ?>
+<?include Sizing-PulmonaryVeins.DES ?>
+<?include Sizing-LeftAtrium.DES ?>
+
+<?include Sizing-O2.DES ?>
+
+<?include Sizing-Pericardium.DES ?>
+<?include Sizing-LowPressureReceptors.DES ?>
+
+<?include Size-ACTH.DES ?>
+<?include Size-ADH.DES ?>
+<?include Size-Aldosterone.DES ?>
+<?include Size-AminoAcid.DES ?>
+<?include Size-ANP.DES ?>
+<?include Size-Bladder.DES ?>
+<?include Size-BodySize.DES ?>
+<?include Size-Ca.DES ?>
+<?include Size-Calcitonin.DES ?>
+<?include Size-Cortisol.DES ?>
+<?include Size-Creatine.DES ?>
+<?include Size-Creatinine.DES ?>
+<?include Size-DietGoalNutrition.DES ?>
+<?include Size-Epinephrine.DES ?>
+<?include Size-EPO.DES ?>
+<?include Size-Estradiol.DES ?>
+<?include Size-FatSize.DES ?>
+<?include Size-FattyAcid.DES ?>
+<?include Size-FSH.DES ?>
+<?include Size-General.DES ?>
+<?include Size-Glucagon.DES ?>
+<?include Size-hCG.DES ?>
+<?include Size-Heat.DES ?>
+<?include Size-Inhibin.DES ?>
+<?include Size-Insulin.DES ?>
+<?include Size-InterstitialProtein.DES ?>
+<?include Size-Leptin.DES ?>
+<?include Size-LH.DES ?>
+<?include Size-Norepinephrine.DES ?>
+<?include Size-OrganCalories.DES ?>
+<?include Size-OrganCO2.DES ?>
+<?include Size-OrganConductance.DES ?>
+<?include Size-OrganH2Os.DES ?>
+<?include Size-OrganSize.DES ?>
+<?include Size-ParathyroidHormone.DES ?>
+<?include Size-PlasmaProtein.DES ?>
+<?include Size-Progesterone.DES ?>
+<?include Size-Renin.DES ?>
+<?include Size-SkeletalMuscleSize.DES ?>
+<?include Size-Testosterone.DES ?>
+<?include Size-ThyroidHormone.DES ?>
+<?include Size-Triglyceride.DES ?>
+<?include Size-VitaminD.DES ?>
+<?include Size-Weight.DES ?>
+
+<structure><name> Sizing </name>
+
+<definitions>
+
+<block><name> Calc </name>
+  <call> Sizing-Pressures.Calc </call>
+  <call> Sizing-OrganMass.Calc </call>
+
+  <call> Sizing-Composition-Bone.Calc </call>
+  <call> Sizing-Composition-Brain.Calc </call>
+  <call> Sizing-Composition-Fat.Calc </call>
+  <call> Sizing-Composition-GITract.Calc </call>
+  <call> Sizing-Composition-LeftKidney.Calc </call>
+  <call> Sizing-Composition-RightKidney.Calc </call>
+  <call> Sizing-Composition-LeftHeart.Calc </call>
+  <call> Sizing-Composition-Liver.Calc </call>
+  <call> Sizing-Composition-OtherTissue.Calc </call>
+  <call> Sizing-Composition-RespiratoryMuscle.Calc </call>
+  <call> Sizing-Composition-RightHeart.Calc </call>
+  <call> Sizing-Composition-SkeletalMuscle.Calc </call>
+  <call> Sizing-Composition-Skin.Calc </call>
+
+  <call> Sizing-BloodVolume.Calc </call>
+
+  <call> Sizing-TissueH2O.Calc </call>
+  <call> Sizing-ExternalH2O.Calc </call>
+  <call> Sizing-BodyH2O.Calc </call>
+  <call> Sizing-ECFV.Calc </call>
+  <call> Sizing-ICFV.Calc </call>
+  <call> Sizing-InterstitialWater.Calc </call>
+  <call> Sizing-CellH2O.Calc </call>
+
+  <call> Sizing-SodiumPool.Calc </call>
+  <call> Sizing-PotassiumPool.Calc </call>
+  <call> Sizing-PotassiumCell.Calc </call>
+  <call> Sizing-ChloridePool.Calc </call>
+  <call> Sizing-LactatePool.Calc </call>
+  <call> Sizing-KetoacidPool.Calc </call>
+  <call> Sizing-SulfatePool.Calc </call>
+  <call> Sizing-PhosphatePool.Calc </call>
+  <call> Sizing-Glucose.Calc </call>
+  <call> Sizing-UreaPool.Calc </call>
+  <call> Sizing-UreaCell.Calc </call>
+
+  <call> Sizing-Osmoles-Total.Calc </call>
+  <call> Sizing-Osmoles-ECFV.Calc </call>
+  <call> Sizing-Osmoles-ICFV.Calc </call>
+
+  <call> Sizing-BloodFlow.Calc </call>
+  <call> Sizing-HeartChambers.Calc </call>
+
+  <call> Sizing-HeartPumping-Right-Diastole.Calc </call>
+  <call> Sizing-HeartPumping-Right-Systole.Calc </call>
+  <call> Sizing-HeartPumping-Right-ContractileProtein.Calc </call>
+  <call> Sizing-HeartPumping-Left-Diastole.Calc </call>
+  <call> Sizing-HeartPumping-Left-Systole.Calc </call>
+  <call> Sizing-HeartPumping-Left-ContractileProtein.Calc </call>
+
+
+  <call> Size-Weight.Calc </call>
+
+<!--  <call> Size-OrganSize.Calc </call> -->
+  <call> Size-General.Calc </call>
+  <call> Size-BodySize.Calc </call>
+  <call> Sizing-Heat.Calc </call>
+
+  <call> Sizing-BloodVessels.Calc </call>
+
+  <call> Sizing-Arteries.Calc </call>
+  <call> Sizing-SystemicArteries.Calc </call>
+
+  <call> Sizing-Veins.Calc </call>
+  <call> Sizing-PeripheralVeins.Calc </call>
+  <call> Sizing-SplanchnicVeins.Calc </call>
+  <call> Sizing-RightAtrium.Calc </call>
+
+  <call> Sizing-Lungs.Calc </call>
+  <call> Sizing-PulmonaryArtery.Calc </call>
+  <call> Sizing-PulmonaryCapillaries.Calc </call>
+  <call> Sizing-PulmonaryVeins.Calc </call>
+  <call> Sizing-LeftAtrium.Calc </call>
+
+  <call> Sizing-O2.Calc </call>
+  <call> Sizing-Pericardium.Calc </call>
+  <call> Sizing-LowPressureReceptors.Calc </call>
+  <call> Size-ACTH.Calc </call>
+  <call> Size-ADH.Calc </call>
+  <call> Size-Aldosterone.Calc </call>
+  <call> Size-AminoAcid.Calc </call>
+  <call> Size-ANP.Calc </call>
+  <call> Size-Bladder.Calc </call>
+  <call> Size-Ca.Calc </call>
+  <call> Size-Calcitonin.Calc </call>
+  <call> Size-Cortisol.Calc </call>
+  <call> Size-Creatine.Calc </call>
+  <call> Size-Creatinine.Calc </call>
+  <call> Size-DietGoalNutrition.Calc </call>
+  <call> Size-Epinephrine.Calc </call>
+  <call> Size-EPO.Calc </call>
+  <call> Size-Estradiol.Calc </call>
+  <call> Size-FattyAcid.Calc </call>
+  <call> Size-FSH.Calc </call>
+  <call> Size-Glucagon.Calc </call>
+  <call> Size-hCG.Calc </call>
+  <call> Size-Heat.Calc </call>
+  <call> Size-Inhibin.Calc </call>
+  <call> Size-Insulin.Calc </call>
+  <call> Size-InterstitialProtein.Calc </call>
+  <call> Size-Leptin.Calc </call>
+  <call> Size-LH.Calc </call>
+  <call> Size-Norepinephrine.Calc </call>
+  <call> Size-OrganCalories.Calc </call>
+  <call> Size-OrganCO2.Calc </call>
+  <call> Size-OrganConductance.Calc </call>
+  <call> Size-OrganH2Os.Calc </call>
+  <call> Size-ParathyroidHormone.Calc </call>
+  <call> Size-PlasmaProtein.Calc </call>
+  <call> Size-Progesterone.Calc </call>
+  <call> Size-Renin.Calc </call>
+  <call> Size-Testosterone.Calc </call>
+  <call> Size-ThyroidHormone.Calc </call>
+  <call> Size-Triglyceride.Calc </call>
+  <call> Size-VitaminD.Calc </call>
+</block>
+
+</definitions>
+</structure>
+
+End

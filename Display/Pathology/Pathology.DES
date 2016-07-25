@@ -1,0 +1,9 @@
+HumMod / Template
+
+
+<?path Display\Pathology\ ?>
+
+<?include Diabetes\Diabetes.DES ?>
+<?include AdrenalInsufficiency\AdrenalInsufficiency.DES ?>
+
+

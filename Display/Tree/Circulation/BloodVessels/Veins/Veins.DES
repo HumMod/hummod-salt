@@ -1,0 +1,51 @@
+HumMod / Veins
+
+Created : 2013-01-27
+Revised : 2013-01-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> BloodVessels-Veins </name>
+  <label> Veins </label>
+  <parent> BloodVessels </parent>
+</branch>
+
+<branch>
+  <name> SystemicVeins </name>
+  <label> Systemic Veins </label>
+  <parent> BloodVessels-Veins </parent>
+</branch>
+
+<leaf>
+  <name> SystemicVeins-Summary </name>
+  <label> Summary </label>
+  <parent> SystemicVeins </parent>
+</leaf>
+
+<leaf>
+  <name> SystemicVeins-Conductance </name>
+  <label> Conductance </label>
+  <parent> SystemicVeins </parent>
+</leaf>
+
+<leaf>
+  <name> BloodVessels_SplanchnicVeins </name>
+  <label> Splanchnic Veins </label>
+  <parent> BloodVessels-Veins </parent>
+</leaf>
+
+<leaf>
+  <name> BloodVessels_RightAtrium </name>
+  <label> Right Atrium </label>
+  <parent> BloodVessels-Veins </parent>
+</leaf>
+
+<leaf>
+  <name> BloodVessels_RightVentricle </name>
+  <label> Right Ventricle </label>
+  <parent> BloodVessels-Veins </parent>
+</leaf>
+
+End

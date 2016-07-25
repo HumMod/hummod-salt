@@ -1,0 +1,279 @@
+HumMod / SodiumReabsorption
+
+Created : 2012-08-06
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structurename> LeftKidney-ZonesTransport </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 21.8 </high>
+   <wide> 30.0 </wide>
+   <title> Left Sodium Reabsorption </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Total </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3.0 </col>
+   <name> Total_PT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Proximal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3.0 </col>
+   <name> Total_LH </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loop Of Henle </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.4 </row><col> 3.0 </col>
+   <name> Total_DT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Distal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.4 </row><col> 3.0 </col>
+   <name> Total_CD </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Collecting Duct </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.0 </row><col> 1.0 </col>
+   <name> OuterCortex </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Outer Cortex </label>
+</showvalue>
+
+<slidebar>
+  <row> 8.4 </row><col> 3.0 </col>
+  <name> OuterCortexFraction(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Fraction (%) </label>
+</slidebar>
+
+<showvalue>
+   <row> 9.8 </row><col> 3.0 </col>
+   <name> OuterCortex_PT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Proximal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 3.0 </col>
+   <name> OuterCortex_LH </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loop Of Henle </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.8 </row><col> 3.0 </col>
+   <name> OuterCortex_DT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Distal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 3.0 </col>
+   <name> OuterCortex_CD </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Collecting Duct </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 1.0 </col>
+   <name> Juxtamedullary </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Juxtamedullary  </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 3.0 </col>
+   <name> JuxtamedullaryFraction(%) </name>
+   <format><integer/></format>
+   <label> Fraction (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_PT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Proximal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_LH </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loop Of Henle </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_DT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Distal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_CD </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Collecting Duct </label>
+</showvalue>
+
+</groupbox>
+
+================================================================
+
+<structurename> RightKidney-ZonesTransport </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 31.0 </col>
+   <high> 21.8 </high>
+   <wide> 30.0 </wide>
+   <title> Right Sodium Reabsorption </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Total </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3.0 </col>
+   <name> Total_PT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Proximal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3.0 </col>
+   <name> Total_LH </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loop Of Henle </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.4 </row><col> 3.0 </col>
+   <name> Total_DT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Distal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.4 </row><col> 3.0 </col>
+   <name> Total_CD </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Collecting Duct </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.0 </row><col> 1.0 </col>
+   <name> OuterCortex </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Outer Cortex </label>
+</showvalue>
+
+<slidebar>
+  <row> 8.4 </row><col> 3.0 </col>
+  <name> OuterCortexFraction(%) </name>
+  <listname> Common.Percent </listname>
+  <label> Fraction (%) </label>
+</slidebar>
+
+<showvalue>
+   <row> 9.8 </row><col> 3.0 </col>
+   <name> OuterCortex_PT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Proximal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 3.0 </col>
+   <name> OuterCortex_LH </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loop Of Henle </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.8 </row><col> 3.0 </col>
+   <name> OuterCortex_DT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Distal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 3.0 </col>
+   <name> OuterCortex_CD </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Collecting Duct </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 1.0 </col>
+   <name> Juxtamedullary </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Juxtamedullary  </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 3.0 </col>
+   <name> JuxtamedullaryFraction(%) </name>
+   <format><integer/></format>
+   <label> Fraction (%) </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_PT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Proximal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_LH </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loop Of Henle </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_DT </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Distal Tubule </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.2 </row><col> 3.0 </col>
+   <name> Juxtamedullary_CD </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Collecting Duct </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

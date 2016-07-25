@@ -1,0 +1,131 @@
+HumMod / Conductance
+
+Created : 12-Apr-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.4 </high>
+   <wide> 30.0 </wide>
+   <title> Conductance </title>
+
+
+<showgraph>
+  <row> 1.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-EfferentArtery.Conductance </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-EfferentArtery.Conductance </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 10 </min><max> 15 </max></scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 8.8 </row><col> 1.0 </col>
+  <name> RightKidney-EfferentArtery.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> R Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Kidney-EfferentArtery.Level </name>
+  <repeat><reps> 100 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 10.2 </row><col> 1.0 </col>
+  <name> RightKidney-EfferentArtery.Level </name>
+  <listname> Kidney-EfferentArtery.Level </listname>
+  <label> R Level </label>
+</slidebar>
+
+<radiobuttons>
+  <row> 11.4 </row><col> 1.0 </col>
+  <name> LeftKidney-EfferentArtery.Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> L Clamp </label>
+</radiobuttons>
+
+
+<slidebar>
+  <row> 12.8 </row><col> 1.0 </col>
+  <name> LeftKidney-EfferentArtery.Level </name>
+  <listname> Kidney-EfferentArtery.Level </listname>
+  <label> L Level </label>
+</slidebar>
+
+<showbargraph>
+  <row> 14.6 </row><col> 1.0 </col><high> 11 </high><wide> 28 </wide>
+  <leftmargin> 12 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> RightKidney-NephronCount.Total(xNormal) </name>
+    <label> R Nephron Count </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftKidney-NephronCount.Total(xNormal) </name>
+    <label> L Nephron Count </label>
+    <color> GREEN </color>
+  </bar>
+  <bar>
+    <name> RightKidney-EfferentArtery.A2Effect </name>
+    <label> R [A2] </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftKidney-EfferentArtery.A2Effect </name>
+    <label> L [A2] </label>
+    <color> GREEN </color>
+  </bar>
+  <bar>
+    <name> RightKidney-EfferentArtery.SympEffect </name>
+    <label> R Alpha Symp's </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> LeftKidney-EfferentArtery.SympEffect </name>
+    <label> L Alpha Symp's </label>
+    <color> GREEN </color>
+  </bar>
+  <bar>
+    <name> Anesthesia.VascularConductance </name>
+    <label> Anesthesia </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Viscosity.ConductanceEffect </name>
+    <label> Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

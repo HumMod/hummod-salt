@@ -1,0 +1,83 @@
+HumMod | VitaminD3Stored
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<structure><name> VitaminD3Stored </name>
+
+<variables>
+
+<var><name> Gain(nG/Min) </name></var>
+<var><name> Loss(nG/Min) </name></var>
+
+<var><name> Sequestration </name></var>
+<var><name> Mobilization </name></var>
+
+<var><name> InitialMass </name></var>
+
+<parm><name> KIn </name><val> 0.33 </val></parm>
+<parm><name> KOut </name><val> 0.028 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 18 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+<def>
+  <name> InitialMass </name>
+  <val> 24 * Weight.InitialWeight(kG) </val>
+</def>
+<def>
+  <name> Mass </name>
+  <val> InitialMass </val>
+</def>
+</block>
+
+<block><name> Conc </name>
+</block>
+
+<block><name> Dervs </name>
+<def>
+  <name> Sequestration </name>
+  <val> VitaminD3.Mass * KIn </val>
+</def>
+
+<def>
+  <name> Mobilization </name>
+  <val> Mass * KOut </val>
+</def>
+
+<def>
+  <name> Gain(nG/Min) </name>
+  <val> Sequestration </val>
+</def>
+
+<def>
+  <name> Loss(nG/Min) </name>
+  <val> Mobilization </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> 0.001 * ( Gain(nG/Min) - Loss(nG/Min) ) </val>
+</def>
+</block>
+
+</definitions>
+</structure>
+
+End

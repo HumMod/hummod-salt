@@ -1,0 +1,102 @@
+HumMod / Density
+
+Created : 05-Jun-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 15.8 </row>
+   <col> 32.0 </col>
+   <high> 6.4 </high>
+   <wide> 30.0 </wide>
+   <title> Density </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightKidney-Size.Density </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Right Kidney </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 21.0 </col>
+   <name> LeftKidney-Size.Density </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Left Kidney </label>
+</showvalue>
+
+
+
+<showtable>
+<row> 3.8 </row><col> 3 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Liquids</textcell>
+<textcell> Solids </textcell>
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+
+<valuecell>
+   <name> LeftKidney-Size.LiquidVol</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+   <name> LeftKidney-Size.SolidVol</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 17.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Right </textcell>
+
+<valuecell>
+   <name> RightKidney-Size.LiquidMass</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+   <name> RightKidney-Size.SolidMass</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units are G/mL. </line>
+  <line>  </line>
+  <line> NORMAL VALUES </line>
+  <line>  </line>
+  <line> Organ = 1.036 </line>
+  <line>  </line>
+  <line> Liquids = 1.000 </line>
+  <line> Solids = 1.170 </line>
+</infobutton>
+
+</groupbox>
+
+End

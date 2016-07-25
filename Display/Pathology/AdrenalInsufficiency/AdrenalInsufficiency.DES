@@ -1,0 +1,9 @@
+HumMod / Template
+
+
+<?path Display\Pathology\ ?>
+
+<?include AdrenalInsufficiency\Primary.DES ?>
+<?include AdrenalInsufficiency\Secondary.DES ?>
+
+

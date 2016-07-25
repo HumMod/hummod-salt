@@ -1,0 +1,129 @@
+HumMod / LeftHeart-Lactate
+
+Created : 31-Mar-05
+Revised : 2013-03-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<structure><name> LeftHeart-Lactate </name>
+
+<variables>
+
+<var><name> [Lac-] </name></var>
+<var><name> [Lac-(mEq/L)] </name></var>
+<var><name> [Lac-(mG/dL)] </name></var>
+<parm><name> DC </name><val> 18.0 </val></parm>
+<var><name> Made </name></var>
+<var><name> Made(mG/Min) </name></var>
+<var><name> Used </name></var>
+<var><name> Used(mG/Min) </name></var>
+
+<var><name> Flow </name></var>
+<var><name> Volume </name></var>
+<var><name> K </name></var>
+<var><name> [Pool] </name></var>
+<var><name> Outflux </name></var>
+
+<constant><name> MEQ_ML_TO_MG_DL </name><val> 9008.0 </val></constant>
+<constant><name> GLUCOSE_TO_LACTATE </name><val> 0.99 </val></constant>
+<constant><name> MG_TO_MEQ </name><val> 0.0112 </val></constant>
+
+</variables>
+
+<equations>
+
+<backwardeuler>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.17 </initialval>
+  <f1name> F1 </f1name>
+  <f2name> F2 </f2name>
+  <dervname> Change </dervname>
+  <errorlim> 0.002 </errorlim>
+</backwardeuler>
+
+</equations>
+
+<definitions>
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Lac-] </name>
+  <val> Mass / LeftHeart-Size.LiquidVol </val>
+</def>
+
+<def>
+  <name> [Lac-(mEq/L)] </name>
+  <val> 1000.0 * [Lac-] </val>
+</def>
+
+<def>
+  <name> [Lac-(mG/dL)] </name>
+  <val> MEQ_ML_TO_MG_DL * [Lac-] </val>
+</def>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<def>
+  <name> Made(mG/Min) </name>
+  <val> GLUCOSE_TO_LACTATE * LeftHeart-Fuel.AnaerobicGlucoseUsed(mG/Min) </val>
+</def>
+
+<def>
+  <name> Made </name>
+  <val> MG_TO_MEQ * Made(mG/Min) </val>
+</def>
+
+<def>
+  <name> Used(mG/Min) </name>
+  <val> LeftHeart-Fuel.LacUsed(mG/Min) </val>
+</def>
+
+<def>
+  <name> Used </name>
+  <val> MG_TO_MEQ * Used(mG/Min) </val>
+</def>
+
+<def>
+  <name> Flow </name>
+  <val> LeftHeart-Flow.BloodFlow </val>
+</def>
+
+<def>
+  <name> Volume </name>
+  <val> LeftHeart-Size.LiquidVol </val>
+</def>
+
+<def>
+  <name> K </name>
+  <val> ( Flow * DC ) / ( Flow + DC ) </val>
+</def>
+
+<def>
+  <name> [Pool] </name>
+  <val> LacPool.[Lac-] </val>
+</def>
+
+<def>
+  <name> F1 </name>
+  <val> Made - Used + ( K * [Pool] ) </val>
+</def>
+
+<def>
+  <name> F2 </name>
+  <val> K / Volume </val>
+</def>
+
+<def>
+  <name> Outflux </name>
+  <val> K * ( [Lac-] - [Pool] ) </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

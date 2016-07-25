@@ -1,0 +1,25 @@
+HumMod / Respiration
+
+Created : 2011-07-27
+Revised : 2012-07-14
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Respiration\ ?>
+
+<?include BloodFlow\BloodFlow.DES ?>
+<?include Breathing\Breathing.DES ?>
+<?include Bronchi\Bronchi.DES ?>
+<?include CO2\CO2.DES ?>
+<?include Fluids\Fluids.DES ?>
+<?include LungGases\LungGases.DES ?>
+<?include LungVolumes\LungVolumes.DES ?>
+<?include GasExchange\GasExchange.DES ?>
+<?include BodyN2\BodyN2.DES ?>
+<?include O2\O2.DES ?>
+<?include PulmonaryMembrane\PulmonaryMembrane.DES ?>
+<?include RespiratoryCenter\RespiratoryCenter.DES ?>
+<?include Thorax\Thorax.DES ?>
+
+End

@@ -1,0 +1,106 @@
+HumMod / SpironolactonePool
+
+Created : 2013-03-15
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 21.6 </high>
+   <wide> 30.0 </wide>
+   <title> Spironolactone Pool </title>
+
+<structurename> SpironolactonePool </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Spironolactone(nG/mL)] </name>
+   <format><integer/></format>   <label> [Spiro (nG/mL)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Spironolactone(nG/mL)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 50 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 9.8 </row><col> 1 </col>
+   <name> [Spironolactone(nMol/L)] </name>
+   <format><integer/></format>   <label> [Spiro (nMol/L)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.2 </row><col> 1 </col>
+   <name> Mass(uG) </name>
+   <format><integer/></format>   <label> Mass (uG) </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.6 </row><col> 1 </col>
+   <name> Free </name>
+   <format><integer/></format>   <label> Free </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.6 </row><col> 1 </col>
+   <name> Bound </name>
+   <format><integer/></format>   <label> Bound </label>
+</showvalue>
+
+<slidebar>  <row> 15.0 </row><col> 3 </col>  <name> Binding(%) </name>  <listname> Common.Percent </listname>  <label> Binding (%) </label></slidebar><showvalue>
+   <row> 16.4 </row><col> 1 </col>
+   <name> Change </name>
+   <format><integer/></format>   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.8 </row><col> 1 </col>
+   <name> Uptake </name>
+   <format><integer/></format>   <label> Uptake </label>
+</showvalue>
+
+<showvalue>
+   <row> 18.8 </row><col> 1 </col>
+   <name> Conversion </name>
+   <format><integer/></format>   <label> Conversion </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.2 </row><col> 1.0 </col>
+   <name> VolDist </name>
+   <format><integer/></format>   <label> Volume Distribution </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units are </line>
+  <line> </line>
+  <line> [Conc] = nG/mL and nMol/L </line>
+  <line> Mass = uG </line>
+  <line> Various Rates = uG/Min </line>
+  <line> Volume Distribution = mL </line>
+  <line> </line>
+  <line> Spironolactone MW = 416.6 C24-H32-O4-S </line>
+</infobutton>
+
+</groupbox>
+
+End

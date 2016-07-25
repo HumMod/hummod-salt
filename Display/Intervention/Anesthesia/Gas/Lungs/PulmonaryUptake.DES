@@ -1,0 +1,82 @@
+HumMod / PulmonaryUptake
+
+Created : 2012-07-15
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 10.4 </row>
+   <col> 32.0 </col>
+   <high> 15.2 </high>
+   <wide> 30.0 </wide>
+   <title> Pulmonary Uptake </title>
+
+<structurename> Lung_Anesthetic </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Uptake </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Uptake </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Uptake </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 10 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> pCapy </name>
+  <format><decimal> 1 </decimal></format>
+  <label> pLungCapillaries </label>
+</showvalue>
+
+<showvalue>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> [Capy] </name>
+  <format><decimal> 3 </decimal></format>
+  <label> [Lung Capillaries] </label>
+</showvalue>
+
+<showvalue>
+  <row> 12.2 </row><col> 1.0 </col>
+  <name> AnesthesiaGasVein.[Blood] </name>
+  <format><decimal> 3 </decimal></format>
+  <label> [Systemic Veins] </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.6 </row><col> 1.0 </col>
+  <name> LungBloodFlow.AlveolarVentilated </name>
+  <format><integer/></format>
+  <label> Ventilated Blood Flow </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Normal O2 uptake is 250 mL/Min. </line>
+</infobutton>
+
+</groupbox>
+
+End

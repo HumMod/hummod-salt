@@ -1,0 +1,70 @@
+HumMod / DailyDoseOral
+
+Created : 05-Jun-06
+Revised : 2012-08-09
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 30.0 </wide>
+   <title> Inhaler </title>
+
+<structurename> IsoproterenolInhaler </structurename>
+
+<actionbutton>
+  <row> 1.4 </row><col> 1.0 </col>
+  <blockname> Inhale </blockname>
+  <label> Use Inhaler Now </label>
+</actionbutton>
+
+<repeatlist>
+  <name> IsoproterenolInhaler.Dose </name>
+  <firstval> 0.14 </firstval>
+  <repeat><reps> 7 </reps><stepsize> 0.07 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.4 </row><col> 1.0 </col>
+  <name> Dose </name>
+  <listname> IsoproterenolInhaler.Dose </listname>
+  <label> Dose </label>
+</slidebar>
+
+<showvalue>
+   <row> 4.8 </row><col> 1.0 </col>
+   <name> CumulativeDose </name>
+   <format> <integer/> </format>
+   <label> Cumulative Dose </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.2 </row><col> 1.0 </col>
+   <name> TotalDoses </name>
+   <format> <integer/> </format>
+   <label> Total Doses </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.6 </row><col> 1.0 </col>
+   <name> TimeLastDose </name>
+   <format>
+      <timestamp/>
+      <fieldwidth> 14 </fieldwidth>
+   </format>
+   <label> Last Dose</label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Standard (adult) dose is 4.5 ug/kg </line>
+</infobutton>
+
+</groupbox>
+
+End
+

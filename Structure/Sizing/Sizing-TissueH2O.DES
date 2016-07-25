@@ -1,0 +1,51 @@
+HumMod / Sizing-TissueH2O
+
+Created : 2013-02-27
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-TissueH2O </name>
+
+<variables>
+
+<var><name> Volume </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> Volume </name>
+  <val>
+      Sizing-Composition-Bone.LiquidVol
+    + Sizing-Composition-Brain.LiquidVol
+    + Sizing-Composition-Fat.LiquidVol
+    + Sizing-Composition-GITract.LiquidVol
+    + Sizing-Composition-RightKidney.LiquidVol
+    + Sizing-Composition-LeftKidney.LiquidVol
+    + Sizing-Composition-LeftHeart.LiquidVol
+    + Sizing-Composition-Liver.LiquidVol
+    + Sizing-Composition-OtherTissue.LiquidVol
+    + Sizing-Composition-RespiratoryMuscle.LiquidVol
+    + Sizing-Composition-RightHeart.LiquidVol
+    + Sizing-Composition-SkeletalMuscle.LiquidVol
+    + Sizing-Composition-Skin.LiquidVol 
+  </val>
+</def>
+
+<def>
+  <name> TissueH2O.InitialVol </name>
+  <val> Volume </val>
+</def>
+
+<call> TissueH2O.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

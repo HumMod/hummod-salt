@@ -1,0 +1,71 @@
+HumMod / Sizing-HeartPumping-Left-Systole
+
+Created : 2013-02-26
+Revised : 2013-04-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-HeartPumping-Left-Systole </name>
+
+<variables>
+
+<var><name> TMP </name></var>
+<var><name> ESV </name></var>
+
+<var><name> Slope </name></var>
+
+<var><name> Passive-TMP </name></var>
+<var><name> Active-TMP </name></var>
+
+<var><name> K-Basic </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> TMP </name>
+  <val> Sizing-Pressures.LeftVentricle-ESP-TMP </val>
+</def>
+
+<def>
+  <name> ESV </name>
+  <val> Sizing-HeartChambers.LeftHeart-ESV </val>
+</def>
+
+<def>
+  <name> Slope </name>
+  <val> Sizing-HeartPumping-Left-Diastole.Slope </val>
+</def>
+
+<def>
+  <name> Passive-TMP </name>
+  <val> Slope * ESV </val>
+</def>
+
+<def>
+  <name> Active-TMP </name>
+  <val> TMP - Passive-TMP </val>
+</def>
+
+<def>
+  <name> K-Basic </name>
+  <val> Active-TMP / SQRT ( ESV ) </val>
+</def>
+
+<def>
+  <name> LeftHeartPumping-Systole.Initial-K-Basic </name>
+  <val> K-Basic </val>
+</def>
+
+<call> LeftHeartPumping-Systole.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

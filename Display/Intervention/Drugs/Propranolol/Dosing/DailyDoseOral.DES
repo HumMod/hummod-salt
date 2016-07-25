@@ -1,0 +1,133 @@
+HumMod / DailyDoseOral
+
+Created : 05-Jun-06
+Revised : 2012-08-09
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 21.4 </high>
+   <wide> 30.0 </wide>
+   <title> Daily Dose Oral </title>
+
+<structurename> PropranololDailyDose </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> TakeDaily </name>
+  <listname> Common.Switch </listname>
+  <label> Take Daily </label>
+</radiobuttons>
+
+<maplist>
+  <name> PropranololDailyDose.Dose </name>
+  <map><val>  0.0 </val><img> None </img></map>
+  <map><val>  10 </val><img> 10 </img></map>
+  <map><val>  20 </val><img> 20 </img></map>
+  <map><val> 40.0 </val><img> 40 </img></map>
+  <map><val> 60.0 </val><img> 60 </img></map>
+  <map><val> 80.0 </val><img> 80 </img></map>
+  <map><val> 240.0 </val><img> 240 </img></map>
+
+</maplist>
+
+<slidebar>
+  <row> 3.2 </row><col> 1.0 </col>
+  <name> Dose </name>
+  <listname> PropranololDailyDose.Dose </listname>
+  <label> Dose </label>
+</slidebar>
+
+<repeatlist>
+  <name> PropranololDailyDose.TimesADay </name>
+  <firstval> 1.0 </firstval>
+  <repeat><reps> 3 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> TimesADay </name>
+  <listname> PropranololDailyDose.TimesADay </listname>
+  <label> Times A Day </label>
+</slidebar>
+
+<showvalue>
+   <row> 6.2 </row><col> 1.0 </col>
+   <name> TimeLastDose </name>
+   <format>
+      <timestamp/>
+      <fieldwidth> 14 </fieldwidth>
+   </format>
+   <label> Last Dose </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.2 </row><col> 1.0 </col>
+   <name> TimeNextDose </name>
+   <format>
+      <timestamp/>
+      <fieldwidth> 14 </fieldwidth>
+   </format>
+   <label> Next Dose </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.6 </row><col> 1.0 </col>
+   <name> TotalDoses </name>
+   <format> <integer/> </format>
+   <label> Total Doses </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.6 </row><col> 1.0 </col>
+   <name> CumulativeDose </name>
+   <format> <integer/> </format>
+   <label> Cumulative Dose </label>
+</showvalue>
+
+<showgraph>
+  <row> 10.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> CumulativeDose </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 20 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<actionbutton>
+  <row> 18.2 </row><col> 1.0 </col>
+  <blockname> Reset </blockname>
+  <label> Reset </label>
+</actionbutton>
+
+<showvalue>
+   <row> 19.8 </row><col> 1.0 </col>
+   <name> Timer </name>
+   <format> <integer/> </format>
+   <label> Time Until Next Dose </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Typical dose is 10 - 30 mG/Day. </line>
+</infobutton>
+
+</groupbox>
+
+End
+

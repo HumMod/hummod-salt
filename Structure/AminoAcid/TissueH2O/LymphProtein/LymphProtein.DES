@@ -1,0 +1,83 @@
+HumMod / LymphProtein
+
+Created : 25-Mar-08
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\TissueH2O\LymphProtein\ ?>
+
+<?include Torso_Upper_LymphProtein.DES ?>
+<?include Torso_Middle_LymphProtein.DES ?>
+<?include Torso_Lower_LymphProtein.DES ?>
+
+<structure><name> LymphProtein </name>
+
+<variables>
+
+<var><name> AlbRate </name></var>
+<var><name> IgGRate </name></var>
+<var><name> AGPRate </name></var>
+<var><name> HetaLWRate </name></var>
+<var><name> HetaHWRate </name></var>
+<var><name> Rate </name></var>
+</variables>
+
+<definitions>
+
+
+<block><name> Dervs </name>
+
+<call> Torso_Upper_LymphProtein.Dervs </call>
+<call> Torso_Middle_LymphProtein.Dervs </call>
+<call> Torso_Lower_LymphProtein.Dervs </call>
+
+<def><name> AlbRate </name>
+  <val>
+      Torso_Upper_LymphProtein.AlbRate
+    + Torso_Middle_LymphProtein.AlbRate
+    + Torso_Lower_LymphProtein.AlbRate
+  </val>
+</def>
+
+<def><name> IgGRate </name>
+  <val>
+      Torso_Upper_LymphProtein.IgGRate
+    + Torso_Middle_LymphProtein.IgGRate
+    + Torso_Lower_LymphProtein.IgGRate
+  </val>
+</def>
+
+<def><name> AGPRate </name>
+  <val>
+      Torso_Upper_LymphProtein.AGPRate
+    + Torso_Middle_LymphProtein.AGPRate
+    + Torso_Lower_LymphProtein.AGPRate
+  </val>
+</def>
+
+<def><name> HetaLWRate </name>
+  <val>
+      Torso_Upper_LymphProtein.HetaLWRate
+    + Torso_Middle_LymphProtein.HetaLWRate
+    + Torso_Lower_LymphProtein.HetaLWRate
+  </val>
+</def>
+
+<def><name> HetaHWRate </name>
+  <val>
+      Torso_Upper_LymphProtein.HetaHWRate
+    + Torso_Middle_LymphProtein.HetaHWRate
+    + Torso_Lower_LymphProtein.HetaHWRate
+  </val>
+</def>
+
+<def><name>Rate </name><val>  AlbRate + IgGRate + AGPRate + HetaLWRate + HetaHWRate </val></def>
+</block>
+
+
+</definitions>
+</structure>
+
+End

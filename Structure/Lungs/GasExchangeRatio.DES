@@ -1,0 +1,31 @@
+HumMod / GasExchangeRatio
+
+Created : 30-Mar-05
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> GasExchangeRatio </name>
+
+<variables>
+
+<var><name> Ratio </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<conditional>
+  <name> Ratio </name>
+  <test> Lung_O2.Gain GT 0.0 </test>
+  <true> Lung_CO2.Loss / Lung_O2.Gain </true>
+  <false> 0 </false>
+</conditional>
+
+</block>
+</definitions>
+</structure>
+
+End

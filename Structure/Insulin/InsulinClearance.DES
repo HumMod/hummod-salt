@@ -1,0 +1,43 @@
+HumMod / InsulinClearance
+
+Created : 21-Jun-06
+Revised : 2012-07-04
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> InsulinClearance </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<var><name> RenalDegradation </name></var>
+
+<parm><name> K </name><val> 0.00061 </val></parm>0.00061
+
+</variables>
+
+<definitions>
+<block><name> Dervs </name>
+
+<def>
+  <name> RenalDegradation </name>
+  <val> K * InsulinPool.[Insulin] * GlomerulusFiltrate.GFR </val>
+</def>
+
+<def>
+  <name> Rate </name>
+  <val>
+         InsulinReceptors-Liver.NetBinding 
+     + InsulinReceptors-General.NetBinding
+     + RenalDegradation
+  </val>
+</def>
+ <!--   -->
+
+</block>
+
+</definitions>
+</structure>
+
+End

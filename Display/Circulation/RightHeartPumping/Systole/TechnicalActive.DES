@@ -1,0 +1,73 @@
+HumMod / TechnicalActive
+
+Created : 11-Aug-08
+Revised : 2013-03-25
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 20.8 </row>
+   <col> 1.0 </col>
+   <high> 13.8 </high>
+   <wide> 30.0 </wide>
+   <title> Technical - Active </title>
+
+<structurename> RightHeartPumping-Systole </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1 </col>
+   <name> K </name>
+   <format><decimal> 1 </decimal></format>
+   <label> K </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1 </col>
+   <name> K-Multiplier </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Multiplier </label>
+</showvalue>
+
+<showcurve>
+  <row> 3.8 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightHeartPumping-Contractility.Contractility </name>
+    <label> Contractility </label>
+    <scale><min> 0 </min><max> 3 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> </label>
+    <scale><min> 0 </min><max> 1.5 </max></scale>
+  </yaxis>
+
+  <curvename> K-Multiplier </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 10.8 </row><col> 1 </col>
+   <name> RightHeartPumping-Contractility.Contractility </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Contractility </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1 </col>
+   <name> K-Basic </name>
+   <format><decimal> 1 </decimal></format>
+   <label> K - Basic </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

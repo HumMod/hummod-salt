@@ -1,0 +1,51 @@
+HumMod / Sizing-LowPressureReceptors
+
+Created : 2013-02-26
+Revised : 2013-02-26
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-LowPressureReceptors </name>
+
+<variables>
+
+<var><name> RAP-TMP </name></var>
+<var><name> LAP-TMP </name></var>
+
+<var><name> AdaptedPressure </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> RAP-TMP </name>
+  <val> Sizing-Pressures.RightAtrium-TMP </val>
+</def>
+
+<def>
+  <name> LAP-TMP </name>
+  <val> Sizing-Pressures.LeftAtrium-TMP </val>
+</def>
+
+<def>
+  <name> AdaptedPressure </name>
+  <val> ( RAP-TMP + LAP-TMP ) / 2 </val>
+</def>
+
+<def>
+  <name> LowPressureReceptors.Initial-AdaptedPressure </name>
+  <val> AdaptedPressure </val>
+</def>
+
+<call> LowPressureReceptors.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

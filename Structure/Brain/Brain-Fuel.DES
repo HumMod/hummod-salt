@@ -1,0 +1,279 @@
+HumMod / Brain-Fuel
+
+Created : 2012-02-17
+Revised : 2013-02-10
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University of Mississippi Medical Center
+
+<structure><name> Brain-Fuel </name>
+
+<variables>
+
+<var><name> GlucoseAvailable </name></var>
+<parm><name> KAAvailable </name><val> 70 </val></parm>
+<parm><name> LacAvailable </name><val> 50 </val></parm>
+
+<var><name> GlucoseDelivered(mG/Min) </name></var>
+<var><name> KADelivered(mG/Min) </name></var>
+<var><name> LacDelivered(mG/Min) </name></var>
+
+<var><name> GlucoseDelivered(Cals/Min) </name></var>
+<var><name> KADelivered(Cals/Min) </name></var>
+<var><name> LacDelivered(Cals/Min) </name></var>
+<var><name> TotalDelivered(Cals/Min) </name></var>
+
+<var><name> KADeliveredFraction </name></var>
+<var><name> KAUsedFraction </name></var>
+
+<var><name> AerobicGlucoseUsed(Cals/Min) </name></var>
+<var><name> AnaerobicGlucoseUsed(Cals/Min) </name></var>
+<var><name> KAUsed(Cals/Min) </name></var>
+<var><name> LacGradient </name></var>
+<var><name> LacUsed(Cals/Min) </name></var>
+<var><name> TotalGlucoseUsed(Cals/Min) </name></var>
+<var><name> TotalUsed(Cals/Min) </name></var>
+
+<var><name> Glucose(%) </name></var>
+<var><name> Fat(%) </name></var>
+<var><name> Lactate(%) </name></var>
+<var><name> Total(%) </name></var>
+
+<var><name> KAUsed(mG/Min) </name></var>
+<var><name> AerobicGlucoseUsed(mG/Min) </name></var>
+<var><name> AnaerobicGlucoseUsed(mG/Min) </name></var>
+<var><name> LacUsed(mG/Min) </name></var>
+
+<var><name> TotalGlucoseUsed(mG/Min) </name></var>
+
+<var><name> IsFailed </name></var>
+
+</variables>
+
+<equations>
+
+<stabledelay>
+  <name> FractUseDelay </name>
+  <outputname> FractUseDelay </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> Adequacy </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Change </dervname>
+  <errorlim> 0.01 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stabledelay>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> KAFraction </name>
+  <point><x> 0.0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 0.5 </x><y> 0.7 </y><slope> 1.0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> GlucoseAvailable </name>
+  <val> 30 </val>90
+</def>
+
+<def>
+  <name> IsFailed </name>
+  <val> ( Brain-Flow.PlasmaFlow LE 0 ) OR ( Brain-Flow.O2Use LE 0 ) </val>
+</def>
+
+<if>
+  <test> IsFailed </test>
+  <true><call> Failed </call></true>
+  <false><call> Calc </call></false>
+</if>
+
+<def><name> K </name><val> 0.5 </val></def>
+<def><name> DxMax </name><val> 1.0 </val></def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> GlucoseDelivered(mG/Min) </name>
+  <val> 0.01 * GlucoseAvailable * GlucosePool.[Glucose] * Brain-Flow.PlasmaFlow </val>
+</def>
+
+<def>
+  <name> KADelivered(mG/Min) </name>
+  <val> 0.01 * KAAvailable * KAPool.[KA] * Brain-Flow.PlasmaFlow </val>
+</def>
+
+<def>
+  <name> LacDelivered(mG/Min) </name>
+  <val> 0.01 * LacAvailable * LacPool.[Lac-] * Brain-Flow.PlasmaFlow </val>
+</def>
+
+<def>
+  <name> GlucoseDelivered(Cals/Min) </name>
+  <val> Metabolism-Tools.Carbo(Cal/mG) * GlucoseDelivered(mG/Min) </val>
+</def>
+
+<def>
+  <name> KADelivered(Cals/Min) </name>
+  <val> Metabolism-Tools.Fat(Cal/mG) * KADelivered(mG/Min) </val>
+</def>
+
+<def>
+  <name> LacDelivered(Cals/Min) </name>
+  <val> Metabolism-Tools.Lac(Cal/mG) * LacDelivered(mG/Min) </val>
+</def>
+
+<def>
+  <name> TotalDelivered(Cals/Min) </name>
+  <val> GlucoseDelivered(Cals/Min) + KADelivered(Cals/Min) + LacDelivered(Cals/Min) </val>
+</def>
+
+<def>
+  <name> LacGradient </name>
+  <val> ( LacPool.[Lac-] - Brain-Lactate.[Lac-] ) MAX 0 </val>
+</def>
+
+<def>
+  <name> LacUsed(Cals/Min) </name>
+  <val> ( LacGradient * Brain-Lactate.DC ) MIN LacDelivered(Cals/Min) </val>
+</def>
+
+<def>
+  <name> KADeliveredFraction </name>
+  <val> KADelivered(Cals/Min) / TotalDelivered(Cals/Min) </val>
+</def>
+
+<def>
+  <name> KAUsedFraction </name>
+  <val> KAFraction [ KADeliveredFraction ] </val>
+</def>
+
+<def>
+  <name> KAUsed(Cals/Min) </name>
+  <val> ( KAUsedFraction * Brain-Metabolism.AerobicCals ) MIN KADelivered(Cals/Min) </val>
+</def>
+
+<def>
+  <name> AerobicGlucoseUsed(Cals/Min) </name>
+  <val> ( Brain-Metabolism.AerobicCals - ( KAUsed(Cals/Min) + LacUsed(Cals/Min) ) ) MIN GlucoseDelivered(Cals/Min) </val>
+</def>
+
+<def>
+  <name> AnaerobicGlucoseUsed(Cals/Min) </name>
+  <val> 0 </val>
+</def>
+
+<def>
+  <name> TotalGlucoseUsed(Cals/Min) </name>
+  <val> AerobicGlucoseUsed(Cals/Min) + AnaerobicGlucoseUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> TotalUsed(Cals/Min) </name>
+  <val> TotalGlucoseUsed(Cals/Min) + KAUsed(Cals/Min) + LacUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> Adequacy </name>
+  <val> TotalUsed(Cals/Min) / Brain-Metabolism.TotalCalsUsed </val>
+</def>
+
+<def>
+  <name> Glucose(%) </name>
+  <val> 100 * TotalGlucoseUsed(Cals/Min) / TotalUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> Fat(%) </name>
+  <val> 100 * KAUsed(Cals/Min) / TotalUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> Lactate(%) </name>
+  <val> 100 * LacUsed(Cals/Min) / TotalUsed(Cals/Min) </val>
+</def>
+
+<def>
+  <name> Total(%) </name>
+  <val> Glucose(%) + Fat(%) + Lactate(%) </val>
+</def>
+
+<def>
+  <name> KAUsed(mG/Min) </name>
+  <val> KAUsed(Cals/Min) * Metabolism-Tools.Fat(mG/Cal) </val>
+</def>
+
+<def>
+  <name> AerobicGlucoseUsed(mG/Min) </name>
+  <val> AerobicGlucoseUsed(Cals/Min) * Metabolism-Tools.CarboAerobic(mG/Cal) </val>
+</def>
+
+<def>
+  <name> LacUsed(mG/Min) </name>
+  <val> LacUsed(Cals/Min) * Metabolism-Tools.Lac-(mG/Cal) </val>
+</def>
+
+<def>
+  <name> AnaerobicGlucoseUsed(mG/Min) </name>
+  <val> AnaerobicGlucoseUsed(Cals/Min) * Metabolism-Tools.CarboAnaerobic(mG/Cal) </val>
+</def>
+
+<def>
+  <name> TotalGlucoseUsed(mG/Min) </name>
+  <val> AerobicGlucoseUsed(mG/Min) + AnaerobicGlucoseUsed(mG/Min) </val>
+</def>
+
+</block>
+
+<block><name> Failed </name>
+
+<def><name> GlucoseDelivered(mG/Min) </name><val> 0 </val></def>
+<def><name> KADelivered(mG/Min) </name><val> 0 </val></def>
+<def><name> LacDelivered(mG/Min) </name><val> 0 </val></def>
+
+<def><name> GlucoseDelivered(Cals/Min) </name><val> 0 </val></def>
+<def><name> KADelivered(Cals/Min) </name><val> 0 </val></def>
+<def><name> LacDelivered(Cals/Min) </name><val> 0 </val></def>
+
+<def><name> TotalDelivered(Cals/Min) </name><val> 0 </val></def>
+
+<def><name> LacGradient </name><val> 0 </val></def>
+<def><name> LacUsed(Cals/Min) </name><val> 0 </val></def>
+
+<def><name> KAUsed(Cals/Min) </name><val> 0 </val></def>
+
+<def><name> AerobicGlucoseUsed(Cals/Min) </name><val> 0 </val></def>
+<def><name> AnaerobicGlucoseUsed(Cals/Min) </name><val> 0 </val></def>
+<def><name> TotalGlucoseUsed(Cals/Min) </name><val> 0 </val></def>
+
+<def><name> TotalUsed(Cals/Min) </name><val> 0 </val></def>
+
+<def><name> Adequacy </name><val> 0 </val></def>
+
+<def><name> Glucose(%) </name><val> UNDEFINED </val></def>
+<def><name> Fat(%) </name><val> UNDEFINED </val></def>
+<def><name> Lactate(%) </name><val> UNDEFINED </val></def>
+<def><name> Total(%) </name><val> UNDEFINED </val></def>
+
+<def><name> KAUsed(mG/Min) </name><val> 0 </val></def>
+<def><name> AerobicGlucoseUsed(mG/Min) </name><val> 0 </val></def>
+<def><name> LacUsed(mG/Min) </name><val> 0 </val></def>
+<def><name> AnaerobicGlucoseUsed(mG/Min) </name><val> 0 </val></def>
+<def><name> TotalGlucoseUsed(mG/Min) </name><val> 0 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

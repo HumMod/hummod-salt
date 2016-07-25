@@ -1,0 +1,94 @@
+HumMod / Lymph
+
+Created : 2013-02-28
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 23.8 </high>
+   <wide> 30.0 </wide>
+   <title> Lymph Flow </title>
+
+<structurename> Torso_Lower_LymphWater </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Rate </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Rate </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Rate </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1.0 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.6 </row><col> 1.0 </col>
+   <name> PressureEffect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Pressure Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 12.6 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> Torso_Lower_InterstitialWater.Pressure </name>
+    <label> Pressure </label>
+    <scale>
+      <min> -14 </min><max> 6 </max><inc> 2 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale>
+      <min> 0 </min><max> 30 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+
+  <curvename> PressureFlow </curvename>
+</showcurve>
+
+<repeatlist>
+  <name> NormalRate(2) </name>
+  <repeat><reps> 200 </reps><stepsize>  0.01 </stepsize></repeat>
+  <repeat><reps>   8 </reps><stepsize>  0.10 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 22.0 </row><col> 1.0 </col>
+  <name> NormalRate </name>
+  <listname> NormalRate(2) </listname>
+  <label> Normal </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Units are mmHg and mL/Min. </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

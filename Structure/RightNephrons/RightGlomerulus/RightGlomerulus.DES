@@ -1,0 +1,24 @@
+HumMod / RightGlomerulus
+
+Created : 09-Apr-05
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2005-2011
+By : University of Mississippi Medical Center
+
+<?path Structure\RightNephrons\RightGlomerulus\ ?>
+
+<?include RightGlomerulusBicarbonate.DES ?>
+<?include RightGlomerulusCalcium.DES ?>
+<?include RightGlomerulusChloride.DES ?>
+<?include RightGlomerulusCreatinine.DES ?>
+<?include RightGlomerulusFiltrate.DES ?>
+<?include RightGlomerulusGlucose.DES ?>
+<?include RightGlomerulusKetoacid.DES ?>
+<?include RightGlomerulusPhosphate.DES ?>
+<?include RightGlomerulusProtein.DES ?>
+<?include RightGlomerulusSodium.DES ?>
+<?include RightGlomerulusSulphate.DES ?>
+<?include RightGlomerulusUrea.DES ?>
+
+End

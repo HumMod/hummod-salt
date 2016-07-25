@@ -1,0 +1,33 @@
+HumMod / Testes-Progesterone
+
+Created : 05-Oct-08
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Testes-Progesterone </name>
+
+<variables>
+
+<var><name> Secretion </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<conditional>
+  <name> Secretion </name>
+  <test> Gender.IsMale </test>
+  <true> 2.64 </true>
+  <false> 0 </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

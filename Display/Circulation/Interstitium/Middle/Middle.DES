@@ -1,0 +1,16 @@
+HumMod / Middle
+
+Created : 2013-02-28
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Circulation\Interstitium\Middle\ ?>
+
+<?include BloodPressure\BloodPressure.DES ?>
+<?include H2O\H2O.DES ?>
+<?include Capillaries-Lymph\Capillaries-Lymph.DES ?>
+<?include InterstitialProtein\InterstitialProtein.DES ?>
+
+End

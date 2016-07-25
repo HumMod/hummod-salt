@@ -1,0 +1,90 @@
+HumMod / LiverMetabolism_Glycogenesis
+
+Created : 29-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> LiverMetabolism_Glycogenesis </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<parm><name> BasicRate </name><val> 75.0 </val></parm>75
+
+<var><name> InsulinEffect </name></var>
+<var><name> MassEffect </name></var>
+<var><name> GlucoseEffect </name></var>
+<var><name> Itest </name></var>
+
+</variables>
+
+<functions>
+<!--  <name> InsulinEffect </name>
+  <point><x>   20 </x><y> 0 </y><slope> 0.0 </slope></point>20,0,
+  <point><x>  35 </x><y> 1.0 </y><slope> 0.03 </slope></point>0.03
+  <point><x> 120 </x><y> 3.0 </y><slope> 0.05 </slope></point>-->
+
+<curve>
+  <name> InsulinEffect </name>
+  <point><x>   20 </x><y> 0 </y><slope> 0.0 </slope></point>20,0,
+  <point><x>  55 </x><y> 1.0 </y><slope> 0.03 </slope></point>35 0.03
+  <point><x> 80 </x><y> 2.0 </y><slope> 0.05 </slope></point>
+  <point><x> 200 </x><y> 40 </y><slope> 0.0 </slope></point>
+
+</curve>
+
+<curve>
+  <name> MassEffect </name>
+  <point><x>   0 </x><y> 3 </y><slope> 0.0 </slope></point>0 3 0
+  <point><x> 100 </x><y> 1.0 </y><slope> -0.04 </slope></point> 100 1 -0.05
+  <point><x> 200 </x><y> 0.1 </y><slope> 0.0 </slope></point>200 0 0
+</curve>
+
+<curve>
+  <name> GlucoseEffect </name>
+  <point><x> 120 </x><y> 0.3 </y><slope> 0 </slope></point> 120 0  0
+  <point><x> 130 </x><y> 1.0 </y><slope> 0.04 </slope></point> 130 1 0.06
+  <point><x> 200 </x><y> 2.0 </y><slope> 0.0 </slope></point>200
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> InsulinEffect </name><val> InsulinEffect [ LiverMetabolism_Insulin.[InsulinDelayed] ] </val></def>
+
+<def><name> Itest </name><val> 1 MIN InsulinEffect </val></def>
+
+<def><name> MassEffect </name><val> MassEffect [ LiverMetabolism_Glycogen.Mass ] </val></def>
+
+<def><name> GlucoseEffect </name><val> GlucoseEffect [ PortalVein-Glucose.[Glucose(mG/dL)] ] </val></def>
+
+
+<!--
+<def><name> MassEffect </name><val> MassEffect [ LiverMetabolism_Glycogen.Mass ] </val></def>
+
+<def><name> GlucoseEffect </name><val> GlucoseEffect [ PortalVein-Glucose.[Glucose(mG/dL)] ] </val></def>
+-->
+
+<def><name> Rate </name>
+  <val>
+      BasicRate
+    * InsulinEffect
+    * MassEffect
+    * GlucoseEffect
+    * Liver-Function.Effect
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

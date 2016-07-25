@@ -1,0 +1,100 @@
+HumMod / Pool
+
+Created : 20-Jun-06
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 16.4 </high>
+   <wide> 30.0 </wide>
+   <title> Pool </title>
+
+<structurename> InsulinPool </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Insulin] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Insulin] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Insulin] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 10 </min><max> 20 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 10.0 </row><col> 1.0 </col>
+   <name> Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.0 </row><col> 3 </col>
+   <name> Change </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.4 </row><col> 1.0 </col>
+   <name> Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.4 </row><col> 1.0 </col>
+   <name> Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.8 </row><col> 1.0 </col>
+   <name> [Insulin(pMol/L)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Insulin (pMol/L)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> [Insulin] is typically 20 uU/mL. </line>
+  <line>  </line>
+  <line> Fasting [Insulin] is typically 10 </line>
+  <line> uU/mL. </line>
+  <line>  </line>
+  <line> The pool is typically 300 mU. </line>
+  <line>  </line>
+  <line> 1 International Unit (U) = 1/24th G. </line>
+  <line>  </line>
+  <line> Molecular weight of insulin is 5808. </line>
+  <line>  </line>
+  <line> uU/mL * 7.241 = pMol/L </line>
+</infobutton>
+
+</groupbox>
+
+End

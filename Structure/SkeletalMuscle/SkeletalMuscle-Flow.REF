@@ -1,0 +1,90 @@
+HumMod / SkeletalMuscle-Flow.REF
+
+Created : 2012-09-11
+Revised : 2012-09-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+The problem is that HumMod 2.0.31 will not complete
+a daily planner work session at 50W.
+
+The reason is that the current characterization of
+skeletal muscle puts the muscle into anaerobic
+metabolism at a high pO2 and the resulting lactate
+is fatal.
+
+There is a bunch of evidence that skeletal muscle
+stays aerobic down to very low pO2's and so the 2.0.31
+model is not accurate. It starts to go anaerobic at a
+pO2 of 20 mmHg.
+
+A very useful reference is Richardson etal. 2006.
+
+Richardson, R.S., S. Duteil, etal. Human skeletal
+muscle intracellular oxygenation: the implact of
+ambient oxygen availability. J.Physiol. 571:415-424,
+2006.
+
+The general idea here is that skeletal muscle does
+not go anaerobic until muscle pO2 gets very low. I
+think that Britt Chance at Penn argued this 5
+decades ago.
+
+Richardson etal. found a resting muscle pO2 of 34 mmHg
+that decreased to 3.1 with exertion. I think this was
+characdterized as maximum, but I need to read the
+details.
+
+So the existing switch to anaerobic metabolism at 20
+mmHg is not correct. My bad. The swich shold be at
+5 mmHg or lower.
+
+I'm putting in a fix. Look in the log.
+
+Mole, P. etal. Amer.J.Physiol. 277:R173-180, 1999.
+
+Cellular pO2 falls in proportion to muscle work load
+-- similar to the following study. The measurement
+uses myoglobin desaturation and is probably a little
+bit below end-capillary pO2.
+
+   Watts O2Use PCr  Pi   ATP  pH   pO2
+   ----- ----- --- ---- ---- ---- ----
+      0     0  100  19   30  7.11  ~40
+    7.8   6.4   59  64   32  6.99  6.8
+   11.8   8.5   44  70   30  6.93  5.3
+   15.1  13.2   33  81   32  6.87  3.1
+
+The larges workload may have been anaerobic.
+
+Richardson, R.S. etal. J.Appl.Physiol. 91:2679-2685,
+2001.
+
+Cellular pO2 falls to 3 to 5 Torr at 1/2 maximum
+exercise and remains at this level up to maximum
+exercise level. This data suggests that from 1/2
+to maximum, additional capillaries are opening to
+reduce the diffusion coefficient. But the signal
+is not clear. The pO2 level appears to be permissive.
+
+Astrand p.249
+
+  [APT] =  5 mMol/kG wet muscle
+  [PCr] = 17 mMol/kG wet muscle
+
+Energy stored above is 0.9 kJ or 0.2 kCal, requiring
+40 mL of O2
+
+Astrand p.163
+
+   O2Use  [O2]   Sat   pO2
+   -----  ----  ----  ----
+    0.25  0.12   60    30
+    1.4   0.07   35    20
+    3.0   0.04   20    12
+    4.0   0.03   15     9
+    4.5   0.02   10     6
+
+
+End

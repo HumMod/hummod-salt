@@ -1,0 +1,39 @@
+HumMod / Ganglia-Mesenteric
+
+Created : 2013-03-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Ganglia-Mesenteric </name>
+
+<variables>
+
+<var><name> NA(Hz) </name></var>
+<var><name> NA </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> NA(Hz) </name>
+  <val>  ( Clamp * ( 1 - Ganglia-Sympathetic.Clamp ) * Level ) + ( Ganglia-Sympathetic.Clamp * Ganglia-Sympathetic.level ) + ( ( 1 - Clamp ) * ( 1 - Ganglia-Sympathetic.Clamp ) * Sympathetics-Mesenteric.NA(Hz) )  </val>
+</def>
+
+<def>
+  <name> NA </name>
+  <val> 0.667 * NA(Hz) </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

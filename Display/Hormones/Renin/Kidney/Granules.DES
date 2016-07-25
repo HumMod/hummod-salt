@@ -1,0 +1,128 @@
+HumMod / Granules
+
+Created : 23-Jun-06
+Last Modified : 2012-01-28
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 26.4 </row>
+   <col> 42.0 </col>
+   <high> 20.8 </high>
+   <wide> 40.0 </wide>
+   <title> Granules </title>
+
+<structurename> ReninGranules </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> RightReninGranules.Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Right Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> LeftReninGranules.Mass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Left Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightReninGranules.Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftReninGranules.Mass </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 400000 </min><max> 450000 </max></scale>
+  </yaxis>
+</showgraph>
+
+<label><row> 12.4 </row><col> 5 </col><text> Left </text></label>
+
+<showvalue>
+   <row> 13.4 </row><col> 2.0 </col>
+   <name> LeftReninGranules.Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 2.0 </col>
+   <name> LeftReninGranules.InFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> InFlux </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 2.0 </col>
+   <name> LeftReninGranules.Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.8 </row><col> 2.0 </col>
+   <name> LeftReninGranules.OutFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> OutFlux </label>
+</showvalue>
+
+<label><row> 12.4 </row><col> 23 </col><text> Right </text></label>
+
+<showvalue>
+   <row> 13.4 </row><col> 19.0 </col>
+   <name> RightReninGranules.Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.4 </row><col> 19.0 </col>
+   <name> RightReninGranules.InFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> InFlux </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.8 </row><col> 19.0 </col>
+   <name> RightReninGranules.Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.8 </row><col> 19.0 </col>
+   <name> RightReninGranules.OutFlux </name>
+   <format><decimal> 1 </decimal></format>
+   <label> OutFlux </label>
+</showvalue>
+
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Units for renin are GU (Goldblatt Units). </line>
+  <line>  </line>
+  <line> A typical value for renin granules is 870000 GU. </line>
+</infobutton>
+
+</groupbox>
+
+End

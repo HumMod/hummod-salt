@@ -1,0 +1,13 @@
+HumMod / Electrolytes
+
+Created : 21-Oct-04
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\Na\ ?>
+
+<?include NaPool.DES ?>
+
+End

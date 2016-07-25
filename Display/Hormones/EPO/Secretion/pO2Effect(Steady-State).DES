@@ -1,0 +1,143 @@
+/* HumMod / pO2Effect(Steady-State)
+
+   Created : 2014-03-02
+   Revised : 2014-03-02
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 22.8 </high>
+   <wide> 60.0 </wide>
+   <title> pO2 Effect (Steady-State) </title>
+
+<structurename> EPOSecretion </structurename>
+
+<label><row> 1.8 </row><col> 10 </col><text> Left Side </text></label>
+
+<showvalue>
+   <row> 3.4 </row><col> 1.0 </col>
+   <name> LeftpO2Effect(Steady-State) </name>
+   <format><decimal> 2 </decimal></format>
+   <label> pO2 Effect </label>
+</showvalue>
+
+<showmap>
+  <row> 4.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> LeftKidney-TubuleO2.Tubule_pO2 </name>
+    <label> Tubule pO2 </label>
+    <scale><min> 10 </min><max> 80 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> LeftpO2Effect(Steady-State) </name>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 500 </max><inc> 100 </inc></scale>
+  </yaxis>
+
+  <blockname> pO2Effect </blockname>
+</showmap>
+
+<showmap>
+  <row> 13.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> LeftKidney-TubuleO2.Tubule_pO2 </name>
+    <label> Tubule pO2 </label>
+    <scale><min> 40 </min><max> 50 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> LeftpO2Effect(Steady-State) </name>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max><inc> 2 </inc></scale>
+  </yaxis>
+
+  <blockname> pO2Effect </blockname>
+</showmap>
+
+<showvalue>
+   <row> 21.2 </row><col> 1.0 </col>
+   <name> LeftKidney-TubuleO2.Tubule_pO2 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Tubule pO2 </label>
+</showvalue>
+
+======================================================================
+
+<label><row> 1.8 </row><col> 40 </col><text> Right Side </text></label>
+
+<showvalue>
+   <row> 3.4 </row><col> 31.0 </col>
+   <name> RightpO2Effect(Steady-State) </name>
+   <format><decimal> 2 </decimal></format>
+   <label> pO2 Effect </label>
+</showvalue>
+
+<showmap>
+  <row> 4.4 </row><col> 31.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> RightKidney-TubuleO2.Tubule_pO2 </name>
+    <label> Tubule pO2 </label>
+    <scale><min> 10 </min><max> 80 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> RightpO2Effect(Steady-State) </name>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 500 </max><inc> 100 </inc></scale>
+  </yaxis>
+
+  <blockname> pO2Effect </blockname>
+</showmap>
+
+<showmap>
+  <row> 13.8 </row><col> 31.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> RightKidney-TubuleO2.Tubule_pO2 </name>
+    <label> Tubule pO2 </label>
+    <scale><min> 40 </min><max> 50 </max><inc> 10 </inc></scale>
+  </xaxis>
+
+  <yaxis>
+    <name> RightpO2Effect(Steady-State) </name>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max><inc> 2 </inc></scale>
+  </yaxis>
+
+  <blockname> pO2Effect </blockname>
+</showmap>
+
+<showvalue>
+   <row> 21.2 </row><col> 31.0 </col>
+   <name> RightKidney-TubuleO2.Tubule_pO2 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Tubule pO2 </label>
+</showvalue>
+
+==============================================================================
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical secretion rate (U/Min) is </line>
+  <line> 0.15 with a tubule pO2 effect of 1.0 </line>
+  <line> at a pO2 of 43 mmHg </line>
+</infobutton>
+
+</groupbox>
+
+End

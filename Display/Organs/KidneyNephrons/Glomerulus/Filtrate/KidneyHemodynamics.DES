@@ -1,0 +1,75 @@
+HumMod / KidneyHemodynamics
+
+Created : 17-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<groupbox>
+   <row> 12.6 </row>
+   <col> 1.0 </col>
+   <high> 5.0 </high>
+   <wide> 60.0 </wide>
+   <title> Kidney Hemodynamics </title>
+
+<structurename> LeftGlomerulusFiltrate </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> LeftKidney-Flow.BloodFlow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Left Blood Flow </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> LeftKidney-Flow.PlasmaFlow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Left Plasma Flow </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.4 </row><col> 1.0 </col>
+  <name> FiltrationFraction </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Left Filtration Fraction </label>
+</showvalue>
+
+<showvalue>
+  <row> 1.4 </row><col> 32.0 </col>
+  <name> RightKidney-Flow.BloodFlow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Right Blood Flow </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 32.0 </col>
+  <name> RightKidney-Flow.PlasmaFlow </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Right Plasma Flow </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.4 </row><col> 32.0 </col>
+  <name> RightGlomerulusFiltrate.FiltrationFraction </name>
+  <format><decimal> 3 </decimal></format>
+  <label> Right Filtration Fraction </label>
+</showvalue>
+
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical values are </line>
+  <line>  </line>
+  <line> Blood Flow = 1200.0 mL/Min </line>
+  <line> Plasma Flow = 670.0 mL/min </line>
+  <line> Filtration Fraction = 0.200 </line>
+</infobutton>
+
+</groupbox>
+
+End

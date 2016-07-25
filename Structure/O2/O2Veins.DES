@@ -1,0 +1,82 @@
+HumMod / O2Veins
+
+Created : 14-May-05
+Revised : 2013-04-11
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University of Mississippi Medical Center
+
+<structure><name> O2Veins </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> [O2] </name></var>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 570 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 5.7 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+<def><name> Mass </name><val> InitialMass </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [O2] </name>
+  <val> Mass / VeinsVol.Vol </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> DxMax </name>
+  <val> 0.1 </val>
+</def>
+
+<def>
+  <name> Gain </name>
+  <val> ( O2Artys.[O2] * CardiacOutput.Flow ) - O2Total.Outflow </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> [O2] * ( SystemicVeins.Outflow + HepaticVein.BloodFlow ) </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> [O2] * ( CardiacOutput.Flow ) </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,83 @@
+HumMod / AcetazolamideSingleDose
+
+Created : 2013-02-08
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> AcetazolamideSingleDose </name>
+
+<variables>
+
+<parm>
+  <name> Dose </name>
+  <val> 0.0 </val>
+</parm>
+
+<var>
+  <name> TimeLastDose </name>
+  <val> UNDEFINED </val>
+</var>
+
+<var>
+  <name> TotalDoses </name>
+  <val> 0.0 </val>
+</var>
+
+<var>
+  <name> CumulativeDose </name>
+  <val> 0.0 </val>
+</var>
+
+</variables>
+
+<definitions>
+
+<block><name> TakeDoseNow </name>
+
+<def>
+  <name> AcetazolamideGILumen.Mass </name>
+  <val> AcetazolamideGILumen.Mass + Dose </val>
+</def>
+
+<def>
+  <name> TimeLastDose </name>
+  <val> System.X </val>
+</def>
+
+<def>
+  <name> TotalDoses </name>
+  <val> TotalDoses + 1.0 </val>
+</def>
+
+<def>
+  <name> CumulativeDose </name>
+  <val> CumulativeDose + Dose </val>
+</def>
+
+</block>
+
+<block><name> Reset </name>
+
+<def>
+  <name> TimeLastDose </name>
+  <val> UNDEFINED </val>
+</def>
+
+<def>
+  <name> TotalDoses </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> CumulativeDose </name>
+  <val> 0.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

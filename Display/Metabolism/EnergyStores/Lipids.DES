@@ -1,0 +1,65 @@
+HumMod / Lipids
+
+Created : 2012-02-11
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 14.4 </high>
+   <wide> 30.0 </wide>
+   <title> Lipids </title>
+
+<structurename> Energy-Stores </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> FatCals </name>
+  <format><integer/></format>
+  <label> Total </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> FatCals </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 110000 </min><max> 130000 </max><inc> 10000 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> LipidDeposits.Mass </name>
+  <format><integer/></format>
+  <label> Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 10.8 </row><col> 3.0 </col>
+  <name> Energy-Tools.FAT_KCAL_PER_G </name>
+  <format><decimal> 2 </decimal></format>
+  <label> kCal/G </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

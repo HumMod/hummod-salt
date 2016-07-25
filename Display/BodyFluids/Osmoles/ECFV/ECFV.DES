@@ -1,0 +1,38 @@
+HumMod / ECFV
+
+Created : 2013-03-05
+Revised : 2013-03-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> Osmoles-ECFV </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Osmolarity </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Osmoles | ECFV </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\BodyFluids\Osmoles\ECFV\ ?>
+
+<?include [Osm].DES ?>
+<?include Osmoles.DES ?>
+
+</panel>
+
+End

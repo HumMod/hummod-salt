@@ -1,0 +1,98 @@
+HumMod / MineralocorticoidReceptor
+
+Created : 2013-03-17
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> MineralocorticoidReceptor </name>
+
+<variables>
+
+<var><name> [Aldo(pMol/L)-Plasma] </name></var>
+<var><name> [Aldo(pMol/L)-Bound] </name></var>
+
+<var><name> [Aldo(nG/dL)-Plasma] </name></var>
+<var><name> [Aldo(nG/dL)-Bound] </name></var>
+
+<var><name> [Spironolactone(nMol/L)] </name></var>
+<parm><name> [Spironolactone(nMol/L)]-IC50 </name><val> 50 </val></parm>
+
+<var><name> [Canrenone(nMol/L)] </name></var>
+<parm><name> [Canrenone(nMol/L)]-IC50 </name><val> 300 </val></parm>
+
+<var><name> SpironolactoneEffect </name></var>
+<var><name> CanrenoneEffect </name></var>
+
+<constant><name> PMOL_L_TO_NG_DL </name><val> 0.0368 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> CalcBinding </name>
+
+<def>
+  <name> [Aldo(nG/dL)-Plasma] </name>
+  <val> AldoPool.[Aldo(nG/dL)] </val>
+</def>
+
+<def>
+  <name> [Aldo(pMol/L)-Plasma] </name>
+  <val> AldoPool.[Aldo(pMol/L)] </val>
+</def>
+
+<def>
+  <name> [Spironolactone(nMol/L)] </name>
+  <val> SpironolactonePool.[Spironolactone(nMol/L)] </val>
+</def>
+
+<def>
+  <name> [Canrenone(nMol/L)] </name>
+  <val> CanrenonePool.[Canrenone(nMol/L)] </val>
+</def>
+
+<call> Spironolactone </call>
+<call> Canrenone </call>
+
+<def>
+  <name> [Aldo(pMol/L)-Bound] </name>
+  <val> [Aldo(pMol/L)-Plasma] * SpironolactoneEffect * CanrenoneEffect </val>
+</def>
+
+<def>
+  <name> [Aldo(nG/dL)-Bound] </name>
+  <val> [Aldo(pMol/L)-Bound] * PMOL_L_TO_NG_DL </val>
+</def>
+
+</block>
+
+<block><name> Spironolactone </name>
+
+<def>
+  <name> SpironolactoneEffect </name>
+  <val>
+      [Spironolactone(nMol/L)]-IC50
+    / ( [Spironolactone(nMol/L)]-IC50 + [Spironolactone(nMol/L)] )
+  </val>
+</def>
+
+</block>
+
+<block><name> Canrenone </name>
+
+<def>
+  <name> CanrenoneEffect </name>
+  <val>
+      [Canrenone(nMol/L)]-IC50
+    / ( [Canrenone(nMol/L)]-IC50 + [Canrenone(nMol/L)] )
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

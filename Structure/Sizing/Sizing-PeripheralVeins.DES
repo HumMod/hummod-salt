@@ -1,0 +1,93 @@
+HumMod / Sizing-PeripheralVeins
+
+Created : 2013-02-20
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-PeripheralVeins </name>
+
+<variables>
+
+<var><name> Volume </name></var>
+
+<var><name> V0 </name></var>
+<parm><name> V0-F </name><val> 0.5 </val></parm>0.5
+
+<var><name> Compliance </name></var>
+<var><name> TMP </name></var>
+
+<var><name> Conductance </name></var>
+<var><name> Flow </name></var>
+<var><name> Gradient </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Volume </name>
+  <val> Sizing-Veins.PeripheralVeinsVolume  </val>
+</def>
+
+<def>
+  <name> V0 </name>
+  <val> V0-F * Volume </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> Sizing-Pressures.PeripheralVeins-TMP </val>
+</def>
+
+<def>
+  <name> Compliance </name>
+  <val> ( 1 / TMP ) * ( Volume - V0 ) </val>
+</def>
+
+<def>
+  <name> Flow </name>
+  <val> Sizing-BloodFlow.PeripheralFlow </val>
+</def>
+
+<def>
+  <name> Gradient </name>
+  <val> Sizing-Pressures.PeripheralVeins - Sizing-Pressures.RightAtrium </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val> Flow / Gradient </val>
+</def>
+
+<def>
+  <name> SystemicVeins.InitialVolume </name>
+  <val> Volume </val>
+</def>
+
+<def>
+  <name> SystemicVeins.InitialV0 </name>
+  <val> V0 </val>
+</def>
+
+<def>
+  <name> SystemicVeins.InitialCompliance </name>
+  <val> Compliance </val>
+</def>
+
+<def>
+  <name> SystemicVeins.InitialConductance </name>
+  <val> Conductance </val>
+</def>
+
+<call> SystemicVeins.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

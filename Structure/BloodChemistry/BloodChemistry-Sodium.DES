@@ -1,0 +1,54 @@
+HumMod / BloodChemistry-Sodium
+
+Created : 2012-07-22
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BloodChemistry-Sodium </name>
+
+<variables>
+
+<constant><name> HIGH </name><val> 145 </val></constant>
+<constant><name> LOW  </name><val> 135 </val></constant>
+
+<var><name> IsHigh </name><val> FALSE </val></var>
+<var><name> IsNormal </name><val> FALSE </val></var>
+<var><name> IsLow </name><val> FALSE </val></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> IsHigh      </name><val> FALSE </val></def>
+<def><name> IsNormal    </name><val> FALSE </val></def>
+<def><name> IsLow       </name><val> FALSE </val></def>
+
+<testcase>
+
+<case><test> BloodChemistry-Sample.[Na+] EQ UNDEFINED </test>
+</case>
+
+<case><test> BloodChemistry-Sample.[Na+] GT HIGH </test>
+  <def><name> IsHigh   </name><val> TRUE </val></def>
+</case>
+
+<case><test> BloodChemistry-Sample.[Na+] LT LOW </test>
+  <def><name> IsLow </name><val> TRUE </val></def>
+</case>
+
+<case><test> TRUE </test>
+  <def><name> IsNormal </name><val> TRUE </val></def>
+</case>
+
+</testcase>
+
+</block>
+
+</definitions>
+</structure>
+
+End

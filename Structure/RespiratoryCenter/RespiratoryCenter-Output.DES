@@ -1,0 +1,72 @@
+HumMod / RespiratoryCenter-Output
+
+Created : 23-Jan-06
+Last Modified : 2011-08-13
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<structure><name> RespiratoryCenter-Output </name>
+
+<variables>
+
+<var><name> Rate </name></var>
+<var><name> MotorNerveActivity </name></var>
+
+<parm><name> RateClampSwitch </name><val> FALSE </val></parm>
+<parm><name> RateClampSetting </name><val> 0 </val></parm>
+
+<parm><name> NerveClampSwitch </name><val> FALSE </val></parm>
+<parm><name> NerveClampSetting </name><val> 0 </val></parm>
+
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> Rate </name>
+  <point><x>  0 </x><y>  0 </y><slope> 12 </slope></point>
+  <point><x>  1 </x><y> 12 </y><slope>  4 </slope></point>
+  <point><x> 10 </x><y> 40 </y><slope>  0 </slope></point>
+</curve>
+
+<curve>
+  <name> MorphineOnRate </name>
+  <point><x>  0 </x><y>  0 </y><slope> 0 </slope></point>
+  <point><x>  0.7 </x><y> -4  </y><slope>  0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<conditional>
+  <name> Rate </name>
+  <test> RateClampSwitch </test>
+  <true> RateClampSetting </true>
+  <false>
+ (     Brain-Function.Effect
+    * Rate [ RespiratoryCenter-Integration.TotalDrive ]
+    + MorphineOnRate [ RespiratoryCenter-Chemical.CombinedMorphine ] )
+   MAX 0
+  </false>
+</conditional>
+
+<conditional>
+  <name> MotorNerveActivity </name>
+  <test> NerveClampSwitch </test>
+  <true> NerveClampSetting </true>
+  <false>
+      Brain-Function.Effect
+    * Anesthesia.TidalVolume
+    * RespiratoryCenter-Integration.TotalDrive
+  </false>
+</conditional>
+
+</block>
+</definitions>
+</structure>
+
+End

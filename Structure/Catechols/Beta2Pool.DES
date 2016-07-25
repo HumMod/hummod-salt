@@ -1,0 +1,69 @@
+HumMod / Beta2Pool
+
+Created : 22-Jun-06
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> Beta2Pool </name>
+
+<variables>
+
+<var><name> Effect </name></var>
+
+<var><name> Total </name></var>
+<var><name> TotalBeta2 </name><val> 4.35 </val></var>4
+
+<!-- these are for beta2 -->
+<constant><name> kd_iso </name><val> .241 </val></constant>241
+<constant><name> kd_epi </name><val> 1.035  </val></constant>1.035
+<constant><name> kd_norepi </name><val> 15.440 </val></constant>15.44
+<constant><name> kd_pro </name><val> 2.5 </val></constant>
+<!-- nMol; verified through Stiles et al "Human cardiac beta-adr receptors..." Life Sciences 33 467-473 and Gille et al "the affinity of -prop for beta1 and beta2 autoreceptors of human heart" Naunyn-Schmmiedeberg's archives of pharmacology 331 p70-60-->
+
+
+<var><name> isobound </name></var>
+<var><name> epibound </name></var>
+<var><name> norepibound </name></var>
+<var><name> probound </name></var>
+
+<var><name> iso </name></var>
+<var><name> epi </name></var>
+<var><name> pro </name></var>
+<var><name> denominator </name></var>
+<var><name> norepi </name></var>
+<var><name> ReceptorActivity </name><val> 1 </val></var>
+<parm><name> Block(%) </name><val> 0 </val></parm>
+
+<var><name> Antagonism </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def><name> epi </name><val> EpiPool.[Epi(nMol/L)]  </val></def>
+<def><name> norepi </name><val> NEPool.[NE(nMol/L)] </val></def>
+<def><name> iso </name><val> IsoproterenolPool.[Isoproterenol(nMol)]  </val></def>
+<def><name> pro </name><val> PropranololPool.[Propranolol(uMol)] * 1000 </val></def>
+
+<def><name> denominator </name><val> ( ( norepi * kd_iso * kd_epi * kd_pro ) + ( epi * kd_iso * kd_norepi * kd_pro ) + ( iso * kd_epi * kd_norepi * kd_pro ) + ( kd_iso * kd_epi * kd_norepi * kd_pro ) + ( pro * kd_iso * kd_epi * kd_norepi  ) )  </val></def>
+
+<def><name> epibound </name><val> ( epi * kd_norepi * kd_iso * kd_pro ) / denominator </val></def>
+<def><name> norepibound </name><val> ( norepi * kd_epi * kd_iso * kd_pro ) / denominator </val></def>
+<def><name> isobound </name><val> ( iso * kd_norepi * kd_epi * kd_pro ) /  denominator </val></def>
+<def><name> probound </name><val> ( pro * kd_norepi * kd_epi * kd_iso  ) / denominator </val></def>
+
+<def><name> Antagonism </name><val> probound / ( epibound + norepibound + isobound + probound ) </val></def>
+<def><name> ReceptorActivity </name><val> ( epibound + norepibound + isobound ) * TotalBeta2 </val></def>3250
+<def><name> Effect </name><val> ( 1 - ( Block(%) / 100 ) ) * ReceptorActivity </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End
+
+

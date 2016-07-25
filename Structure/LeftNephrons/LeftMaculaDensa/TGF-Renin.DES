@@ -1,0 +1,266 @@
+/* HumMod / TGF-Renin
+
+   Created : 2014-02-26
+   Revised : 2014-02-26
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+Left
+<structure><name> LeftTGF-Renin </name>
+
+<variables>
+
+<parm><name> BasicSignal </name><val> 1.0 </val></parm>
+
+
+<var><name> Signal </name></var>
+<var><name> A2Effect </name></var>
+<var><name> ANPEffect </name></var>
+<var><name> FurosemideEffect </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+<parm><name> L </name><val> 0.99 </val></parm>
+
+
+<parm><name> Na_ATarget </name><val> 2.5 </val></parm>
+<parm><name> Na_mTarget </name><val> 7.5 </val></parm>
+<parm><name> Na_STarget </name><val> 50.9 </val></parm>51.5
+<parm><name> Na_BTarget </name><val> 0.075 </val></parm>
+
+<parm><name> A2_ATarget </name><val> 4.4 </val></parm>
+<parm><name> A2_mTarget </name><val> 8 </val></parm>
+<parm><name> A2_STarget </name><val> 2.9 </val></parm>
+<parm><name> A2_BTarget </name><val> 1 </val></parm>
+
+<parm><name> ANP_ATarget </name><val> 2 </val></parm>
+<parm><name> ANP_mTarget </name><val> 4.4 </val></parm>
+<parm><name> ANP_STarget </name><val> 3.3 </val></parm>
+<parm><name> ANP_BTarget </name><val> 0.968 </val></parm>
+
+
+</variables>
+
+
+<equations>
+
+<stabledelay>
+  <name> NaEffect </name>
+  <outputname> NaEffect </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> Steady-State </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.01 </errorlim>
+ <dxmaxname> DxMax </dxmaxname>
+</stabledelay>
+
+<diffeq>
+  <name> Na_A </name>
+  <integralname> Na_A </integralname>
+  <initialval> 2.5 </initialval>
+  <dervname> dNaA </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_m </name>
+  <integralname> Na_m </integralname>
+  <initialval> 7.5 </initialval>
+  <dervname> dNam </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_S </name>
+  <integralname> Na_S </integralname>
+  <initialval> 51.5 </initialval>
+  <dervname> dNaS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Na_B </name>
+  <integralname> Na_B </integralname>
+  <initialval> 0.075 </initialval>
+  <dervname> dNaB </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+---------------------------------------------------------------------
+
+<diffeq>
+  <name> A2_A </name>
+  <integralname> A2_A </integralname>
+  <initialval> 4.4 </initialval>
+  <dervname> dA2A </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_m </name>
+  <integralname> A2_m </integralname>
+  <initialval> 8 </initialval>
+  <dervname> dA2m </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_S </name>
+  <integralname> A2_S </integralname>
+  <initialval> 2.9 </initialval>
+  <dervname> dA2S </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_B </name>
+  <integralname> A2_B </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dA2B </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+---------------------------------------------------------------------
+
+<diffeq>
+  <name> ANP_A </name>
+  <integralname> ANP_A </integralname>
+  <initialval> 2 </initialval>
+  <dervname> dANPA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_m </name>
+  <integralname> ANP_m </integralname>
+  <initialval> 4.4 </initialval>
+  <dervname> dANPm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_S </name>
+  <integralname> ANP_S </integralname>
+  <initialval> 3.3 </initialval>
+  <dervname> dANPS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ANP_B </name>
+  <integralname> ANP_B </integralname>
+  <initialval> 0.968 </initialval>
+  <dervname> dANPB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+</equations>
+
+
+<functions>
+
+<curve>
+  <name> NaEffect </name>
+  <point><x>   0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x>   25  </x><y> 0.1 </y><slope> 0.0 </slope></point>
+  <point><x>  48 </x><y> 1.0 </y><slope> 0.06 </slope></point>48 0.1
+  <point><x> 100 </x><y> 3 </y><slope> 0.0 </slope></point>2.5
+</curve>
+
+<curve>
+  <name> A2Effect </name>
+  <point><x> 0.0 </x><y> 0.8 </y><slope> 0.0 </slope></point>0.9
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 2.5 </x><y> 2.0 </y><slope> 2.0 </slope></point>
+  <point><x> 3.5 </x><y> 5.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+
+<curve>
+  <name> ANPEffect </name>
+  <point><x> 0.0 </x><y> 0.8 </y><slope> 0.0 </slope></point>
+  <point><x> 1.3 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 5 </x><y> 2.7 </y><slope> 0.0 </slope></point>2.7
+</curve>
+
+
+<curve>
+  <name> FurosemideEffect </name>
+  <point><x> 0.0 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+  <point><x> 1.3 </x><y> 0.2 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> dNaA </name><val> 0.05 * ( Na_ATarget - Na_A ) </val></def>
+<def><name> dNam </name><val> 0.05 * ( Na_mTarget - Na_m ) </val></def>
+<def><name> dNaS </name><val> 0.05 * ( Na_STarget - Na_S ) </val></def>
+<def><name> dNaB </name><val> 0.05 * ( Na_BTarget - Na_B ) </val></def>
+
+<def><name> dA2A </name><val> 0.05 * ( A2_ATarget - A2_A ) </val></def>
+<def><name> dA2m </name><val> 0.05 * ( A2_mTarget - A2_m ) </val></def>
+<def><name> dA2S </name><val> 0.05 * ( A2_STarget - A2_S ) </val></def>
+<def><name> dA2B </name><val> 0.05 * ( A2_BTarget - A2_B ) </val></def>
+
+<def><name> dANPA </name><val> 0.05 * ( ANP_ATarget - ANP_A ) </val></def>
+<def><name> dANPm </name><val> 0.05 * ( ANP_mTarget - ANP_m ) </val></def>
+<def><name> dANPS </name><val> 0.05 * ( ANP_STarget - ANP_S ) </val></def>
+<def><name> dANPB </name><val> 0.05 * ( ANP_BTarget - ANP_B ) </val></def>
+
+
+
+<def><name> K </name><val> 0.5 </val></def>
+<def><name> DxMax </name><val> 0.2 </val></def>
+
+
+
+<def>
+  <name> FurosemideEffect </name>
+  <val> FurosemideEffect [ FurosemidePool.Loss ] </val>
+</def>
+
+<!--
+<def>
+  <name> ANPEffect </name>
+  <val> ANPEffect [ ANPPool.Log10Conc ] </val>
+</def>
+
+<def><name> A2Effect </name>
+  <val> A2Effect [ A2Pool.Log10Conc ] </val></def>
+<def><name> Steady-State </name>
+  <val> NaEffect [ LeftMaculaDensa_Na.[Na+(mEq/L)] ] </val></def>
+  -->
+
+<def><name> Steady-State </name><val> ( Na_A * ( ( LeftMaculaDensa_Na.[Na+(mEq/L)] ^ Na_m ) / ( ( LeftMaculaDensa_Na.[Na+(mEq/L)] ^ Na_m ) + ( ( Na_S * L ) ^ Na_m ) ) ) ) + Na_B  </val></def>
+
+<def><name> A2Effect </name><val> ( A2_A * ( ( A2Pool.Log10Conc ^ A2_m ) / ( ( A2Pool.Log10Conc ^ A2_m ) + ( A2_S ^ A2_m ) ) ) ) + A2_B  </val></def>
+
+<def><name> ANPEffect </name><val> ( ANP_A * ( ( ANPPool.Log10Conc ^ ANP_m ) / ( ( ANPPool.Log10Conc ^ ANP_m ) + ( ANP_S ^ ANP_m ) ) ) ) + ANP_B  </val></def>
+
+
+
+<conditional><name> Signal </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicSignal
+  * NaEffect
+  * A2Effect
+  * ANPEffect
+  * FurosemideEffect
+</false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

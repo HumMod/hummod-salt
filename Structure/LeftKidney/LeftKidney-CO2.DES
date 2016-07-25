@@ -1,0 +1,202 @@
+HumMod / LeftKidney-CO2
+
+Created : 31-Mar-05
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftKidney-CO2 </name>
+
+<variables>
+
+<var><name> [HCO3] </name></var>
+<var><name> [HCO3(mEq/L)] </name></var>
+<var><name> PCO2 </name></var>
+<var><name> InflowGas </name></var>
+<var><name> InflowBase </name></var>
+<var><name> OutflowBase </name></var>
+<var><name> [BloodHCO3] </name></var>
+
+<var><name> Outflow(0) </name></var>
+<var><name> K </name></var>
+<var><name> Alpha </name></var>
+
+<parm><name> Initial_pCO2 </name><val> 45.0 </val></parm>
+<parm><name> Initial_[SID] </name><val> 0.036 </val></parm>
+<var><name> Initial_[HCO3] </name></var>
+<var><name> Initial_Mass </name></var>
+
+<parm><name> p50 </name><val> 32.0 </val></parm>
+<parm><name> k </name><val> 0.760 </val></parm>
+
+<var><name> K_CO2 </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 0.04 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+<block><name> Init </name>
+
+<def><name> K_CO2 </name><val> k * Initial_[SID] </val></def>
+
+<copy><from> p50 </from><to> CO2_pCO2_To_[HCO3].p50 </to></copy>
+<copy><from> K_CO2 </from><to> CO2_pCO2_To_[HCO3].K </to></copy>
+<copy><from> Initial_pCO2 </from><to> CO2_pCO2_To_[HCO3].pCO2 </to></copy>
+<call> CO2_pCO2_To_[HCO3].Calc </call>
+<copy><from> CO2_pCO2_To_[HCO3].[HCO3] </from><to> Initial_[HCO3] </to></copy>
+
+<def>
+  <name> Initial_Mass </name>
+  <val> Initial_[HCO3] * LeftKidney-Size.InitialLiquidVol </val>
+</def>
+
+<def>
+  <name> Mass </name>
+  <val> Initial_Mass </val>
+</def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<if><test>  LeftKidney-Size.LiquidVol GT 0 </test>
+<true>
+<def><name> [HCO3] </name><val> Mass / LeftKidney-Size.LiquidVol </val></def>
+</true>
+<false>
+<def><name> [HCO3] </name><val> 0 </val></def>
+</false>
+</if>
+
+<def>
+  <name> [HCO3(mEq/L)] </name>
+  <val> 1000.0 * [HCO3] </val>
+</def>
+
+<def><name> K_CO2 </name><val> k * LeftKidney-Ph.[SID] </val></def>
+
+<copy><from> p50 </from><to> CO2_[HCO3]_To_pCO2.p50 </to></copy>
+<copy><from> K_CO2 </from><to> CO2_[HCO3]_To_pCO2.K </to></copy>
+<copy><from> [HCO3] </from><to> CO2_[HCO3]_To_pCO2.[HCO3] </to></copy>
+
+<call> CO2_[HCO3]_To_pCO2.Calc </call>
+
+<copy><from> CO2_[HCO3]_To_pCO2.pCO2 </from><to> PCO2 </to></copy>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<if><test> LeftKidney-Size.LiquidVol  GT 0 </test>
+<true>
+<def>
+  <name> K </name>
+  <val> LeftKidney-Flow.BloodFlow / LeftKidney-Size.LiquidVol </val>
+</def>
+</true>
+<false>
+<def><name> K </name><val> 0 </val></def>
+</false>
+</if>
+<testcase>
+
+<case>
+<test> System.Dx GE UNDEFINED </test>
+<def>
+  <name> Alpha </name>
+  <val> 0.0 </val>
+</def>
+</case>
+
+<case>
+<test> ( K * System.Dx ) GE 100.0 </test>
+<def>
+  <name> Alpha </name>
+  <val> 4E-44 </val>
+</def>
+</case>
+
+<case>
+<test> TRUE </test>
+<def>
+  <name> Alpha </name>
+  <val> EXP ( -  K * System.Dx ) </val>
+</def>
+</case>
+
+</testcase>
+
+<def>
+  <name> InflowGas </name>
+  <val> Metabolism-RespiratoryQuotient.RQ * LeftKidney-Metabolism.O2Use </val>
+</def>
+
+<def>
+  <name> InflowBase </name>
+  <val> CO2Tools.LitersToMols * InflowGas </val>
+</def>
+
+<copy>
+  <from> PCO2 </from>
+  <to> CO2Blood.pCO2 </to>
+</copy>
+
+<copy>
+  <from> BloodIons.[SID] </from>
+  <to> CO2Blood.[SID] </to>
+</copy>
+
+<call> CO2Blood.pCO2_To_[HCO3] </call>
+
+<copy>
+  <from> CO2Blood.[HCO3] </from>
+  <to> [BloodHCO3] </to>
+</copy>
+
+<def>
+  <name> Outflow(0) </name>
+  <val> LeftKidney-Flow.BloodFlow * ( [BloodHCO3] - CO2Artys.[HCO3] ) </val>
+</def>
+
+<def>
+  <name> OutflowBase </name>
+  <val>
+        ( Alpha * Outflow(0) )
+    + ( ( 1 - Alpha ) * InflowBase )
+  </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> InflowBase - OutflowBase </val>
+</def>
+
+</block>
+
+<block><name> MapperBlock </name>
+
+<def><name> K_CO2 </name><val> k * LeftKidney-Ph.[SID] </val></def>
+
+<copy><from> p50 </from><to> CO2_pCO2_To_[HCO3].p50 </to></copy>
+<copy><from> K_CO2 </from><to> CO2_pCO2_To_[HCO3].K </to></copy>
+<copy><from> PCO2 </from><to> CO2_pCO2_To_[HCO3].pCO2 </to></copy>
+<call> CO2_pCO2_To_[HCO3].Calc </call>
+<copy><from> CO2_pCO2_To_[HCO3].[HCO3] </from><to> [HCO3] </to></copy>
+
+</block>
+
+</definitions>
+</structure>
+
+End

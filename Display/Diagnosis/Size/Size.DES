@@ -1,0 +1,16 @@
+HumMod / Size
+
+Created : 2012-01-29
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Diagnosis\Size\ ?>
+
+<?include Summary\Summary.DES ?>
+<?include Mass\Mass.DES ?>
+<?include Volume\Volume.DES ?>
+<?include Density\Density.DES ?>
+
+End

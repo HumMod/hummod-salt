@@ -1,0 +1,102 @@
+HumMod / Lactate-Transport.REF
+
+Created : 14-Dec-05
+Revised : 2013-03-28
+Author : Tom Coleman
+Copyright : 2008-2013
+By : University of Mississippi Medical Center
+
+A figure in Astrand (p. 250) shows that lactate comes
+out of skeletal muscle at a rapid rate during strenuous
+exercise.
+
+This means that the diffusion coefficients are large
+and the lactate compartments are unstable. I'll use
+a flow predictor. No, I'm going to use a backward Euler
+integrator -- developed below.
+
+Data suggests a gradient of 12 mEq/L over 10 minutes
+with extracellular fluid volume increasing to 15 mEq/L.
+ECFV = 15 L. The rate of outflux is 22.5 mEq/Min.
+
+Using mEq/mL yeilds
+
+   Outflux = DC * Gradient
+     22.5  = DC * 0.012
+
+This yields a DC of 1875 mL/Min for skeletal muscle or
+67.7 (mL/Min)/kG.
+
+                     DC     H2O
+                  ------  -----
+Bone                180    3513
+Brain               100    1193
+Fat                 270    2487
+GITract             180    1102
+Kidney               20     257
+LeftHeart            18     218
+Liver               100    1426
+OtherTissue         270    3167
+RespiratoryMuscle   270    3006
+RightHeart            3      38
+SkeletalMuscle     1875   20245
+Skin                270    1762
+                  ------  -----
+Total              3556   38414
+
+Numerical Methods ======================================
+
+Comparing the diffusion coefficients above with typical
+organ blood flow indicates that organ lactate removel is
+both a flow limited and organ limited process.
+
+[Lac-] -----------------------------
+
+[C] - Cell
+[B] - Blood
+[P] - Pool
+
+Flow - Blood Flow 
+DC - Diffusion Coefficient
+
+Mass - Lactate mass in organ
+Volume - Volume of organ
+
+Lac- Movenment ---------------------
+
+Made (anaerobically)
+Used (in glycolysis
+Outflow (from cell, can be negative)
+
+Math -------------------------------
+
+  Outflow = DC * ([C] - [B]) and also
+  Outflow = Flow * ([B] - [P])
+
+Removing [B] from these two equations yields
+
+  K = (Flow * DC) / (Flow + DC)
+  Outflow = K * ([C] - [P])
+
+A backward Euler integral is partially implicit and in
+many instances it is both accurate and stable. This may
+be such an instance. We need
+
+  dX/dt = F1 - F2 * X
+
+Noting that
+
+  [C] = Mass / Volume
+  Outflow =  K * (1/Volume) * Mass - K * [P]
+
+which organizes as
+
+  F1 = Made - Used + K * [P]
+  F2 = K / Volume
+
+References =============================================
+
+Astrand, P.-O. et.al. Textbook of Work Physiology.
+4th Edition. 2003.
+
+End

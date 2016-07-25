@@ -1,0 +1,65 @@
+Circulatory Protein Notes.TXT
+
+Created : 2013-02-27
+Revised : 2013-02-27
+Author : Tom Coleman
+
+HumMod uses these numbers. [Protein] is G/dL. Volume is L.
+Mass is G. Synthesis and disposal are mG/Min.
+
+       [Protein] Volume Mass Made Lost
+       --------- ------ ---- ---- ----
+Plasma    7.0      3.0   210  9.8 10.0
+IFV       2.0     12.0   230   -    -
+
+Sterling finds a 1/2 time for distribution of 0.5 days and a
+1/2 time for disposal of 10.5 days.
+
+This suggests a capillary flux of 210 G/Day or 146 mG/Min.
+With no node concentratiing, this would require a lymph flow
+of ~7 mL/Min. HumMod shows these lymph flows (at time 0).
+
+             Flow Conc Flux Leak Mass
+             ---- ---- ---- ---- ----
+Upper Torso   0.4  19   7.3 11.2   47
+Middle Torso  0.8  19  15.1 22.4  117
+Lower Torso   1.3  19  24.2 36.2   70
+             ---- ---- ---- ---- ----
+              2.5      46.6 69.8  230
+
+So the leak is very low (70 vs. 146) and still we are going
+to get a big accumulation in the interstitium. After 1 week,
+the plasma mass is down to 184, synthesis is up to 13.1, and
+interstitial mass is up to 290.
+
+Quinn and Shannon found protein rich lymph leaving the nodes
+that they studied in sheep. Here are the lymph to plasma
+ratios.
+
+Node        [L]/[P]
+----------- -------
+Popliteal    0.40
+Renal        0.68
+Prescapular  0.70
+Hepatic      0.90
+
+Witte cannulated the thoracic lymph duct in normal subjects
+
+Lymph Flow (mL/Min) = 1.0
+Pressure (cM H2O) = 12
+Protein (L/P %) = 72
+
+References ==================================================
+
+Quinn, J.W. and A.D. Shannon. The influence of the lymmph
+node on the protein concentration of efferent lymph leaving
+the node. J. Physiol. 264:307-321, 1977.
+
+Sterling, K. The turnover rate of serum albumin in man as 
+measured by I121-tagged albumin. JCI 30(11):1228-1237, 1951.
+
+Witte, M.H. et.al. Lymph circulation in congestive heart
+failure. Effect of external thoracic duct drainage.
+Circulation 39:723-733, 1969.
+
+End

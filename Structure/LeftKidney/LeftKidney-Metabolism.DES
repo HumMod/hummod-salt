@@ -1,0 +1,140 @@
+HumMod / LeftKidney-Metabolism
+
+Created : 31-Mar-05
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftKidney-Metabolism </name>
+
+<variables>
+
+<var><name> TotalCalsUsed </name></var>
+<var><name> BasalCalsUsed </name></var>
+<var><name> InitialBasalCalsUsed </name></var>
+
+<constant><name> BasalCalsUsed((Cal/Min)/G) </name><val> 0.1420 </val></constant>
+
+<parm><name> CalMultiplier </name><val> 1.0 </val></parm>
+
+<var><name> ProximalTubuleCals </name></var>
+<var><name> LoopOfHenleCals </name></var>
+<var><name> DistalTubuleCals </name></var>
+
+<constant><name> CalPerNa+(Meq/Min) </name><val> 3.6 </val></constant>
+
+<var><name> AerobicCals </name></var>
+<var><name> AnaerobicCals </name></var>
+
+<var><name> O2Need </name></var>
+<var><name> O2Lack </name></var>
+<var><name> O2Use </name></var>
+
+<var><name> Vein[O2] </name></var>
+<var><name> Vein_pO2 </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> ScaleCals </name>
+
+<def>
+  <name> InitialBasalCalsUsed </name>
+  <val>
+       CalMultiplier
+     * BasalCalsUsed((Cal/Min)/G)
+     * LeftKidney-Size.InitialMass
+  </val>
+</def>
+
+</block>
+
+<block><name> CalcCals </name>
+
+<def>
+  <name> BasalCalsUsed </name>
+  <val>
+       CalMultiplier
+     * BasalCalsUsed((Cal/Min)/G)
+     * LeftKidney-Size.Mass
+  </val>
+</def>
+
+<def>
+  <name> ProximalTubuleCals </name>
+  <val> CalPerNa+(Meq/Min) * LeftProximalTubule_Na.Reab </val>
+</def>
+
+<def>
+  <name> LoopOfHenleCals </name>
+  <val> CalPerNa+(Meq/Min) * LeftLoopOfHenle_Na.Reab </val>
+</def>
+
+<def>
+  <name> DistalTubuleCals </name>
+  <val> CalPerNa+(Meq/Min) * LeftDistalTubule_Na.Reab </val>
+</def>
+
+<def>
+  <name> TotalCalsUsed </name>
+  <val>
+    ( BasalCalsUsed
+    * Thyroid.Effect
+    * HeatMetabolism.Core
+    * LeftKidney-Structure.Effect )
+    + ProximalTubuleCals
+    + LoopOfHenleCals
+    + DistalTubuleCals
+  </val>
+</def>
+
+<def>
+  <name> O2Need </name>
+  <val> Metabolism-Tools.CalToO2 * TotalCalsUsed </val>
+</def>
+
+<call> LeftKidney-TubuleO2.Calc </call>
+
+<def>
+  <name> O2Use </name>
+  <val> LeftKidney-TubuleO2.O2Use </val>
+</def>
+
+<def>
+  <name> Vein[O2] </name>
+  <val> LeftKidney-TubuleO2.Vein[O2] </val>
+</def>
+
+<def>
+  <name> Vein_pO2 </name>
+  <val> LeftKidney-TubuleO2.Vein_pO2 </val>
+</def>
+
+</block>
+
+<block><name> SplitCals </name>
+
+
+<def>
+  <name> O2Lack </name>
+  <val> ( O2Need - O2Use ) MAX 0 </val>
+</def>
+
+<def>
+  <name> AerobicCals </name>
+  <val> Metabolism-Tools.O2ToCal * O2Use </val>
+</def>
+
+<def>
+  <name> AnaerobicCals </name>
+  <val> Metabolism-Tools.O2ToCal * O2Lack </val>
+</def>
+
+</block>
+</definitions>
+
+</structure>
+
+End

@@ -1,0 +1,114 @@
+HumMod / RightColumn
+
+Created : 2011-08-07
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<structurename> NephronCalciumDistal </structurename>
+
+<label>
+  <row> 3.0 </row><col> 32.0 </col>
+  <text> Distal Reabsorption </text>
+</label>
+
+<showvalue>
+   <row> 4.4 </row><col> 32.0 </col>
+   <name> Inflow </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Inflow </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.4 </row><col> 32.0 </col>
+   <name> Reab </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Reabsorption </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.4 </row><col> 32.0 </col>
+   <name> Outflow </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Outflow </label>
+</showvalue>
+
+<showgraph>
+  <row> 7.8 </row><col> 32.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Reab </name>
+      <label> Reab </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 1 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 15.2 </row><col> 34.0 </col>
+   <name> RightNephronCalciumDistal.[PTH]Effect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Right[PTH]Effect </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 34.0 </col>
+   <name> LeftNephronCalciumDistal.[PTH]Effect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [PTH]Effect </label>
+</showvalue>
+
+<repeatlist>
+  <name> BasicReab </name>
+  <repeat><reps> 100 </reps><stepsize>  0.01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 17.6 </row><col> 34.0 </col>
+  <name> RightNephronCalciumDistal.BasicReab </name>
+  <listname> BasicReab </listname>
+  <label> Right Basic </label>
+</slidebar>
+
+<slidebar>
+  <row> 18.6 </row><col> 34.0 </col>
+  <name> LeftNephronCalciumDistal.BasicReab </name>
+  <listname> BasicReab </listname>
+  <label> Left Basic </label>
+</slidebar>
+
+
+<showcurve>
+  <row> 20.0 </row><col> 32.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> ParathyroidHormone.[Conc(pG/mL)] </name>
+    <label> [PTH] </label>
+    <scale><min> 0 </min><max> 80 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> RightNephronCalciumDistal.Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> RightNephronCalciumDistal.[PTH]Effect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 28.0 </row><col> 32.0 </col>
+   <name> ParathyroidHormone.[Conc(pG/mL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [PTH] </label>
+</showvalue>
+
+End

@@ -1,0 +1,113 @@
+HumMod / Contractility
+
+Created : 2011-08-10
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<structurename> RightHeartPumping-Contractility </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 21.8 </high>
+   <wide> 30.0 </wide>
+   <title> Contractility </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Contractility </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Contractility </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Contractility </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> ClampSwitch </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Clamp </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1.0 </col>
+  <name> ClampSetting </name>
+  <listname> Clamp </listname>
+  <label> Level </label>
+</slidebar>
+
+<showbargraph>
+  <row> 12.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 11 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> BetaSymps </name>
+    <label> Beta Symp's </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> pH </name>
+    <label> pH </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Protein </name>
+    <label> Muscle Mass </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Digoxin </name>
+    <label> Digoxin </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Anesthetic </name>
+    <label> Anesthetic </label>
+    <color> BLUE </color>
+  </bar>
+  <scale>
+    <min> 0 </min><max> 2 </max><inc> 1 </inc>
+  </scale>
+</showbargraph>
+
+<repeatlist>
+  <name> Basic </name>
+  <repeat><reps> 50 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 20.0 </row><col> 1.0 </col>
+  <name> BasicTarget </name>
+  <listname> Basic </listname>
+  <label> Basic </label>
+</slidebar>
+
+</groupbox>
+
+End

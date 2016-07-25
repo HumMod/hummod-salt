@@ -1,0 +1,16 @@
+HumMod / Pancreas
+
+Created : 2012-11-02
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<?path Display\Organs\Pancreas\ ?>
+
+<?include Circulation\Circulation.DES ?>
+<?include Insulin\Insulin.DES ?>
+<?include Glucagon\Glucagon.DES ?>
+<?include Size\Size.DES ?>
+
+End

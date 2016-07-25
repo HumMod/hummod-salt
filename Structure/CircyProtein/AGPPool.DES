@@ -1,0 +1,128 @@
+HumMod / PlasmaProtein
+
+Created : 07-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2005-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> AGPPool </name>
+
+<variables>
+
+<var><name> Gain </name><val> 0 </val></var>
+<var><name> Loss </name><val> 0 </val></var>
+<constant><name> MW </name><val> 44000 </val></constant>
+
+<var><name> [AGP] </name></var>
+<var><name> [AGP(G/dL)] </name></var>
+<var><name> [AGP(mmol/mL)] </name></var> <!-- target 0.02 mmol/L-->
+<var><name> [AGP(uMol)] </name><val> 0.02 </val></var> 
+
+<constant><name> PER_ML_TO_PER_DL </name><val> 100.0 </val></constant>
+
+<var><name> COP </name></var>
+
+<parm><name> SynthesisBasic </name><val> 0.000167 </val></parm>
+<var><name> COPEffect </name></var>
+<var><name> Synthesis </name><val> 0 </val></var>
+
+<parm><name> DegradationBasic </name><val> 0.000167 </val></parm>
+<var><name> ProteinEffect </name></var>
+<var><name> Degradation </name><val> 0 </val></var>
+
+<var><name> Target[AGP] </name><val> 0.003 </val></var><!-- 0.002933 g/mL--><!-- .1 g/dL-->
+<var><name> InitialMass </name></var>
+<var><name> pCOP </name></var>
+<parm><name> sigmaAGP </name><val> 0.80 </val></parm>
+<var><name> AGPFrac </name><val> 0.01</val></var>
+
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 1 </errorlim>
+</diffeq>
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> COPEffect </name>
+  <point><x> 20.0 </x><y> 1.3 </y><slope> 0.0 </slope></point>
+  <point><x> 28.0 </x><y> 1.0 </y><slope> -0.07 </slope></point>
+  <point><x> 40.0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+<curve>
+  <name> AGPEffect </name>
+  <point><x> 0.00 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x> 0.003 </x><y> 1.0 </y><slope> 1240.0 </slope></point>
+  <point><x> 0.00375 </x><y> 6.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Init </name>
+  <def><name> InitialMass </name><val> Target[AGP] * PlasmaVol.Vol </val></def>
+  <def><name> Mass </name><val> InitialMass </val></def>
+  <def><name> Change </name><val> 0 </val></def>
+
+</block>
+
+<block><name> CalcConc </name>
+
+<def><name> [AGP] </name><val> Mass / PlasmaVol.Vol </val></def>
+<def><name> [AGP(G/dL)] </name><val> PER_ML_TO_PER_DL * [AGP] </val></def>
+<def><name> [AGP(mmol/mL)] </name><val> Mass / PlasmaVol.Vol(L) / MW </val></def>
+<def><name> [AGP(uMol)] </name><val>  [AGP(mmol/mL)] </val></def>
+
+<def><name> pCOP </name><val> 1.5 *  [AGP(mmol/mL)] * 62.36367 * HeatCore.Temp(K) * sigmaAGP </val></def>
+
+</block>
+
+<block><name> CalcDervs </name>
+
+<def><name> COPEffect </name><val> COPEffect [ PlasmaProtein.COP ] </val></def>
+<def><name> Synthesis </name><val> SynthesisBasic * COPEffect </val></def>
+
+<def><name> ProteinEffect </name><val> AGPEffect [ [AGP] ] * 0 + 1</val></def>
+<def><name> Degradation </name><val> DegradationBasic * ProteinEffect </val></def>
+
+<def><name> Gain </name>
+  <val>
+      Synthesis
+    + LymphProtein.AGPRate 
+    + ( Transfusion.ProteinRate * Transfusion.AGPFrac )
+    + PeritoneumProtein.AGPLoss 
+    + ( IVDrip.ProteinRate * IVDrip.AGPFrac )
+  </val></def>
+
+<def><name> Loss </name>
+  <val>
+      Degradation
+    + CapillaryProtein.AGPRate 
+    + ( Hemorrhage.ProteinRate * AGPFrac )
+    + PeritoneumProtein.AGPGain 
+    + CollectingDuct_Protein.AGPOutflow 
+  </val></def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+<def><name> AGPFrac </name><val> [AGP(mmol/mL)] / PlasmaProtein.[Protein] </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End
+

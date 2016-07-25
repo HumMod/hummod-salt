@@ -1,0 +1,30 @@
+EPO-Disposal.REF
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+I'd like to use the word clearance here, but it is too vague --
+so the disappearance of EPO will be called disposal.
+
+Disposal (U/Min) = K (1/Min) * Mass in Pool (U)
+
+To go from half-life to tau to rate constant,
+
+  K = 1 / (1.26 * 60 * Half-Life(Hrs))
+
+Pool = 18 * 5 or 90 U
+
+Time 1/2 = 7.8 Hours (from Halstenson) or 468 Min.
+K = 1 / 1.26 * Time 1/2 or 0.0017 (1/Min)
+Disposal = 0.153 U/Min
+
+References =====================================================
+
+Halstenson, C.E. et.al. Comparative pharmacokinetics and
+pharmacodynamics of epoetin alpha and epoetin beta. Clin.
+Pharmacol. Ther. 50:702-712, 1991.
+
+End

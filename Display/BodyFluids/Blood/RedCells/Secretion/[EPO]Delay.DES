@@ -1,0 +1,106 @@
+HumMod / [EPO]Delay
+
+Created : 26-Jun-06
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 22.6 </high>
+   <wide> 30.0 </wide>
+   <title> [EPO] Delay </title>
+
+<structurename> [EPO]Delay </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Effect </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Effect </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 2 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<repeatlist>
+  <name> Tau </name>
+  <repeat><reps> 100 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> Tau </name>
+  <listname> Tau </listname>
+  <label> Tau </label>
+</slidebar>
+
+<showvalue>
+   <row> 11.2 </row><col> 1 </col>
+   <name> SteadyState </name>
+   <format><decimal> 1 </decimal></format>
+   <label> SteadyState </label>
+</showvalue>
+
+<showcurve>
+  <row> 12.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> EPOPool.Log10Conc </name>
+    <label>  </label>
+    <scale><min> 0 </min><max> 4 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale><min> 0 </min><max> 4 </max></scale>
+  </yaxis>
+
+  <curvename> SteadyState </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 19.6 </row><col> 1.0 </col>
+   <name> EPOPool.Log10Conc </name>
+   <format><decimal> 1 </decimal></format>
+   <label> LOG10 [EPO] </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.0 </row><col> 1.0 </col>
+   <name> EPOPool.[EPO] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [EPO] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> A typical [EPO] effect is 1.0  x NormalL. </line>
+  <line> </line>
+  <line> Delay is 3.0 days. </line>
+</infobutton>
+
+</groupbox>
+
+End

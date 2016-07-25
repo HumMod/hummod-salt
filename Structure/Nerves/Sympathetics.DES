@@ -1,0 +1,35 @@
+HumMod / Sympathetics
+
+Created : 2013-03-06
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Structure\Nerves\ ?>
+
+<?include Sympathetics-General.DES ?>
+<?include Sympathetics-Adrenal.DES ?>
+<?include Sympathetics-Cardiac.DES ?>
+<?include Sympathetics-Renal.DES ?>
+<?include Sympathetics-Hepatic.DES ?>
+<?include Sympathetics-Mesenteric.DES ?>
+
+<structure><name> Sympathetics </name>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<call> Sympathetics-General.Calc </call>
+<call> Sympathetics-Adrenal.Calc </call>
+<call> Sympathetics-Cardiac.Calc </call>
+<call> Sympathetics-Renal.Calc </call>
+<call> Sympathetics-Hepatic.Calc </call>
+<call> Sympathetics-Mesenteric.Calc </call>
+
+</block>
+</definitions>
+</structure>
+
+End

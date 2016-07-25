@@ -1,0 +1,116 @@
+HumMod / AminoAcid
+
+Created : 07-Apr-05
+Revised : 2013-02-18
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\AminoAcid\ ?>
+
+<?include AA-Arginine.DES ?>
+<?include AA-Histidine.DES ?>
+<?include AA-Isoleucine.DES ?>
+<?include AA-Leucine.DES ?>
+<?include AA-Lysine.DES ?>
+<?include AA-Methionine.DES ?>
+<?include AA-Phenylalanine.DES ?>
+<?include AA-Threonine.DES ?>
+<?include AA-Tryptophan.DES ?>
+<?include AA-Valine.DES ?>
+<?include AA-Alanine.DES ?>
+<?include AA-Asparagine.DES ?>
+<?include AA-Aspartate.DES ?>
+<?include AA-Cysteine.DES ?>
+<?include AA-Glutamate.DES ?>
+<?include AA-Glutamine.DES ?>
+<?include AA-Glycine.DES ?>
+<?include AA-Proline.DES ?>
+<?include AA-Serine.DES ?>
+<?include AA-Tyrosine.DES ?>
+
+<?include AAPool.DES ?>
+
+<structure><name> AminoAcid </name>
+
+<definitions>
+
+<block><name> Init </name>
+  <call> AA-Arginine.Init </call>
+  <call> AA-Histidine.Init </call>
+  <call> AA-Isoleucine.Init </call>
+  <call> AA-Leucine.Init </call>
+  <call> AA-Lysine.Init </call>
+  <call> AA-Methionine.Init </call>
+  <call> AA-Phenylalanine.Init </call>
+  <call> AA-Threonine.Init </call>
+  <call> AA-Tryptophan.Init </call>
+  <call> AA-Valine.Init </call>
+  <call> AA-Alanine.Init </call>
+  <call> AA-Asparagine.Init </call>
+  <call> AA-Aspartate.Init </call>
+  <call> AA-Cysteine.Init </call>
+  <call> AA-Glutamate.Init </call>
+  <call> AA-Glutamine.Init </call>
+  <call> AA-Glycine.Init </call>
+  <call> AA-Proline.Init </call>
+  <call> AA-Serine.Init </call>
+  <call> AA-Tyrosine.Init </call>
+
+  <call> AAPool.Init </call>
+</block>
+
+<block><name> Conc </name>
+  <call> AA-Arginine.Conc </call>
+  <call> AA-Histidine.Conc </call>
+  <call> AA-Isoleucine.Conc </call>
+  <call> AA-Leucine.Conc </call>
+  <call> AA-Lysine.Conc </call>
+  <call> AA-Methionine.Conc </call>
+  <call> AA-Phenylalanine.Conc </call>
+  <call> AA-Threonine.Conc </call>
+  <call> AA-Tryptophan.Conc </call>
+  <call> AA-Valine.Conc </call>
+  <call> AA-Alanine.Conc </call>
+  <call> AA-Asparagine.Conc </call>
+  <call> AA-Aspartate.Conc </call>
+  <call> AA-Cysteine.Conc </call>
+  <call> AA-Glutamate.Conc </call>
+  <call> AA-Glutamine.Conc </call>
+  <call> AA-Glycine.Conc </call>
+  <call> AA-Proline.Conc </call>
+  <call> AA-Serine.Conc </call>
+  <call> AA-Tyrosine.Conc </call>
+
+  <call> AAPool.Conc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> AA-Arginine.Dervs </call>
+  <call> AA-Histidine.Dervs </call>
+  <call> AA-Isoleucine.Dervs </call>
+  <call> AA-Leucine.Dervs </call>
+  <call> AA-Lysine.Dervs </call>
+  <call> AA-Methionine.Dervs </call>
+  <call> AA-Phenylalanine.Dervs </call>
+  <call> AA-Threonine.Dervs </call>
+  <call> AA-Tryptophan.Dervs </call>
+  <call> AA-Valine.Dervs </call>
+  <call> AA-Alanine.Dervs </call>
+  <call> AA-Asparagine.Dervs </call>
+  <call> AA-Aspartate.Dervs </call>
+  <call> AA-Cysteine.Dervs </call>
+  <call> AA-Glutamate.Dervs </call>
+  <call> AA-Glutamine.Dervs </call>
+  <call> AA-Glycine.Dervs </call>
+  <call> AA-Proline.Dervs </call>
+  <call> AA-Serine.Dervs </call>
+  <call> AA-Tyrosine.Dervs </call>
+
+  <call> AAPool.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

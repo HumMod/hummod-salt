@@ -1,0 +1,35 @@
+HumMod / ContractileProtein
+
+Created : 2011-08-10
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2011-2013
+By : University of Mississippi Medical Center
+
+<panel><name> RightHeartPumping-ContractileProtein </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> RightHeart(2) </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Right Heart | Contractile Protein </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Circulation\RightHeartPumping\ContractileProtein\ ?>
+
+<?include Box.DES ?>
+
+</panel>
+
+End

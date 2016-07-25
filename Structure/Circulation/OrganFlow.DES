@@ -1,0 +1,66 @@
+HumMod / OrganFlow
+
+Created : 21-Oct-04
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> OrganFlow </name>
+
+<variables>
+
+<var><name> CoronarySinusFlow </name></var>
+<var><name> HepaticVeinFlow </name></var>
+<var><name> PeripheralFlow </name></var>
+<var><name> TotalFlow </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def><name> CoronarySinusFlow </name>
+  <val>
+      RightHeart-Flow.BloodFlow
+    + LeftHeart-Flow.BloodFlow
+  </val>
+</def>
+
+<def><name> HepaticVeinFlow </name>
+  <val>
+      GITract-Flow.BloodFlow
+    + HepaticArtery-Flow.BloodFlow
+  </val>
+</def>
+
+<def><name> PeripheralFlow </name>
+  <val>
+     A-VFistula-Flow.BloodFlow
+   + Bone-Flow.BloodFlow
+   + Brain-Flow.BloodFlow
+   + Fat-Flow.BloodFlow
+   + LeftKidney-Flow.BloodFlow
+   + RightKidney-Flow.BloodFlow
+   + OtherTissue-Flow.BloodFlow
+   + RespiratoryMuscle-Flow.BloodFlow
+   + SkeletalMuscle-Flow.BloodFlow
+   + Skin-Flow.BloodFlow
+  </val>
+</def>
+
+<def><name> TotalFlow </name>
+  <val>
+     CoronarySinusFlow
+   + HepaticVeinFlow
+   + PeripheralFlow
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

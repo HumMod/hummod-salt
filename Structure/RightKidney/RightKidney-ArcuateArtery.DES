@@ -1,0 +1,93 @@
+HumMod / RightKidney-ArcuateArtery
+
+Created : 20-Dec-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2005-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> RightKidney-ArcuateArtery </name>
+
+<variables>
+
+<var><name> Pressure </name></var>
+
+<var><name> Conductance </name></var>
+
+<var><name> BasicConductance </name></var>
+<parm><name> Multiplier </name><val> 1.0 </val></parm>
+<var><name> NominalConductance </name></var>
+<constant><name> Conductance(/G) </name><val> 1.855 </val></constant>1.555
+
+<parm><name> Stenosis </name><val> 1.0 </val></parm>
+
+<var><name> PressureGradient </name></var>
+<var><name> BloodFlow </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> NominalConductance </name>
+  <val> Conductance(/G) * RightKidney-Size.InitialMass </val>
+</def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BasicConductance </name>
+  <val> NominalConductance * Multiplier </val>
+</def>
+
+<def>
+  <name> Conductance </name>
+  <val> BasicConductance * Viscosity.ConductanceEffect / Stenosis </val>
+</def>
+
+</block>
+
+<block><name> Pressure </name>
+
+<if>
+<test> Conductance GT 0 </test>
+<true>
+<def>
+  <name> Pressure </name>
+  <val>
+      RightKidney-Pressure.ArtyPressure
+    - ( RightKidney-Flow.BloodFlow / Conductance )
+  </val>
+</def>
+</true>
+<false>
+<def><name> Pressure </name><val> 0 </val></def>
+</false>
+</if>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> PressureGradient </name>
+  <val> RightKidney-Pressure.ArtyPressure - Pressure </val>
+</def>
+
+<def>
+  <name> BloodFlow </name>
+  <val> PressureGradient * Conductance </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

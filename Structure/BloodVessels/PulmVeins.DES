@@ -1,0 +1,72 @@
+HumMod / PulmVeins DES
+
+Created : 21-Oct-04
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> PulmVeins </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> V0 </name></var>
+<var><name> StressedVol </name></var>
+<var><name> Pressure </name><val> 7 </val></var>
+<var><name> TMP </name></var>
+<var><name> ExternalPressure </name></var>
+<var><name> Compliance </name></var>
+<var><name> Conductance </name></var>
+
+<var><name> InitialVolume </name></var>
+<var><name> InitialV0 </name></var>
+<var><name> InitialCompliance </name></var>
+<var><name> InitialConductance </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> Vol </name><val> InitialVolume </val></def>
+<def><name> V0 </name><val> InitialV0 </val></def>
+<def><name> Compliance </name><val> InitialCompliance </val></def>
+<def><name> Conductance </name><val> InitialConductance </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Pressure </name>
+  <val> ( PulmVessels.BloodFlow / Conductance ) + LeftAtrium.Pressure </val>
+</def>
+
+<def>
+  <name> ExternalPressure </name>
+  <val> Thorax.AvePressure </val>
+</def>
+
+<def>
+  <name> TMP </name>
+  <val> ( Pressure - Thorax.AvePressure ) MAX 0 </val>
+</def>
+
+<def>
+  <name> StressedVol </name>
+  <val> TMP * Compliance </val>
+</def>
+
+<def>
+  <name> Vol </name>
+  <val> StressedVol + V0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

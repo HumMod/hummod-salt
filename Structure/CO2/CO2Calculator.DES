@@ -1,0 +1,40 @@
+HumMod / CO2Calculator
+
+Created : 2012-10-28
+Revised : 2013-04-04
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> CO2Calculator </name>
+
+<variables>
+
+<var><name> [HCO3] </name></var>
+
+<parm><name> pCO2 </name><val> 45 </val></parm>
+<parm><name> p50 </name><val> 32.0 </val></parm>
+<parm><name> k </name><val> 1.09 </val></parm>
+<parm><name> [SID] </name><val> 0.040 </val></parm>
+
+<var><name> K </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Parms </name>
+
+<def><name> K </name><val> k * [SID] </val></def>
+
+<copy><from> p50 </from><to> CO2_pCO2_To_[HCO3].p50 </to></copy>
+<copy><from> K </from><to> CO2_pCO2_To_[HCO3].K </to></copy>
+<copy><from> pCO2 </from><to> CO2_pCO2_To_[HCO3].pCO2 </to></copy>
+<call> CO2_pCO2_To_[HCO3].Calc </call>
+<copy><from> CO2_pCO2_To_[HCO3].[HCO3] </from><to> [HCO3] </to></copy>
+
+</block>
+
+</definitions>
+</structure>
+
+End

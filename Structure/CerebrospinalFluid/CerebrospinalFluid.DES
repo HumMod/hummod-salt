@@ -1,0 +1,75 @@
+HumMod / CerebrospinalFluid
+
+Created : 2012-07-10
+Revised : 2012-07-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> CerebrospinalFluid </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<parm><name> Secretion </name><val> 0.35 </val></parm>
+<var><name> Absorption </name></var>
+
+<var><name> Pressure </name></var>
+<parm><name> A </name><val> 0.00044 </val></parm>
+
+<var><name> PressureGradient </name></var>
+<parm><name> Conductance </name><val> 0.054 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 150 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.5 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+ <call> CalcPressure </call>
+</block>
+
+<block><name> CalcPressure </name>
+
+<def><name> Pressure </name><val> A * ( Mass * Mass ) </val></def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> PressureGradient </name>
+  <val> Pressure - RegionalPressure.UpperVein </val>
+</def>
+
+<def>
+  <name> Absorption </name>
+  <val> ( Conductance * PressureGradient ) MAX 0 </val>
+</def>
+
+<def><name> Gain </name><val> Secretion </val></def>
+<def><name> Loss </name><val> Absorption</val></def>
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+EndEnd

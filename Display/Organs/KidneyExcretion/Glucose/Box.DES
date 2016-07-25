@@ -1,0 +1,98 @@
+HumMod / Box
+
+Created : 26-Mar-08
+Revised : 2012-07-10
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 19.4 </high>
+   <wide> 30.0 </wide>
+
+<structurename> NephronGlucose </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> GlomerulusGlucose.Rate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Filtration Rate </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 3.0 </col>
+   <name> GlucosePool.[Glucose(mG/dL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Glucose (mG/dL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3.0 </col>
+   <name> GlomerulusFiltrate.GFR </name>
+   <format><decimal> 1 </decimal></format>
+   <label> GFR </label>
+</showvalue>
+
+
+
+
+<showvalue>
+   <row> 7.4 </row><col> 1.0 </col>
+   <name> Reab </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Reabsorption </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.4 </row><col> 3.0 </col>
+   <name> RightNephronGlucose.FractionalReabsorption </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Right Fraction </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.4 </row><col> 3.0 </col>
+   <name> LeftNephronGlucose.FractionalReabsorption </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Left Fraction </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.8 </row><col> 1.0 </col>
+   <name> Spillover </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Spillover </label>
+</showvalue>
+
+<showgraph>
+  <row> 11.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 7 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Spillover </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 10 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Units are mG/Min. </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

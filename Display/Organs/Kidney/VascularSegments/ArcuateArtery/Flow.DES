@@ -1,0 +1,61 @@
+HumMod / Flow
+
+Created : 2012-02-19
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 12.4 </high>
+   <wide> 30.0 </wide>
+   <title> Flow </title>
+
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightKidney-ArcuateArtery.BloodFlow </name>
+  <format><integer/></format>
+  <label> Right Blood Flow </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> LeftKidney-ArcuateArtery.BloodFlow </name>
+  <format><integer/></format>
+  <label> Left Blood Flow </label>
+</showvalue>
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-ArcuateArtery.BloodFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+   <yvar>
+      <name> LeftKidney-ArcuateArtery.BloodFlow </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 400 </min><max> 600 </max></scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

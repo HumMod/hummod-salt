@@ -1,0 +1,250 @@
+HumMod / Exercise-Metabolism
+
+Created : 20-Dec-05
+Last Modified : 2011-11-15
+Author : Tom Coleman
+Copyright : 2008-2011
+By : University of Mississippi Medical Center
+
+<structure><name> Exercise-Metabolism </name>
+
+<variables>
+
+<var><name> MotionWatts </name></var>
+<var><name> HeatWatts </name></var>
+
+<var><name> TargetMotionWatts </name></var>
+<var><name> TargetHeatWatts </name></var>
+
+<var><name> DPTargetWork </name></var>
+<var><name> DPTargetAerobics </name></var>
+
+<constant><name> WattsToCals </name><val> 14.34 </val></constant>
+
+<var><name> TotalCals </name></var>
+<var><name> MotionCals </name></var>
+<var><name> HeatCals </name></var>
+
+<parm><name> EnergyTau </name><val> 1.5 </val></parm>
+<parm><name> ContractionsTau </name><val> 0.2 </val></parm>
+
+<parm><name> StandardEfficiency </name><val> 0.22 </val></parm>
+<var><name> Efficiency </name></var>
+<whitenoise><name> random </name><lowerlim> -1 </lowerlim><upperlim> 1 </upperlim></whitenoise>
+
+</variables>
+
+<equations>
+
+<delay>
+  <name> TotalWatts </name>
+  <outputname> TotalWatts </outputname>
+  <initialval> 0.0 </initialval>
+  <inputname> TargetTotalWatts </inputname>
+  <rateconstname> EnergyK </rateconstname>
+  <dervname> TotalWattsDerv </dervname>
+  <errorlim> 3.0 </errorlim>
+</delay>
+
+<delay>
+  <name> ContractionRate </name>
+  <outputname> ContractionRate </outputname>
+  <initialval> 0.0 </initialval>
+  <inputname> TargetContractionRate </inputname>
+  <rateconstname> ContractionsK </rateconstname>
+  <dervname> ContractionRateDerv </dervname>
+  <errorlim> 0.5 </errorlim>
+</delay>
+
+<diffeq>
+  <name> DPWork </name>
+  <integralname> DPWork </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> dWork </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> DPAerobics </name>
+  <integralname> DPAerobics </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> dAerobics </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> randomeffect </name>
+  <integralname> randomeffect </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> drandom </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<conditional><name> EnergyK </name>
+<test> EnergyTau GT 0.0 </test>
+<true> INVERT EnergyTau </true>
+<false> INFINITE </false>
+</conditional>
+
+<conditional><name> ContractionsK </name>
+<test> ContractionsTau GT 0.0 </test>
+<true> INVERT ContractionsTau </true>
+<false> INFINITE </false>
+</conditional>
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> drandom </name><val> 0.25 * ( random - randomeffect ) * 0</val></def>
+<def>
+  <name> DPTargetWork </name>
+  <val> DailyPlannerControl.WorkLevel </val>
+</def>
+
+<def>
+  <name> DPTargetAerobics </name>
+  <val> DailyPlannerControl.AerobicsLevel </val>
+</def>
+
+<def>
+  <name> dWork </name>
+  <val> 0.25 * ( DPTargetWork - DPWork ) </val>
+</def>
+
+<def>
+  <name> dAerobics </name>
+  <val> 0.25 * ( DPTargetAerobics - DPAerobics ) </val>
+</def>
+
+
+<testcase>
+
+<case>
+<test> Status.Exertion EQ 0 </test>
+<def>
+  <name> Efficiency </name>
+  <val> 0.0 </val>
+</def>
+<def>
+  <name> TargetTotalWatts </name>
+  <val> 0.0 </val>
+</def>
+<def>
+  <name> TargetContractionRate </name>
+  <val> 0.0 </val>
+</def>
+</case>
+
+<case>
+<test> Status.Exertion EQ 1 </test>
+<def>
+  <name> Efficiency </name>
+  <val> Exercise-Bike.Efficiency </val>
+</def>
+<def>
+  <name> TargetTotalWatts </name>
+  <val> Exercise-Bike.TotalWatts </val>
+</def>
+<def>
+  <name> TargetContractionRate </name>
+  <val> Exercise-Bike.RPM </val>
+</def>
+</case>
+
+<case>
+<test> Status.Exertion EQ 2 </test>
+<def>
+  <name> Efficiency </name>
+  <val> Exercise-Treadmill.Efficiency </val>
+</def>
+<def>
+  <name> TargetTotalWatts </name>
+  <val> Exercise-Treadmill.TotalWatts </val>
+</def>
+<def>
+  <name> TargetContractionRate </name>
+  <val> Exercise-Treadmill.StepsPerMinute </val>
+</def>
+</case>
+
+<case>
+<test> Status.Exertion EQ 3 </test>
+<def>
+  <name> Efficiency </name>
+  <val> StandardEfficiency </val>
+</def>
+<def>
+  <name> TargetTotalWatts </name>
+  <val> DPWork + randomeffect / Efficiency </val>
+</def>
+<def>
+  <name> TargetContractionRate </name>
+  <val> 10.0 </val>
+</def>
+</case>
+
+<case>
+<test> Status.Exertion EQ 4 </test>
+<def>
+  <name> Efficiency </name>
+  <val> StandardEfficiency </val>
+</def>
+<def>
+  <name> TargetTotalWatts </name>
+  <val> DPAerobics + randomeffect / Efficiency </val>
+</def>
+<def>
+  <name> TargetContractionRate </name>
+  <val> 50.0 </val>
+</def>
+</case>
+
+</testcase>
+
+<def>
+  <name> TargetMotionWatts </name>
+  <val> Efficiency * TargetTotalWatts </val>
+</def>
+
+<def>
+  <name> TargetHeatWatts </name>
+  <val> TargetTotalWatts - TargetMotionWatts </val>
+</def>
+
+<def>
+  <name> MotionWatts </name>
+  <val> Efficiency * TotalWatts </val>
+</def>
+
+<def>
+  <name> HeatWatts </name>
+  <val> TotalWatts - MotionWatts </val>
+</def>
+
+<def>
+  <name> TotalCals </name>
+  <val> WattsToCals * TotalWatts </val>
+</def>
+
+<def>
+  <name> MotionCals </name>
+  <val> WattsToCals * MotionWatts </val>
+</def>
+
+<def>
+  <name> HeatCals </name>
+  <val> WattsToCals * HeatWatts </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

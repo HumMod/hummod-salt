@@ -1,0 +1,15 @@
+HumMod / BloodChemistry
+
+Created : 27-Apr-05
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Display\Diagnosis\BloodChemistry\ ?>
+
+<?include Sample\Sample.DES ?>
+<?include BloodGases\BloodGases.DES ?>
+<?include Consult\Consult.DES ?>
+
+End

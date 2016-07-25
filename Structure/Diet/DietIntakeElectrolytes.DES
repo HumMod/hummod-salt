@@ -1,0 +1,104 @@
+HumMod / DietIntakeElectrolytes
+
+Created : 24-Jun-06
+Last Modified : 2011-08-01
+Author : Tom Coleman
+Copyright : 2008-2011
+By : University of Mississippi Medical Center
+
+<structure><name> DietIntakeElectrolytes </name>
+
+<variables>
+
+<var><name> Na+_mMol/Min </name></var>
+<var><name> Cl-_mMol/Min </name></var>
+<var><name> K+_mMol/Min </name></var>
+<var><name> Ca++_mMol/Min </name></var>
+<var><name> PO4---_mMol/Min </name></var>
+<var><name> SO4--_mMol/Min </name></var>
+
+<var><name> Intake(xGoal) </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Dervs </name>
+
+<if>
+<test> Brain-Function.IsReallyDead </test>
+<true>
+  <def><name> Na+_mMol/Min </name><val> 0.0 </val></def>
+  <def><name> Cl-_mMol/Min </name><val> 0.0 </val></def>
+  <def><name> K+_mMol/Min </name><val> 0.0 </val></def>
+  <def><name> Ca++_mMol/Min </name><val> 0.0 </val></def>
+  <def><name> PO4---_mMol/Min </name><val> 0.0 </val></def>
+  <def><name> SO4--_mMol/Min </name><val> 0.0 </val></def>
+  <exitblock/>  
+</true>
+</if>
+
+<def>
+  <name> Intake(xGoal) </name>
+  <val> DietIntakeNutrition.Intake(xGoal) </val>
+</def>
+
+<def>
+  <name> Na+_mMol/Min </name>
+  <val>
+       DietFeeding.Fraction
+     * DietGoalElectrolytes.Na+_mMol/Day
+     * Intake(xGoal)
+  </val>
+</def>
+
+<def>
+  <name> Cl-_mMol/Min </name>
+  <val>
+       DietFeeding.Fraction
+     * DietGoalElectrolytes.Cl-_mMol/Day
+     * Intake(xGoal)
+  </val>
+</def>
+
+<def>
+  <name> K+_mMol/Min </name>
+  <val>
+       DietFeeding.Fraction
+     * DietGoalElectrolytes.K+_mMol/Day
+     * Intake(xGoal)
+  </val>
+</def>
+
+<def>
+  <name> Ca++_mMol/Min </name>
+  <val>
+       DietFeeding.Fraction
+     * DietGoalElectrolytes.Ca++_mMol/Day
+     * Intake(xGoal)
+  </val>
+</def>
+
+<def>
+  <name> PO4---_mMol/Min </name>
+  <val>
+       DietFeeding.Fraction
+     * DietGoalElectrolytes.PO4---_mMol/Day
+     * Intake(xGoal)
+  </val>
+</def>
+
+<def>
+  <name> SO4--_mMol/Min </name>
+  <val>
+       DietFeeding.Fraction
+     * DietGoalElectrolytes.SO4--_mMol/Day
+     * Intake(xGoal)
+  </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

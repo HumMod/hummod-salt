@@ -1,0 +1,110 @@
+HumMod / Summary
+
+Created : 2012-01-31
+Revised : 2012-01-31
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 31.0 </col>
+   <high> 22.0 </high>
+   <wide> 30.0 </wide>
+   <title> Summary </title>
+
+<structurename> MotorRadiation</structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> TotalEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Effect </label>
+</showvalue>
+
+<radiobuttons>
+  <row> 2.8 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level(Duplicate) </name>
+  <repeat>
+    <reps> 50 </reps>
+    <stepsize> 0.1 </stepsize>
+  </repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.2 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level(Duplicate) </listname>
+  <label> Level </label>
+</slidebar>
+
+<showgraph>
+  <row> 5.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TotalEffect </name>
+      <label> NA </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showcurve>
+  <row> 13.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> Exercise-Metabolism.TotalWatts </name>
+    <label> Exercise Watts </label>
+    <scale>
+      <min> 0 </min>
+      <max> 500 </max>
+      <inc> 100 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <label> TotalEffect </label>
+    <scale>
+      <min> 0 </min><max> 5 </max><inc> 1 </inc>
+    </scale>
+  </yaxis>
+
+  <curvename> TotalEffect </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 20.4 </row><col> 1.0 </col>
+  <name> Exercise-Metabolism.TotalWatts </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Wattage </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> High skeletal muscle activity stimulates </line>
+  <line> skeletal muscle afferent nerve </line>
+  <line> activity. </line>
+</infobutton>
+
+</groupbox>
+
+End
+

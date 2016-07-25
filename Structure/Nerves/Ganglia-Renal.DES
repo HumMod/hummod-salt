@@ -1,0 +1,59 @@
+HumMod / Ganglia-Renal
+
+Created : 2013-03-06
+Revised : 2013-03-06 
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Ganglia-Renal </name>
+
+<variables>
+
+<var><name> NA(Hz)-Right </name></var>
+<var><name> NA-Right </name></var>
+<var><name> NA(Hz)-Left </name></var>
+<var><name> NA-Left  </name></var>
+<parm><name> Clamp-Right </name><val> FALSE </val></parm>
+<parm><name> Level-Right </name><val> 0.0 </val></parm>
+<parm><name> Clamp-Left </name><val> FALSE </val></parm>
+<parm><name> Level-Left </name><val> 0.0 </val></parm>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<conditional>
+  <name> NA(Hz)-Right </name>
+  <test> Clamp-Right </test>
+  <true> Level-Right * Sympathetics-Renal.NA(Hz)-Right  </true>
+  <false> Sympathetics-Renal.NA(Hz)-Right </false>
+</conditional>
+
+<conditional>
+  <name> NA(Hz)-Left </name>
+  <test> Clamp-Left </test>
+  <true> Level-Left * Sympathetics-Renal.NA(Hz)-Left  </true>
+  <false> Sympathetics-Renal.NA(Hz)-Left </false>
+</conditional>
+
+<def>
+  <name> NA-Left </name>
+  <val> 0.667 * NA(Hz)-Left </val>
+</def>
+
+<def>
+  <name> NA-Right </name>
+  <val> 0.667 * NA(Hz)-Right </val>
+</def>
+
+
+
+
+</block>
+</definitions>
+</structure>
+
+End

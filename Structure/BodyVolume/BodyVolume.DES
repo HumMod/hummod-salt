@@ -1,0 +1,68 @@
+HumMod / BodyVolume
+
+Created : 2012-01-29
+Revised : 2012-03-13
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> BodyVolume </name>
+
+<variables>
+
+<var><name> Total </name></var>
+<var><name> Total(L) </name></var>
+
+<var><name> Organs </name></var>
+<var><name> Fluids </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Organs </name>
+  <val>
+      Bone-Size.Vol
+    + Brain-Size.Vol
+    + Fat-Size.Vol
+    + GITract-Size.Vol
+    + Kidney-Size.Vol
+    + LeftHeart-Size.Vol
+    + Liver-Size.Vol
+    + OtherTissue-Size.Vol
+    + RespiratoryMuscle-Size.Vol
+    + RightHeart-Size.Vol
+    + SkeletalMuscle-Size.Vol
+    + Skin-Size.Vol
+  </val>
+</def>
+
+<def>
+  <name> Fluids </name>
+  <val> 
+      BloodVol.Vol
+    + GILumenVolume.Mass
+    + ExcessLungWater.Volume
+    + PeritoneumSpace.Volume
+  </val>
+</def>
+
+<def>
+  <name> Total </name>
+  <val> Organs + Fluids </val>
+</def>
+
+<def>
+  <name> Total(L) </name>
+  <val> Total / 1000.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

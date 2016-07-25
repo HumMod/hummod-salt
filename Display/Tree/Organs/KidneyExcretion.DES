@@ -1,0 +1,73 @@
+HumMod / KidneyExcretion
+
+Created : 2013-02-02
+Revised : 2013-02-04
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> Excretion </name>
+  <label> ... Excretion </label>
+  <parent> ORGANS </parent>
+</branch>
+
+<leaf>
+  <name> NephronUrine </name>
+  <label> Urine </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronAcidBase </name>
+  <label> Acid-Base </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<separatorbar>
+  <parent> Excretion </parent>
+</separatorbar>
+
+<leaf>
+  <name> NephronAmmonia </name>
+  <label> Ammonia </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronBicarbonate </name>
+  <label> Bicarbonate </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronCalcium </name>
+  <label> Calcium </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronChloride </name>
+  <label> Chloride </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronCreatinine </name>
+  <label> Creatinine </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronGlucose </name>
+  <label> Glucose </label>
+  <parent> Excretion </parent>
+</leaf>
+
+<leaf>
+  <name> NephronKetoacids </name>
+  <label> Ketoacids </label>
+  <parent> Excretion </parent>
+</leaf>
+
+End

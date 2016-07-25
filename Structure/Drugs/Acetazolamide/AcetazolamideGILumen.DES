@@ -1,0 +1,77 @@
+HumMod / AcetazolamideGILumen
+
+Created : 2013-02-08
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> AcetazolamideGILumen </name>
+
+<variables>
+
+<constant><name> PERM </name><val> 0.05 </val></constant>
+
+<constant><name> MG_TO_UG </name><val> 1000 </val></constant>
+<constant><name> UG_ML_TO_UMOL_L </name><val> 4.5 </val></constant>
+
+<var><name> [ACZ(mG/mL)] </name></var>
+<var><name> [ACZ(uG/mL)] </name></var>
+<var><name> [ACZ(uMol/L)] </name></var>
+
+<var><name> Loss </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 1.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [ACZ(mG/mL)] </name>
+  <val> Mass / GILumenH2O.Mass </val>
+</def>
+
+<def>
+  <name> [ACZ(uG/mL)] </name>
+  <val> [ACZ(mG/mL)] * MG_TO_UG </val>
+</def>
+
+<def>
+  <name> [ACZ(uMol/L)] </name>
+  <val> [ACZ(uG/mL)] * UG_ML_TO_UMOL_L </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Loss </name>
+  <val> PERM * Mass
+  </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

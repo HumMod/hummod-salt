@@ -1,0 +1,44 @@
+HumMod | VitaminD
+
+Created : 2011-08-04
+Last Modified : 2011-08-04
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<?path Structure\VitaminD\ ?>
+
+<?include VitaminD3.DES ?>
+<?include VitaminD3Stored.DES ?>
+<?include VitaminD(25-Hydroxy).DES ?>
+<?include VitaminD(1,25-Dihydroxy).DES ?>
+
+<structure><name> VitaminD </name>
+
+<definitions>
+
+<block><name> Init </name>
+  <call> VitaminD3.Init </call>
+  <call> VitaminD3Stored.Init </call>
+  <call> VitaminD(25-Hydroxy).Init </call>
+  <call> VitaminD(1,25-Dihydroxy).Init </call>
+</block>
+
+<block><name> Conc </name>
+  <call> VitaminD3.Conc </call>
+  <call> VitaminD3Stored.Conc </call>
+  <call> VitaminD(25-Hydroxy).Conc </call>
+  <call> VitaminD(1,25-Dihydroxy).Conc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> VitaminD3Stored.Dervs </call>
+  <call> VitaminD3.Dervs </call>
+  <call> VitaminD(25-Hydroxy).Dervs </call>
+  <call> VitaminD(1,25-Dihydroxy).Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

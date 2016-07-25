@@ -1,0 +1,56 @@
+HumMod / PhUrine.REF
+
+Created : 2013-02-03
+Revised : 2013-02-05
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+Moviat, M. et.al. Critical Care 10(1):R14, 2006.
+
+pCO2     SID  pH   pK
+-------- ---- ---- ----
+5.7 42.9 48.4 5.55 5.50
+5.3 39.8 85.3 7.30 6.97
+                   ----
+                   6.24
+
+The pH 7.3 was read from a graph. The text reported
+a different value.
+
+SID ===============================================
+
+It's possible to have a negative SID in urine. This
+may be the case in starvation when the urine has
+lots of KA- paired with NH4+.
+
+With strong ions only, the is a major transition in
+pH as SID crosses zero (Stewart p39).
+
+For now I'm just going to use a function curve.
+
+pH = 4.0 Minimum
+pH = 6.0 Normal
+pH = 9.0 Maximum
+
+Urine pCO2 ========================================
+
+Urine pCO2 is greater than blood pCO2, typically by
+20 to 50 mmHg. I don't have the details worked out
+but here are some considerations.
+
+# The distal renal tubular system (collecting duct,
+ureter) is not very permeabile to CO2, so CO2
+generated stays in the urine.
+
+# Carbonic anhydraze is scarce, so CO2 is slowly
+formed from bicarb.
+
+# It takes only a small amount of bicarb to supply
+the generated CO2 in solution.
+
+# pCO2 is increased in both acidic and alkalotic
+urine. It may be that a small amount of acidification
+always occurs about at the collecting duct.
+
+End

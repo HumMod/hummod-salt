@@ -1,0 +1,34 @@
+HumMod / RespiratoryRate
+
+Created : 2014-02-25
+Revised : 2014-02-25
+Author : Tom Coleman
+Copyright : 2014-2014
+By : Tom Coleman
+
+<showvalue>
+   <row> 17.2 </row><col> 1 </col>
+   <name> Breathing.RespRate </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Respiratory Rate </label>
+</showvalue>
+
+<showgraph>
+  <row> 18.2 </row><col> 1 </col><high> 6.8 </high><wide> 26 </wide>
+  <leftmargin> 4 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Breathing.RespRate </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 10 </min><max> 20 </max></scale>
+  </yaxis>
+</showgraph>
+
+End

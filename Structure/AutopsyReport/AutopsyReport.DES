@@ -1,0 +1,33 @@
+HumMod / AutopsyReport
+
+Created : 21-May-05
+Revised : 2013-02-13
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\AutopsyReport\ ?>
+
+<?include Autopsy-Examination.DES ?>
+<?include Autopsy-Chemistry.DES ?>
+
+<structure><name> AutopsyReport </name>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<if>
+<test> NOT Brain-Function.IsReallyDead </test>
+<true><exitblock/></true>
+</if>
+
+<call> Autopsy-Examination.Calc </call>
+<call> Autopsy-Chemistry.Calc </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

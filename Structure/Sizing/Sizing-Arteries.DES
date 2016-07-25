@@ -1,0 +1,47 @@
+HumMod / Sizing-Arteries
+
+Created : 2013-02-19
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Arteries </name>
+
+<variables>
+
+<var><name> TotalVolume </name></var>
+<var><name> CirculatingVolume </name></var>
+
+<constant><name> SequesteredVolume </name><val> 50 </val></constant>
+
+<constant><name> SystemicArteries-F </name><val> 1.0 </val></constant>
+<var><name> SystemicArteriesVolume </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> TotalVolume </name>
+  <val> Sizing-BloodVessels.ArteryVolume </val>
+</def>
+
+<def>
+  <name> CirculatingVolume </name>
+  <val> TotalVolume - SequesteredVolume </val>
+</def>
+
+<def>
+  <name> SystemicArteriesVolume </name>
+  <val> SystemicArteries-F * CirculatingVolume </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

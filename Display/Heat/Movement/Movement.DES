@@ -1,0 +1,27 @@
+HumMod / Heat
+
+Created : 24-Apr-05
+Revised : 2013-02-10
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<?path Display\Heat\Movement\ ?>
+
+<?include Conduction\Conduction.DES ?>
+<?include Dialysis\Dialysis.DES ?>
+<?include Diarrhea\Diarrhea.DES ?>
+<?include Hemorrhage\Hemorrhage.DES ?>
+<?include InsensibleLung\InsensibleLung.DES ?>
+<?include InsensibleSkin\InsensibleSkin.DES ?>
+<?include IVDrip\IVDrip.DES ?>
+<?include Metabolism\Metabolism.DES ?>
+<?include OralIntake\OralIntake.DES ?>
+<?include Radiation\Radiation.DES ?>
+<?include Shivering\Shivering.DES ?>
+<?include Sweating\Sweating.DES ?>
+<?include Transfusion\Transfusion.DES ?>
+<?include Urine\Urine.DES ?>
+<?include Vomitus\Vomitus.DES ?>
+
+End

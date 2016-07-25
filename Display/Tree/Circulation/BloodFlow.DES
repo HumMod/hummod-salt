@@ -1,0 +1,15 @@
+HumMod / BloodFlow
+
+Created : 2011-07-26
+Revised : 2012-02-10
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<leaf>
+  <name> Circulation_BloodFlow </name>
+  <label> Blood Flow </label>
+  <parent> CIRCULATION </parent>
+</leaf>
+
+End

@@ -1,0 +1,28 @@
+HumMod / LungVolumes (REF)
+
+Created : 2012-07-12
+Revised : 2012-07-12
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+Lung volumes are BTPS while blood and body
+volumes are STPD, so we must do a conversion
+as gas crosses the pulmonary membrane.
+
+Something like this ...
+
+<copy>
+  <from> Volume(BTPS) </from>
+  <to> BTPS_To_STPD.V1 </to>
+</copy>
+<call> BTPS_To_STPD.Calc </call>
+<copy>
+  <from> BTPS_To_STPD.V2 </from>
+  <to> Volume(STPD) </to>
+</copy>
+
+
+
+
+End

@@ -1,0 +1,33 @@
+EPO-Erythropoiesis.REF
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+Eschback gave EPO injections 3 times a week and monitored
+hematocrit. Injections were 15, 50, 150 and 500 U/kG. I
+converted the dosing to U/Min for a 75 kG subject. I also
+calculated relative erythropoiesis (ERY) as change in
+hematocrit (Hct) over the time that the change (Week)
+required.
+
+Dose  Dose'  Hct  Week  ERY
+----  -----  ---  ----  ---
+ 15    0.33    6   12   0.5
+ 50    1.12    9   11   0.8
+150    3.35   20   11   1.6
+500   11.20   24    6   4.0
+
+With an red cell lifespan of 90 days (129,600 Min) and a red
+cell volume of 2400 mL, the normal red cell replacement rate
+is 0.0185 mL/Min.
+
+References =====================================================
+
+I don't have this paper, but the data is presented in Brenner.
+
+Eschbach, J.W. et.al. N. Engl. J. Med. 316:73-78, 1987.
+
+End

@@ -1,0 +1,191 @@
+
+HumMod / Torso_Middle_InterstitialProtein
+
+Created : 21-Oct-04
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Torso_Middle_InterstitialProtein </name>
+
+<variables>
+
+<var><name> AlbGain </name></var>
+<var><name> AlbLoss </name></var>
+<var><name> AGPGain </name></var>
+<var><name> AGPLoss </name></var>
+<var><name> IgGGain </name></var>
+<var><name> IgGLoss </name></var>
+<var><name> HetaLWGain </name></var>
+<var><name> HetaLWLoss </name></var>
+<var><name> HetaHWGain </name></var>
+<var><name> HetaHWLoss </name></var>
+
+<var><name> [Alb] </name></var>
+<var><name> [Alb(G/dL)] </name></var>
+<var><name> [Alb(mmol/mL)] </name></var>
+<var><name> [IgG] </name></var>
+<var><name> [IgG(G/dL)] </name></var>
+<var><name> [IgG(mmol/mL)] </name></var>
+<var><name> [AGP] </name></var>
+<var><name> [AGP(G/dL)] </name></var>
+<var><name> [AGP(mmol/mL)] </name></var>
+<var><name> [HetaLW] </name></var>
+<var><name> [HetaLW(G/dL)] </name></var>
+<var><name> [HetaLW(mmol/mL)] </name></var>
+<var><name> [HetaHW] </name></var>
+<var><name> [HetaHW(G/dL)] </name></var>
+<var><name> [HetaHW(mmol/mL)] </name></var>
+
+<var><name> COP </name></var>
+
+<var><name> InitialAlbMass </name></var>
+<var><name> InitialIgGMass </name></var>
+<var><name> InitialAGPMass </name></var>
+<var><name> InitialHetaLWMass </name></var>
+<var><name> InitialHetaHWMass </name></var>
+
+<var><name> Mass </name></var>
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+<var><name> [Total] </name></var>
+<var><name> Change </name></var>
+<var><name> [Protein(G/dL)] </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> AlbMass </name>
+  <integralname> AlbMass </integralname>
+  <dervname> AlbChange </dervname>
+  <errorlim> 0.75 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> IgGMass </name>
+  <integralname> IgGMass </integralname>
+  <dervname> IgGChange </dervname>
+  <errorlim> 0.75 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> AGPMass </name>
+  <integralname> AGPMass </integralname>
+  <dervname> AGPChange </dervname>
+  <errorlim> 0.75 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> HetaLWMass </name>
+  <integralname> HetaLWMass </integralname>
+  <dervname> HetaLWChange </dervname>
+  <errorlim> 0.75 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> HetaHWMass </name>
+  <integralname> HetaHWMass </integralname>
+  <dervname> HetaHWChange </dervname>
+  <errorlim> 0.75 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def><name> InitialAlbMass </name><val> TissueH2O.Torso_Middle_SizeFract * InterstitialProtein.InitialMass * AlbuminPool.AlbFrac </val></def>
+<def><name> AlbMass </name><val> InitialAlbMass </val></def>
+
+<def><name> InitialIgGMass </name><val> TissueH2O.Torso_Middle_SizeFract * InterstitialProtein.InitialMass * IgGPool.IgGFrac </val></def>
+<def><name> IgGMass </name><val> InitialIgGMass </val></def>
+
+<def><name> InitialAGPMass </name><val> TissueH2O.Torso_Middle_SizeFract * InterstitialProtein.InitialMass * AGPPool.AGPFrac </val></def>
+<def><name> AGPMass </name><val> InitialAGPMass </val></def>
+
+<def><name> InitialHetaLWMass </name><val> TissueH2O.Torso_Middle_SizeFract * InterstitialProtein.InitialMass * HetaPool.HetaLWFrac </val></def>
+<def><name> HetaLWMass </name><val> InitialHetaLWMass </val></def>
+
+<def><name> InitialHetaHWMass </name><val> TissueH2O.Torso_Middle_SizeFract * InterstitialProtein.InitialMass * HetaPool.HetaHWFrac </val></def>
+<def><name> HetaHWMass </name><val> InitialHetaHWMass </val></def>
+
+<def><name> Mass </name><val> AlbMass + IgGMass + AGPMass + HetaLWMass + HetaHWMass </val></def>
+<def><name> Gain </name><val> 0 </val></def>
+<def><name> Loss </name><val> 0 </val></def>
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> [Alb] </name><val> AlbMass / Torso_Middle_InterstitialWater.Vol </val></def>
+<def><name> [Alb(G/dL)] </name><val> 100.0 * [Alb] </val></def>
+<def><name> [Alb(mmol/mL)] </name><val> 1000 * [Alb] / AlbuminPool.MW </val></def>
+
+<def><name> [IgG] </name><val> IgGMass / Torso_Middle_InterstitialWater.Vol </val></def>
+<def><name> [IgG(G/dL)] </name><val> 100.0 * [IgG] </val></def>
+<def><name> [IgG(mmol/mL)] </name><val> 1000 * [IgG] / IgGPool.MW </val></def>
+
+<def><name> [AGP] </name><val> AGPMass / Torso_Middle_InterstitialWater.Vol </val></def>
+<def><name> [AGP(G/dL)] </name><val> 100.0 * [AGP] </val></def>
+<def><name> [AGP(mmol/mL)] </name><val> 1000 * [AGP] / AGPPool.MW </val></def>
+
+<def><name> [HetaLW] </name><val> HetaLWMass / Torso_Middle_InterstitialWater.Vol </val></def>
+<def><name> [HetaLW(G/dL)] </name><val> 100.0 * [HetaLW] </val></def>
+<def><name> [HetaLW(mmol/mL)] </name><val> 1000 * [HetaLW] / HetaPool.lowMW </val></def>
+
+<def><name> [HetaHW] </name><val> HetaHWMass / Torso_Middle_InterstitialWater.Vol </val></def>
+<def><name> [HetaHW(G/dL)] </name><val> 100.0 * [HetaHW] </val></def>
+<def><name> [HetaHW(mmol/mL)] </name><val> 1000 * [HetaHW] / HetaPool.highMW </val></def>
+
+<def><name> COP </name>
+<val>  
+(  ( [Alb(mmol/mL)] * AlbuminPool.sigmaAlb )  
++ ( [IgG(mmol/mL)] * IgGPool.sigmaIgG ) 
++ ( [AGP(mmol/mL)] * AGPPool.sigmaAGP )
++ ( [HetaLW(mmol/mL)] * HetaPool.sigmaLWHeta ) 
++ ( [HetaHW(mmol/mL)] * HetaPool.sigmaHWHeta ) ) * 62.36367 * HeatCore.Temp(K)
+</val></def> 
+
+
+</block>
+
+<block><name> Dervs </name>
+
+<def><name> AlbGain </name><val> Torso_Middle_CapillaryProtein.AlbRate </val></def>
+<def><name> AlbLoss </name><val> Torso_Middle_LymphProtein.AlbRate </val></def>
+<def><name> AlbChange </name><val> AlbGain - AlbLoss </val></def>
+
+<def><name> AGPGain </name><val> Torso_Middle_CapillaryProtein.AGPRate </val></def>
+<def><name> AGPLoss </name><val> Torso_Middle_LymphProtein.AGPRate </val></def>
+<def><name> AGPChange </name><val> AGPGain - AGPLoss </val></def>
+
+<def><name> IgGGain </name><val> Torso_Middle_CapillaryProtein.IgGRate </val></def>
+<def><name> IgGLoss </name><val> Torso_Middle_LymphProtein.IgGRate </val></def>
+<def><name> IgGChange </name><val> IgGGain - IgGLoss </val></def>
+
+<def><name> HetaLWGain </name><val> Torso_Middle_CapillaryProtein.HetaLWRate </val></def>
+<def><name> HetaLWLoss </name><val> Torso_Middle_LymphProtein.HetaLWRate </val></def>
+<def><name> HetaLWChange </name><val> HetaLWGain - HetaLWLoss </val></def>
+
+<def><name> HetaHWGain </name><val> Torso_Middle_CapillaryProtein.HetaHWRate </val></def>
+<def><name> HetaHWLoss </name><val> Torso_Middle_LymphProtein.HetaHWRate </val></def>
+<def><name> HetaHWChange </name><val> HetaHWGain - HetaHWLoss </val></def>
+
+<def><name> Mass </name><val> AlbMass + IgGMass + AGPMass + HetaLWMass + HetaHWMass </val></def>
+<def><name> Gain </name><val> AlbGain + IgGGain + AGPGain + HetaLWGain + HetaHWGain </val></def>
+<def><name> Loss </name><val> AlbLoss + IgGLoss + AGPLoss + HetaLWLoss + HetaHWLoss </val></def>
+<def><name> [Total] </name><val> Mass / Torso_Middle_InterstitialWater.Vol </val></def>
+<def><name> [Protein(G/dL)] </name><val> 100 * [Total] </val></def>
+
+<def><name> Change </name><val> AlbChange + AGPChange + IgGChange + HetaLWChange + HetaHWChange </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

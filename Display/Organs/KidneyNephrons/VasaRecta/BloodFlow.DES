@@ -1,0 +1,76 @@
+HumMod / BloodFlow
+
+Created : 29-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 22.4 </high>
+   <wide> 30.0 </wide>
+   <title> Blood Flow </title>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 10 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightVasaRecta.Inflow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftVasaRecta.Inflow </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 10 </min><max> 30 </max><inc> 10 </inc></scale>
+  </yaxis>
+</showgraph>
+
+
+<showgraph>
+  <row> 12.8 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightVasaRecta.Outflow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftVasaRecta.Outflow </name>
+      <nolabel/>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale><min> 10 </min><max> 30 </max><inc> 10 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Typical values are </line>
+  <line>  </line>
+  <line> Blood Inflow = 24 mL / Min </line>
+  <line> Blood Outflow = 27 mL / Min </line>
+</infobutton>
+
+</groupbox>
+
+End

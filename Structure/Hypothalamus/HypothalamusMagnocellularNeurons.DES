@@ -1,0 +1,139 @@
+HumMod / HypothalamusTSH
+
+Created : 30-Dec-14
+Last Modified : 
+Author : W Pruett
+Copyright : 20014-2014
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> HypothalamusMagnocellularNeurons </name>
+
+<variables>
+
+<var>
+  <name> Intact </name>
+  <val> 1 </val>
+</var>
+
+<var>
+  <name> TemperatureDifference </name>
+</var>
+
+<parm>
+  <name> NewDamage </name>
+  <val> 0 </val>
+</parm>
+
+<timervar>
+       <name> CountDown </name>
+       <state> OFF </state>
+</timervar>
+
+<timervar>
+       <name> DamageCountDown </name>
+       <state> OFF </state>
+</timervar>
+<parm><name> dNRFlag </name><val> 0 </val></parm>
+<parm><name> DamageFraction </name><val> 0 </val></parm>
+<var><name> DamageRadius </name><val> 0 </val></var>
+<var><name> NecroticFraction </name></var>
+<var><name> dNecroticFraction </name></var>
+</variables>
+
+
+<equations>
+
+<diffeq>
+  <name> NecroticRadius </name>
+  <integralname> NecroticRadius </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> dNecroticRadius  </dervname>
+  <errorlim> 0.03 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+    <def><name> dNecroticRadius  </name><val>0 </val></def>
+</block>
+
+<block><name> Parms </name>
+
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> dNecroticRadius </name><val> dNRFlag * ( DamageRadius GE NecroticRadius ) / 3000 </val></def>
+
+
+</block>
+
+<block><name> WrapUp </name>
+
+  <onjustchanged>
+  <name> DamageFraction </name>
+    <timer>
+       <name> CountDown </name>
+       <val> 7200 </val>
+       <state> DOWN </state>
+  </timer>
+    <timer>
+       <name> DamageCountDown </name>
+       <val> 5 </val>
+       <state> DOWN </state>
+  </timer>  
+
+  </onjustchanged>
+
+<ontimedout>
+  <name> DamageCountDown </name>
+  
+  <def>
+    <name> Intact </name>
+    <val> 1 - DamageFraction </val>
+  </def>
+
+  <def>
+    <name> DamageRadius </name>
+    <val> DamageFraction  </val> 
+  </def>
+
+  <def>
+    <name> ADHFastMass.DamagedMass </name>
+    <val> ADHFastMass.Mass * DamageFraction </val>
+  </def>
+
+  <def>
+    <name> ADHFastMass.UndamagedMass </name>
+    <val> ADHFastMass.Mass * ( 1 - DamageFraction ) </val>
+  </def>
+
+  <def>
+    <name> ADHSlowMass.UndamagedMass </name>
+    <val> ADHSlowMass.UndamagedMass * ( 1 - DamageFraction ) </val>
+  </def>
+
+  <def>
+    <name> ADHSlowMass.InitialDamagedMass </name>
+    <val> ADHSlowMass.Mass *  DamageFraction  </val>
+  </def>
+
+  <def>
+    <name> ADHSlowMass.DamagedMass </name>
+    <val> ADHSlowMass.Mass *  DamageFraction  </val>
+  </def>
+</ontimedout>
+
+<ontimedout>
+  <name> CountDown </name>
+  <def><name> dNRFlag  </name><val>  1 </val></def>
+</ontimedout>
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,43 @@
+HumMod / LiverMetabolism
+
+Created : 29-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<?path Structure\LiverMetabolism\ ?>
+
+<?include LiverMetabolism_AminoAcids.DES ?>
+<?include LiverMetabolism_Glucose.DES ?>
+<?include LiverMetabolism_FattyAcids.DES ?>
+<?include LiverMetabolism_Glycogen.DES ?>
+<?include LiverMetabolism_Gluconeogenesis.DES ?>
+<?include LiverMetabolism_Ketoacids.DES ?>
+
+<?include LiverMetabolism_Insulin.DES ?>
+
+<structure><name> LiverMetabolism </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> LiverMetabolism_Insulin.Parms </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> LiverMetabolism_Glycogen.Dervs </call>
+  <call> LiverMetabolism_Gluconeogenesis.Dervs </call>
+  <call> LiverMetabolism_Ketoacids.Dervs </call>
+  <call> LiverMetabolism_FattyAcids.Dervs </call>
+  <call> LiverMetabolism_AminoAcids.Dervs </call>
+  <call> LiverMetabolism_Glucose.Dervs </call>
+  <call> LiverMetabolism_Insulin.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

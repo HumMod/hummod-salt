@@ -1,0 +1,96 @@
+HumMod / LungVolumes
+
+Created : 2012-07-11
+Revised : 2012-07-11
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> LungVolumes </name>
+
+<variables>
+
+<parm><name> TotalCapacity </name><val> 5800 </val></parm>
+
+<parm><name> InspiratoryReserve(%) </name><val> 50 </val></parm>
+<parm><name> ExpiratoryReserve(%) </name><val> 21 </val></parm>
+<parm><name> ResidualVolume(%) </name><val> 20</val></parm>
+
+<var><name> RightCapacity </name><val> 2900 </val></var>
+<var><name> LeftCapacity </name><val> 2900 </val></var>
+<var><name> InspiratoryReserve </name></var>
+<var><name> ExpiratoryReserve </name></var>
+<var><name> ResidualVolume </name></var>
+
+<var><name> InspiratoryCapacity </name></var>
+<var><name> VitalCapacity </name></var>
+<var><name> FunctionalResidualCapacity </name></var>
+
+<var><name> TidalVolume(%) </name></var>
+<var><name> Correction </name></var>
+<var><name> Scale </name></var>
+
+</variables>
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> TidalVolume(%) </name>
+  <val> 100 * ( Breathing.TidalVolume / TotalCapacity ) </val>
+</def>
+
+<def>
+  <name> Correction </name>
+  <val>
+  (   InspiratoryReserve(%)
+    + TidalVolume(%)
+    + ExpiratoryReserve(%)
+    + ResidualVolume(%)
+  ) / 100
+  </val>
+</def>
+
+<def>
+  <name> Scale </name>
+  <val> 0.01 * Correction * TotalCapacity </val>
+</def>
+
+<def>
+  <name> InspiratoryReserve </name>
+  <val> Scale * InspiratoryReserve(%) </val>
+</def>
+
+<def>
+  <name> ExpiratoryReserve </name>
+  <val> Scale * ExpiratoryReserve(%) </val>
+</def>
+
+<def>
+  <name> ResidualVolume </name>
+  <val> Scale * ResidualVolume(%) </val>
+</def>
+
+<def>
+  <name> InspiratoryCapacity </name>
+  <val> InspiratoryReserve + Breathing.TidalVolume </val>
+</def>
+
+<def>
+  <name> VitalCapacity </name>
+  <val> InspiratoryCapacity + ExpiratoryReserve </val>
+</def>
+
+<def>
+  <name> FunctionalResidualCapacity </name>
+  <val> ExpiratoryReserve + ResidualVolume </val>
+</def>
+
+<def><name> RightCapacity </name><val> TotalCapacity / 2 </val></def>
+<def><name> LeftCapacity </name><val> TotalCapacity / 2 </val></def>
+
+</block>
+</definitions>
+</structure>
+
+End

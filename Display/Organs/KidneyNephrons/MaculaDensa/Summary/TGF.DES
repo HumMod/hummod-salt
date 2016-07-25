@@ -1,0 +1,86 @@
+HumMod / TGF
+
+Created : 11-Apr-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 24.4 </high>
+   <wide> 30.0 </wide>
+   <title> TGF </title>
+
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> RightTGF-Vascular.Signal </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right Vascular Signal </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.4 </row><col> 1.0 </col>
+  <name> LeftTGF-Vascular.Signal </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Vascular Signal </label>
+</showvalue>
+
+
+<showgraph>
+  <row> 3.4 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name><label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar><name> RightTGF-Vascular.Signal </name><nolabel/><linecolor> BLUE </linecolor></yvar>
+    <yvar><name> LeftTGF-Vascular.Signal </name><nolabel/><linecolor> GREEN </linecolor></yvar>
+    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<structurename> TGF-Renin </structurename>
+
+<showvalue>
+  <row> 12.8 </row><col> 1.0 </col>
+  <name> RightTGF-Renin.Signal </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Right Renin Signal </label>
+</showvalue>
+
+<showvalue>
+  <row> 13.8 </row><col> 1.0 </col>
+  <name> LeftTGF-Renin.Signal </name>
+  <format><decimal> 2 </decimal></format>
+  <label> Left Renin Signal </label>
+</showvalue>
+
+<showgraph>
+  <row> 14.8 </row><col> 1.0 </col><high> 9 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name><label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar><name> RightTGF-Renin.Signal </name><nolabel/><linecolor> BLUE </linecolor></yvar>
+    <yvar><name> LeftTGF-Renin.Signal </name><nolabel/><linecolor> GREEN </linecolor></yvar>
+    <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line> Typical values are 1.0 x Normal for both effects. </line>
+</infobutton>
+
+</groupbox>
+
+End

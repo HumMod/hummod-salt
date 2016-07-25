@@ -1,0 +1,96 @@
+HumMod / Nucleus-CRF
+
+Created : 2013-03-20
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Nucleus-CRF </name>
+
+<variables>
+
+<var><name> NA </name></var>
+<parm><name> NA-Basic </name><val> 1.0 </val></parm>
+
+<var><name> BaroEffect </name></var>
+<var><name> LowPressureEffect </name></var>
+<var><name> ApneaEffect </name></var>
+
+<var><name> [Glucose]Effect </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+
+
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> BaroEffect </name>
+  <point><x> 0.0 </x><y> 1.5 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.5 </slope></point>
+  <point><x> 2.0 </x><y> 0.5 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> LowPressureEffect </name>
+  <point><x> 0.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.2 </slope></point>
+  <point><x> 4.0 </x><y> 0.6 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ApneaEffect  </name>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 20.0 </x><y> 1.5 </y><slope> 0 </slope></point>
+</curve>
+
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> BaroEffect </name>
+  <val> BaroEffect [ Baroreflex.NA ] </val>
+</def>
+
+<def>
+  <name> LowPressureEffect </name>
+  <val> LowPressureEffect [ LowPressureReceptors.NA ] </val>
+</def>
+
+<def>
+  <name> ApneaEffect </name>
+  <val> ApneaEffect [ Apnea.EventRate ] </val>
+</def>
+
+
+<def>
+  <name> [Glucose]Effect </name>
+  <val>  GlucoseReceptors.NA </val>
+</def>
+
+<conditional>
+  <name> NA </name>
+  <test> Clamp </test>
+  <true> Level </true>
+  <false>
+      NA-Basic
+    * BaroEffect 
+    * LowPressureEffect 
+    * [Glucose]Effect 
+    * Brain-Function.Effect
+  </false>
+</conditional>
+
+</block>
+</definitions>
+</structure>
+
+End

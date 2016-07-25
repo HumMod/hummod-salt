@@ -1,0 +1,98 @@
+HumMod / Hemorrhage
+
+Created : 30-May-05
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2005-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Hemorrhage </name>
+
+<variables>
+
+<constant><name> CONSTANTRATE </name><val> 0 </val></constant>
+<constant><name> PRESSUREDRIVEN </name><val> 1 </val></constant>
+
+<parm><name> Switch </name><val> FALSE </val></parm>
+<parm><name> Type </name><val> 0 </val></parm>
+<parm><name> TargetRate </name><val> 0 </val></parm>
+
+<var><name> PlasmaRate </name></var>
+<var><name> ProteinRate </name></var>
+<var><name> RBCRate </name></var>
+<var><name> NaRate </name></var>
+<var><name> KRate </name></var>
+<var><name> ClRate </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Volume </name>
+  <integralname> Volume </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Rate </dervname>
+  <errorlim> 10.0  </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<if>
+  <test> Switch </test>
+  <true>
+    <andif>
+      <test> Type EQ CONSTANTRATE </test>
+      <true>
+        <def><name> Rate </name><val> TargetRate </val></def>
+      </true>
+      <false>
+        <def><name> Rate </name><val> SystemicArtys.Pressure * TargetRate / 100 </val></def>
+      </false>
+    </andif>
+  </true>
+  <false>
+    <def><name> Rate </name><val> 0 </val></def>
+  </false>
+</if>
+
+<def><name> PlasmaRate </name><val> BloodVol.PVCrit * Rate + ThoraxHemorrhage.PlasmaRate</val></def>
+<def><name> ProteinRate </name><val> PlasmaProtein.[Total] * PlasmaRate + ThoraxHemorrhage.ProteinRate</val></def>
+<def><name> RBCRate </name><val> BloodVol.Hct * Rate + ThoraxHemorrhage.RBCRate </val></def>
+<def><name> NaRate </name><val> NaPool.[Na+] * PlasmaRate + ThoraxHemorrhage.NaRate</val></def>
+<def><name> KRate </name><val> KPool.[K+] * PlasmaRate + ThoraxHemorrhage.KRate </val></def>
+<def><name> ClRate </name><val> ClPool.[Cl-] * PlasmaRate + ThoraxHemorrhage.ClRate </val></def>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<if>
+  <test> NOT Switch </test>
+  <true><exitblock/></true>
+</if>
+
+<if>
+  <test> SystemicArtys.Pressure LE 10 </test>
+  <true>
+    <def><name> Switch </name><val> 0 </val></def>
+ <!--   <page> Arterial collapse. Hemorrhage has stopped. </page>-->
+  </true>
+</if>
+
+</block>
+
+<block><name> ResetVolume </name>
+
+<def><name> Volume </name><val> 0.0 </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

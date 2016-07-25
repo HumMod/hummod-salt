@@ -1,0 +1,89 @@
+HumMod / Box
+
+Created : 2013-02-20
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 13.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Sizing-PulmonaryArtery </structurename>
+
+<showvalue>
+   <row> 1.0 </row><col> 1.0 </col>
+   <name> Volume </name>
+   <format><integer/></format>
+   <label> Volume </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.4 </row><col> 1.0 </col>
+   <name> V0 </name>
+   <format><decimal> 1 </decimal></format>
+   <label> V0 </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.4 </row><col> 3 </col>
+   <name> V0-F </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Fraction </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.8 </row><col> 1 </col>
+   <name> Compliance </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Compliance </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.8 </row><col> 3 </col>
+   <name> TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> TMP </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.2 </row><col> 1 </col>
+   <name> Conductance </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Conductance </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 3 </col>
+   <name> Flow </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.2 </row><col> 3 </col>
+   <name> Gradient </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gradient </label>
+</showvalue>
+
+<showvalue>
+   <row> 10.6 </row><col> 1 </col>
+   <name> KS </name>
+   <format><decimal> 3 </decimal></format>
+   <label> KS </label>
+</showvalue>
+
+<showvalue>
+   <row> 11.6 </row><col> 1 </col>
+   <name> KD </name>
+   <format><decimal> 3 </decimal></format>
+   <label> KD </label>
+</showvalue>
+
+</groupbox>
+
+End

@@ -1,0 +1,125 @@
+HumMod / DailyDoseOral
+
+Created : 2013-02-08
+Revised : 2013-02-08
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 21.2 </high>
+   <wide> 30.0 </wide>
+   <title> Daily Dose Oral </title>
+
+<structurename> AcetazolamideDailyDose </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> TakeDaily </name>
+  <listname> Common.Switch </listname>
+  <label> Take Daily </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Dose </name>
+  <repeat><reps> 8 </reps><stepsize> 125.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.2 </row><col> 1.0 </col>
+  <name> Dose </name>
+  <listname> Dose </listname>
+  <label> Dose </label>
+</slidebar>
+
+<repeatlist>
+  <name> TimesADay </name>
+  <firstval> 1.0 </firstval>
+  <repeat><reps> 23 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> TimesADay </name>
+  <listname> TimesADay </listname>
+  <label> Times A Day </label>
+</slidebar>
+
+<showvalue>
+   <row> 6.2 </row><col> 1.0 </col>
+   <name> TimeLastDose </name>
+   <format>
+      <timestamp/>
+      <fieldwidth> 14 </fieldwidth>
+   </format>
+   <label> Last Dose </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.2 </row><col> 1.0 </col>
+   <name> TimeNextDose </name>
+   <format>
+      <timestamp/>
+      <fieldwidth> 14 </fieldwidth>
+   </format>
+   <label> Next Dose </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.6 </row><col> 1.0 </col>
+   <name> TotalDoses </name>
+   <format> <integer/> </format>
+   <label> Total Doses </label>
+</showvalue>
+
+<showvalue>
+   <row> 9.6 </row><col> 1.0 </col>
+   <name> CumulativeDose </name>
+   <format> <integer/> </format>
+   <label> Cumulative Dose </label>
+</showvalue>
+
+<showgraph>
+  <row> 10.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> CumulativeDose </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 5000 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<actionbutton>
+  <row> 18.0 </row><col> 1.0 </col>
+  <blockname> Reset </blockname>
+  <label> Reset </label>
+</actionbutton>
+
+<showvalue>
+   <row> 19.6 </row><col> 1.0 </col>
+   <name> Timer </name>
+   <format> <integer/> </format>
+   <label> Time Until Next Dose </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Typical daily dose is 500 - 1000 mG/Day. </line>
+</infobutton>
+
+</groupbox>
+
+End

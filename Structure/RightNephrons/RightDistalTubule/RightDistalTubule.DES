@@ -1,0 +1,17 @@
+HumMod / RightDistalTubule
+
+Created : 09-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<?path Structure\RightNephrons\RightDistalTubule\ ?>
+
+<?include RightDistalTubule_Na.DES ?>
+<?include RightDistalTubule_H2O.DES ?>
+<?include RightDistalTubule_H2OChannels.DES ?>
+<?include RightDistalTubule_K.DES ?>
+
+End

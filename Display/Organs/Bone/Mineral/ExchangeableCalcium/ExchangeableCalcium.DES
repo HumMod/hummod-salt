@@ -1,0 +1,222 @@
+HumMod / ExchangeableCalcium
+
+Created : 2011-08-08
+Last Modified : 2011-08-08
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University Of Mississippi Medical Center
+
+<panel><name> Mineral-ExchangeableCalcium </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Bone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Mineral | Exchangeable Calcium </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<structurename> Bone-ExchangeableCalcium </structurename>
+
+<showvalue>
+   <row> 3.0 </row><col> 1.0 </col>
+   <name> [Conc(mG/dL)] </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Conc (mG/dL)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Conc(mG/dL)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 10 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.4 </row><col> 1.0 </col>
+   <name> Solubility </name>
+   <format><decimal> 6 </decimal></format>
+   <label> Solubility </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.0 </row><col> 1.0 </col>
+   <name> [PTH]Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [PTH] Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 14.0 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+
+  <xaxis>
+    <name> ParathyroidHormone.[Conc(pG/mL)] </name>
+    <label> [PTH] </label>
+    <scale><min> 0 </min><max> 80 </max></scale>
+  </xaxis>
+
+  <yaxis>
+    <label> Effect </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+
+  <curvename> [PTH]Effect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 21.4 </row><col> 1.0 </col>
+   <name> ParathyroidHormone.[Conc(pG/mL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [PTH (pG/mL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.0 </row><col> 32.0 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+<showgraph>
+  <row> 4.0 </row><col> 32.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> Mass </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 10000 </min><max> 16000 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+   <row> 11.4 </row><col> 32.0 </col>
+   <name> Change </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.8 </row><col> 32.0 </col>
+   <name> Gain </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 13.8 </row><col> 32.0 </col>
+   <name> Loss </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.4 </row><col> 32.0 </col>
+   <name> Influx </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Influx </label>
+</showvalue>
+
+<repeatlist>
+  <name> InfluxK </name>
+  <repeat><reps> 100 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 16.8 </row><col> 34.0 </col>
+  <name> InfluxK </name>
+  <listname> InfluxK </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 18.2 </row><col> 34.0 </col>
+   <name> Ca.[Diffusing(mG/dL)] </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Ca++ (mG/dL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 19.8 </row><col> 32.0 </col>
+   <name> Outflux </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Outflux </label>
+</showvalue>
+
+<repeatlist>
+  <name> OutfluxK </name>
+  <repeat><reps> 100 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 21.2 </row><col> 34.0 </col>
+  <name> OutfluxK </name>
+  <listname> OutfluxK </listname>
+  <label> K </label>
+</slidebar>
+
+<showvalue>
+   <row> 22.6 </row><col> 34.0 </col>
+   <name> [Conc(mG/dL)] </name>
+   <format><decimal> 2 </decimal></format>
+   <label> [Ca++ (mG/dL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 23.6 </row><col> 34.0 </col>
+   <name> [PTH]Effect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [PTH] Effect </label>
+</showvalue>
+
+<showvalue>
+   <row> 25.2 </row><col> 32.0 </col>
+   <name> Deposition </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Deposition </label>
+</showvalue>
+
+<showvalue>
+   <row> 26.2 </row><col> 32.0 </col>
+   <name> Resorption </name>
+   <format><decimal> 3 </decimal></format>
+   <label> Resorption </label>
+</showvalue>
+
+</panel>
+
+End

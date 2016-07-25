@@ -1,0 +1,79 @@
+HumMod / ReninFree
+
+Created : 22-Jun-06
+Last Modified : 2012-01-28
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftReninFree </name>
+
+<variables>
+
+<var><name> InFlux </name></var>
+<var><name> OutFlux </name></var>
+
+<parm><name> OutFluxK </name><val> 0.01 </val></parm>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+<var><name> InitialMass </name></var>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <dervname> Change </dervname>
+  <errorlim> 435.0 </errorlim>
+</diffeq>
+
+</equations>
+
+<definitions>
+
+<block><name> Init </name>
+<def><name> Mass </name><val> InitialMass </val></def>
+
+
+</block>
+
+<block><name> OutFlux </name>
+
+<def>
+  <name> OutFlux </name>
+  <val> OutFluxK * Mass </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<def>
+  <name> InFlux </name>
+  <val> LeftReninGranules.OutFlux </val>
+</def>
+
+<def>
+  <name> Gain </name>
+  <val> LeftReninSynthesis.Rate + InFlux </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> LeftReninSecretion.Rate + OutFlux </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

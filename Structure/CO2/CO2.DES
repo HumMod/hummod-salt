@@ -1,0 +1,53 @@
+HumMod / CO2
+
+Created : 21-Oct-04
+Revised : 2012-10-29
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\CO2\ ?>
+
+<?include CO2Tools.DES ?>
+
+<?include CO2_pCO2_To_[HCO3].DES ?>
+<?include CO2_[HCO3]_To_pCO2.DES ?>
+
+<?include CO2Blood.DES ?>
+
+<?include CO2Total.DES ?>
+<?include CO2Artys.DES ?>
+<?include CO2Veins.DES ?>
+
+<?include CO2Calculator.DES ?>
+
+<structure><name> CO2 </name>
+
+<definitions>
+
+<block><name> Parms </name>
+
+  <call> CO2Calculator.Parms </call>
+
+</block>
+
+<block><name> CalcConc </name>
+
+  <call> CO2Artys.CalcConc </call>
+  <call> CO2Veins.CalcConc </call>
+
+</block>
+
+<block><name> Dervs </name>
+
+  <call> CO2Total.Dervs </call>
+  <call> CO2Artys.Dervs </call>
+  <call> CO2Veins.Dervs </call>
+
+</block>
+
+</definitions>
+
+</structure>
+
+End

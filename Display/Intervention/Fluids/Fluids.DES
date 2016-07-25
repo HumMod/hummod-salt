@@ -1,0 +1,16 @@
+HumMod / Fluids
+
+Created : 24-Apr-05
+Last Modified : 2011-07-26
+Author : Tom Coleman
+Copyright : 2006-2011
+By : University Of Mississippi Medical Center
+
+<?path Display\Intervention\Fluids\ ?>
+
+<?include IVDrip\IVDrip.DES ?>
+<?include IVEpinephrineInjection\IVEpinephrineInjection.DES ?>
+<?include OralH2OGlucoseLoad\OralH2OGlucoseLoad.DES ?>
+<?include Transfusion\Transfusion.DES ?>
+
+End

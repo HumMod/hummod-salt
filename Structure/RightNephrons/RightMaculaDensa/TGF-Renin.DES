@@ -1,0 +1,142 @@
+/* HumMod / TGF-Renin
+
+   Created : 2014-02-26
+   Revised : 2014-02-26
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<structure><name> RightTGF-Renin </name>
+
+<variables>
+
+<parm><name> BasicSignal </name><val> 1.0 </val></parm>
+<var><name> Signal </name></var>
+
+<var><name> A2Effect </name></var>
+<var><name> ANPEffect </name></var>
+<var><name> FurosemideEffect </name></var>
+
+<parm><name> Clamp </name><val> FALSE </val></parm>
+<parm><name> Level </name><val> 0.0 </val></parm>
+<parm><name> L </name><val> 1 </val></parm>
+</variables>
+
+<equations>
+
+<stabledelay>
+  <name> NaEffect </name>
+  <outputname> NaEffect </outputname>
+  <initialval> 1.0 </initialval>
+  <inputname> Steady-State </inputname>
+  <rateconstname> K </rateconstname>
+  <dervname> Derv </dervname>
+  <errorlim> 0.01 </errorlim>
+ <dxmaxname> DxMax </dxmaxname>
+</stabledelay>
+
+</equations>
+
+<functions>
+
+
+<curve>
+  <name> NaEffect </name>
+  <point><x>   0 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x>   25  </x><y> 0.1 </y><slope> 0.0 </slope></point>
+  <point><x>  48 </x><y> 1.0 </y><slope> 0.06 </slope></point>48 0.1
+  <point><x> 100 </x><y> 3 </y><slope> 0.0 </slope></point>2.5
+</curve>
+
+<!--  
+<curve>
+  <name> NaEffect </name>
+  <point><x>   10 </x><y> 0.0 </y><slope> 0.0 </slope></point>
+  <point><x>  46 </x><y> 1.0 </y><slope> 0.06 </slope></point>48
+  <point><x> 100 </x><y> 2.0 </y><slope> 0.0 </slope></point>
+</curve>
+-->
+
+<curve>
+  <name> A2Effect </name>
+  <point><x> 0.0 </x><y> 0.8 </y><slope> 0.0 </slope></point>0.9
+  <point><x> 1.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 2.5 </x><y> 2.0 </y><slope> 2.0 </slope></point>
+  <point><x> 3.5 </x><y> 5.0 </y><slope> 0.0 </slope></point>
+</curve>
+
+
+<curve>
+  <name> ANPEffect </name>
+  <point><x> 0.0 </x><y> 0.8 </y><slope> 0.0 </slope></point>
+  <point><x> 1.3 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 5 </x><y> 2.7 </y><slope> 0.0 </slope></point>2.7
+</curve>
+
+
+
+<curve>
+  <name> FurosemideEffect </name>
+  <point><x> 0.0 </x><y> 1.0 </y><slope> 0.0 </slope></point>
+  <point><x> 1.3 </x><y> 0.2 </y><slope> 0.0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+
+
+<def><name> K </name><val> 0.5 </val></def>
+<def><name> DxMax </name><val> 0.2 </val></def>
+
+<!-- 
+<def><name> ANPEffect </name>
+  <val> ANPEffect [ ANPPool.Log10Conc ] </val>
+</def>
+
+<def>
+  <name> A2Effect </name>
+  <val> A2Effect [ A2Pool.Log10Conc ] </val>
+</def>
+
+<def><name> Steady-State </name>
+  <val> NaEffect [ RightMaculaDensa_Na.[Na+(mEq/L)] ] </val></def>
+ -->
+
+<def>
+  <name> FurosemideEffect </name>
+  <val> FurosemideEffect [ FurosemidePool.Loss ] </val>
+</def>
+
+
+
+<def><name> Steady-State</name><val> ( LeftTGF-Renin.Na_A * ( ( RightMaculaDensa_Na.[Na+(mEq/L)] ^ LeftTGF-Renin.Na_m ) / ( ( RightMaculaDensa_Na.[Na+(mEq/L)] ^ LeftTGF-Renin.Na_m ) + ( ( LeftTGF-Renin.Na_S * L ) ^ LeftTGF-Renin.Na_m ) ) ) ) + LeftTGF-Renin.Na_B  </val></def>
+
+<def><name> A2Effect </name><val> ( LeftTGF-Renin.A2_A * ( ( A2Pool.Log10Conc ^ LeftTGF-Renin.A2_m ) / ( ( A2Pool.Log10Conc ^ LeftTGF-Renin.A2_m ) + ( LeftTGF-Renin.A2_S ^ LeftTGF-Renin.A2_m ) ) ) ) + LeftTGF-Renin.A2_B  </val></def>
+
+<def><name> ANPEffect </name><val> ( LeftTGF-Renin.ANP_A * ( ( ANPPool.Log10Conc ^ LeftTGF-Renin.ANP_m ) / ( ( ANPPool.Log10Conc ^ LeftTGF-Renin.ANP_m ) + ( LeftTGF-Renin.ANP_S ^ LeftTGF-Renin.ANP_m ) ) ) ) + LeftTGF-Renin.ANP_B  </val></def>
+
+
+
+<conditional><name> Signal </name>
+<test> Clamp </test>
+<true> Level </true>
+<false>
+    BasicSignal
+  * NaEffect
+  * A2Effect
+  * ANPEffect
+  * FurosemideEffect
+</false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

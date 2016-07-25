@@ -1,0 +1,202 @@
+/* HumMod / O2
+
+   Created : 2014-03-03
+   Revised : 2014-03-03
+   Author : Tom Coleman
+   Copyright : 2014-2014
+   By : Tom Coleman
+*/
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 30.6 </high>
+   <wide> 30.0 </wide>
+   <title> O2 </title>
+
+<structurename> Kidney-TubuleO2 </structurename>
+Kidney-TubuleO2 
+
+<showtable>
+<row> 2.8 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> Tubule[O2] </textcell>
+<textcell>  Tubule_pO2 </textcell>
+<textcell> Tubule pO2 </textcell>
+<textcell>  Tubule O2 need </textcell>
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+
+<valuecell>
+  <name> LeftKidney-TubuleO2.Tubule[O2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-TubuleO2.Tubule_pO2  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-TubuleO2.Tubule_pO2  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-TubuleO2.O2Need  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 16.0 </indent>
+<fieldwidth> 6.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightKidney-TubuleO2.Tubule[O2] </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-TubuleO2.Tubule_pO2  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-TubuleO2.Tubule_pO2  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-TubuleO2.O2Need  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<showgraph>
+  <row> 8.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-TubuleO2.Tubule_pO2 </name>
+      <label> Right pO2 </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name>  LeftKidney-TubuleO2.Tubule_pO2 </name>
+      <label> Left pO2 </label>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale>
+      <min> 30 </min><max> 50 </max><inc> 20 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+
+<showgraph>
+  <row> 15.8 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> RightKidney-TubuleO2.O2Use </name>
+      <label> Use </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <yvar>
+      <name> LeftKidney-TubuleO2.O2Use </name>
+      <label> Use </label>
+      <linecolor> GREEN </linecolor>
+    </yvar>
+    <scale>
+      <min> 10 </min><max> 30 </max><inc> 10 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<showcurve>
+  <row> 20.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> RightKidney-TubuleO2.Vein_pO2 </name>
+    <label> Venous pO2 </label>
+    <scale>
+      <min> 0 </min><max> 80 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+      <label> Fract </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> RightKidney-TubuleO2.AerobicFraction </curvename>
+</showcurve>
+
+<showcurve>
+  <row> 28.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> LeftKidney-TubuleO2.Vein_pO2 </name>
+    <label> Venous pO2 </label>
+    <scale>
+      <min> 0 </min><max> 80 </max>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+      <label> Fract </label>
+    <scale>
+      <min> 0 </min><max> 1 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> LeftKidney-TubuleO2.AerobicFraction </curvename>
+</showcurve>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Renal vein pO2 is typically 60 mmHg. </line>
+  <line>  </line>
+  <line> O2 need and use are typically 22 </line>
+  <line> mL/Min </line>
+</infobutton>
+
+</groupbox>
+
+/* End */

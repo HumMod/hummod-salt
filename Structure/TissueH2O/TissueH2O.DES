@@ -1,0 +1,139 @@
+HumMod / TissueH2O
+
+Created : 24-Mar-08
+Revised : 2012-02-11
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\TissueH2O\ ?>
+
+<?include Torso_Upper_H2O.DES ?>
+<?include Torso_Middle_H2O.DES ?>
+<?include Torso_Lower_H2O.DES ?>
+
+<?include CapillaryWater\CapillaryWater.DES ?>
+<?include CapillaryProtein\CapillaryProtein.DES ?>
+
+<?include InterstitialWater\InterstitialWater.DES ?>
+<?include InterstitialProtein\InterstitialProtein.DES ?>
+
+<?include LymphWater\LymphWater.DES ?>
+<?include LymphProtein\LymphProtein.DES ?>
+
+<?include CellH2O\CellH2O.DES ?>
+
+<structure><name> TissueH2O </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+<var><name> InitialVol </name></var>
+<var><name> Vol(L) </name></var>
+
+<var><name> Change </name></var>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<constant><name> Torso_Lower_SizeFract </name><val> 0.315 </val></constant>.3
+<constant><name> Torso_Middle_SizeFract </name><val> 0.47 </val></constant>.5
+<constant><name> Torso_Upper_SizeFract </name><val> 0.215 </val></constant>.2
+
+<constant><name> Torso_Lower_CalsFract </name><val> 0.20 </val></constant>
+<constant><name> Torso_Middle_CalsFract </name><val> 0.50 </val></constant>
+<constant><name> Torso_Upper_CalsFract </name><val> 0.30 </val></constant>
+
+<constant><name> Torso_Lower_SweatFract </name><val> 0.33 </val></constant>
+<constant><name> Torso_Middle_SweatFract </name><val> 0.34 </val></constant>
+<constant><name> Torso_Upper_SweatFract </name><val> 0.33 </val></constant>
+
+<constant><name> Torso_Lower_SkinFract </name><val> 0.33 </val></constant>
+<constant><name> Torso_Middle_SkinFract </name><val> 0.34 </val></constant>
+<constant><name> Torso_Upper_SkinFract </name><val> 0.33 </val></constant>
+
+<constant><name> Torso_Lower_LungFract </name><val> 0.0 </val></constant>
+<constant><name> Torso_Middle_LungFract </name><val> 1.0 </val></constant>
+<constant><name> Torso_Upper_LungFract </name><val> 0.0 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+
+<def>
+  <name> Vol </name>
+  <val> InitialVol </val>
+</def>
+
+<call> Torso_Upper_H2O.Init </call>
+<call> Torso_Middle_H2O.Init </call>
+<call> Torso_Lower_H2O.Init </call>
+
+</block>
+
+<block><name> CalcVol </name>
+
+<call> Torso_Upper_H2O.Calc </call>
+<call> Torso_Middle_H2O.Calc </call>
+<call> Torso_Lower_H2O.Calc </call>
+
+<def><name> Vol </name>
+  <val>
+      Torso_Upper_H2O.Vol
+    + Torso_Middle_H2O.Vol
+    + Torso_Lower_H2O.Vol
+  </val>
+</def>
+
+<def><name> Vol(L) </name><val> Vol / 1000.0 </val></def>
+
+</block>
+
+<block><name> Calc </name>
+
+<call> CellH2O.Calc </call>
+<call> InterstitialWater.Calc </call>
+<call> InterstitialProtein.Calc </call>
+
+</block>
+
+<block><name> Dervs </name>
+
+<call> CapillaryProtein.Dervs </call>
+<call> CapillaryWater.Dervs </call>
+
+<call> LymphWater.Dervs </call>
+<call> LymphProtein.Dervs </call>
+
+<call> InterstitialProtein.Dervs </call>
+
+<call> Torso_Upper_H2O.Dervs </call>
+<call> Torso_Middle_H2O.Dervs </call>
+<call> Torso_Lower_H2O.Dervs </call>
+
+<def><name> Gain </name>
+  <val>
+      Torso_Upper_H2O.Gain
+    + Torso_Middle_H2O.Gain
+    + Torso_Lower_H2O.Gain
+  </val>
+</def>
+
+<def><name> Loss </name>
+  <val>
+      Torso_Upper_H2O.Loss
+    + Torso_Middle_H2O.Loss
+    + Torso_Lower_H2O.Loss
+  </val>
+</def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

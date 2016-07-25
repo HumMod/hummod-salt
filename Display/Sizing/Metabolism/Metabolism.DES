@@ -1,0 +1,111 @@
+HumMod / Metabolism
+
+Created : 2013-03-04
+Revised : 2013-03-04
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> Sizing-Metabolism </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> WholeBody </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Sizing | Metabolism </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 20.0 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Sizing-Glucose </structurename>
+
+<showvalue>
+  <row> 1.0 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Glucose (mG) </label>
+</showvalue>
+
+<showvalue>
+  <row> 2.0 </row><col> 3 </col>
+  <name> [Glucose] </name>
+  <format><integer/></format>
+  <label> [Glucose] </label>
+</showvalue>
+
+<showvalue>
+  <row> 3.0 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-UreaPool </structurename>
+
+<showvalue>
+  <row> 4.4 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Pool Urea (mG) </label>
+</showvalue>
+
+<showvalue>
+  <row> 5.4 </row><col> 3 </col>
+  <name> [Urea] </name>
+  <format><integer/></format>
+  <label> [Urea] </label>
+</showvalue>
+
+<showvalue>
+  <row> 6.4 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+<structurename> Sizing-UreaCell </structurename>
+
+<showvalue>
+  <row> 7.8 </row><col> 1 </col>
+  <name> Mass </name>
+  <format><integer/></format>
+  <label> Cell Urea (mG) </label>
+</showvalue>
+
+<showvalue>
+  <row> 8.8 </row><col> 3 </col>
+  <name> [Urea] </name>
+  <format><integer/></format>
+  <label> [Urea] </label>
+</showvalue>
+
+<showvalue>
+  <row> 9.8 </row><col> 3.0 </col>
+  <name> Volume </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Volume </label>
+</showvalue>
+
+
+
+</groupbox>
+</panel>
+
+End

@@ -1,0 +1,112 @@
+HumMod / RightDistalTubule_K
+
+Created : 10-Apr-05
+Revised : 2013-03-17
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> RightDistalTubule_K </name>
+
+<variables>
+
+<var><name> Outflow </name></var>
+<parm><name> BasicOutflow </name><val> 0.025 </val></parm>
+<var><name> AldoEffect </name></var>
+<var><name> KEffect </name></var>
+<var><name> NaEffect </name></var>
+<var><name> ThiazideEffect </name></var>
+<parm><name> AldoSwitch </name><val> FALSE </val></parm>
+<parm><name> AldoLevel </name><val> 0.0 </val></parm>
+
+<parm><name> KA </name><val> 2.5 </val></parm>
+<parm><name> KS </name><val> 4.95  </val></parm>
+<parm><name> KN </name><val> 11. </val></parm>
+<var><name> ModifiedNaLoad </name></var>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> AldoOnOutflow </name>
+  <point><x>  0.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+  <point><x> 12.0 </x><y> 1.0 </y><slope> 0.06 </slope></point>
+  <point><x> 50.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> KOnOutflow </name>
+  <point><x> 2 </x><y> 0.5 </y><slope> 0 </slope></point>
+  <point><x> 4.3 </x><y> 1.0 </y><slope> 0.2 </slope></point>
+  <point><x> 5.5 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> NaOnOutflow </name>
+  <point><x> 0.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+  <point><x> 0.1522 </x><y> 1.0 </y><slope> 2.4 </slope></point>
+  <point><x> 1.111 </x><y> 2.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ThiazideOnOutflow </name>
+  <point><x> 0.0 </x><y> 1.0 </y><slope> 2.0 </slope></point>
+  <point><x> 0.6 </x><y> 2.0 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> Calc </name>
+
+<conditional>
+  <name> AldoEffect </name>
+  <test> AldoSwitch </test>
+  <true> AldoLevel </true>
+  <false> RightDistalTubule_Na.AldoEffect </false>
+</conditional>
+
+
+<def>
+  <name> KEffect </name>
+  <val> KA * ( KPool.[K+(mEq/L)]  ^ KN ) / ( ( KS ^ KN ) + ( KPool.[K+(mEq/L)]  ^ KN ) )  + 0.5 </val>
+</def>
+
+
+<if><test> RightKidney-NephronCount.NumFiltering GT 0 </test>
+<true><def><name> ModifiedNaLoad </name><val> RightDistalTubule_Na.Outflow / ( RightKidney-NephronCount.Total(xNormal) ) </val></def>
+ </true>
+<false>
+  <def><name> ModifiedNaLoad </name><val> 0 </val></def>
+</false>
+</if>
+
+
+<def>
+  <name> NaEffect </name>
+  <val> NaOnOutflow [ ModifiedNaLoad ] </val>
+</def>
+
+<def>
+  <name> ThiazideEffect </name>
+  <val> ThiazideOnOutflow [ ThiazidePool.[Thiazide] ] </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val>
+      BasicOutflow
+    * AldoEffect
+    * KEffect
+    * NaEffect
+    * ThiazideEffect
+    * RightKidney-Function.Effect
+  </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

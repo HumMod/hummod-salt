@@ -1,0 +1,110 @@
+HumMod / NarcanPool
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> NarcanPool </name>
+
+<variables>
+
+<var>
+  <name> [Narcan] </name>
+</var>
+
+<var>
+  <name> [Narcan(nG/mL)] </name>
+</var>
+
+<var>
+  <name> [Narcan(uMol)] </name>
+  <val>0 </val>
+</var>
+
+<constant><name> NarcanMW </name><val> 327.27 </val></constant>
+
+<var>
+  <name> Gain </name>
+</var>
+
+<var>
+  <name> Loss </name>
+</var>
+
+<parm>
+  <name> K </name>
+  <val> 0.02 </val>
+</parm>
+
+<parm>
+  <name> VolDist </name>
+  <val> 109 </val><!-- in L -->
+</parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 0.0 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 0.025 </errorlim>
+</diffeq>
+
+
+<!-- in ug-->
+
+</equations>
+
+<definitions>
+
+<block><name> CalcConc </name>
+
+<def>
+  <name> [Narcan] </name>
+  <val> Mass / VolDist </val>
+</def>
+<!-- ug/L=ng/mL-->
+
+
+<def>
+  <name> [Narcan(nG/mL)] </name>
+  <val> [Narcan]  </val>
+</def>
+
+<def>
+  <name> [Narcan(uMol)] </name>
+  <val> [Narcan] / NarcanMW </val>
+</def>
+
+</block>
+
+
+<block><name> Dervs </name>
+
+<def>
+  <name> Gain </name>
+  <val> NarcanIV.Rate + NarcanBolus.Loss </val>
+</def>
+
+<def>
+  <name> Loss </name>
+  <val> NarcanLiver.Loss + NarcanKidney.Loss  </val>
+</def>
+
+<def>
+  <name> Change </name>
+  <val> Gain - Loss </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

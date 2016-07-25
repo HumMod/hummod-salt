@@ -1,0 +1,41 @@
+HumMod / Sizing-CellH2O
+
+Created : 2013-02-27
+Revised : 2013-03-02
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-CellH2O </name>
+
+<variables>
+
+<var><name> Vol </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> Vol </name>
+  <val>
+      Sizing-ICFV.Vol
+    - Sizing-BloodVolume.RBC-H2O
+ </val>
+</def>
+
+<def>
+  <name> CellH2O.InitialVol </name>
+  <val> Vol </val>
+</def>
+
+<call> CellH2O.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

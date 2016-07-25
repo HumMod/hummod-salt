@@ -1,0 +1,16 @@
+HumMod / SequesteredBlood
+
+Created : 21-Mar-08
+Revised : 2012-02-01
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<?path Structure\SequesteredBlood\ ?>
+
+<?include BVSeq.DES ?>
+<?include BVSeqArtys.DES ?>
+<?include BVSeqVeins.DES ?>
+<?include BVSeqAlphaReceptors.DES ?>
+
+End

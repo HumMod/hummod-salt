@@ -1,0 +1,175 @@
+HumMod | Box
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.8 </high>
+   <wide> 30.0 </wide>
+
+<structurename> Pancreas-Flow </structurename>
+
+<repeatlist>
+  <name> Cond/G </name>
+  <repeat><reps> 40 </reps><stepsize> 0.001 </stepsize></repeat>
+</repeatlist>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> TotalFlow </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Total Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> EndocrineFlow </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Endocrine Flow </label>
+</showvalue>
+
+<showvalue>
+   <row> 4.2 </row><col> 1.0 </col>
+   <name> AlphaCellFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Alpha Cell Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 5.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> AlphaCellCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 6.8 </row><col> 3.0 </col>
+   <name> Pancreas-Size.AlphaCellMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> BetaCellFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Beta Cell Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 9.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> BetaCellCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 10.8 </row><col> 3.0 </col>
+   <name> Pancreas-Size.BetaCellMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 12.2 </row><col> 1.0 </col>
+   <name> DeltaCellFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label>  Delta Cell Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 13.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> DeltaCellCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 14.8 </row><col> 3.0 </col>
+   <name> Pancreas-Size.DeltaCellMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.2 </row><col> 1.0 </col>
+   <name> OtherCellFlow </name>
+   <format><decimal> 2 </decimal></format>
+   <label>  Other Cell Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 17.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> OtherCellCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 18.8 </row><col> 3.0 </col>
+   <name> Pancreas-Size.OtherCellMass </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 20.2 </row><col> 1.0 </col>
+   <name> ExocrineFlow </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Exocrine Flow </label>
+</showvalue>
+
+<slidebar>
+  <row> 21.5 </row><col> 3.0 </col><wide> 9 </wide>
+  <name> ExocrineCond/G </name>
+  <listname> Cond/G </listname>
+  <label> Cond/G </label>
+</slidebar>
+
+<showvalue>
+   <row> 22.8 </row><col> 3.0 </col>
+   <name> Pancreas-Size.ExocrineMass </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+  <row> 24.2 </row><col> 1.0 </col>
+  <name> GITract-Flow.Conductance_X_Normal </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Conductance (x Normal) </label>
+</showvalue>
+
+<showvalue>
+   <row> 25.2 </row><col> 1.0 </col>
+   <name> GITract-Pressure.PressureGradient </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Pressure Gradient </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Typical Blood Flows (mL/Min) </line>
+  <line>  </line>
+  <line> Total = 85 </line>
+  <line>  </line>
+  <line> Endocrine = 17 </line>
+  <line>  </line>
+  <line> Alpha Cell = 10.2 </line>
+  <line> Beta Cell = 4.2 </line>
+  <line> Delta Cell = 1.7 </line>
+  <line> Other Cell = 0.8 </line>
+  <line>  </line>
+  <line> Exocrine = 68 </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,134 @@
+HumMod / Lung_O2
+
+Created : 2012-07-14
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> Lung_O2 </name>
+
+<variables>
+
+<var><name> Gain </name></var>
+<var><name> Loss </name></var>
+
+<var><name> [O2] </name></var>
+<var><name> pO2 </name><val> 100 </val></var>
+
+<var><name> MembraneGradient </name></var>
+
+<var><name> [Capy] </name></var>
+<var><name> pCapy </name></var>
+<var><name> CapySat </name></var>
+
+</variables>
+
+<equations>
+
+<stablediffeq>
+  <name> Mass </name>
+  <integralname> Mass </integralname>
+  <initialval> 340 </initialval>
+  <dervname> Change </dervname>
+  <errorlim> 3.4 </errorlim>
+  <dxmaxname> DxMax </dxmaxname>
+</stablediffeq>
+
+<impliciteq>
+  <name> Uptake </name>
+  <startname> Uptake </startname>
+  <initialval> 250.0 </initialval>
+  <endname> EndUptake </endname>
+  <errorlim> .25 </errorlim>
+</impliciteq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+</block>
+
+<block><name> Calc </name>
+  <def>
+    <name> [O2] </name>
+    <val> Mass / LungVolumes.FunctionalResidualCapacity </val>
+  </def>
+
+  <def>
+    <name> pO2 </name>
+    <val> [O2] * Barometer.Pressure </val>
+  </def>
+
+  <implicitmath><name> Uptake </name>
+
+  <def>
+    <name> MembraneGradient </name>
+    <val> Uptake / PulmonaryMembrane.Permeability </val>
+  </def>
+
+  <def>
+    <name> pCapy </name>
+    <val> pO2 - MembraneGradient </val>
+  </def>
+
+  <copy>
+    <from> pCapy </from>
+    <to> HgbLung.pO2 </to>
+  </copy>
+
+  <call> HgbLung.PO2ToO2 </call>
+
+  <copy>
+    <from> HgbLung.[O2] </from>
+    <to> [Capy] </to>
+  </copy>
+
+  <def>
+    <name> EndUptake </name>
+    <val>
+        LungBloodFlow.AlveolarVentilated
+      * ( [Capy] - LungArtyO2.[O2] )
+    </val>
+  </def>
+
+  </implicitmath>
+
+  <copy>
+    <from> [Capy] </from>
+    <to> HgbConc.[O2] </to>
+  </copy>
+
+  <call> HgbConc.Sat(%) </call>
+
+  <copy>
+    <from> HgbConc.Sat(%) </from>
+    <to> CapySat </to>
+  </copy>
+</block>
+
+<block><name> Dervs </name>
+  <def>
+    <name> Gain </name>
+    <val> Breathing.AlveolarVentilation * ( Bronchi.[O2] - [O2] ) </val>
+  </def>
+
+  <def>
+    <name> Loss </name>
+    <val> Uptake </val>
+  </def>
+
+<def><name> Change </name><val> Gain - Loss </val></def>  
+
+
+  <def>
+    <name> DxMax </name>
+    <val> LungGases.DxMax </val>
+  </def>
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,60 @@
+HumMod / Traits
+
+Created : 2012-03-10
+Revised : 2012-03-10
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 8.8 </high>
+   <wide> 30.0 </wide>
+   <title> Traits </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> Context-Gender.Index </name>
+   <format><list> Common.Gender </list></format>
+   <label> Gender </label>
+</showvalue>
+
+<showvalue>
+   <row> 2.8 </row><col> 1.0 </col>
+   <name> Context-Age.Index </name>
+   <format><list> Common.Age </list></format>
+   <label> Age </label>
+</showvalue>
+
+<showvalue>
+   <row> 3.8 </row><col> 1.0 </col>
+   <name> Context-Height.Index </name>
+   <format><list> Common.Height </list></format>
+   <label> Height </label>
+</showvalue>
+
+<showvalue>
+   <row> 5.2 </row><col> 1.0 </col>
+   <name> Context-Adiposity.Index </name>
+   <format><list> Common.Adiposity </list></format>
+   <label> Adiposity </label>
+</showvalue>
+
+<showvalue>
+   <row> 6.2 </row><col> 1.0 </col>
+   <name> Context-Muscularity.Index </name>
+   <format><list> Common.Muscularity </list></format>
+   <label> Muscularity </label>
+</showvalue>
+
+<showvalue>
+   <row> 7.2 </row><col> 1.0 </col>
+   <name> Context-OtherMass.Index </name>
+   <format><list> Common.OtherMass </list></format>
+   <label> Other Mass </label>
+</showvalue>
+
+</groupbox>
+
+End

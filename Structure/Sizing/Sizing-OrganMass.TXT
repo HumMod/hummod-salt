@@ -1,0 +1,25 @@
+HumMod / Sizing-OrganMass.TXT
+
+Created : 2013-03-01
+Revised : 2013-03-01
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+There are 12 major organs to be sized. Context gives us
+
+Context-Adiposity.Mass(kG)
+Context-Muscularity.Mass(kG)
+Context-OtherMass.Mass(kG)
+
+Other mass must be apportioned among the 10 organs besides
+fat and muscle (the base organs). We do this on a % basis.
+
+Then each of the 12 organ masses is divided into its H2O
+and solid parts (composition) using individual fractions.
+
+
+
+
+
+End

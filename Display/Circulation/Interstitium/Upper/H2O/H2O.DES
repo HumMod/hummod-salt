@@ -1,0 +1,36 @@
+HumMod / H2O
+
+Created : 2013-02-28
+Revised : 2013-02-28
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> Interstitium-Upper-H2O </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> H2O </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Upper Torso | H2O </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Circulation\Interstitium\Upper\H2O\ ?>
+
+<?include Balance.DES ?>
+<?include InterstitialPressure.DES ?>
+
+</panel>
+
+End

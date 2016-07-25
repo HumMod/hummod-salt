@@ -1,0 +1,146 @@
+HumMod / OsmCell
+
+Created : 26-May-05
+Revised : 2013-03-04
+Author : Tom Coleman
+Copyright : 2005-2013
+By : University of Mississippi Medical Center
+
+<structure><name> OsmCell </name>
+
+<variables>
+
+<var><name> Total </name></var>
+<var><name> Active </name></var>
+
+<var><name> Anions </name></var>
+<var><name> OtherAnions </name></var>
+
+<var><name> Cations </name></var>
+<var><name> OtherCations </name></var>
+
+<var><name> Non-Electrolytes </name></var>
+<var><name> OtherOsmoles </name></var>
+
+<var><name> [Total] </name></var>
+<var><name> [Active] </name></var>
+
+<var><name> [Cations] </name></var>
+<var><name> [K+] </name></var>
+<var><name> [OtherCations] </name></var>
+
+<var><name> [Anions] </name></var>
+<var><name> [OtherAnions] </name></var>
+
+<var><name> Electrolytes </name></var>
+
+<var><name> [Electrolytes] </name></var>
+
+<var><name> [Non-Electrolytes] </name></var>
+<var><name> [Urea] </name></var>
+<var><name> [OtherOsmoles] </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Init </name>
+</block>
+
+<block><name> Calc </name>
+
+<def><name> Cations </name>
+  <val>
+      KCell.Mass
+    + OtherCations
+  </val>
+</def>
+
+<def><name> Anions </name>
+  <val> OtherAnions </val>
+</def>
+
+<def><name> Non-Electrolytes </name>
+  <val>
+      UreaCell.Osmoles
+    + OtherOsmoles
+  </val>
+</def>
+
+<def><name> Electrolytes </name>
+  <val> Cations + Anions </val>
+</def>
+
+<def><name> Total </name>
+  <val> Electrolytes + Non-Electrolytes </val>
+</def>
+
+<def><name> Active </name>
+  <val> ( OsmBody.Dissociation * Electrolytes ) + Non-Electrolytes </val>
+</def>
+
+</block>
+
+<block><name> Wrapup </name>
+
+<def>
+  <name> [Total] </name>
+  <val> Total / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Active] </name>
+  <val> Active / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Cations] </name>
+  <val> Cations / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [K+] </name>
+  <val> KCell.Mass / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [OtherCations] </name>
+  <val> OtherCations / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Anions] </name>
+  <val> Anions / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [OtherAnions] </name>
+  <val> OtherAnions / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Electrolytes] </name>
+  <val> Electrolytes / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Non-Electrolytes] </name>
+  <val> Non-Electrolytes / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [Urea] </name>
+  <val> UreaCell.Osmoles / ICFV.Vol(L) </val>
+</def>
+
+<def>
+  <name> [OtherOsmoles] </name>
+  <val> OtherOsmoles / ICFV.Vol(L) </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,100 @@
+HumMod / Sizing-Pericardium
+
+Created : 2013-02-20
+Revised : 2013-02-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sizing-Pericardium </name>
+
+<variables>
+
+<var><name> Volume </name></var>
+<var><name> V0 </name></var>
+
+<constant><name> SolidDensity </name><val> 1.05 </val></constant>
+
+<var><name> RightAtriumVolume </name></var>
+<var><name> LeftAtriumVolume </name></var>
+
+<var><name> RightVentricleVolume </name></var>
+<var><name> LeftVentricleVolume </name></var>
+
+<var><name> RightHeartVolume </name></var>
+<var><name> LeftHeartVolume </name></var>
+
+<constant><name> Stiffness </name><val> 0.008 </val></constant>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> RightAtriumVolume </name>
+  <val> Sizing-Veins.RightAtriumVolume </val>
+</def>
+
+<def>
+  <name> LeftAtriumVolume </name>
+  <val> Sizing-Lungs.LeftAtriumVolume </val>
+</def>
+
+<def>
+  <name> RightVentricleVolume </name>
+  <val> Sizing-HeartChambers.RightHeart-EDV </val>
+</def>
+
+<def>
+  <name> LeftVentricleVolume </name>
+  <val> Sizing-HeartChambers.LeftHeart-EDV </val>
+</def>
+
+<def>
+  <name> RightHeartVolume </name>
+  <val> Sizing-OrganMass.RightHeart_Mass / SolidDensity </val>
+</def>
+
+<def>
+  <name> LeftHeartVolume </name>
+  <val> Sizing-OrganMass.LeftHeart_Mass / SolidDensity </val>
+</def>
+
+<def>
+  <name> Volume </name>
+  <val> 
+      RightAtriumVolume
+    + RightVentricleVolume
+    + RightHeartVolume
+
+    + LeftAtriumVolume
+    + LeftVentricleVolume
+    + LeftHeartVolume
+  </val>
+</def>
+
+<def>
+  <name> V0 </name>
+  <val> Volume - ( LOG ( 2 ) / Stiffness ) </val>
+</def>
+
+<def>
+  <name> Pericardium.InitialStiffness </name>
+  <val> Stiffness </val>
+</def>
+
+<def>
+  <name> Pericardium.InitialV0 </name>
+  <val> V0 </val>
+</def>
+
+<call> Pericardium.Init </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

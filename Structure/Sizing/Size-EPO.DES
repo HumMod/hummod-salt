@@ -1,0 +1,29 @@
+HumMod / Size-EPO DES
+
+Created : 22-Aug-09
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> Size-EPO </name>
+
+<variables>
+<var><name> SizeModification </name></var>
+<constant><name>  BasicVD </name><val> 5100 </val></constant> <!-- ECFV -->
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+  <def><name> SizeModification </name><val> 0.01 * EPOPool.VolDist(%ECFV) * Sizing-ECFV.Vol / BasicVD </val></def>
+  <def><name> EPOSecretion.sizeModification </name><val> SizeModification </val></def>
+
+  <call> EPOPool.Init </call>
+</block>
+
+</definitions>
+</structure>
+
+End

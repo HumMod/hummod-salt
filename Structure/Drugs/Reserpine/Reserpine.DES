@@ -1,0 +1,42 @@
+HumMod / Reserpine
+
+Created : 15-Jul-13
+Revised : 
+Author : W Pruett
+Copyright : 2013-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\Drugs\Reserpine\ ?>
+
+<?include ReserpinePool.DES ?>
+<?include ReserpineLiver.DES ?>
+<?include ReserpineKidney.DES ?>
+<?include ReserpineOral.DES ?>
+<?include ReserpineGILumen.DES ?>
+
+<structure><name> Reserpine </name>
+
+<definitions>
+
+<block><name> Parms </name>
+  <call> ReserpineOral.Parms </call>
+</block>
+
+<block><name> CalcConc </name>
+  <call> ReserpinePool.CalcConc </call>
+  <call> ReserpineGILumen.CalcConc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> ReserpineLiver.Dervs </call>
+  <call> ReserpineKidney.Dervs </call>
+  <call> ReserpineGILumen.Dervs </call>
+  <call> ReserpinePool.Dervs </call>
+</block>
+
+<block><name> Wrapup </name>
+   <call> ReserpineOral.Wrapup </call>
+</block>
+</definitions>
+</structure>
+

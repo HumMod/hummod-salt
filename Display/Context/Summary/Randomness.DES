@@ -1,0 +1,83 @@
+HumMod / Randomness
+
+Created : 2012-06-28
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 11.2 </row>
+   <col> 1.0 </col>
+   <high> 14.6 </high>
+   <wide> 30.0 </wide>
+   <title> Randomness </title>
+
+<structurename> Random </structurename>
+
+<maplist>
+  <name> Random </name>
+  <map><val> 0 </val><img> Deterministic </img></map>
+  <map><val> 1 </val><img> Stochastic </img></map>
+</maplist>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> State </name>
+  <listname> Random </listname>
+  <nolabel/>
+  <layout> VERT </layout>
+</radiobuttons>
+
+<maplist>
+  <name> Distribution </name>
+  <map><val> 0 </val><img> Normal </img></map>
+  <map><val> 1 </val><img> Flat </img></map>
+</maplist>
+
+<radiobuttons>
+  <row> 4.2 </row><col> 1.0 </col>
+  <name> Distribution </name>
+  <listname> Distribution </listname>
+  <label> Distribution </label>
+  <layout> VERT </layout>
+</radiobuttons>
+
+<label>
+   <row> 6.8 </row><col> 1.0 </col>
+   <text> Apply To </text>
+</label>
+
+<checkbox>
+   <row> 8.2 </row><col> 1.0 </col>
+   <name> Age </name>
+   <label> Age </label>
+</checkbox>
+
+<checkbox>
+   <row> 9.4 </row><col> 1.0 </col>
+   <name> Height </name>
+   <label> Height </label>
+</checkbox>
+
+<checkbox>
+   <row> 10.6 </row><col> 1.0 </col>
+   <name> Adiposity </name>
+   <label> Adiposity </label>
+</checkbox>
+
+<checkbox>
+   <row> 11.8 </row><col> 1.0 </col>
+   <name> Muscularity </name>
+   <label> Muscularity </label>
+</checkbox>
+
+<checkbox>
+   <row> 13.0 </row><col> 1.0 </col>
+   <name> OtherMass </name>
+   <label> OtherMass </label>
+</checkbox>
+
+</groupbox>
+
+End

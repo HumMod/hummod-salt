@@ -1,0 +1,85 @@
+HumMod / RightLoopOfHenle_H2O
+
+Created : 10-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2006-2010
+By : University Of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> RightLoopOfHenle_H2O </name>
+
+<variables>
+
+<var>
+  <name> Inflow </name>
+</var>
+
+<var>
+  <name> Outflow </name>
+</var>
+
+<var>
+  <name> RightFractReab </name>
+</var>
+
+<var>
+  <name> Reab </name>
+</var>
+
+<var><name> OsmEffect </name></var>
+
+<parm>
+  <name> RightLoopPerm(%) </name>
+  <val> 37.0 </val>
+</parm>
+
+</variables>
+
+<functions>
+
+<curve>
+  <name> OsmOnFract </name>
+  <point><x> 100 </x><y> 0.8 </y><slope> 0 </slope></point>
+  <point><x>  1000 </x><y> 1 </y><slope> 0 </slope></point>
+  <point><x> 3000 </x><y> 1.5 </y><slope> 0 </slope></point>1.5
+</curve>
+
+
+</functions>
+
+
+<definitions>
+<block><name> Calc </name>
+
+<def>
+  <name> OsmEffect </name>
+  <val> OsmOnFract [ RightMedulla.[Osm] ] </val>
+</def>
+
+
+<def>
+  <name> Inflow </name>
+  <val> RightProximalTubule_H2O.Outflow </val>
+</def>
+
+<def>
+  <name> RightFractReab </name>
+  <val> 0.01 * RightLoopPerm(%) * RightLoopOfHenle_Na.RightFractReab * OsmEffect  </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> RightFractReab * Inflow </val>
+</def>
+
+<def>
+  <name> Outflow </name>
+  <val> Inflow - Reab </val>
+</def>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,44 @@
+HumMod / VenaeCava
+
+Created : 2012-02-09
+Revised : 2013-03-09
+Author : Tom Coleman
+Copyright : 2012-2013
+By : University Of Mississippi Medical Center
+
+<?path Structure\VenaeCava\ ?>
+
+<?include InferiorVenaCava.DES ?>
+<?include SuperiorVenaCava.DES ?>
+
+<structure><name> VenaeCava </name>
+
+<variables>
+
+<parm><name> SuperiorFraction </name><val> 0.3 </val></parm>
+<var><name> InferiorFraction </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<def>
+  <name> InferiorFraction </name>
+  <val> 1 - SuperiorFraction </val>
+</def>
+
+</block>
+
+<block><name> Dervs </name>
+
+<call> InferiorVenaCava.Dervs </call>
+<call> SuperiorVenaCava.Dervs </call>
+
+</block>
+
+</definitions>
+</structure>
+
+End

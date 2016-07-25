@@ -1,0 +1,16 @@
+HumMod / Sweat
+
+Created : 2012-03-23
+Revised : 2012-03-23
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Heat\Sweat\ ?>
+
+<?include SweatDuct\SweatDuct.DES ?>
+<?include SweatGland\SweatGland.DES ?>
+<?include SweatAcclimation\SweatAcclimation.DES ?>
+<?include SweatFuel\SweatFuel.DES ?>
+
+End

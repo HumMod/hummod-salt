@@ -1,0 +1,148 @@
+HumMod / Control
+
+Created : 02-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 26.2 </high>
+   <wide> 30.0 </wide>
+   <title> Control </title>
+
+<structurename> OralH2OGlucoseLoad </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Switch </name>
+  <listname> Common.Switch </listname>
+  <nolabel/>
+</radiobuttons>
+
+<repeatlist>
+  <name> OralH2OGlucoseLoad.H2ORate </name>
+  <repeat><reps> 1 </reps><stepsize> 1.0 </stepsize></repeat>
+  <repeat><reps> 3 </reps><stepsize> 3.0 </stepsize></repeat>
+  <repeat><reps> 49 </reps><stepsize> 10.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 2.8 </row><col> 1.0 </col>
+  <name> H2ORate </name>
+  <listname> OralH2OGlucoseLoad.H2ORate </listname>
+  <label> H2O Rate </label>
+</slidebar>
+
+<maplist><name> ClinicalSaline </name>
+  <map><val>   0 </val><img> None </img></map>
+  <map><val>  40 </val><img> 1/4 Normal </img></map>
+  <map><val>  80 </val><img> 1/2 Normal </img></map>
+  <map><val> 154 </val><img> Normal (0.9%) </img></map>
+  <map><val> 170 </val><img> 1% </img></map>
+  <map><val> 345 </val><img> 2% </img></map>
+  <map><val> 520 </val><img> 3% </img></map>
+  <map><val> 860 </val><img> 5% </img></map>
+  <map><val> 1720 </val><img> 10% </img></map>
+</maplist>
+
+<slidebar>
+  <row> 4.2 </row><col> 1.0 </col>
+  <name> NaClContent </name>
+  <listname> ClinicalSaline </listname>
+  <label> NaCl Content </label>
+</slidebar>
+
+<showvalue>
+  <row> 5.6 </row><col> 1.0 </col>
+  <name> TotalH2O </name>
+  <format> <integer/> </format>
+  <label> Total H2O </label>
+</showvalue>
+
+<showgraph>
+  <row> 6.6 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 8 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TotalH2O </name>
+      <label> H2O </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 1000 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<repeatlist>
+  <name> OralH2OGlucoseLoad.Glucose(%) </name>
+  <repeat><reps> 20 </reps><stepsize> 1.0 </stepsize></repeat>
+  <repeat><reps> 8 </reps><stepsize> 10.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 14.0 </row><col> 1.0 </col>
+  <name> Glucose(%) </name>
+  <listname> OralH2OGlucoseLoad.Glucose(%) </listname>
+  <label> Glucose (%) </label>
+</slidebar>
+
+<showvalue>
+  <row> 15.4 </row><col> 1.0 </col>
+  <name> GlucoseRate </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Glucose Rate </label>
+</showvalue>
+
+<showvalue>
+  <row> 16.6 </row><col> 1.0 </col>
+  <name> TotalGlucose </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Total Glucose </label>
+</showvalue>
+
+<showgraph>
+  <row> 16.2 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 8 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> TotalGlucose </name>
+      <label> Glucose </label>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 0 </min><max> 1000 </max>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> H2O Rate = mL/Min </line>
+  <line> Total H2O = mL </line>
+  <line>  </line>
+  <line> Glucose Rate = mG/Min </line>
+  <line> Glucose Total = mG </line>
+  <line>  </line>
+  <line> Set glucose % to zero for pure H2O load. </line>
+</infobutton>
+
+</groupbox>
+
+End

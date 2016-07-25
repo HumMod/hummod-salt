@@ -1,0 +1,38 @@
+HumMod / BloodGases
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<panel><name> BloodChemistry-BloodGases </name>
+
+<showbitmap>
+  <row> 0.3 </row><col> 1.0 </col>
+  <name> Blood </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row><col> 4.5 </col>
+  <text> Blood Chemistry | Blood Gases </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Diagnosis\BloodChemistry\BloodGases\ ?>
+
+<?include GetSamples.DES ?>
+
+<?include Artery.DES ?>
+<?include Vein.DES ?>
+
+</panel>
+
+End

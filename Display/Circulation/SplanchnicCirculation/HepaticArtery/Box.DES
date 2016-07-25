@@ -1,0 +1,117 @@
+HumMod / Box
+
+Created : 2012-02-19
+Revised : 2012-11-02
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 23.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> HepaticArtery-Flow </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> BloodFlow </name>
+   <format><integer/></format>
+   <label> Blood Flow </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> BloodFlow </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 300 </min><max> 400 </max></scale>
+  </yaxis>
+</showgraph>
+
+<showvalue>
+  <row> 9.8 </row><col> 1 </col>
+  <name> Conductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Conductance </label>
+</showvalue>
+
+<showbargraph>
+  <row> 10.8 </row><col> 1.0 </col><high> 4.0 </high><wide> 28 </wide>
+  <leftmargin> 8 </leftmargin>
+  <title> Effect </title>
+  <showinitialvalues/>
+  <bar>
+    <name> SympsEffect </name>
+    <label> Symp's </label>
+    <color> BLUE </color>
+  </bar>
+  <bar>
+    <name> Viscosity.ConductanceEffect </name>
+    <label> Viscosity </label>
+    <color> BLUE </color>
+  </bar>
+  <scale><min> 0 </min><max> 2 </max><inc> 1 </inc></scale>
+</showbargraph>
+
+<showvalue>
+  <row> 15.2 </row><col> 1.0 </col>
+  <name> BasicConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Basic Conductance </label>
+</showvalue>
+
+<slidebar>
+  <row> 16.6 </row><col> 3.0 </col>
+  <name> Multiplier </name>
+  <listname> Common.Multiplier </listname>
+  <label> X </label>
+</slidebar>
+
+<showvalue>
+  <row> 18.0 </row><col> 3.0 </col>
+  <name> NominalConductance </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Nominal </label>
+</showvalue>
+
+<showvalue>
+  <row> 19.0 </row><col> 3.0 </col>
+  <name> Conductance(/G) </name>
+  <format><decimal> 5 </decimal></format>
+  <label> /G </label>
+</showvalue>
+
+<showvalue>
+  <row> 20.0 </row><col> 3.0 </col>
+  <name> Liver-Size.InitialMass </name>
+  <format><integer/></format>
+  <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 21.6 </row><col> 1.0 </col>
+   <name> PressureGradient </name>
+   <format><integer/></format>
+   <label> Pressure Gradient </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row><col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

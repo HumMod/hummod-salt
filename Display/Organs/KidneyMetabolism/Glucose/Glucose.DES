@@ -1,0 +1,37 @@
+HumMod / Glucose
+
+Created : 2013-02-04
+Revised : 2013-02-04
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<panel><name> KidneyMetabolism-Glucose </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Kidney </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Kidney | Glucose </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\KidneyMetabolism\Glucose\ ?>
+
+<?include Summary.DES ?>
+
+</panel>
+
+End

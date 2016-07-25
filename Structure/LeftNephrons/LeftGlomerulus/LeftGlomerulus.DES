@@ -1,0 +1,24 @@
+HumMod / LeftGlomerulus
+
+Created : 09-Apr-05
+Last Modified : 2011-08-07
+Author : Tom Coleman
+Copyright : 2005-2011
+By : University of Mississippi Medical Center
+
+<?path Structure\LeftNephrons\LeftGlomerulus\ ?>
+
+<?include LeftGlomerulusBicarbonate.DES ?>
+<?include LeftGlomerulusCalcium.DES ?>
+<?include LeftGlomerulusChloride.DES ?>
+<?include LeftGlomerulusCreatinine.DES ?>
+<?include LeftGlomerulusFiltrate.DES ?>
+<?include LeftGlomerulusGlucose.DES ?>
+<?include LeftGlomerulusKetoacid.DES ?>
+<?include LeftGlomerulusPhosphate.DES ?>
+<?include LeftGlomerulusProtein.DES ?>
+<?include LeftGlomerulusSodium.DES ?>
+<?include LeftGlomerulusSulphate.DES ?>
+<?include LeftGlomerulusUrea.DES ?>
+
+End

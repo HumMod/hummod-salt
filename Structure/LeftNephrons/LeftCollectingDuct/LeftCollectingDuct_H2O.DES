@@ -1,0 +1,234 @@
+HumMod / LeftCollectingDuct_H2O
+
+Created : 10-Apr-05
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<structure><name> LeftCollectingDuct_H2O </name>
+
+<variables>
+
+<var><name> Inflow </name></var>
+<var><name> Outflow </name></var>
+<var><name> LeftFractReab </name></var>
+<var><name> Reab </name></var>
+<var><name> OutflowMin </name></var>
+<var><name> ADHEffect </name></var>
+<var><name> Perm </name></var>
+
+<parm><name> BasicPerm </name><val> 1.0 </val></parm>
+<var><name> ModPerm </name></var>
+<parm><name> PermSwitch </name><val> FALSE </val></parm>
+<parm><name> PermLevel </name><val> 0.0 </val></parm>
+
+<var><name> PermEffect </name></var>
+
+<parm><name> ADH_ATarget </name><val> 3.1 </val></parm>
+<parm><name> ADH_mTarget </name><val> 2 </val></parm>
+<parm><name> ADH_STarget </name><val> 4.15 </val></parm>
+<parm><name> ADH_BTarget </name><val> 0.3 </val></parm>
+
+<parm><name> Perm_ATarget </name><val> 1 </val></parm>
+<parm><name> Perm_mTarget </name><val> 6 </val></parm>
+<parm><name> Perm_STarget </name><val> 0.67 </val></parm>
+<parm><name> Perm_BTarget </name><val> 0 </val></parm>
+
+
+
+</variables>
+
+
+
+<equations>
+
+<diffeq>
+  <name> ADH_A </name>
+  <integralname> ADH_A </integralname>
+  <initialval> 3.1 </initialval>
+  <dervname> dADHA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ADH_m </name>
+  <integralname> ADH_m </integralname>
+  <initialval> 2 </initialval>
+  <dervname> dADHm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ADH_S </name>
+  <integralname> ADH_S </integralname>
+  <initialval> 4.15 </initialval>
+  <dervname> dADHS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> ADH_B </name>
+  <integralname> ADH_B </integralname>
+  <initialval> 0.3 </initialval>
+  <dervname> dADHB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+--------------------------------------------------------
+
+<diffeq>
+  <name> Perm_A </name>
+  <integralname> Perm_A </integralname>
+  <initialval> 1 </initialval>
+  <dervname> dPermA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Perm_m </name>
+  <integralname> Perm_m </integralname>
+  <initialval> 6 </initialval>
+  <dervname> dPermm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Perm_S </name>
+  <integralname> Perm_S </integralname>
+  <initialval> 0.67 </initialval>
+  <dervname> dPermS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Perm_B </name>
+  <integralname> Perm_B </integralname>
+  <initialval> 0 </initialval>
+  <dervname> dPermB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+
+
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> ADHOnPerm </name>
+  <point><x>  0.0 </x><y> 0.3 </y><slope> 0 </slope></point>
+  <point><x>  2 </x><y> 1.0 </y><slope> 0.5 </slope></point>
+  <point><x> 10.0 </x><y> 3.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> PermOnOutflow </name>
+  <point><x> 0.3 </x><y> 0.00 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 0.93 </y><slope> 0.05 </slope></point>
+  <point><x> 3.0 </x><y> 1 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+<block><name> CalcInflow </name>
+
+<def>
+  <name> Inflow </name>
+  <val> LeftDistalTubule_H2O.Outflow </val>
+</def>
+
+</block>
+
+<block><name> CalcFlux </name>
+
+<if><test> LeftKidney-Structure.Remaining GT 0 </test>
+<true>
+<def>
+  <name> OutflowMin </name>
+  <val>
+    ( LeftCollectingDuct_Na.Outflow
+    + LeftCollectingDuct_K.Outflow
+    + LeftCollectingDuct_NH4.Outflow
+    + ( 0.5 * LeftCollectingDuct_Glucose.Outflow ) )
+    / ( LeftMedulla.[Osm] / 1000 )
+  </val>
+</def>
+</true>
+<false>
+  <def><name> OutflowMin </name><val> 0 </val></def>
+</false>
+</if>
+
+
+
+<def><name> dADHA </name><val> 0.05 * ( ADH_ATarget - ADH_A ) </val></def>
+<def><name> dADHm </name><val> 0.05 * ( ADH_mTarget - ADH_m ) </val></def>
+<def><name> dADHS </name><val> 0.05 * ( ADH_STarget - ADH_S ) </val></def>
+<def><name> dADHB </name><val> 0.05 * ( ADH_BTarget - ADH_B ) </val></def>
+
+<def><name> dPermA </name><val> 0.05 * ( Perm_ATarget - Perm_A ) </val></def>
+<def><name> dPermm </name><val> 0.05 * ( Perm_mTarget - Perm_m ) </val></def>
+<def><name> dPermS </name><val> 0.05 * ( Perm_STarget - Perm_S ) </val></def>
+<def><name> dPermB </name><val> 0.05 * ( Perm_BTarget - Perm_B ) </val></def>
+
+<def><name> ADHEffect </name><val> ( ADH_A * ( ( LeftNephronADH.[ADH] ^ ADH_m ) / ( ( LeftNephronADH.[ADH] ^ ADH_m ) + ( ADH_S ^ ADH_m ) ) ) ) + ADH_B  </val></def>
+
+
+
+<conditional>
+  <name> Perm </name>
+  <test> PermSwitch </test>
+  <true> PermLevel </true>
+  <false>
+      BasicPerm
+    * ADHEffect
+    * LeftCollectingDuct_H2OChannels.Active
+  </false>
+</conditional>
+
+<def><name> PermEffect </name><val> ( Perm_A * ( ( Perm ^ Perm_m ) / ( ( Perm ^ Perm_m ) + ( Perm_S ^ Perm_m ) ) ) ) + Perm_B  </val></def>
+<def><name> ModPerm </name><val> CollectingDuct_H2O.LeftPerm </val></def>
+
+<def>
+  <name> Outflow </name>
+  <val>
+      ( PermEffect * OutflowMin )
+    + ( ( 1 - PermEffect ) * Inflow )
+  </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> Inflow - Outflow </val>
+</def>
+
+<conditional>
+  <name> LeftFractReab </name>
+  <test> Inflow GT 0.0 </test>
+  <true> ( Reab / Inflow ) MIN 1.0 </true>
+  <false> 0.0 </false>
+</conditional>
+
+</block>
+
+<block><name> NoFlow </name>
+
+<def>
+  <name> Outflow </name>
+  <val> 0.0 </val>
+</def>
+
+<def>
+  <name> Reab </name>
+  <val> 0.0 </val>
+</def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,21 @@
+HumMod / BodyFluids DES
+
+Created : 2011-07-26
+Last Modified : 2011-07-26
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+<branch>
+  <name> BODYFLUIDS </name>
+  <label> Body Fluids </label>
+  <parent> MAINMENU </parent>
+</branch>
+
+<?path Display\Tree\BodyFluids\ ?>
+
+<?include H2O.DES ?>
+<?include Blood.DES ?>
+<?include Osmoles.DES ?>
+
+End

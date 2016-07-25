@@ -1,0 +1,185 @@
+HumMod / Context-Height
+
+Created : 2012-03-10
+Revised : 2012-06-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<structure><name> Context-Height </name>
+
+<variables>
+
+<parm><name> Index </name><val> 1 </val></parm>
+<parm><name> PlusMinus </name><val> 0 </val></parm>
+
+<constant><name> MALE_SHORT    </name><val> 160.0 </val></constant>
+<constant><name> MALE_NORMAL   </name><val> 178.0 </val></constant>
+<constant><name> MALE_TALL     </name><val> 200.0 </val></constant>
+<constant><name> MALE_VERYTALL </name><val> 230.0 </val></constant>
+
+<constant><name> FEMALE_SHORT    </name><val> 150.0 </val></constant>
+<constant><name> FEMALE_NORMAL   </name><val> 165.0 </val></constant>
+<constant><name> FEMALE_TALL     </name><val> 180.0 </val></constant>
+<constant><name> FEMALE_VERYTALL </name><val> 200.0 </val></constant>
+
+<var><name> NominalHeight </name></var>
+<var><name> Height(cM) </name></var>
+
+<var><name> IsShort        </name></var>
+<var><name> IsNormalHeight </name></var>
+<var><name> IsTall         </name></var>
+<var><name> IsVeryTall     </name></var>
+
+<var><name> Stochasm </name></var>
+
+<normaldist>
+  <name> Normal </name>
+  <mean> 0 </mean>
+  <stddev> 25 </stddev>
+</normaldist>
+
+<whitenoise>
+  <name> Flat </name>
+  <lowerlim> -50 </lowerlim>
+  <upperlim> 50 </upperlim>
+</whitenoise>
+
+</variables>
+
+<definitions>
+
+<block><name> Parms </name>
+
+<onjustchanged><name> Index </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+<onjustchanged><name> PlusMinus </name>
+<call> Context.Calc </call>
+</onjustchanged>
+
+</block>
+
+<block><name> Calc </name>
+
+<def><name> IsShort        </name><val> FALSE </val></def>
+<def><name> IsNormalHeight </name><val> FALSE </val></def>
+<def><name> IsTall         </name><val> FALSE </val></def>
+<def><name> IsVeryTall     </name><val> FALSE </val></def>
+
+<if><test> Context-Gender.IsFemale </test>
+  <true><call> CalcFemale </call></true>
+  <false><call> CalcMale </call></false>
+</if>
+
+<call> CalcStochasm </call>
+
+<def>
+  <name> Height(cM) </name>
+  <val>
+     NominalHeight
+     * ( 1.0 + ( PlusMinus / 100 ) )
+     * ( 1.0 + ( Stochasm / 100 ) )
+  </val>
+</def>
+
+<def>
+  <name> Height.InitialHeight </name>
+  <val> Height(cM) </val>
+</def>
+
+<call> Height.Init </call>
+
+</block>
+
+<block><name> CalcMale </name>
+
+<testcase>
+
+<case><test> Index EQ 0 </test>
+<def><name> NominalHeight </name><val> MALE_SHORT </val></def>
+<def><name> IsShort </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 1 </test>
+<def><name> NominalHeight </name><val> MALE_NORMAL </val></def>
+<def><name> IsNormalHeight </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 2 </test>
+<def><name> NominalHeight </name><val> MALE_TALL </val></def>
+<def><name> IsTall </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 3 </test>
+<def><name> NominalHeight </name><val> MALE_VERYTALL </val></def>
+<def><name> IsVeryTall </name><val> TRUE </val></def>
+</case>
+
+</testcase>
+
+</block>
+
+<block><name> CalcFemale </name>
+
+<testcase>
+
+<case><test> Index EQ 0 </test>
+<def><name> NominalHeight </name><val> FEMALE_SHORT </val></def>
+<def><name> IsShort </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 1 </test>
+<def><name> NominalHeight </name><val> FEMALE_NORMAL </val></def>
+<def><name> IsNormalHeight </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 2 </test>
+<def><name> NominalHeight </name><val> FEMALE_TALL </val></def>
+<def><name> IsTall </name><val> TRUE </val></def>
+</case>
+
+<case><test> Index EQ 3 </test>
+<def><name> NominalHeight </name><val> FEMALE_VERYTALL </val></def>
+<def><name> IsVeryTall </name><val> TRUE </val></def>
+</case>
+
+</testcase>
+
+</block>
+
+<block><name> CalcStochasm </name>
+
+<def>
+  <name> Stochasm </name>
+  <val> 0 </val>
+</def>
+
+<if>
+  <test> NOT Random.Adiposity </test>
+  <true>
+    <exitblock/>
+  </true>
+</if>
+
+<if>
+  <test> Random.State EQ Random.IS_DETERMINISTIC </test>
+  <true>
+    <exitblock/>
+  </true>
+</if>
+
+<conditional>
+  <name> Stochasm </name>
+  <test> Random.Distribution EQ Random.IS_NORMAL </test>
+  <true> Normal </true>
+  <false> Flat </false>
+</conditional>
+
+</block>
+
+</definitions>
+</structure>
+
+End

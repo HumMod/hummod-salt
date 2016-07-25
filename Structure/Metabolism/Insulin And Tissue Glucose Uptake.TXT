@@ -1,0 +1,60 @@
+Insulin And Tissue Glucose Uptake.TXT
+
+Created : 2011-10-18
+Revised : 2011-10-18
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+Rizza RA, LJ Mandarino and JE Gerich. Dose-response
+charactistics for effects of insulin on production
+and utilization of glucose in man. Amer. J. Physiol.
+240:E630-E639, 1981.
+
+Data in this paper was redrawn in Pickup & Williams
+(p.31.2) possibly with some artistic license.
+
+[I] is uU/mL
+Uptake is uptake in mG/Min
+Prod is production in mG/Min
+
+      [I] Uptake Prod
+      500   700     0
+       55   350     0
+       30          70
+Model  20    70    60
+       10   120   140
+
+This doesn't tell us about uptake with [I] ~ 0,
+but it suggests that uptake may be 1/2 normal.
+
+Guyton and Hall tell us that in the absence of
+insulin, tissue glucose uptake is inadequate.
+
+Whichelow, MJ and WJH Butterfield. Peripheral
+glucose uptake during the oral glucose-tolerance
+test in normal and obese subjects and borderline
+and frank diabetics. Quart. J. Med. 40:261-273,
+1971.
+
+Forearm glucose uptake goes mostly to skeletal
+muscle.
+
+No [I] data, but the fasting [G] values are
+impressive.
+
+            [G]  Flow  Uptake
+Normal       78   5.6   0.46
+Borderline   86   5.9   0.55
+Diabetics   198   5.3   0.25
+
+So [G] is doubled and uptake is halved. [I] may
+be 0 to 4, so lack of [I] cut uptake to 1/4!
+
+
+
+
+
+
+
+End

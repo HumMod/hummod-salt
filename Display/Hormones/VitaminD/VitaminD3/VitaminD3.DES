@@ -1,0 +1,40 @@
+HumMod | VitaminD3
+
+Created : 2011-08-04
+Revised : 2012-01-29
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<panel><name> VitaminD3 </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Hormone </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Hormones | Vitamin D3 </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Hormones\VitaminD\VitaminD3\ ?>
+
+<?include Pool.DES ?>
+
+<?include Mass.DES ?>
+<?include Pump.DES ?>
+
+</panel>
+
+End

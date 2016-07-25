@@ -1,0 +1,29 @@
+EPO-Pool.REF
+
+Created : 2013-02-15
+Revised : 2013-02-17
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+ECFV is HumMod's normal value. Volume of distribution data is
+from Halstenson. [EPO] is from many sources -- Eckardt msy be
+cited.
+
+ECFV : 15,000 mL
+Volume of Distribution (% ECFV) : 33.4
+Volume of Distribution (mL) : 5010
+[EPO] (mU/mL) : 15
+Mass (U) : 75.1
+
+References =====================================================
+
+Eckardt, K-U. et.al. Rate of erythropoietin formation in humans
+in response to acute hypobaric hypoxia. J. Appl. Physiol.
+66(4):1785-1788, 1989.
+
+Halstenson, C.E. et.al. Comparative pharmacokinetics and
+pharmacodynamics of epoetin alpha and epoetin beta. Clin.
+Pharmacol. Ther. 50:702-712, 1991.
+
+End

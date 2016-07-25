@@ -1,0 +1,57 @@
+HumMod | InsulinEffect
+
+Created : 2012-06-19
+Revised : 2013-01-30
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 13.8 </row>
+   <col> 32.0 </col>
+   <high> 11.4 </high>
+   <wide> 30.0 </wide>
+   <title> Insulin Effect </title>
+
+<structurename> LiverMetabolism_Ketoacids </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> InsulinEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> InsulinReceptors-Liver.BoundFraction(%) </name>
+    <label> Bound Fraction (%) </label>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </xaxis>
+  <yaxis>
+    <label> Effect </label>
+    <linecolor> BLUE </linecolor>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </yaxis>
+  <curvename> InsulinEffect </curvename>
+</showcurve>
+
+<showvalue>
+  <row> 9.8 </row><col> 1.0 </col>
+  <name> InsulinReceptors-Liver.BoundFraction(%) </name>
+  <format><decimal> 1 </decimal></format>
+  <label> Bound Fraction (%) </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+  <line> Portal vein [Insulin] is greater than  </line>
+  <line> peripheral pool [Insulin]. </line>
+</infobutton>
+
+</groupbox>
+
+End

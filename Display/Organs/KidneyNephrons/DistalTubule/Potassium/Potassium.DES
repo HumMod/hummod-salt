@@ -1,0 +1,14 @@
+HumMod / Potassiium
+
+Created : 2013-03-18
+Revised : 2013-03-18
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<?path Display\Organs\KidneyNephrons\DistalTubule\Potassium\ ?>
+
+<?include Summary\Summary.DES ?>
+<?include Details\Details.DES ?>
+
+End

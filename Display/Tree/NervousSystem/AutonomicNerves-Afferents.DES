@@ -1,0 +1,63 @@
+HumMod / AutonomicNerves-Afferents
+
+Created : 2013-03-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> AutonomicNerves </name>
+  <label>  Autonomic Nerves </label>
+  <parent> NERVOUSSYSTEM </parent>
+</branch>
+
+<branch>
+  <name> AutonomicNerves-Afferents </name>
+  <label> Afferents </label>
+  <parent> AutonomicNerves </parent>
+</branch>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-Summary </name>
+  <label> Summary </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-Baroreflex </name>
+  <label> Baroreflex </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-LowPressureReceptors </name>
+  <label> Low Pressure Receptors </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-Mechanoreceptors </name>
+  <label> Heart Mechanoreceptors </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-Chemoreceptors </name>
+  <label> Chemoreceptors </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-Metaboreflex </name>
+  <label> Metaboreflex </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Afferents-GlucoseReceptors </name>
+  <label> Glucose Receptors </label>
+  <parent> AutonomicNerves-Afferents </parent>
+</leaf>
+
+End

@@ -1,0 +1,60 @@
+HumMod | Ca Reference
+
+Created : 2011-08-01
+Revised : 2012-03-11
+Author : Tom Coleman
+Copyright : 2011-2011
+By : University of Mississippi Medical Center
+
+MW = 40.08
+
+[Conc(mG/dL)] = 9.4
+[Conc(mMol/L)] = 2.35
+
+mG/dL * 0.25 = mMol/L
+
+[Conc(mG/mL)] = 0.0094
+
+Volume distribution = 15000 (ECFV) for Ionized and Not Dissociated
+Volume distribution = 3000 (PV) for Protein Bound
+
+Ionized = 0.50 Total
+Not Dissociated = 0.09 Total
+Protein Bound = 0.41 Total
+
+[Total] = Mass / (0.59 * ECFV + 0.41 * PV)
+
+Mass = 0.0094 * (0.59 * 15000 + 0.41 * 3000) or 95 mG
+
+[Total(mG/dL)] = 9.4
+  Ionized = 4.7 (50%)
+  Protein Bound = 3.8 (41%)
+  Not Dissociated = 0.9 (9%)
+
+Ca++ Movement
+
+                  mG/Day  mG/Min
+----------------- ------  ------
+Diet               1000    0.69
+GI Absorption       350    0.24
+GI Secretion        250    0.17
+GI Excretion        900    0.62
+Renal Filtration   9980    6.93
+Renal Reabsoption  9880    6.86
+Urine Excretion     100    0.07
+Bone Deposition     500    0.35
+Bone Resorption     500    0.35
+
+milli = 10^-3
+micro = 10^-6
+nano  = 10^-9
+pico  = 10^-12
+
+A good source of information is
+
+Kohlmeier, M. Nutrient Matabolism. Academic Press. 2003.
+
+Kohlmeier has [Ca++] at 2.20 to 2.65 mMol/L. The average
+is 2.42. Ca++ is divalent, so mEq/L is 4.85.
+
+End

@@ -1,0 +1,68 @@
+HumMod / LeftHeartPumping
+
+Created : 2010-05-25
+Revised : 2013-02-25
+Author : Tom Coleman
+Copyright : 2010-2013
+By : University of Mississippi Medical Center
+
+<?path Structure\LeftHeartPumping\ ?>
+
+<?include LeftHeartPumping-Pumping.DES ?>
+<?include LeftHeartPumping-Diastole.DES ?>
+<?include LeftHeartPumping-Systole.DES ?>
+<?include LeftHeartPumping-ContractileProtein.DES ?>
+<?include LeftHeartPumping-Contractility.DES ?>
+
+<structure><name> LeftHeartPumping </name>
+
+<equations>
+
+<impliciteq>
+  <name> SBP </name>
+  <startname> SBP </startname>
+  <initialval> 120.0 </initialval>
+  <endname> SBPEnd </endname>
+  <errorlim> 1.2 </errorlim>
+  <searchmin> -4.0 </searchmin>
+</impliciteq>
+
+</equations>
+
+<definitions>
+
+<block><name> Parms </name>
+ <call> LeftHeartPumping-ContractileProtein.Parms </call>
+ <call> LeftHeartPumping-Contractility.Parms </call>
+
+ <call> LeftHeartPumping-Diastole.Parms </call>
+</block>
+
+<block><name> Calc </name>
+  <call> LeftHeartPumping-ContractileProtein.Calc </call>
+  <call> LeftHeartPumping-Contractility.Calc </call>
+  <call> LeftHeartPumping-Diastole.Calc </call>
+
+  <implicitmath><name> SBP </name>
+
+  <def><name> LeftHeartPumping-Systole.SBP </name><val> SBP </val></def>
+
+  <call> LeftHeartPumping-Systole.Calc </call>
+  <call> LeftHeartPumping-Pumping.Calc </call>
+  <call> SystemicArtys.SBP </call>
+
+  <def><name> SBPEnd </name><val> SystemicArtys.SBP </val></def>
+
+  </implicitmath>
+
+  <call> LeftHeartPumping-ContractileProtein.Calc </call>
+</block>
+
+<block><name> Dervs </name>
+  <call> LeftHeartPumping-ContractileProtein.Dervs </call>
+</block>
+
+</definitions>
+</structure>
+
+End

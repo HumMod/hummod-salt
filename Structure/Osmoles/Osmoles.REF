@@ -1,0 +1,70 @@
+HumMod / Osmoles.REF
+
+Created : 2013-03-04
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+Notice that both ECFV and ICFV are electrically neutral,
+yet list cations are considerably more than list anions.
+That is because proteins are a significant but weak anion
+while playing little role in osmolarity.
+
+Volume partition is determined by active osmolality, not
+total (or potential) osmolality. This means that the ECFV
+and ICFV partitions can have different osmolalities,
+depending on their individual mix of anions and cations.
+
+For sizing, total osmolarity ~302 mOsm/L and the dissociation
+constant of 0.90. We start with an initial active osmolality
+of 282 mOsm/L (Guyton and Hall).
+
+Electrolytes are specified as mEq/L. Divalent ions contribute
+one half. I'm going to put in some place holders that might
+be used later to implement additional detail.
+
+For ECFV osmolarity (volume = 15 L),
+
+[Cations] = 146.4
+[Na+] = 142
+[K+] = 4.4
+[OtherCations] = 0
+
+[Anions] = 134.0
+[Cl-] = 108
+[HCO3-] = 24.0
+[Lac-] = 1.0
+[KA-] = 0.1
+[SO4--] = 0.3
+[PO4--] = 0.2
+[OtherAnions] = 0
+
+[Total Ions] = 280.4
+
+[Glucose] = 5.6
+[Urea] = 4.0
+[OtherOsmoles] = 12.0
+
+[TotalOsmoles] = 302
+
+For ICFV (volume = 27 L),
+
+[Cations] = 174
+[K+] = 140
+[Other Cations] = 34
+
+[Anions] = 80
+[OtherAnions] = 80
+
+[TotalIons] = 254 
+
+[Urea] = 4.0
+[OtherOsmoles] = 44
+
+[TotalOsmoles] = 302
+
+Urea diffuses rapidly but can cause transient osmotic
+effects, such a during dialysis.
+
+End

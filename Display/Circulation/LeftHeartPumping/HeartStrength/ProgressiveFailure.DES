@@ -1,0 +1,35 @@
+HumMod / ProgressiveFailure
+
+Created : 2011-08-10
+Revised : 2012-02-03
+Author : Tom Coleman
+Copyright : 2011-2012
+By : University of Mississippi Medical Center
+
+<structurename> LeftHeartPumping-Contractility </structurename>
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 6.4 </high>
+   <wide> 30.0 </wide>
+   <title> Progressive Failure </title>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> FailureSwitch </name>
+  <listname> Common.NoYes </listname>
+  <label> Progressive Failure? </label>
+  <layout> VERT </layout>
+</radiobuttons>
+
+<slidebar>
+  <row> 4.6 </row><col> 1.0 </col>
+  <name> FailureRate </name>
+  <listname> Common.Percent </listname>
+  <label> Rate (%/Day) </label>
+</slidebar>
+
+</groupbox>
+
+End

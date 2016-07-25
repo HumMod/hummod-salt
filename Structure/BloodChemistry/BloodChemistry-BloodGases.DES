@@ -1,0 +1,54 @@
+HumMod / BloodChemistry-BloodGases
+
+Created : 2012-11-01
+Revised : 2012-11-01
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<structure><name> BloodChemistry-BloodGases </name>
+
+<variables>
+
+<var><name> Timestamp </name><val> 0 </val></var>
+
+<var><name> Artery_pO2 </name><val> UNDEFINED </val></var>
+<var><name> Artery_[O2] </name><val> UNDEFINED </val></var>
+<var><name> Artery_Sat(%) </name><val> UNDEFINED </val></var>
+<var><name> Artery_pCO2 </name><val> UNDEFINED </val></var>
+<var><name> Artery_[CO2] </name><val> UNDEFINED </val></var>
+
+<var><name> Vein_pO2 </name><val> UNDEFINED </val></var>
+<var><name> Vein_[O2] </name><val> UNDEFINED </val></var>
+<var><name> Vein_Sat(%) </name><val> UNDEFINED </val></var>
+<var><name> Vein_pCO2 </name><val> UNDEFINED </val></var>
+<var><name> Vein_[CO2] </name><val> UNDEFINED </val></var>
+
+</variables>
+
+<definitions>
+
+<block><name> GetSamples </name>
+
+<call> BladderVolume.TestVolume </call>
+
+<def><name> Timestamp </name><val> System.X </val></def>
+
+<def><name> Artery_pO2 </name><val> PO2Artys.Pressure </val></def>
+<def><name> Artery_[O2] </name><val> O2Artys.[O2] </val></def>
+<def><name> Artery_Sat(%) </name><val> PO2Artys.Sat(%) </val></def>
+<def><name> Artery_pCO2 </name><val> CO2Artys.Pressure </val></def>
+<def><name> Artery_[CO2] </name><val> CO2Artys.[HCO3(mEq/L)] </val></def>
+
+<def><name> Vein_pO2 </name><val> PO2Veins.Pressure </val></def>
+<def><name> Vein_[O2] </name><val> O2Veins.[O2] </val></def>
+<def><name> Vein_Sat(%) </name><val> PO2Veins.Sat(%) </val></def>
+<def><name> Vein_pCO2 </name><val> CO2Veins.Pressure </val></def>
+<def><name> Vein_[CO2] </name><val> CO2Veins.[HCO3(mEq/L)] </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

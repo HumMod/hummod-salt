@@ -1,0 +1,54 @@
+HumMod / Pump
+
+Created : 20-Jun-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 6.2 </high>
+   <wide> 30.0 </wide>
+   <title> Pump </title>
+
+<structurename> ANPPump </structurename>
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Switch </name>
+  <listname> Common.Switch </listname>
+  <label> Switch </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> ANPPump.Setting </name>
+  <repeat><reps> 10 </reps><stepsize>   10.0 </stepsize></repeat>
+  <repeat><reps>  9 </reps><stepsize>  100.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.0 </row><col> 1.0 </col>
+  <name> Setting </name>
+  <listname> ANPPump.Setting </listname>
+  <label> Setting </label>
+</slidebar>
+
+<showvalue>
+   <row> 4.6 </row><col> 1.0 </col>
+   <name> Rate </name>
+   <format><integer/></format>
+   <label> Rate </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> Normal ANP secretion rate is 67 pMol/Min </line>
+</infobutton>
+
+</groupbox>
+
+End

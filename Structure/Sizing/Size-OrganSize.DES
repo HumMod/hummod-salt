@@ -1,0 +1,32 @@
+HumMod / Size-OrganSize DES
+
+Created : 03-Apr-05
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Schema : DES V1.0
+
+<structure><name> Size-OrganSize </name>
+
+<variables>
+
+<var><name> SumMassFractBase </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+  <def>
+    <name> SumMassFractBase </name>
+    <val> 1 </val>
+  </def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

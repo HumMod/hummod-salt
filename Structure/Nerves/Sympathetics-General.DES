@@ -1,0 +1,394 @@
+HumMod / Sympathetics-General
+
+Created : 2013-03-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<structure><name> Sympathetics-General </name>
+
+<variables>
+
+<var><name> NA </name><val> 1 </val></var>
+<var><name> NA(Hz) </name></var>
+<parm><name> GSNAconstituent </name><val> 0.0 </val></parm>
+
+<var><name> A2Effect </name></var>
+<var><name> BaroEffect </name></var>
+<var><name> ApneaEffect </name></var>
+<var><name> PainEffect</name></var>
+<parm><name> BaroSensitivity </name><val> 1.0 </val></parm>
+
+<var><name> LowPressureEffect </name></var>
+
+<parm><name> LowPressureSensitivity </name><val> 1.0 </val></parm>
+
+<var><name> MechanoEffect </name></var>
+<var><name> FuelEffect </name></var>
+<var><name> ReflexNA </name></var>
+
+<parm><name> ClampSwitch </name><val> FALSE </val></parm>
+<parm><name> ClampLevel </name><val> 0.0 </val></parm>
+
+<parm><name> EssentialEffect </name><val> 0 </val></parm>
+
+<parm><name> A2_ATarget </name><val> 0.4 </val></parm>
+<parm><name> A2_mTarget </name><val> 25 </val></parm>
+<parm><name> A2_STarget </name><val> 1.965 </val></parm>
+<parm><name> A2_BTarget </name><val> 0.991 </val></parm>
+
+<parm><name> Baro_ATarget </name><val> 1.4 </val></parm>
+<parm><name> Baro_mTarget </name><val> -1.8 </val></parm>
+<parm><name> Baro_STarget </name><val> 1.35 </val></parm>
+<parm><name> Baro_BTarget </name><val> 0.12 </val></parm>
+
+<parm><name> Low_ATarget </name><val> 0.4 </val></parm>
+<parm><name> Low_mTarget </name><val> -2.5 </val></parm>
+<parm><name> Low_STarget </name><val> 0.65 </val></parm>
+<parm><name> Low_BTarget </name><val> 0.9 </val></parm>
+
+<parm><name> Mech_ATarget </name><val> 0.6 </val></parm>
+<parm><name> Mech_mTarget </name><val> -4.4 </val></parm>
+<parm><name> Mech_STarget </name><val> 12.9 </val></parm>
+<parm><name> Mech_BTarget </name><val> 0.42 </val></parm>
+
+</variables>
+
+<equations>
+
+<diffeq>
+  <name> A2_A </name>
+  <integralname> A2_A </integralname>
+  <initialval> 0.4 </initialval>
+  <dervname> dA2A </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_m </name>
+  <integralname> A2_m </integralname>
+  <initialval> 25 </initialval>
+  <dervname> dA2m </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_S </name>
+  <integralname> A2_S </integralname>
+  <initialval> 1.965 </initialval>
+  <dervname> dA2S </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> A2_B </name>
+  <integralname> A2_B </integralname>
+  <initialval> 0.991 </initialval>
+  <dervname> dA2B </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+--------------------------------------
+
+<diffeq>
+  <name> Baro_A </name>
+  <integralname> Baro_A </integralname>
+  <initialval> 1.4 </initialval>
+  <dervname> dBaroA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_m </name>
+  <integralname> Baro_m </integralname>
+  <initialval> -1.8 </initialval>
+  <dervname> dBarom </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_S </name>
+  <integralname> Baro_S </integralname>
+  <initialval> 1.35 </initialval>
+  <dervname> dBaroS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Baro_B </name>
+  <integralname> Baro_B </integralname>
+  <initialval> 0.12 </initialval>
+  <dervname> dBaroB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+--------------------------------------
+
+<diffeq>
+  <name> Low_A </name>
+  <integralname> Low_A </integralname>
+  <initialval> 0.4 </initialval>
+  <dervname> dLowA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Low_m </name>
+  <integralname> Low_m </integralname>
+  <initialval> -2.5 </initialval>
+  <dervname> dLowm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Low_S </name>
+  <integralname> Low_S </integralname>
+  <initialval> 0.65 </initialval>
+  <dervname> dLowS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Low_B </name>
+  <integralname> Low_B </integralname>
+  <initialval> 0.9 </initialval>
+  <dervname> dLowB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+--------------------------------------
+
+<diffeq>
+  <name> Mech_A </name>
+  <integralname> Mech_A </integralname>
+  <initialval> 0.6 </initialval>
+  <dervname> dMechA </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Mech_m </name>
+  <integralname> Mech_m </integralname>
+  <initialval> -4.4 </initialval>
+  <dervname> dMechm </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Mech_S </name>
+  <integralname> Mech_S </integralname>
+  <initialval> 12.9 </initialval>
+  <dervname> dMechS </dervname>
+  <errorlim> 0.05 </errorlim>
+</diffeq>
+
+<diffeq>
+  <name> Mech_B </name>
+  <integralname> Mech_B </integralname>
+  <initialval> 0.42 </initialval>
+  <dervname> dMechB </dervname>
+  <errorlim> 0.005 </errorlim>
+</diffeq>
+
+--------------------------------------
+
+</equations>
+
+<functions>
+
+<curve>
+  <name> A2Effect </name>
+  <point><x> 1.7 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 2.3 </x><y> 1.4 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> ApneaEffect </name>
+  <point><x> 0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 20 </x><y> 1.75 </y><slope> 0 </slope></point>
+</curve>
+
+
+<curve>
+  <name> BaroEffect </name>
+  <point><x> 0.0 </x><y> 1.5 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.5 </slope></point>
+  <point><x> 2.0 </x><y> 0.5 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> LowPressureEffect </name>
+  <point><x> 0.0 </x><y> 1.5 </y><slope> 0 </slope></point>
+  <point><x> 1.0 </x><y> 1.0 </y><slope> -0.1 </slope></point>
+  <point><x> 4.0 </x><y> 0.9 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> MechanoEffect </name>
+  <point><x>  5.0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 20.0 </x><y> 0.5 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> FuelEffect </name>
+  <point><x> 0.30 </x><y> 0.0 </y><slope> 0 </slope></point>
+  <point><x> 0.60 </x><y> 3.0 </y><slope> 0 </slope></point>
+  <point><x> 0.80 </x><y> 0.0 </y><slope> 0 </slope></point>
+</curve>
+
+<curve>
+  <name> PainOnSNA </name>
+  <point><x> 0 </x><y> 1.0 </y><slope> 0 </slope></point>
+  <point><x> 10 </x><y> 2.5 </y><slope> 0 </slope></point>
+</curve>
+
+</functions>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<def>
+  <name> FuelEffect </name>
+  <val> FuelEffect [ Brain-Fuel.FractUseDelay ] </val>
+</def>
+
+<if>
+  <test> Brain-Function.Effect GT 0.1 </test>
+  <true>
+    
+
+    <def>
+      <name> ApneaEffect </name>
+      <val> ApneaEffect [ Apnea.EventRate ] </val>
+    </def>
+
+<def><name> A2Effect </name><val> ( A2_A * ( ( A2Pool.Log10Conc ^ A2_m ) / ( ( A2Pool.Log10Conc ^ A2_m ) + ( A2_S ^ A2_m ) ) ) ) + A2_B  </val></def>
+
+<def><name> dA2A </name><val> 0.05 * ( A2_ATarget - A2_A ) </val></def>
+<def><name> dA2m </name><val> 0.05 * ( A2_mTarget - A2_m ) </val></def>
+<def><name> dA2S </name><val> 0.05 * ( A2_STarget - A2_S ) </val></def>
+<def><name> dA2B </name><val> 0.05 * ( A2_BTarget - A2_B ) </val></def>
+
+
+<def><name> dBaroA </name><val> 0.05 * ( Baro_ATarget - Baro_A ) </val></def>
+<def><name> dBarom </name><val> 0.05 * ( Baro_mTarget - Baro_m ) </val></def>
+<def><name> dBaroS </name><val> 0.05 * ( Baro_STarget - Baro_S ) </val></def>
+<def><name> dBaroB </name><val> 0.05 * ( Baro_BTarget - Baro_B ) </val></def>
+
+    <def>
+      <name> BaroEffect </name>
+      <val>
+          1.0 + ( BaroSensitivity *
+           ( ( ( Baro_A * ( ( Baroreflex.NA ^ Baro_m ) / ( ( Baroreflex.NA ^ Baro_m ) + ( Baro_S ^ Baro_m ) ) ) ) + Baro_B )  
+        - 1.0 ) )
+      </val>
+    </def>
+
+<def><name> dLowA </name><val> 0.05 * ( Low_ATarget - Low_A ) </val></def>
+<def><name> dLowm </name><val> 0.05 * ( Low_mTarget - Low_m ) </val></def>
+<def><name> dLowS </name><val> 0.05 * ( Low_STarget - Low_S ) </val></def>
+<def><name> dLowB </name><val> 0.05 * ( Low_BTarget - Low_B ) </val></def>
+
+    <def>
+      <name> LowPressureEffect </name>
+      <val>
+          1.0
+        + ( LowPressureSensitivity
+        * ( ( ( Low_A * ( ( LowPressureReceptors.NA ^ Low_m ) / ( ( LowPressureReceptors.NA ^ Low_m ) + ( Low_S ^ Low_m ) ) ) ) + Low_B )  
+        - 1.0 ) )
+
+      </val>
+    </def>
+
+<def><name> dMechA </name><val> 0.05 * ( Mech_ATarget - Mech_A ) </val></def>
+<def><name> dMechm </name><val> 0.05 * ( Mech_mTarget - Mech_m ) </val></def>
+<def><name> dMechS </name><val> 0.05 * ( Mech_STarget - Mech_S ) </val></def>
+<def><name> dMechB </name><val> 0.05 * ( Mech_BTarget - Mech_B ) </val></def>
+
+<def><name> MechanoEffect </name><val> ( Mech_A * ( ( Mechanoreceptors.FiringRate ^ Mech_m ) / ( ( Mechanoreceptors.FiringRate ^ Mech_m ) + ( Mech_S ^ Mech_m ) ) ) ) + Mech_B  </val></def>
+<def><name> PainEffect </name><val> PainOnSNA [ Pain.Pain ] </val></def>
+
+    <def>
+      <name> ReflexNA </name>
+      <val>
+          ApneaEffect
+        * BaroEffect
+        * LowPressureEffect
+        * MechanoEffect
+        * ChemoreceptorsCNS.Effect 
+        * Mechanoreflex-Renal.PressureEffect-Ave 
+      </val>
+    </def>
+<!--        + EssentialEffect
+ -->
+    <def>
+      <name> NA </name>
+      <val>
+        ( ReflexNA
+       + Sympathetics-General.EssentialEffect
+        + ExerciseSymps.TotalEffect
+        + CushingResponse.Effect
+        + FuelEffect )
+        * A2Effect
+        * PainEffect
+        * CNSTrophicFactor.Effect + GSNAconstituent 
+      </val>
+    </def>
+  </true>
+  <false>
+    <def>
+      <name> A2Effect </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> ApneaEffect </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> BaroEffect </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> LowPressureEffect </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> MechanoEffect </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> ReflexNA </name>
+      <val> 0.0 </val>
+    </def>
+
+    <def>
+      <name> NA </name>
+      <val>
+        ( 1.0
+        + CushingResponse.Effect
+        + FuelEffect )
+        * CNSTrophicFactor.Effect
+      </val>
+    </def>
+  </false>
+</if>
+
+<conditional>
+  <name> NA(Hz) </name>
+  <test> ClampSwitch </test>
+  <true> ClampLevel </true>
+  <false> 1.5 * NA </false>
+</conditional>
+
+</block>
+</definitions>
+</structure>
+
+End

@@ -1,0 +1,39 @@
+HumMod / PortalVein-Insulin
+
+Created : 31-Mar-08
+Revised : 2012-11-03
+Author : Tom Coleman
+Copyright : 2008-2012
+By : University of Mississippi Medical Center
+
+<structure><name> PortalVein-Insulin </name>
+
+<variables>
+
+<var><name> [Insulin] </name></var>
+<var><name> [Insulin(mU/mL)] </name></var>
+
+<var><name> [Increment] </name></var>
+
+<constant><name> UU_TO_MU </name><val> 0.001 </val></constant>
+</variables>
+
+<definitions>
+
+<block><name> Calc </name>
+
+<conditional><name> [Increment] </name>
+  <test> PortalVein.PlasmaFlow GT 0.0 </test>
+  <true> InsulinSecretion.Rate(uU/Min) / PortalVein.PlasmaFlow </true>
+  <false> 0.0 </false>
+</conditional>
+
+<def><name> [Insulin] </name><val> InsulinPool.[Insulin] + [Increment] </val></def>
+<def><name> [Insulin(mU/mL)] </name><val> [Insulin] * UU_TO_MU </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

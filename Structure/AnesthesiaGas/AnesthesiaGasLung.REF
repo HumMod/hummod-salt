@@ -1,0 +1,33 @@
+HumMod / AnesthesiaGasLung Reference
+
+Created : 03-Jun-06
+Revised : 2012-07-15
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+With the addition of an alveolar gas
+compartment, this reference get a major
+revision.
+
+We assume no diffusion barrier. Thus, gas
+uptake is flow limited, with the flow being
+ventilated blood flow.
+
+   [Alv] - Alveolar Conc
+   [Cap] - Capillary Conc
+   [V] - Systemic Vein Conc
+
+   pAlv - Alveolar pGas
+   pCap - Capillary pGas
+
+   pCap = pAlv
+   [Cap] = ( pCap / Barometer Pressure ) * BloodK
+   Uptake = VentFlow * ([Cap] - [V])
+
+BloodK is solubility ((mL/mL)/1 Atm).
+
+The structure AnesthesiaGasLung has been moved to
+Lung_Anesthetic to be with the other lung gases.
+
+End

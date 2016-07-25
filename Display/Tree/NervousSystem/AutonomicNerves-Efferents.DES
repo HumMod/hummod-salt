@@ -1,0 +1,75 @@
+HumMod / AutonomicNerves-Efferents
+
+Created : 2013-03-06
+Revised : 2013-03-07
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<branch>
+  <name> AutonomicNerves-Efferents </name>
+  <label> Efferents </label>
+  <parent> AutonomicNerves </parent>
+</branch>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-Sympathetic </name>
+  <label> Sympathetic Ganglia </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-General </name>
+  <label> ... General </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-Adrenal </name>
+  <label> ... Adrenal </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-Cardiac </name>
+  <label> ... Cardiac </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-Renal </name>
+  <label> ... Renal </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-Hepatic </name>
+  <label> ... Hepatic </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-Ganglia-Mesenteric </name>
+  <label> ... Mesenteric </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-VagusNerve </name>
+  <label> Vagus Nerve </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-AdrenalNerve </name>
+  <label> Adrenal Nerve </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+<leaf>
+  <name> AutonomicNerves-Efferents-SystemicVeins </name>
+  <label> Systemic Veins </label>
+  <parent> AutonomicNerves-Efferents </parent>
+</leaf>
+
+End

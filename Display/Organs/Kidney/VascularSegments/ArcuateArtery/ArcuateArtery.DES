@@ -1,0 +1,38 @@
+HumMod / ArcuateArtery
+
+Created : 09-Apr-08
+Revised : 2012-02-19
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+
+<panel><name> VascularSegments-ArcuateArtery </name>
+
+<showbitmap>
+  <row> 0.3 </row>
+  <col> 1.0 </col>
+  <name> Kidney </name>
+</showbitmap>
+
+<label>
+  <row> 0.3 </row>
+  <col> 4.5 </col>
+  <text> Vascular Segments - Arcuate Artery </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Organs\Kidney\VascularSegments\ArcuateArtery\ ?>
+
+<?include Flow.DES ?>
+<?include Conductance.DES ?>
+
+</panel>
+
+End

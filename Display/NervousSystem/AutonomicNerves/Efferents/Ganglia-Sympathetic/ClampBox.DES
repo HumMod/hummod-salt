@@ -1,0 +1,42 @@
+HumMod / NerveActivity
+
+Created : 2014-02-07
+Revised : 2014-02-07
+Author : W Andrew Pruett
+
+Copyright : 2014-2014
+By : W Andrew Pruett
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 64.0 </col>
+   <high> 27.4 </high>
+   <wide> 31.0 </wide>
+
+<structurename> Ganglia-Sympathetic </structurename>
+
+
+<radiobuttons>
+  <row> 1.4 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> ClampLevel </name>
+  <repeat><reps> 30 </reps><stepsize> 0.1 </stepsize></repeat>
+  <repeat><reps>  7 </reps><stepsize> 1.0 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 3.4 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> ClampLevel </listname>
+  <label> Level </label>
+</slidebar>
+
+
+
+</groupbox>
+

@@ -1,0 +1,15 @@
+HumMod / Zones
+
+Created : 2012-08-06
+Revised : 2012-08-06
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Organs\Kidney\Zones\ ?>
+
+<?include Anatomy\Anatomy.DES ?>
+<?include Circulation\Circulation.DES ?>
+<?include Transport\Transport.DES ?>
+
+End

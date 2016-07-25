@@ -1,0 +1,61 @@
+HumMod / GlucoseEffect
+
+Created : 2012-02-14
+Revised : 2012-07-22
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<groupbox>
+   <row> 18.6 </row>
+   <col> 32.0 </col>
+   <high> 12.8 </high>
+   <wide> 30.0 </wide>
+   <title> Glucose Effect </title>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> GlucoseEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showcurve>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+
+  <xaxis>
+    <name> GlucosePool.[Glucose(mG/dL)] </name>
+    <label> [Glucose (mG/dL)] </label>
+    <scale>
+      <min> 0 </min><max> 300 </max><inc> 100 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <nolabel/>
+    <scale>
+      <min> 0 </min><max> 3 </max>
+    </scale>
+  </yaxis>
+
+  <curvename> GlucoseEffect </curvename>
+</showcurve>
+
+<showvalue>
+   <row> 9.8 </row><col> 1.0 </col>
+   <name> GlucosePool.[Glucose(mG/dL)] </name>
+   <format><integer/></format>
+   <label> [Glucose (mG/dL)] </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

@@ -1,0 +1,42 @@
+HumMod / RightAtrium
+
+Created : 2013-03-06
+Revised : 2013-03-06
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 11.6 </high>
+   <wide> 30.0 </wide>
+   <title> Right Atrium </title>
+
+<structurename> ANPSecretion </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1 </col>
+   <name> RAPEffect </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Effect </label>
+</showvalue>
+
+<showcurve>  <row> 2.4 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>  <leftmargin> 6 </leftmargin>  <xaxis>    <name> RightAtrium.TMP </name>    <label> TMP </label>    <scale><min> 0 </min><max> 20 </max><inc> 10 </inc></scale>  </xaxis>  <yaxis>    <label> Effect </label>    <scale><min> 0 </min><max> 10 </max></scale>  </yaxis>  <curvename> RAPEffect </curvename></showcurve><showvalue>
+   <row> 10.0 </row><col> 1 </col>
+   <name> RightAtrium.TMP </name>
+   <format><decimal> 1 </decimal></format>
+   <label> TMP </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

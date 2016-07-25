@@ -1,0 +1,115 @@
+HumMod / Pool
+
+Created : 06-Jun-06
+Revised : 2013-03-19
+Author : Tom Coleman
+Copyright : 2006-2013
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 19.0 </high>
+   <wide> 30.0 </wide>
+   <title> Pool </title>
+
+<structurename> AldoPool </structurename>
+
+<showvalue>
+   <row> 1.4 </row><col> 1.0 </col>
+   <name> [Aldo(pMol/L)] </name>
+   <format><integer/></format>
+   <label> [Aldo] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1.0 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 6 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [Aldo(pMol/L)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale>
+      <min> 200 </min><max> 400 </max><inc> 100 </inc>
+    </scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 9.8 </row><col> 1 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 30 </reps><stepsize> 0.1 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.2 </row><col> 1 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<showvalue>
+   <row> 12.6 </row><col> 1 </col>
+   <name> [Aldo(nG/dL)] </name>
+   <format><decimal> 1 </decimal></format>
+   <label> [Aldo (nG/dL)] </label>
+</showvalue>
+
+<showvalue>
+   <row> 14.0 </row><col> 1 </col>
+   <name> Mass </name>
+   <format><integer/></format>
+   <label> Mass </label>
+</showvalue>
+
+<showvalue>
+   <row> 15.0 </row><col> 3 </col>
+   <name> Change </name>
+   <format><decimal> 2 </decimal></format>
+   <label> Change </label>
+</showvalue>
+
+<showvalue>
+   <row> 16.4 </row><col> 1 </col>
+   <name> Gain </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Gain </label>
+</showvalue>
+
+<showvalue>
+   <row> 17.4 </row><col> 1 </col>
+   <name> Loss </name>
+   <format><decimal> 1 </decimal></format>
+   <label> Loss </label>
+</showvalue>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> MW = 360.5 </line>
+  <line> C21-H28-O5 </line>
+  <line>  </line>
+  <line> nG/dL * 27.7 = pMol/L </line>
+  <line>  </line>
+  <line> Aldosterone concentration is </line>
+  <line> normally 330 pMol/L or 12</line>
+  <line> nG/dL. </line>
+</infobutton>
+
+</groupbox>
+
+End

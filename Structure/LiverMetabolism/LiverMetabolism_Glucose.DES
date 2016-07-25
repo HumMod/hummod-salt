@@ -1,0 +1,36 @@
+HumMod / LiverMetabolism_Glucose
+
+Created : 30-Mar-08
+Last Modified : 26-Jan-10
+Author : Tom Coleman
+Copyright : 2008-2010
+By : University of Mississippi Medical Center
+Solver : DES 2005
+Schema : 2005.0
+
+<structure><name> LiverMetabolism_Glucose </name>
+
+<variables>
+
+<var><name> NetUptake </name></var>
+
+<var><name> Uptake </name></var>
+<var><name> Release </name></var>
+
+</variables>
+
+<definitions>
+
+<block><name> Dervs </name>
+
+<def><name> Uptake </name><val> LiverMetabolism_Glycogenesis.Rate + LiverMetabolism_FA_Glucose.Rate </val></def>
+<def><name> Release </name><val> LiverMetabolism_Glycogenolysis.Rate + LiverMetabolism_Gluconeogenesis.Rate </val></def>
+
+<def><name> NetUptake </name><val> Uptake - Release </val></def>
+
+</block>
+
+</definitions>
+</structure>
+
+End

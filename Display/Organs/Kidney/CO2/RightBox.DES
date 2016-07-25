@@ -1,0 +1,162 @@
+HumMod / RightBox
+
+Created : 2012-10-28
+Revised : 2012-10-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University Of Mississippi Medical Center
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 32.0 </col>
+   <high> 17.4 </high>
+   <wide> 35.0 </wide>
+
+<structurename> LeftKidney-CO2 </structurename>
+
+<showmap>
+  <row> 1.4 </row><col> 1.0 </col><high> 7 </high><wide> 20 </wide>
+  <leftmargin> 7 </leftmargin>
+
+  <xaxis>
+    <name> PCO2 </name>
+    <label> pCO2 </label>
+    <scale>
+      <min> 0 </min><max> 100 </max><inc> 10 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <name> [HCO3] </name>
+    <label> [HCO3] </label>
+    <scale>
+      <min> 0 </min><max> 0.03 </max><inc> 0.01 </inc>
+    </scale>
+  </yaxis>
+
+  <blockname> MapperBlock </blockname>
+</showmap>
+<structurename> RightKidney-CO2 </structurename>
+
+<showmap>
+  <row> 1.4 </row><col> 1.0 </col><high> 7 </high><wide> 13 </wide>
+  <leftmargin> 0 </leftmargin>
+
+  <xaxis>
+    <name> PCO2 </name>
+    <label> pCO2 </label>
+    <scale>
+      <min> 0 </min><max> 100 </max><inc> 10 </inc>
+    </scale>
+  </xaxis>
+
+  <yaxis>
+    <name> [HCO3] </name>
+<nolabel/>
+    <scale>
+      <min> 0 </min><max> 0.03 </max><inc> 0.01 </inc>
+    </scale>
+  </yaxis>
+
+  <blockname> MapperBlock </blockname>
+</showmap>
+<showtable>
+<row> 11.4 </row><col> 1 </col>
+
+<column>
+<indent> 0 </indent>
+<fieldwidth> 7 </fieldwidth>
+<justify> LEFT </justify>
+
+<textcell> </textcell>
+<textcell> [HCO3] </textcell>
+<textcell> pCO2 </textcell>
+<textcell> [SID]</textcell>
+
+
+</column>
+
+<column>
+<indent> 7.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+
+<textcell> Left </textcell>
+<valuecell>
+  <name> LeftKidney-CO2.[HCO3]  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-CO2.PCO2  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> LeftKidney-Ph.[SID]</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+
+<column>
+<indent> 15.0 </indent>
+<fieldwidth> 8.0 </fieldwidth>
+<justify> RIGHT </justify>
+<textcell> Right </textcell>
+
+<valuecell>
+  <name> RightKidney-CO2.[HCO3]  </name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-CO2.PCO2  </name>
+  <format><decimal> 1 </decimal></format>
+</valuecell>
+
+<valuecell>
+  <name> RightKidney-Ph.[SID]</name>
+  <format><decimal> 3 </decimal></format>
+</valuecell>
+
+</column>
+</showtable>
+
+<repeatlist>
+  <name> p50 </name>
+  <repeat><reps> 100 </reps><stepsize> 1 </stepsize></repeat>
+</repeatlist>
+<!--
+<slidebar>
+  <row> 14.4 </row><col> 1.0 </col>
+  <name> p50 </name>
+  <listname> p50 </listname>
+  <label> p50 </label>
+</slidebar>
+
+<repeatlist>
+  <name> k </name>
+  <firstval> 0.6 </firstval>
+  <repeat><reps> 40 </reps><stepsize> .01 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 15.8 </row><col> 1.0 </col>
+  <name> k </name>
+  <listname> k </listname>
+  <label> k </label>
+</slidebar>
+-->
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> [HCO3] = k * [SID] * (pCO2/(p50 + pCO2)) </line>
+  <line>  </line>
+  <line>  </line>
+</infobutton>
+
+</groupbox>
+
+End

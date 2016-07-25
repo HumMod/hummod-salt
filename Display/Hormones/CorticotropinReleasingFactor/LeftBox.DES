@@ -1,0 +1,108 @@
+HumMod / Box
+
+Created : 2013-03-20
+Revised : 2013-03-20
+Author : Tom Coleman
+Copyright : 2013-2013
+By : Tom Coleman
+
+<groupbox>
+   <row> 2.0 </row>
+   <col> 1.0 </col>
+   <high> 18.2 </high>
+   <wide> 30.0 </wide>
+
+<structurename> CorticotropinReleasingFactor </structurename>
+
+<showvalue>
+  <row> 1.4 </row><col> 1 </col>
+  <name> [CRF(pG/mL)] </name>
+  <format><integer/></format>  <label> [CRF (pG/mL)] </label>
+</showvalue>
+
+<showgraph>
+  <row> 2.4 </row><col> 1 </col><high> 7 </high><wide> 28 </wide>
+  <leftmargin> 5 </leftmargin>
+  <xaxis>
+    <name> System.X </name>
+    <label> Time </label>
+    <scale><min> 0 </min><max> 2 </max></scale>
+  </xaxis>
+  <yaxis>
+    <yvar>
+      <name> [CRF(pG/mL)] </name>
+      <nolabel/>
+      <linecolor> BLUE </linecolor>
+    </yvar>
+    <scale><min> 0 </min><max> 100 </max></scale>
+  </yaxis>
+</showgraph>
+
+<radiobuttons>
+  <row> 10.0 </row><col> 1.0 </col>
+  <name> Clamp </name>
+  <listname> Common.Switch </listname>
+  <label> Clamp </label>
+</radiobuttons>
+
+<repeatlist>
+  <name> Level </name>
+  <repeat><reps> 100 </reps><stepsize> 10 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 11.4 </row><col> 1.0 </col>
+  <name> Level </name>
+  <listname> Level </listname>
+  <label> Level </label>
+</slidebar>
+
+<showvalue>
+  <row> 13.0 </row><col> 1 </col>
+  <name> NeuralEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label>  Neural Effect </label>
+</showvalue>
+
+<showvalue>
+  <row> 14.0 </row><col> 1 </col>
+  <name> StressEffect </name>
+  <format><decimal> 1 </decimal></format>
+  <label>  Stress Effect </label>
+</showvalue>
+
+<showvalue>
+  <row> 15.0 </row><col> 1 </col>
+  <name> [Cortisol]Effect </name>
+  <format><decimal> 1 </decimal></format>
+  <label>  [Cortisol] Effect </label>
+</showvalue>
+
+<repeatlist>
+  <name> [CRF(pG/mL)-Basic] </name>
+  <repeat><reps> 100 </reps><stepsize> 10 </stepsize></repeat>
+</repeatlist>
+
+<slidebar>
+  <row> 16.6 </row><col> 1.0 </col>
+  <name> [CRF(pG/mL)-Basic] </name>
+  <listname> [CRF(pG/mL)-Basic] </listname>
+  <label> [Basic] </label>
+</slidebar>
+
+<infobutton>
+  <row> 1.2 </row>
+  <col> 26.0 </col>
+
+  <line> CRF is an acronym for corticotropin releasing </line>
+  <line> factor which is also called corticotropin </line>
+  <line> releasing hormone. </line>
+  <line>  </line>
+  <line> A typical portal concentration is 80 pG/mL. </line>
+  <line>  </line>
+  <line> Typical effects are 1.0 x Normal. </line>
+</infobutton>
+
+</groupbox>
+
+End

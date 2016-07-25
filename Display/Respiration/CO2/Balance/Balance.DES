@@ -1,0 +1,34 @@
+HumMod / Balance
+
+Created : 2012-02-13
+Revised : 2012-10-28
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<panel><name> CO2_Balance </name>
+
+<label>
+  <row> 0.3 </row><col> 1.0 </col>
+  <text> CO2 | Balance </text>
+</label>
+
+<showclock>
+  <row> 0.3 </row><col> 32.0 </col>
+  <name> System.X </name>
+  <ampm/>
+  <secs/>
+  <days/>
+</showclock>
+
+<?path Display\Respiration\CO2\Balance\ ?>
+
+<?include Change.DES ?>
+<?include HCO3.DES ?>
+<?include Generated.DES ?>
+<?include Exhaled.DES ?>
+<?include Excreted.DES ?>
+
+</panel>
+
+End

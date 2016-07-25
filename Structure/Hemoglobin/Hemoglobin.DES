@@ -1,0 +1,17 @@
+HumMod / Hemoglobin
+
+Created : 21-Oct-04
+Revised : 2012-09-13
+Author : Tom Coleman
+Copyright : 2006-2012
+By : University Of Mississippi Medical Center
+
+<?path Structure\Hemoglobin\ ?>
+
+<?include HgbProps.DES ?>
+<?include HgbConc.DES ?>
+<?include HgbTissue.DES ?>
+<?include HgbLung.DES ?>
+<?include HgbCalculator.DES ?>
+
+End

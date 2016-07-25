@@ -1,0 +1,19 @@
+HumMod / Heat
+
+Created : 2012-03-23
+Revised : 2012-03-23
+Author : Tom Coleman
+Copyright : 2012-2012
+By : University of Mississippi Medical Center
+
+<?path Display\Heat\ ?>
+
+<?include Core\Core.DES ?>
+<?include GILumen\GILumen.DES ?>
+<?include Movement\Movement.DES ?>
+<?include SkeletalMuscle\SkeletalMuscle.DES ?>
+<?include Skin\Skin.DES ?>
+<?include Summary\Summary.DES ?>
+<?include Sweat\Sweat.DES ?>
+
+End
