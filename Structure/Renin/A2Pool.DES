@@ -49,12 +49,11 @@ By : University Of Mississippi Medical Center
   <val> EndogenousRate + A2Pump.Rate </val>
 </def>
 
-
 <conditional>
   <name> [A2(pG/mL)] </name>
   <test> Clamp </test>
   <true> Level </true>
-  <false> A2CONC * FormationRate MAX 2.5 </false> 
+ <false> A2CONC * FormationRate MAX 2.5 </false>
 </conditional>
 
 <def>
@@ -68,7 +67,6 @@ By : University Of Mississippi Medical Center
   <true> LOG10 ( [A2(pG/mL)] ) </true>
   <false> 0.0 </false>
 </conditional>
-
 
 </block>
 </definitions>

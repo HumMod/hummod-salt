@@ -51,7 +51,7 @@ By : University of Mississippi Medical Center
 <definitions>
 
 <block><name> Initialize </name>
-  <def><name> Mass </name><val> 310 * ( ( ( GILumenCarbohydrates.Mass + GILumenFat.Mass + GILumenProtein.Mass ) * 0.001 * SpecificHeat.Food(kCal/G) ) + ( GILumenH2O.Mass * SpecificHeat.Water(kCal/G)  ) ) </val></def>  
+  <def><name> Mass </name><val> 310 </val></def>  310 * ( ( ( GILumenCarbohydrates.Mass + GILumenFat.Mass + GILumenProtein.Mass ) * 0.001 * SpecificHeat.Food(kCal/G) ) + ( GILumenH2O.Mass * SpecificHeat.Water(kCal/G)  ) )
 </block>
 
 <block><name> Temperature </name>
@@ -147,7 +147,7 @@ By : University of Mississippi Medical Center
 
 <def>
   <name> Change </name>
-  <val> Gain - Loss  </val> 
+  <val> 0 </val> Gain - Loss
 </def>
 
 </block>

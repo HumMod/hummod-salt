@@ -36,9 +36,6 @@ By : University Of Mississippi Medical Center
 <var><name> InitialCompliance </name></var>
 <var><name> InitialConductance </name></var>
 
-<parm><name> Clamp </name><val> FALSE </val></parm>
-<parm><name> Level </name><val> 0.0 </val></parm>
-
 </variables>
 
 
@@ -157,20 +154,17 @@ By : University Of Mississippi Medical Center
   <val> OrganFlow.PeripheralFlow </val>
 </def>
 
-
-<conditional><name> Conductance </name>
-<test> Clamp </test>
-<true> Level </true>
-<false> 
+<def>
+  <name> Conductance </name>
+  <val>
       ConductanceBasic
     * Beta2OnConductance
     * Conductance-X
     * BloodVol.CollapsedEffect
     * Exercise-MusclePump.Effect
     * Viscosity.ConductanceEffect
-</false>
-</conditional>
-
+  </val>
+</def>
 
 <def>
   <name> Outflow </name>

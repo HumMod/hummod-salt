@@ -75,13 +75,21 @@ By : University of Mississippi Medical Center
   <val> VolDist(FractionECFV) * ECFV.Vol(L) </val>
 </def>
 
- <conditional>
+<!-- <conditional>
   <name> [EPO] </name>
   <test> Switch </test>
   <true> Level </true>
   <false> Mass / VolDist </false>
 </conditional>
- 
+ -->
+
+<conditional>
+  <name> [EPO] </name>
+  <test> Switch </test>
+  <true> Level </true>
+  <false> 17 </false>
+</conditional>
+
 
 <conditional>
   <name> Log10Conc </name>
