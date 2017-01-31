@@ -7,7 +7,7 @@ Copyright : 2013-2013
 By : Tom Coleman
 
 <groupbox>
-   <row> 2.0 </row>
+   <row> 2.0 </row> 
    <col> 32.0 </col>
    <high> 26.2 </high>
    <wide> 60.0 </wide>
@@ -26,7 +26,7 @@ By : Tom Coleman
   <leftmargin> 5 </leftmargin>
 
   <xaxis>
-    <name> Inflow </name>
+    <name> ModifiedInflow </name>
     <label> Na+ Inflow </label>
     <scale><min> 0 </min><max> 0.4 </max><inc> 0.2 </inc></scale>
   </xaxis>
@@ -94,7 +94,7 @@ By : Tom Coleman
   <leftmargin> 5 </leftmargin>
 
   <xaxis>
-    <name> Inflow </name>
+    <name> ModifiedInflow </name>
     <label> Na+ Inflow </label>
     <scale><min> 0 </min><max> 1 </max><inc> 1 </inc></scale>
   </xaxis>
