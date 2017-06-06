@@ -28,13 +28,18 @@ By : University Of Mississippi Medical Center
 
 <block><name> Calc </name>
 
-<!--
+
 <if>
 <test> LeftKidney-ArcuateArtery.Conductance * LeftKidney-AfferentArtery.Conductance * LeftKidney-EfferentArtery.Conductance GT 0 </test>
 <true>
 <def>
   <name> Conductance </name>
   <val>
+    INVERT (
+      ( INVERT LeftKidney-ArcuateArtery.Conductance )
+    + ( INVERT LeftKidney-AfferentArtery.Conductance )
+    + ( INVERT LeftKidney-EfferentArtery.Conductance )
+    )
   </val>
 </def>
 </true>
@@ -45,9 +50,9 @@ By : University Of Mississippi Medical Center
 </def>
 </false>
 </if> 
-  -->
 
 
+<!--
 <conditional><name> Conductance </name>
 <test> Clamp </test>
 <true> Level </true>
@@ -59,7 +64,7 @@ By : University Of Mississippi Medical Center
     )
 </false>
 </conditional>
-
+  -->
 
 <def>
   <name> BloodFlow </name>
