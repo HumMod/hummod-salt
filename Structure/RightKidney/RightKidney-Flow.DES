@@ -51,7 +51,6 @@ By : University Of Mississippi Medical Center
 </false>
 </if> 
 
-
 <!--  
 <conditional><name> Conductance </name>
 <test> Clamp </test>
