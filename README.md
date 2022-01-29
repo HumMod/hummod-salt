@@ -21,4 +21,4 @@ This makes HumMod a very large simulation by cognitive science and physiology
 standards. HumMod offers the data files and equations as the documentation, but to someone who is not 
 familiar with human physiology, it can be difficult to understand.
 
--from Manual for HumMod (Salt Version 3.0.4), Manual Version: 2.9
+-- from Manual for HumMod (Salt Version 3.0.4), Manual Version: 2.9
