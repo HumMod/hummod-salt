@@ -22,3 +22,4 @@ standards. HumMod offers the data files and equations as the documentation, but 
 familiar with human physiology, it can be difficult to understand.
 
 -- from Manual for HumMod (Salt Version 3.0.4), Manual Version: 2.9
+http://acs.ist.psu.edu/reports/brenerBPRDWS19.pdf
