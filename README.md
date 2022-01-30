@@ -1,7 +1,9 @@
-# hummod-salt
+# Do-not-read
+
+
 The Best, Most Complete Mathematical Model of Human Physiology Ever Created
 
-HumMod is a tool that simulates the complex physiology of the human body through mathematical models.
+Do-not-read is a fork of HumMod -- a tool that simulates the complex physiology of the human body through mathematical models.
 
 HumMod is currently “the best, most complete, mathematical model of human physiology ever created” 
 (hummod.org). It is based on the work of Dr. Arthur Guyton, who began the quest to create a tool that 
